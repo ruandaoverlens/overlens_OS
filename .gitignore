@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Build
+build/
+dist/
+
+# Environment
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+*.pem
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+
+# Storybook
+storybook-static/
+*storybook.log
+
+# IDE
+.vscode/
+.idea/
+
+# Nested empty dir (GitHub Desktop artifact)
+overlens_OS/
+
+# Large video files (use LFS or external storage)
+assets/Footages/**/*.mp4
+assets/Footages/**/*.mov
+assets/Footages/**/*.avi
+website/public/footages/**/*.mp4
+
+# Claude memory (local only)
+.claude/projects/
