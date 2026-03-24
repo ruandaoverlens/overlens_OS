@@ -1,40 +1,36 @@
 import { NextRequest, NextResponse } from "next/server";
-import { writeFile, mkdir } from "fs/promises";
+import { writeFile, mkdir, rm } from "fs/promises";
 import path from "path";
+import os from "os";
+import { createClient } from "@/lib/supabase/server";
+import { getStoragePath, sanitizeFilename } from "@/lib/supabase/storage";
 import {
-  ORIGINALS_DIR,
   generatePreview,
   detectMediaType,
-  getPreviewApiUrl,
-  getDownloadApiUrl,
 } from "@/lib/media-optimizer";
-
-/** Map asset type slugs to subfolder names inside assets/ */
-const ASSET_TYPE_FOLDERS: Record<string, string> = {
-  "banco-de-imagens": "Imagens",
-  "banco-de-videos": "Footages",
-  "sons-e-audios": "Musicas",
-  "simbolos-e-logotipos": "Imagens/logos",
-  "ativos-de-cor": "Imagens/cores",
-  "ativos-de-tipografia": "Imagens/tipografia",
-  "biblioteca-de-icones": "Imagens/icones",
-  "grafismos-e-patterns": "Imagens/grafismos",
-  "templates-e-layouts": "Imagens/templates",
-  "objetos-3d": "Objetos3D",
-};
-
-function sanitizeFilename(name: string): string {
-  return name
-    .replace(/[<>:"/\\|?*\x00-\x1F]/g, "_") // remove invalid chars
-    .replace(/\s+/g, "-") // spaces to hyphens
-    .replace(/-+/g, "-") // collapse multiple hyphens
-    .replace(/^-|-$/g, ""); // trim hyphens
-}
 
 export async function POST(request: NextRequest) {
   try {
-    const formData = await request.formData();
+    const supabase = await createClient();
 
+    // Auth check
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) {
+      return NextResponse.json({ error: "Não autenticado" }, { status: 401 });
+    }
+
+    // Role check
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("role")
+      .eq("id", user.id)
+      .single();
+
+    if (!profile || !["staff", "admin"].includes(profile.role)) {
+      return NextResponse.json({ error: "Sem permissão" }, { status: 403 });
+    }
+
+    const formData = await request.formData();
     const file = formData.get("file") as File | null;
     const assetType = formData.get("assetType") as string | null;
     const metadataRaw = formData.get("metadata") as string | null;
@@ -42,53 +38,83 @@ export async function POST(request: NextRequest) {
     if (!file) {
       return NextResponse.json({ error: "Nenhum arquivo enviado" }, { status: 400 });
     }
-
     if (!assetType) {
       return NextResponse.json({ error: "Tipo de asset não especificado" }, { status: 400 });
     }
 
-    // Determine destination folder
-    const subfolder = ASSET_TYPE_FOLDERS[assetType] ?? assetType;
-    const destDir = path.join(ORIGINALS_DIR, subfolder);
-    await mkdir(destDir, { recursive: true });
-
-    // Sanitize and write the original file
     const originalName = sanitizeFilename(file.name);
-    const destPath = path.join(destDir, originalName);
-
+    const storagePath = getStoragePath(assetType, originalName);
     const buffer = Buffer.from(await file.arrayBuffer());
-    await writeFile(destPath, buffer);
 
-    // Parse metadata (for logging/future DB use)
-    let metadata: Record<string, unknown> = {};
-    if (metadataRaw) {
-      try {
-        metadata = JSON.parse(metadataRaw);
-      } catch {
-        // ignore invalid metadata
-      }
+    // Upload original to Supabase Storage
+    const { error: uploadError } = await supabase.storage
+      .from("platform-assets")
+      .upload(storagePath, buffer, {
+        contentType: file.type,
+        upsert: false,
+      });
+
+    if (uploadError) {
+      return NextResponse.json({ error: uploadError.message }, { status: 500 });
     }
 
-    // Generate optimized preview if it's a media file
+    // Parse metadata
+    let metadata: Record<string, unknown> = {};
+    if (metadataRaw) {
+      try { metadata = JSON.parse(metadataRaw); } catch { /* ignore */ }
+    }
+
+    // Generate preview if media file
     const mediaType = detectMediaType(originalName);
     let preview: { url: string; size: number; ratio: number } | null = null;
 
     if (mediaType) {
       try {
-        const result = await generatePreview(destPath, { force: true });
-        const relativePath = path.relative(ORIGINALS_DIR, destPath);
+        // Write to temp file for Sharp/FFmpeg processing
+        const tmpDir = path.join(os.tmpdir(), "overlens-upload");
+        await mkdir(tmpDir, { recursive: true });
+        const tmpPath = path.join(tmpDir, originalName);
+        await writeFile(tmpPath, buffer);
+
+        const result = await generatePreview(tmpPath, { force: true });
+
+        // Read the generated preview and upload to asset-previews bucket
+        const { readFile } = await import("fs/promises");
+        const previewBuffer = await readFile(result.previewPath);
+        const previewExt = path.extname(result.previewPath);
+        const parsed = path.parse(storagePath);
+        const previewStoragePath = `${parsed.dir}/${parsed.name}${previewExt}`;
+
+        const mimeMap: Record<string, string> = {
+          ".webp": "image/webp",
+          ".mp4": "video/mp4",
+          ".ogg": "audio/ogg",
+        };
+
+        await supabase.storage
+          .from("asset-previews")
+          .upload(previewStoragePath, previewBuffer, {
+            contentType: mimeMap[previewExt] ?? "application/octet-stream",
+            upsert: true,
+          });
+
+        const { data: { publicUrl } } = supabase.storage
+          .from("asset-previews")
+          .getPublicUrl(previewStoragePath);
+
         preview = {
-          url: getPreviewApiUrl(relativePath),
+          url: publicUrl,
           size: result.previewSize,
           ratio: result.ratio,
         };
+
+        // Clean up temp files
+        await rm(tmpPath, { force: true }).catch(() => {});
+        await rm(result.previewPath, { force: true }).catch(() => {});
       } catch (err) {
         console.error("[upload] Preview generation failed:", err);
-        // Upload still succeeds, preview will be generated on-demand
       }
     }
-
-    const relativePath = path.relative(ORIGINALS_DIR, destPath);
 
     return NextResponse.json({
       success: true,
@@ -96,9 +122,9 @@ export async function POST(request: NextRequest) {
         name: originalName,
         size: buffer.length,
         mediaType,
-        path: relativePath,
-        downloadUrl: getDownloadApiUrl(relativePath),
-        previewUrl: preview?.url ?? (mediaType ? getPreviewApiUrl(relativePath) : null),
+        path: storagePath,
+        downloadUrl: `/api/assets/download?file=${encodeURIComponent(storagePath)}`,
+        previewUrl: preview?.url ?? null,
       },
       preview: preview
         ? {
@@ -113,7 +139,7 @@ export async function POST(request: NextRequest) {
     console.error("[upload] Error:", err);
     return NextResponse.json(
       { error: "Erro ao processar upload" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

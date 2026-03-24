@@ -1,6 +1,15 @@
 "use client";
 
-import { createContext, useContext, useState, useCallback, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useCallback,
+  useEffect,
+  type ReactNode,
+} from "react";
+import { createClient } from "@/lib/supabase/client";
+import type { SupabaseClient } from "@supabase/supabase-js";
 
 export type UserRole = "gratuito" | "assinante" | "staff" | "admin";
 
@@ -12,40 +21,44 @@ export interface User {
   avatarUrl?: string;
 }
 
-// Test users
-export const TEST_USERS: Record<UserRole, User> = {
-  gratuito: {
-    id: "1",
-    name: "Ana Silva",
-    email: "ana@overlens.com",
-    role: "gratuito",
-  },
-  assinante: {
-    id: "2",
-    name: "Lucas Ferreira",
-    email: "lucas@overlens.com",
-    role: "assinante",
+// Real users for dev quick-access on login page
+export const TEST_USERS: Record<
+  UserRole,
+  { email: string; password: string; name: string; role: UserRole }
+> = {
+  admin: {
+    email: "admin@overlens.com.br",
+    password: "admin123",
+    name: "Admin Overlens",
+    role: "admin",
   },
   staff: {
-    id: "3",
-    name: "Carlos Mendes",
-    email: "carlos@overlens.com",
+    email: "staff@overlens.com.br",
+    password: "staff123",
+    name: "Equipe Overlens",
     role: "staff",
   },
-  admin: {
-    id: "4",
-    name: "Ruan Barbosa",
-    email: "ruan@overlens.com",
-    role: "admin",
+  assinante: {
+    email: "assinante@overlens.com.br",
+    password: "assinante123",
+    name: "Maria Souza",
+    role: "assinante",
+  },
+  gratuito: {
+    email: "visitante@overlens.com.br",
+    password: "visitante123",
+    name: "João Visitante",
+    role: "gratuito",
   },
 };
 
-// Permissions map
+// --- Permission functions (unchanged API) ---
+
 const ROUTE_ACCESS: Record<UserRole, string[]> = {
-  gratuito: ["/docs", "/pacote", "/plataforma", "/website"],
-  assinante: ["/docs", "/pacote", "/plataforma", "/website", "/codices"],
-  staff: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/codices", "/tru", "/playbook-conteudo", "/playbook-videos", "/playbook-operacao", "/playbook-gestao"],
-  admin: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/codices", "/tru", "/playbook-conteudo", "/playbook-videos", "/playbook-operacao", "/playbook-gestao"],
+  gratuito: ["/docs", "/pacote", "/plataforma", "/website", "/ferramentas"],
+  assinante: ["/docs", "/pacote", "/plataforma", "/website", "/codices", "/ferramentas"],
+  staff: ["/docs", "/estudio", "/growth", "/magny", "/pacote", "/assets", "/plataforma", "/website", "/codices", "/tru", "/playbook-conteudo", "/playbook-videos", "/playbook-operacao", "/playbook-gestao", "/ferramentas"],
+  admin: ["/docs", "/estudio", "/growth", "/magny", "/pacote", "/assets", "/plataforma", "/website", "/codices", "/tru", "/playbook-conteudo", "/playbook-videos", "/playbook-operacao", "/playbook-gestao", "/ferramentas"],
 };
 
 export function canAccessRoute(role: UserRole, pathname: string): boolean {
@@ -79,51 +92,103 @@ export function getRoleLabel(role: UserRole): string {
   }
 }
 
+// --- Auth Context ---
+
 interface AuthContextValue {
   user: User | null;
-  login: (email: string, password: string) => boolean;
-  logout: () => void;
-  updateUser: (data: Partial<Pick<User, "name" | "email">>) => void;
+  loading: boolean;
+  login: (email: string, password: string) => Promise<boolean>;
+  logout: () => Promise<void>;
+  updateUser: (data: Partial<Pick<User, "name" | "email">>) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
+async function fetchProfile(
+  supabase: SupabaseClient,
+  userId: string,
+): Promise<User | null> {
+  const { data, error } = await supabase
+    .from("profiles")
+    .select("id, name, email, role, avatar_url")
+    .eq("id", userId)
+    .single();
+
+  if (error || !data) return null;
+
+  return {
+    id: data.id,
+    name: data.name,
+    email: data.email,
+    role: data.role as UserRole,
+    avatarUrl: data.avatar_url ?? undefined,
+  };
+}
+
+// Set to true to bypass auth during development
+const BYPASS_AUTH = false;
+
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(() => {
-    if (typeof window === "undefined") return null;
-    const stored = localStorage.getItem("overlens-user");
-    if (stored) {
-      try { return JSON.parse(stored); } catch { return null; }
-    }
-    return null;
-  });
+  const [supabase] = useState(() => createClient());
+  const [user, setUser] = useState<User | null>(
+    BYPASS_AUTH ? { id: "bypass", name: "Ruan Barbosa", email: "ruan@overlens.com", role: "admin" } : null,
+  );
+  const [loading, setLoading] = useState(BYPASS_AUTH ? false : true);
 
-  const login = useCallback((email: string, _password: string): boolean => {
-    const found = Object.values(TEST_USERS).find((u) => u.email === email);
-    if (found) {
-      setUser(found);
-      localStorage.setItem("overlens-user", JSON.stringify(found));
-      return true;
-    }
-    return false;
-  }, []);
-
-  const logout = useCallback(() => {
-    setUser(null);
-    localStorage.removeItem("overlens-user");
-  }, []);
-
-  const updateUser = useCallback((data: Partial<Pick<User, "name" | "email">>) => {
-    setUser((prev) => {
-      if (!prev) return prev;
-      const updated = { ...prev, ...data };
-      localStorage.setItem("overlens-user", JSON.stringify(updated));
-      return updated;
+  useEffect(() => {
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
+      if (session?.user) {
+        const profile = await fetchProfile(supabase, session.user.id);
+        setUser(profile);
+      }
+      setLoading(false);
+    }).catch(() => {
+      setLoading(false);
     });
-  }, []);
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange(async (_event, session) => {
+      if (session?.user) {
+        const profile = await fetchProfile(supabase, session.user.id);
+        setUser(profile);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, [supabase]);
+
+  const login = useCallback(
+    async (email: string, password: string): Promise<boolean> => {
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      return !error;
+    },
+    [supabase],
+  );
+
+  const logout = useCallback(async () => {
+    await supabase.auth.signOut();
+    setUser(null);
+  }, [supabase]);
+
+  const updateUser = useCallback(
+    async (data: Partial<Pick<User, "name" | "email">>) => {
+      if (!user) return;
+      const { error } = await supabase
+        .from("profiles")
+        .update({ name: data.name, email: data.email })
+        .eq("id", user.id);
+      if (!error) {
+        setUser((prev) => (prev ? { ...prev, ...data } : prev));
+      }
+    },
+    [supabase, user],
+  );
 
   return (
-    <AuthContext value={{ user, login, logout, updateUser }}>
+    <AuthContext value={{ user, loading, login, logout, updateUser }}>
       {children}
     </AuthContext>
   );

@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { readFile, stat } from "fs/promises";
+import { writeFile, mkdir, readFile, rm } from "fs/promises";
 import path from "path";
+import os from "os";
+import { createClient } from "@/lib/supabase/server";
 import {
-  ORIGINALS_DIR,
-  PREVIEWS_DIR,
   generatePreview,
   detectMediaType,
   IMAGE_PREVIEW,
@@ -14,9 +14,6 @@ import {
 const MIME_TYPES: Record<string, string> = {
   ".webp": "image/webp",
   ".avif": "image/avif",
-  ".jpg": "image/jpeg",
-  ".jpeg": "image/jpeg",
-  ".png": "image/png",
   ".mp4": "video/mp4",
   ".webm": "video/webm",
   ".ogg": "audio/ogg",
@@ -26,8 +23,8 @@ const MIME_TYPES: Record<string, string> = {
 /**
  * GET /api/assets/preview?file=Imagens/photo.jpg
  *
- * Serves the optimized preview for a given asset.
- * If the preview doesn't exist yet, generates it on-demand and caches it.
+ * Serves the optimized preview from Supabase Storage (asset-previews bucket).
+ * If preview doesn't exist, downloads original, generates preview, uploads it.
  */
 export async function GET(request: NextRequest) {
   const fileParam = request.nextUrl.searchParams.get("file");
@@ -36,85 +33,90 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Missing file parameter" }, { status: 400 });
   }
 
-  // Prevent path traversal
-  const normalized = path.normalize(fileParam).replace(/^(\.\.[/\\])+/, "");
-  const originalPath = path.join(ORIGINALS_DIR, normalized);
-
-  if (!originalPath.startsWith(ORIGINALS_DIR)) {
-    return NextResponse.json({ error: "Invalid path" }, { status: 403 });
-  }
-
-  const mediaType = detectMediaType(normalized);
+  const mediaType = detectMediaType(fileParam);
   if (!mediaType) {
     return NextResponse.json({ error: "Unsupported media type" }, { status: 400 });
   }
 
-  // Determine preview extension
+  // Determine preview path in storage
   const previewExt = mediaType === "image"
     ? `.${IMAGE_PREVIEW.format}`
     : mediaType === "video"
       ? `.${VIDEO_PREVIEW.format}`
       : `.${AUDIO_PREVIEW.format}`;
 
-  const parsed = path.parse(normalized);
-  const previewRelative = path.join(parsed.dir, `${parsed.name}${previewExt}`);
-  const previewPath = path.join(PREVIEWS_DIR, previewRelative);
+  const parsed = path.parse(fileParam);
+  const previewStoragePath = `${parsed.dir}/${parsed.name}${previewExt}`;
 
-  // Try to serve existing preview
-  try {
-    await stat(previewPath);
-  } catch {
-    // Preview doesn't exist yet — generate on demand
-    try {
-      await stat(originalPath); // verify original exists
-      await generatePreview(originalPath);
-    } catch (err) {
-      console.error("[preview] Generation failed:", err);
-      return NextResponse.json({ error: "File not found" }, { status: 404 });
-    }
+  const supabase = await createClient();
+
+  // Try to download existing preview from public bucket
+  const { data: previewBlob } = await supabase.storage
+    .from("asset-previews")
+    .download(previewStoragePath);
+
+  if (previewBlob) {
+    const buffer = Buffer.from(await previewBlob.arrayBuffer());
+    const contentType = MIME_TYPES[previewExt] ?? "application/octet-stream";
+
+    return new NextResponse(buffer, {
+      headers: {
+        "Content-Type": contentType,
+        "Content-Length": buffer.length.toString(),
+        "Cache-Control": "public, max-age=31536000, immutable",
+      },
+    });
   }
 
-  // Serve the preview file
+  // Preview doesn't exist — generate on demand
+  // Auth check (only for generating, since it needs the original from private bucket)
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) {
+    return NextResponse.json({ error: "Não autenticado" }, { status: 401 });
+  }
+
+  // Download original
+  const { data: originalBlob, error } = await supabase.storage
+    .from("platform-assets")
+    .download(fileParam);
+
+  if (error || !originalBlob) {
+    return NextResponse.json({ error: "File not found" }, { status: 404 });
+  }
+
   try {
-    const buffer = await readFile(previewPath);
-    const ext = path.extname(previewPath).toLowerCase();
-    const contentType = MIME_TYPES[ext] ?? "application/octet-stream";
+    // Write to temp, generate preview
+    const tmpDir = path.join(os.tmpdir(), "overlens-preview");
+    await mkdir(tmpDir, { recursive: true });
+    const tmpOriginal = path.join(tmpDir, path.basename(fileParam));
+    const originalBuffer = Buffer.from(await originalBlob.arrayBuffer());
+    await writeFile(tmpOriginal, originalBuffer);
 
-    const headers: Record<string, string> = {
-      "Content-Type": contentType,
-      "Content-Length": buffer.length.toString(),
-      "Cache-Control": "public, max-age=31536000, immutable", // 1 year cache
-    };
+    const result = await generatePreview(tmpOriginal, { force: true });
+    const previewBuffer = await readFile(result.previewPath);
 
-    // For videos, support range requests for better streaming
-    if (mediaType === "video") {
-      const range = request.headers.get("range");
-      if (range) {
-        const fileStat = await stat(previewPath);
-        const parts = range.replace(/bytes=/, "").split("-");
-        const start = parseInt(parts[0], 10);
-        const end = parts[1] ? parseInt(parts[1], 10) : fileStat.size - 1;
-        const chunkSize = end - start + 1;
+    // Upload preview to public bucket
+    const contentType = MIME_TYPES[previewExt] ?? "application/octet-stream";
+    await supabase.storage
+      .from("asset-previews")
+      .upload(previewStoragePath, previewBuffer, {
+        contentType,
+        upsert: true,
+      });
 
-        const chunk = buffer.subarray(start, end + 1);
+    // Clean up temp files
+    await rm(tmpOriginal, { force: true }).catch(() => {});
+    await rm(result.previewPath, { force: true }).catch(() => {});
 
-        return new NextResponse(chunk, {
-          status: 206,
-          headers: {
-            "Content-Type": contentType,
-            "Content-Range": `bytes ${start}-${end}/${fileStat.size}`,
-            "Content-Length": chunkSize.toString(),
-            "Accept-Ranges": "bytes",
-            "Cache-Control": "public, max-age=31536000, immutable",
-          },
-        });
-      }
-
-      headers["Accept-Ranges"] = "bytes";
-    }
-
-    return new NextResponse(buffer, { headers });
-  } catch {
-    return NextResponse.json({ error: "Preview not found" }, { status: 404 });
+    return new NextResponse(previewBuffer, {
+      headers: {
+        "Content-Type": contentType,
+        "Content-Length": previewBuffer.length.toString(),
+        "Cache-Control": "public, max-age=31536000, immutable",
+      },
+    });
+  } catch (err) {
+    console.error("[preview] Generation failed:", err);
+    return NextResponse.json({ error: "Preview generation failed" }, { status: 500 });
   }
 }

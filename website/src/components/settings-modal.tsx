@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -21,7 +21,8 @@ import {
   SmArrowForwardIosLineIcon,
 } from "@/components/icons";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useAuth, canManageMembers, canAccessRoute, getRoleLabel, TEST_USERS, type UserRole } from "@/lib/auth";
+import { useAuth, canManageMembers, canAccessRoute, getRoleLabel, type UserRole } from "@/lib/auth";
+import { createClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
 
 type SettingsTab = "conta" | "seguranca" | "aplicativos" | "membros";
@@ -58,8 +59,8 @@ export function SettingsModal({ open, onOpenChange }: SettingsModalProps) {
     (item) => !item.adminOnly || isAdmin,
   );
 
-  const handleSave = () => {
-    updateUser({ name, email });
+  const handleSave = async () => {
+    await updateUser({ name, email });
     onOpenChange(false);
   };
 
@@ -180,9 +181,35 @@ function ContaPanel({
 /* ── Segurança ──────────────────────────────────────────── */
 
 function SegurancaPanel() {
-  const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [status, setStatus] = useState<"idle" | "saving" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleUpdatePassword = async () => {
+    if (newPassword.length < 6) {
+      setErrorMsg("A senha deve ter pelo menos 6 caracteres.");
+      setStatus("error");
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      setErrorMsg("As senhas não coincidem.");
+      setStatus("error");
+      return;
+    }
+    setStatus("saving");
+    setErrorMsg("");
+    const supabase = createClient();
+    const { error } = await supabase.auth.updateUser({ password: newPassword });
+    if (error) {
+      setErrorMsg(error.message);
+      setStatus("error");
+    } else {
+      setStatus("success");
+      setNewPassword("");
+      setConfirmPassword("");
+    }
+  };
 
   return (
     <>
@@ -193,24 +220,13 @@ function SegurancaPanel() {
 
       <div className="flex flex-col gap-5 mt-6">
         <div className="space-y-2">
-          <Label htmlFor="settings-current-password">Senha atual</Label>
-          <Input
-            id="settings-current-password"
-            type="password"
-            placeholder="••••••••"
-            value={currentPassword}
-            onChange={(e) => setCurrentPassword(e.target.value)}
-          />
-        </div>
-
-        <div className="space-y-2">
           <Label htmlFor="settings-new-password">Nova senha</Label>
           <Input
             id="settings-new-password"
             type="password"
             placeholder="••••••••"
             value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
+            onChange={(e) => { setNewPassword(e.target.value); setStatus("idle"); }}
           />
         </div>
 
@@ -221,13 +237,26 @@ function SegurancaPanel() {
             type="password"
             placeholder="••••••••"
             value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            onChange={(e) => { setConfirmPassword(e.target.value); setStatus("idle"); }}
           />
         </div>
+
+        {status === "error" && (
+          <p className="text-sm text-red-500">{errorMsg}</p>
+        )}
+        {status === "success" && (
+          <p className="text-sm text-emerald-400">Senha atualizada com sucesso.</p>
+        )}
       </div>
 
       <div className="mt-auto pt-6">
-        <Button variant="default">Atualizar senha</Button>
+        <Button
+          variant="default"
+          onClick={handleUpdatePassword}
+          disabled={status === "saving"}
+        >
+          {status === "saving" ? "Atualizando..." : "Atualizar senha"}
+        </Button>
       </div>
     </>
   );
@@ -291,39 +320,67 @@ function AplicativosPanel({ role }: { role: UserRole }) {
 /* ── Membros ────────────────────────────────────────────── */
 
 interface MemberEntry {
+  id: string;
   name: string;
   email: string;
   role: UserRole;
   joinedAt: string;
 }
 
-const INITIAL_MEMBERS: MemberEntry[] = [
-  { name: "Ruan Barbosa", email: "ruan@overlens.com", role: "admin", joinedAt: "22/01/2025" },
-  { name: "Carlos Mendes", email: "carlos@overlens.com", role: "staff", joinedAt: "15/03/2025" },
-  { name: "Lucas Ferreira", email: "lucas@overlens.com", role: "assinante", joinedAt: "02/06/2025" },
-  { name: "Ana Silva", email: "ana@overlens.com", role: "gratuito", joinedAt: "18/09/2025" },
-];
-
 function MembrosPanel({ currentUserEmail }: { currentUserEmail: string }) {
-  const [members, setMembers] = useState<MemberEntry[]>(INITIAL_MEMBERS);
+  const [members, setMembers] = useState<MemberEntry[]>([]);
   const [editingMember, setEditingMember] = useState<MemberEntry | null>(null);
   const [search, setSearch] = useState("");
   const [roleFilter, setRoleFilter] = useState<UserRole | "todos">("todos");
   const [page, setPage] = useState(1);
+  const [loadingMembers, setLoadingMembers] = useState(true);
   const perPage = 10;
 
-  const deleteMember = (email: string) => {
-    setMembers((prev) => prev.filter((m) => m.email !== email));
+  useEffect(() => {
+    const supabase = createClient();
+    supabase
+      .from("profiles")
+      .select("id, name, email, role, created_at")
+      .order("created_at", { ascending: true })
+      .then(({ data }) => {
+        if (data) {
+          setMembers(
+            data.map((p) => ({
+              id: p.id,
+              name: p.name,
+              email: p.email,
+              role: p.role as UserRole,
+              joinedAt: new Date(p.created_at).toLocaleDateString("pt-BR"),
+            })),
+          );
+        }
+        setLoadingMembers(false);
+      });
+  }, []);
+
+  const deleteMember = async (id: string) => {
+    const supabase = createClient();
+    const { error } = await supabase.from("profiles").delete().eq("id", id);
+    if (!error) {
+      setMembers((prev) => prev.filter((m) => m.id !== id));
+    }
   };
 
-  const saveMember = (updated: MemberEntry) => {
-    setMembers((prev) =>
-      prev.map((m) => (m.email === updated.email ? updated : m)),
-    );
+  const saveMember = async (updated: MemberEntry) => {
+    const supabase = createClient();
+    const { error } = await supabase
+      .from("profiles")
+      .update({ name: updated.name, email: updated.email, role: updated.role })
+      .eq("id", updated.id);
+    if (!error) {
+      setMembers((prev) =>
+        prev.map((m) => (m.id === updated.id ? updated : m)),
+      );
+    }
     setEditingMember(null);
   };
 
-  const isSelf = (email: string) => email === currentUserEmail;
+  const isSelf = (memberEmail: string) => memberEmail === currentUserEmail;
 
   const filtered = members.filter((m) => {
     const matchesSearch =
@@ -391,9 +448,15 @@ function MembrosPanel({ currentUserEmail }: { currentUserEmail: string }) {
             </tr>
           </thead>
           <tbody>
-            {paginated.map((member) => (
+            {loadingMembers ? (
+              <tr>
+                <td colSpan={5} className="py-6 text-center text-muted-foreground text-sm">
+                  Carregando membros...
+                </td>
+              </tr>
+            ) : paginated.map((member) => (
               <tr
-                key={member.email}
+                key={member.id}
                 className="border-b border-white/[0.04] last:border-0 hover:bg-white/[0.02]"
               >
                 <td className="py-2.5 pl-1">
@@ -421,7 +484,7 @@ function MembrosPanel({ currentUserEmail }: { currentUserEmail: string }) {
                         <SmEditSolidIcon className="size-3.5" />
                       </button>
                       <button
-                        onClick={() => deleteMember(member.email)}
+                        onClick={() => deleteMember(member.id)}
                         className="p-1 rounded-md text-muted-foreground hover:text-red-400 hover:bg-white/[0.06] cursor-pointer"
                         title="Remover membro"
                       >
@@ -473,14 +536,17 @@ function MemberEditView({
 }: {
   member: MemberEntry;
   onBack: () => void;
-  onSave: (updated: MemberEntry) => void;
+  onSave: (updated: MemberEntry) => Promise<void> | void;
 }) {
   const [name, setName] = useState(member.name);
   const [email, setEmail] = useState(member.email);
   const [role, setRole] = useState<UserRole>(member.role);
+  const [saving, setSaving] = useState(false);
 
-  const handleSave = () => {
-    onSave({ ...member, name, email, role });
+  const handleSave = async () => {
+    setSaving(true);
+    await onSave({ ...member, name, email, role });
+    setSaving(false);
   };
 
   return (
@@ -564,8 +630,8 @@ function MemberEditView({
       </div>
 
       <div className="mt-auto pt-5">
-        <Button variant="default" onClick={handleSave}>
-          Salvar alterações
+        <Button variant="default" onClick={handleSave} disabled={saving}>
+          {saving ? "Salvando..." : "Salvar alterações"}
         </Button>
       </div>
     </div>

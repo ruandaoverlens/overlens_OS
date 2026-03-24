@@ -2,47 +2,47 @@
 
 import { useState, useEffect, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { useAuth, TEST_USERS, getRoleLabel, type UserRole } from "@/lib/auth";
+import { useAuth } from "@/lib/auth";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 
 export default function LoginPage() {
   const router = useRouter();
-  const { user, login } = useAuth();
+  const { user, loading, login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
+  // Redirect if already logged in
   useEffect(() => {
-    if (user) {
-      router.replace("/docs");
+    if (user && !loading) {
+      window.location.href = "/docs";
     }
-  }, [user, router]);
+  }, [user, loading]);
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setError("");
-    const success = login(email, password);
+    setSubmitting(true);
+    const success = await login(email, password);
     if (success) {
-      router.push("/docs");
+      // Hard redirect to ensure cookies are sent to the server
+      window.location.href = "/docs";
     } else {
       setError("Email ou senha incorretos.");
+      setSubmitting(false);
     }
   }
 
-  function handleTestUserLogin(role: UserRole) {
-    const testUser = TEST_USERS[role];
-    setEmail(testUser.email);
-    setError("");
-    const success = login(testUser.email, "test");
-    if (success) {
-      router.push("/docs");
-    }
-  }
-
-  if (user) {
-    return null;
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-sm text-muted-foreground">Carregando...</div>
+      </div>
+    );
   }
 
   return (
@@ -70,57 +70,42 @@ export default function LoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              disabled={submitting}
             />
           </div>
 
           <div className="space-y-1.5">
             <Label htmlFor="password">Senha</Label>
-            <Input
-              id="password"
-              type="password"
-              size="sm"
-              placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            <div className="relative">
+              <Input
+                id="password"
+                type={showPassword ? "text" : "password"}
+                size="sm"
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                disabled={submitting}
+                className="pr-10"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((v) => !v)}
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors text-xs cursor-pointer"
+              >
+                {showPassword ? "Ocultar" : "Mostrar"}
+              </button>
+            </div>
           </div>
 
-          <Button type="submit" className="w-full">
-            Entrar
+          <Button type="submit" className="w-full" disabled={submitting}>
+            {submitting ? "Entrando..." : "Entrar"}
           </Button>
 
           {error && (
             <p className="text-sm text-red-500 text-center">{error}</p>
           )}
         </form>
-
-        {/* Test Users */}
-        <div className="space-y-3 pt-2">
-          <p className="text-xs text-muted-foreground text-center">
-            Usuários de teste
-          </p>
-          <div className="grid gap-2">
-            {(Object.keys(TEST_USERS) as UserRole[]).map((role) => {
-              const u = TEST_USERS[role];
-              return (
-                <button
-                  key={role}
-                  type="button"
-                  onClick={() => handleTestUserLogin(role)}
-                  className="flex flex-col items-start rounded-lg border border-foreground/10 px-3 py-2 text-left transition-colors hover:bg-accent/50"
-                >
-                  <span className="text-sm font-medium text-foreground">
-                    {u.name}
-                  </span>
-                  <span className="text-xs text-muted-foreground">
-                    {u.email} &middot; {getRoleLabel(u.role)}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
       </div>
     </div>
   );

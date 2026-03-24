@@ -13,6 +13,8 @@ import {
   MdLanguageLineIcon,
   MdToolSolidIcon,
   MdInvoiceSolidIcon,
+  MdBoltSolidIcon,
+  MdSearchLineIcon,
 } from "@/components/icons";
 
 function OverlensSymbol() {
@@ -28,10 +30,12 @@ function OverlensSymbol() {
 
 const apps = [
   { name: "Assets", href: "/assets", icon: <MdFolderSolidIcon /> },
+  { name: "Botões Mágicos", href: "/ferramentas", icon: <MdBoltSolidIcon /> },
   { name: "Brand System", href: "/docs", icon: <MdDocSolidIcon /> },
   { name: "Códices", href: "/codices", icon: <MdInvoiceSolidIcon /> },
   { name: "Content System", href: "/estudio", icon: <MdCognitionLineIcon /> },
   { name: "Growth System", href: "/growth", icon: <MdChartLineIcon /> },
+  { name: "Magny", href: "/magny", icon: <MdSearchLineIcon /> },
   { name: "Pacote Cultural", href: "/pacote", icon: <MdLibrarySolidIcon /> },
   { name: "Plata", href: "/plataforma", icon: <OverlensSymbol /> },
   { name: "T.R.U", href: "/tru", icon: <MdToolSolidIcon /> },
