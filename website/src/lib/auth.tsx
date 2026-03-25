@@ -156,22 +156,30 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       };
     }
 
+    async function resolveUser(sessionUser: { id: string; email?: string; user_metadata?: Record<string, unknown> }) {
+      const profile = await fetchProfile(supabase, sessionUser.id);
+      const resolved = profile ?? fallbackUser(sessionUser);
+      console.log("[auth] resolved user:", resolved.name, resolved.email, resolved.role, profile ? "(profile)" : "(fallback)");
+      return resolved;
+    }
+
     supabase.auth.getSession().then(async ({ data: { session } }) => {
+      console.log("[auth] getSession:", session ? session.user.email : "no session");
       if (session?.user) {
-        const profile = await fetchProfile(supabase, session.user.id);
-        setUser(profile ?? fallbackUser(session.user));
+        setUser(await resolveUser(session.user));
       }
       setLoading(false);
-    }).catch(() => {
+    }).catch((err) => {
+      console.error("[auth] getSession error:", err);
       setLoading(false);
     });
 
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (_event, session) => {
+      console.log("[auth] onAuthStateChange:", _event, session ? session.user.email : "no session");
       if (session?.user) {
-        const profile = await fetchProfile(supabase, session.user.id);
-        setUser(profile ?? fallbackUser(session.user));
+        setUser(await resolveUser(session.user));
       } else {
         setUser(null);
       }
