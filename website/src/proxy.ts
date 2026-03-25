@@ -18,7 +18,12 @@ export async function proxy(request: NextRequest) {
     if (user && pathname.startsWith("/login")) {
       const url = request.nextUrl.clone();
       url.pathname = "/docs";
-      return NextResponse.redirect(url);
+      const redirect = NextResponse.redirect(url);
+      // Forward session cookies so refreshed tokens aren't lost
+      supabaseResponse.cookies.getAll().forEach((cookie) => {
+        redirect.cookies.set(cookie.name, cookie.value);
+      });
+      return redirect;
     }
     return supabaseResponse;
   }

@@ -33,7 +33,11 @@ import {
 
 const MUSIC_GRADIENT = "linear-gradient(135deg, #4A5FA8 0%, #7B8FCC 50%, #B4C0E8 100%)";
 import { Pause } from "lucide-react";
-import { useAuth, canUpload } from "@/lib/auth";
+import { useAuth, canUpload, canDelete } from "@/lib/auth";
+import { useInfiniteScroll } from "@/lib/use-infinite-scroll";
+import { getStoragePath } from "@/lib/supabase/storage";
+import { useHiddenAssets } from "@/lib/hidden-assets";
+import { AdminAssetTabs } from "@/components/admin-asset-tabs";
 import { AssetUploadModal } from "@/components/asset-upload-modal";
 import { getUploadConfig } from "@/lib/upload-configs";
 
@@ -140,6 +144,10 @@ function TrackRow({
   onSeek,
   onFavorite,
   isFavorite,
+  showDelete,
+  onDelete,
+  isHidden,
+  onToggleHide,
 }: {
   track: Track;
   isActive: boolean;
@@ -151,12 +159,42 @@ function TrackRow({
   onSeek: (pct: number) => void;
   onFavorite: () => void;
   isFavorite: boolean;
+  showDelete?: boolean;
+  onDelete?: () => void;
+  isHidden?: boolean;
+  onToggleHide?: () => void;
 }) {
+  const [deleting, setDeleting] = useState(false);
+  const [hiding, setHiding] = useState(false);
+
   const handleDownload = () => {
     const a = document.createElement("a");
     a.href = track.downloadUrl;
     a.download = track.filename;
     a.click();
+  };
+
+  const handleDelete = async () => {
+    if (!confirm("Tem certeza que deseja excluir este asset?")) return;
+    setDeleting(true);
+    try {
+      const storagePath = getStoragePath("sons-e-audios", track.filename);
+      const res = await fetch("/api/assets/delete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ storagePath, previewPath: storagePath }),
+      });
+      if (res.ok) {
+        onDelete?.();
+      } else {
+        const data = await res.json();
+        alert(data.error || "Erro ao excluir");
+      }
+    } catch {
+      alert("Erro ao excluir asset");
+    } finally {
+      setDeleting(false);
+    }
   };
 
   return (
@@ -256,6 +294,32 @@ function TrackRow({
             <TooltipContent side="top">Baixar arquivo</TooltipContent>
           </Tooltip>
         </TooltipProvider>
+        {showDelete && onToggleHide && (
+          <Button
+            variant="outline"
+            size="sm"
+            className="border-white/20 text-white/60 hover:bg-white/10 hover:border-white/40 hover:text-white text-xs"
+            onClick={async () => {
+              setHiding(true);
+              await onToggleHide();
+              setHiding(false);
+            }}
+            disabled={hiding}
+          >
+            <span>{hiding ? "..." : isHidden ? "Desocultar" : "Ocultar"}</span>
+          </Button>
+        )}
+        {showDelete && (
+          <Button
+            variant="outline"
+            size="sm"
+            className="border-white/20 text-white/60 hover:bg-white/10 hover:border-white/40 hover:text-white text-xs"
+            onClick={handleDelete}
+            disabled={deleting}
+          >
+            <span>{deleting ? "..." : "Excluir"}</span>
+          </Button>
+        )}
       </div>
     </div>
   );
@@ -269,7 +333,11 @@ export function MusicBank() {
   const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
   const [search, setSearch] = useState("");
   const [uploadOpen, setUploadOpen] = useState(false);
+  const [deleted, setDeleted] = useState<Set<string>>(new Set());
+  const [showHidden, setShowHidden] = useState(false);
+  const { isHidden, hide, unhide } = useHiddenAssets("audio");
   const showUpload = user && canUpload(user.role);
+  const isAdmin = user && canDelete(user.role);
   const uploadConfig = getUploadConfig("sons-e-audios");
 
   const {
@@ -297,12 +365,25 @@ export function MusicBank() {
     });
   };
 
+  const handleToggleHide = async (id: string) => {
+    if (isHidden(id)) await unhide(id);
+    else await hide(id);
+  };
+
+  const availableTracks = tracks.filter((t) => !deleted.has(t.id));
+  const hiddenCount = availableTracks.filter((t) => isHidden(t.id)).length;
+  const visibleCount = availableTracks.length - hiddenCount;
+
   const filtered = tracks.filter((t) => {
+    if (deleted.has(t.id)) return false;
+    if (showHidden ? !isHidden(t.id) : isHidden(t.id)) return false;
     const matchesTags = activeTags.size === 0 || t.tags.some((tag) => activeTags.has(tag));
     const q = search.toLowerCase().trim();
     const matchesSearch = !q || t.title.toLowerCase().includes(q) || t.artist.toLowerCase().includes(q) || t.tags.some((tag) => tag.includes(q));
     return matchesTags && matchesSearch;
   });
+
+  const { visibleItems: pagedTracks, hasMore, setSentinel } = useInfiniteScroll(filtered);
 
   return (
     <div className="flex flex-col h-full">
@@ -313,6 +394,11 @@ export function MusicBank() {
           <BannerTitle>Sons e áudios</BannerTitle>
         </BannerContent>
       </Banner>
+
+      {/* Admin tabs */}
+      {isAdmin && (
+        <AdminAssetTabs showHidden={showHidden} onShowHiddenChange={setShowHidden} totalCount={visibleCount} hiddenCount={hiddenCount} />
+      )}
 
       {/* Search + Upload */}
       <div className="flex items-center gap-2 px-4 pt-4 pb-3">
@@ -367,7 +453,7 @@ export function MusicBank() {
 
       {/* Track list */}
       <div className="flex-1 overflow-auto pb-16 pt-[40px]">
-        {filtered.map((track) => (
+        {pagedTracks.map((track) => (
           <TrackRow
             key={track.id}
             track={track}
@@ -380,8 +466,17 @@ export function MusicBank() {
             onSeek={seekTrack}
             onFavorite={() => globalToggleFavorite({ id: track.id, type: "audio", title: track.title, subtitle: track.artist })}
             isFavorite={isFavorite(track.id)}
+            showDelete={!!isAdmin}
+            onDelete={() => setDeleted((prev) => new Set(prev).add(track.id))}
+            isHidden={isHidden(track.id)}
+            onToggleHide={() => handleToggleHide(track.id)}
           />
         ))}
+        {hasMore && (
+          <div ref={setSentinel} className="flex items-center justify-center py-8">
+            <p className="text-xs text-white/30">Carregando mais...</p>
+          </div>
+        )}
         <div className="h-[200px] w-full shrink-0" aria-hidden="true" />
       </div>
 

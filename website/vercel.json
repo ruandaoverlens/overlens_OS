@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/magny/pipeline/watchdog",
+      "schedule": "0 8 * * *"
+    }
+  ]
+}

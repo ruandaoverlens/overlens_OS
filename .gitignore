@@ -45,5 +45,13 @@ assets/Footages/**/*.mov
 assets/Footages/**/*.avi
 website/public/footages/**/*.mp4
 
+# Backup media folders (migrated to Supabase Storage)
+_backup_footages/
+_backup_musicas/
+_backup_brand_images/
+
 # Claude memory (local only)
 .claude/projects/
+
+.vercel
+.env*.local

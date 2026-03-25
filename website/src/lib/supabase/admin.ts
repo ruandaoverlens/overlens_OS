@@ -1,8 +1,10 @@
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 
+const SUPABASE_URL = "https://lqymftfphjexutgtvjuh.supabase.co";
+
 export function createAdminClient() {
   return createSupabaseClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    SUPABASE_URL,
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
     {
       auth: {

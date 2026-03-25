@@ -57,7 +57,7 @@ export const TEST_USERS: Record<
 const ROUTE_ACCESS: Record<UserRole, string[]> = {
   gratuito: ["/docs", "/pacote", "/plataforma", "/website", "/ferramentas"],
   assinante: ["/docs", "/pacote", "/plataforma", "/website", "/codices", "/ferramentas"],
-  staff: ["/docs", "/estudio", "/growth", "/magny", "/pacote", "/assets", "/plataforma", "/website", "/codices", "/tru", "/playbook-conteudo", "/playbook-videos", "/playbook-operacao", "/playbook-gestao", "/ferramentas"],
+  staff: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/playbook-conteudo", "/playbook-videos", "/playbook-operacao", "/playbook-gestao", "/ferramentas"],
   admin: ["/docs", "/estudio", "/growth", "/magny", "/pacote", "/assets", "/plataforma", "/website", "/codices", "/tru", "/playbook-conteudo", "/playbook-videos", "/playbook-operacao", "/playbook-gestao", "/ferramentas"],
 };
 
@@ -83,6 +83,10 @@ export function canUpload(role: UserRole): boolean {
   return role === "staff" || role === "admin";
 }
 
+export function canDelete(role: UserRole): boolean {
+  return role === "admin";
+}
+
 export function getRoleLabel(role: UserRole): string {
   switch (role) {
     case "gratuito": return "Gratuito";
@@ -98,6 +102,7 @@ interface AuthContextValue {
   user: User | null;
   loading: boolean;
   login: (email: string, password: string) => Promise<boolean>;
+  signup: (email: string, password: string, name: string) => Promise<{ success: boolean; error?: string }>;
   logout: () => Promise<void>;
   updateUser: (data: Partial<Pick<User, "name" | "email">>) => Promise<void>;
 }
@@ -168,6 +173,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     [supabase],
   );
 
+  const signup = useCallback(
+    async (email: string, password: string, name: string): Promise<{ success: boolean; error?: string }> => {
+      try {
+        // 1. Create user (trigger auto-confirms email)
+        const { error: signUpError } = await supabase.auth.signUp({
+          email,
+          password,
+          options: { data: { full_name: name } },
+        });
+        if (signUpError) return { success: false, error: signUpError.message };
+
+        // 2. Small delay for trigger to confirm email
+        await new Promise((r) => setTimeout(r, 500));
+
+        // 3. Sign in
+        const { error: loginError } = await supabase.auth.signInWithPassword({ email, password });
+        if (loginError) return { success: false, error: loginError.message };
+        return { success: true };
+      } catch (err) {
+        return { success: false, error: err instanceof Error ? err.message : "Erro ao criar conta" };
+      }
+    },
+    [supabase],
+  );
+
   const logout = useCallback(async () => {
     await supabase.auth.signOut();
     setUser(null);
@@ -188,7 +218,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 
   return (
-    <AuthContext value={{ user, loading, login, logout, updateUser }}>
+    <AuthContext value={{ user, loading, login, signup, logout, updateUser }}>
       {children}
     </AuthContext>
   );

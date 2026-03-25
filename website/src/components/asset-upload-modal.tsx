@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/upload"
 import { TagsInput } from "@/components/tags-input"
 import { useAuth } from "@/lib/auth"
+import { generateClientPreview, needsClientPreview } from "@/lib/client-media-optimizer"
 import type {
   AssetUploadConfig,
   UploadFieldConfig,
@@ -218,8 +219,9 @@ export function AssetUploadModal({
 
         setUploadProgress({ current: i + 1, total, phase: "uploading" })
 
+        const currentFile = files[i]
         const formData = new FormData()
-        formData.append("file", files[i])
+        formData.append("file", currentFile)
         formData.append("assetType", config.slug)
         formData.append(
           "metadata",
@@ -229,6 +231,17 @@ export function AssetUploadModal({
             uploadedAt: new Date().toISOString(),
           })
         )
+
+        // Generate client-side preview for video/audio files
+        if (needsClientPreview(currentFile.name)) {
+          setUploadProgress({ current: i + 1, total, phase: "optimizing" })
+          try {
+            const { preview: previewFile } = await generateClientPreview(currentFile)
+            formData.append("preview", previewFile)
+          } catch (err) {
+            console.warn("[upload] Client-side preview generation failed, uploading without preview:", err)
+          }
+        }
 
         setUploadProgress({ current: i + 1, total, phase: "optimizing" })
 

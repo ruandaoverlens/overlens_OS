@@ -1,3 +1,5 @@
+import { getAssetPreviewUrl } from "@/lib/supabase/storage";
+
 export interface Footage {
   id: string;
   filename: string;
@@ -58,7 +60,7 @@ function parseFilename(filename: string): Footage {
     hasAudio,
     author,
     uploadedBy: "Overlens",
-    previewUrl: `/footages/preview/${encodeURIComponent(filename)}`,
+    previewUrl: getAssetPreviewUrl("Footages", filename),
     downloadUrl: `/api/footages/download?file=${encodeURIComponent(filename)}`,
   };
 }

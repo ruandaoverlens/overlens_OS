@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { sanitizeStorageFilename } from "@/lib/supabase/storage";
+
+export const maxDuration = 120;
 
 /**
  * GET /api/assets/download?file=Imagens/photo.jpg
@@ -21,10 +24,16 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Não autenticado" }, { status: 401 });
   }
 
+  // Sanitize the filename portion of the path (keep folder structure)
+  const parts = fileParam.split("/");
+  const sanitizedPath = parts.map((p, i) =>
+    i === parts.length - 1 ? sanitizeStorageFilename(p) : p
+  ).join("/");
+
   // Download from Storage
   const { data, error } = await supabase.storage
     .from("platform-assets")
-    .download(fileParam);
+    .download(sanitizedPath);
 
   if (error || !data) {
     return NextResponse.json({ error: "File not found" }, { status: 404 });

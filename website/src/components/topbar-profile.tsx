@@ -30,11 +30,14 @@ export function TopbarProfile() {
   const [hasMounted, setHasMounted] = useState(false);
   useEffect(() => setHasMounted(true), []);
 
-  if (!hasMounted || !user) return null;
+  const [loggingOut, setLoggingOut] = useState(false);
 
-  const handleLogout = () => {
-    logout();
-    router.push("/login");
+  if (!hasMounted || (!user && !loggingOut)) return null;
+
+  const handleLogout = async () => {
+    setLoggingOut(true);
+    await logout();
+    window.location.replace("/login");
   };
 
   return (
@@ -43,8 +46,8 @@ export function TopbarProfile() {
         <DropdownMenuTrigger asChild>
           <button className="inline-flex size-9 cursor-pointer items-center justify-center rounded-full outline-none transition-opacity hover:opacity-80">
             <Avatar size="sm">
-              <AvatarImage src={user.avatarUrl ?? ""} alt="Perfil" />
-              <AvatarFallback>{getInitials(user.name)}</AvatarFallback>
+              <AvatarImage src={user?.avatarUrl ?? ""} alt="Perfil" />
+              <AvatarFallback>{getInitials(user?.name)}</AvatarFallback>
             </Avatar>
           </button>
         </DropdownMenuTrigger>

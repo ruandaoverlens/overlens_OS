@@ -1,10 +1,6 @@
-import { execFile } from "child_process";
-import { promisify } from "util";
 import path from "path";
 import { mkdir, access, stat } from "fs/promises";
 import sharp from "sharp";
-
-const execFileAsync = promisify(execFile);
 
 // ─── Paths ────────────────────────────────────────────────────
 
@@ -82,15 +78,15 @@ export interface OptimizeResult {
 
 // ─── Helpers ──────────────────────────────────────────────────
 
-const IMAGE_EXTENSIONS = new Set([
+export const IMAGE_EXTENSIONS = new Set([
   ".jpg", ".jpeg", ".png", ".webp", ".avif", ".tiff", ".tif", ".bmp",
 ]);
 
-const VIDEO_EXTENSIONS = new Set([
+export const VIDEO_EXTENSIONS = new Set([
   ".mp4", ".mov", ".webm", ".avi", ".mkv", ".m4v",
 ]);
 
-const AUDIO_EXTENSIONS = new Set([
+export const AUDIO_EXTENSIONS = new Set([
   ".mp3", ".wav", ".flac", ".ogg", ".aac", ".m4a", ".opus",
 ]);
 
@@ -156,99 +152,13 @@ async function optimizeImage(inputPath: string): Promise<OptimizeResult> {
   };
 }
 
-// ─── Video Optimization (ffmpeg) ─────────────────────────────
-
-async function optimizeVideo(inputPath: string): Promise<OptimizeResult> {
-  const previewPath = buildPreviewPath(inputPath, `.${VIDEO_PREVIEW.format}`);
-  await ensureDir(path.dirname(previewPath));
-
-  const args = [
-    "-i", inputPath,
-    "-vf", `scale=-2:${VIDEO_PREVIEW.maxHeight}`,
-    "-c:v", VIDEO_PREVIEW.codec,
-    "-crf", String(VIDEO_PREVIEW.crf),
-    "-preset", VIDEO_PREVIEW.preset,
-    "-movflags", "+faststart", // web optimized: moov atom at start
-    "-pix_fmt", "yuv420p", // max compatibility
-  ];
-
-  if (VIDEO_PREVIEW.audioCodec) {
-    args.push("-c:a", VIDEO_PREVIEW.audioCodec, "-b:a", VIDEO_PREVIEW.audioBitrate);
-  } else {
-    args.push("-an"); // strip audio
-  }
-
-  args.push("-y", previewPath);
-
-  await execFileAsync("ffmpeg", args, { timeout: 300_000 }); // 5 min timeout
-
-  const originalStat = await stat(inputPath);
-  const previewStat = await stat(previewPath);
-
-  // Get preview dimensions from ffprobe
-  let width: number | undefined;
-  let height: number | undefined;
-  try {
-    const { stdout } = await execFileAsync("ffprobe", [
-      "-v", "error",
-      "-select_streams", "v:0",
-      "-show_entries", "stream=width,height",
-      "-of", "json",
-      previewPath,
-    ]);
-    const probe = JSON.parse(stdout);
-    width = probe.streams?.[0]?.width;
-    height = probe.streams?.[0]?.height;
-  } catch {
-    // non-critical, skip
-  }
-
-  return {
-    originalPath: inputPath,
-    previewPath,
-    previewRelative: path.relative(PREVIEWS_DIR, previewPath),
-    originalSize: originalStat.size,
-    previewSize: previewStat.size,
-    ratio: previewStat.size / originalStat.size,
-    mediaType: "video",
-    width,
-    height,
-  };
-}
-
-// ─── Audio Optimization (ffmpeg) ─────────────────────────────
-
-async function optimizeAudio(inputPath: string): Promise<OptimizeResult> {
-  const previewPath = buildPreviewPath(inputPath, `.${AUDIO_PREVIEW.format}`);
-  await ensureDir(path.dirname(previewPath));
-
-  const args = [
-    "-i", inputPath,
-    "-c:a", AUDIO_PREVIEW.codec,
-    "-b:a", AUDIO_PREVIEW.bitrate,
-    "-y", previewPath,
-  ];
-
-  await execFileAsync("ffmpeg", args, { timeout: 120_000 });
-
-  const originalStat = await stat(inputPath);
-  const previewStat = await stat(previewPath);
-
-  return {
-    originalPath: inputPath,
-    previewPath,
-    previewRelative: path.relative(PREVIEWS_DIR, previewPath),
-    originalSize: originalStat.size,
-    previewSize: previewStat.size,
-    ratio: previewStat.size / originalStat.size,
-    mediaType: "audio",
-  };
-}
-
 // ─── Public API ───────────────────────────────────────────────
 
 /**
- * Generate an optimized preview for any media file.
+ * Generate an optimized preview for an image file.
+ * Video and audio previews must be generated client-side using
+ * `generateClientPreview()` from `@/lib/client-media-optimizer`.
+ *
  * If a preview already exists, returns it without re-processing (unless force=true).
  */
 export async function generatePreview(
@@ -260,13 +170,15 @@ export async function generatePreview(
     throw new Error(`Unsupported media type: ${path.extname(inputPath)}`);
   }
 
-  // Check if preview already exists
-  const ext = mediaType === "image"
-    ? `.${IMAGE_PREVIEW.format}`
-    : mediaType === "video"
-      ? `.${VIDEO_PREVIEW.format}`
-      : `.${AUDIO_PREVIEW.format}`;
+  if (mediaType === "video" || mediaType === "audio") {
+    throw new Error(
+      `Server-side preview generation for ${mediaType} is not supported on Vercel. ` +
+      `Use client-side processing with generateClientPreview() from @/lib/client-media-optimizer.`
+    );
+  }
 
+  // Check if preview already exists
+  const ext = `.${IMAGE_PREVIEW.format}`;
   const previewPath = buildPreviewPath(inputPath, ext);
 
   if (!options?.force && await fileExists(previewPath)) {
@@ -283,30 +195,22 @@ export async function generatePreview(
     };
   }
 
-  switch (mediaType) {
-    case "image":
-      return optimizeImage(inputPath);
-    case "video":
-      return optimizeVideo(inputPath);
-    case "audio":
-      return optimizeAudio(inputPath);
-  }
+  return optimizeImage(inputPath);
 }
 
 /**
- * Batch generate previews for multiple files.
- * Processes images in parallel, videos sequentially (CPU intensive).
+ * Batch generate previews for multiple image files.
+ * Video/audio files are skipped — they must use client-side processing.
  */
 export async function generatePreviews(
   inputPaths: string[],
   options?: { force?: boolean; onProgress?: (completed: number, total: number, result: OptimizeResult) => void }
 ): Promise<OptimizeResult[]> {
   const images = inputPaths.filter((p) => detectMediaType(p) === "image");
-  const others = inputPaths.filter((p) => detectMediaType(p) !== "image");
 
   const results: OptimizeResult[] = [];
   let completed = 0;
-  const total = inputPaths.length;
+  const total = images.length;
 
   // Process images in parallel (sharp handles this well)
   const imageResults = await Promise.all(
@@ -318,14 +222,6 @@ export async function generatePreviews(
     })
   );
   results.push(...imageResults);
-
-  // Process videos/audio sequentially (ffmpeg is CPU heavy)
-  for (const p of others) {
-    const result = await generatePreview(p, options);
-    completed++;
-    options?.onProgress?.(completed, total, result);
-    results.push(result);
-  }
 
   return results;
 }

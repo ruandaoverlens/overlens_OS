@@ -68,7 +68,7 @@ export function SettingsModal({ open, onOpenChange }: SettingsModalProps) {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         className="max-w-none w-full h-full rounded-none sm:max-w-[860px] sm:h-auto sm:rounded-xl p-0 gap-0 overflow-hidden"
-        showCloseButton
+        showCloseButton={false}
       >
         <VisuallyHidden.Root>
           <DialogTitle>Configurações</DialogTitle>
@@ -330,54 +330,91 @@ interface MemberEntry {
 function MembrosPanel({ currentUserEmail }: { currentUserEmail: string }) {
   const [members, setMembers] = useState<MemberEntry[]>([]);
   const [editingMember, setEditingMember] = useState<MemberEntry | null>(null);
+  const [addingMember, setAddingMember] = useState(false);
   const [search, setSearch] = useState("");
   const [roleFilter, setRoleFilter] = useState<UserRole | "todos">("todos");
   const [page, setPage] = useState(1);
   const [loadingMembers, setLoadingMembers] = useState(true);
   const perPage = 10;
 
+  const [errorMsg, setErrorMsg] = useState("");
+
   useEffect(() => {
-    const supabase = createClient();
-    supabase
-      .from("profiles")
-      .select("id, name, email, role, created_at")
-      .order("created_at", { ascending: true })
-      .then(({ data }) => {
-        if (data) {
-          setMembers(
-            data.map((p) => ({
-              id: p.id,
-              name: p.name,
-              email: p.email,
-              role: p.role as UserRole,
-              joinedAt: new Date(p.created_at).toLocaleDateString("pt-BR"),
-            })),
-          );
+    const load = async () => {
+      try {
+        const res = await fetch("/api/auth/list-members");
+        if (!res.ok) {
+          const json = await res.json().catch(() => ({}));
+          throw new Error(json.error ?? `HTTP ${res.status}`);
         }
+        const { members: data } = await res.json();
+        setMembers(
+          (data as { id: string; name: string | null; email: string; role: string; created_at: string }[]).map((p) => ({
+            id: p.id,
+            name: p.name ?? "",
+            email: p.email,
+            role: p.role as UserRole,
+            joinedAt: new Date(p.created_at).toLocaleDateString("pt-BR"),
+          })),
+        );
+      } catch (err) {
+        console.error("Failed to load members:", err);
+        setErrorMsg("Erro ao carregar membros. Tente recarregar a página.");
+      } finally {
         setLoadingMembers(false);
-      });
+      }
+    };
+    load();
   }, []);
 
   const deleteMember = async (id: string) => {
-    const supabase = createClient();
-    const { error } = await supabase.from("profiles").delete().eq("id", id);
-    if (!error) {
+    const res = await fetch("/api/auth/delete-user", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userId: id }),
+    });
+    if (res.ok) {
       setMembers((prev) => prev.filter((m) => m.id !== id));
     }
   };
 
   const saveMember = async (updated: MemberEntry) => {
-    const supabase = createClient();
-    const { error } = await supabase
-      .from("profiles")
-      .update({ name: updated.name, email: updated.email, role: updated.role })
-      .eq("id", updated.id);
-    if (!error) {
+    const res = await fetch("/api/auth/update-member", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userId: updated.id, name: updated.name, email: updated.email, role: updated.role }),
+    });
+    if (res.ok) {
       setMembers((prev) =>
         prev.map((m) => (m.id === updated.id ? updated : m)),
       );
     }
     setEditingMember(null);
+  };
+
+  const addMember = async (data: { name: string; email: string; password: string; role: UserRole }) => {
+    const res = await fetch("/api/auth/create-user", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.error ?? "Erro ao criar conta");
+    // Reload members
+    const listRes = await fetch("/api/auth/list-members");
+    if (listRes.ok) {
+      const { members: refreshed } = await listRes.json();
+      setMembers(
+        (refreshed as { id: string; name: string | null; email: string; role: string; created_at: string }[]).map((p) => ({
+          id: p.id,
+          name: p.name ?? "",
+          email: p.email,
+          role: p.role as UserRole,
+          joinedAt: new Date(p.created_at).toLocaleDateString("pt-BR"),
+        })),
+      );
+    }
+    setAddingMember(false);
   };
 
   const isSelf = (memberEmail: string) => memberEmail === currentUserEmail;
@@ -395,6 +432,15 @@ function MembrosPanel({ currentUserEmail }: { currentUserEmail: string }) {
   const safePage = Math.min(page, totalPages);
   const paginated = filtered.slice((safePage - 1) * perPage, safePage * perPage);
 
+  if (addingMember) {
+    return (
+      <MemberAddView
+        onBack={() => setAddingMember(false)}
+        onAdd={addMember}
+      />
+    );
+  }
+
   if (editingMember) {
     return (
       <MemberEditView
@@ -407,10 +453,15 @@ function MembrosPanel({ currentUserEmail }: { currentUserEmail: string }) {
 
   return (
     <>
-      <PanelHeader
-        title="Membros"
-        description="Gerencie os membros da equipe"
-      />
+      <div className="flex items-center justify-between">
+        <PanelHeader
+          title="Membros"
+          description="Gerencie os membros da equipe"
+        />
+        <Button variant="outline" size="sm" onClick={() => setAddingMember(true)}>
+          Adicionar
+        </Button>
+      </div>
 
       <div className="flex items-center gap-3 mt-5">
         <Select
@@ -436,7 +487,7 @@ function MembrosPanel({ currentUserEmail }: { currentUserEmail: string }) {
         />
       </div>
 
-      <div className="mt-4 overflow-y-auto max-h-[360px] [&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-foreground/20 [&::-webkit-scrollbar-track]:bg-transparent">
+      <div className="mt-4 overflow-y-auto flex-1 [&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-foreground/20 [&::-webkit-scrollbar-track]:bg-transparent">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-white/[0.06] text-xs text-muted-foreground">
@@ -452,6 +503,12 @@ function MembrosPanel({ currentUserEmail }: { currentUserEmail: string }) {
               <tr>
                 <td colSpan={5} className="py-6 text-center text-muted-foreground text-sm">
                   Carregando membros...
+                </td>
+              </tr>
+            ) : errorMsg ? (
+              <tr>
+                <td colSpan={5} className="py-6 text-center text-red-400 text-sm">
+                  {errorMsg}
                 </td>
               </tr>
             ) : paginated.map((member) => (
@@ -632,6 +689,112 @@ function MemberEditView({
       <div className="mt-auto pt-5">
         <Button variant="default" onClick={handleSave} disabled={saving}>
           {saving ? "Salvando..." : "Salvar alterações"}
+        </Button>
+      </div>
+    </div>
+  );
+}
+
+/* ── Member Add View ───────────────────────────────────── */
+
+function MemberAddView({
+  onBack,
+  onAdd,
+}: {
+  onBack: () => void;
+  onAdd: (data: { name: string; email: string; password: string; role: UserRole }) => Promise<void>;
+}) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState<UserRole>("gratuito");
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleAdd = async () => {
+    if (!name.trim() || !email.trim() || !password) {
+      setError("Preencha todos os campos.");
+      return;
+    }
+    if (password.length < 6) {
+      setError("A senha deve ter pelo menos 6 caracteres.");
+      return;
+    }
+    setSaving(true);
+    setError("");
+    try {
+      await onAdd({ name: name.trim(), email: email.trim(), password, role });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Erro ao criar conta.");
+      setSaving(false);
+    }
+  };
+
+  return (
+    <div className="flex flex-col h-full">
+      <div>
+        <h2 className="text-lg font-semibold">Adicionar membro</h2>
+        <button
+          onClick={onBack}
+          className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer mt-0.5"
+        >
+          Voltar para membros
+        </button>
+      </div>
+
+      <div className="mt-5 overflow-y-auto flex-1 [&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-foreground/20 [&::-webkit-scrollbar-track]:bg-transparent">
+        <div className="flex flex-col gap-4">
+          <div className="space-y-1.5">
+            <Label className="text-xs">Nome</Label>
+            <Input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Nome completo"
+            />
+          </div>
+          <div className="space-y-1.5">
+            <Label className="text-xs">Email</Label>
+            <Input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="email@exemplo.com"
+            />
+          </div>
+          <div className="space-y-1.5">
+            <Label className="text-xs">Senha</Label>
+            <Input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Minimo 6 caracteres"
+            />
+          </div>
+          <div className="space-y-1.5">
+            <Label className="text-xs">Acesso</Label>
+            <Select
+              value={role}
+              onValueChange={(v) => setRole(v as UserRole)}
+            >
+              <SelectTrigger size="sm">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="gratuito">Gratuito</SelectItem>
+                <SelectItem value="assinante">Assinante</SelectItem>
+                <SelectItem value="staff">Staff</SelectItem>
+                <SelectItem value="admin">Administrador</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          {error && <p className="text-sm text-red-500">{error}</p>}
+        </div>
+      </div>
+
+      <div className="mt-auto pt-5">
+        <Button variant="default" onClick={handleAdd} disabled={saving}>
+          {saving ? "Criando..." : "Criar conta"}
         </Button>
       </div>
     </div>

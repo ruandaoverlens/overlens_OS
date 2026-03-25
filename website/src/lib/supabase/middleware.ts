@@ -1,12 +1,16 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
+const SUPABASE_URL = "https://lqymftfphjexutgtvjuh.supabase.co";
+const SUPABASE_ANON_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9." +
+  "eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxxeW1mdGZwaGpleHV0Z3R2anVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI0NTkyNzEsImV4cCI6MjA4ODAzNTI3MX0." +
+  "TB9UWWnUuOw3-OiOn_iVxlvTuxYFv2Oh_G23sL7pVw4";
+
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request });
 
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+  const supabase = createServerClient(SUPABASE_URL, SUPABASE_ANON_KEY,
     {
       cookies: {
         getAll() {

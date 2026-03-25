@@ -9,6 +9,8 @@ import {
   detectMediaType,
 } from "@/lib/media-optimizer";
 
+export const maxDuration = 120;
+
 export async function POST(request: NextRequest) {
   try {
     const supabase = await createClient();
@@ -32,6 +34,7 @@ export async function POST(request: NextRequest) {
 
     const formData = await request.formData();
     const file = formData.get("file") as File | null;
+    const clientPreview = formData.get("preview") as File | null;
     const assetType = formData.get("assetType") as string | null;
     const metadataRaw = formData.get("metadata") as string | null;
 
@@ -68,9 +71,43 @@ export async function POST(request: NextRequest) {
     const mediaType = detectMediaType(originalName);
     let preview: { url: string; size: number; ratio: number } | null = null;
 
-    if (mediaType) {
+    if (mediaType && clientPreview) {
+      // Client-side preview was provided (video/audio processed in browser)
       try {
-        // Write to temp file for Sharp/FFmpeg processing
+        const previewBuffer = Buffer.from(await clientPreview.arrayBuffer());
+        const previewExt = path.extname(clientPreview.name);
+        const parsed = path.parse(storagePath);
+        const previewStoragePath = `${parsed.dir}/${parsed.name}${previewExt}`;
+
+        const mimeMap: Record<string, string> = {
+          ".webp": "image/webp",
+          ".mp4": "video/mp4",
+          ".mp3": "audio/mpeg",
+          ".ogg": "audio/ogg",
+        };
+
+        await supabase.storage
+          .from("asset-previews")
+          .upload(previewStoragePath, previewBuffer, {
+            contentType: mimeMap[previewExt] ?? clientPreview.type ?? "application/octet-stream",
+            upsert: true,
+          });
+
+        const { data: { publicUrl } } = supabase.storage
+          .from("asset-previews")
+          .getPublicUrl(previewStoragePath);
+
+        preview = {
+          url: publicUrl,
+          size: previewBuffer.length,
+          ratio: previewBuffer.length / buffer.length,
+        };
+      } catch (err) {
+        console.error("[upload] Client preview upload failed:", err);
+      }
+    } else if (mediaType === "image") {
+      // Server-side image preview via Sharp (works on Vercel)
+      try {
         const tmpDir = path.join(os.tmpdir(), "overlens-upload");
         await mkdir(tmpDir, { recursive: true });
         const tmpPath = path.join(tmpDir, originalName);
@@ -78,7 +115,6 @@ export async function POST(request: NextRequest) {
 
         const result = await generatePreview(tmpPath, { force: true });
 
-        // Read the generated preview and upload to asset-previews bucket
         const { readFile } = await import("fs/promises");
         const previewBuffer = await readFile(result.previewPath);
         const previewExt = path.extname(result.previewPath);
@@ -112,9 +148,10 @@ export async function POST(request: NextRequest) {
         await rm(tmpPath, { force: true }).catch(() => {});
         await rm(result.previewPath, { force: true }).catch(() => {});
       } catch (err) {
-        console.error("[upload] Preview generation failed:", err);
+        console.error("[upload] Image preview generation failed:", err);
       }
     }
+    // For video/audio without client preview: graceful fallback — no preview generated
 
     return NextResponse.json({
       success: true,

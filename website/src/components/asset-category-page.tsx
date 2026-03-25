@@ -27,13 +27,59 @@ import {
 import { AssetPageShell } from "@/components/asset-page-shell";
 import { VideoBank } from "@/components/video-bank";
 import { MusicBank } from "@/components/music-bank";
-import { LogosBank } from "@/components/logos-bank";
+import { LogosBank, LOGOS } from "@/components/logos-bank";
 import { ColorBank } from "@/components/color-bank";
 import { TypographyBank } from "@/components/typography-bank";
 import { ImageBank, getAllImageTags } from "@/components/image-bank";
 import { IconGallery } from "@/components/icons/icon-gallery";
 import { FavoritesPage } from "@/components/favorites-page";
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import { useAuth, canDelete } from "@/lib/auth";
+import { useHiddenAssets } from "@/lib/hidden-assets";
+import { AdminAssetTabs } from "@/components/admin-asset-tabs";
+
+function ImageBankPage() {
+  const { user } = useAuth();
+  const isAdmin = user && canDelete(user.role);
+  const [showHidden, setShowHidden] = useState(false);
+  const [counts, setCounts] = useState({ visible: 0, hidden: 0 });
+
+  const handleCountChange = useCallback((visible: number, hidden: number) => {
+    setCounts({ visible, hidden });
+  }, []);
+
+  return (
+    <AssetPageShell
+      slug="banco-de-imagens"
+      title="Banco de imagens"
+      searchPlaceholder="Buscar imagens..."
+      tags={getAllImageTags()}
+      contentClassName="flex-1 overflow-y-auto px-1 pt-[40px] max-w-[1920px] mx-auto w-full"
+      gradient="linear-gradient(135deg, #4A5FA8 0%, #7B8FCC 50%, #B4C0E8 100%)"
+      headerSlot={isAdmin ? <AdminAssetTabs showHidden={showHidden} onShowHiddenChange={setShowHidden} totalCount={counts.visible} hiddenCount={counts.hidden} /> : undefined}
+    >
+      <ImageBank showHidden={showHidden} onCountChange={handleCountChange} />
+    </AssetPageShell>
+  );
+}
+
+function LogosBankPage() {
+  const { user } = useAuth();
+  const isAdmin = user && canDelete(user.role);
+  const [showHidden, setShowHidden] = useState(false);
+  const { hiddenKeys } = useHiddenAssets("logo");
+
+  return (
+    <AssetPageShell
+      slug="simbolos-e-logotipos"
+      title="Símbolos e logotipos"
+      searchPlaceholder="Buscar logos..."
+      headerSlot={isAdmin ? <AdminAssetTabs showHidden={showHidden} onShowHiddenChange={setShowHidden} totalCount={LOGOS.length - hiddenKeys.size} hiddenCount={hiddenKeys.size} /> : undefined}
+    >
+      <LogosBank showHidden={showHidden} />
+    </AssetPageShell>
+  );
+}
 
 function IconsPage() {
   const [search, setSearch] = useState("");
@@ -163,15 +209,7 @@ export function AssetCategoryPage({ category }: { category: AssetCategory }) {
 
   // Pages with content inside the shell
   if (category.slug === "simbolos-e-logotipos") {
-    return (
-      <AssetPageShell
-        slug="simbolos-e-logotipos"
-        title="Símbolos e logotipos"
-        searchPlaceholder="Buscar logos..."
-      >
-        <LogosBank />
-      </AssetPageShell>
-    );
+    return <LogosBankPage />;
   }
 
   if (category.slug === "ativos-de-cor") {
@@ -205,18 +243,7 @@ export function AssetCategoryPage({ category }: { category: AssetCategory }) {
   }
 
   if (category.slug === "banco-de-imagens") {
-    return (
-      <AssetPageShell
-        slug="banco-de-imagens"
-        title="Banco de imagens"
-        searchPlaceholder="Buscar imagens..."
-        tags={getAllImageTags()}
-        contentClassName="flex-1 overflow-y-auto px-1 pt-[40px] max-w-[1920px] mx-auto w-full"
-        gradient="linear-gradient(135deg, #4A5FA8 0%, #7B8FCC 50%, #B4C0E8 100%)"
-      >
-        <ImageBank />
-      </AssetPageShell>
-    );
+    return <ImageBankPage />;
   }
 
   // Empty pages with shell (grafismos, templates, docs, 3d, etc.)

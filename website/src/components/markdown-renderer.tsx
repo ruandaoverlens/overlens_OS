@@ -284,10 +284,17 @@ export function MarkdownRenderer({ content, title }: { content: string; title?: 
             </figcaption>
           ),
           hr: () => <hr className="my-8 border-border/50" />,
-          img: ({ src, alt, style, ...rest }) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={src} alt={alt || ""} className="rounded-lg" style={style} {...rest} />
-          ),
+          img: ({ src, alt, style, ...rest }) => {
+            let resolvedSrc = src;
+            if (typeof src === "string" && src.startsWith("/brand/images/")) {
+              const filename = src.replace("/brand/images/", "");
+              resolvedSrc = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/asset-previews/Imagens/${filename}`;
+            }
+            return (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={resolvedSrc} alt={alt || ""} className="rounded-lg" style={style} {...rest} />
+            );
+          },
           table: ({ children }) => (
             <div className="-mr-6 overflow-x-auto scrollbar-hidden lg:mr-0 lg:rounded-lg lg:border lg:border-border">
               <table className="w-max min-w-full text-sm lg:w-full">{children}</table>

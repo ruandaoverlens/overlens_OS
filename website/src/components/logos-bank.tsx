@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { SmCloseLineIcon } from "@/components/icons";
+import { SmCloseLineIcon, SmVisibilitySolidIcon, SmVisibilityOffSolidIcon } from "@/components/icons";
 import { useFavorites } from "@/lib/favorites";
 import { FavoriteButton } from "@/components/favorite-button";
+import { useAuth, canDelete } from "@/lib/auth";
+import { useHiddenAssets } from "@/lib/hidden-assets";
 
 // ─── Data ────────────────────────────────────────────────────
 
@@ -55,11 +57,17 @@ function LogoCard({
   onClick,
   isFavorite,
   onToggleFavorite,
+  showHideButton,
+  isHidden,
+  onToggleHide,
 }: {
   asset: LogoAsset;
   onClick: () => void;
   isFavorite: boolean;
   onToggleFavorite: () => void;
+  showHideButton?: boolean;
+  isHidden?: boolean;
+  onToggleHide?: () => void;
 }) {
   return (
     <div
@@ -77,7 +85,15 @@ function LogoCard({
           className="object-contain"
           style={{ maxWidth: "40%", maxHeight: "40%" }}
         />
-        <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+          {showHideButton && onToggleHide && (
+            <button
+              onClick={(e) => { e.stopPropagation(); onToggleHide(); }}
+              className="size-8 rounded-full flex items-center justify-center bg-black/50 text-white/40 hover:text-white/70 hover:bg-black/70 transition-all"
+            >
+              {isHidden ? <SmVisibilityOffSolidIcon className="size-4" /> : <SmVisibilitySolidIcon className="size-4" />}
+            </button>
+          )}
           <FavoriteButton isFavorite={isFavorite} onClick={() => onToggleFavorite()} />
         </div>
       </div>
@@ -94,10 +110,21 @@ function LogoCard({
 export function LogoModal({
   asset,
   onClose,
+  onDelete,
+  isHidden,
+  onToggleHide,
 }: {
   asset: LogoAsset;
   onClose: () => void;
+  onDelete?: () => void;
+  isHidden?: boolean;
+  onToggleHide?: () => void;
 }) {
+  const { user } = useAuth();
+  const isAdmin = user && canDelete(user.role);
+  const [deleting, setDeleting] = useState(false);
+  const [hiding, setHiding] = useState(false);
+
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -105,6 +132,32 @@ export function LogoModal({
     document.addEventListener("keydown", handleKey);
     return () => document.removeEventListener("keydown", handleKey);
   }, [onClose]);
+
+  const handleDelete = async () => {
+    if (!confirm("Tem certeza que deseja excluir este asset?")) return;
+    setDeleting(true);
+    try {
+      const res = await fetch("/api/assets/delete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          storagePath: `Imagens/logos/${asset.name}`,
+          previewPath: `Imagens/logos/${asset.name}`,
+        }),
+      });
+      if (res.ok) {
+        onDelete?.();
+        onClose();
+      } else {
+        const data = await res.json();
+        alert(data.error || "Erro ao excluir");
+      }
+    } catch {
+      alert("Erro ao excluir asset");
+    } finally {
+      setDeleting(false);
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 bg-black flex flex-col animate-in fade-in duration-200">
@@ -116,14 +169,42 @@ export function LogoModal({
           </p>
           <p className="text-xs text-white/40 mt-0.5">{asset.type}</p>
         </div>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="text-white/60 hover:text-white hover:bg-white/10 ml-4"
-          onClick={onClose}
-        >
-          <SmCloseLineIcon />
-        </Button>
+        <div className="flex items-center gap-2 ml-4">
+          {isAdmin && onToggleHide && (
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-white/20 text-white/60 hover:bg-white/10 hover:border-white/40 hover:text-white"
+              onClick={async () => {
+                setHiding(true);
+                await onToggleHide();
+                setHiding(false);
+              }}
+              disabled={hiding}
+            >
+              <span>{hiding ? "..." : isHidden ? "Desocultar" : "Ocultar"}</span>
+            </Button>
+          )}
+          {isAdmin && (
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-white/20 text-white/60 hover:bg-white/10 hover:border-white/40 hover:text-white"
+              onClick={handleDelete}
+              disabled={deleting}
+            >
+              <span>{deleting ? "Excluindo..." : "Excluir"}</span>
+            </Button>
+          )}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-white/60 hover:text-white hover:bg-white/10"
+            onClick={onClose}
+          >
+            <SmCloseLineIcon />
+          </Button>
+        </div>
       </div>
 
       {/* Preview area */}
@@ -207,26 +288,60 @@ export function LogoModal({
 
 // ─── Main Component ──────────────────────────────────────────
 
-export function LogosBank() {
+export function LogosBank({ showHidden = false }: { showHidden?: boolean } = {}) {
+  const { user } = useAuth();
+  const isAdmin = user && canDelete(user.role);
   const [selected, setSelected] = useState<LogoAsset | null>(null);
+  const [deleted, setDeleted] = useState<Set<string>>(new Set());
+  const { isHidden, hide, unhide } = useHiddenAssets("logo");
   const { isFavorite, toggleFavorite } = useFavorites();
+
+  const handleToggleHide = async (name: string) => {
+    if (isHidden(name)) await unhide(name);
+    else await hide(name);
+  };
+
+  const visibleLogos = LOGOS.filter((l) => {
+    if (deleted.has(l.name)) return false;
+    return showHidden ? isHidden(l.name) : !isHidden(l.name);
+  });
 
   return (
     <div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {LOGOS.map((asset) => (
+        {visibleLogos.map((asset) => (
           <LogoCard
             key={asset.name}
             asset={asset}
             onClick={() => setSelected(asset)}
             isFavorite={isFavorite(asset.name)}
             onToggleFavorite={() => toggleFavorite({ id: asset.name, type: "logo", title: asset.name, subtitle: asset.type, thumbnail: asset.lightSrc })}
+            showHideButton={!!isAdmin}
+            isHidden={isHidden(asset.name)}
+            onToggleHide={() => handleToggleHide(asset.name)}
           />
         ))}
       </div>
 
+      {visibleLogos.length === 0 && (
+        <div className="flex items-center justify-center py-16">
+          <p className="text-sm text-white/40">
+            {showHidden ? "Nenhum asset oculto" : "Nenhum logo encontrado"}
+          </p>
+        </div>
+      )}
+
       {selected && (
-        <LogoModal asset={selected} onClose={() => setSelected(null)} />
+        <LogoModal
+          asset={selected}
+          onClose={() => setSelected(null)}
+          onDelete={() => {
+            setDeleted((prev) => new Set(prev).add(selected.name));
+            setSelected(null);
+          }}
+          isHidden={isHidden(selected.name)}
+          onToggleHide={() => handleToggleHide(selected.name)}
+        />
       )}
     </div>
   );

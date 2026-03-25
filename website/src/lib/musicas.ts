@@ -1,3 +1,5 @@
+import { getAssetPreviewUrl } from "@/lib/supabase/storage";
+
 export interface Track {
   id: string;
   filename: string;
@@ -51,8 +53,8 @@ function parseEntry(entry: TrackEntry): Track {
     title,
     artist,
     tags: entry.tags,
-    src: `/musicas/${encodeURIComponent(entry.file)}`,
-    downloadUrl: `/musicas/${encodeURIComponent(entry.file)}`,
+    src: getAssetPreviewUrl("Musicas", entry.file),
+    downloadUrl: `/api/assets/download?file=${encodeURIComponent("Musicas/" + entry.file)}`,
   };
 }
 

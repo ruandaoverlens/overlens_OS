@@ -121,6 +121,7 @@ export function AssetPageShell({
   search,
   onSearchChange,
   count,
+  headerSlot,
   countLabel = "ativos",
   contentClassName,
   gradient,
@@ -138,6 +139,7 @@ export function AssetPageShell({
   countLabel?: string;
   contentClassName?: string;
   gradient?: string;
+  headerSlot?: React.ReactNode;
   children: React.ReactNode;
 }) {
   const { user } = useAuth();
@@ -175,6 +177,9 @@ export function AssetPageShell({
           <BannerTitle>{title}</BannerTitle>
         </BannerContent>
       </Banner>
+
+      {/* Header slot (e.g. admin tabs) */}
+      {headerSlot}
 
       {/* Search + Upload */}
       <div className="flex items-center gap-2 px-4 pt-4 pb-3 max-w-[1920px] mx-auto w-full min-w-0">

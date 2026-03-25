@@ -11,10 +11,13 @@ import {
   AUDIO_PREVIEW,
 } from "@/lib/media-optimizer";
 
+export const maxDuration = 120;
+
 const MIME_TYPES: Record<string, string> = {
   ".webp": "image/webp",
   ".avif": "image/avif",
   ".mp4": "video/mp4",
+  ".mp3": "audio/mpeg",
   ".webm": "video/webm",
   ".ogg": "audio/ogg",
   ".opus": "audio/opus",
@@ -24,7 +27,8 @@ const MIME_TYPES: Record<string, string> = {
  * GET /api/assets/preview?file=Imagens/photo.jpg
  *
  * Serves the optimized preview from Supabase Storage (asset-previews bucket).
- * If preview doesn't exist, downloads original, generates preview, uploads it.
+ * - Images: if preview doesn't exist, generates it server-side with Sharp.
+ * - Video/Audio: if preview doesn't exist, returns 404 (must be generated client-side).
  */
 export async function GET(request: NextRequest) {
   const fileParam = request.nextUrl.searchParams.get("file");
@@ -68,8 +72,20 @@ export async function GET(request: NextRequest) {
     });
   }
 
-  // Preview doesn't exist — generate on demand
-  // Auth check (only for generating, since it needs the original from private bucket)
+  // Preview doesn't exist — handle based on media type
+  if (mediaType === "video" || mediaType === "audio") {
+    // Video/audio previews must be generated client-side.
+    // Return 404 so the frontend knows no preview is available.
+    return NextResponse.json(
+      {
+        error: "Preview not available",
+        message: `No ${mediaType} preview found. Video and audio previews are generated client-side at upload time.`,
+      },
+      { status: 404 }
+    );
+  }
+
+  // Image: generate on demand with Sharp (works on Vercel)
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) {
     return NextResponse.json({ error: "Não autenticado" }, { status: 401 });
@@ -85,7 +101,7 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    // Write to temp, generate preview
+    // Write to temp, generate preview with Sharp
     const tmpDir = path.join(os.tmpdir(), "overlens-preview");
     await mkdir(tmpDir, { recursive: true });
     const tmpOriginal = path.join(tmpDir, path.basename(fileParam));

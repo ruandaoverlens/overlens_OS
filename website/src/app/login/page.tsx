@@ -1,15 +1,17 @@
 "use client";
 
 import { useState, useEffect, type FormEvent } from "react";
-import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 
+type Mode = "login" | "signup";
+
 export default function LoginPage() {
-  const router = useRouter();
-  const { user, loading, login } = useAuth();
+  const { user, loading, login, signup } = useAuth();
+  const [mode, setMode] = useState<Mode>("login");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -23,17 +25,42 @@ export default function LoginPage() {
     }
   }, [user, loading]);
 
+  function switchMode(newMode: Mode) {
+    setMode(newMode);
+    setError("");
+  }
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setError("");
     setSubmitting(true);
-    const success = await login(email, password);
-    if (success) {
-      // Hard redirect to ensure cookies are sent to the server
-      window.location.href = "/docs";
+
+    if (mode === "login") {
+      const ok = await login(email, password);
+      if (ok) {
+        window.location.href = "/docs";
+      } else {
+        setError("Email ou senha incorretos.");
+        setSubmitting(false);
+      }
     } else {
-      setError("Email ou senha incorretos.");
-      setSubmitting(false);
+      if (!name.trim()) {
+        setError("Preencha seu nome.");
+        setSubmitting(false);
+        return;
+      }
+      if (password.length < 6) {
+        setError("A senha deve ter pelo menos 6 caracteres.");
+        setSubmitting(false);
+        return;
+      }
+      const result = await signup(email, password, name.trim());
+      if (result.success) {
+        window.location.href = "/docs";
+      } else {
+        setError(result.error ?? "Erro ao criar conta. Tente novamente.");
+        setSubmitting(false);
+      }
     }
   }
 
@@ -54,12 +81,28 @@ export default function LoginPage() {
             Overlens
           </h1>
           <p className="text-sm text-muted-foreground">
-            Acesse o Brand System
+            {mode === "login" ? "Acesse o Brand System" : "Crie sua conta gratuita"}
           </p>
         </div>
 
-        {/* Login Form */}
+        {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
+          {mode === "signup" && (
+            <div className="space-y-1.5">
+              <Label htmlFor="name">Nome</Label>
+              <Input
+                id="name"
+                type="text"
+                size="sm"
+                placeholder="Seu nome"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                disabled={submitting}
+              />
+            </div>
+          )}
+
           <div className="space-y-1.5">
             <Label htmlFor="email">Email</Label>
             <Input
@@ -99,13 +142,46 @@ export default function LoginPage() {
           </div>
 
           <Button type="submit" className="w-full" disabled={submitting}>
-            {submitting ? "Entrando..." : "Entrar"}
+            {submitting
+              ? mode === "login"
+                ? "Entrando..."
+                : "Criando conta..."
+              : mode === "login"
+                ? "Entrar"
+                : "Criar conta"}
           </Button>
 
           {error && (
             <p className="text-sm text-red-500 text-center">{error}</p>
           )}
         </form>
+
+        {/* Toggle */}
+        <p className="text-sm text-muted-foreground text-center">
+          {mode === "login" ? (
+            <>
+              Ainda nao tem conta?{" "}
+              <button
+                type="button"
+                onClick={() => switchMode("signup")}
+                className="text-foreground hover:underline cursor-pointer"
+              >
+                Criar conta
+              </button>
+            </>
+          ) : (
+            <>
+              Ja tem uma conta?{" "}
+              <button
+                type="button"
+                onClick={() => switchMode("login")}
+                className="text-foreground hover:underline cursor-pointer"
+              >
+                Entrar
+              </button>
+            </>
+          )}
+        </p>
       </div>
     </div>
   );

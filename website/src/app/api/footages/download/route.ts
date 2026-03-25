@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { sanitizeStorageFilename } from "@/lib/supabase/storage";
+
+export const maxDuration = 120;
 
 /**
  * GET /api/footages/download?file=video.mp4
@@ -21,8 +24,8 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Não autenticado" }, { status: 401 });
   }
 
-  // Footages are stored under Footages/ in platform-assets
-  const storagePath = `Footages/${filename}`;
+  // Footages are stored under Footages/ in platform-assets (sanitized names)
+  const storagePath = `Footages/${sanitizeStorageFilename(filename)}`;
 
   const { data, error } = await supabase.storage
     .from("platform-assets")

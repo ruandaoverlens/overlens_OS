@@ -37,9 +37,9 @@ const apps = [
   { name: "Growth System", href: "/growth", icon: <MdChartLineIcon /> },
   { name: "Magny", href: "/magny", icon: <MdSearchLineIcon /> },
   { name: "Pacote Cultural", href: "/pacote", icon: <MdLibrarySolidIcon /> },
-  { name: "Plata", href: "/plataforma", icon: <OverlensSymbol /> },
+  { name: "Plata", href: "https://plataforma.overlens.com.br", icon: <OverlensSymbol />, external: true },
   { name: "T.R.U", href: "/tru", icon: <MdToolSolidIcon /> },
-  { name: "Website", href: "/website", icon: <MdLanguageLineIcon /> },
+  { name: "Website", href: "https://overlens.com.br", icon: <MdLanguageLineIcon />, external: true },
 ];
 
 export function AppSwitcher() {
@@ -49,8 +49,10 @@ export function AppSwitcher() {
   const { user } = useAuth();
 
   const sorted = [...apps].sort((a, b) => {
-    const aAccess = user ? canAccessRoute(user.role, a.href) : true;
-    const bAccess = user ? canAccessRoute(user.role, b.href) : true;
+    const aExternal = "external" in a && a.external;
+    const bExternal = "external" in b && b.external;
+    const aAccess = aExternal || (user ? canAccessRoute(user.role, a.href) : true);
+    const bAccess = bExternal || (user ? canAccessRoute(user.role, b.href) : true);
     if (aAccess === bAccess) return 0;
     return aAccess ? -1 : 1;
   });
@@ -59,8 +61,9 @@ export function AppSwitcher() {
     <TopbarApps open={open} onOpenChange={setOpen}>
       <TopbarAppsContent>
         {sorted.map((app) => {
-          const isActive = pathname.startsWith(app.href);
-          const hasAccess = user ? canAccessRoute(user.role, app.href) : true;
+          const isExternal = "external" in app && app.external;
+          const isActive = !isExternal && pathname.startsWith(app.href);
+          const hasAccess = isExternal || (user ? canAccessRoute(user.role, app.href) : true);
           return (
             <TopbarAppsItem
               key={app.href}
@@ -77,7 +80,11 @@ export function AppSwitcher() {
               onClick={() => {
                 if (!hasAccess) return;
                 setOpen(false);
-                router.push(app.href);
+                if (isExternal) {
+                  window.open(app.href, "_blank", "noopener");
+                } else {
+                  router.push(app.href);
+                }
               }}
             />
           );
