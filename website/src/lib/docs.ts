@@ -22,14 +22,21 @@ export interface DocSection {
 
 // ─── Constants ───────────────────────────────────────────
 
-const BRAND_SYSTEM_DIR = path.resolve(process.cwd(), "..", "TRU", "brand_system");
-const ESTUDIO_DIR = path.resolve(process.cwd(), "..", "TRU", "estudio_criativo");
-const GROWTH_DIR = path.resolve(process.cwd(), "..", "TRU", "growth_system");
-const PACOTE_DIR = path.resolve(process.cwd(), "..", "TRU", "pacote_cultural");
-const PLAYBOOK_CONTEUDO_DIR = path.resolve(process.cwd(), "..", "TRU", "estudio_criativo", "03 - Playbook de Conteúdo");
-const PLAYBOOK_VIDEOS_DIR = path.resolve(process.cwd(), "..", "TRU", "estudio_criativo", "04 - Playbook de Edição de Vídeos");
-const PLAYBOOK_OPERACAO_DIR = path.resolve(process.cwd(), "..", "TRU", "growth_system", "04 - Playbooks", "08 - Playbook de Operação");
-const PLAYBOOK_GESTAO_DIR = path.resolve(process.cwd(), "..", "TRU", "growth_system", "04 - Playbooks", "09 - Playbook de Gestão");
+/** Resolve a TRU sub-path, trying ./content/ first (Vercel), then ../TRU/ (local dev). */
+function resolveTRU(...subpath: string[]): string {
+  const internal = path.resolve(process.cwd(), "content", ...subpath);
+  if (fs.existsSync(internal)) return internal;
+  return path.resolve(process.cwd(), "..", "TRU", ...subpath);
+}
+
+const BRAND_SYSTEM_DIR = resolveTRU("brand_system");
+const ESTUDIO_DIR = resolveTRU("estudio_criativo");
+const GROWTH_DIR = resolveTRU("growth_system");
+const PACOTE_DIR = resolveTRU("pacote_cultural");
+const PLAYBOOK_CONTEUDO_DIR = resolveTRU("estudio_criativo", "03 - Playbook de Conteúdo");
+const PLAYBOOK_VIDEOS_DIR = resolveTRU("estudio_criativo", "04 - Playbook de Edição de Vídeos");
+const PLAYBOOK_OPERACAO_DIR = resolveTRU("growth_system", "04 - Playbooks", "08 - Playbook de Operação");
+const PLAYBOOK_GESTAO_DIR = resolveTRU("growth_system", "04 - Playbooks", "09 - Playbook de Gestão");
 
 // ─── Helpers ─────────────────────────────────────────────
 

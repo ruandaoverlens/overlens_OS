@@ -24,7 +24,7 @@ function getInitials(name?: string): string {
 }
 
 export function TopbarProfile() {
-  const { user, logout } = useAuth();
+  const { user, loading, logout } = useAuth();
   const router = useRouter();
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
@@ -32,7 +32,7 @@ export function TopbarProfile() {
 
   const [loggingOut, setLoggingOut] = useState(false);
 
-  if (!hasMounted || (!user && !loggingOut)) return null;
+  if (!hasMounted || (!user && !loggingOut && !loading)) return null;
 
   const handleLogout = async () => {
     setLoggingOut(true);
