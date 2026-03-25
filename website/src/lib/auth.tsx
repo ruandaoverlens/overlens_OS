@@ -119,6 +119,10 @@ async function fetchProfile(
     .eq("id", userId)
     .single();
 
+  if (error) {
+    console.error("[auth] fetchProfile failed:", error.message, error.code);
+  }
+
   if (error || !data) return null;
 
   return {
@@ -141,10 +145,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(BYPASS_AUTH ? false : true);
 
   useEffect(() => {
+    // Build a minimal User from the auth session as a fallback when
+    // the profiles table query fails (e.g. RLS timing, network).
+    function fallbackUser(sessionUser: { id: string; email?: string; user_metadata?: Record<string, unknown> }): User {
+      return {
+        id: sessionUser.id,
+        name: (sessionUser.user_metadata?.full_name as string) ?? sessionUser.email?.split("@")[0] ?? "",
+        email: sessionUser.email ?? "",
+        role: "gratuito",
+      };
+    }
+
     supabase.auth.getSession().then(async ({ data: { session } }) => {
       if (session?.user) {
         const profile = await fetchProfile(supabase, session.user.id);
-        setUser(profile);
+        setUser(profile ?? fallbackUser(session.user));
       }
       setLoading(false);
     }).catch(() => {
@@ -156,7 +171,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } = supabase.auth.onAuthStateChange(async (_event, session) => {
       if (session?.user) {
         const profile = await fetchProfile(supabase, session.user.id);
-        setUser(profile);
+        setUser(profile ?? fallbackUser(session.user));
       } else {
         setUser(null);
       }
