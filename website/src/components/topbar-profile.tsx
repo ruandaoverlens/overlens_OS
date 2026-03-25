@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -25,19 +24,25 @@ function getInitials(name?: string): string {
 
 export function TopbarProfile() {
   const { user, loading, logout } = useAuth();
-  const router = useRouter();
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
-  useEffect(() => setHasMounted(true), []);
-
   const [loggingOut, setLoggingOut] = useState(false);
 
-  if (!hasMounted || (!user && !loggingOut && !loading)) return null;
+  useEffect(() => setHasMounted(true), []);
+
+  // Don't render during SSR
+  if (!hasMounted) return null;
+
+  // Always show the profile button once mounted — hiding it traps users
+  // without a way to log out. During loading, show fallback initials.
 
   const handleLogout = async () => {
     setLoggingOut(true);
-    await logout();
-    window.location.replace("/login");
+    try {
+      await logout();
+    } finally {
+      window.location.replace("/login");
+    }
   };
 
   return (
@@ -57,9 +62,9 @@ export function TopbarProfile() {
             <span>Configurações</span>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem onClick={handleLogout}>
+          <DropdownMenuItem onClick={handleLogout} disabled={loggingOut}>
             <SmLogoutLineIcon />
-            <span>Desconectar</span>
+            <span>{loggingOut ? "Saindo..." : "Desconectar"}</span>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

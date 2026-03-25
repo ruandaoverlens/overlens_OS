@@ -53,6 +53,14 @@ export function SettingsModal({ open, onOpenChange }: SettingsModalProps) {
   const [name, setName] = useState(user?.name ?? "");
   const [email, setEmail] = useState(user?.email ?? "");
 
+  // Sync local state when user data loads asynchronously
+  useEffect(() => {
+    if (user) {
+      setName(user.name);
+      setEmail(user.email);
+    }
+  }, [user]);
+
   const isAdmin = canManageMembers(user?.role ?? "gratuito");
 
   const visibleItems = NAV_ITEMS.filter(
