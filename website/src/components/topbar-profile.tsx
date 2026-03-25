@@ -38,11 +38,12 @@ export function TopbarProfile() {
 
   const handleLogout = async () => {
     setLoggingOut(true);
-    try {
-      await logout();
-    } finally {
-      window.location.replace("/login");
-    }
+    // signOut can hang due to Supabase lock contention — enforce 2s timeout
+    await Promise.race([
+      logout().catch(() => {}),
+      new Promise((r) => setTimeout(r, 2000)),
+    ]);
+    window.location.replace("/login");
   };
 
   return (

@@ -156,17 +156,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       };
     }
 
-    async function resolveUser(sessionUser: { id: string; email?: string; user_metadata?: Record<string, unknown> }) {
-      const profile = await fetchProfile(supabase, sessionUser.id);
-      const resolved = profile ?? fallbackUser(sessionUser);
-      console.log("[auth] resolved user:", resolved.name, resolved.email, resolved.role, profile ? "(profile)" : "(fallback)");
-      return resolved;
+    // Load profile in the background — never block the auth callbacks.
+    // Set fallback user immediately so UI is never empty, then upgrade
+    // to the full profile once the query resolves.
+    function loadProfile(sessionUser: { id: string; email?: string; user_metadata?: Record<string, unknown> }) {
+      // Immediate: set fallback so name/email are visible right away
+      setUser(fallbackUser(sessionUser));
+      // Background: upgrade to full profile (with correct role)
+      fetchProfile(supabase, sessionUser.id).then((profile) => {
+        if (profile) {
+          console.log("[auth] profile loaded:", profile.name, profile.role);
+          setUser(profile);
+        } else {
+          console.log("[auth] profile query failed, using fallback");
+        }
+      });
     }
 
-    supabase.auth.getSession().then(async ({ data: { session } }) => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
       console.log("[auth] getSession:", session ? session.user.email : "no session");
       if (session?.user) {
-        setUser(await resolveUser(session.user));
+        loadProfile(session.user);
       }
       setLoading(false);
     }).catch((err) => {
@@ -176,10 +186,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange(async (_event, session) => {
+    } = supabase.auth.onAuthStateChange((_event, session) => {
       console.log("[auth] onAuthStateChange:", _event, session ? session.user.email : "no session");
       if (session?.user) {
-        setUser(await resolveUser(session.user));
+        loadProfile(session.user);
       } else {
         setUser(null);
       }
