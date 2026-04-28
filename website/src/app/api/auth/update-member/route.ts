@@ -34,15 +34,29 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "userId é obrigatório" }, { status: 400 });
   }
 
-  const admin = createAdminClient();
-  const { error } = await admin
-    .from("profiles")
-    .update({ name, email, role })
-    .eq("id", userId);
+  try {
+    const admin = createAdminClient();
 
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    const updateData: Record<string, string> = {};
+    if (name !== undefined) updateData.name = name;
+    if (email !== undefined) updateData.email = email;
+    if (role !== undefined) updateData.role = role;
+
+    const { error } = await admin
+      .from("profiles")
+      .update(updateData)
+      .eq("id", userId);
+
+    if (error) {
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
+    return NextResponse.json({ success: true });
+  } catch (err) {
+    console.error("update-member error:", err);
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Erro interno" },
+      { status: 500 },
+    );
   }
-
-  return NextResponse.json({ success: true });
 }

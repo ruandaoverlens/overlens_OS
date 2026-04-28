@@ -396,8 +396,11 @@ function MembrosPanel({ currentUserEmail }: { currentUserEmail: string }) {
       setMembers((prev) =>
         prev.map((m) => (m.id === updated.id ? updated : m)),
       );
+      setEditingMember(null);
+    } else {
+      const json = await res.json().catch(() => ({ error: "Erro ao atualizar membro" }));
+      alert(json.error || "Erro ao atualizar membro");
     }
-    setEditingMember(null);
   };
 
   const addMember = async (data: { name: string; email: string; password: string; role: UserRole }) => {
