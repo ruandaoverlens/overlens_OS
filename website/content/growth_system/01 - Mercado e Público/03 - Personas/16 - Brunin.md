@@ -7,7 +7,7 @@
 </div>
 <div style="flex:1;min-width:0">
 
-| ![][image1] | Nome | Bruno (Brunin) |
+|  | Nome | Bruno (Brunin) |
 | :---- | :---- | :---- |
 |  | **Idade** | 18 anos |
 |  | **Oferta ideal** | Protocolo 3-2-1 e Overpass |

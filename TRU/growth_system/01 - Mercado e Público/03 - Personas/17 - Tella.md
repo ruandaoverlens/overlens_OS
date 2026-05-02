@@ -7,7 +7,7 @@
 </div>
 <div style="flex:1;min-width:0">
 
-| ![][image2] | Nome | Stella (Tella, Telinha) |
+|  | Nome | Stella (Tella, Telinha) |
 | :---- | :---- | :---- |
 |  | **Idade** | 23 anos |
 |  | **Estado civil** | Solteira |

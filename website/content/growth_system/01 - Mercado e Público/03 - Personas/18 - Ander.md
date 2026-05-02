@@ -7,7 +7,7 @@
 </div>
 <div style="flex:1;min-width:0">
 
-| ![][image3] | Nome | Anderson (Ander) |
+|  | Nome | Anderson (Ander) |
 | :---- | :---- | :---- |
 |  | **Idade** | 27 anos |
 |  | **Estado civil** | Namorando |
