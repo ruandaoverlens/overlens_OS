@@ -1,17 +1,20 @@
 # Overpass
 
-## A porta de entrada para quem quer parar de reagir ao mundo e começar a criá-lo com método. O Overpass não é um curso; é um sistema que conecta IA, branding, design e posicionamento pessoal em um eixo coerente, formando a base simbólica e operacional para tudo que vem depois dentro do ecossistema Overlens.
+**Aprendizado baseado em criação de projetos**
 
-**A entrada oficial para a era da criação**
+[**Manual do Overpass**](https://docs.google.com/document/d/1jguC-WLBlyvQf3jwQc-NQex90MmfzcryUMA9CokUUaQ/edit?usp=sharing)
 
 ## O Overpass é a porta de entrada para o universo da Overlens e, ao mesmo tempo, um radar de consciência criativa. Foi pensado para quem sente que as ferramentas mudaram, mas ainda procura um novo mapa. Para quem deseja criar com propósito.
 
 Não é um curso. É um sistema inteiro. O Overpass reúne aquilo que todo criador do nosso tempo precisa entender para deixar de apenas consumir tecnologia e começar a usá-la com intenção. Aqui, o participante conecta IA, branding, design, estratégia e posicionamento pessoal em um eixo coerente. Não para seguir tendências, mas para sustentar a direção.
 
+## Project-based learning
+
 ### O que o Overpass entrega?
 
-* Uma nova visão de futuro, centrada na criação com inteligência simbiótica  
-* Um modelo mental completo para usar IA com intencionalidade criativa  
+* Aulas e aprendizado baseado nas necessidades do projeto (aprendizado por demanda)  
+* Nova visão de futuro, centrada na criação com inteligência simbiótica  
+* Modelos mentais completos para usar IA com intencionalidade criativa  
 * Fundamentos sólidos de marca pessoal, narrativa, diferenciação e impacto  
 * Metodologias para estruturar ideias e projetar futuros viáveis  
 * Acesso à comunidade Overlens e às trilhas seguintes do ecossistema
@@ -27,3 +30,20 @@ Funciona como filtro e como fundação. Atrai os criadores certos, forma a base 
 ## Posicionamento da oferta
 
 A oferta do Overpass precisa ser comunicada com clareza e coragem. Não é um curso rápido para quem busca atalhos. É uma estrutura inicial de alinhamento profundo. Sua promessa está ancorada em transformação de perspectiva, reconfiguração de identidade criadora e conexão com ferramentas que não estão apenas na técnica, mas na visão. É por isso que sua narrativa convida, provoca e exige.
+
+## Ficha técnica: Overpass
+
+| Nome | Overpass |
+| :---- | :---- |
+| **Status** | Ativo |
+| **Promessa** | \- Pare de reagir. Comece a criar.\- Clareza criativa em um mundo barulhento\- Menos ruído. Mais direção.\- Clareza é a nossa vantagem competitiva.\- A casa das pessoas criadoras |
+| **Website** | Página principal (Toque aqui para acessar) |
+| **Tipo de produto** | Back-end /  Assinatura  |
+| **GTM** | Product Led Growth / 2 Stage (Toque para acessar) |
+| **Preço base** | R$180/mês (R$2.160 em 12 meses) (Mensal) |
+|  | 12x R$149 no cartão (R$1.788/anual) (Plano anual \> R$480 de desconto) |
+|  | R$1.500 à vista no pix (R$660 de desconto) |
+| **Duração** | Pacotes: Anual/semestral ou assinatura mensal |
+| **Persona principal** | Tella ([Toque para acessar](https://docs.google.com/document/d/1lga8Zv4h0rPwVgOXBygkcUvDGkE6YmTjGBL6rh0Px2w/edit?tab=t.z8h7yanm370l)) e Ander ([Toque para acessar](https://docs.google.com/document/d/1lga8Zv4h0rPwVgOXBygkcUvDGkE6YmTjGBL6rh0Px2w/edit?tab=t.ck2js1vctkbs)) |
+
+Leia o [Manual do Overpass](https://docs.google.com/document/d/1jguC-WLBlyvQf3jwQc-NQex90MmfzcryUMA9CokUUaQ/edit?tab=t.0) para mais informações

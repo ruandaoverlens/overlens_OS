@@ -1,8 +1,8 @@
 # Operantes
 
-## Operante é quem já percebeu que precisa mudar, mas ainda vive com uma visão moldada pelo passado. Tenta avançar, mas permanece preso à crença de que dominar ferramentas é o suficiente para vencer. No fundo, ainda constrói com modelos antigos, enquanto o mundo exige outra lógica. Na Overlens, Operantes aprende a sair do vício técnico e a construir provas reais de valor, baseadas em visão, execução e relevância no novo cenário. 
+## Operante é quem já percebeu que precisa mudar, mas ainda vive com uma visão moldada pelo passado. Tenta avançar, mas permanece preso à crença de que dominar ferramentas é o suficiente. No fundo, ainda constrói com modelos antigos, enquanto o mundo exige outra lógica. Na Overlens, Operantes aprende a sair do vício técnico e a construir provas reais de valor, baseadas em visão, execução e relevância no novo cenário. 
 
-**Soluções**: Atlas Protocolo 3-2-1 Overpass 
+**Soluções**: Atlas Overpass 
 
 ### **O Dilema dos Operantes**
 
@@ -10,21 +10,21 @@
 
 *Você está preso em um loop de execução técnica, acreditando que dominar mais ferramentas e aumentar sua produtividade são os caminhos para o sucesso. Esta é uma ilusão perigosa. Enquanto você otimiza processos obsoletos, o mercado está se transformando fundamentalmente. Suas habilidades técnicas, que hoje parecem valiosas, estão se tornando commodities. A IA já executa em segundos o que você leva dias para fazer, e isso é apenas o começo.*
 
-*Sua única chance é quebrar o ciclo de dependência técnica. Pare de acumular cursos superficiais e comece a desenvolver compreensão profunda. Estude teoria dos sistemas complexos, psicologia cognitiva e antropologia. Não para aplicar diretamente, mas para desenvolver uma nova forma de pensar. O mercado não precisa de mais executores técnicos \- precisa de pessoas que compreendam padrões fundamentais de comportamento e mudança. Seu desafio não é aprender mais, é aprender diferente.*
+*Sua única chance é quebrar o ciclo de dependência técnica. Pare de acumular cursos superficiais e comece a desenvolver compreensão profunda. Estude teoria dos sistemas complexos, psicologia cognitiva e antropologia (onde? na Overlens). Não para aplicar diretamente, mas para desenvolver uma nova forma de pensar. O mercado não precisa de mais executores técnicos, precisa de pessoas que compreendam padrões fundamentais de comportamento e mudança. Seu desafio não é aprender mais, é aprender diferente.*
 
 ### **Ficha rápida:**
 
 ---
 
-**Resumo Essencial**: O Operante é aquele que já percebeu que o mundo mudou, mas ainda tenta avançar carregando paradigmas antigos. Preso na ilusão de que dominar mais ferramentas técnicas o salvará, ele precisa romper com a lógica do passado e aprender a construir valor real em um novo mercado. Sua maior batalha não é técnica; é cognitiva.  
+**Resumo Essencial**: O Operante é aquele que já percebeu que o mundo mudou, mas ainda tenta avançar carregando paradigmas antigos. Preso na ilusão de que dominar mais ferramentas técnicas o salvará, ele precisa romper com a lógica do passado e aprender a construir valor real em um novo mercado. Sua maior batalha não é técnica, é cognitiva.  
 **Arquétipo**: Executor que desperta para o Pensador Estratégico.  
-**Momento de vida**: Freelancers, designers júnior, criadores independentes em fase inicial de carreira. Já sentem as limitações do modelo técnico, mas ainda não sabem como transcender. Estão no limiar entre o domínio técnico e a necessidade de pensamento sistêmico.  
+**Momento de vida**: Criadores em fase inicial de carreira ou estagnados. Já sentem as limitações do modelo técnico, mas ainda não sabem como transcender. Estão no limiar entre o domínio técnico e a necessidade de pensamento sistêmico.  
 **JTBD Funcional**:Quebrar o ciclo de execução técnica vazia para construir projetos de alta percepção de valor e relevância real no mercado.  
 **JTBD Emocional**: Reconquistar a confiança em seu próprio futuro criativo, sentindo que finalmente está construindo algo que importa e o diferencia.  
-**Motivação Primária**: Desejo de protagonismo, liberdade e reconhecimento autêntico. Vontade de provar (a si mesmo e ao mundo) que seu trabalho tem valor real; não apenas técnico, mas simbólico e estratégico.  
+**Motivação Primária**: Desejo de protagonismo, liberdade e reconhecimento autêntico. Vontade de provar (a si mesmo e ao mundo) que seu trabalho tem valor real, não apenas técnico, mas simbólico e estratégico.  
 **Medo/Frustração**: Medo de ser irrelevante apesar do esforço. Medo de ser substituído por IA ou automações. Medo de estagnar profissionalmente e perder o controle do próprio destino criativo.  
 **Paradigmas Mentais**: “Se eu dominar mais ferramentas, estarei seguro.”, “Só preciso ser mais produtivo para me destacar.”, “Projetos incríveis são feitos apenas por quem tem acesso a grandes clientes ou recursos.”  
-**Gatilhos de Ação**: Perder uma vaga ou cliente para alguém menos técnico, mas mais estratégico. Receber feedback morno sobre o portfólio. Ver automações realizando seu trabalho. Sentir estagnação e invisibilidade crescente no mercado.  
+**Gatilhos de Ação**: Perder uma vaga ou cliente para alguém menos técnico, mas mais estratégico. Receber feedback morno sobre o seu trabalho. Ver automações realizando seu trabalho. Sentir estagnação e invisibilidade crescente no mercado.  
 **Objeções típicas**: "Será que não estou desperdiçando tempo em mais um curso?", "E se eu não conseguir acompanhar?", "Eu já tentei evoluir antes e não funcionou."  
 **De/Para**: De: Executor técnico inseguro, perdido em acumulação de habilidades isoladas. Para: Criador estratégico confiante, capaz de construir provas reais de valor e evoluir com propósito.  
 **Lente de sucesso**: Conseguir ver progresso concreto (projetos fortes publicados), receber feedback positivo sincero, sentir controle crescente sobre sua trajetória criativa e profissional.  
@@ -46,7 +46,7 @@ Jornada ideal: trilhas de construção de portfólio rápido, técnicas de posic
 ### **Medos Ocultos**
 
 **Medo de ser irrelevante:** que seus esforços não deixem marca no mundo.  
-**Medo de ser esquecido:** trabalhar duro mas ser apenas “mais um”; invisível.  
+**Medo de ser esquecido:** trabalhar duro mas ser apenas “mais um”, invisível.  
 **Medo de ser ultrapassado:** ver colegas menos técnicos prosperarem, enquanto ele fica preso.  
 **Medo de não ter controle sobre o próprio futuro:** depender sempre de empregos ou freelas instáveis
 
@@ -78,7 +78,7 @@ Jornada ideal: trilhas de construção de portfólio rápido, técnicas de posic
 
 (Racionais e Emocionais)
 
-**R**: Dificuldades em construir projetos de portfólio que realmente impressionam clientes ou empresas.  
+**R**: Dificuldades em construir projetos que realmente impressionam clientes ou empresas.  
 **E**: Sinto vergonha ou insegurança de mostrar meu trabalho atual
 
 **R**: Não sei como escolher projetos que sejam estratégicos e valorizem minhas habilidades.  
@@ -121,13 +121,11 @@ Jornada ideal: trilhas de construção de portfólio rápido, técnicas de posic
 
 ### **Garantias de Realização:** 
 
-*"Você vai construir projetos que fortalecem seu portfólio, sua autoconfiança e sua capacidade de viver de criação; no seu tempo, com seu estilo."*
-
-1\. Você terá acesso imediato a trilhas práticas projetadas para construir projetos de portfólio relevantes e de alta percepção de valor.
+1\. Você terá acesso imediato a trilhas práticas projetadas para construir projetos relevantes e de alta percepção de valor.
 
 2\. As trilhas foram desenhadas para que você não apenas aprenda, mas aplique, validando suas habilidades com projetos que geram autoridade real.
 
-3\. Você poderá evoluir de maneira progressiva, escolhendo os projetos que mais se alinham ao seu objetivo de mercado; evitando desperdício de tempo em exercícios inúteis.
+3\. Você poderá evoluir de maneira progressiva, escolhendo os projetos que mais se alinham ao seu objetivo de mercado, evitando desperdício de tempo em exercícios inúteis.
 
 4\. Segurança: “Finalmente estou construindo algo que me representa e que o mercado reconhece.”
 
@@ -173,19 +171,11 @@ Ritmo gerenciável: Tempo de dedicação realista para quem está conciliando es
 
 | Gatilho | Exemplos Concretos	 | Observações |
 | :---- | :---- | :---- |
-| Ruptura Técnica	 | "Dominar ferramentas é bom. Mas entender o jogo é vital."	 | Reposiciona a técnica como insuficiente; sem atacar o esforço feito. |
-| Tempo Queimando | "Enquanto você aperfeiçoa o que já é automatizado, o futuro pede outro tipo de criação."	 | "Enquanto você aperfeiçoa o que já é automatizado, o futuro pede outro tipo de criação."	 |
+| Ruptura Técnica	 | "Dominar ferramentas é bom. Mas entender o jogo é vital."	 | Reposiciona a técnica como insuficiente, sem atacar o esforço. |
+| Tempo Queimando | "Enquanto você aperfeiçoa o que já é automatizado, o futuro pede outro tipo de criação."	 |  |
 | Valor Real	 | "Não basta executar rápido. Você precisa construir algo que ninguém queira substituir."	 | Faz a pessoa se questionar sobre a real percepção de valor que entrega. |
 | Efeito Espelho	 | "Quantos projetos seus mostram o que você realmente é capaz de criar?"	 | Induz reflexão sem humilhação: chama para honestidade interna. |
-| Convocação à Consciência	 | "A nova era criativa não é para quem sabe mais; é para quem enxerga melhor."	 | Introduz a visão estratégica como diferencial inevitável. |
-
-Contrastes de obsolescência: imagens de ferramentas ultrapassadas ao lado de expressões de visão (mapas, redes, padrões).
-
-Símbolos de transição: pontes, encruzilhadas, bússolas, janelas abertas.
-
-Tipografia com evolução visual: iniciar com fontes mais "densas" e evoluir para traços mais claros conforme avança na navegação (sutil).
-
-Texturas de fragmentação: em fundos ou detalhes, como se partes antigas estivessem se desfazendo para revelar novas camadas.
+| Convocação à Consciência	 | "A nova era criativa não é para quem sabe mais, é para quem enxerga melhor."	 | Introduz a visão estratégica como diferencial inevitável. |
 
 | Estratégia | Aplicação |
 | :---- | :---- |
@@ -195,13 +185,7 @@ Texturas de fragmentação: em fundos ou detalhes, como se partes antigas estive
 
 Evitar soar como um curso básico ou técnico. Eles já se acham "avançados" no domínio técnico.
 
-Evitar linguagem de "aprender mais ferramentas". Eles precisam sentir que vão acessar uma nova forma de pensar; uma evolução estratégica.
+Evitar linguagem de "aprender mais ferramentas". Eles precisam sentir que vão acessar uma nova forma de pensar, uma evolução estratégica.
 
 Usar levemente termos de "construir provas", "mapear padrões", "arquitetar valor".  
 Essas expressões sugerem movimento de executor para arquiteto, sem ferir o ego.
-
-## Insights
-
-Criar uma sessão com “Projetos” com briefings que os alunos podem seguir para construir confiança, com feedback e fechando com projetos que podem colocar no portfólio. Essa sessão de projetos, pode vir com instruções de como realizar o projeto, dicas para deixar o projeto melhor (tipo dicas em jogos) e aulas que podem assistir para aprender como trabalhar os projetos.  Pensando melhor, os projetos podem inclusive já terem uma versão pronto e os integrantes vão sendo guiados.
-
-Também podemos fazer as trilhas bem praticas (estilo duolingo) e pedir exercícios que simulem situações do mundo real (storytelling \+ briefing \+ exercício) (exemplo: vetorizar algo, criar um logo, criar ícones, escolher as cores de um projeto, gerar algumas imagens para um projeto, arquitetar metodologia etc (A tarefa já vem com um contexto...)

@@ -2,13 +2,13 @@
 
 ## Inconscientes são aquelas pessoas que ainda não despertaram verdadeiramente para a mudança que estamos vivendo. Não conhecem a Overlens e estão vivendo suas vidas normalmente, como se o mundo ainda fosse o mesmo de algumas décadas atrás.
 
-**Soluções**: Atlas Protocolo 3-2-1 Overpass 
+**Soluções**: Atlas Overpass
 
 ### **Ficha rápida:**
 
 ---
 
-**Resumo Essencial:** O Inconsciente é aquele que intui que algo mudou, mas ainda precisa de um portal de iniciação; uma porta realista e segura que lhe mostre que o futuro pode ser conquistado agora, sem precisar destruir sua vida atual.  
+**Resumo Essencial:** O Inconsciente é aquele que intui que algo mudou, mas ainda precisa de um portal de iniciação, uma porta realista e segura que lhe mostre que o futuro pode ser conquistado agora, sem precisar destruir sua vida atual.  
 **Arquétipo:** Inocente que desperta para a Jornada  
 **Momento de vida**: Estudantes, criativos iniciantes, early-career workers em áreas saturadas. Sentem-se deslocados mas ainda não sabem explicar. Contato raso com tecnologia emergente aplicada à criação.  
 **JTBD Funcional**: Encontrar um caminho claro e possível para se tornar relevante no futuro.  
@@ -46,7 +46,7 @@
 
 (Racionais e Emocionais)
 
-**R**: Acesso imediato ao MIFGE, que ensina os fundamentos para ser relevante na nova era criativa  
+**R**: Acesso imediato ao youtube, que ensina os fundamentos para ser relevante na nova era criativa  
 **E**: Alívio imediato ao perceber que existe um caminho estruturado e possível.
 
 **R**: Criação de conta gratuita na Overlens, que desbloqueia conteúdos, trilhas e ferramentas práticas.  
@@ -59,7 +59,7 @@
 **E**: Segurança emocional para dar o primeiro passo sem grandes riscos.
 
 **R**: Introdução a um novo ecossistema (não é só um curso, é uma nova forma de aprender).  
-**E**: Inspiração profunda; sentir que está, finalmente, "do lado certo da história".
+**E**: Inspiração profunda — sentir que está, finalmente, "do lado certo da história".
 
 ### **Resultado dos Sonhos:** 
 
@@ -67,17 +67,13 @@
 
 ### **Garantias de Realização:** 
 
-1\. Você receberá o Códice Atrium em sua casa e terá acesso à plataforma Overlens gratuitamente, podendo aplicar o que aprendeu no seu próprio ritmo, sem pressão financeira.
+1\. Você poderá evoluir no seu próprio tempo, sem risco inicial, com a possibilidade de avançar para formações mais profundas caso sinta-se preparado.
 
-2\. O Códice Atrium foi criado para ser prático e realista, mostrando exatamente como desenvolver as habilidades mais críticas para relevância criativa no novo mercado.
+2\. Mesmo que esteja começando agora, estará protegido contra dar passos em falso.
 
-3\. Você poderá evoluir no seu próprio tempo, sem risco inicial, com a possibilidade de avançar para formações mais profundas caso sinta-se preparado.
+3\. Poderá explorar sem medo de errar ou perder dinheiro.
 
-4\. Mesmo que esteja começando agora, estará protegido contra dar passos em falso.
-
-5\. Poderá explorar sem medo de errar ou perder dinheiro.
-
-6\. Se aplicar o que aprender aqui, estará mais próximo do futuro que quer construir.
+4\. Se aplicar o que aprender aqui, estará mais próximo do futuro que quer construir.
 
 ### **Esforço e Sacrifício:** 
 
@@ -85,7 +81,7 @@
 
 1\. Separar alguns minutos para refletir sobre o conteúdo.
 
-2\. Ter disciplina para aplicar pequenos exercícios de criação e observação sugeridos.
+2\. Ter disciplina para aplicar exercícios de criação e observação sugeridos.
 
 3\. Lidar com a frustração inicial de perceber que o seu próprio repertório ou forma de pensar atual precisam ser expandidos.
 
@@ -104,11 +100,11 @@
 *"Em menos de duas horas, você já estará dentro de um novo caminho criativo, com ações práticas para começar a construir seu futuro."*
 
 *Criação de conta: 2 minutos ou menos.*  
-*Acesso e leitura inicial: Aproximadamente 40 minutos para completar a primeira imersão.*  
+*Acesso e leitura inicial: Aproximadamente 40 minutos para completar a primeira etapa.*  
 *Primeiros exercícios: Podem ser feitos em sessões de 15 a 30 minutos ao longo da semana.*  
 *Sensação de movimento imediato: Você sente que já deu um passo relevante no mesmo dia em que descobriu o caminho.*  
 *Ritmo leve e seguro: Não exige mudanças drásticas na rotina; pode ser encaixado naturalmente no tempo livre.*  
-*Satisfação rápida: Já na primeira leitura do MIFGE, é possível perceber novas ideias surgindo; ativando uma sensação real de evolução.*
+*Satisfação rápida: Já na primeira leitura ou aula assistida, é possível perceber novas ideias surgindo, ativando uma sensação real de evolução.*
 
 ## Micro-gatilhos visuais e verbais
 
@@ -116,20 +112,16 @@
 
 | Gatilho | Exemplos Concretos	 | Observações |
 | :---- | :---- | :---- |
-| Perda Oculta | "O mercado já mudou; e ninguém vai esperar você perceber." | Frase que cria uma leve ansiedade produtiva, sem catastrofismo. |
+| Perda Oculta | "O mercado já mudou e ninguém vai esperar você perceber." | Frase que cria uma leve ansiedade produtiva, sem catastrofismo. |
 | Iluminação | "O que ninguém te contou sobre a nova era criativa." | Promete revelar algo oculto (senso de descoberta). |
 | Contraste de Velocidade | "Diplomas levam anos. Dominar habilidades certas leva semanas." | Mostra vantagem temporal clara e possível. |
-| Identidade Emergente | "Se você sente que nasceu para algo maior, talvez este seja o seu primeiro passo." | Acesso à auto imagem aspiracional sem parecer arrogante. |
-| Pertencimento Visionário | "A maioria vai seguir cegamente. Poucos vão enxergar; e criar." | Estimula o desejo de ser parte do grupo desperto. |
-
-Contrastes de luz (luz/sombra, início/amanhecer)  
-Ícones de porta, chave, portal, primeiros passos  
-Tipografia levemente instável ou com textura (evocar movimento em direção à clareza)
+| Identidade Emergente | "Se você sente que pode fazer algo maior, talvez este seja o seu primeiro passo." | Acesso à auto imagem aspiracional sem parecer arrogante. |
+| Pertencimento Visionário | "A maioria vai seguir cegamente. Poucos vão enxergar e criar." | Estimula o desejo de ser parte do grupo desperto. |
 
 | Estratégia | Aplicação |
 | :---- | :---- |
-| Call to Action Suave | "Explore primeiro. Decida depois." |
-| Mensagem de empoderamento | "Você decide; avance no seu ritmo." |
+| Call to Action Suave | "Enxergue primeiro. Decida depois." |
+| Mensagem de empoderamento | "Você decide. Avance no seu ritmo." |
 | Narrativa de presente | "O conhecimento já é seu. Use quando quiser." |
 
 **Técnica Sutil**: Evitar linguagem de "compromisso", "assinatura", "obrigação" no primeiro contato.

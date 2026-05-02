@@ -1,7 +1,5 @@
 # Brunin \- O Jovem Inconsciente
 
-## Potencial bruto, direção difusa. O primeiro passo é enxergar que existe um mapa. Brunin tem 18 anos, consome conteúdo criativo sem parar e sente que o mundo está mudando rápido demais; mas entre tutoriais acumulados e freelas inconsistentes, ainda não encontrou a trilha que transforme curiosidade em ação com direção.
-
 <div style="display:flex;gap:24px;align-items:flex-start">
 <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px;width:200px">
 <img src="/brand/images/persona-brunin-growth.png" alt="Brunin" style="width:200px;border-radius:12px" />
@@ -9,7 +7,7 @@
 </div>
 <div style="flex:1;min-width:0">
 
-| | Nome | Bruno (Brunin) |
+| ![][image1] | Nome | Bruno (Brunin) |
 | :---- | :---- | :---- |
 |  | **Idade** | 18 anos |
 |  | **Oferta ideal** | Protocolo 3-2-1 e Overpass |
@@ -23,9 +21,9 @@
 </div>
 </div>
 
-| Personalidade | INFP Introvertido (I): consome muito conteúdo sozinho, mas se sente isolado. Intuitivo (N): percebe que “o mundo está mudando muito rápido” Sentimento (F): inseguro, teme ser descartado, busca validação externa. Percepção (P): acumula cursos gratuitos, playlists e tutoriais, mas não estrutura nada.“Talvez se eu seguir estudando faculdade e tutoriais, tudo se resolve” |
+| Personalidade | INFP Introvertido (I): consome muito conteúdo sozinho, mas se sente isolado. Intuitivo (N): percebe que “o mundo está mudando muito rápido” Sentimento (F): inseguro, teme ser descartado, busca validação externa. Percepção (P): acumula cursos gratuitos, playlists e tutoriais, mas não estrutura nada.“Talvez se eu seguir estudando faculdade e tutoriais, tudo se resolve” |
 | :---- | :---- |
-| **Frase típica** | ***“Cara, eu sei que preciso aprender coisas novas… mas não sei como começar.”*** Os amigos dizem que ele é criativo, mas vive “viajando” e adiando decisões. A família insiste que “faculdade e estágio são o caminho certo”, e ele sente que isso não basta. |
+| **Frase típica** | ***“Cara, eu sei que preciso aprender coisas novas… mas não sei como começar.”*** Os amigos dizem que ele é criativo, mas vive “viajando” e adiando decisões. A família insiste que “faculdade e estágio são o caminho certo”, e ele sente que isso não basta. |
 | **Estilo Musical** | Playlists de lo-fi, chill e indie no Spotify (“Lo-Fi Beats”, “Indie Brasil”). Curte artistas como Tame Impala, Arctic Monkeys, Billie Eilish. Vai em shows de bandas locais/universitárias quando consegue ingresso barato. |
 | **Mídias Sociais** | **TikTok**: rola vídeos de tendências criativas, dicas rápidas de apps/IA. **YouTube**: assiste tutoriais de Photoshop/After Effects, vlogs de criadores. **Instagram**: segue páginas de design, memes e referências visuais. Busca validação social inconscientemente (curtidas, comentários). |
 | **Games** | Gosta de Minecraft, Valorant e jogos mobile gratuitos. Joga em notebook básico, mas sonha em montar um setup gamer. Acompanha streamers de criatividade e jogos leves na Twitch. |
@@ -48,7 +46,7 @@ O maior sonho de Brunin é construir um portfólio que o faça se sentir orgulho
 
 Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sabe que precisa mudar, mas ainda está preso na esperança de que “um dia as coisas se resolvem”. Ele representa o início da jornada: alguém que sente o chamado do novo, mas ainda não deu o primeiro passo firme para atravessar o portal.
 
-## Tom de Voz do Brunin
+### Tom de Voz do Brunin
 
 * Informal e cotidiano, o “cara comum” de São Paulo.  
 * Mistura gírias paulistanas (“mano”, “véi”, “parça”) com gírias de internet.  
@@ -56,7 +54,7 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 * Sempre tentando parecer tranquilo, mas entrega ansiedade.  
 * Usa bastante humor e auto ironia para disfarçar a falta de confiança.
 
-## Vícios de Linguagem
+### Vícios de Linguagem
 
 * “Mano…” pra abrir frases ou chamar atenção.  
 * “Tipo…” como muleta pra pensar.  
@@ -66,7 +64,7 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 * “Agora me pegou” em mensagens de WhatsApp/Instagram.  
 * “Lá ele” quando algo tem conotação sexual.
 
-## Vocabulário típico
+### Vocabulário típico
 
 * Termos criativos: “estética”, “referência”, “paleta”, “mood”.  
 * Mistura com inglês: “layout clean”, “trend”, “vibe”, “cringe”.  
@@ -74,7 +72,7 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 * Palavras de procrastinação: “depois eu vejo”, “um dia eu faço”, “vou deixar salvo aqui”.  
 * Cultura digital: TikTok, Spotify, Pinterest, IAzinha.
 
-## Fala típica
+### Fala típica
 
 “Mano, eu fico vendo TikTok e a galera já trampando com IA e eu aqui tentando terminar um freela… Ai, sei lá, parece que tô sempre atrasado, tá ligado? Não sei se faz sentido, mas sinto que se eu não aprender logo, já era… ta ligado? kkk.”
 
@@ -82,7 +80,7 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 
 ---
 
-## O que Brunin vê:
+### O que Brunin vê:
 
 * Professores e familiares reforçando que faculdade \+ estágio são o “caminho seguro”.  
 * Colegas de curso mais engajados em ferramentas novas (IA, apps, softwares).  
@@ -90,7 +88,7 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 * Portfólios no Instagram/Behance que parecem inalcançáveis.  
 * O mercado de trabalho cada vez mais competitivo, mas distante da sua realidade.
 
-## O que Brunin ouve:
+### O que Brunin ouve:
 
 * “Termina a faculdade que tudo se resolve.”  
 * “Mano, precisa aprender a mexer na IA, senão vai ficar pra trás.”  
@@ -98,7 +96,7 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 * “Se você não se atualizar, vai ser engolido pelo mercado.”  
 * Ambiente geral: comentários sobre crise, desemprego e “mercado saturado”.
 
-## O que ele pensa e sente
+### O que ele pensa e sente
 
 * Mistura de curiosidade e ansiedade: sabe que algo está mudando, mas não entende o que.  
 * Medo de se tornar irrelevante antes mesmo de começar.  
@@ -107,7 +105,7 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 * Esperança de que exista um atalho confiável, mas não sabe qual.  
 * Solidão intelectual: acha que ninguém ao redor entende essa angústia.
 
-## O que ele fala
+### O que ele fala
 
 * “Preciso aprender umas coisas novas, mas não sei nem por onde começar.”  
 * “Será que a faculdade vai me dar emprego mesmo?”  
@@ -115,7 +113,7 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 * “Tenho medo de perder tempo em coisa inútil.”  
 * “Queria ter um portfólio massa, mas nunca termino nada.”
 
-## Como ele age
+### Como ele age
 
 * Consome tutoriais, PDFs e cursos gratuitos, mas raramente conclui.  
 * Compartilha memes e referências criativas nas redes, mas evita postar trabalhos próprios por insegurança.  
@@ -124,7 +122,7 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 * Passa horas rolando TikTok/YouTube para “se inspirar”, mas sem estruturar aprendizado.  
 * Evita falar abertamente que já testou IA, por medo de julgamento.
 
-## O que Brunin deseja
+### O que Brunin deseja
 
 * Reconstruir sua identidade criativa e sentir orgulho autoral.  
 * Ter um portfólio que não só mostre competência, mas cause admiração.  
@@ -132,7 +130,7 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 * Encontrar frameworks que o ajudem a criar sistemas próprios, não só repetir padrões.  
 * Sentir que está **blindado contra a substituição** por IA ou concorrência massiva.
 
-## O que irrita Brunin
+### O que irrita Brunin
 
 * Comparações com colegas: quando vê amigos da faculdade com portfólios “profissionais” ou gente da idade dele já conseguindo vagas.  
 * Críticas vagas: ouvir “tá fraco”, “não gostei” sem explicarem o porquê.  
@@ -143,7 +141,7 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 * Trabalhos não valorizados: cliente pedindo desconto, atrasando pagamento, tratando como “favor”.  
 * Excesso de informação: se perde com tanta dica, curso e tutorial diferente.
 
-## O que deixa Brunin muito feliz
+### O que deixa Brunin muito feliz
 
 * Reconhecimento do trabalho: receber um elogio sincero de um professor, colega ou até um like inesperado no Behance/Instagram.  
 * Primeiras conquistas visíveis: terminar um projeto que ele realmente gosta, sentir que evoluiu em relação ao que fazia antes.  
@@ -153,7 +151,7 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 * Sentir pertencimento: conversar com alguém que entende suas inseguranças e não julga.  
 * Independência financeira (mesmo pequena): pagar uma conta com dinheiro do freela e sentir “tô virando adulto”.
 
-## Análise
+### Análise
 
 ---
 

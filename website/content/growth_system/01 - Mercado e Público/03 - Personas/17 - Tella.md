@@ -1,7 +1,5 @@
 # Tella \- A Artista Operante
 
-## Talento que transborda, estrutura que falta. A arte precisa de sistema para sobreviver. Tella é a criadora que acumula cursos, começa projetos e sente culpa ao usar IA; presa no loop entre entusiasmo e paralisia, esperando um método que transforme potencial disperso em portfólio, consistência e orgulho autoral.
-
 <div style="display:flex;gap:24px;align-items:flex-start">
 <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px;width:200px">
 <img src="/brand/images/persona-tella-growth.png" alt="Tella" style="width:200px;border-radius:12px" />
@@ -9,7 +7,7 @@
 </div>
 <div style="flex:1;min-width:0">
 
-| | Nome | Stella (Tella, Telinha) |
+| ![][image2] | Nome | Stella (Tella, Telinha) |
 | :---- | :---- | :---- |
 |  | **Idade** | 23 anos |
 |  | **Estado civil** | Solteira |
@@ -23,9 +21,9 @@
 </div>
 </div>
 
-| Personalidade | ENFPExtrovertida (E): se conecta e busca grupos e cursos. Intuitiva (N): aberta a ideias novas, mas dispersa.Sentimento (F): lida com a culpa, vergonha e busca aceitação. Percepção (P): acumula cursos, adora começar, mas falta fechamento |
+| Personalidade | ENFPExtrovertida (E): se conecta e busca grupos e cursos. Intuitiva (N): aberta a ideias novas, mas dispersa.Sentimento (F): lida com a culpa, vergonha e busca aceitação. Percepção (P): acumula cursos, adora começar, mas falta fechamento |
 | :---- | :---- |
-| **Frase típica** | ***“Esse vai ser o projeto que vai mudar meu portfólio\!”*** Família e amigos riem porque ela repete isso em todo novo freela ou trabalho de faculdade, mas depois acaba não finalizando ou se frustrando com o resultado. |
+| **Frase típica** | ***“Esse vai ser o projeto que vai mudar meu portfólio\!”*** Família e amigos riem porque ela repete isso em todo novo freela ou trabalho de faculdade, mas depois acaba não finalizando ou se frustrando com o resultado. |
 | **Estilo Musical** | Ouve muito **Billie Eilish, Doja Cat, The Weeknd, Rosalía, Jão e Ludmilla**. Gosta de **indie pop/alternativo** (Tame Impala, Arctic Monkeys, Florence \+ The Machine). Costuma ouvir playlists do **Spotify** como **“Indie Brasil”, “Lo-fi Beats”** e **“Focus no Trabalho”** para estudar ou trabalhar. Vai em shows acessíveis, como **Lollapalooza (SP)** ou festivais universitários. |
 | **Mídias Sociais** | Passa horas no **Instagram e TikTok**; usa o **Behance e Pinterest** para referência visual. Adora vídeos curtos de dicas de **IA no TikTok**. Consome podcasts como **Mamilos**, **Braincast (B9)** e **Naruhodo**. |
 | **Games** | Curte jogar **The Sims 4, Animal Crossing, Minecraft e Valorant**. Joga no notebook intermediário, mas sonha em ter um PC gamer. Assiste streams na **Twitch**, principalmente artistas digitais e game designers independentes. |
@@ -38,7 +36,7 @@
 
 Tella é uma jovem de 23 anos, sonhadora e otimista, que adora imaginar e criar. Escolheu a faculdade de design por identificação com a área e deve se formar este ano, ou no máximo no próximo. Pensa em fazer uma pós, mas está ansiosa para entrar no mercado.
 
-Muito curiosa e com sede por aprendizado, maratona tutoriais, salva links e compra cursos baratos; mas costuma acumular conteúdos sem concluir. Foca em softwares e truques de execução, ainda sem uma narrativa clara sobre quem é, que problema resolve e por que seu trabalho importa. Procura algo guiado, com começo–meio–fim e resultado prático visível, para sentir segurança de que está evoluindo e não ficando para trás.
+Muito curiosa e com sede por aprendizado, maratona tutoriais, salva links e compra cursos baratos — mas costuma acumular conteúdos sem concluir. Foca em softwares e truques de execução, ainda sem uma narrativa clara sobre quem é, que problema resolve e por que seu trabalho importa. Procura algo guiado, com começo–meio–fim e resultado prático visível, para sentir segurança de que está evoluindo e não ficando para trás.
 
 Tella ainda está confusa sobre o uso de IAs na criação. Ao mesmo tempo que se sente entusiasmada, também se sente mal por não entender a tecnologia. Escuta de pessoas próximas que a IA “roubou o trabalho de muita gente” e fica dividida, como se tivesse que escolher entre evoluir e ser leal ao que aprendeu. Fascinada pela IA, mas culpada e envergonhada, evita admitir que já usa essas ferramentas em seus processos.
 
@@ -46,7 +44,7 @@ Atualmente, trabalha em projetos de design e arte para amigos e conhecidos. Cons
 
 Tella trabalha em um notebook intermediário e sonha com o dia em que terá equipamentos de ponta e um escritório só dela. O que ganha, gasta com passeios, roupas e algumas despesas da família. Guarda um pouco e investe em livros, cursos e melhorias no setup. Tem um cartão com limite baixo e, sempre que pode, prefere pagar pelo Pix.
 
-## Tom de Voz da Tella
+### Tom de Voz da Tella
 
 Informal, espontâneo e cheio de interjeições.  
 Mistura gírias de internet (TikTok/Instagram) com linguagem de estudante de design.  
@@ -55,7 +53,7 @@ Fala rápido quando está animada, mas com pausas e risadinhas quando fica inseg
 Tenta parecer segura, mas a escolha das palavras entrega dúvida e ansiedade.  
 Tella NUNCA fala dela mesma na terceira pessoa, ela acha isso muito estranho.
 
-## Vícios de Linguagem
+### Vícios de Linguagem
 
 “Tipo…” a cada frase, como muleta para organizar pensamento.  
 “Ai, sério…” quando está surpresa ou cansada.  
@@ -64,14 +62,14 @@ Tella NUNCA fala dela mesma na terceira pessoa, ela acha isso muito estranho.
 “Tô muito nessa vibe…” quando fala de referências ou estilo.  
 “Socorro\!” ou “MDSSS” em mensagens/textos, como exagero cômico.
 
-## Vocabulário típico
+### Vocabulário típico
 
 Palavras de design/arte: “estética”, “referência”, “paleta”, “moodboard”, “conceito”.  
 Termos da internet: “cringe”, “vibe”, “trend”, “inspiração do Pinterest”.  
 Mistura inglês com português em jargões criativos: “layout clean”, “meio artsy”, “work in progress”.  
 Se refere às IAs como “as AIs” ou “IAzinha”, com ironia e desconfiança.
 
-## Fala típica
+### Fala típica
 
 “Sério, eu preciso atualizar meu portfólio logo…, tenho várias ideias, várias vibes diferentes, mas não consigo fechar nada que eu olhe e fale: é isso\! Ai, socorro… e agora com essa IAzinha, parece que tudo ficou mais rápido e eu fico meio perdida, sabe? Não sei se faz sentido, mas parece que tô sempre correndo e nunca chego.”
 
@@ -79,21 +77,21 @@ Se refere às IAs como “as AIs” ou “IAzinha”, com ironia e desconfiança
 
 ---
 
-## O que Tella vê:
+### O que Tella vê:
 
 * Um mercado competitivo, cheio de jovens criativos disputando vagas.  
 * Amigos e colegas comentando sobre as IAs, alguns fascinados e outros assustados.  
 * Muitos cursos online baratos, mas com promessas genéricas.  
 * Portfólios inspiradores no Behance e Instagram, que parecem distantes da sua realidade.
 
-## O que Tella ouve:
+### O que Tella ouve:
 
 * “IA vai roubar seu emprego” (amigos e familiares desconfiados).  
 * “Precisa dominar as ferramentas certas para ser alguém no mercado” (professores, grupos).  
 * “O importante é ter um portfólio forte” (colegas de curso, recrutadores).  
 * “Tem que se atualizar sempre, senão fica para trás” (redes sociais, creators).
 
-## O que ela pensa e sente
+### O que ela pensa e sente
 
 * Mistura de entusiasmo e medo em relação à IA.  
 * Insegurança sobre suas próprias habilidades e sobre ser “boa o suficiente”.  
@@ -101,7 +99,7 @@ Se refere às IAs como “as AIs” ou “IAzinha”, com ironia e desconfiança
 * Sonha em trabalhar em um lugar que valorize sua criatividade e a ajude a crescer.  
 * Crença limitante: usar IA pode ser “trapacear” ou “desrespeitar a profissão”.
 
-## O que ela fala
+### O que ela fala
 
 * “Preciso atualizar meu portfólio logo.”  
 * “Tenho medo de ficar para trás com IA.”  
@@ -111,14 +109,14 @@ Se refere às IAs como “as AIs” ou “IAzinha”, com ironia e desconfiança
 * “Tenho vergonha de falar para amigos que uso IA.”  
 * “Não tenho muito dinheiro, meu limite é baixo.”
 
-## Como ela age
+### Como ela age
 
 * Compra vários cursos, mas raramente finaliza.  
 * Publica pouco seu trabalho por insegurança.  
 * Experimenta ferramentas de IA em segredo.  
 * Aceita freelas pequenos, mas não divulga muito para não ser julgada.
 
-## O que Tella deseja
+### O que Tella deseja
 
 * Ter um portfólio que chame atenção de recrutadores e clientes.  
 * Sentir confiança ao usar IA sem culpa.  
@@ -126,7 +124,7 @@ Se refere às IAs como “as AIs” ou “IAzinha”, com ironia e desconfiança
 * Estruturar sua rotina de aprendizado em algo guiado e prático.  
 * Conquistar autonomia financeira para investir em equipamentos e experiências próprias.
 
-##  O que irrita Tella
+###  O que irrita Tella
 
 **Críticas vazias:** Fica frustrada quando alguém diz só “não gostei” ou “tá estranho” sem dar um feedback construtivo. Se irrita porque sente que não sabe “pra onde ir” com a crítica.
 
@@ -142,7 +140,7 @@ Se refere às IAs como “as AIs” ou “IAzinha”, com ironia e desconfiança
 
 **Tecnologia travando:** Notebook lento, Photoshop fechando sozinho ou render travado. Gatilho instantâneo de irritação (e piadinhas como “meu note me odeia”).
 
-##  O que deixa Tella muito feliz
+###  O que deixa Tella muito feliz
 
 **Reconhecimento do trabalho:** Quando alguém comenta “amei esse design” ou compartilha seu post. Likes no Behance/Instagram a fazem sorrir por dias.
 
@@ -163,7 +161,7 @@ A música a transporta para um lugar de sonho e liberdade.
 
 **Conquistar independência:** Pagar algo com o próprio dinheiro (mesmo que seja um café especial) traz sensação de “sou adulta”.
 
-## Análise
+### Análise
 
 ---
 
