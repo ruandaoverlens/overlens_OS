@@ -8,20 +8,22 @@
 
 ---
 
-**Resumo Essencial:** O Inconsciente é aquele que intui que algo mudou, mas ainda precisa de um portal de iniciação, uma porta realista e segura que lhe mostre que o futuro pode ser conquistado agora, sem precisar destruir sua vida atual.  
-**Arquétipo:** Inocente que desperta para a Jornada  
-**Momento de vida**: Estudantes, criativos iniciantes, early-career workers em áreas saturadas. Sentem-se deslocados mas ainda não sabem explicar. Contato raso com tecnologia emergente aplicada à criação.  
-**JTBD Funcional**: Encontrar um caminho claro e possível para se tornar relevante no futuro.  
-**JTBD Emocional**: Sentir-se parte do mundo que está por vir, sem medo de ser descartado.  
-**Motivação Primária**: Desejo de autonomia, relevância social, reconhecimento futuro. Busca de um senso de significado que o velho sistema não oferece mais.  
-**Medo/Frustração**: Medo de se tornar irrelevante. Medo de investir tempo/recursos no lugar errado. Solidão intelectual e sensação de invisibilidade.  
-**Paradigmas Mentais**: “Se eu fizer uma faculdade tradicional, estarei seguro”,“Ainda dá tempo de ser só bom em algo técnico.”, “Essas mudanças ainda vão demorar a chegar de verdade.”  
-**Gatilhos de Ação**: Sentir-se ultrapassado. Ver colegas dominando IA/novas tecnologias. Notar que cursos tradicionais já não garantem destaque.  
-**Objeções típicas**: "Isso parece bom demais para ser verdade.", "Não sei se vou ter disciplina suficiente.", "Não conheço ninguém que fez isso."  
-**De/Para**: De: Inseguro, perdido, ansioso Para: Consciente, participante ativo da nova era criativa.  
-**Lente de sucesso**: Sentir-se mais confiante, ter clareza sobre quais habilidades desenvolver, perceber progresso visível em poucos dias ou semanas.  
-**Comportamento de consumo**: Plataformas: YouTube (tutoriais e inspirações), TikTok (novidades criativas), Instagram (portfólios e tendências). Buscam validação social inconsciente.  
-**Barreira Sistêmica**: Educação defasada. Saturação de informação irrelevante. Falta de networking para ver exemplos vivos de transformação
+| Campo | Descrição |
+| :---- | :---- |
+| **Resumo Essencial** | O Inconsciente é aquele que intui que algo mudou, mas ainda precisa de um portal de iniciação, uma porta realista e segura que lhe mostre que o futuro pode ser conquistado agora, sem precisar destruir sua vida atual. |
+| **Arquétipo** | Inocente que desperta para a Jornada |
+| **Momento de vida** | Estudantes, criativos iniciantes, early-career workers em áreas saturadas. Sentem-se deslocados mas ainda não sabem explicar. Contato raso com tecnologia emergente aplicada à criação. |
+| **JTBD Funcional** | Encontrar um caminho claro e possível para se tornar relevante no futuro. |
+| **JTBD Emocional** | Sentir-se parte do mundo que está por vir, sem medo de ser descartado. |
+| **Motivação Primária** | Desejo de autonomia, relevância social, reconhecimento futuro. Busca de um senso de significado que o velho sistema não oferece mais. |
+| **Medo/Frustração** | Medo de se tornar irrelevante. Medo de investir tempo/recursos no lugar errado. Solidão intelectual e sensação de invisibilidade. |
+| **Paradigmas Mentais** | “Se eu fizer uma faculdade tradicional, estarei seguro”,“Ainda dá tempo de ser só bom em algo técnico.”, “Essas mudanças ainda vão demorar a chegar de verdade.” |
+| **Gatilhos de Ação** | Sentir-se ultrapassado. Ver colegas dominando IA/novas tecnologias. Notar que cursos tradicionais já não garantem destaque. |
+| **Objeções típicas** | "Isso parece bom demais para ser verdade.", "Não sei se vou ter disciplina suficiente.", "Não conheço ninguém que fez isso." |
+| **De/Para** | De: Inseguro, perdido, ansioso Para: Consciente, participante ativo da nova era criativa. |
+| **Lente de sucesso** | Sentir-se mais confiante, ter clareza sobre quais habilidades desenvolver, perceber progresso visível em poucos dias ou semanas. |
+| **Comportamento de consumo** | Plataformas: YouTube (tutoriais e inspirações), TikTok (novidades criativas), Instagram (portfólios e tendências). Buscam validação social inconsciente. |
+| **Barreira Sistêmica** | Educação defasada. Saturação de informação irrelevante. Falta de networking para ver exemplos vivos de transformação |
 
 ### **Lista de Problemas:** 
 

@@ -16,20 +16,22 @@
 
 ---
 
-**Resumo Essencial**: O Operante é aquele que já percebeu que o mundo mudou, mas ainda tenta avançar carregando paradigmas antigos. Preso na ilusão de que dominar mais ferramentas técnicas o salvará, ele precisa romper com a lógica do passado e aprender a construir valor real em um novo mercado. Sua maior batalha não é técnica, é cognitiva.  
-**Arquétipo**: Executor que desperta para o Pensador Estratégico.  
-**Momento de vida**: Criadores em fase inicial de carreira ou estagnados. Já sentem as limitações do modelo técnico, mas ainda não sabem como transcender. Estão no limiar entre o domínio técnico e a necessidade de pensamento sistêmico.  
-**JTBD Funcional**:Quebrar o ciclo de execução técnica vazia para construir projetos de alta percepção de valor e relevância real no mercado.  
-**JTBD Emocional**: Reconquistar a confiança em seu próprio futuro criativo, sentindo que finalmente está construindo algo que importa e o diferencia.  
-**Motivação Primária**: Desejo de protagonismo, liberdade e reconhecimento autêntico. Vontade de provar (a si mesmo e ao mundo) que seu trabalho tem valor real, não apenas técnico, mas simbólico e estratégico.  
-**Medo/Frustração**: Medo de ser irrelevante apesar do esforço. Medo de ser substituído por IA ou automações. Medo de estagnar profissionalmente e perder o controle do próprio destino criativo.  
-**Paradigmas Mentais**: “Se eu dominar mais ferramentas, estarei seguro.”, “Só preciso ser mais produtivo para me destacar.”, “Projetos incríveis são feitos apenas por quem tem acesso a grandes clientes ou recursos.”  
-**Gatilhos de Ação**: Perder uma vaga ou cliente para alguém menos técnico, mas mais estratégico. Receber feedback morno sobre o seu trabalho. Ver automações realizando seu trabalho. Sentir estagnação e invisibilidade crescente no mercado.  
-**Objeções típicas**: "Será que não estou desperdiçando tempo em mais um curso?", "E se eu não conseguir acompanhar?", "Eu já tentei evoluir antes e não funcionou."  
-**De/Para**: De: Executor técnico inseguro, perdido em acumulação de habilidades isoladas. Para: Criador estratégico confiante, capaz de construir provas reais de valor e evoluir com propósito.  
-**Lente de sucesso**: Conseguir ver progresso concreto (projetos fortes publicados), receber feedback positivo sincero, sentir controle crescente sobre sua trajetória criativa e profissional.  
-**Comportamento de consumo**: Plataformas: YouTube (how-to e tutoriais técnicos), Instagram (portfólios e benchmarks), LinkedIn (tendências de mercado e oportunidades). Buscam informações que prometem evolução rápida, mas ainda priorizam meios técnicos.  
-**Barreira Sistêmica**: Mercado saturado de técnicos, excesso de cursos superficiais, falta de orientação estratégica real. Educação focada em execução, não em pensamento sistêmico ou visão de futuro.
+| Campo | Descrição |
+| :---- | :---- |
+| **Resumo Essencial** | O Operante é aquele que já percebeu que o mundo mudou, mas ainda tenta avançar carregando paradigmas antigos. Preso na ilusão de que dominar mais ferramentas técnicas o salvará, ele precisa romper com a lógica do passado e aprender a construir valor real em um novo mercado. Sua maior batalha não é técnica, é cognitiva. |
+| **Arquétipo** | Executor que desperta para o Pensador Estratégico. |
+| **Momento de vida** | Criadores em fase inicial de carreira ou estagnados. Já sentem as limitações do modelo técnico, mas ainda não sabem como transcender. Estão no limiar entre o domínio técnico e a necessidade de pensamento sistêmico. |
+| **JTBD Funcional** | Quebrar o ciclo de execução técnica vazia para construir projetos de alta percepção de valor e relevância real no mercado. |
+| **JTBD Emocional** | Reconquistar a confiança em seu próprio futuro criativo, sentindo que finalmente está construindo algo que importa e o diferencia. |
+| **Motivação Primária** | Desejo de protagonismo, liberdade e reconhecimento autêntico. Vontade de provar (a si mesmo e ao mundo) que seu trabalho tem valor real, não apenas técnico, mas simbólico e estratégico. |
+| **Medo/Frustração** | Medo de ser irrelevante apesar do esforço. Medo de ser substituído por IA ou automações. Medo de estagnar profissionalmente e perder o controle do próprio destino criativo. |
+| **Paradigmas Mentais** | “Se eu dominar mais ferramentas, estarei seguro.”, “Só preciso ser mais produtivo para me destacar.”, “Projetos incríveis são feitos apenas por quem tem acesso a grandes clientes ou recursos.” |
+| **Gatilhos de Ação** | Perder uma vaga ou cliente para alguém menos técnico, mas mais estratégico. Receber feedback morno sobre o seu trabalho. Ver automações realizando seu trabalho. Sentir estagnação e invisibilidade crescente no mercado. |
+| **Objeções típicas** | "Será que não estou desperdiçando tempo em mais um curso?", "E se eu não conseguir acompanhar?", "Eu já tentei evoluir antes e não funcionou." |
+| **De/Para** | De: Executor técnico inseguro, perdido em acumulação de habilidades isoladas. Para: Criador estratégico confiante, capaz de construir provas reais de valor e evoluir com propósito. |
+| **Lente de sucesso** | Conseguir ver progresso concreto (projetos fortes publicados), receber feedback positivo sincero, sentir controle crescente sobre sua trajetória criativa e profissional. |
+| **Comportamento de consumo** | Plataformas: YouTube (how-to e tutoriais técnicos), Instagram (portfólios e benchmarks), LinkedIn (tendências de mercado e oportunidades). Buscam informações que prometem evolução rápida, mas ainda priorizam meios técnicos. |
+| **Barreira Sistêmica** | Mercado saturado de técnicos, excesso de cursos superficiais, falta de orientação estratégica real. Educação focada em execução, não em pensamento sistêmico ou visão de futuro. |
 
 ### **Subtipos de Operantes**
 

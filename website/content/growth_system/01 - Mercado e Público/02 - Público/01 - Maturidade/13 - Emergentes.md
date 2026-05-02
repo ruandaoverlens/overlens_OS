@@ -16,25 +16,23 @@
 
 ---
 
-**Resumo Essencial**: O Emergente é aquele que já transcendeu a fase da execução e da diferenciação técnica, ele enxerga padrões, reconhece as dinâmicas complexas do novo mundo, e sente o chamado para criar sistemas vivos e sustentáveis. No entanto, sua capacidade de construir realidades ainda é fragmentada: entende o que precisa ser feito, mas luta para integrar múltiplas camadas de conhecimento em arquiteturas robustas. Sua jornada não é mais sobre aprender frameworks, é sobre sintetizar o invisível e navegar a incerteza com maestria.  
-**Arquétipo**: Arquiteto de Sistemas Emergentes, nascido do Visionário Desestruturado.  
-**Momento de vida**: Líderes criativos, fundadores de projetos inovadores, estrategistas de produto ou negócio, freelancers sênior que já atuam em múltiplas frentes mas sentem a falta de uma espinha dorsal sistêmica para seus movimentos. Já ultrapassaram o nível de "ferramentas e métodos", mas precisam de síntese, clareza e validação para construir futuros consistentes.  
-**JTBD Funcional**: Consolidar sua capacidade de criação emergente, estruturando modelos, negócios e projetos que resistam ao tempo e à volatilidade do mercado.  
-**JTBD Emocional**: Validar internamente que sua visão sistêmica não é utopia, é arquitetura de futuro real. Sentir orgulho de construir não apenas produtos, mas ecossistemas vivos.  
-**Motivação Primária**: Desejo profundo de ver suas ideias se concretizando como sistemas coerentes, resilientes e impactantes, não como flashes isolados de inovação. Vontade de se tornar uma referência na criação de futuros aplicados, respeitado não apenas por criar algo novo, mas por estruturar o que outros não conseguem.  
-**Medo/Frustração**: Medo de ver sua capacidade de inovação ser desperdiçada por falta de estrutura e direção. Frustração ao perceber que, mesmo enxergando o futuro, ainda tropeça ao tentar consolidá-lo em iniciativas sustentáveis. Angústia de se perder em meio ao excesso de possibilidades sem conseguir ancorar nada duradouro.  
-**Paradigmas Mentais**: “Enxergar padrões já é suficiente para construir algo sólido.”  
-“Quanto mais redes e possibilidades eu criar, mais forte será minha inovação.”  
-“A incerteza é inevitável, mas talvez eu devesse esperar por condições melhores para agir.”  
-**Gatilhos de Ação**: Perceber que uma ideia brilhante não se sustentou por falta de estrutura.  
-Ver peers avançando com frameworks claros enquanto ainda está lidando com fragmentação.  
-Sentir que o tempo de inovação espontânea acabou e que agora a excelência exige estratégia deliberada.  
-**Objeções típicas**: "Será que estruturar minhas ideias não vai engessar minha capacidade criativa?" "E se eu ainda não estiver pronto para transformar visão em sistema?" "Será que vale a pena investir tanto agora, se o futuro ainda é tão incerto?"  
-**De/Para**: De: Criador de padrões intuitivos, disperso em múltiplas frentes, lidando com inovação fragmentada. Para: Arquiteto de sistemas emergentes, capaz de consolidar redes de valor, construir futuros vivos e sustentar movimentos no tempo.  
-**Lente de sucesso**: Conseguir não apenas inovar, mas construir estruturas que sobrevivam às mudanças — sentir que está criando realidades sistêmicas e deixando marcas que evoluem no tempo.  
-**Comportamento de consumo**: Plataformas: LinkedIn (networking estratégico e tendências emergentes), Medium (ensaios sobre inovação e complexidade), podcasts sobre negócios futuros, newsletters de futurologia aplicada.  
-**Padrões de busca**: Conteúdos que falam sobre construção de sistemas, antifragilidade, inovação sustentável, frameworks de negócios emergentes. Evitam "modismos" superficiais e buscam "ferramentas para o invisível".  
-**Barreira Sistêmica**: Ambiente repleto de "inovações vazias" que iludem com brilho superficial, mas não entregam bases estruturais. Pressão acelerada para se posicionar na vanguarda sem comprometer a profundidade, exigência de agir rápido em terrenos ainda em formação. Dificuldade de encontrar comunidades maduras o suficiente para acolher inovação genuína sem pasteurizar ou diluir a originalidade.
+| Campo | Descrição |
+| :---- | :---- |
+| **Resumo Essencial** | O Emergente é aquele que já transcendeu a fase da execução e da diferenciação técnica, ele enxerga padrões, reconhece as dinâmicas complexas do novo mundo, e sente o chamado para criar sistemas vivos e sustentáveis. No entanto, sua capacidade de construir realidades ainda é fragmentada: entende o que precisa ser feito, mas luta para integrar múltiplas camadas de conhecimento em arquiteturas robustas. Sua jornada não é mais sobre aprender frameworks, é sobre sintetizar o invisível e navegar a incerteza com maestria. |
+| **Arquétipo** | Arquiteto de Sistemas Emergentes, nascido do Visionário Desestruturado. |
+| **Momento de vida** | Líderes criativos, fundadores de projetos inovadores, estrategistas de produto ou negócio, freelancers sênior que já atuam em múltiplas frentes mas sentem a falta de uma espinha dorsal sistêmica para seus movimentos. Já ultrapassaram o nível de "ferramentas e métodos", mas precisam de síntese, clareza e validação para construir futuros consistentes. |
+| **JTBD Funcional** | Consolidar sua capacidade de criação emergente, estruturando modelos, negócios e projetos que resistam ao tempo e à volatilidade do mercado. |
+| **JTBD Emocional** | Validar internamente que sua visão sistêmica não é utopia, é arquitetura de futuro real. Sentir orgulho de construir não apenas produtos, mas ecossistemas vivos. |
+| **Motivação Primária** | Desejo profundo de ver suas ideias se concretizando como sistemas coerentes, resilientes e impactantes, não como flashes isolados de inovação. Vontade de se tornar uma referência na criação de futuros aplicados, respeitado não apenas por criar algo novo, mas por estruturar o que outros não conseguem. |
+| **Medo/Frustração** | Medo de ver sua capacidade de inovação ser desperdiçada por falta de estrutura e direção. Frustração ao perceber que, mesmo enxergando o futuro, ainda tropeça ao tentar consolidá-lo em iniciativas sustentáveis. Angústia de se perder em meio ao excesso de possibilidades sem conseguir ancorar nada duradouro. |
+| **Paradigmas Mentais** | “Enxergar padrões já é suficiente para construir algo sólido.” “Quanto mais redes e possibilidades eu criar, mais forte será minha inovação.” “A incerteza é inevitável, mas talvez eu devesse esperar por condições melhores para agir.” |
+| **Gatilhos de Ação** | Perceber que uma ideia brilhante não se sustentou por falta de estrutura. Ver peers avançando com frameworks claros enquanto ainda está lidando com fragmentação. Sentir que o tempo de inovação espontânea acabou e que agora a excelência exige estratégia deliberada. |
+| **Objeções típicas** | "Será que estruturar minhas ideias não vai engessar minha capacidade criativa?" "E se eu ainda não estiver pronto para transformar visão em sistema?" "Será que vale a pena investir tanto agora, se o futuro ainda é tão incerto?" |
+| **De/Para** | De: Criador de padrões intuitivos, disperso em múltiplas frentes, lidando com inovação fragmentada. Para: Arquiteto de sistemas emergentes, capaz de consolidar redes de valor, construir futuros vivos e sustentar movimentos no tempo. |
+| **Lente de sucesso** | Conseguir não apenas inovar, mas construir estruturas que sobrevivam às mudanças — sentir que está criando realidades sistêmicas e deixando marcas que evoluem no tempo. |
+| **Comportamento de consumo** | Plataformas: LinkedIn (networking estratégico e tendências emergentes), Medium (ensaios sobre inovação e complexidade), podcasts sobre negócios futuros, newsletters de futurologia aplicada. |
+| **Padrões de busca** | Conteúdos que falam sobre construção de sistemas, antifragilidade, inovação sustentável, frameworks de negócios emergentes. Evitam "modismos" superficiais e buscam "ferramentas para o invisível". |
+| **Barreira Sistêmica** | Ambiente repleto de "inovações vazias" que iludem com brilho superficial, mas não entregam bases estruturais. Pressão acelerada para se posicionar na vanguarda sem comprometer a profundidade, exigência de agir rápido em terrenos ainda em formação. Dificuldade de encontrar comunidades maduras o suficiente para acolher inovação genuína sem pasteurizar ou diluir a originalidade. |
 
 **Solução-gancho**: Atlas Overpass Vanguarda   
 **Métricas de sucesso**:  

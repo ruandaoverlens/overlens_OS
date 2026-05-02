@@ -16,23 +16,22 @@
 
 ---
 
-**Resumo Essencial**: O Convergente é aquele que já rompeu parte das amarras do paradigma técnico, mas ainda carrega correntes invisíveis que o impedem de atingir sua verdadeira diferenciação. Avançou além da simples execução, porém se apoia excessivamente em metodologias como muletas. Falta-lhe a visão sistêmica capaz de transformar conhecimento fragmentado em criação singular. Sua batalha não é mais sobre aprender, é sobre desaprender e reconstruir.  
-**Arquétipo**: Alquimista Conceitual emergindo do Executor Metódico.  
-**Momento de vida**: Profissionais de criação com portfólio sólido, freelancers sênior, designers independentes em busca de especialização estratégica. Já sentem a inadequação dos métodos tradicionais frente à nova dinâmica do mercado, mas ainda não sabem como romper completamente.  
-**JTBD Funcional**: Reconstruir sua identidade criativa de forma estratégica, desenvolvendo especializações únicas que aumentam seu valor e sua proteção contra a substituição.  
-**JTBD Emocional**: Recuperar a sensação de singularidade e orgulho criativo, sentindo-se novamente insubstituível e reconhecido no mercado.  
-**Motivação Primária**: Desejo profundo de ser visto como indispensável — alguém cujo trabalho é percebido como raro, relevante e impossível de ser replicado facilmente. Vontade de transcender o ciclo da adaptação superficial para ocupar um lugar estratégico e autoral.  
-**Medo/Frustração**: Medo de ser percebido como apenas "mais um" no mercado saturado. Frustração ao perceber que, mesmo com experiência e técnica, ainda não conseguiu romper a barreira da diferenciação verdadeira. Ansiedade crescente frente à aceleração da IA e das novas exigências criativas.  
-**Paradigmas Mentais**:  
-“Se eu dominar mais metodologias, conseguirei me destacar.”  
-“Preciso seguir modelos que já funcionaram para os outros.”  
-“É perigoso tentar criar algo totalmente próprio, melhor ficar nos padrões conhecidos.”  
-**Gatilhos de Ação**: Perder oportunidades importantes para profissionais mais jovens ou ousados. Receber feedback de que seus projetos são competentes, mas pouco memoráveis. Sentir estagnação criativa apesar do domínio técnico e metodológico. Perceber que o mercado valoriza autenticidade mais do que perfeição técnica.  
-**Objeções típicas**: "Será que isso realmente vai me diferenciar ou é só mais um curso?" "Será que estou pronto para abandonar o que já conheço?" "E se eu não conseguir criar algo que seja realmente único?"  
-**De/Para**: De: Criador experiente, mas preso em estruturas herdadas, buscando segurança na replicação de métodos. Para: Arquiteto criativo singular, capaz de integrar visão sistêmica, inovação e identidade própria em seus projetos.  
-**Lente de sucesso**: Construir projetos que geram não apenas aceitação, mas admiração. Sentir, através de resultados reais, que ocupa um espaço autoral e estratégico no mercado.  
-**Comportamento de consumo**: Plataformas: LinkedIn (tendências de inovação, cases estratégicos), YouTube (frameworks avançados, design estratégico), newsletters de tecnologia e comportamento de mercado. Buscam conteúdos que prometem evolução estrutural, mas ainda caem em armadilhas de soluções metodológicas simplistas.  
-**Barreira Sistêmica**: Mercado saturado de especialistas "de prateleira", excesso de fórmulas prontas que não ensinam pensamento adaptativo. Pressão silenciosa para se manter relevante num ambiente em que o diferencial real exige coragem intelectual e inovação consistente.
+| Campo | Descrição |
+| :---- | :---- |
+| **Resumo Essencial** | O Convergente é aquele que já rompeu parte das amarras do paradigma técnico, mas ainda carrega correntes invisíveis que o impedem de atingir sua verdadeira diferenciação. Avançou além da simples execução, porém se apoia excessivamente em metodologias como muletas. Falta-lhe a visão sistêmica capaz de transformar conhecimento fragmentado em criação singular. Sua batalha não é mais sobre aprender, é sobre desaprender e reconstruir. |
+| **Arquétipo** | Alquimista Conceitual emergindo do Executor Metódico. |
+| **Momento de vida** | Profissionais de criação com portfólio sólido, freelancers sênior, designers independentes em busca de especialização estratégica. Já sentem a inadequação dos métodos tradicionais frente à nova dinâmica do mercado, mas ainda não sabem como romper completamente. |
+| **JTBD Funcional** | Reconstruir sua identidade criativa de forma estratégica, desenvolvendo especializações únicas que aumentam seu valor e sua proteção contra a substituição. |
+| **JTBD Emocional** | Recuperar a sensação de singularidade e orgulho criativo, sentindo-se novamente insubstituível e reconhecido no mercado. |
+| **Motivação Primária** | Desejo profundo de ser visto como indispensável — alguém cujo trabalho é percebido como raro, relevante e impossível de ser replicado facilmente. Vontade de transcender o ciclo da adaptação superficial para ocupar um lugar estratégico e autoral. |
+| **Medo/Frustração** | Medo de ser percebido como apenas "mais um" no mercado saturado. Frustração ao perceber que, mesmo com experiência e técnica, ainda não conseguiu romper a barreira da diferenciação verdadeira. Ansiedade crescente frente à aceleração da IA e das novas exigências criativas. |
+| **Paradigmas Mentais** | “Se eu dominar mais metodologias, conseguirei me destacar.” “Preciso seguir modelos que já funcionaram para os outros.” “É perigoso tentar criar algo totalmente próprio, melhor ficar nos padrões conhecidos.” |
+| **Gatilhos de Ação** | Perder oportunidades importantes para profissionais mais jovens ou ousados. Receber feedback de que seus projetos são competentes, mas pouco memoráveis. Sentir estagnação criativa apesar do domínio técnico e metodológico. Perceber que o mercado valoriza autenticidade mais do que perfeição técnica. |
+| **Objeções típicas** | "Será que isso realmente vai me diferenciar ou é só mais um curso?" "Será que estou pronto para abandonar o que já conheço?" "E se eu não conseguir criar algo que seja realmente único?" |
+| **De/Para** | De: Criador experiente, mas preso em estruturas herdadas, buscando segurança na replicação de métodos. Para: Arquiteto criativo singular, capaz de integrar visão sistêmica, inovação e identidade própria em seus projetos. |
+| **Lente de sucesso** | Construir projetos que geram não apenas aceitação, mas admiração. Sentir, através de resultados reais, que ocupa um espaço autoral e estratégico no mercado. |
+| **Comportamento de consumo** | Plataformas: LinkedIn (tendências de inovação, cases estratégicos), YouTube (frameworks avançados, design estratégico), newsletters de tecnologia e comportamento de mercado. Buscam conteúdos que prometem evolução estrutural, mas ainda caem em armadilhas de soluções metodológicas simplistas. |
+| **Barreira Sistêmica** | Mercado saturado de especialistas "de prateleira", excesso de fórmulas prontas que não ensinam pensamento adaptativo. Pressão silenciosa para se manter relevante num ambiente em que o diferencial real exige coragem intelectual e inovação consistente. |
 
 **Solução-gancho**: Overpass ou Atlas  
 **Métricas de sucesso**:  
