@@ -30,6 +30,10 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# CLI operation artifacts (vercel env, supabase, etc — may leak secrets)
+*.log
+*.err
+
 # env files (can opt-in for committing if needed)
 .env*
 
