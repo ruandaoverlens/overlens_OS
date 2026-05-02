@@ -6,7 +6,6 @@ import { Topbar, TopbarBreadcrumb, TopbarActions } from "@/components/ui/topbar"
 import { DocTopbarLabel } from "@/components/doc-breadcrumb";
 import { MagnySidebar } from "@/components/magny/magny-sidebar";
 import { AppSwitcher } from "@/components/app-switcher";
-import { TopbarProfile } from "@/components/topbar-profile";
 
 export default function MagnyLayout({
   children,
@@ -22,7 +21,6 @@ export default function MagnyLayout({
             <DocTopbarLabel label="Magny" basePath="/magny" />
           </TopbarBreadcrumb>
           <TopbarActions>
-            <TopbarProfile />
             <AppSwitcher />
           </TopbarActions>
         </Topbar>

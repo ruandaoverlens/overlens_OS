@@ -13,7 +13,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarFooter,
-  SidebarSeparator,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import {
@@ -23,6 +22,7 @@ import {
   Rss,
   ClipboardCheck,
 } from "lucide-react";
+import { SidebarProfile } from "@/components/sidebar-profile";
 
 // ─── Navigation items ──────────────────────────────────────
 
@@ -81,10 +81,7 @@ export function MagnySidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <SidebarSeparator />
-        <p className="px-2 py-1 font-mono text-[10px] text-muted-foreground/50">
-          Overlens Magny v1.0
-        </p>
+        <SidebarProfile />
       </SidebarFooter>
     </Sidebar>
   );

@@ -7,7 +7,6 @@ import { SystemSidebar, type NavSection } from "@/components/doc-sidebar";
 import { DocTopbarLabel } from "@/components/doc-breadcrumb";
 import { getPlaybookConteudoSections, type DocSection } from "@/lib/docs";
 import { AppSwitcher } from "@/components/app-switcher";
-import { TopbarProfile } from "@/components/topbar-profile";
 
 function toNav(sections: DocSection[]): NavSection[] {
   return sections.map((s) => ({
@@ -46,7 +45,6 @@ export default function PlaybookConteudoLayout({
             <DocTopbarLabel label="Playbook de Conteúdo" basePath="/playbook-conteudo" />
           </TopbarBreadcrumb>
           <TopbarActions>
-            <TopbarProfile />
             <AppSwitcher />
           </TopbarActions>
         </Topbar>

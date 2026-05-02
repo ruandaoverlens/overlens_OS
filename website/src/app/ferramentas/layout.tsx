@@ -5,7 +5,6 @@ import {
 import { Topbar, TopbarBreadcrumb, TopbarActions } from "@/components/ui/topbar";
 import { DocTopbarLabel } from "@/components/doc-breadcrumb";
 import { AppSwitcher } from "@/components/app-switcher";
-import { TopbarProfile } from "@/components/topbar-profile";
 
 export default function FerramentasLayout({
   children,
@@ -20,7 +19,6 @@ export default function FerramentasLayout({
             <DocTopbarLabel label="Botões Mágicos" basePath="/ferramentas" />
           </TopbarBreadcrumb>
           <TopbarActions>
-            <TopbarProfile />
             <AppSwitcher />
           </TopbarActions>
         </Topbar>

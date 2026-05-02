@@ -33,6 +33,7 @@ import {
   SmArrowBackLineIcon,
 } from "@/components/icons";
 import { assetCategories } from "@/lib/assets";
+import { SidebarProfile } from "@/components/sidebar-profile";
 
 const iconMap: Record<string, React.ReactNode> = {
   "visao-geral": <SmHomeSolidIcon />,
@@ -119,10 +120,7 @@ export function AssetsSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <SidebarSeparator />
-        <p className="px-2 py-1 font-mono text-[10px] text-muted-foreground/50">
-          Overlens Assets v1.0
-        </p>
+        <SidebarProfile />
       </SidebarFooter>
     </Sidebar>
   );

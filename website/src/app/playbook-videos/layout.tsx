@@ -7,7 +7,6 @@ import { SystemSidebar, type NavSection } from "@/components/doc-sidebar";
 import { DocTopbarLabel } from "@/components/doc-breadcrumb";
 import { getPlaybookVideosSections, type DocSection } from "@/lib/docs";
 import { AppSwitcher } from "@/components/app-switcher";
-import { TopbarProfile } from "@/components/topbar-profile";
 
 function toNav(sections: DocSection[]): NavSection[] {
   return sections.map((s) => ({
@@ -46,7 +45,6 @@ export default function PlaybookVideosLayout({
             <DocTopbarLabel label="Playbook de Edição" basePath="/playbook-videos" />
           </TopbarBreadcrumb>
           <TopbarActions>
-            <TopbarProfile />
             <AppSwitcher />
           </TopbarActions>
         </Topbar>

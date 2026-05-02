@@ -7,7 +7,6 @@ import { SystemSidebar, type NavSection } from "@/components/doc-sidebar";
 import { DocTopbarLabel } from "@/components/doc-breadcrumb";
 import { getEstudioSections, type DocSection } from "@/lib/docs";
 import { AppSwitcher } from "@/components/app-switcher";
-import { TopbarProfile } from "@/components/topbar-profile";
 
 function toNav(sections: DocSection[]): NavSection[] {
   return sections.map((s) => ({
@@ -66,7 +65,6 @@ export default function EstudioLayout({
             <DocTopbarLabel label="Content System" basePath="/estudio" />
           </TopbarBreadcrumb>
           <TopbarActions>
-            <TopbarProfile />
             <AppSwitcher />
           </TopbarActions>
         </Topbar>

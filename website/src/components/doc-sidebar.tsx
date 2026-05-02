@@ -34,6 +34,7 @@ import {
   SmLockSolidIcon,
 } from "@/components/icons";
 import { useAuth, canAccessRoute } from "@/lib/auth";
+import { SidebarProfile } from "@/components/sidebar-profile";
 
 // ─── Types (serializable, no content) ────────────────────
 
@@ -424,10 +425,7 @@ export function SystemSidebar({
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <SidebarSeparator />
-        <p className="px-2 py-1 font-mono text-[10px] text-muted-foreground/50">
-          Overlens {title} v1.0
-        </p>
+        <SidebarProfile />
       </SidebarFooter>
     </Sidebar>
   );

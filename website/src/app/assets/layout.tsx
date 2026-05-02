@@ -5,7 +5,6 @@ import {
 import { Topbar, TopbarBreadcrumb, TopbarActions } from "@/components/ui/topbar";
 import { DocTopbarLabel } from "@/components/doc-breadcrumb";
 import { AppSwitcher } from "@/components/app-switcher";
-import { TopbarProfile } from "@/components/topbar-profile";
 import { AssetsSidebar } from "@/components/assets-sidebar";
 
 export default function AssetsLayout({
@@ -22,7 +21,6 @@ export default function AssetsLayout({
             <DocTopbarLabel label="Assets da Marca" basePath="/assets" />
           </TopbarBreadcrumb>
           <TopbarActions>
-            <TopbarProfile />
             <AppSwitcher />
           </TopbarActions>
         </Topbar>
