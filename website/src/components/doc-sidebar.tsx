@@ -76,6 +76,14 @@ function findAncestorSlug(sections: NavSection[], basePath: string, currentPath:
   return null;
 }
 
+function findFirstAccordionSlug(sections: NavSection[]): string | null {
+  for (const section of sections) {
+    const isLeaf = section.files.length === 1 && section.children.length === 0;
+    if (!isLeaf) return section.slug;
+  }
+  return null;
+}
+
 // ─── Top-level section item ─────────────────────────────
 
 function SectionItem({
@@ -267,7 +275,6 @@ export function SystemSidebar({
   backLabel,
   footerLinks,
   separatorAfterIndex,
-  defaultOpenSlug,
 }: {
   sections: NavSection[];
   basePath: string;
@@ -277,7 +284,6 @@ export function SystemSidebar({
   backLabel?: string;
   footerLinks?: SidebarLink[];
   separatorAfterIndex?: number;
-  defaultOpenSlug?: string;
 }) {
   const { user } = useAuth();
   const [hasMounted, setHasMounted] = useState(false);
@@ -295,7 +301,7 @@ export function SystemSidebar({
   const currentPath = "/" + currentSegments.join("/");
 
   const [openSlug, setOpenSlug] = useState<string | null>(
-    findAncestorSlug(sections, basePath, currentPath) ?? defaultOpenSlug ?? null
+    findAncestorSlug(sections, basePath, currentPath) ?? findFirstAccordionSlug(sections)
   );
 
   useEffect(() => {
