@@ -1,24 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Next.js app for Overlens. Secrets are managed via [Infisical](https://infisical.com) — there is no `.env.local`.
 
-## Getting Started
+## Setup local
 
-First, run the development server:
+**Pré-requisitos:** Node.js 20+, conta no Infisical com acesso ao projeto `overlens-os`.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Instalar o Infisical CLI**
+   - Windows: `winget install infisical.infisical`
+   - macOS: `brew install infisical/get-cli/infisical`
+   - Linux/outros: ver https://infisical.com/docs/cli/overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Autenticar (uma vez por máquina)**
+   ```bash
+   infisical login
+   ```
+   Abre o browser, você loga, o token fica guardado no keyring do SO.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Instalar deps e rodar**
+   ```bash
+   npm install
+   npm run dev
+   ```
+   O script `dev` usa `infisical run --env=dev` por baixo, que injeta os segredos em memória no processo Next. Você verá `Injecting 7 Infisical secrets into your application process` na inicialização.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **Acessar:** http://localhost:3000
+
+## Scripts
+
+| Script | O que faz |
+|---|---|
+| `npm run dev` | Next em modo dev, com segredos do Infisical (env `dev`) |
+| `npm run build` | Build de produção (sem wrapper — Vercel injeta env vars no build remoto) |
+| `npm run build:local` | Build local com segredos do Infisical |
+| `npm run start` | Roda o build local (depois de `build:local`) |
+| `npm run storybook` | Storybook em dev |
+| `npm run lint` | ESLint |
+
+## Onde edito segredos
+
+App web do Infisical → projeto `overlens-os` → ambiente correspondente (`dev`, `preview`, `production`). Mudanças sincronizam pra Vercel automaticamente em ~10s via Native Integration.
 
 ## Learn More
 
