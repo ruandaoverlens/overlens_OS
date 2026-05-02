@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "infisical run --env=dev -- next dev",
     "build": "next build",
-    "start": "next start",
+    "build:local": "infisical run --env=dev -- next build",
+    "start": "infisical run --env=dev -- next start",
     "lint": "eslint",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "infisical run --env=dev -- storybook dev -p 6006",
+    "build-storybook": "infisical run --env=dev -- storybook build"
   },
   "dependencies": {
     "@base-ui/react": "^1.2.0",
