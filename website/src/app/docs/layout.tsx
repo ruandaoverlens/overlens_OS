@@ -37,6 +37,7 @@ export default function DocsLayout({
         title="Brand System"
         subtitle="Brand System"
         separatorAfterIndex={1}
+        defaultOpenSlug="02-overview-da-overlens"
         footerLinks={[
           { title: "Pacote Cultural", href: "/pacote" },
         ]}

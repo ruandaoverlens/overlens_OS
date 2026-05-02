@@ -267,6 +267,7 @@ export function SystemSidebar({
   backLabel,
   footerLinks,
   separatorAfterIndex,
+  defaultOpenSlug,
 }: {
   sections: NavSection[];
   basePath: string;
@@ -276,6 +277,7 @@ export function SystemSidebar({
   backLabel?: string;
   footerLinks?: SidebarLink[];
   separatorAfterIndex?: number;
+  defaultOpenSlug?: string;
 }) {
   const { user } = useAuth();
   const [hasMounted, setHasMounted] = useState(false);
@@ -293,7 +295,7 @@ export function SystemSidebar({
   const currentPath = "/" + currentSegments.join("/");
 
   const [openSlug, setOpenSlug] = useState<string | null>(
-    findAncestorSlug(sections, basePath, currentPath)
+    findAncestorSlug(sections, basePath, currentPath) ?? defaultOpenSlug ?? null
   );
 
   useEffect(() => {
