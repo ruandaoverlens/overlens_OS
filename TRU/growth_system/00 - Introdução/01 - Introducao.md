@@ -1,5 +1,7 @@
 # Introdução
 
+Documento Interno
+
 ## O Livro de Growth reúne princípios, práticas e padrões que regem a forma como a Overlens se posiciona, comunica e vende.
 
 Apresentamos o nosso pensamento estratégico em diretrizes concretas, combinando visão e execução em uma mesma arquitetura. Trata-se de um documento de referência. Não serve para inspirar campanhas passageiras, mas para formar fundamentos. Seu valor está na coerência que ele sustenta, na clareza que oferece e na potência que libera ao alinhar toda a operação com o propósito que nos move.
@@ -30,4 +32,4 @@ Este documento está em constante construção. À medida que aprendemos com os 
 
 ### *“Formas de fazer com que ideias transformadoras encontrem as pessoas certas.”*
 
-Este livro representa um compromisso com a lucidez. Em um cenário ruidoso, ele oferece clareza. Seu papel não é apenas orientar, mas proteger a integridade do que estamos construindo. **Na Overlens, marketing não é manipulação. Vendas não são persuasão desonestas.** Mas sim, formas de fazer com que ideias transformadoras encontrem as pessoas certas. Este livro é a base dessa ponte.
+**Na Overlens, marketing não é manipulação. Vendas não são persuasão desonestas.** Mas sim, formas de fazer com que ideias transformadoras encontrem as pessoas certas. Este livro é a base.

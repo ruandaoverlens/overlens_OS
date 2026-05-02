@@ -1,6 +1,4 @@
-# Buyer Personas
-
-## Personas não são ficção. São espelhos construídos a partir de padrões reais de quem já está em movimento. Brunin, Tella, Ander e Lilly representam quatro estágios da jornada criativa; do despertar inconsciente à maturidade emergente; e guiam cada decisão de produto, linguagem e experiência dentro do ecossistema Overlens.
+# Buyer Personas da Overlens
 
 Buyer Personas são representações semi-fictícias dos principais perfis de pessoas que a Overlens atende. Elas não representam um único indivíduo específico. São arquétipos construídos a partir de padrões reais de comportamento, necessidades, motivações e desafios observados em pessoas que se interessam por criação, design, tecnologia e futuro.
 

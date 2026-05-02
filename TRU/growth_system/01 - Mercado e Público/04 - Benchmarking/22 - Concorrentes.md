@@ -1,5 +1,7 @@
 # Concorrentes
 
+(Precisa de atualização)
+
 ## Operamos em um território altamente dinâmico, onde marcas, plataformas e indivíduos disputam atenção, autoridade e pertencimento. Compreender esse cenário é fundamental para preservar clareza estratégica, reforçar nossos diferenciais e reconhecer onde há sobreposição, ruído ou oportunidade.
 
 Dividimos nossos concorrentes em níveis. Cada grupo representa um tipo distinto de tensão competitiva: por proposta, por escala ou por tempo mental.

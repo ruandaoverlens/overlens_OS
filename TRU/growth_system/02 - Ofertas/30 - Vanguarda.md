@@ -1,10 +1,10 @@
 # Vanguarda
 
-## Mentoria para quem já ultrapassou o básico e precisa de estrutura para liderar o que vem a seguir. A Vanguarda é o vértice mais alto do ecossistema atual; um laboratório estratégico organizado em quatro pilares onde criadores com visão autoral desenvolvem pensamento sistêmico, constroem autoridade e se tornam os futuros experts e guardiões culturais da Overlens.
-
 **Mentoria avançada para criadores que lideram o novo**
 
-## A Vanguarda é a linha de frente da Overlens. Um espaço reservado para criadores que não apenas acompanham as transformações do presente, mas decidem moldar o que vem depois. É uma mentoria avançada, um laboratório estratégico e um ponto de convergência entre visão, execução e influência.
+[**Manual da Vanguarda**](https://docs.google.com/document/d/10HPRcbj0Fa0aMWtLbKIn7naUk7MruSG6CgxOZAse9nM/edit?usp=sharing)
+
+## A Vanguarda é o programa de aceleração de resultados da Overlens. Um espaço reservado para criadores que não apenas acompanham as transformações do presente, mas decidem moldar o que vem depois. É uma mentoria avançada, um laboratório estratégico e um ponto de convergência entre visão, execução e influência.
 
 Projetada para quem já superou o básico e deseja operar em um novo patamar de maturidade criativa, a Vanguarda forma mentes capazes de pensar sistemicamente, agir com inteligência simbiótica e posicionar-se com autoridade em territórios emergentes. (Habilidades) \> (Negócio)
 
@@ -23,12 +23,16 @@ A Vanguarda oferece mais do que conhecimento. Oferece estrutura para decisão, e
 
 ## Estrutura e diferenciais
 
-A jornada da Vanguarda é organizada em quatro pilares formativos, representados por cidades arquetípicas do universo Overlens:
+A jornada da Vanguarda é organizada em 8 níveis de construção de um negócio, baseado na metodologia lean.
 
-* **Arcádia**: domínio da criação e expressão original  
-* **Téssera**: domínio da estratégia, posicionamento e narrativa de marca  
-* **Orbital**: domínio da estrutura, sistemas e modelos de negócio  
-* **Noumenom**: domínio da influência, autoridade e construção de comunidade
+* **Entropia**  
+* **Direção**  
+* **Validação**  
+* **Caixa**  
+* **Previsibilidade**  
+* **Equipe**  
+* **Processos**  
+* **Expansão**
 
 Cada membro inicia sua trajetória com base em seu vetor cognitivo predominante e avança em direção ao desenvolvimento completo. Ao longo do caminho, assume missões, realiza projetos próprios, participa de ciclos de desafio e pode receber reconhecimento público como Nexialista em ascensão.
 
@@ -39,3 +43,21 @@ A Vanguarda é o vértice mais alto do ecossistema atual. Serve como espaço de 
 ## Posicionamento da oferta
 
 A oferta da Vanguarda deve ser comunicada com sobriedade e ambição. Não é para quem busca soluções prontas ou passos genéricos. É para quem deseja clareza estratégica, impacto real e uma comunidade de criadores em estado de criação ativa. A promessa não é sucesso imediato, mas maturidade contínua. Não é só o que você aprende, é quem você se torna no processo.
+
+## Ficha técnica: Vanguarda
+
+| Nome | Vanguarda |
+| :---- | :---- |
+| **Status** | Ativo |
+| **Promessas** | \- Pare de abandonar ideias. Comece a construir o futuro.\- Construa agora o tipo de negócio que vai continuar existindo. \- Para quem leva a própria criação a sério.\- Você não precisa de mais ideias. Precisa de estrutura. |
+| **Website** | Página principal (Toque aqui para acessar) |
+| **Tipo de produto** | High-end / Mentoria |
+| **GTM** | Eficiência \- 2 stages (Toque para acessar) |
+| **Preço base** | R$12.000 ou 12x R$1.000 |
+|  | Dividido no Cartão ou até R$3.000 de desconto à vista no pix (R$9.000). |
+| **Preço especial** | R$9.000 ou 12x R$750 no cartão |
+| **Duração** | Anual: Até R$9.000 ou 12x R$750 |
+|  | Semestral: R$6.000 ou 6x R$1.000 (Ainda não testamos) |
+| **Persona principal** | Lilly ([Toque para acessar](https://docs.google.com/document/d/1lga8Zv4h0rPwVgOXBygkcUvDGkE6YmTjGBL6rh0Px2w/edit?tab=t.43k1ssk59ci0)) |
+
+Leia o [Manual da Vanguarda](https://docs.google.com/document/d/10HPRcbj0Fa0aMWtLbKIn7naUk7MruSG6CgxOZAse9nM/edit?tab=t.0) para mais informações

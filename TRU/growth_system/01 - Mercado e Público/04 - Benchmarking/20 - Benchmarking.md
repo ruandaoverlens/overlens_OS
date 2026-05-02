@@ -27,3 +27,14 @@ Consulte esta seção sempre que for desenvolver novos produtos, posicionamentos
 
 **Mapa Perceptual da Concorrência**  
 Apresentar os 4 quadrantes
+
+Científica \*\*\*\*\*  
+Profundo  
+Provocativo  
+Inspirador \*\*\*\*\*
+
+Carl Sagan  
+Tomorrowland  
+The beginning of infinity  
+Personalidade Carismática  
+Nature
