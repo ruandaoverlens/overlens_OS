@@ -39,17 +39,14 @@ Next.js app for Overlens. Secrets are managed via [Infisical](https://infisical.
 
 App web do Infisical → projeto `overlens-os` → ambiente correspondente (`dev`, `preview`, `production`). Mudanças sincronizam pra Vercel automaticamente em ~10s via Native Integration.
 
-## Learn More
+## Deploy
 
-To learn more about Next.js, take a look at the following resources:
+`main` → produção (`overlens-os.vercel.app`). Qualquer outra branch → Preview Deployment automático na Vercel. Env vars vêm da Infisical Native Integration; nada precisa ser cadastrado no dashboard Vercel manualmente.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts standalone
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Rodam fora do Next (migrações, uploads, etc.). Wrappar manualmente com `infisical run`:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+infisical run --env=dev -- npx tsx scripts/migrate-assets-to-storage.ts
+```

@@ -6,9 +6,41 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is the **Overlens Brand System** — a living document repository containing the complete branding, strategy, identity, and communication guidelines for Overlens, a school that trains "Nexialist Designers" (creators who integrate design, philosophy, technology, and art).
 
-This is **not a code repository**. It is a structured collection of Markdown documents that form the brand's operational system.
+The repo is **dual-purpose**: it hosts the Brand System (Markdown documents — the original and primary focus) **and** the Overlens platform code under `website/`. When the user asks for "a new page", clarify which side they mean — Brand System markdown (e.g., `[PAGINA] Nome.md`) or a Next.js route under `website/src/app/`.
 
-## Repository Structure
+## Technical Infrastructure (platform side)
+
+The Next.js app in `website/` powers the live Overlens product.
+
+### Stack
+- **Frontend/API**: Next.js 16 + React 19 (`website/`)
+- **Backend**: Supabase (`supabase/` for migrations and config)
+- **Hosting**: Vercel — `main` branch → production (`overlens-os.vercel.app`); any other branch → preview
+- **Secrets**: [Infisical](https://infisical.com) — project `overlens-os`, environments `dev` / `preview` / `production`. Synced to Vercel via Native Integration (auto-push on change). **No `.env.local` exists anywhere in the repo** — running `npm run dev` requires `infisical login` first.
+- **Cron jobs**: defined in `website/vercel.json` (currently `/api/magny/pipeline/watchdog` daily at 8am UTC).
+
+### Where things live
+- `website/src/` — app code, API routes, Magny pipeline (LLM agents)
+- `website/scripts/` — standalone Node scripts (migrations, uploads). Run with `infisical run --env=dev -- npx tsx scripts/<name>.ts`
+- `website/.infisical.json` — links the folder to the Infisical project (committed, no secrets)
+- `supabase/` — DB migrations and config
+- `assets/`, `_backup_*` — static assets and backups
+
+### Local dev workflow
+```bash
+cd website
+npm run dev   # wraps `next dev` with `infisical run --env=dev` — injects secrets in memory
+```
+Setup details (CLI install, login) are in `website/README.md`.
+
+### Editing secrets
+App web do Infisical → `overlens-os` → escolher o ambiente (`dev` / `preview` / `production`). Mudanças sincronizam para Vercel automaticamente em ~10s.
+
+### Known gotchas
+- Dev, preview, and production share the **same** Supabase project. Destructive queries in dev hit prod data.
+- A few `process.env.X` references exist for unused features (`PERPLEXITY_API_KEY`, `FEEDLY_API_KEY`, `CRON_SECRET`, `NEXT_PUBLIC_SITE_URL`, `IMAGEN_MODEL`). They are **not** in Infisical — these code paths are dead. Don't add them to Infisical without confirming the feature is actually needed.
+
+## Repository Structure (Brand System side)
 
 ### Core Documents
 - `[B] O Livro de Branding da Overlens (1).md` — The **central document** (~3079 lines). Single source of truth.
