@@ -35,8 +35,6 @@ const GROWTH_DIR = resolveTRU("growth_system");
 const PACOTE_DIR = resolveTRU("pacote_cultural");
 const PLAYBOOK_CONTEUDO_DIR = resolveTRU("estudio_criativo", "03 - Playbook de Conteúdo");
 const PLAYBOOK_VIDEOS_DIR = resolveTRU("estudio_criativo", "04 - Playbook de Edição de Vídeos");
-const PLAYBOOK_OPERACAO_DIR = resolveTRU("growth_system", "04 - Playbooks", "08 - Playbook de Operação");
-const PLAYBOOK_GESTAO_DIR = resolveTRU("growth_system", "04 - Playbooks", "09 - Playbook de Gestão");
 
 // ─── Helpers ─────────────────────────────────────────────
 
@@ -441,76 +439,6 @@ export function getFirstPlaybookVideosSegments(): string[] | null {
 
 export function getAllPlaybookVideosFlat(): DocFile[] {
   return flattenFiles(getPlaybookVideosSections());
-}
-
-// ─── Playbook de Operação API ────────────────────────────
-
-let _playbookOperacaoCache: DocSection[] | null = null;
-
-export function getPlaybookOperacaoSections(): DocSection[] {
-  if (_playbookOperacaoCache) return _playbookOperacaoCache;
-  _playbookOperacaoCache = scanPlaybookDir(PLAYBOOK_OPERACAO_DIR);
-  return _playbookOperacaoCache;
-}
-
-export function getPlaybookOperacaoDocBySegments(
-  segments: string[]
-): { file: DocFile; section: DocSection; breadcrumbs: DocSection[] } | null {
-  if (segments.length === 1) {
-    const section = getPlaybookOperacaoSections().find((s) => s.slug === segments[0]);
-    if (!section || section.files.length === 0) return null;
-    return { file: section.files[0], section, breadcrumbs: [section] };
-  }
-  return resolveSegments(getPlaybookOperacaoSections(), segments);
-}
-
-export function getAllPlaybookOperacaoSegments(): string[][] {
-  return flattenSegments(getPlaybookOperacaoSections());
-}
-
-export function getFirstPlaybookOperacaoSegments(): string[] | null {
-  const sections = getPlaybookOperacaoSections();
-  if (sections.length === 0 || sections[0].files.length === 0) return null;
-  return sections[0].files[0].segments;
-}
-
-export function getAllPlaybookOperacaoFlat(): DocFile[] {
-  return flattenFiles(getPlaybookOperacaoSections());
-}
-
-// ─── Playbook de Gestão API ──────────────────────────────
-
-let _playbookGestaoCache: DocSection[] | null = null;
-
-export function getPlaybookGestaoSections(): DocSection[] {
-  if (_playbookGestaoCache) return _playbookGestaoCache;
-  _playbookGestaoCache = scanPlaybookDir(PLAYBOOK_GESTAO_DIR);
-  return _playbookGestaoCache;
-}
-
-export function getPlaybookGestaoDocBySegments(
-  segments: string[]
-): { file: DocFile; section: DocSection; breadcrumbs: DocSection[] } | null {
-  if (segments.length === 1) {
-    const section = getPlaybookGestaoSections().find((s) => s.slug === segments[0]);
-    if (!section || section.files.length === 0) return null;
-    return { file: section.files[0], section, breadcrumbs: [section] };
-  }
-  return resolveSegments(getPlaybookGestaoSections(), segments);
-}
-
-export function getAllPlaybookGestaoSegments(): string[][] {
-  return flattenSegments(getPlaybookGestaoSections());
-}
-
-export function getFirstPlaybookGestaoSegments(): string[] | null {
-  const sections = getPlaybookGestaoSections();
-  if (sections.length === 0 || sections[0].files.length === 0) return null;
-  return sections[0].files[0].segments;
-}
-
-export function getAllPlaybookGestaoFlat(): DocFile[] {
-  return flattenFiles(getPlaybookGestaoSections());
 }
 
 // ─── Shared helpers ──────────────────────────────────────

@@ -28,9 +28,7 @@ export default function GrowthLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const all = getGrowthSections();
-  const sections = all.filter((s) => s.title !== "Playbooks");
-  const nav = toNav(sections);
+  const nav = toNav(getGrowthSections());
 
   return (
     <SidebarProvider>
@@ -39,10 +37,6 @@ export default function GrowthLayout({
         basePath="/growth"
         title="Growth System"
         subtitle="Crescimento & Métricas"
-        footerLinks={[
-          { title: "Operação de Vendas", href: "/playbook-operacao" },
-          { title: "Gestão de Vendas", href: "/playbook-gestao" },
-        ]}
       />
       <SidebarInset>
         <Topbar>
