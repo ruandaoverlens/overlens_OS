@@ -58,7 +58,7 @@ export function AppSwitcher() {
   });
 
   return (
-    <TopbarApps open={open} onOpenChange={setOpen} className="translate-x-2">
+    <TopbarApps open={open} onOpenChange={setOpen} className="pt-2">
       <TopbarAppsContent>
         {sorted.map((app) => {
           const isExternal = "external" in app && app.external;
