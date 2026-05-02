@@ -162,7 +162,7 @@ const meta = {
           "      <TopbarAppsContent>",
           "        <TopbarAppsItem icon={<MdChatSolidIcon />} label=\"Overchat\" />",
           "        <TopbarAppsItem icon={<MdShopSolidIcon />} label=\"Artefatos\" />",
-          "        <TopbarAppsItem icon={<MdDocSolidIcon />} label=\"Magny\" />",
+          "        <TopbarAppsItem icon={<MdDocSolidIcon />} label=\"Brand System\" />",
           "      </TopbarAppsContent>",
           "    </TopbarApps>",
           "  </TopbarActions>",
@@ -198,7 +198,7 @@ const meta = {
           "",
           "## Apps launcher",
           "",
-          "`TopbarApps` wraps a `Popover` with a 3-column grid of `TopbarAppsItem` cells (Google Workspace style). Each item has a large icon and a truncated label. Current apps: Overchat, Artefatos, Magny.",
+          "`TopbarApps` wraps a `Popover` with a 3-column grid of `TopbarAppsItem` cells (Google Workspace style). Each item has a large icon and a truncated label. Current apps: Overchat, Artefatos, Brand System.",
           "",
           "## Key details",
           "",
@@ -269,7 +269,7 @@ export const Default: Story = {
             <TopbarAppsContent>
               <TopbarAppsItem icon={<MdChatSolidIcon />} label="Overchat" />
               <TopbarAppsItem icon={<MdShopSolidIcon />} label="Artefatos" />
-              <TopbarAppsItem icon={<MdDocSolidIcon />} label="Magny" />
+              <TopbarAppsItem icon={<MdDocSolidIcon />} label="Brand System" />
             </TopbarAppsContent>
           </TopbarApps>
         </TopbarActions>
@@ -319,7 +319,7 @@ export const Minimal: Story = {
             <TopbarAppsContent>
               <TopbarAppsItem icon={<MdChatSolidIcon />} label="Overchat" />
               <TopbarAppsItem icon={<MdShopSolidIcon />} label="Artefatos" />
-              <TopbarAppsItem icon={<MdDocSolidIcon />} label="Magny" />
+              <TopbarAppsItem icon={<MdDocSolidIcon />} label="Brand System" />
             </TopbarAppsContent>
           </TopbarApps>
         </TopbarActions>
@@ -361,7 +361,7 @@ export const AllVariants: Story = {
             <TopbarAppsContent>
               <TopbarAppsItem icon={<MdChatSolidIcon />} label="Overchat" />
               <TopbarAppsItem icon={<MdShopSolidIcon />} label="Artefatos" />
-              <TopbarAppsItem icon={<MdDocSolidIcon />} label="Magny" />
+              <TopbarAppsItem icon={<MdDocSolidIcon />} label="Brand System" />
             </TopbarAppsContent>
           </TopbarApps>
             </TopbarActions>
@@ -395,7 +395,7 @@ export const AllVariants: Story = {
                 <TopbarAppsContent>
                   <TopbarAppsItem icon={<MdChatSolidIcon />} label="Overchat" />
                   <TopbarAppsItem icon={<MdShopSolidIcon />} label="Artefatos" />
-                  <TopbarAppsItem icon={<MdDocSolidIcon />} label="Magny" />
+                  <TopbarAppsItem icon={<MdDocSolidIcon />} label="Brand System" />
                 </TopbarAppsContent>
               </TopbarApps>
             </TopbarActions>

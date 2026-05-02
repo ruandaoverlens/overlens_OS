@@ -273,14 +273,13 @@ function SegurancaPanel() {
 /* ── Aplicativos ────────────────────────────────────────── */
 
 const APPS = [
-  { name: "Assets", route: "/assets", description: "Biblioteca de assets digitais" },
+  { name: "Overlens", route: "/plataforma", description: "Ambiente de aprendizado" },
   { name: "Brand System", route: "/docs", description: "Documentação de marca" },
-  { name: "Códices", route: "/codices", description: "Referências e curadoria" },
+  { name: "Assets", route: "/assets", description: "Biblioteca de assets digitais" },
+  { name: "Botões Mágicos", route: "/ferramentas", description: "Ferramentas mágicas" },
   { name: "Content System", route: "/estudio", description: "Produção de conteúdo" },
   { name: "Growth System", route: "/growth", description: "Métricas e crescimento" },
   { name: "Pacote Cultural", route: "/pacote", description: "Inspirações e cultura" },
-  { name: "Plata", route: "/plataforma", description: "Ambiente de aprendizado" },
-  { name: "T.R.U", route: "/tru", description: "Ferramentas internas" },
   { name: "Website", route: "/website", description: "Site institucional" },
 ];
 

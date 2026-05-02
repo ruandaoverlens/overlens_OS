@@ -11,10 +11,7 @@ import {
   MdLibrarySolidIcon,
   MdFolderSolidIcon,
   MdLanguageLineIcon,
-  MdToolSolidIcon,
-  MdInvoiceSolidIcon,
   MdBoltSolidIcon,
-  MdSearchLineIcon,
 } from "@/components/icons";
 
 function OverlensSymbol() {
@@ -29,16 +26,13 @@ function OverlensSymbol() {
 }
 
 const apps = [
+  { name: "Overlens", href: "https://plataforma.overlens.com.br", icon: <OverlensSymbol />, external: true },
+  { name: "Brand System", href: "/docs", icon: <MdDocSolidIcon /> },
   { name: "Assets", href: "/assets", icon: <MdFolderSolidIcon /> },
   { name: "Botões Mágicos", href: "/ferramentas", icon: <MdBoltSolidIcon /> },
-  { name: "Brand System", href: "/docs", icon: <MdDocSolidIcon /> },
-  { name: "Códices", href: "/codices", icon: <MdInvoiceSolidIcon /> },
   { name: "Content System", href: "/estudio", icon: <MdCognitionLineIcon /> },
   { name: "Growth System", href: "/growth", icon: <MdChartLineIcon /> },
-  { name: "Magny", href: "/magny", icon: <MdSearchLineIcon /> },
   { name: "Pacote Cultural", href: "/pacote", icon: <MdLibrarySolidIcon /> },
-  { name: "Plata", href: "https://plataforma.overlens.com.br", icon: <OverlensSymbol />, external: true },
-  { name: "T.R.U", href: "/tru", icon: <MdToolSolidIcon /> },
   { name: "Website", href: "https://overlens.com.br", icon: <MdLanguageLineIcon />, external: true },
 ];
 
