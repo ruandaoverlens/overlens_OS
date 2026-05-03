@@ -17,6 +17,7 @@ interface MusicPlayerState {
   duration: number;
   durations: Record<string, number>;
   favorites: Set<string>;
+  volume: number;
   playTrack: (track: Track) => void;
   pauseTrack: () => void;
   togglePlayPause: () => void;
@@ -25,6 +26,8 @@ interface MusicPlayerState {
   prevTrack: () => void;
   toggleFavorite: (id: string) => void;
   setDuration: (id: string, dur: number) => void;
+  setVolume: (v: number) => void;
+  closePlayer: () => void;
 }
 
 const MusicPlayerContext = createContext<MusicPlayerState | null>(null);
@@ -42,6 +45,7 @@ export function MusicPlayerProvider({ children }: { children: React.ReactNode })
   const [progress, setProgress] = useState(0);
   const [durations, setDurations] = useState<Record<string, number>>({});
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
+  const [volume, setVolumeState] = useState(1);
   const animRef = useRef<number>(0);
 
   const activeTrack = tracks.find((t) => t.id === activeTrackId) ?? null;
@@ -147,6 +151,25 @@ export function MusicPlayerProvider({ children }: { children: React.ReactNode })
     setDurations((prev) => ({ ...prev, [id]: dur }));
   }, []);
 
+  const setVolume = useCallback((v: number) => {
+    const clamped = Math.max(0, Math.min(1, v));
+    if (audioRef.current) audioRef.current.volume = clamped;
+    setVolumeState(clamped);
+  }, []);
+
+  const closePlayer = useCallback(() => {
+    audioRef.current?.pause();
+    cancelAnimationFrame(animRef.current);
+    setIsPlaying(false);
+    setActiveTrackId(null);
+    setProgress(0);
+  }, []);
+
+  // Keep audio element volume in sync
+  useEffect(() => {
+    if (audioRef.current) audioRef.current.volume = volume;
+  }, [volume, activeTrackId]);
+
   // Wire up audio events
   useEffect(() => {
     const audio = audioRef.current;
@@ -199,6 +222,7 @@ export function MusicPlayerProvider({ children }: { children: React.ReactNode })
         duration,
         durations,
         favorites,
+        volume,
         playTrack,
         pauseTrack,
         togglePlayPause,
@@ -207,6 +231,8 @@ export function MusicPlayerProvider({ children }: { children: React.ReactNode })
         prevTrack,
         toggleFavorite,
         setDuration,
+        setVolume,
+        closePlayer,
       }}
     >
       {children}

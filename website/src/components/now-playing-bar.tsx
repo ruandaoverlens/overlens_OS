@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useMusicPlayer } from "@/lib/music-player";
 import { useFavorites } from "@/lib/favorites";
 import { Button } from "@/components/ui/button";
@@ -10,13 +10,15 @@ import {
   TooltipTrigger,
   TooltipContent,
 } from "@/components/ui/tooltip";
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
+import { Slider } from "@/components/ui/slider";
 import {
   SmDownloadSolidIcon,
   SmStarLineIcon,
   SmStarSolidIcon,
-  SmPlaySolidIcon,
+  SmCloseLineIcon,
 } from "@/components/icons";
-import { Pause, SkipBack, SkipForward } from "lucide-react";
+import { Play, Pause, SkipBack, SkipForward, Volume2, Volume1, VolumeX } from "lucide-react";
 
 // ─── Mini Waveform ───────────────────────────────────────────
 
@@ -113,15 +115,41 @@ export function NowPlayingBar() {
     isPlaying,
     progress,
     duration,
+    volume,
     togglePlayPause,
     seekTrack,
     nextTrack,
     prevTrack,
+    setVolume,
+    closePlayer,
   } = useMusicPlayer();
 
   const { isFavorite, toggleFavorite: globalToggleFavorite } = useFavorites();
+  const [volumeOpen, setVolumeOpen] = useState(false);
+  const closeTimeoutRef = useRef<number | null>(null);
+
+  const openVolume = () => {
+    if (closeTimeoutRef.current) {
+      window.clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setVolumeOpen(true);
+  };
+
+  const scheduleCloseVolume = () => {
+    if (closeTimeoutRef.current) window.clearTimeout(closeTimeoutRef.current);
+    closeTimeoutRef.current = window.setTimeout(() => setVolumeOpen(false), 120);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) window.clearTimeout(closeTimeoutRef.current);
+    };
+  }, []);
 
   if (!activeTrack) return null;
+
+  const VolumeIcon = volume === 0 ? VolumeX : volume < 0.5 ? Volume1 : Volume2;
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 bg-[var(--surface-950)] border-t border-[var(--surface-900)]">
@@ -142,7 +170,7 @@ export function NowPlayingBar() {
           {isPlaying ? (
             <Pause className="size-4 text-black fill-black" />
           ) : (
-            <SmPlaySolidIcon className="size-5 text-black" />
+            <Play className="size-4 text-black fill-black" />
           )}
         </button>
 
@@ -171,6 +199,40 @@ export function NowPlayingBar() {
 
         {/* Actions */}
         <div className="flex items-center gap-1 shrink-0">
+          {/* Volume */}
+          <Popover open={volumeOpen} onOpenChange={setVolumeOpen}>
+            <PopoverTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-[var(--surface-500)] hover:text-white hover:bg-white/10"
+                onMouseEnter={openVolume}
+                onMouseLeave={scheduleCloseVolume}
+                onClick={() => setVolume(volume === 0 ? 1 : 0)}
+                aria-label="Volume"
+              >
+                <VolumeIcon className="size-5" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent
+              side="top"
+              align="center"
+              sideOffset={8}
+              onOpenAutoFocus={(e) => e.preventDefault()}
+              onMouseEnter={openVolume}
+              onMouseLeave={scheduleCloseVolume}
+              className="w-40 p-3 bg-[var(--surface-900)] border border-[var(--surface-800)]"
+            >
+              <Slider
+                value={[volume * 100]}
+                min={0}
+                max={100}
+                step={1}
+                onValueChange={([v]) => setVolume(v / 100)}
+              />
+            </PopoverContent>
+          </Popover>
+
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -206,6 +268,22 @@ export function NowPlayingBar() {
                 </Button>
               </TooltipTrigger>
               <TooltipContent side="top">Baixar arquivo</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-[var(--surface-500)] hover:text-white hover:bg-white/10"
+                  onClick={closePlayer}
+                  aria-label="Fechar player"
+                >
+                  <SmCloseLineIcon />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent side="top">Fechar</TooltipContent>
             </Tooltip>
           </TooltipProvider>
         </div>
