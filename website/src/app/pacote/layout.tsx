@@ -3,47 +3,37 @@ import {
   SidebarInset,
 } from "@/components/ui/sidebar";
 import { Topbar, TopbarBreadcrumb, TopbarActions } from "@/components/ui/topbar";
-import { SystemSidebar, type NavSection } from "@/components/doc-sidebar";
+import { SystemSidebar } from "@/components/doc-sidebar";
 import { DocTopbarLabel } from "@/components/doc-breadcrumb";
-import { getPacoteSections, type DocSection } from "@/lib/docs";
+import { getChatConversations } from "@/lib/chat-conversations";
 import { AppSwitcher } from "@/components/app-switcher";
+import { SystemTracker } from "@/components/system-tracker";
+import { getSystemConfig } from "@/lib/system-configs";
 
-function toNav(sections: DocSection[]): NavSection[] {
-  return sections.map((s) => ({
-    slug: s.slug,
-    title: s.title,
-    segments: s.segments,
-    files: s.files.map((f) => ({
-      slug: f.slug,
-      title: f.title,
-      segments: f.segments,
-    })),
-    children: toNav(s.children),
-  }));
-}
-
-export default function PacoteLayout({
+export default async function PacoteLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const nav = toNav(getPacoteSections());
+  const config = getSystemConfig("pacote");
+  const nav = config.getNav();
+  const conversations = await getChatConversations();
 
   return (
     <SidebarProvider>
+      <SystemTracker slug={config.slug} />
       <SystemSidebar
         sections={nav}
-        basePath="/pacote"
-        title="Pacote Cultural"
-        subtitle="Referências & Inspirações"
-        footerLinks={[
-          { title: "Brand System", href: "/docs" },
-        ]}
+        basePath={config.basePath}
+        title={config.title}
+        subtitle={config.subtitle}
+        footerLinks={config.footerLinks}
+        conversations={conversations}
       />
       <SidebarInset>
         <Topbar>
           <TopbarBreadcrumb>
-            <DocTopbarLabel label="Pacote Cultural" basePath="/pacote" />
+            <DocTopbarLabel label={config.title} basePath={config.basePath} />
           </TopbarBreadcrumb>
           <TopbarActions>
             <AppSwitcher />

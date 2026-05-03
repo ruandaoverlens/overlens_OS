@@ -31,10 +31,27 @@ import {
   SmArrowOutwardLineIcon,
   SmArrowBackLineIcon,
   SmFolderLineIcon,
-  SmLockSolidIcon,
+  SmFolderSolidIcon,
+  SmDocLineIcon,
+  SmDocSolidIcon,
+  SmMessageCircleLineIcon,
+  SmMessageCircleSolidIcon,
 } from "@/components/icons";
 import { useAuth, canAccessRoute } from "@/lib/auth";
 import { SidebarProfile } from "@/components/sidebar-profile";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { ConversationItem } from "@/components/chat/conversation-item";
+import { Plus } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+export type ChatConversationLink = {
+  id: string;
+  title: string;
+};
 
 // ─── Types (serializable, no content) ────────────────────
 
@@ -84,6 +101,35 @@ function findFirstAccordionSlug(sections: NavSection[]): string | null {
   return null;
 }
 
+function makeSectionDragHandler(title: string, segments: string[]) {
+  return (e: React.DragEvent) => {
+    e.dataTransfer.setData(
+      "application/x-overlens-section",
+      JSON.stringify({ title, segments })
+    );
+    e.dataTransfer.effectAllowed = "copy";
+
+    // Suppress the browser's "not-allowed" cursor by accepting drops globally
+    // for the duration of this drag. Listeners self-cleanup on dragend/drop.
+    const allowDrop = (ev: DragEvent) => {
+      ev.preventDefault();
+      if (ev.dataTransfer) ev.dataTransfer.dropEffect = "copy";
+    };
+    const cleanup = () => {
+      window.removeEventListener("dragover", allowDrop);
+      window.removeEventListener("drop", onGlobalDrop);
+      window.removeEventListener("dragend", cleanup);
+    };
+    const onGlobalDrop = (ev: DragEvent) => {
+      ev.preventDefault();
+      cleanup();
+    };
+    window.addEventListener("dragover", allowDrop);
+    window.addEventListener("drop", onGlobalDrop);
+    window.addEventListener("dragend", cleanup);
+  };
+}
+
 // ─── Top-level section item ─────────────────────────────
 
 function SectionItem({
@@ -121,7 +167,11 @@ function SectionItem({
     return (
       <SidebarMenuItem>
         <SidebarMenuButton isActive={isActive} size="sm" asChild>
-          <Link href={href}>
+          <Link
+            href={href}
+            draggable
+            onDragStart={makeSectionDragHandler(section.title, file.segments)}
+          >
             <span>{section.title}</span>
           </Link>
         </SidebarMenuButton>
@@ -150,7 +200,11 @@ function SectionItem({
               return (
                 <SidebarMenuSubItem key={file.slug}>
                   <SidebarMenuSubButton isActive={isActive} asChild>
-                    <Link href={href}>
+                    <Link
+                      href={href}
+                      draggable
+                      onDragStart={makeSectionDragHandler(file.title, file.segments)}
+                    >
                       <span>{file.title}</span>
                     </Link>
                   </SidebarMenuSubButton>
@@ -211,7 +265,11 @@ function NestedSectionItem({
     return (
       <SidebarMenuSubItem>
         <SidebarMenuSubButton isActive={isActive} asChild>
-          <Link href={href}>
+          <Link
+            href={href}
+            draggable
+            onDragStart={makeSectionDragHandler(section.title, file.segments)}
+          >
             <span>{section.title}</span>
           </Link>
         </SidebarMenuSubButton>
@@ -240,7 +298,11 @@ function NestedSectionItem({
               return (
                 <SidebarMenuSubItem key={file.slug}>
                   <SidebarMenuSubButton isActive={isActive} asChild>
-                    <Link href={href}>
+                    <Link
+                      href={href}
+                      draggable
+                      onDragStart={makeSectionDragHandler(file.title, file.segments)}
+                    >
                       <span>{file.title}</span>
                     </Link>
                   </SidebarMenuSubButton>
@@ -275,6 +337,8 @@ export function SystemSidebar({
   backLabel,
   footerLinks,
   separatorAfterIndex,
+  conversations,
+  defaultView = "directives",
 }: {
   sections: NavSection[];
   basePath: string;
@@ -284,6 +348,8 @@ export function SystemSidebar({
   backLabel?: string;
   footerLinks?: SidebarLink[];
   separatorAfterIndex?: number;
+  conversations?: ChatConversationLink[];
+  defaultView?: "directives" | "conversations";
 }) {
   const { user } = useAuth();
   const [hasMounted, setHasMounted] = useState(false);
@@ -303,6 +369,10 @@ export function SystemSidebar({
   const [openSlug, setOpenSlug] = useState<string | null>(
     findAncestorSlug(sections, basePath, currentPath) ?? findFirstAccordionSlug(sections)
   );
+  const [view, setView] = useState<"directives" | "conversations">(defaultView);
+  const showTabs = Array.isArray(conversations);
+  const activeConversationId =
+    typeof params?.id === "string" ? params.id : undefined;
 
   useEffect(() => {
     const ancestor = findAncestorSlug(sections, basePath, currentPath);
@@ -369,63 +439,166 @@ export function SystemSidebar({
                 </SidebarSearch>
               </SidebarMenuItem>
               <SidebarMenuItem className="mt-1.5">
-                {canAccessAssets ? (
-                  <SidebarMenuButton
-                    size="sm"
-                    className="h-12 rounded-[8px] bg-accent/50 text-[var(--surface-400)] hover:bg-accent hover:text-[var(--surface-300)] dark:bg-input/30 dark:hover:bg-input/50"
-                    asChild
-                  >
-                    <Link href="/assets">
-                      <SmFolderLineIcon />
-                      <span>Assets da Marca</span>
-                    </Link>
-                  </SidebarMenuButton>
-                ) : (
-                  <SidebarMenuButton
-                    size="sm"
-                    disabled
-                    className="h-12 rounded-[8px] bg-accent/50 text-[var(--surface-400)] dark:bg-input/30 opacity-50 cursor-not-allowed"
-                  >
-                    <SmFolderLineIcon />
-                    <span>Assets da Marca</span>
-                    <SmLockSolidIcon className="ml-auto !size-[18px] text-[var(--surface-500)]" />
-                  </SidebarMenuButton>
-                )}
-              </SidebarMenuItem>
-              <SidebarMenuItem className="mt-4">
-                <SidebarMenuButton isActive={currentSegments.length === 0} size="sm" asChild>
-                  <Link href={basePath}>
-                    <span>Introdução</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              {sections.map((section, i) => (
-                <React.Fragment key={section.slug}>
-                  <SectionItem
-                    section={section}
-                    currentSegments={currentSegments}
-                    basePath={basePath}
-                    open={openSlug === section.slug}
-                    onToggle={handleToggle}
-                  />
-                  {separatorAfterIndex === i && (
-                    <SidebarSeparator className="my-2" />
-                  )}
-                </React.Fragment>
-              ))}
-              {footerLinks && footerLinks.length > 0 && (
-                <>
-                  <SidebarSeparator className="my-2" />
-                  {footerLinks.map((link) => (
-                    <SidebarMenuItem key={link.href}>
-                      <SidebarMenuButton size="sm" asChild>
-                        <Link href={link.href}>
-                          <span>{link.title}</span>
-                          <SmArrowOutwardLineIcon className="ml-auto" />
+                <div className="flex w-full items-center justify-between">
+                  <div className="flex items-center gap-0">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        {canAccessAssets ? (
+                          <Link
+                            href="/assets"
+                            aria-label="Assets da Marca"
+                            className="group/asset relative flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+                          >
+                            <SmFolderLineIcon className="size-6 transition-opacity group-hover/asset:opacity-0" />
+                            <SmFolderSolidIcon className="absolute size-6 opacity-0 transition-opacity group-hover/asset:opacity-100" />
+                          </Link>
+                        ) : (
+                          <button
+                            type="button"
+                            disabled
+                            aria-label="Assets da Marca (bloqueado)"
+                            className="flex size-8 items-center justify-center text-muted-foreground opacity-50 cursor-not-allowed"
+                          >
+                            <SmFolderLineIcon className="size-6" />
+                          </button>
+                        )}
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        {canAccessAssets ? "Assets da Marca" : "Assets da Marca (bloqueado)"}
+                      </TooltipContent>
+                    </Tooltip>
+                    {showTabs && (
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <button
+                            type="button"
+                            onClick={() => setView("directives")}
+                            aria-label="Diretrizes"
+                            aria-pressed={view === "directives"}
+                            className={cn(
+                              "group/dir relative flex size-8 items-center justify-center transition-colors outline-none",
+                              "text-muted-foreground hover:text-foreground",
+                              view === "directives" && "text-foreground",
+                            )}
+                          >
+                            {view === "directives" ? (
+                              <SmDocSolidIcon className="size-6" />
+                            ) : (
+                              <>
+                                <SmDocLineIcon className="size-6 transition-opacity group-hover/dir:opacity-0" />
+                                <SmDocSolidIcon className="absolute size-6 opacity-0 transition-opacity group-hover/dir:opacity-100" />
+                              </>
+                            )}
+                          </button>
+                        </TooltipTrigger>
+                        <TooltipContent>Diretrizes</TooltipContent>
+                      </Tooltip>
+                    )}
+                    {showTabs && (
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <button
+                            type="button"
+                            onClick={() => setView("conversations")}
+                            aria-label="Conversas"
+                            aria-pressed={view === "conversations"}
+                            className={cn(
+                              "group/conv relative flex size-8 items-center justify-center transition-colors outline-none",
+                              "text-muted-foreground hover:text-foreground",
+                              view === "conversations" && "text-foreground",
+                            )}
+                          >
+                            {view === "conversations" ? (
+                              <SmMessageCircleSolidIcon className="size-6" />
+                            ) : (
+                              <>
+                                <SmMessageCircleLineIcon className="size-6 transition-opacity group-hover/conv:opacity-0" />
+                                <SmMessageCircleSolidIcon className="absolute size-6 opacity-0 transition-opacity group-hover/conv:opacity-100" />
+                              </>
+                            )}
+                          </button>
+                        </TooltipTrigger>
+                        <TooltipContent>Conversas</TooltipContent>
+                      </Tooltip>
+                    )}
+                  </div>
+                  {showTabs && (
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Link
+                          href="/chat"
+                          aria-label="Nova conversa"
+                          className="flex size-10 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                        >
+                          <Plus className="size-6" />
                         </Link>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
+                      </TooltipTrigger>
+                      <TooltipContent>Nova conversa</TooltipContent>
+                    </Tooltip>
+                  )}
+                </div>
+              </SidebarMenuItem>
+
+              {view === "directives" && (
+                <>
+                  <SidebarMenuItem className="mt-2">
+                    <SidebarMenuButton isActive={currentSegments.length === 0} size="sm" asChild>
+                      <Link href={basePath}>
+                        <span>Introdução</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  {sections.map((section, i) => (
+                    <React.Fragment key={section.slug}>
+                      <SectionItem
+                        section={section}
+                        currentSegments={currentSegments}
+                        basePath={basePath}
+                        open={openSlug === section.slug}
+                        onToggle={handleToggle}
+                      />
+                      {separatorAfterIndex === i && (
+                        <SidebarSeparator className="my-2" />
+                      )}
+                    </React.Fragment>
                   ))}
+                  {footerLinks && footerLinks.length > 0 && (
+                    <>
+                      <SidebarSeparator className="my-2" />
+                      {footerLinks.map((link) => (
+                        <SidebarMenuItem key={link.href}>
+                          <SidebarMenuButton size="sm" asChild>
+                            <Link href={link.href}>
+                              <span>{link.title}</span>
+                              <SmArrowOutwardLineIcon className="ml-auto" />
+                            </Link>
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      ))}
+                    </>
+                  )}
+                </>
+              )}
+
+              {view === "conversations" && conversations && (
+                <>
+                  <li className="h-2" aria-hidden="true" />
+                  {conversations.length === 0 ? (
+                    <div className="px-3 py-6 text-center text-xs text-muted-foreground">
+                      Nenhuma conversa ainda.
+                      <br />
+                      Comece pela home de qualquer sistema.
+                    </div>
+                  ) : (
+                    conversations.map((c) => (
+                      <ConversationItem
+                        key={c.id}
+                        id={c.id}
+                        title={c.title}
+                        isActive={activeConversationId === c.id}
+                      />
+                    ))
+                  )}
                 </>
               )}
             </SidebarMenu>

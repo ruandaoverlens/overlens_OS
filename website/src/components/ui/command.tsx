@@ -97,6 +97,7 @@ function CommandDialog({
   className,
   showCloseButton = true,
   placeholder,
+  suggestions,
   ...props
 }: React.ComponentProps<typeof Dialog> & {
   title?: string
@@ -104,12 +105,14 @@ function CommandDialog({
   className?: string
   showCloseButton?: boolean
   placeholder?: string
+  suggestions?: React.ReactNode
 }) {
   const isMobile = useIsMobile()
 
   const commandContent = (
     <Command
       placeholder={placeholder}
+      suggestions={suggestions}
       className={cn(
         "min-w-0 rounded-none border-0 [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]]:px-2 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5",
         !isMobile && "sm:min-w-[464px] sm:rounded-2xl sm:border sm:border-[var(--surface-800)]"

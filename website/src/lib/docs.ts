@@ -1,7 +1,18 @@
 import fs from "fs";
 import path from "path";
+import matter from "gray-matter";
 
 // ─── Types ───────────────────────────────────────────────
+
+export interface DocFrontmatter {
+  title?: string;
+  summary?: string;
+  topics?: string[];
+  keywords?: string[];
+  priority?: "high" | "medium" | "low";
+  ai_when_to_use?: string;
+  related?: string[];
+}
 
 export interface DocFile {
   slug: string;
@@ -9,6 +20,7 @@ export interface DocFile {
   order: number;
   content: string;
   segments: string[];
+  frontmatter: DocFrontmatter | null;
 }
 
 export interface DocSection {
@@ -97,10 +109,13 @@ function scanDir(
       const { order: fileOrder } = extractOrder(
         entry.name.replace(/\.md$/, "").replace(/^\[PAGINA\]\s*/, "")
       );
-      const content = fs.readFileSync(
+      const raw = fs.readFileSync(
         path.join(dirPath, entry.name),
         "utf-8"
       );
+      const parsed = matter(raw);
+      const content = parsed.content;
+      const frontmatter = (Object.keys(parsed.data).length > 0 ? parsed.data : null) as DocFrontmatter | null;
 
       files.push({
         slug: fileSlug,
@@ -108,6 +123,7 @@ function scanDir(
         order: fileOrder,
         content,
         segments: [...currentSegments, fileSlug],
+        frontmatter,
       });
     }
   }
@@ -170,7 +186,10 @@ function scanFlatContentDir(dir: string): DocSection[] {
       const { order: fileOrder } = extractOrder(
         entry.name.replace(/\.md$/, "").replace(/^\[PAGINA\]\s*/, "")
       );
-      const content = fs.readFileSync(path.join(dir, entry.name), "utf-8");
+      const raw = fs.readFileSync(path.join(dir, entry.name), "utf-8");
+      const parsed = matter(raw);
+      const content = parsed.content;
+      const frontmatter = (Object.keys(parsed.data).length > 0 ? parsed.data : null) as DocFrontmatter | null;
 
       files.push({
         slug: fileSlug,
@@ -178,6 +197,7 @@ function scanFlatContentDir(dir: string): DocSection[] {
         order: fileOrder,
         content,
         segments: [fileSlug],
+        frontmatter,
       });
     }
   }
@@ -218,13 +238,17 @@ function scanPlaybookDir(dir: string): DocSection[] {
       const { order: fileOrder } = extractOrder(
         entry.name.replace(/\.md$/, "").replace(/^\[PAGINA\]\s*/, "")
       );
-      const content = fs.readFileSync(path.join(dir, entry.name), "utf-8");
+      const raw = fs.readFileSync(path.join(dir, entry.name), "utf-8");
+      const parsed = matter(raw);
+      const content = parsed.content;
+      const frontmatter = (Object.keys(parsed.data).length > 0 ? parsed.data : null) as DocFrontmatter | null;
       rootFiles.push({
         slug: fileSlug,
         title: fileTitle,
         order: fileOrder,
         content,
         segments: [fileSlug],
+        frontmatter,
       });
     }
   }

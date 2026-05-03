@@ -1,4 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 import type { DocSection } from "@/lib/docs";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import {
@@ -45,6 +50,28 @@ import { PromptArea } from "@/components/prompt-area";
 
 function countFilesDeep(s: DocSection): number {
   return s.files.length + s.children.reduce((sum, c) => sum + countFilesDeep(c), 0);
+}
+
+export type CitableSection = {
+  title: string;
+  segments: string[];
+  groupTitle: string;
+};
+
+function flattenForCitation(sections: DocSection[]): CitableSection[] {
+  const result: CitableSection[] = [];
+  for (const top of sections) {
+    walk(top, top.title);
+  }
+  function walk(s: DocSection, groupTitle: string) {
+    for (const file of s.files) {
+      result.push({ title: file.title, segments: file.segments, groupTitle });
+    }
+    for (const child of s.children) {
+      walk(child, groupTitle);
+    }
+  }
+  return result;
 }
 
 function findFirstFile(s: DocSection): DocSection["files"][0] | undefined {
@@ -391,6 +418,44 @@ export function SystemIndex({
   sections: DocSection[];
   basePath: string;
 }) {
+  const router = useRouter();
+  const [submitting, setSubmitting] = useState(false);
+
+  async function handleSubmit({
+    text,
+    planMode,
+    selectedSection,
+  }: {
+    text: string;
+    planMode: boolean;
+    selectedSection: { title: string; segments: string[] } | null;
+  }) {
+    if (submitting) return;
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/chat/conversations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstMessage: text,
+          planMode,
+          citedSection: selectedSection,
+        }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.error ?? "Não foi possível iniciar a conversa.");
+      }
+      const { id } = (await res.json()) as { id: string };
+      router.push(`/chat/${id}`);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Erro inesperado.";
+      toast.error(message);
+      setSubmitting(false);
+    }
+    // NÃO setSubmitting(false) no caminho de sucesso — a navegação cuida.
+  }
+
   return (
     <div className="mx-auto max-w-4xl px-6 pt-4 pb-8 md:px-8 md:pt-5 md:pb-10">
       <div className="mb-8 px-2">
@@ -402,8 +467,14 @@ export function SystemIndex({
         </p>
       </div>
 
-      {/* TODO: habilitar quando integrar IA */}
-      {/* <PromptArea className="mb-8" /> */}
+      <div className="mb-8 px-2">
+        <PromptArea
+          citableSections={flattenForCitation(sections)}
+          basePath={basePath}
+          onSubmit={handleSubmit}
+          loading={submitting}
+        />
+      </div>
 
       <div className="grid gap-3 px-2 sm:grid-cols-2">
         {sections.map((section, i) => (

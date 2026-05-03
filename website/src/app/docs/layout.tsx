@@ -3,48 +3,38 @@ import {
   SidebarInset,
 } from "@/components/ui/sidebar";
 import { Topbar, TopbarBreadcrumb, TopbarActions } from "@/components/ui/topbar";
-import { SystemSidebar, type NavSection } from "@/components/doc-sidebar";
+import { SystemSidebar } from "@/components/doc-sidebar";
 import { DocTopbarLabel } from "@/components/doc-breadcrumb";
-import { getSections, type DocSection } from "@/lib/docs";
+import { getChatConversations } from "@/lib/chat-conversations";
 import { AppSwitcher } from "@/components/app-switcher";
+import { SystemTracker } from "@/components/system-tracker";
+import { getSystemConfig } from "@/lib/system-configs";
 
-function toNav(sections: DocSection[]): NavSection[] {
-  return sections.map((s) => ({
-    slug: s.slug,
-    title: s.title,
-    segments: s.segments,
-    files: s.files.map((f) => ({
-      slug: f.slug,
-      title: f.title,
-      segments: f.segments,
-    })),
-    children: toNav(s.children),
-  }));
-}
-
-export default function DocsLayout({
+export default async function DocsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const nav = toNav(getSections());
+  const config = getSystemConfig("docs");
+  const nav = config.getNav();
+  const conversations = await getChatConversations();
 
   return (
     <SidebarProvider>
+      <SystemTracker slug={config.slug} />
       <SystemSidebar
         sections={nav}
-        basePath="/docs"
-        title="Brand System"
-        subtitle="Brand System"
-        separatorAfterIndex={1}
-        footerLinks={[
-          { title: "Pacote Cultural", href: "/pacote" },
-        ]}
+        basePath={config.basePath}
+        title={config.title}
+        subtitle={config.subtitle}
+        separatorAfterIndex={config.separatorAfterIndex}
+        footerLinks={config.footerLinks}
+        conversations={conversations}
       />
       <SidebarInset>
         <Topbar>
           <TopbarBreadcrumb>
-            <DocTopbarLabel label="Brand System" basePath="/docs" />
+            <DocTopbarLabel label={config.title} basePath={config.basePath} />
           </TopbarBreadcrumb>
           <TopbarActions>
             <AppSwitcher />

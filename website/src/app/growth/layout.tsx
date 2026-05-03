@@ -3,44 +3,36 @@ import {
   SidebarInset,
 } from "@/components/ui/sidebar";
 import { Topbar, TopbarBreadcrumb, TopbarActions } from "@/components/ui/topbar";
-import { SystemSidebar, type NavSection } from "@/components/doc-sidebar";
+import { SystemSidebar } from "@/components/doc-sidebar";
 import { DocTopbarLabel } from "@/components/doc-breadcrumb";
-import { getGrowthSections, type DocSection } from "@/lib/docs";
+import { getChatConversations } from "@/lib/chat-conversations";
 import { AppSwitcher } from "@/components/app-switcher";
+import { SystemTracker } from "@/components/system-tracker";
+import { getSystemConfig } from "@/lib/system-configs";
 
-function toNav(sections: DocSection[]): NavSection[] {
-  return sections.map((s) => ({
-    slug: s.slug,
-    title: s.title,
-    segments: s.segments,
-    files: s.files.map((f) => ({
-      slug: f.slug,
-      title: f.title,
-      segments: f.segments,
-    })),
-    children: toNav(s.children),
-  }));
-}
-
-export default function GrowthLayout({
+export default async function GrowthLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const nav = toNav(getGrowthSections());
+  const config = getSystemConfig("growth");
+  const nav = config.getNav();
+  const conversations = await getChatConversations();
 
   return (
     <SidebarProvider>
+      <SystemTracker slug={config.slug} />
       <SystemSidebar
         sections={nav}
-        basePath="/growth"
-        title="Growth System"
-        subtitle="Crescimento & Métricas"
+        basePath={config.basePath}
+        title={config.title}
+        subtitle={config.subtitle}
+        conversations={conversations}
       />
       <SidebarInset>
         <Topbar>
           <TopbarBreadcrumb>
-            <DocTopbarLabel label="Growth System" basePath="/growth" />
+            <DocTopbarLabel label={config.title} basePath={config.basePath} />
           </TopbarBreadcrumb>
           <TopbarActions>
             <AppSwitcher />

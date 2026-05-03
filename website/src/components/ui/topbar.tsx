@@ -44,6 +44,23 @@ function Topbar({ className, ...props }: React.ComponentProps<"header">) {
   )
 }
 
+/** Absolutely centered area within the topbar (e.g., status notices). Hidden on mobile. */
+function TopbarCenter({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="topbar-center"
+      className={cn(
+        "pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center md:flex",
+        className,
+      )}
+      {...props}
+    />
+  )
+}
+
 /** Left-aligned breadcrumb area within the topbar. */
 function TopbarBreadcrumb({
   className,
@@ -386,6 +403,7 @@ export {
   Topbar,
   TopbarActions,
   TopbarBreadcrumb,
+  TopbarCenter,
   TopbarFractals,
   TopbarStreak,
   TopbarNotifications,
