@@ -1,3 +1,14 @@
+---
+title: Introdução ao conteúdo
+summary: Apresenta o Manual de Produção de Conteúdo como mapa do território simbólico e estratégico da Overlens, abrindo com a parábola "O Cego que Enxergava o Invisível" sobre valor real versus valor percebido.
+topics: [manual de conteúdo, princípios, comunicação, simbolismo, narrativa]
+keywords: [manual, conteúdo, voz da marca, criadores nexialistas, parábola, símbolos, valor percebido, comunicação, Londrina]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre os fundamentos da produção de conteúdo da Overlens, o manual de comunicação, ou a história fundadora sobre tornar ideias visíveis.
+related: []
+---
+
 # Introdução ao conteúdo
 
 ## 

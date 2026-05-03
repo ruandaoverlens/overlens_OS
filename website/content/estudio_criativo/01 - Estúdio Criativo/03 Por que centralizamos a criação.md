@@ -1,3 +1,14 @@
+---
+title: Por que centralizamos a criação
+summary: Justifica a centralização da produção criativa no Estúdio como mecanismo de proteção da identidade, consistência entre canais e preservação do posicionamento estratégico da Overlens.
+topics: [centralização, coerência de marca, posicionamento, infraestrutura criativa, integridade]
+keywords: [centralização, coerência, consistência, retrabalho, posicionamento, infraestrutura criativa, integridade da marca]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar por que a Overlens centraliza a criação, quais os riscos de produção isolada, ou como a centralização protege a marca.
+related: []
+---
+
 # Por que centralizamos a criação
 
 ## Quando equipes diferentes produzem de forma isolada, a marca perde coerência lentamente; cores desviam, mensagens desalinham, o posicionamento se dissolve. Centralizar a criação não é limitar a produção: é proteger a integridade do que a Overlens representa em cada ponto de contato.

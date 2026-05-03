@@ -1,3 +1,13 @@
+---
+title: Vanguarda
+summary: Vanguarda é a oferta high-end de mentoria e aceleração (R$9.000 a R$12.000 anual) para criadores em estado autoral — 8 níveis baseados em metodologia lean, vértice mais alto do ecossistema Overlens. Persona Lilly.
+topics: [vanguarda, oferta high-end, mentoria, aceleração, lean, persona lilly]
+keywords: [vanguarda, mentoria, high-end, R$9.000, R$12.000, lean, lilly, entropia, direção, validação, caixa, previsibilidade, equipe, processos, expansão, mastermind, aceleração]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre a Vanguarda, programa de mentoria avançada da Overlens, oferta high-end, aceleração de negócios criativos, preço da Vanguarda, ficha técnica, persona Lilly, ou recomendar uma oferta para criadores que já estão em estado autoral e querem estrutura de negócio.
+related: [growth_system/02 - Ofertas/23 - Ofertas, growth_system/01 - Mercado e Público/03 - Personas/19 - Lilly]
+---
 # Vanguarda
 
 **Mentoria avançada para criadores que lideram o novo**

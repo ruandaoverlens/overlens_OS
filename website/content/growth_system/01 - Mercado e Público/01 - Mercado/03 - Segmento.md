@@ -1,3 +1,14 @@
+---
+title: Segmento
+summary: Define o segmento de mercado da Overlens (Educação, Tecnologia, Economia Criativa, Entretenimento) e detalha setor, subsetor, categoria, posicionamento único, público-alvo e público expandido.
+topics: [segmento, posicionamento, edtech, economia criativa, design, futurismo]
+keywords: [segmento, setor macro, subsetor, categoria, edtech, design, futurismo, project-based learning, IA, criadores, empreendedores criativos, equipes de inovação, agências, startups]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre o segmento de mercado da Overlens, em que categoria a escola se posiciona, qual o setor/subsetor de atuação, ou para entender o posicionamento único da marca frente a edtechs, escolas de design e plataformas de IA.
+related: []
+---
+
 # Segmento
 
 ## Uma plataforma de transição criativa para um novo mundo; criação, tecnologia e filosofia aplicada para formar criadores conscientes, habilitados e preparados para construir o que vem a seguir.

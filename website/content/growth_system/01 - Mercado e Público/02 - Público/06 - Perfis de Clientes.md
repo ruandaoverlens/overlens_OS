@@ -1,3 +1,14 @@
+---
+title: Perfis de Clientes
+summary: Define os cinco perfis de clientes da Overlens por estágio de maturidade (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas) e a estrutura padrão de 14 campos que cada perfil deve preencher.
+topics: [perfis de clientes, maturidade, segmentação comportamental, jtbd, jornada]
+keywords: [perfis de clientes, ICP, inconscientes, operantes, convergentes, emergentes, nexialistas, jtbd, arquétipo, paradigmas mentais, micro-gatilhos, jornada nexialista]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre os perfis de clientes da Overlens, segmentação por maturidade, ICP, como construir um perfil novo, ou ao desenhar campanhas, jornadas, onboarding e ofertas alinhadas a estágios de consciência.
+related: []
+---
+
 # Perfis de Clientes
 
 ## Perfis de Clientes Ideais

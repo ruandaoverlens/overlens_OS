@@ -1,3 +1,14 @@
+---
+title: Mercado
+summary: Mapeia o contexto de mercado da Overlens e introduz a estrutura da seção (Segmento, TAM/SAM/SOM, Público-Alvo, Perfil Ideal) que orienta o posicionamento estratégico da plataforma.
+topics: [mercado, posicionamento, economia criativa, edtech, estratégia, IA]
+keywords: [mercado, segmento, TAM, SAM, SOM, público-alvo, ICP, perfil ideal, edtech, economia criativa, nexialistas, design, IA]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre o mercado da Overlens, em que setor/categoria a marca opera, qual o panorama estratégico ou como navegar a estrutura da seção Mercado e Público (Segmento, TAM/SAM/SOM, Público-Alvo, Perfil Ideal).
+related: []
+---
+
 # Mercado
 
 A seção "Mercado" do *Livro de Marketing e Vendas da Overlens* apresenta uma análise estratégica e abrangente do cenário no qual a Overlens opera, fornecendo uma base sólida para a compreensão do seu posicionamento, oportunidades e desafios.

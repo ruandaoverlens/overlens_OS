@@ -1,3 +1,14 @@
+---
+title: Cuidados e Riscos
+summary: Documenta os limites éticos da Overlens — distingue renúncia de preguiça, reconhece desigualdade de acesso à responsabilidade e evita a armadilha messiânica de "despertar" os outros.
+topics: [guardrails éticos, autocrítica, limites filosóficos, ética da autonomia, antidogma]
+keywords: [renúncia, preguiça, autonomia, responsabilidade, dogma, messianismo, aristóteles, existencialismo, humanismo, caspar david friedrich, wanderer, estado, culpa individual]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre os limites éticos da Overlens, como evitamos virar dogma, a diferença entre renúncia e preguiça, riscos de pregar autonomia, ou quando estiver redigindo conteúdo sensível que pode soar arrogante/messiânico.
+related: []
+---
+
 # Cuidados e Riscos
 
 ## Não existe certeza absoluta. Toda convicção forte carrega riscos proporcionais à sua intensidade.

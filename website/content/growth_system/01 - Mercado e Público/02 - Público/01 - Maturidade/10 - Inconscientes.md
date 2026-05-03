@@ -1,3 +1,14 @@
+---
+title: Inconscientes
+summary: Detalha o estágio Inconsciente da jornada de maturidade Overlens, com ficha rápida, problemas, soluções, micro-gatilhos e linguagem para iniciar quem ainda não despertou para a nova era criativa.
+topics: [maturidade, inconscientes, jornada, atlas, overpass, gatilhos]
+keywords: [inconscientes, atlas, overpass, jornada nexialista, jtbd, arquétipo do inocente, estudantes, early-career, paradigmas, micro-gatilhos, perda oculta, iluminação, identidade emergente]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre o perfil Inconsciente, estudantes e iniciantes que ainda não despertaram para a mudança de era, ou ao desenhar comunicação de topo de funil, conteúdos gratuitos e portas de entrada como Atlas e Overpass.
+related: []
+---
+
 # Inconscientes
 
 ## Inconscientes são aquelas pessoas que ainda não despertaram verdadeiramente para a mudança que estamos vivendo. Não conhecem a Overlens e estão vivendo suas vidas normalmente, como se o mundo ainda fosse o mesmo de algumas décadas atrás.

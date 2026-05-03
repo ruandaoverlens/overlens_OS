@@ -1,3 +1,14 @@
+---
+title: Glossário
+summary: Aponta para o glossário completo da Overlens em overlens.com.br/glossario e organiza as camadas de termos do ecossistema — conceitos fundacionais, produtos, personas, perfis de maturidade, lugares simbólicos e termos proibidos.
+topics: [glossário, terminologia oficial, ecossistema de nomes, termos proibidos]
+keywords: [Arcimboldo, The Librarian, Nexialista, Lente, Sistema Vivo, Capital Simbólico, Atlas, Overpass, Vanguarda, Spectrum, NexGen, D.U.D, T.R.U, Brunin, Tella, Ander, Lilly, Parallax, Arcádia, Téssera, Orbital, Noumenom, Inconsciente, Operante, Convergente, Emergente]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar pela lista oficial de termos da Overlens, pelo significado de produtos, personas, lugares simbólicos ou perfis de maturidade, ou quando precisar verificar a grafia correta de um termo antes de publicar.
+related: ["brand_system/05 - Universo Verbal/04 Vocabulário.md", "brand_system/05 - Universo Verbal/09 Arquitetura de Marca.md"]
+---
+
 # Glossário
 
 ## Cada palavra é uma lente. Um glossário não é apenas uma lista de definições; é o mapa genético de como uma marca pensa, nomeia e organiza a realidade que constrói.

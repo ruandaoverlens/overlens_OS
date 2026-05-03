@@ -1,3 +1,14 @@
+---
+title: Guia de Cores
+summary: Explica por que o preto é base da Overlens (e não o branco), o simbolismo das cores de acento (azul, verde musgo, âmbar, bordô, cinzas) e as diretrizes de saturação, microdoses e papel arquetípico de cada tom.
+topics: [paleta de cores, base preta, acentos cromáticos, simbolismo das cores, saturação]
+keywords: [Claude Monet, Impression Sunrise, preto, azul gelo, verde musgo, âmbar, bordô, vermelho queimado, cinzas, microdoses, saturação, paleta modular, Logos, Pathos, Ethos, alerta ético, contraste]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar qual a paleta da Overlens, por que o preto é base, quando usar âmbar versus azul versus verde musgo, qual o nível de saturação aceitável, ou quando estiver definindo cores para uma peça ou interface.
+related: ["brand_system/06 - Universo Visual/06 Tipografia.md", "brand_system/06 - Universo Visual/08 Grafismos.md", "brand_system/06 - Universo Visual/04 Símbolos e Logotipos.md"]
+---
+
 # Guia de Cores
 
 ## Um sistema visual feito para criar atmosfera, comunicar maturidade e valorizar o silêncio visual como lugar de potência.

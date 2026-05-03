@@ -1,3 +1,14 @@
+---
+title: Swipe Files
+summary: Define swipe file como coleção viva de referências eficazes — anúncios, headlines, ofertas — e descreve como organizá-la por tema, objetivo, marcações e formato para acelerar a criação.
+topics: [swipe file, referências, copywriting, organização, repertório]
+keywords: [swipe file, copywriting, referências, headlines, ofertas, e-mails, organização, persuasão, Notion, repertório]
+priority: low
+ai_when_to_use: |
+  Use APENAS quando o usuário pedir explicitamente exemplos/referências de manifesto, copy ou conteúdo similar, ou perguntar como montar e organizar um swipe file.
+related: []
+---
+
 # Swipe Files
 
 ## Um swipe file é uma coleção viva de referências que já demonstraram eficácia; anúncios, headlines, estruturas de texto, ofertas. Em vez de partir da folha em branco, o criador consulta padrões reais, identifica mecanismos de persuasão e adapta com precisão e intenção estratégica.

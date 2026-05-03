@@ -1,3 +1,14 @@
+---
+title: Iconografia
+summary: Estabelece os princípios da iconografia Overlens — ícones sólidos com pontas levemente arredondadas, preenchimento como padrão e linha como apoio — e as três escalas de uso (Medium 24px, Small 20px, Micro 16px) com prefixos Md/Sm/Micro.
+topics: [iconografia, sistema de ícones, escalas, princípios de construção]
+keywords: [ícones sólidos, ícones de linha, Md, Sm, Micro, 24px, 20px, 16px, navegação, badges, tags, indicadores, preenchimento, pontas arredondadas]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar como construir ou escolher um ícone para a Overlens, qual escala usar em cada contexto (navegação, input, badge), ou quando estiver auditando consistência de iconografia em uma interface.
+related: ["brand_system/06 - Universo Visual/08 Grafismos.md", "brand_system/06 - Universo Visual/05 Guia de Cores.md"]
+---
+
 # Iconografia
 
 ## Cada forma carrega uma decisão. Cada ícone é uma frase visual com peso, direção e propósito.

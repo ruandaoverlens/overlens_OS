@@ -1,3 +1,14 @@
+---
+title: Instagram
+summary: Diretrizes de produção no Instagram da Overlens — curadoria de tema, foco em compartilhamento, enquadramento estratégico, primeiros 5 segundos e uso de materiais-presente sem sensacionalismo.
+topics: [instagram, redes sociais, conteúdo, enquadramento, ctas]
+keywords: [instagram, reels, carrosséis, stories, compartilhamento, headline, enquadramento, cta, manychat, presente, atenção]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar como produzir conteúdo no Instagram da Overlens, diretrizes de post, headlines, enquadramento, uso de materiais-presente ou métricas de engajamento.
+related: []
+---
+
 # Instagram
 
 ## Chamar atenção sem vender os valores da marca. No Instagram, a Overlens segue o rastro da atenção com curadoria precisa, enquadramento estratégico e materiais-presente que transformam alcance orgânico em relação real; sem sensacionalismo, sem atalhos vazios.

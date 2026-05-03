@@ -1,3 +1,14 @@
+---
+title: Manifesto
+summary: Manifesto fundador da Overlens, escrito por Ruan Braz, que confronta a era da produção vazia, a captura da imaginação por algoritmos e IAs, e convoca à criação consciente como ato de liberdade na Era da Criação.
+topics: [manifesto, fundação, Era da Criação, crítica à passividade, autoria, liberdade criativa]
+keywords: [Ruan Braz, Era da Criação, futuro como projeto, prisão cor de rosa, dopamina, alegoria da caverna, Platão, IA generativa, burnout, criadores destruidores de ídolos, simbiose, fogo do Olimpo, Prometheus, briefing, criar pela liberdade]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário pedir o manifesto da Overlens, perguntar sobre a história fundadora, a crítica da marca à era da produção vazia, ou quando precisar de uma declaração emocional-filosófica de alto impacto para abertura de campanhas, vídeos ou eventos.
+related: ["brand_system/04 - Núcleo da Marca/03 Visão e Propósito.md", "brand_system/04 - Núcleo da Marca/04 Storybrand.md"]
+---
+
 # Manifesto
 
 Escrito por **Ruan Braz**, fundador da Overlens.

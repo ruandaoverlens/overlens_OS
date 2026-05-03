@@ -1,3 +1,14 @@
+---
+title: Convergentes
+summary: Aprofunda o perfil Convergente (preso a metodologias) com paradoxo central, subtipos (Técnico Estagnado, Estrategista Engessado, Criativo Racionalizado), objeções, antídotos e gatilhos para construir diferenciação autoral.
+topics: [maturidade, convergentes, diferenciação, atlas, overpass, autoralidade]
+keywords: [convergentes, atlas, overpass, alquimista conceitual, freelancer sênior, designer independente, metodologia, framework, diferenciação, assinatura criativa, IA, blindagem, micro-vitórias]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre o perfil Convergente, criadores presos a metodologias e em busca de diferenciação, freelancers sêniores, ou ao desenhar narrativa de Atlas, Overpass e mensagens sobre singularidade e visão sistêmica.
+related: []
+---
+
 # Convergentes
 
 ## Convergentes já romperam parte das crenças que os limitavam, mas ainda carregam correntes invisíveis que os prendem. Avançaram além da técnica, mas agora se apoiam demais em metodologias sem perceber que metodologia sem visão sistêmica também leva à estagnação. Na Overlens, Convergentes encontram a coragem para questionar suas próprias molduras e a estratégia para posicionar sua criação como algo único, vivo e necessário. 

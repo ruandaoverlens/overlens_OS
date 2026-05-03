@@ -1,3 +1,14 @@
+---
+title: Arquétipos
+summary: Define a tríade arquetípica da Overlens — Mago (primário, transformação com método), Criador (secundário, forma e realização) e Sábio (terciário, ética e explicabilidade) — com guardrails para evitar charlatanismo e limites inegociáveis.
+topics: [arquétipos, Mago, Criador, Sábio, narrativa simbólica, guardrails éticos]
+keywords: [Mago, Criador, Sábio, Prometheus, Ironman, cientista, sábio-trickster, anti-herói, assombro sem truque, microdoses de caos, replicabilidade, deepfake, Marcel Duchamp, Fountain, faísca, brasa, fogueira, prisma, micélio, Bauhaus, Media Lab, Gestalt]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre os arquétipos da marca, sobre o papel de Mago/Criador/Sábio, quando precisar decidir o tom arquetípico de uma campanha, ou quando estiver verificando se uma peça respeita os guardrails (sem charlatanismo, sem deepfake, sem promessas irreais).
+related: ["brand_system/04 - Núcleo da Marca/05 Virtudes.md", "brand_system/04 - Núcleo da Marca/04 Storybrand.md", "brand_system/04 - Núcleo da Marca/07 Proxies.md"]
+---
+
 # Arquétipos
 
 ## Magia traduzida em tecnologia e ciência.

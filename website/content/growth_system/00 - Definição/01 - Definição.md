@@ -1,3 +1,13 @@
+---
+title: Definição
+summary: Apresenta o Livro de Growth da Overlens — propósito, público-alvo, momentos de uso e como navegar o sistema de princípios estratégicos que orienta posicionamento, comunicação e vendas.
+topics: [growth, livro de growth, definição, estratégia, fundamentos]
+keywords: [livro de growth, posicionamento, comunicação estratégica, vendas, marketing, expressão da overlens, sistema de pensamento, módulos]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar o que é o Livro de Growth da Overlens, qual seu propósito, a quem se destina, quando deve ser consultado, ou quando precisar de uma visão geral da arquitetura estratégica da Overlens antes de mergulhar em capítulos específicos.
+related: []
+---
 # Definição
 
 Documento Interno

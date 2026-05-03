@@ -1,3 +1,14 @@
+---
+title: Público-alvo
+summary: Valida o público-alvo da Overlens por meio de cinco fatores (relevância, porte, acessibilidade, rentabilidade, objetividade) e ancora a lógica de múltiplas portas de entrada por estágio de maturidade.
+topics: [público-alvo, validação, segmentação, rentabilidade, jornada]
+keywords: [público-alvo, criadores, freelancers, designers, empreendedores, líderes criativos, vanguarda, echoes, atlas, overpass, inconscientes, operantes, convergentes, emergentes, nexialistas]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre o público-alvo da Overlens, quem é atendido, por que esse público é relevante, qual o porte e a rentabilidade do mercado, ou ao validar fit de produto e estratégia de comunicação.
+related: []
+---
+
 # Público-alvo
 
 ## Fatores de Validação

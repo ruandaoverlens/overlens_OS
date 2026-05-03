@@ -1,3 +1,14 @@
+---
+title: Painel Semântico
+summary: Descreve em palavras (não em colagem) os 5 eixos semânticos da estética Overlens (Atmosfera, Texturas, Composição, Figuras, Paisagens), a paleta emocional alvo, o anti-moodboard e referências artísticas como Sugimoto, Tarkovsky, Villeneuve e Wabi-sabi.
+topics: [moodboard, painel semântico, direção de arte, atmosfera visual, anti-moodboard, referências culturais]
+keywords: [Hiroshi Sugimoto, Edward Weston, Michael Kenna, Sebastião Salgado, Andrei Tarkovsky, Denis Villeneuve, Terrence Malick, Estilo Suíço, Brockmann, Wabi-sabi, Kenya Hara, Burke, Kant, sublime, Chardin, contemplação ativa, assombro comedido, tensão produtiva, anti-moodboard]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar qual a direção de arte da Overlens, qual atmosfera visual buscar em fotografia ou vídeo, quais referências cinematográficas e fotográficas estudar, ou quando precisar decidir se uma imagem específica combina com a marca.
+related: ["brand_system/06 - Universo Visual/02 Imagens Arquetípicas.md", "brand_system/06 - Universo Visual/05 Guia de Cores.md", "brand_system/07 - Universo Sonoro/01 Universo Sonoro.md"]
+---
+
 # Painel Semântico
 
 ## Antes da imagem, existe a intenção. O moodboard da Overlens não é uma colagem de referências; é um mapa de atmosferas, tensões e presenças visuais que traduzem, em linguagem sensorial, aquilo que a marca pensa e sente.

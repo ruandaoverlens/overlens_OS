@@ -1,4 +1,15 @@
-# Lilly \- A Consultora Emergente
+---
+title: Lilly - A Consultora Emergente
+summary: Persona da consultora de branding de 34 anos em São Paulo, design e pós em branding, perfil ENTP-A emergente que busca metodologia própria e rede de pares, com oferta ideal Vanguarda.
+topics: [persona, lilly, emergente, consultora, branding estratégico, vanguarda]
+keywords: [lilly, lilian, persona, emergente, consultora, branding estratégico, ENTP-A, são paulo, vanguarda, sistemas vivos, frameworks próprios, pentagram, interbrand, antifragil, mapa de empatia]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre Lilly, persona da consultora emergente, profissional de branding de alto nível em busca de metodologia própria e comunidade madura, ou ao desenhar narrativa de Vanguarda, mentoria avançada e branding estratégico.
+related: []
+---
+
+# Lilly - A Consultora Emergente
 
 <div style="display:flex;gap:24px;align-items:flex-start">
 <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px;width:200px">

@@ -1,3 +1,14 @@
+---
+title: Tomorrowland
+summary: Trecho narrativo inspirado em Tomorrowland sobre o paradoxo do alerta ignorado — quem viu o iceberg, alertou, e foi tratado como entretenimento enquanto o colapso seguia.
+topics: [referência cultural, tomorrowland, narrativa, alerta, futuro]
+keywords: [tomorrowland, narrativa, futuro, colapso, apocalipse, alerta, swipe file, referência cultural]
+priority: low
+ai_when_to_use: |
+  Use APENAS quando o usuário pedir explicitamente referências culturais, exemplos de narrativa de alerta ou copy similar como inspiração.
+related: []
+---
+
 # Tomorrowland
 
 ## Imagine se descobrisse o futuro e se assustasse com o que soube. O que faria com essa informação? Procuraria quem? políticos? grandes industriais? O que usaria para convencer? Dados? Fatos? Boa sorte\!

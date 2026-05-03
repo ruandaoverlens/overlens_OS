@@ -1,3 +1,14 @@
+---
+title: Encontrando Big Ideas
+summary: Apresenta o método para identificar, validar e traduzir Big Ideas em headlines — combinando subversão da lógica, desejo latente, 14 princípios de validação e fórmula de gatilho-objeção-quebra.
+topics: [big idea, copywriting, headlines, validação, criatividade]
+keywords: [big idea, headline, gatilho, objeção, quebra de objeção, subversão, desejo latente, copy, persona, novidade, urgência, 14 princípios]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar como criar uma Big Idea, como validar uma ideia, como escrever uma headline forte, ou sobre a fórmula de copy da Overlens.
+related: []
+---
+
 # Encontrando Big Ideas
 
 ## Uma Big Idea é emocional e intelectualmente irresistível, simples o suficiente para ser compreendida de imediato e poderosa o bastante para redesenhar a percepção de quem a encontra. Aqui está o método para identificá-la, validá-la e traduzi-la em headlines que sustentam atenção real.

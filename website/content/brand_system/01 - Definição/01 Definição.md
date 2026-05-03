@@ -1,3 +1,14 @@
+---
+title: Introdução
+summary: Apresenta o Brand System como código operacional vivo da Overlens, definindo seu papel, escopo, público-alvo e modo de uso para todas as pessoas que constroem a marca.
+topics: [brand system, fundamentos da marca, governança de marca, sistema vivo, documentação]
+keywords: [brand system, sistema vivo, código operacional, nexialista, propósito, clareza, consistência, evolução, magritte, clairvoyance, designers, criadores, estrategistas]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar o que é o Brand System da Overlens, como navegar/usar este documento, para quem ele foi feito, qual o propósito da marca, ou quando precisar de uma introdução geral ao ecossistema antes de mergulhar em qualquer outro doc.
+related: []
+---
+
 # Introdução
 
 ## Este é o código operacional da Overlens; o sistema vivo que organiza cada decisão, símbolo e narrativa da marca. Não é um manual para ser lido uma vez. É uma estrutura para ser consultada sempre que algo for criado em nome deste ecossistema.

@@ -1,3 +1,14 @@
+---
+title: Perfil Ideal
+summary: Define o ICP da Overlens (Convergente-maduro a Emergente-inicial) com indicadores de ticket, LTV, ciclo de venda, sete perguntas-âncora de qualificação e estratégia de prospecção para Vanguarda.
+topics: [ICP, perfil ideal, qualificação, vanguarda, vendas]
+keywords: [ICP, perfil ideal de cliente, ticket médio, LTV, ciclo de venda, NPS, upgrade rate, vanguarda, atlas, overpass, perguntas-âncora, discovery call, health score, prospecção]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre o perfil ideal de cliente da Overlens, ICP, como qualificar lead para Vanguarda, indicadores de fit comercial, ou ao desenhar discovery call, prospecção e estratégia de vendas de alto ticket.
+related: []
+---
+
 # Perfil Ideal
 
 ## O Perfil Ideal de Cliente é aquele que chega no momento de maturidade e consciência certa para navegar por toda jornada dentro da Overlens.

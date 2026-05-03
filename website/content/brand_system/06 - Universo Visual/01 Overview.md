@@ -1,3 +1,14 @@
+---
+title: Overview
+summary: Apresenta o universo visual da Overlens como sistema vivo de decisões estéticas e indica como acessar os assets oficiais (logotipos, ícones, templates, fontes) via botão Assets da Marca, restrito a Staff e Administradores.
+topics: [overview visual, sistema visual, acesso a assets, governança da marca]
+keywords: [Kandinsky, Several Circles, sistema vivo, assets da marca, logotipos, ícones, templates, fontes, Staff, Administrador, gramática visual]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar onde encontra os arquivos oficiais da identidade visual, quem tem acesso aos assets, ou pedir uma visão geral rápida do que compõe o universo visual da Overlens.
+related: ["brand_system/06 - Universo Visual/04 Símbolos e Logotipos.md", "brand_system/06 - Universo Visual/05 Guia de Cores.md", "brand_system/06 - Universo Visual/06 Tipografia.md"]
+---
+
 # Overview
 
 ## O universo visual da Overlens é um sistema vivo de decisões estéticas; cada elemento existe para sustentar a narrativa da marca com precisão e coerência.

@@ -1,3 +1,14 @@
+---
+title: Ensaio Manifesto
+summary: Ensaio direto e desconfortável sobre o salto evolutivo imposto pela IA, dividindo a humanidade em três grupos — Nexialistas, Operantes e Obsoletos — e convocando à escolha imediata.
+topics: [manifesto, ensaio, ia, evolução, nexialistas]
+keywords: [ensaio, manifesto, nexialistas, operantes, obsoletos, bifurcação, ia, salto evolutivo, singularidade, criação]
+priority: low
+ai_when_to_use: |
+  Use APENAS quando o usuário pedir explicitamente exemplos/referências de manifesto, ensaio ou copy similar como inspiração para conteúdo.
+related: []
+---
+
 # Ensaio Manifesto
 
 ## Um ensaio direto sobre o salto evolutivo que a inteligência artificial impõe à humanidade. Não é motivacional, não é confortável; é uma leitura crua sobre a bifurcação entre quem escolhe evoluir, quem serve aos que evoluíram e quem se torna obsoleto.

@@ -1,3 +1,14 @@
+---
+title: Por que a Overlens existe?
+summary: Explica o propósito da Overlens — combater a renúncia criativa em um mundo que recompensa obediência — e detalha como cumprimos a missão pelos três pilares (inspirar, ensinar, mover).
+topics: [propósito, missão, três pilares, autonomia criativa, crítica ao status quo]
+keywords: [propósito, missão, inspirar, ensinar, mover, prometheus, autonomia, alienação, renúncia, criação, vanguarda, bootcamps, mentoria, sugadores, capital simbólico]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre o propósito da Overlens, por que ela existe, qual a missão, os três pilares (inspirar, ensinar, mover), ou quando precisar fundamentar qualquer comunicação que toque o "porquê" da marca.
+related: []
+---
+
 # Por que a Overlens existe?
 
 ## A realidade é implacável, mas sempre cede espaço para quem ousa criar.

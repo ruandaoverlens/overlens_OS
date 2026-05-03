@@ -1,3 +1,14 @@
+---
+title: Identidade Sonora
+summary: Diretrizes operacionais da identidade sonora — sonic logo (2,5–3,5s), gêneros alinhados e proibidos, BPM por contexto, instrumentação preferencial, soundscape por touchpoint (vídeos, aulas, reels, eventos, plataforma), brand voice humana e funções do silêncio.
+topics: [identidade sonora, sonic logo, brand music, brand voice, BPM, soundscape, playlists]
+keywords: [sonic logo, sino tibetano, piano preparado, sintetizador analógico, ambient, neoclássico, post-rock, IDM, downtempo, trip-hop, synthwave, BPM, Moog, Prophet, Juno, field recordings, granular synthesis, brand voice, madeira aquecida, upspeak, Visualizando o Futuro, Ethereal Lens, Conquer the World, Overwaltz for Creation, ATON 25, Overthinking, Kandinsky, Squares with Concentric Circles]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar como soa a Overlens (sonic logo, brand voice), qual BPM ou gênero usar em cada formato, como editar áudio para vídeo institucional ou reel, qual playlist consultar para cada estado emocional, ou quando estiver aprovando uma peça com componente sonoro.
+related: ["brand_system/07 - Universo Sonoro/01 Universo Sonoro.md", "brand_system/04 - Núcleo da Marca/06 Arquétipos.md"]
+---
+
 # Identidade Sonora
 
 ## Antes de qualquer imagem, existe uma frequência que diz ao corpo: preste atenção.

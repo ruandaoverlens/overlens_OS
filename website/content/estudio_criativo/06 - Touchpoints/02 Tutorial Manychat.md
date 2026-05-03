@@ -1,3 +1,14 @@
+---
+title: "Tutorial: Manychat"
+summary: Guia operacional para configurar automações no Manychat — automações perpétuas em posts e temporárias em stories, com templates de DM de introdução, follow e agradecimento.
+topics: [tutorial, manychat, automação, instagram, dm]
+keywords: [manychat, automação, dm, instagram, template, palavra-chave, comentário, follow, perpétua, temporária]
+priority: low
+ai_when_to_use: |
+  Use APENAS quando o usuário perguntar especificamente como configurar automação no Manychat, criar DM automatizada, ou pedir os templates de mensagem da Overlens.
+related: []
+---
+
 # Tutorial : Manychat
 
 ## O guia operacional para configurar automações no Manychat que entregam materiais com naturalidade; das mensagens de introdução ao envio do link final. Automação perpétua para posts, temporária para stories, sempre com intenção e sem parecer mecânico.

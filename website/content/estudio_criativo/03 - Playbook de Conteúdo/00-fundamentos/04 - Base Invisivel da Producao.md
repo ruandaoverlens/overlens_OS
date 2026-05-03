@@ -1,3 +1,14 @@
+---
+title: A base invisível da produção de conteúdo
+summary: Aplica os 5 níveis de consciência de Eugene Schwartz à comunicação Overlens e mapeia as personas Brunin, Tella, Ander e Lilly como modelos operacionais de cada nível de maturidade criativa.
+topics: [níveis de consciência, personas, maturidade criativa, eugene schwartz, diagnóstico]
+keywords: [eugene schwartz, unaware, problem aware, solution aware, product aware, most aware, brunin, tella, ander, lilly, buyer persona, maturidade criativa, nexialista]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário estiver definindo público-alvo, perguntar em que nível de consciência a pessoa está, quiser as personas (Brunin, Tella, Ander, Lilly) ou precisar calibrar a mensagem ao estágio mental do leitor antes de escrever.
+related: []
+---
+
 # A base invisível da produção de conteúdo
 
 ## Antes de qualquer Big Idea, antes de qualquer headline, existe uma decisão anterior que determina se o conteúdo será ignorado ou absorvido: **Em que nível de consciência está a pessoa que estamos tentando alcançar?**

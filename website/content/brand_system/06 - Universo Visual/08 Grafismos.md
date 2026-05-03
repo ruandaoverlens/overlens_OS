@@ -1,3 +1,14 @@
+---
+title: Grafismos
+summary: Define as 4 famílias de grafismos da Overlens (Ruído Controlado, Linhas e Geometria, Elementos Orgânicos, Tipográficos), regras de combinação (no máximo 2 famílias por composição), dosagens precisas e anti-padrões a evitar.
+topics: [grafismos, texturas, geometria, elementos orgânicos, tipografia como grafismo, anti-padrões]
+keywords: [Kandinsky, Composition VIII, ruído controlado, grão, linhas, geometria, Brockmann, Vignelli, Kenya Hara, manchas orgânicas, gradientes, lettering, Outfit, contenção, microdose, ordem e caos, tensão, glitch, vaporwave, cyberpunk, anti-padrões]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar como aplicar texturas, ruído ou elementos gráficos complementares na Overlens, qual combinação de famílias usar, qual a dosagem certa de opacidade, ou quando estiver criando peças editoriais e precisar decidir entre orgânico, geométrico ou tipográfico.
+related: ["brand_system/06 - Universo Visual/05 Guia de Cores.md", "brand_system/06 - Universo Visual/06 Tipografia.md", "brand_system/06 - Universo Visual/03 Painel Semântico.md"]
+---
+
 # Grafismos
 
 ## O que acontece entre o logo e o vazio não é acidente. É linguagem.

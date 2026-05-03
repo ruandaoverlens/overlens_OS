@@ -1,3 +1,14 @@
+---
+title: Nossos Princípios
+summary: Define os quatro princípios operacionais da Overlens — Julgamento, Realização, Parcimônia e Unidade — como critérios de decisão que sustentam coerência diante da complexidade.
+topics: [princípios operacionais, critérios de decisão, cultura interna, tomada de decisão]
+keywords: [julgamento, realização, parcimônia, unidade, princípios, m.c. escher, relativity, vanguarda, camila moya, michael menezes, pedro hirakawa, simplicidade, comunicação, torre de babel, causa raiz]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre os princípios da Overlens, como tomamos decisões, qual o critério para julgar/agir/simplificar/comunicar, ou quando precisar fundamentar uma escolha em um eixo de coerência da marca.
+related: []
+---
+
 # Nossos Princípios
 
 ## Princípios não dizem o que fazer. Dizem como pensar quando ninguém está dizendo o que fazer. São critérios de julgamento, ação e orientação que operam abaixo das regras; moldando o modo de priorizar, decidir e se responsabilizar diante da complexidade do mundo real.

@@ -1,3 +1,14 @@
+---
+title: Fluxo de Edição
+summary: Descreve o fluxo de produção massiva da Overlens — 13 horas semanais de live, checkpoint e workshop viram dezenas de cortes — passando por planejamento, preparação, gravação, upload no Drive, decupagem, edição e distribuição multicanal.
+topics: [fluxo de edição, produção massiva, decupagem, reaproveitamento, planejamento de conteúdo, lives, workshops]
+keywords: [fluxo de produção, planejamento, preparação, gravação, upload, drive, decupagem, cortes, lives, checkpoint, workshop, youtube, redes sociais, 13 horas]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar como funciona o fluxo de produção/edição de vídeo da Overlens, como as 13h semanais de gravação viram cortes, o que acontece em cada etapa (planejamento, preparação, gravação, upload, decupagem), ou como o conteúdo bruto é transformado em ativos publicados.
+related: []
+---
+
 # Fluxo de Edição
 
 ## Treze horas semanais de conteúdo bruto entram no sistema. Do planejamento temático à decupagem, da seleção de cortes à distribuição multicanal; este fluxo transforma produção massiva em dezenas de ativos reutilizáveis para YouTube, Instagram pessoal e institucional.

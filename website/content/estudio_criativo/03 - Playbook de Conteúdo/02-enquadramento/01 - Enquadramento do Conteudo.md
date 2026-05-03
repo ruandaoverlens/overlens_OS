@@ -1,3 +1,14 @@
+---
+title: Enquadramento do Conteúdo
+summary: Define enquadramento como a lente que organiza o conteúdo e apresenta os 6 enquadramentos Overlens (Diagnóstico, Distinção, Mapa, Processo, Consequência, Listas) com perguntas centrais e usos típicos.
+topics: [enquadramento, lente, arquitetura de pensamento, frameworks]
+keywords: [enquadramento, lente, diagnóstico, distinção, mapa, processo, consequência, listas, arquitetura de pensamento, big idea, headline]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário tiver uma Big Idea e não souber como estruturar a peça, perguntar "qual lente usar para esse tema?", ou precisar escolher entre diagnóstico, distinção, mapa, processo ou consequência antes de escrever.
+related: []
+---
+
 # Enquadramento do Conteúdo
 
 ## Enquadramento é a decisão mais importante da produção de conteúdo  na Overlens. Se a Big Idea define **o que precisa ser revelado**, o enquadramento define **como essa revelação vai acontecer**.

@@ -1,3 +1,14 @@
+---
+title: As duas frentes do Estúdio Criativo
+summary: Detalha as duas responsabilidades complementares do Estúdio — governança dos assets de marca (visuais, verbais, sensoriais, estratégicos) e produção criativa sob demanda para os demais departamentos.
+topics: [governança de marca, produção criativa, assets, estratégia, frentes de trabalho]
+keywords: [governança, assets, logotipos, tipografia, tom de voz, naming, posicionamento, briefing, formulário de solicitação, demanda]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre as duas frentes do Estúdio, o que é governança de marca, como funciona produção sob demanda, ou quais tipos de ativos o estúdio gerencia.
+related: []
+---
+
 # As duas frentes do Estúdio Criativo
 
 ## O Estúdio opera em duas frentes complementares: a governança dos assets que formam a identidade da marca e a produção criativa sob demanda que materializa essa identidade. Uma constrói o sistema, a outra o coloca em movimento; sem que nenhuma das duas exista sem a outra.

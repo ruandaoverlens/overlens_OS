@@ -1,3 +1,14 @@
+---
+title: Como pensar no conteúdo
+summary: Estabelece o método de pensamento antes da execução — contexto, utilidade, abrangência, enquadramento — e explica a lacuna entre valor real e valor percebido que define se um conteúdo será visto ou ignorado.
+topics: [estratégia de conteúdo, contexto, utilidade, valor percebido, enquadramento]
+keywords: [contexto, utilidade, abrangência, enquadramento, valor real, valor percebido, heurísticas, atenção, viés de confirmação, headlines]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar como começar a pensar um conteúdo, como decidir tema e formato, como aumentar alcance sem ser genérico, ou sobre valor percebido versus valor real.
+related: []
+---
+
 # Como pensar no conteúdo
 
 ## Antes de escolher formato, canal ou linguagem, a primeira decisão é sobre contexto: quem precisa ouvir isso e por quê. Utilidade define se o conteúdo merece atenção; abrangência define seu alcance; enquadramento resolve o abismo entre valor real e valor percebido.

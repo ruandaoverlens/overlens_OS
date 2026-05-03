@@ -1,3 +1,14 @@
+---
+title: Universo Sonoro
+summary: Mapeia os princípios sonoros da Overlens — semiótica (profundidade sem peso, clareza sem frieza, tensão sem ansiedade), arquétipos sonoros (Mago, Criador, Sábio), paisagem sonora (keynote, sinais, soundmarks), papel do silêncio e territórios musicais habitados ou proibidos.
+topics: [universo sonoro, semiótica sonora, arquétipos sonoros, paisagem sonora, silêncio estrutural, curadoria musical]
+keywords: [Julian Treasure, Murray Schafer, Michel Chion, Walter Murch, Brian Eno, Stars of the Lid, Nils Frahm, Max Richter, Ólafur Arnalds, Ryuichi Sakamoto, Moderat, Kiasmos, Jon Hopkins, Sigur Rós, Bon Iver, Jóhann Jóhannsson, Hildur Guðnadóttir, Paul Klee, Polyphony, Mago, Criador, Sábio, ambient, neoclássico, modal, drones, keynote, sinais, soundmarks, ATON 25]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar quais princípios guiam o som da Overlens, quais artistas e gêneros referenciar, qual o papel do silêncio, como combinar arquétipos sonoros, ou quando estiver curando trilha para vídeo, evento ou plataforma.
+related: ["brand_system/07 - Universo Sonoro/02 Identidade Sonora.md", "brand_system/04 - Núcleo da Marca/06 Arquétipos.md", "brand_system/06 - Universo Visual/03 Painel Semântico.md"]
+---
+
 # Universo Sonoro
 
 ## Aqui está o que permanece quando você fecha os olhos.

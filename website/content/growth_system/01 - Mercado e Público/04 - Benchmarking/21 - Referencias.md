@@ -1,3 +1,14 @@
+---
+title: Referências
+summary: Lista as principais referências internacionais que inspiram a Overlens (IFTF, MasterClass, Future London Academy, IDEO U, Hyper Island, The School of Life) e os aprendizados de cada uma em produto, posicionamento e marketing.
+topics: [referências, benchmarking, inspiração, edtech internacional, foresight]
+keywords: [IFTF, institute for the future, masterclass, future london academy, IDEO U, hyper island, the school of life, foresight, design fiction, autoridade, comunidade, design thinking]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre referências internacionais da Overlens, escolas e institutos que servem de inspiração, ou ao buscar boas práticas de produto, autoridade, comunidade e narrativa em educação criativa e foresight.
+related: []
+---
+
 # Referências
 
 ## A Overlens se inspira em estruturas que conseguiram romper o formato tradicional da educação e operar no território da experiência, da comunidade e do símbolo. Nesta seção, reunimos marcas que representam uma peça do quebra-cabeça que buscamos montar com nossa própria linguagem, nosso próprio ritmo e nossa própria verdade.

@@ -1,3 +1,13 @@
+---
+title: Overpass
+summary: Overpass é a oferta back-end por assinatura (R$180/mês ou anual a partir de R$1.500) — sistema de project-based learning que conecta IA, branding, design e posicionamento pessoal. Principal porta de entrada para o ecossistema.
+topics: [overpass, oferta back-end, assinatura, project-based learning, ecossistema]
+keywords: [overpass, assinatura, project based learning, R$180, R$1.500, R$1.788, mensal, anual, tella, ander, ecossistema overlens, comunidade, ia, branding, design]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre o Overpass, plano de assinatura mensal/anual da Overlens, oferta back-end, project-based learning, comunidade Overlens, preço do Overpass, ficha técnica, persona alvo (Tella ou Ander), ou recomendar a próxima etapa após o Atlas.
+related: [growth_system/02 - Ofertas/23 - Ofertas, growth_system/02 - Ofertas/28 - Atlas]
+---
 # Overpass
 
 **Aprendizado baseado em criação de projetos**

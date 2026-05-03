@@ -1,3 +1,14 @@
+---
+title: O Estúdio Criativo
+summary: Define o Estúdio Criativo como núcleo único de produção criativa da Overlens, responsável por centralizar, proteger e evoluir a marca em todos os canais e formatos.
+topics: [estúdio criativo, governança de marca, produção criativa, identidade, consistência]
+keywords: [estúdio criativo, guardião da marca, assets, coerência visual, coerência narrativa, posicionamento, departamentos, infraestrutura criativa]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre o que é o Estúdio Criativo da Overlens, qual seu papel, quais entregas produz, ou por que toda criação passa por um único centro.
+related: []
+---
+
 # O Estúdio Criativo
 
 ## Toda criação da Overlens passa por um único centro; não por controle, mas por coerência. O Estúdio Criativo é a infraestrutura que garante que cada peça visual, verbal ou sensorial fortaleça a identidade da marca em vez de fragmentá-la.

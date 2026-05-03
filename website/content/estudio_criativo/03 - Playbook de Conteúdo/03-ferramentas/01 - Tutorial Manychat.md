@@ -1,3 +1,14 @@
+---
+title: "Tutorial: Manychat"
+summary: Passo a passo para configurar automações no Manychat (perpétuas em posts, temporárias em stories), com templates de DM de introdução, solicitação de seguir e agradecimento com link do material.
+topics: [tutorial, manychat, automação, instagram, dm]
+keywords: [manychat, automação, dm, instagram, post, stories, gumroad, google docs, comentário, palavra-chave, template, link do material]
+priority: low
+ai_when_to_use: |
+  Use quando o usuário quiser configurar automação de DM no Manychat, perguntar como entregar material via comentário em post, ou precisar dos templates de mensagem (introdução, solicitar seguir, agradecimento com link).
+related: []
+---
+
 # Tutorial : Manychat
 
 ## O passo a passo para configurar automações no Manychat que entregam materiais com naturalidade; das mensagens de introdução ao envio do link final. Automação perpétua para posts, temporária para stories, sempre com intenção e sem soar robótico.

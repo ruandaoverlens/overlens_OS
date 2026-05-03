@@ -1,3 +1,14 @@
+---
+title: Emergentes
+summary: Aprofunda o perfil Emergente (arquiteto de sistemas) com subtipos (Criador Visionário, Estrategista Sistêmico, Conector de Redes), medos, desejos, objeções e a oferta Vanguarda como ambiente de validação e construção.
+topics: [maturidade, emergentes, vanguarda, sistemas, antifragilidade, futuro]
+keywords: [emergentes, vanguarda, atlas, overpass, arquiteto de sistemas, antifragilidade, sistemas adaptativos, modelos de negócio, taleb, fundadores, líderes criativos, sprint de validação, churn anual]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre o perfil Emergente, fundadores e líderes criativos que precisam estruturar visão sistêmica em negócios duradouros, ou ao posicionar Vanguarda como ambiente de validação e mentoria de alto nível.
+related: []
+---
+
 # Emergentes
 
 ## Emergente já enxerga a complexidade do que precisa ser feito e entende que o futuro exige mais do que soluções simples. Mas ainda tropeça ao tentar conectar essas peças em sistemas vivos e coerentes. Sem essa arquitetura, sua inovação se dispersa. Na Overlens, Emergentes aprendem a estruturar o invisível: alinhando estratégia, execução e visão para construir obras que atravessam o tempo e não apenas o mercado. 

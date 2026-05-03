@@ -1,3 +1,14 @@
+---
+title: Análise de conteúdo
+summary: Define como classificar temas após a pesquisa por timing, utilidade, abrangência, FOMO, efeito UAU, CTA e simplicidade narrativa, e organiza-os em estados (prioritário, derivável, latente, estrutural).
+topics: [análise, priorização, timing, classificação de temas, capital intelectual]
+keywords: [análise, timing, utilidade, abrangência, fomo, efeito uau, cta, prioritário, derivável, latente, estrutural, capital intelectual, priorização]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário tiver vários temas pesquisados e precisar decidir qual virar conteúdo agora, quiser priorizar pauta, ou precisar dos critérios de timing/utilidade/FOMO para classificar uma ideia.
+related: []
+---
+
 # Análise de conteúdo
 
 ## O momento em que pesquisa vira direção. Aqui, nenhuma informação é descartada; ela é classificada por timing, utilidade e potencial estratégico. A análise decide o que precisa existir agora, o que pode amadurecer e o que se torna capital intelectual para produtos e formações futuras.

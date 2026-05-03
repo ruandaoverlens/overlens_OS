@@ -1,3 +1,14 @@
+---
+title: Nexialistas
+summary: Apresenta o estágio máximo de maturidade Overlens (Nexialista), o criador que arquiteta possibilidades, opera com complexidade e catalisa a evolução de outros via Overpass e Vanguarda.
+topics: [maturidade, nexialistas, vanguarda, overpass, complexidade, legado]
+keywords: [nexialistas, vanguarda, overpass, arquiteto de possibilidades, complexidade, sistemas emergentes, auto-organização, frameworks, legado, capital simbólico, jornada nexialista]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre o perfil Nexialista, o estágio mais avançado da jornada Overlens, criadores que arquitetam realidades, ou ao construir narrativa de propósito, legado e papel da Vanguarda como ambiente de pares.
+related: []
+---
+
 # Nexialistas
 
 **Soluções**: Overpass Vanguarda 

@@ -1,3 +1,14 @@
+---
+title: Buyer Personas da Overlens
+summary: Apresenta as quatro buyer personas da Overlens (Brunin, Tella, Ander, Lilly) como representações dos estágios de maturidade criativa que percorrem a jornada nexialista.
+topics: [personas, jornada criativa, segmentação, comunicação, produto]
+keywords: [personas, buyer personas, brunin, tella, ander, lilly, jornada nexialista, inconsciente, operante, convergente, emergente, maturidade criativa]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre as personas da Overlens, quem são Brunin, Tella, Ander e Lilly, qual a lógica por trás dos arquétipos, ou ao calibrar comunicação, produto e jornada de acordo com o perfil de maturidade.
+related: []
+---
+
 # Buyer Personas da Overlens
 
 Buyer Personas são representações semi-fictícias dos principais perfis de pessoas que a Overlens atende. Elas não representam um único indivíduo específico. São arquétipos construídos a partir de padrões reais de comportamento, necessidades, motivações e desafios observados em pessoas que se interessam por criação, design, tecnologia e futuro.

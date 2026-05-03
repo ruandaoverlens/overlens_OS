@@ -1,3 +1,14 @@
+---
+title: Vocabulário
+summary: Define os 4 termos proprietários centrais da Overlens — Lente, Nexialista, Sistema Vivo e Capital Simbólico — com definição, exemplo de uso e observações sobre como aplicá-los sem banalizar.
+topics: [vocabulário proprietário, termos oficiais, mapa semântico, identidade verbal]
+keywords: [Lente, Nexialista, Designer Nexialista, Sistema Vivo, Capital Simbólico, ecossistema, governança intencional, percepção ampliada, Pierre Bourdieu, Rosetta Stone, IA, design sistêmico, capital simbólico vs capital financeiro]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar o significado de termos proprietários da Overlens (Lente, Nexialista, Sistema Vivo, Capital Simbólico), pedir um exemplo de uso correto, ou quando estiver revisando texto para garantir que os termos não foram banalizados ou diluídos.
+related: ["brand_system/05 - Universo Verbal/06 Glossário.md", "brand_system/05 - Universo Verbal/05 Território de palavras.md"]
+---
+
 # Vocabulário
 
 ## A linguagem é um dos alicerces que sustenta a identidade da Overlens. Cada termo que usamos carrega intenções, valores e símbolos que refletem nossa visão: formar Designers Nexialistas capazes de pensar sistemicamente, ampliar a imaginação com inteligência artificial e criar marcas, produtos e mundos com propósito real.

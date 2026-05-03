@@ -1,3 +1,14 @@
+---
+title: Linha do Tempo
+summary: Narra a trajetória da Overlens de 2015 a 2025 — da tensão criadora na faculdade ao nascimento do nexialismo — não como narrativa de sucesso, mas como contrato implícito de alinhamento.
+topics: [história da overlens, marcos institucionais, fundação, nexialismo, vanguarda]
+keywords: [ruan, rafael, 2015, 2018, 2021, 2022, 2023, 2024, 2025, vanguarda, nexialismo, the voyage of the space beagle, salvador dali, persistência da memória, inteligência artificial generativa, fundação]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre a história da Overlens, quando/por que foi fundada, quem são os fundadores (Ruan e Rafael), origem do nome Overlens, surgimento da Vanguarda, origem do nexialismo, ou marcos cronológicos da escola.
+related: []
+---
+
 # Linha do Tempo
 
 ## Não vendemos uma narrativa de sucesso. Mostramos de onde viemos, para que você decida se quer caminhar na mesma direção.

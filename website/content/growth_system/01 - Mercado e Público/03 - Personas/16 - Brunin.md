@@ -1,4 +1,15 @@
-# Brunin \- O Jovem Inconsciente
+---
+title: Brunin - O Jovem Inconsciente
+summary: Persona do estudante de Publicidade de 18 anos em São Paulo, freelancer iniciante de social media, inconsciente que consome conteúdos sem estruturar, com perfil INFP e oferta ideal Protocolo 3-2-1 e Overpass.
+topics: [persona, brunin, inconsciente, jovem criativo, freelancer iniciante]
+keywords: [brunin, bruno, persona, inconsciente, estudante, publicidade, social media, freelancer, INFP, são paulo, protocolo 3-2-1, overpass, tiktok, mapa de empatia]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre Brunin, persona do jovem inconsciente, estudante criativo iniciante, ou ao desenhar campanha de topo de funil, comunicação para 18-24 anos, conteúdo educativo gratuito ou onboarding de freelancers iniciantes.
+related: []
+---
+
+# Brunin - O Jovem Inconsciente
 
 <div style="display:flex;gap:24px;align-items:flex-start">
 <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px;width:200px">

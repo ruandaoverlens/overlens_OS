@@ -1,3 +1,14 @@
+---
+title: Storybrand
+summary: Organiza o roteiro narrativo da Overlens via SB7 (Donald Miller) cruzado com a Jornada do Herói de Campbell e Vogler, mapeando herói, vilão, guia, plano, sucesso e fracasso através dos 5 perfis de maturidade.
+topics: [narrativa de marca, storytelling, jornada do herói, perfis de maturidade, roteiro, arco narrativo]
+keywords: [SB7, StoryBrand, Donald Miller, Joseph Campbell, Christopher Vogler, jornada do herói, herói, vilão, guia, plano, Prometheus, Inconsciente, Operante, Convergente, Emergente, Nexialista, alienação, renúncia, one-liner, elevator pitch, Thomas Cole, Voyage of Life]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre a narrativa da Overlens, como construir copy ou storytelling para a marca, quem é o herói/vilão/guia, os perfis de maturidade do criador, ou quando estiver redigindo landing pages, manifestos, vídeos institucionais ou qualquer peça narrativa.
+related: ["brand_system/04 - Núcleo da Marca/02 Posicionamento.md", "brand_system/04 - Núcleo da Marca/06 Arquétipos.md", "brand_system/05 - Universo Verbal/02 Manifesto.md"]
+---
+
 # Storybrand
 
 ## Toda história poderosa começa com alguém que sabe que pode mais, mas ainda não encontrou o caminho. A Overlens não é essa pessoa. A Overlens é quem entrega o mapa.

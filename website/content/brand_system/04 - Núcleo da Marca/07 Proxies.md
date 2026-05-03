@@ -1,3 +1,14 @@
+---
+title: Proxies
+summary: Estabelece os códigos de quem fala em nome da Overlens — pessoas, sistemas e personas autorizadas a expressar a marca — sintetizando direção da comunicação, arquétipos, valores e tom de voz para garantir harmonia entre vozes diferentes.
+topics: [proxies, representação de marca, personas, governança da voz, síntese institucional]
+keywords: [proxy, D.U.D, T.R.U, personas simbólicas, El Lissitzky, Proun 5A, Mago, Criador, Sábio, virtudes, Ethos Pathos Logos, valores inegociáveis, território linguístico, harmonia]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre quem pode falar pela Overlens, como garantir coerência entre vozes diferentes, o papel das personas D.U.D e T.R.U, ou quando precisar de uma síntese rápida dos códigos de comunicação da marca antes de escrever, gravar ou aprovar conteúdo.
+related: ["brand_system/04 - Núcleo da Marca/06 Arquétipos.md", "brand_system/05 - Universo Verbal/03 Tom de Voz.md", "brand_system/05 - Universo Verbal/09 Arquitetura de Marca.md"]
+---
+
 # Proxies
 
 ## Toda marca precisa ser ouvida, mas só permanece viva quando é bem representada. A Overlens é uma escola, um ecossistema e também uma ideia em movimento. Por isso, quem fala em seu nome carrega uma responsabilidade que vai além da função. Assume um lugar simbólico, um papel de mediação entre o invisível e o visível, entre a essência da marca e o mundo que a recebe.

@@ -1,3 +1,14 @@
+---
+title: Concorrentes
+summary: Mapeia os concorrentes da Overlens em três níveis (Diretos, Indiretos, Plataformas Substitutas) com marcas como Somos Tera, Human Academy, Domestika, Alura, Hotmart e creators independentes.
+topics: [concorrentes, benchmarking, mercado competitivo, edtech brasil]
+keywords: [concorrentes, somos tera, human academy, marcelo kimura, montag school, design boost, brandster, marcados, domestika, alura, laje, descola, EBAC, perestroika, hotmart, kiwify, monetizze, coursera, udemy]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre concorrentes da Overlens, escolas que disputam o mesmo público, plataformas substitutas como Hotmart e Domestika, ou ao mapear cenário competitivo e identificar lacunas de posicionamento.
+related: []
+---
+
 # Concorrentes
 
 (Precisa de atualização)

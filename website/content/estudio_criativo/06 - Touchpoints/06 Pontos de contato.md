@@ -1,3 +1,14 @@
+---
+title: Pontos de Contato
+summary: Mapeia os touchpoints da Overlens em 5 fases da jornada do criador (Descoberta, Consideração, Entrada, Profundidade, Legado), definindo tom, persona ativa, perfil de maturidade, objetivos e anti-padrões por canal.
+topics: [touchpoints, jornada do criador, canais, fases, anti-padrões]
+keywords: [pontos de contato, jornada, descoberta, consideração, entrada, profundidade, legado, ethos, pathos, logos, instagram, youtube, site, gumroad, manychat, vanguarda, comunidade, plataforma, D.U.D, T.R.U, perfis de maturidade]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre touchpoints da Overlens, jornada do criador, canais por fase, anti-padrões de marca, ou como tom/persona/perfil se combinam em cada ponto de contato.
+related: [estudio_criativo/06 - Touchpoints/05 Instagram, estudio_criativo/06 - Touchpoints/02 Tutorial Manychat, estudio_criativo/06 - Touchpoints/03 Tutorial Gumroad, estudio_criativo/05 - Personas Sintéticas/02 D.U.D, estudio_criativo/05 - Personas Sintéticas/03 T.R.U]
+---
+
 # Pontos de Contato
 
 ## Uma marca não existe onde ela se anuncia. Existe onde ela é experimentada. Cada ponto de contato é uma promessa cumprida; ou quebrada.

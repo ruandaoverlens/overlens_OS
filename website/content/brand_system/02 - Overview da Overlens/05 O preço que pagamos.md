@@ -1,3 +1,14 @@
+---
+title: O preço que pagamos
+summary: Torna explícito o custo de colaborar com a Overlens — autoria, coerência, abdicar de ser "especial", ritmo realista e sustentar convicções impopulares — e por que ainda assim vale a pena.
+topics: [contrato implícito, exigências do colaborador, filtro de fit cultural, autoria, coerência discurso-prática]
+keywords: [autoria, coerência, ritmo, atlas, hércules, claude mellan, especial, validação, status quo, sustentar convicções, fit, sentido]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar o que é exigido de quem colabora com a Overlens, qual o "preço" de fazer parte, como filtrar fit cultural, ou quando precisar comunicar expectativas honestas sem amaciar a realidade.
+related: []
+---
+
 # O preço que pagamos
 
 ## Criar exige peso. Colaborar com a Overlens exige sustentar esse peso com os olhos abertos.

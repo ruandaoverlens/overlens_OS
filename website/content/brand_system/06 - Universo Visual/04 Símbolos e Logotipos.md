@@ -1,3 +1,14 @@
+---
+title: Símbolos e Logotipos
+summary: Detalha o símbolo da Overlens (triângulo + círculo-lente), o logotipo principal OVERLENS, e as marcas dos produtos Atlas, Protocolo 3-2-1 e Vanguarda, com versões light/dark para download e diretrizes de uso (área de proteção, proporção, fundo).
+topics: [símbolo, logotipo, marcas de produto, diretrizes de uso, downloads]
+keywords: [símbolo Overlens, triângulo, círculo, lente, OVERLENS, Atlas, Protocolo 3-2-1, Vanguarda, light, dark, SVG, área de proteção, proporção, over-lens]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar como usar o símbolo ou logotipo da Overlens, em qual fundo aplicar versão light ou dark, qual a área de proteção mínima, ou quando precisar dos arquivos SVG das marcas Atlas, Protocolo 3-2-1 ou Vanguarda.
+related: ["brand_system/06 - Universo Visual/05 Guia de Cores.md", "brand_system/06 - Universo Visual/06 Tipografia.md"]
+---
+
 # Símbolos e Logotipos
 
 ## O símbolo da Overlens é a síntese visual de uma ideia filosófica: a lente que se eleva acima do plano comum para ver além. Triângulo e círculo; base e consciência, equilíbrio e percepção expandida; formam a assinatura mais protegida da marca.

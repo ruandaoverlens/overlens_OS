@@ -1,3 +1,14 @@
+---
+title: Operantes
+summary: Aprofunda o perfil Operante (preso ao loop técnico) com dilema central, subtipos (Visionário, Pragmático), medos ocultos, problemas, soluções e micro-gatilhos para romper a ilusão da execução.
+topics: [maturidade, operantes, loop técnico, atlas, overpass, portfólio]
+keywords: [operantes, atlas, overpass, executor, pensador estratégico, portfólio, freelancer junior, IA, automação, INTJ, pragmático, visionário, micro-gatilhos, ruptura técnica]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre o perfil Operante, criadores presos em loop técnico, freelancers junior, ou ao desenhar trilhas de portfólio, mensagens de ruptura técnica e ofertas de Atlas e Overpass para esse estágio.
+related: []
+---
+
 # Operantes
 
 ## Operante é quem já percebeu que precisa mudar, mas ainda vive com uma visão moldada pelo passado. Tenta avançar, mas permanece preso à crença de que dominar ferramentas é o suficiente. No fundo, ainda constrói com modelos antigos, enquanto o mundo exige outra lógica. Na Overlens, Operantes aprende a sair do vício técnico e a construir provas reais de valor, baseadas em visão, execução e relevância no novo cenário. 

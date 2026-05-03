@@ -1,4 +1,15 @@
-# Copy \- Carrinho Aberto
+---
+title: Copy - Carrinho Aberto
+summary: Define copy de carrinho aberto como ativação emocional (a razão já aprovou) usando desejo ampliado, perda visível e clareza decisória para tornar a escolha de entrar inevitável internamente.
+topics: [copy, carrinho aberto, decisão emocional, desejo, identidade]
+keywords: [carrinho aberto, desejo ampliado, perda visível, clareza decisória, identidade, pertencimento, urgência, prioridade, coragem, conversão, lançamento]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário for escrever copy durante carrinho aberto de um lançamento, precisar ativar desejo e identidade em quem já entendeu o produto, ou quiser tornar a decisão de comprar emocionalmente concreta.
+related: []
+---
+
+# Copy - Carrinho Aberto
 
 [Mapa de Criativos \- Carrinho Aberto](https://docs.google.com/spreadsheets/d/1dBd8ji3-cQdaHL0yGirmvraedFstDFJSwbJ4dgkD2fU/edit?gid=1734808890#gid=1734808890)
 

@@ -1,3 +1,13 @@
+---
+title: Growth Loop
+summary: Detalha o ciclo de crescimento da Overlens em 5 estágios — Aquisição (YouTube, lives, Atlas, SEO), Ativação (primeiro projeto + boas-vindas), Retenção (XP, missões, badges, ranking), Revenue (Overpass, Vanguarda, artefatos) e Referral (indique e ganhe, UGC).
+topics: [growth loop, aquisição, ativação, retenção, revenue, referral, gamificação]
+keywords: [growth loop, aquisição, ativação, retenção, revenue, referral, atlas, overpass, vanguarda, xp, badges, missões, fractais, ranking, ugc, indique e ganhe, youtube, seo, paywall]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre o growth loop da Overlens, ciclo de aquisição/ativação/retenção/revenue/referral, como o crescimento se auto-alimenta, qual o primeiro momento de sucesso, sistemas de gamificação (XP, badges, missões, fractais), ou como conduzir um usuário do primeiro contato até a Vanguarda.
+related: [growth_system/03 - Estratégia/32 - Fluxos, growth_system/02 - Ofertas/28 - Atlas, growth_system/02 - Ofertas/29 - Overpass, growth_system/02 - Ofertas/30 - Vanguarda]
+---
 # Growth Loop
 
 ## Growth loops são sistemas cíclicos em que cada resultado gera os insumos do próximo ciclo, criando crescimento sustentável por meio da própria entrega de valor.

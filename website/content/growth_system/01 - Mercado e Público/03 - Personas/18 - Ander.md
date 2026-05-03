@@ -1,4 +1,15 @@
-# Ander \- O Produtor Convergente
+---
+title: Ander - O Produtor Convergente
+summary: Persona do produtor multimídia de 27 anos em Curitiba, formado em Publicidade, perfil INTJ convergente preso a metodologias e em busca de assinatura autoral, com oferta ideal Overpass ou Vanguarda.
+topics: [persona, ander, convergente, produtor multimídia, branding, autoralidade]
+keywords: [ander, anderson, persona, convergente, produtor multimídia, publicidade, INTJ, curitiba, overpass, vanguarda, branding, framework, design thinking, assinatura, mapa de empatia]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre Ander, persona do produtor convergente, profissional sólido tecnicamente em busca de diferenciação, ou ao desenhar comunicação para criadores experientes, oferta Vanguarda e narrativa de visão sistêmica e autoralidade.
+related: []
+---
+
+# Ander - O Produtor Convergente
 
 <div style="display:flex;gap:24px;align-items:flex-start">
 <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px;width:200px">

@@ -1,3 +1,14 @@
+---
+title: Visão Geral
+summary: Resume a Overlens como escola de criadores conscientes — explicando para quem é, para quem não é, e a abordagem em três pilares (inspirar, ensinar, mover).
+topics: [identidade institucional, posicionamento, público-alvo, abordagem pedagógica, fundamentos]
+keywords: [escola, criadores, designers, autonomia criativa, inspirar, ensinar, mover, nexialista, hilma af klint, ética da autonomia, autoria, responsabilidade]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar o que é a Overlens, qual a proposta da escola, para quem ela é (e para quem não é), ou qual sua abordagem geral. É a porta de entrada do Overview e ponto de partida para qualquer dúvida institucional ampla.
+related: []
+---
+
 # Visão Geral
 
 ## Uma escola para quem decide criar com consciência. A Overlens forma pessoas capazes de pensar com profundidade, agir com método e construir realidades que o mundo ainda não viu; sem receitas prontas, sem atalhos e sem ilusões sobre o que isso exige.

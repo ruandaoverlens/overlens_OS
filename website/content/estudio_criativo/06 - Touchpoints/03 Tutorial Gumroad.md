@@ -1,3 +1,14 @@
+---
+title: "Tutorial: Gumroad"
+summary: Passo a passo para publicar produtos no Gumroad — criação, capa 1280x720, thumbnail 600x600, configuração de preço, upload de arquivos e verificação de links no PDF antes da publicação.
+topics: [tutorial, gumroad, produto digital, pdf, publicação]
+keywords: [gumroad, e-book, capa, thumbnail, upload, preço, pay what you want, adobe acrobat, links, publish]
+priority: low
+ai_when_to_use: |
+  Use APENAS quando o usuário perguntar especificamente como publicar produto no Gumroad, configurar capa, preço, ou subir PDF na plataforma.
+related: []
+---
+
 # Tutorial : Gumroad
 
 ## Da criação do produto à publicação da URL; o processo completo para disponibilizar materiais no Gumroad. Capa, thumbnail, configuração de preço, upload de arquivos e verificação de links: cada etapa documentada para que qualquer membro da equipe execute com autonomia.

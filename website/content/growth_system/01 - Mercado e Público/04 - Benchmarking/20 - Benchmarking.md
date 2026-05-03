@@ -1,3 +1,14 @@
+---
+title: Benchmarking
+summary: Introduz a seção de Benchmarking da Overlens com critérios para distinguir referência, concorrência e paralelo estratégico, e prepara o mapa perceptual da concorrência.
+topics: [benchmarking, concorrência, referências, mapa perceptual, posicionamento]
+keywords: [benchmarking, concorrência, referência, paralelo estratégico, mapa perceptual, científica, profundo, provocativo, inspirador, carl sagan, tomorrowland, nature]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre como a Overlens analisa concorrentes e referências, qual o critério para diferenciar referência de concorrência, ou ao construir mapa perceptual e posicionamento competitivo.
+related: []
+---
+
 # Benchmarking
 
 ## Nenhuma construção sólida nasce isolada. Toda marca precisa enxergar além de si para compreender melhor quem é, onde está e o que precisa ser. O benchmarking é o instrumento que utilizamos para observar o cenário externo com inteligência estratégica, sem perder a integridade da nossa visão.

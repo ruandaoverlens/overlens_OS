@@ -1,3 +1,14 @@
+---
+title: Território de Palavras
+summary: Cartografa as 6 constelações semânticas da Overlens (Criação, Conhecimento, Sistemas, Autonomia, Transformação, Filosofia), lista palavras que usamos vs. evitamos, define metáforas estruturais (Lente, Sistema Vivo, Fogo, Camadas) e quatro registros de intensidade.
+topics: [território semântico, constelações de palavras, metáforas estruturais, registros de intensidade, palavras evitadas]
+keywords: [Flammarion Engraving, criar, construir, integrar, autonomia, autoria, agência, emergir, consciência, propósito, Lente, Sistema Vivo, Fogo, Camadas, Prometheus, prisma, micélio, travessia, registro provocativo, registro acolhedor, registro técnico, registro inspirador, acenda, forje, destrave, empoderamento, sinergia, despertar, vagas limitadas, hustle, grind]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar quais palavras a Overlens usa ou evita, qual o campo semântico de uma palavra, qual metáfora aplicar, qual registro de intensidade adequado a um contexto, ou quando estiver revisando texto em busca de termos proibidos (acenda, destrave, empoderamento, vagas limitadas etc.).
+related: ["brand_system/05 - Universo Verbal/03 Tom de Voz.md", "brand_system/05 - Universo Verbal/04 Vocabulário.md", "brand_system/05 - Universo Verbal/06 Glossário.md"]
+---
+
 # Território de Palavras
 
 ## As palavras que uma marca escolhe revelam o mundo que ela está construindo. As que ela recusa revelam o mundo que ela se recusa a perpetuar.

@@ -1,3 +1,13 @@
+---
+title: Jobs to Be Done
+summary: Mapeia o JTBD principal de cada um dos 5 perfis de maturidade (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas) no formato "Quando ___, eu quero ___, para que ___", com complemento emocional para alinhar marketing, produto e copy.
+topics: [jobs to be done, jtbd, perfis de cliente, maturidade, copy, motivação]
+keywords: [jobs to be done, jtbd, christensen, inconscientes, operantes, convergentes, emergentes, nexialistas, motivação emocional, copy, alinhamento marketing produto]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre Jobs to Be Done, JTBD da Overlens, motivações de cada perfil, o que cada perfil quer realizar, como escrever copy que fale ao desejo de cada cliente, ou alinhar marketing/produto/experiência ao job real do usuário.
+related: [growth_system/01 - Mercado e Público/02 - Público/01 - Maturidade/10 - Inconscientes, growth_system/01 - Mercado e Público/02 - Público/01 - Maturidade/11 - Operantes, growth_system/01 - Mercado e Público/02 - Público/01 - Maturidade/12 - Convergentes, growth_system/01 - Mercado e Público/02 - Público/01 - Maturidade/13 - Emergentes, growth_system/01 - Mercado e Público/02 - Público/01 - Maturidade/14 - Nexialistas]
+---
 # Jobs to Be Done
 
 ## Descobrir o que cada Perfil realmente quer da Overlens em suas vidas; não apenas aprender, mas realizar um progresso real e emocional.

@@ -1,4 +1,15 @@
-# Copy \- Lembrete
+---
+title: Copy - Lembrete
+summary: Define copy de lembrete como urgência organizada (não insistência emocional) — recolocar o compromisso, tornar o prazo concreto e reduzir procrastinação com prazo, consequência e ação imediata.
+topics: [copy, lembrete, urgência, prazo, decisão]
+keywords: [lembrete, urgência, prazo, consequência, ação imediata, vagas, decisão, fricção, prioridade, ciclo de campanha]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário for escrever copy de lembrete para reativar leads que já conhecem o produto/evento, precisar comunicar prazo final ou últimas vagas, ou quiser transformar intenção acumulada em execução.
+related: []
+---
+
+# Copy - Lembrete
 
 [Mapa de Criativos \- Lembrete](https://docs.google.com/spreadsheets/d/1dBd8ji3-cQdaHL0yGirmvraedFstDFJSwbJ4dgkD2fU/edit?gid=235710671#gid=235710671)
 

@@ -1,3 +1,14 @@
+---
+title: Produção de Conteúdo
+summary: Define a missão da produção de conteúdo da Overlens (revelar valor real, não preencher feed) e os cinco pilares operacionais — Pesquisa, Contexto, Big Idea, Enquadramento, Headline e Extensão.
+topics: [produção de conteúdo, fundamentos, método, pilares, valor percebido]
+keywords: [pesquisa, contexto, big idea, enquadramento, headline, extensão, material-presente, valor real, valor percebido, deslocamento cognitivo]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário pedir ajuda para entender a filosofia de produção de conteúdo da Overlens, quiser saber por onde começar a estruturar uma peça, ou precisar dos cinco pilares operacionais (pesquisa, contexto, big idea, enquadramento, headline, extensão).
+related: []
+---
+
 # Produção de Conteúdo
 
 ## Produzir conteúdo na Overlens não é sobre informar mais, postar mais ou performar melhor no algoritmo. É sobre **tornar visível aquilo que hoje está mal compreendido, mal nomeado ou mal enquadrado**.

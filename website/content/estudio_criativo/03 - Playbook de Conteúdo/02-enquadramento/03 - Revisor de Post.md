@@ -1,3 +1,14 @@
+---
+title: Revisor de Post
+summary: Apresenta o GPT Revisor de Post como filtro final antes da publicação e define o material-presente como extensão natural do conteúdo (transformar atenção em uso, fixar a lente, qualificar relação).
+topics: [revisão, material-presente, extensão, conversão, qualificação]
+keywords: [revisor de post, gpt, material-presente, extensão, big idea, enquadramento, checklist, framework, mini-guia, conversão, qualificação]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário terminar uma peça e precisar revisar antes de publicar, quiser criar um material-presente conectado ao conteúdo, ou perguntar como estender um carrossel para gerar uso real e qualificar audiência.
+related: []
+---
+
 # Revisor de Post
 
 ## O filtro final antes da publicação. O Revisor de Post avalia se a peça sustenta os padrões da Overlens em clareza, enquadramento e tom; e decide se ela está pronta para representar a marca ou se ainda precisa de ajuste antes de chegar ao público.

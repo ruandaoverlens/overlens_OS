@@ -1,3 +1,14 @@
+---
+title: Tom de Voz
+summary: Define os 4 tons da Overlens (Científico, Profundo, Provocativo, Inspirador) mais a virtude transversal Adaptável, com excessos a evitar, faltas a corrigir, exemplos práticos lado a lado e a estratégia em camadas Ethos-Pathos-Logos.
+topics: [tom de voz, virtudes, Ethos Pathos Logos, exemplos práticos, diretrizes de redação]
+keywords: [científico, profundo, provocativo, inspirador, adaptável, virtudes, excesso, falta, Ethos, Pathos, Logos, Magritte, The Treachery of Images, Honestidade, Maestria, Coragem, Curiosidade, Realização, evergreen, headlines, CTA, onboarding]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre tom de voz, como escrever no estilo Overlens, exemplos do que evitar, qual tom usar em cada contexto (redes sociais, cursos, manifestos, evergreen), ou quando estiver redigindo conteúdo que precise soar como a marca.
+related: ["brand_system/04 - Núcleo da Marca/05 Virtudes.md", "brand_system/04 - Núcleo da Marca/02 Posicionamento.md", "brand_system/05 - Universo Verbal/05 Território de palavras.md"]
+---
+
 # Tom de Voz
 
 ## A comunicação da Overlens acontece em camadas, atraindo atenção, criando conexão e entregando profundidade com clareza. Queremos ser percebidos como inovadores visionários, provocadores inteligentes que tiram as pessoas da zona de conforto para agir.

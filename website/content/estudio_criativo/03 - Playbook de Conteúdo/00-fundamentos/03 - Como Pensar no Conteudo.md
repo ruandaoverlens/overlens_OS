@@ -1,3 +1,14 @@
+---
+title: Como pensar no conteúdo?
+summary: Define o ponto de partida de qualquer conteúdo Overlens (contexto antes de tema), explica utilidade vs. abrangência, valor real vs. valor percebido, e por que enquadramento resolve o problema da atenção.
+topics: [fundamentos, contexto, valor percebido, atenção, heurísticas]
+keywords: [contexto, utilidade, abrangência, valor real, valor percebido, heurísticas, viés de confirmação, enquadramento, atenção, criação de conteúdo]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário estiver começando a pensar uma peça e perguntar "por onde começo?", quiser entender por que conteúdo de valor é ignorado, ou precisar dos critérios de utilidade e abrangência para decidir se a ideia merece existir.
+related: []
+---
+
 # Como pensar no conteúdo?
 
 ## O ponto de partida de qualquer conteúdo da Overlens não é o tema; é o contexto. Saber com quem estamos falando e o que essa pessoa precisa resolve duas variáveis ao mesmo tempo: utilidade e abrangência. O enquadramento cuida do resto: transformar valor real em valor percebido.

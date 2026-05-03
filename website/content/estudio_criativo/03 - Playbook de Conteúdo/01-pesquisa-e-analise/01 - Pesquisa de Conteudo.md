@@ -1,3 +1,14 @@
+---
+title: Pesquisa de conteúdo
+summary: Detalha o método de pesquisa Overlens em três camadas (observação de campo, leitura estruturada, cruzamento crítico), os sinais que indicam potencial de conteúdo e como a pesquisa alimenta o resto do sistema.
+topics: [pesquisa, sinais, timing, leitura de campo, fontes]
+keywords: [pesquisa, sinais, timing, observação de campo, feedly, arxiv, the new yorker, mit technology review, hbr, lacuna, ponto cego, cruzamento crítico, big idea]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário quiser pesquisar um tema antes de produzir conteúdo, perguntar onde encontrar fontes confiáveis, precisar identificar sinais de timing/lacunas no campo, ou estiver tentando sair do óbvio antes de formular a Big Idea.
+related: []
+---
+
 # Pesquisa de conteúdo
 
 ## Na Overlens, pesquisa não existe para encontrar ideias “populares”. Ela existe para **entender o estado do campo** antes de intervir nele.

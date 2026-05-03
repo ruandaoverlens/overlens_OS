@@ -1,3 +1,14 @@
+---
+title: Tipografia
+summary: Define o sistema tipográfico da Overlens com Inter (fonte principal, neutra, versátil) para corpo de texto e Outfit (exclusivamente em caixa alta) para títulos, banners e frases de impacto, ambas disponíveis no Google Fonts.
+topics: [tipografia, sistema de fontes, Inter, Outfit, hierarquia tipográfica]
+keywords: [Inter, Outfit, Google Fonts, neo-grotesca, geométrica, caixa alta, banners, títulos, hierarquia visual, legibilidade, contraste tipográfico]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar quais fontes a Overlens usa, quando aplicar Inter versus Outfit, como construir hierarquia tipográfica, ou onde baixar as fontes oficiais.
+related: ["brand_system/06 - Universo Visual/05 Guia de Cores.md", "brand_system/06 - Universo Visual/04 Símbolos e Logotipos.md"]
+---
+
 # Tipografia
 
 ## Letras não são neutras. Cada escolha tipográfica carrega um tom, uma postura e uma intenção que o leitor sente antes de ler.

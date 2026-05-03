@@ -1,3 +1,14 @@
+---
+title: Enquadramento para cada tipo de conteúdo
+summary: Detalha o enquadramento específico de headlines (interromper o pensamento automático, traduzir Big Idea), com fórmulas, gatilhos cognitivos e o critério Overlens de "atenção qualificada".
+topics: [enquadramento, headline, formato, atenção qualificada]
+keywords: [headline, big idea, gatilho de ruptura, promessa clara, remoção de objeção, atenção qualificada, fórmula de copy, carrossel, vídeo, material-presente]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário precisar escrever uma headline, perguntar como traduzir a Big Idea para abrir um carrossel/vídeo, ou quiser os critérios para validar se a headline atrai sem distorcer a ideia.
+related: []
+---
+
 # Enquadramento para cada tipo de conteúdo
 
 ## Headline, carrossel, vídeo ou material-presente; cada formato opera sob uma lógica diferente de atenção e profundidade. Este guia define o enquadramento específico para cada tipo de peça, garantindo que a Big Idea se traduza com precisão independentemente do formato escolhido.

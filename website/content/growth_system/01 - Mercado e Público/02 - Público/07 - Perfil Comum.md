@@ -1,3 +1,14 @@
+---
+title: Perfil Comum
+summary: Descreve o Perfil Comum (Operante-tardio a Convergente-inicial), com ticket inicial de R$180/mês via Overpass, motivações, medos, JTBD, métricas e papel no funil de receita recorrente.
+topics: [perfil comum, segmentação, overpass, ticket de entrada, retenção]
+keywords: [perfil comum, overpass, atlas, vanguarda, ticket inicial, LTV, churn, freelancer, operante, convergente, FOMO, retenção 90d, onboarding gamificado, mentoria leve]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre o cliente de entrada da Overlens, perfil de menor ticket, assinante Overpass, retenção da base recorrente, ou ao desenhar oferta acessível, onboarding e estratégia de upsell para Vanguarda.
+related: []
+---
+
 # Perfil Comum
 
 ## O Perfil Comum é aquele que inicialmente não têm as características necessárias para adquirir nossos produtos mais avançados, mas possui necessidades que o nosso produto mais barato consegue resolver.

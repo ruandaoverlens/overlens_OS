@@ -1,4 +1,15 @@
-# Tella \- A Artista Operante
+---
+title: Tella - A Artista Operante
+summary: Persona da designer/artista de 23 anos em Belo Horizonte, formanda em design gráfico, perfil ENFP operante que acumula cursos sem finalizar, com oferta ideal Overpass ou Protocolo 3-2-1.
+topics: [persona, tella, operante, designer, artista, portfólio]
+keywords: [tella, stella, persona, operante, designer gráfico, artista, ENFP, belo horizonte, overpass, protocolo 3-2-1, portfólio, IA, mapa de empatia, loop técnico]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre Tella, persona da artista operante, designer recém-formada, perfil que acumula cursos sem concluir, ou ao desenhar comunicação para criadores em transição de estudante para profissional, oferta de portfólio guiado e Overpass.
+related: []
+---
+
+# Tella - A Artista Operante
 
 <div style="display:flex;gap:24px;align-items:flex-start">
 <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px;width:200px">

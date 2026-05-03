@@ -1,3 +1,14 @@
+---
+title: Arquitetura de Marca
+summary: Mapeia o modelo de arquitetura independente da Overlens em camadas — marca principal, produtos (Atlas, Protocolo 3-2-1, Overpass, Blackpass, Vanguarda), marca pessoal Ruan Braz, personas sintéticas, trilhas, lugares, artefatos, documentos e métodos.
+topics: [arquitetura de marca, ecossistema, hierarquia de marcas, produtos, trilhas, lugares simbólicos]
+keywords: [Pieter Bruegel, Tower of Babel, Atlas, Protocolo 3-2-1, Overpass, Blackpass, Vanguarda, Ruan Braz, D.U.D, T.R.U, Brunin, Tella, Ander, Lilly, NexGen, Spectrum, AI First, Chrome, Idea, Gestalt, Signals, Parallax, Arcádia, Téssera, Orbital, Noumenom, Limbo, Códices, A.C.R.O, 4 lentes]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar como a Overlens organiza seus produtos e sub-marcas, qual a hierarquia entre marca principal e marcas filhas, quais trilhas e lugares existem no ecossistema, ou quando precisar mapear como uma nova entidade se encaixa na arquitetura.
+related: ["brand_system/05 - Universo Verbal/06 Glossário.md", "brand_system/04 - Núcleo da Marca/07 Proxies.md"]
+---
+
 # Arquitetura de Marca
 
 ## Um ecossistema não se sustenta numa marca rígida. Sustenta-se em camadas que expandem sem perder coerência. Produtos, personas, trilhas, lugares e artefatos; cada entidade possui identidade própria, mas orbita uma mesma coordenada central. Esta é a anatomia de um universo que cresce de forma modular.

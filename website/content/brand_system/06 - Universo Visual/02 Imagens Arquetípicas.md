@@ -1,3 +1,14 @@
+---
+title: Imagens Arquetípicas
+summary: Cataloga as 8 categorias de imagens arquetípicas da Overlens (Rabiscos, Lentes, Natureza Micro-Macro, Pinturas, Símbolos Humanos, Objetos, Ordem×Caos, Travessia) com explicações simbólicas e diretrizes de uso.
+topics: [imagens arquetípicas, gramática visual simbólica, escalas micro-macro, ordem e caos]
+keywords: [rabiscos, lentes, prismas, microscópio, telescópio, micélio, constelações, cisne negro, fractais, René Magritte, The Human Condition, ovo, maçã, portais, labirintos, campos de trigo, cosmos, Bauhaus, ordem versus caos]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar quais tipos de imagem combinam com a Overlens, quais símbolos arquetípicos podem ser usados em peças visuais, ou quando estiver curando referências fotográficas e ilustrativas para uma campanha.
+related: ["brand_system/06 - Universo Visual/03 Painel Semântico.md", "brand_system/04 - Núcleo da Marca/06 Arquétipos.md"]
+---
+
 # Imagens Arquetípicas
 
 ## O universo visual da Overlens é tecido por um conjunto de ativos arquetípicos que se repetem em diferentes escalas e linguagens, criando uma gramática simbólica própria.

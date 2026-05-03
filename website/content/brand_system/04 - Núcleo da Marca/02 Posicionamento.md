@@ -1,3 +1,14 @@
+---
+title: Posicionamento
+summary: Define como a Overlens quer ser percebida em camadas (Ethos-Pathos-Logos) e detalha as quatro virtudes do tom (Científica, Profunda, Provocativa, Inspiradora) que sustentam toda a comunicação da marca.
+topics: [posicionamento, percepção de marca, tom de voz, Ethos Pathos Logos, retórica, comunicação em camadas]
+keywords: [Ethos, Pathos, Logos, Aristóteles, retórica, científico, profundo, provocativo, inspirador, pós-verdade, evergreen, Kandinsky, Composition IX, inovadores visionários, abordagem científica]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre como a Overlens se posiciona, como quer ser percebida pela audiência, qual a estratégia retórica em camadas (Ethos-Pathos-Logos), ou quando precisar definir o tom de uma peça em relação aos quatro tons fundamentais (científico, profundo, provocativo, inspirador).
+related: ["brand_system/04 - Núcleo da Marca/05 Virtudes.md", "brand_system/05 - Universo Verbal/03 Tom de Voz.md"]
+---
+
 # Posicionamento
 
 ## Como queremos ser percebidos

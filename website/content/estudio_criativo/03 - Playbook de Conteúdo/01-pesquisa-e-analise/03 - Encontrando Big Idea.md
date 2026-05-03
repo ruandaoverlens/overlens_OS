@@ -1,3 +1,14 @@
+---
+title: Encontrando Big Idea
+summary: Define Big Idea como núcleo de tensão emocional e intelectual, com critérios de abrangência/utilidade/novidade, processo de validação em 5 perguntas e os 5 princípios (clareza, valor, credibilidade, execução, timing).
+topics: [big idea, validação, núcleo de tensão, copy, framework]
+keywords: [big idea, abrangência, utilidade, novidade, impacto, desejo latente, deslocamento cognitivo, validação, cauda longa, prova social, timing, mecanismo]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário pedir ajuda para encontrar a Big Idea de um conteúdo, quiser validar se uma ideia é forte o suficiente, ou precisar dos critérios para gerar uma releitura da realidade que sustente um carrossel, post ou campanha.
+related: []
+---
+
 # Encontrando Big Idea
 
 ## **Big Idea**: É uma ideia **emocional** e **intelectualmente** atraente com uma oportunidade. É instantâneamente compreendida (**simples**) como **importante**, **excitante** e **benéfica**. 

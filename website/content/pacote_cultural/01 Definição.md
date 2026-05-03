@@ -1,3 +1,14 @@
+---
+title: Definição
+summary: Apresenta o Pacote Cultural da Overlens — mapa de obras (12 livros, 12 filmes/séries, 10 animações, 6 playlists + 12 músicas) que sustenta a visão de mundo nexialista, conectando filosofia, ciência, ficção, arte e música.
+topics: [pacote cultural, repertório, referências, visão de mundo, nexialismo, cultura overlens]
+keywords: [pacote cultural, repertório nexialista, referências overlens, mapa cultural, livros, filmes, animações, músicas, filosofia, ciência, ficção, arte, futuro, criação]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar o que é o Pacote Cultural, quais são as referências da Overlens, como o repertório cultural se organiza, ou quais tipos de obras compõem o universo cultural da escola. É a porta de entrada do Pacote Cultural — sempre que precisar contextualizar antes de listar obras específicas.
+related: []
+---
+
 # Definição
 
 ## As obras, ideias e sensibilidades que moldaram a visão de mundo da Overlens; um mapa cultural que conecta filosofia, ciência, ficção, arte e música para revelar o repertório que sustenta o pensamento nexialista e amplia a percepção sobre criação, tecnologia e futuro

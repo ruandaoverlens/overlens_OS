@@ -1,3 +1,13 @@
+---
+title: Atlas
+summary: Atlas é a porta de entrada da Overlens — imersão de 2 dias (front-end / ingresso) que ensina a construir um Brand System com IA num fim de semana. Ingresso a partir de R$19, persona Tella e Ander.
+topics: [atlas, oferta front-end, brand system, imersão, porta de entrada]
+keywords: [atlas, brand system, imersão, ingresso, front-end, product led growth, tella, ander, agentes de ia, R$19, R$29,90, fim de semana]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar sobre o Atlas, ingresso de entrada da Overlens, imersão de fim de semana, como construir um Brand System com IA, preço do Atlas, ficha técnica, persona alvo (Tella ou Ander), ou recomendar uma oferta inicial / front-end.
+related: [growth_system/02 - Ofertas/23 - Ofertas]
+---
 # Atlas
 
 **O caminho mais rápido para começar**
