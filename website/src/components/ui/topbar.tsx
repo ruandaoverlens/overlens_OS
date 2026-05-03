@@ -34,7 +34,7 @@ function Topbar({ className, ...props }: React.ComponentProps<"header">) {
     <header
       data-slot="topbar"
       className={cn(
-        "sticky top-0 z-30 flex h-12 w-full items-center justify-end pr-3 pb-[2px]",
+        "sticky top-0 z-30 flex h-12 w-full items-center justify-end pb-[2px]",
         "bg-[var(--surface-black)] md:bg-background/70 md:backdrop-blur-xl md:justify-between md:pl-5",
         "md:shadow-[inset_3rem_0_2rem_-1rem_oklch(0_0_0)]",
         className

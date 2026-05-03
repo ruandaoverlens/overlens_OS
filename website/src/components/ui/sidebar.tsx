@@ -233,7 +233,7 @@ function Sidebar({
           className="fixed top-1.5 left-3 z-50 size-9 text-muted-foreground hover:bg-transparent dark:hover:bg-transparent hover:text-foreground md:hidden"
           onClick={() => setOpenMobile(true)}
         >
-          <SmDehazeLineIcon className="size-5" />
+          <SmDehazeLineIcon className="size-6" />
           <span className="sr-only">Open menu</span>
         </Button>
         <Drawer open={openMobile} onOpenChange={setOpenMobile}>

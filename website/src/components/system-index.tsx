@@ -457,12 +457,12 @@ export function SystemIndex({
   }
 
   return (
-    <div className="mx-auto max-w-4xl px-6 pt-4 pb-8 md:px-8 md:pt-5 md:pb-10">
+    <div className="mx-auto max-w-4xl px-6 pt-4 pb-[max(2rem,env(safe-area-inset-bottom))] max-[479px]:px-2 md:px-8 md:pt-5 md:pb-10">
       <div className="mb-8 px-2">
         <h1 className="font-heading text-[40px] font-normal uppercase tracking-normal leading-none text-balance">
           {title}
         </h1>
-        <p className="mt-2 text-sm leading-7 text-pretty text-muted-foreground">
+        <p className="mt-5 text-sm leading-7 text-pretty text-muted-foreground">
           {description}
         </p>
       </div>

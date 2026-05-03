@@ -174,7 +174,7 @@ export function ChatExperience({
         )}
       </div>
 
-      <div className="w-full shrink-0 bg-gradient-to-t from-background via-background to-background/0 pb-6 pt-2">
+      <div className="w-full shrink-0 bg-gradient-to-t from-background via-background to-background/0 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-2">
         <div className="mx-auto w-full max-w-3xl px-4">
           <PromptArea
             onSubmit={handleSubmit}
