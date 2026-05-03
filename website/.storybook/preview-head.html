@@ -1,20 +1,39 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap"
   rel="stylesheet"
 />
 <style>
   :root {
-    --font-inter: 'Inter', sans-serif;
-    --font-outfit: 'Outfit', sans-serif;
-    --font-jetbrains-mono: 'JetBrains Mono', monospace;
+    --font-outfit: "Outfit", sans-serif;
+    --font-inter: "Inter", sans-serif;
+    --font-jetbrains-mono: "JetBrains Mono", monospace;
   }
+
   body {
     font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
     background: #000000;
-    color: #F2F2F2;
+    color: #fafafa;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ── "Show code" / "Hide code" button — border to atmos ── */
+  .docblock-code-toggle,
+  button[class*="docblock-code-toggle"] {
+    border-color: #8ec5d0 !important;
+    color: #8ec5d0 !important;
+  }
+
+  /* ── Scrollbar — hidden but scrollable ── */
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: none;
   }
 </style>
