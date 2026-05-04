@@ -47,31 +47,12 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { PromptArea } from "@/components/prompt-area";
+import { flattenForCitation } from "@/lib/citable-sections";
+
+export type { CitableSection } from "@/lib/citable-sections";
 
 function countFilesDeep(s: DocSection): number {
   return s.files.length + s.children.reduce((sum, c) => sum + countFilesDeep(c), 0);
-}
-
-export type CitableSection = {
-  title: string;
-  segments: string[];
-  groupTitle: string;
-};
-
-function flattenForCitation(sections: DocSection[]): CitableSection[] {
-  const result: CitableSection[] = [];
-  for (const top of sections) {
-    walk(top, top.title);
-  }
-  function walk(s: DocSection, groupTitle: string) {
-    for (const file of s.files) {
-      result.push({ title: file.title, segments: file.segments, groupTitle });
-    }
-    for (const child of s.children) {
-      walk(child, groupTitle);
-    }
-  }
-  return result;
 }
 
 function findFirstFile(s: DocSection): DocSection["files"][0] | undefined {
