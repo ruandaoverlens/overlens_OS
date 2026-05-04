@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { streamText, createDataStreamResponse } from "ai";
+import {
+  streamText,
+  createDataStreamResponse,
+  convertToCoreMessages,
+  type Message as AiMessage,
+} from "ai";
 import { createClient } from "@/lib/supabase/server";
 import { openrouter } from "@/lib/ai/openrouter";
 import { AVAILABLE_MODELS, DEFAULT_MODEL } from "@/lib/ai/models";
@@ -14,10 +19,17 @@ const ModelIdSchema = z.enum(
   AVAILABLE_MODELS.map((m) => m.id) as [string, ...string[]],
 );
 
+const AttachmentSchema = z.object({
+  name: z.string(),
+  contentType: z.string(),
+  url: z.string(),
+});
+
 const UIMessageSchema = z.object({
   id: z.string().optional(),
   role: z.enum(["user", "assistant", "system"]),
   content: z.string(),
+  experimental_attachments: z.array(AttachmentSchema).optional(),
 });
 
 const CitedSectionSchema = z
@@ -34,6 +46,9 @@ const BodySchema = z.object({
   model: ModelIdSchema.optional(),
   planMode: z.boolean().optional(),
   citedSection: CitedSectionSchema,
+  // Anexos enviados junto da última mensagem do usuário (espelham
+  // experimental_attachments). Persistidos no DB para reload.
+  attachments: z.array(AttachmentSchema).optional(),
   skipPersistFirstUser: z.boolean().optional(),
 });
 
@@ -63,6 +78,7 @@ export async function POST(req: NextRequest) {
       model: requestedModel,
       planMode = false,
       citedSection = null,
+      attachments = [],
       skipPersistFirstUser = false,
     } = parsed.data;
 
@@ -90,6 +106,12 @@ export async function POST(req: NextRequest) {
     if (!skipPersistFirstUser) {
       const lastUser = [...messages].reverse().find((m) => m.role === "user");
       if (lastUser) {
+        // Prefer attachments from request body; fall back to the message's
+        // experimental_attachments (set by useChat client).
+        const lastUserAttachments =
+          attachments.length > 0
+            ? attachments
+            : lastUser.experimental_attachments ?? [];
         const { error: insertErr } = await supabase
           .from("chat_messages")
           .insert({
@@ -97,6 +119,8 @@ export async function POST(req: NextRequest) {
             role: "user",
             content: lastUser.content,
             cited_segments: citedSection?.segments ?? null,
+            attachments:
+              lastUserAttachments.length > 0 ? lastUserAttachments : null,
           });
         if (insertErr) {
           return NextResponse.json(
@@ -147,9 +171,65 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    const system = buildSystemPrompt({ planMode, contextDocs });
+    let systemPrompt = buildSystemPrompt({ planMode, contextDocs });
+
+    // If we have non-image attachments (e.g. PDFs/MDs), expose their names to
+    // the model as text — most models won't read PDFs natively, but at least
+    // they know what was attached. Images are forwarded as multimodal parts
+    // by convertToCoreMessages.
+    const lastUserMsgIndex = (() => {
+      for (let i = messages.length - 1; i >= 0; i--) {
+        if (messages[i].role === "user") return i;
+      }
+      return -1;
+    })();
+    const lastUserMsg =
+      lastUserMsgIndex >= 0 ? messages[lastUserMsgIndex] : null;
+    const effectiveAttachments =
+      attachments.length > 0
+        ? attachments
+        : lastUserMsg?.experimental_attachments ?? [];
+    const nonImageAttachments = effectiveAttachments.filter(
+      (a) => !a.contentType.startsWith("image/"),
+    );
+    if (nonImageAttachments.length > 0) {
+      const list = nonImageAttachments
+        .map((a) => `- ${a.name} (${a.contentType})`)
+        .join("\n");
+      systemPrompt += `\n\nO usuário anexou os seguintes arquivos não-imagem (você não consegue ler o conteúdo diretamente — peça ao usuário para colar o trecho relevante se necessário):\n${list}`;
+    }
 
     const sources = resolveSources(routedDocIds);
+
+    // Convert UI messages (with experimental_attachments) into core messages
+    // — this turns image attachments into multimodal content parts that the
+    // model can see. Attach the request body's `attachments` to the last
+    // user message (covers the case where the client sends them via body).
+    const messagesForCore: AiMessage[] = messages.map((m, i) => {
+      const base: AiMessage = {
+        id: m.id ?? `msg-${i}`,
+        role: m.role as AiMessage["role"],
+        content: m.content,
+      };
+      const merged =
+        i === lastUserMsgIndex && attachments.length > 0
+          ? attachments
+          : m.experimental_attachments;
+      if (merged && merged.length > 0) {
+        // Only forward image attachments to the model (other types will not
+        // be understood; their names are already in the system prompt).
+        const imageOnly = merged.filter((a) =>
+          a.contentType.startsWith("image/"),
+        );
+        if (imageOnly.length > 0) {
+          (base as AiMessage & { experimental_attachments?: typeof imageOnly })
+            .experimental_attachments = imageOnly;
+        }
+      }
+      return base;
+    });
+
+    const coreMessages = convertToCoreMessages(messagesForCore);
 
     return createDataStreamResponse({
       execute: (writer) => {
@@ -159,8 +239,8 @@ export async function POST(req: NextRequest) {
 
         const result = streamText({
           model: openrouter(model),
-          system,
-          messages: messages.map((m) => ({ role: m.role, content: m.content })),
+          system: systemPrompt,
+          messages: coreMessages,
           maxTokens: 2000,
           onError: ({ error }) => {
             console.error("[chat] streamText error:", error);

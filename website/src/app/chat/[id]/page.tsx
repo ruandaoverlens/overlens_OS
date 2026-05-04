@@ -4,9 +4,26 @@ import {
   ChatExperience,
   type ChatMessageMeta,
 } from "@/components/chat/chat-experience";
-import type { UIMessage } from "@/lib/ai/types";
+import type { ChatAttachment, UIMessage } from "@/lib/ai/types";
 import type { ModelId } from "@/lib/ai/models";
 import { resolveCitedTitle, resolveSources } from "@/lib/ai/sources";
+
+function parseAttachments(value: unknown): ChatAttachment[] | null {
+  if (!Array.isArray(value)) return null;
+  const items: ChatAttachment[] = [];
+  for (const raw of value) {
+    if (
+      raw &&
+      typeof raw === "object" &&
+      typeof (raw as ChatAttachment).name === "string" &&
+      typeof (raw as ChatAttachment).contentType === "string" &&
+      typeof (raw as ChatAttachment).url === "string"
+    ) {
+      items.push(raw as ChatAttachment);
+    }
+  }
+  return items.length > 0 ? items : null;
+}
 
 export default async function ChatConversationPage({
   params,
@@ -26,21 +43,32 @@ export default async function ChatConversationPage({
 
   const { data: messages } = await supabase
     .from("chat_messages")
-    .select("id, role, content, cited_segments, routed_doc_ids")
+    .select("id, role, content, cited_segments, routed_doc_ids, attachments")
     .eq("conversation_id", id)
     .order("created_at", { ascending: true });
 
-  const initialMessages: UIMessage[] = (messages ?? []).map((m) => ({
-    id: m.id as string,
-    role: m.role as UIMessage["role"],
-    content: m.content as string,
-  }));
+  const initialMessages: UIMessage[] = (messages ?? []).map((m) => {
+    const attachments = parseAttachments(m.attachments);
+    const msg: UIMessage = {
+      id: m.id as string,
+      role: m.role as UIMessage["role"],
+      content: m.content as string,
+    };
+    if (attachments) msg.experimental_attachments = attachments;
+    return msg;
+  });
 
   const initialMeta: Record<string, ChatMessageMeta> = {};
   for (const m of messages ?? []) {
     if (m.role === "user") {
       const title = resolveCitedTitle(m.cited_segments as string[] | null);
-      if (title) initialMeta[m.id as string] = { citedTitle: title };
+      const attachments = parseAttachments(m.attachments);
+      if (title || attachments) {
+        initialMeta[m.id as string] = {
+          citedTitle: title ?? null,
+          attachments: attachments ?? null,
+        };
+      }
     } else if (m.role === "assistant") {
       const sources = resolveSources(m.routed_doc_ids as string[] | null);
       if (sources.length > 0) initialMeta[m.id as string] = { sources };
