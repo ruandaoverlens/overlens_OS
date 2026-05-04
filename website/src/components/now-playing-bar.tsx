@@ -147,12 +147,37 @@ export function NowPlayingBar() {
     };
   }, []);
 
+  const barRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (!activeTrack) {
+      root.style.setProperty("--now-playing-h", "0px");
+      return;
+    }
+    const el = barRef.current;
+    if (!el) return;
+    const update = () => {
+      root.style.setProperty("--now-playing-h", `${el.offsetHeight}px`);
+    };
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => {
+      ro.disconnect();
+      root.style.setProperty("--now-playing-h", "0px");
+    };
+  }, [activeTrack]);
+
   if (!activeTrack) return null;
 
   const VolumeIcon = volume === 0 ? VolumeX : volume < 0.5 ? Volume1 : Volume2;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 bg-[var(--surface-950)] border-t border-[var(--surface-900)]">
+    <div
+      ref={barRef}
+      className="fixed bottom-0 left-0 right-0 z-40 bg-[var(--surface-950)] border-t border-[var(--surface-900)]"
+    >
       <div className="flex items-center gap-3 px-4 pt-2.5">
         {/* Prev */}
         <button

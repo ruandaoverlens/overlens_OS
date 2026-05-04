@@ -31,7 +31,7 @@ export default async function ChatLayout({
   const nav = config.getNav();
 
   return (
-    <SidebarProvider className="h-svh overflow-hidden">
+    <SidebarProvider className="h-[calc(100svh-var(--now-playing-h,0px))] overflow-hidden">
       <SystemSidebar
         sections={nav}
         basePath={config.basePath}
@@ -44,7 +44,7 @@ export default async function ChatLayout({
         conversations={conversations}
         defaultView="conversations"
       />
-      <SidebarInset className="h-svh overflow-hidden">
+      <SidebarInset className="h-[calc(100svh-var(--now-playing-h,0px))] overflow-hidden">
         <Topbar>
           <TopbarBreadcrumb>
             <ChatBreadcrumb conversations={conversations} />
