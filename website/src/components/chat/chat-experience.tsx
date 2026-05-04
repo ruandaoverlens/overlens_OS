@@ -196,37 +196,49 @@ export function ChatExperience({
 
   const hasMessages = messages.length > 0
 
+  const promptArea = (
+    <PromptArea
+      citableSections={citableSections}
+      basePath={basePath}
+      onSubmit={handleSubmit}
+      loading={isLoading}
+      autoFocus
+    />
+  )
+
+  if (!hasMessages) {
+    return (
+      <div
+        data-slot="chat-experience"
+        className={cn("flex h-full min-h-0 w-full flex-col", className)}
+      >
+        <div className="flex flex-1 items-center justify-center px-4 pb-40">
+          <div className="w-full max-w-[780px]">
+            <EmptyState />
+            <div className="mt-9">{promptArea}</div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div
       data-slot="chat-experience"
       className={cn("flex h-full min-h-0 w-full flex-col", className)}
     >
       <div className="flex min-h-0 flex-1 flex-col">
-        {hasMessages ? (
-          <MessageList
-            messages={messages as UIMessage[]}
-            meta={meta}
-            isLoading={isLoading}
-            error={errorInfo}
-            onRetry={() => reload()}
-          />
-        ) : (
-          <div className="flex flex-1 items-center justify-center">
-            <EmptyState />
-          </div>
-        )}
+        <MessageList
+          messages={messages as UIMessage[]}
+          meta={meta}
+          isLoading={isLoading}
+          error={errorInfo}
+          onRetry={() => reload()}
+        />
       </div>
 
       <div className="w-full shrink-0 bg-gradient-to-t from-background via-background to-background/0 pb-6 pt-2">
-        <div className="mx-auto w-full max-w-[780px] px-4">
-          <PromptArea
-            citableSections={citableSections}
-            basePath={basePath}
-            onSubmit={handleSubmit}
-            loading={isLoading}
-            autoFocus
-          />
-        </div>
+        <div className="mx-auto w-full max-w-[780px] px-4">{promptArea}</div>
       </div>
     </div>
   )
