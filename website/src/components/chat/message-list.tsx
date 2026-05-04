@@ -65,11 +65,14 @@ export function MessageList({
         {messages.map((m) => {
           const messageMeta = meta?.[m.id]
           if (m.role === "user") {
+            const attachments =
+              messageMeta?.attachments ?? m.experimental_attachments ?? null
             return (
               <UserMessage
                 key={m.id}
                 content={m.content}
                 citedTitle={messageMeta?.citedTitle ?? null}
+                attachments={attachments}
               />
             )
           }

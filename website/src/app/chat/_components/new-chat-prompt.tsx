@@ -7,7 +7,26 @@ import { PromptArea, type PromptSubmitPayload } from "@/components/prompt-area";
 import { MessageList } from "@/components/chat/message-list";
 import { EmptyState } from "@/components/chat/empty-state";
 import { useCitableSections } from "@/components/chat/citable-sections-provider";
-import type { UIMessage } from "@/lib/ai/types";
+import type { ChatAttachment, UIMessage } from "@/lib/ai/types";
+
+async function fileToAttachment(file: File): Promise<ChatAttachment> {
+  const url = await new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = () =>
+      reject(reader.error ?? new Error("Falha ao ler arquivo"));
+    reader.onload = () => {
+      const result = reader.result;
+      if (typeof result === "string") resolve(result);
+      else reject(new Error("Formato inesperado ao ler arquivo"));
+    };
+    reader.readAsDataURL(file);
+  });
+  return {
+    name: file.name,
+    contentType: file.type || "application/octet-stream",
+    url,
+  };
+}
 
 export function NewChatPrompt() {
   const router = useRouter();
@@ -16,10 +35,25 @@ export function NewChatPrompt() {
     React.useState<UIMessage | null>(null);
 
   async function handleSubmit(payload: PromptSubmitPayload) {
+    let attachments: ChatAttachment[] = [];
+    if (payload.attachments.length > 0) {
+      try {
+        attachments = await Promise.all(
+          payload.attachments.map(fileToAttachment),
+        );
+      } catch (err) {
+        console.error("Falha ao processar anexos:", err);
+        toast.error("Não foi possível processar os anexos.");
+        return;
+      }
+    }
+
     setOptimisticMessage({
       id: "optimistic-user",
       role: "user",
       content: payload.text,
+      experimental_attachments:
+        attachments.length > 0 ? attachments : undefined,
     });
 
     try {
@@ -30,6 +64,7 @@ export function NewChatPrompt() {
           firstMessage: payload.text,
           planMode: payload.planMode,
           citedSection: payload.selectedSection,
+          attachments,
         }),
       });
 

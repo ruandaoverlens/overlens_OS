@@ -2,6 +2,13 @@ import type { ModelId } from "./models";
 
 export type ChatRole = "user" | "assistant" | "system";
 
+export interface ChatAttachment {
+  name: string;
+  contentType: string;
+  /** Data URL (base64) ou URL pública/assinada. */
+  url: string;
+}
+
 export interface ChatMessage {
   id: string;
   conversation_id: string;
@@ -9,6 +16,7 @@ export interface ChatMessage {
   content: string;
   cited_segments?: string[] | null;
   routed_doc_ids?: string[] | null;
+  attachments?: ChatAttachment[] | null;
   tokens_in?: number | null;
   tokens_out?: number | null;
   feedback?: -1 | 0 | 1 | null;
@@ -47,4 +55,5 @@ export interface UIMessage {
   id: string;
   role: ChatRole;
   content: string;
+  experimental_attachments?: ChatAttachment[];
 }

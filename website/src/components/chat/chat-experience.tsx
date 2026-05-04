@@ -5,7 +5,7 @@ import { useChat } from "ai/react"
 import { toast } from "sonner"
 import { cn } from "@/lib/utils"
 import type { ModelId } from "@/lib/ai/models"
-import type { UIMessage } from "@/lib/ai/types"
+import type { ChatAttachment, UIMessage } from "@/lib/ai/types"
 import { classifyClientError, type ChatErrorInfo } from "@/lib/ai/chat-errors"
 import { PromptArea, type PromptSubmitPayload } from "@/components/prompt-area"
 import { MessageList } from "./message-list"
@@ -16,6 +16,7 @@ import { useCitableSections } from "./citable-sections-provider"
 export type ChatMessageMeta = {
   citedTitle?: string | null
   sources?: AssistantSource[] | null
+  attachments?: ChatAttachment[] | null
 }
 
 type ChatExperienceProps = {
@@ -35,6 +36,24 @@ type StreamAnnotation = {
 
 function isStreamAnnotation(value: unknown): value is StreamAnnotation {
   return typeof value === "object" && value !== null
+}
+
+async function fileToAttachment(file: File): Promise<ChatAttachment> {
+  const url = await new Promise<string>((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onerror = () => reject(reader.error ?? new Error("Falha ao ler arquivo"))
+    reader.onload = () => {
+      const result = reader.result
+      if (typeof result === "string") resolve(result)
+      else reject(new Error("Formato inesperado ao ler arquivo"))
+    }
+    reader.readAsDataURL(file)
+  })
+  return {
+    name: file.name,
+    contentType: file.type || "application/octet-stream",
+    url,
+  }
 }
 
 export function ChatExperience({
@@ -114,12 +133,30 @@ export function ChatExperience({
       typeof crypto !== "undefined" && "randomUUID" in crypto
         ? crypto.randomUUID()
         : `local-${Date.now()}`
-    if (payload.selectedSection) {
+
+    let attachments: ChatAttachment[] = []
+    if (payload.attachments.length > 0) {
+      try {
+        attachments = await Promise.all(
+          payload.attachments.map(fileToAttachment),
+        )
+      } catch (err) {
+        console.error("Falha ao processar anexos:", err)
+        toast.error("Não foi possível processar os anexos.")
+        return
+      }
+    }
+
+    if (payload.selectedSection || attachments.length > 0) {
       setLocalMeta((prev) => ({
         ...prev,
-        [userMessageId]: { citedTitle: payload.selectedSection!.title },
+        [userMessageId]: {
+          citedTitle: payload.selectedSection?.title ?? null,
+          attachments: attachments.length > 0 ? attachments : null,
+        },
       }))
     }
+
     await append(
       { id: userMessageId, role: "user", content: payload.text },
       {
@@ -128,7 +165,10 @@ export function ChatExperience({
           model,
           planMode: payload.planMode || planMode,
           citedSection: payload.selectedSection,
+          attachments,
         },
+        experimental_attachments:
+          attachments.length > 0 ? attachments : undefined,
       },
     )
   }

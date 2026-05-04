@@ -38,6 +38,7 @@ export type PromptSubmitPayload = {
   text: string
   planMode: boolean
   selectedSection: SelectedSection | null
+  attachments: File[]
 }
 
 type PromptAreaProps = {
@@ -51,6 +52,91 @@ type PromptAreaProps = {
   autoFocus?: boolean
   /** When true, clears the textarea after a successful submit. Default: true. */
   clearOnSubmit?: boolean
+}
+
+const ACCEPTED_TYPES = "image/*,.pdf,.md"
+
+function isImage(file: File) {
+  return file.type.startsWith("image/")
+}
+
+function formatBytes(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`
+  return `${(bytes / 1024 / 1024).toFixed(1)} MB`
+}
+
+type ImagePreviewProps = {
+  file: File
+  onRemove: () => void
+}
+
+function ImagePreview({ file, onRemove }: ImagePreviewProps) {
+  const [url, setUrl] = React.useState<string | null>(null)
+  React.useEffect(() => {
+    const objectUrl = URL.createObjectURL(file)
+    setUrl(objectUrl)
+    return () => URL.revokeObjectURL(objectUrl)
+  }, [file])
+
+  return (
+    <div
+      data-slot="prompt-area-image-preview"
+      className="relative h-[72px] w-[72px] shrink-0 overflow-hidden rounded-xl border border-border/50 bg-muted"
+    >
+      {url && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={url}
+          alt={file.name}
+          className="h-full w-full object-cover"
+        />
+      )}
+      <button
+        type="button"
+        onClick={onRemove}
+        aria-label={`Remover ${file.name}`}
+        className={cn(
+          "absolute right-1 top-1 flex size-5 items-center justify-center rounded-full transition-colors outline-none",
+          "bg-black/70 text-white hover:bg-black/85",
+        )}
+      >
+        <SmCloseLineIcon className="size-3.5" />
+      </button>
+    </div>
+  )
+}
+
+type FileChipProps = {
+  file: File
+  onRemove: () => void
+}
+
+function FileChip({ file, onRemove }: FileChipProps) {
+  return (
+    <div
+      data-slot="prompt-area-file-chip"
+      className={cn(
+        "inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full pl-3 pr-1 text-sm font-medium transition-colors",
+        "bg-[#D6A461]/10 text-[#D6A461]",
+      )}
+    >
+      <SmFolderLineIcon className="size-4" />
+      <span className="max-w-[180px] truncate">{file.name}</span>
+      <span className="text-xs opacity-70">{formatBytes(file.size)}</span>
+      <button
+        type="button"
+        onClick={onRemove}
+        aria-label={`Remover ${file.name}`}
+        className={cn(
+          "ml-0.5 flex size-7 shrink-0 items-center justify-center rounded-full transition-colors outline-none",
+          "text-[#D6A461] hover:bg-[#D6A461]/15",
+        )}
+      >
+        <SmCloseLineIcon className="size-4" />
+      </button>
+    </div>
+  )
 }
 
 export function PromptArea({
@@ -69,27 +155,76 @@ export function PromptArea({
   const [selectedSection, setSelectedSection] = React.useState<SelectedSection | null>(null)
   const [sectionPickerOpen, setSectionPickerOpen] = React.useState(false)
   const [isDragOver, setIsDragOver] = React.useState(false)
+  const [attachments, setAttachments] = React.useState<File[]>([])
   const dragCounter = React.useRef(0)
   const textareaRef = React.useRef<HTMLTextAreaElement>(null)
+  const fileInputRef = React.useRef<HTMLInputElement>(null)
 
   const hasValue = value.trim().length > 0
-  const canSubmit = hasValue && !disabled && !loading && Boolean(onSubmit)
+  const hasAttachments = attachments.length > 0
+  const canSubmit = (hasValue || hasAttachments) && !disabled && !loading && Boolean(onSubmit)
 
   React.useEffect(() => {
     if (autoFocus) textareaRef.current?.focus()
   }, [autoFocus])
 
+  function appendFiles(files: File[]) {
+    if (files.length === 0) return
+    setAttachments((prev) => [...prev, ...files])
+  }
+
+  function removeAttachment(index: number) {
+    setAttachments((prev) => prev.filter((_, i) => i !== index))
+  }
+
   async function handleSubmit() {
     if (!canSubmit || !onSubmit) return
     const trimmed = value.trim()
+    const filesToSend = attachments
     // Clear immediately so the textarea is empty during streaming.
     // (Parent's onSubmit may resolve only after the entire stream finishes.)
-    if (clearOnSubmit) setValue("")
+    if (clearOnSubmit) {
+      setValue("")
+      setAttachments([])
+    }
     try {
-      await onSubmit({ text: trimmed, planMode, selectedSection })
+      await onSubmit({
+        text: trimmed,
+        planMode,
+        selectedSection,
+        attachments: filesToSend,
+      })
     } catch (err) {
       // Parent is responsible for surfacing errors (toast, etc.)
       console.error("PromptArea submit failed:", err)
+    }
+  }
+
+  function handleAddFilesClick() {
+    fileInputRef.current?.click()
+  }
+
+  function handleFileInputChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const files = e.target.files ? Array.from(e.target.files) : []
+    appendFiles(files)
+    // Reset so picking the same file twice in a row still triggers change.
+    e.target.value = ""
+  }
+
+  function handlePaste(e: React.ClipboardEvent) {
+    const items = e.clipboardData?.items
+    if (!items || items.length === 0) return
+    const pastedFiles: File[] = []
+    for (const item of Array.from(items)) {
+      if (item.kind !== "file") continue
+      const file = item.getAsFile()
+      if (file && isImage(file)) pastedFiles.push(file)
+    }
+    if (pastedFiles.length > 0) {
+      // Prevent the default text-paste only when we actually consumed an image.
+      // (When pasting plain text, items may include "string" entries — let those through.)
+      e.preventDefault()
+      appendFiles(pastedFiles)
     }
   }
 
@@ -150,6 +285,13 @@ export function PromptArea({
     setSectionPickerOpen(false)
   }
 
+  const imageAttachments = attachments
+    .map((file, index) => ({ file, index }))
+    .filter(({ file }) => isImage(file))
+  const fileAttachments = attachments
+    .map((file, index) => ({ file, index }))
+    .filter(({ file }) => !isImage(file))
+
   return (
     <>
       <div
@@ -160,6 +302,7 @@ export function PromptArea({
         onDragLeave={handleDragLeave}
         onDragOver={handleDragOver}
         onDrop={handleDrop}
+        onPaste={handlePaste}
         className={cn(
           "group/prompt relative -mx-0.5 flex w-[calc(100%+4px)] flex-col gap-7 overflow-hidden rounded-3xl px-2 pt-4 pb-2",
           "bg-accent/50 dark:bg-input/30",
@@ -172,6 +315,39 @@ export function PromptArea({
           className
         )}
       >
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept={ACCEPTED_TYPES}
+          multiple
+          onChange={handleFileInputChange}
+          className="hidden"
+          aria-hidden="true"
+          tabIndex={-1}
+        />
+
+        {hasAttachments && (
+          <div
+            data-slot="prompt-area-attachments"
+            className="-mb-4 flex w-full items-center gap-2 overflow-x-auto px-2 pb-1 scrollbar-hidden"
+          >
+            {imageAttachments.map(({ file, index }) => (
+              <ImagePreview
+                key={`img-${index}-${file.name}`}
+                file={file}
+                onRemove={() => removeAttachment(index)}
+              />
+            ))}
+            {fileAttachments.map(({ file, index }) => (
+              <FileChip
+                key={`file-${index}-${file.name}`}
+                file={file}
+                onRemove={() => removeAttachment(index)}
+              />
+            ))}
+          </div>
+        )}
+
         <div className="flex items-start gap-2 pl-3 pr-2">
           <textarea
             ref={textareaRef}
@@ -219,7 +395,7 @@ export function PromptArea({
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" sideOffset={8} className="min-w-[220px] pb-2">
-                <DropdownMenuItem>
+                <DropdownMenuItem onSelect={handleAddFilesClick}>
                   <SmClipsLineIcon />
                   Adicionar fotos e arquivos
                 </DropdownMenuItem>

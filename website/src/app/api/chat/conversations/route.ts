@@ -15,12 +15,24 @@ const CitedSectionSchema = z
   .nullable()
   .optional();
 
-const PostBodySchema = z.object({
-  firstMessage: z.string().min(1),
-  model: ModelIdSchema.optional(),
-  planMode: z.boolean().optional(),
-  citedSection: CitedSectionSchema,
+const AttachmentSchema = z.object({
+  name: z.string(),
+  contentType: z.string(),
+  url: z.string(),
 });
+
+const PostBodySchema = z
+  .object({
+    firstMessage: z.string(),
+    model: ModelIdSchema.optional(),
+    planMode: z.boolean().optional(),
+    citedSection: CitedSectionSchema,
+    attachments: z.array(AttachmentSchema).optional(),
+  })
+  .refine(
+    (val) => val.firstMessage.trim().length > 0 || (val.attachments?.length ?? 0) > 0,
+    { message: "Mensagem ou anexo obrigatório" },
+  );
 
 export async function GET() {
   try {
@@ -78,13 +90,20 @@ export async function POST(req: NextRequest) {
       model = DEFAULT_MODEL,
       planMode = false,
       citedSection = null,
+      attachments = [],
     } = parsed.data;
 
     const trimmed = firstMessage.trim();
+    const fallbackTitle =
+      attachments.length > 0
+        ? attachments.length === 1
+          ? attachments[0].name
+          : `${attachments.length} anexos`
+        : "Nova conversa";
     const capitalized =
       trimmed.length > 0
         ? trimmed.charAt(0).toLocaleUpperCase("pt-BR") + trimmed.slice(1)
-        : trimmed;
+        : fallbackTitle;
     const title =
       capitalized.length > 60
         ? capitalized.slice(0, 60) + "…"
@@ -113,6 +132,7 @@ export async function POST(req: NextRequest) {
       role: "user",
       content: firstMessage,
       cited_segments: citedSection?.segments ?? null,
+      attachments: attachments.length > 0 ? attachments : null,
     });
 
     if (msgErr) {
