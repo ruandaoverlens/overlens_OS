@@ -6,10 +6,12 @@ import { toast } from "sonner";
 import { PromptArea, type PromptSubmitPayload } from "@/components/prompt-area";
 import { MessageList } from "@/components/chat/message-list";
 import { EmptyState } from "@/components/chat/empty-state";
+import { useCitableSections } from "@/components/chat/citable-sections-provider";
 import type { UIMessage } from "@/lib/ai/types";
 
 export function NewChatPrompt() {
   const router = useRouter();
+  const { citableSections, basePath } = useCitableSections();
   const [optimisticMessage, setOptimisticMessage] =
     React.useState<UIMessage | null>(null);
 
@@ -72,7 +74,12 @@ export function NewChatPrompt() {
         <div className="w-full max-w-3xl">
           <EmptyState />
           <div className="mt-9">
-            <PromptArea onSubmit={handleSubmit} autoFocus />
+            <PromptArea
+              citableSections={citableSections}
+              basePath={basePath}
+              onSubmit={handleSubmit}
+              autoFocus
+            />
           </div>
         </div>
       </div>

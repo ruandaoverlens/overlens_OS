@@ -11,6 +11,7 @@ import { PromptArea, type PromptSubmitPayload } from "@/components/prompt-area"
 import { MessageList } from "./message-list"
 import { EmptyState } from "./empty-state"
 import type { AssistantSource } from "./assistant-message"
+import { useCitableSections } from "./citable-sections-provider"
 
 export type ChatMessageMeta = {
   citedTitle?: string | null
@@ -45,6 +46,8 @@ export function ChatExperience({
   initialMeta,
   className,
 }: ChatExperienceProps) {
+  const { citableSections, basePath } = useCitableSections()
+
   const {
     messages,
     append,
@@ -177,6 +180,8 @@ export function ChatExperience({
       <div className="w-full shrink-0 bg-gradient-to-t from-background via-background to-background/0 pb-6 pt-2">
         <div className="mx-auto w-full max-w-[780px] px-4">
           <PromptArea
+            citableSections={citableSections}
+            basePath={basePath}
             onSubmit={handleSubmit}
             loading={isLoading}
             autoFocus

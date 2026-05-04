@@ -13,8 +13,10 @@ import {
 import { AppSwitcher } from "@/components/app-switcher";
 import { SystemSidebar } from "@/components/doc-sidebar";
 import { ChatBreadcrumb } from "@/components/chat/chat-breadcrumb";
+import { CitableSectionsProvider } from "@/components/chat/citable-sections-provider";
 import { getChatConversations } from "@/lib/chat-conversations";
 import { getSystemConfig } from "@/lib/system-configs";
+import { flattenForCitation } from "@/lib/citable-sections";
 
 export default async function ChatLayout({
   children,
@@ -29,6 +31,7 @@ export default async function ChatLayout({
 
   const conversations = await getChatConversations();
   const nav = config.getNav();
+  const citableSections = flattenForCitation(nav);
 
   return (
     <SidebarProvider className="h-[calc(100svh-var(--now-playing-h,0px))] overflow-hidden">
@@ -59,7 +62,14 @@ export default async function ChatLayout({
             <AppSwitcher />
           </TopbarActions>
         </Topbar>
-        <div className="flex min-h-0 flex-1 overflow-hidden">{children}</div>
+        <div className="flex min-h-0 flex-1 overflow-hidden">
+          <CitableSectionsProvider
+            citableSections={citableSections}
+            basePath={config.basePath}
+          >
+            {children}
+          </CitableSectionsProvider>
+        </div>
       </SidebarInset>
     </SidebarProvider>
   );
