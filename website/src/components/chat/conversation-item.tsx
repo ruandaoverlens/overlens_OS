@@ -113,7 +113,12 @@ export function ConversationItem({ id, title, isActive }: ConversationItemProps)
   return (
     <>
       <SidebarMenuItem>
-        <SidebarMenuButton isActive={isActive} size="sm" asChild>
+        <SidebarMenuButton
+          isActive={isActive}
+          size="sm"
+          asChild
+          className="group-hover/menu-item:bg-sidebar-accent group-hover/menu-item:text-sidebar-accent-foreground group-has-data-[state=open]/menu-item:bg-sidebar-accent group-has-data-[state=open]/menu-item:text-sidebar-accent-foreground"
+        >
           <Link href={`/chat/${id}`} className="truncate">
             <span className="truncate">{displayTitle || "Sem título"}</span>
           </Link>
@@ -123,7 +128,7 @@ export function ConversationItem({ id, title, isActive }: ConversationItemProps)
             <SidebarMenuAction
               showOnHover
               aria-label="Ações da conversa"
-              className="!top-1/2 !-translate-y-1/2 [&_svg]:!size-[22px]"
+              className="!top-1/2 !-translate-y-1/2 hover:bg-transparent dark:hover:bg-transparent [&_svg]:!size-[22px]"
             >
               <MoreHorizontal />
             </SidebarMenuAction>
