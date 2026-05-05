@@ -526,7 +526,7 @@ export function SystemSidebar({
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Link
-                          href="/chat"
+                          href="/chat/new"
                           aria-label="Nova conversa"
                           className="flex size-10 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
                         >
