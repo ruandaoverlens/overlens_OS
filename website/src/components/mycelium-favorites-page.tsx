@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { AssetPageShell } from "@/components/asset-page-shell";
 import { MyceliumCard } from "./mycelium-card";
 import { MyceliumLightbox } from "./mycelium-lightbox";
+import { MyceliumCreateButton } from "./mycelium-create-button";
 import { useFavorites } from "@/lib/favorites";
 import { MYCELIUM_TYPES, type MyceliumReference } from "@/lib/mycelium-types";
 
@@ -114,6 +115,7 @@ export function MyceliumFavoritesPage() {
       tags={allTags}
       activeTags={activeTags}
       onTagToggle={onTagToggle}
+      headerActions={<MyceliumCreateButton className="shrink-0" />}
     >
       {loading ? (
         <div className="flex items-center justify-center py-16">

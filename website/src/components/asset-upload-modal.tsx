@@ -27,6 +27,7 @@ import { TagsInput } from "@/components/tags-input"
 import { useAuth } from "@/lib/auth"
 import { uploadAssetDirect, type DirectUploadPhase } from "@/lib/direct-upload"
 import { compressImageIfNeeded } from "@/lib/browser-image-compress"
+import { notify } from "@/lib/notifications"
 import type {
   AssetUploadConfig,
   UploadFieldConfig,
@@ -318,6 +319,13 @@ export function AssetUploadModal({
     const abort = new AbortController()
     abortRef.current = abort
 
+    // Toast lifecycle — additive to the inline progress UI.
+    if (mode === "link") {
+      notify.loading("Salvando link...", { id: "upload-batch" })
+    } else if (files.length > 0) {
+      notify.uploadStarted(files.length)
+    }
+
     try {
       if (mode === "link") {
         setUploadProgress({ completed: 0, total: 1, phase: "finalizing" })
@@ -405,6 +413,9 @@ export function AssetUploadModal({
             } catch (err) {
               if ((err as Error).name === "AbortError") throw err
               console.warn("[upload] compression failed, sending original:", err)
+              notify.warning("Compressão falhou", {
+                description: `${file.name}: enviando original`,
+              })
             }
           }
 
@@ -423,6 +434,9 @@ export function AssetUploadModal({
               ...prev,
               `${file.name}: preview não gerado (${result.previewError}). O original foi salvo, mas pode não aparecer na galeria até o problema ser resolvido.`,
             ])
+            notify.warning("Preview não gerado", {
+              description: `${file.name}: ${result.previewError}`,
+            })
           }
 
           inFlight.delete(index)
@@ -447,6 +461,29 @@ export function AssetUploadModal({
         await Promise.all(workers)
 
         setUploadProgress({ completed, total, phase: "done" })
+      }
+
+      // Success toast — replaces the loading toast via shared id "upload-batch".
+      if (mode === "link") {
+        notify.success("Link salvo", { description: linkUrl.trim() })
+      } else {
+        notify.uploadSuccess(files.length, { description: config.title })
+
+        // Persisted notification for sizable batches (>=3). Fire-and-forget;
+        // the server route swallows errors so it can't break the flow.
+        if (files.length >= 3) {
+          void fetch("/api/assets/upload/batch-notification", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              assetType: config.slug,
+              count: files.length,
+              title: config.title,
+            }),
+          }).catch(() => {
+            /* non-critical */
+          })
+        }
       }
 
       // Also call the original onSubmit for any consumer-side logic
@@ -479,7 +516,9 @@ export function AssetUploadModal({
       })
     } catch (err) {
       if ((err as Error).name === "AbortError") return
-      setError((err as Error).message ?? "Erro ao fazer upload")
+      const message = (err as Error).message ?? "Erro ao fazer upload"
+      setError(message)
+      notify.uploadFailed(message)
       setSubmitting(false)
       setUploadProgress(null)
     }

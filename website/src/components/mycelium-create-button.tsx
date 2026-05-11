@@ -2,18 +2,17 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { SmPlusSolidIcon } from "@/components/icons";
 import { useAuth, canDelete } from "@/lib/auth";
 import { MyceliumPostForm } from "./mycelium-post-form";
 
 /**
- * Botão "+" pra abrir o sheet de criação de referência no Mycelium.
+ * Botão "Adicionar" para abrir o sheet de criação de referência no Mycelium.
  *
  * Visível apenas para staff/admin (mesmo nível que `canDelete`). Quando o post é
  * criado, dispara um `CustomEvent('mycelium:refresh')` no window para que as
  * páginas de listagem (feed, categoria, favoritos) possam refazer o fetch.
  */
-export function MyceliumCreateButton() {
+export function MyceliumCreateButton({ className }: { className?: string }) {
   const { user } = useAuth();
   const [open, setOpen] = useState(false);
 
@@ -24,11 +23,10 @@ export function MyceliumCreateButton() {
       <Button
         size="sm"
         onClick={() => setOpen(true)}
-        className="gap-1.5"
+        className={className}
         aria-label="Adicionar referência"
       >
-        <SmPlusSolidIcon className="size-4" />
-        <span className="hidden sm:inline">Adicionar</span>
+        Adicionar
       </Button>
       <MyceliumPostForm
         open={open}

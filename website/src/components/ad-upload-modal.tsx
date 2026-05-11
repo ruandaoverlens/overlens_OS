@@ -21,6 +21,7 @@ import {
   UploadMessage,
 } from "@/components/ui/upload";
 import { AD_PLATFORMS, type AdType } from "@/lib/ads";
+import { notify } from "@/lib/notifications";
 
 const MAX_SIZE_MB = 2048;
 
@@ -166,7 +167,9 @@ export function AdUploadModal({ open, onOpenChange, onCreated }: AdUploadModalPr
       handleOpenChange(false);
     } catch (err) {
       if ((err as Error).name === "AbortError") return;
-      setError((err as Error).message ?? "Erro ao criar anúncio");
+      const msg = (err as Error).message ?? "Erro ao criar anúncio";
+      setError(msg);
+      notify.error("Falha ao salvar anúncio", { description: msg });
       setSubmitting(false);
     }
   };

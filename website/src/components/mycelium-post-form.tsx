@@ -30,6 +30,7 @@ import {
   type AttachmentDraft,
 } from "@/components/mycelium-attachment-uploader";
 import { cn } from "@/lib/utils";
+import { notify } from "@/lib/notifications";
 
 interface MyceliumPostFormProps {
   open: boolean;
@@ -168,7 +169,7 @@ export function MyceliumPostForm({
 
   const handleSubmit = async () => {
     if (!title.trim()) {
-      alert("Título é obrigatório");
+      notify.warning("Título é obrigatório");
       return;
     }
     setSubmitting(true);
@@ -198,19 +199,23 @@ export function MyceliumPostForm({
         if (newId && onCreated) onCreated(newId);
         resetForm();
         onOpenChange(false);
+        notify.success("Post criado");
       } else {
-        let message = "Erro ao publicar referência";
+        let detail = "";
         try {
           const errData = await res.json();
-          if (errData?.error) message = `${message}: ${errData.error}`;
+          if (errData?.error) detail = errData.error;
         } catch {
           /* noop */
         }
-        alert(message);
+        notify.error("Falha ao salvar post", {
+          description: detail || `Erro ${res.status}`,
+        });
       }
     } catch (err) {
       console.error("[mycelium-post-form] submit failed:", err);
-      alert("Erro ao publicar referência");
+      const msg = err instanceof Error ? err.message : "Erro desconhecido";
+      notify.error("Falha ao salvar post", { description: msg });
     } finally {
       setSubmitting(false);
     }

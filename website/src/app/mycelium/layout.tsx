@@ -5,8 +5,8 @@ import {
 import { Topbar, TopbarBreadcrumb, TopbarActions } from "@/components/ui/topbar";
 import { DocTopbarLabel } from "@/components/doc-breadcrumb";
 import { AppSwitcher } from "@/components/app-switcher";
+import { AppNotifications } from "@/components/app-notifications";
 import { MyceliumSidebar } from "@/components/mycelium-sidebar";
-import { MyceliumCreateButton } from "@/components/mycelium-create-button";
 
 export default function MyceliumLayout({
   children,
@@ -22,7 +22,7 @@ export default function MyceliumLayout({
             <DocTopbarLabel label="Mycelium" basePath="/mycelium" />
           </TopbarBreadcrumb>
           <TopbarActions>
-            <MyceliumCreateButton />
+            <AppNotifications />
             <AppSwitcher />
           </TopbarActions>
         </Topbar>

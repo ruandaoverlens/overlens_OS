@@ -122,6 +122,7 @@ export function AssetPageShell({
   onSearchChange,
   count,
   headerSlot,
+  headerActions,
   countLabel = "ativos",
   contentClassName,
   gradient,
@@ -140,6 +141,7 @@ export function AssetPageShell({
   contentClassName?: string;
   gradient?: string;
   headerSlot?: React.ReactNode;
+  headerActions?: React.ReactNode;
   children: React.ReactNode;
 }) {
   const { user } = useAuth();
@@ -205,6 +207,7 @@ export function AssetPageShell({
             <span>Upload</span>
           </Button>
         )}
+        {headerActions}
       </div>
 
       {/* Tags */}

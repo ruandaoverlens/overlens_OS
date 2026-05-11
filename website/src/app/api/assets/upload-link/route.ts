@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import { createClient } from "@/lib/supabase/server";
 import { ASSET_TYPE_FOLDERS, sanitizeStorageFilename } from "@/lib/supabase/storage";
+import { createNotification } from "@/lib/notifications";
 
 export const maxDuration = 60;
 
@@ -104,6 +105,20 @@ export async function POST(request: NextRequest) {
     if (insertError) {
       return NextResponse.json({ error: insertError.message }, { status: 500 });
     }
+
+    // Persist a "reference saved" notification. createNotification logs and
+    // returns null on failure, so it can't break the response.
+    await createNotification({
+      userId: user.id,
+      variant: "post",
+      category: "reference",
+      title: "Referência salva",
+      description: url,
+      actionUrl: `/assets/${assetType}`,
+      entityType: "reference",
+      entityId: linkId,
+      metadata: { url, assetType },
+    });
 
     return NextResponse.json({
       success: true,

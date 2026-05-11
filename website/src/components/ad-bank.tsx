@@ -36,6 +36,7 @@ import {
   type AdMedia,
 } from "@/lib/ads";
 import { AdUploadModal } from "@/components/ad-upload-modal";
+import { notify } from "@/lib/notifications";
 
 const SUPABASE_PREVIEW_BASE =
   "https://lqymftfphjexutgtvjuh.supabase.co/storage/v1/object/public/asset-previews/";
@@ -64,11 +65,19 @@ function useAds() {
   const refresh = useCallback(async () => {
     try {
       const res = await fetch("/api/ads", { cache: "no-store" });
-      if (!res.ok) throw new Error("fetch failed");
+      if (!res.ok) throw new Error(`fetch failed (${res.status})`);
       const data = (await res.json()) as { ads: Ad[] };
       setAds(data.ads ?? []);
-    } catch {
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Erro desconhecido";
       setAds([]);
+      notify.error("Falha ao carregar anúncios", {
+        description: msg,
+        action: {
+          label: "Tentar novamente",
+          onClick: () => void refresh(),
+        },
+      });
     } finally {
       setLoading(false);
     }
@@ -341,8 +350,11 @@ function PerformanceForm({
         throw new Error(data.error ?? "Erro ao salvar");
       }
       onUpdated(body);
+      notify.success("Anúncio atualizado");
     } catch (err) {
-      setError((err as Error).message);
+      const msg = (err as Error).message;
+      setError(msg);
+      notify.error("Falha ao salvar anúncio", { description: msg });
     } finally {
       setSaving(false);
     }
@@ -512,10 +524,15 @@ function AdLightbox({
     setDeleting(true);
     try {
       const res = await fetch(`/api/ads/${ad.id}`, { method: "DELETE" });
-      if (!res.ok) throw new Error("Falha ao excluir");
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.error ?? "Falha ao excluir");
+      }
       onDeleted();
-    } catch {
-      alert("Erro ao excluir anúncio");
+      notify.success("Anúncio removido");
+    } catch (err) {
+      const msg = (err as Error).message;
+      notify.error("Falha ao salvar anúncio", { description: msg });
     } finally {
       setDeleting(false);
     }
@@ -723,7 +740,10 @@ export function AdBank() {
       <AdUploadModal
         open={uploadOpen}
         onOpenChange={setUploadOpen}
-        onCreated={() => refresh()}
+        onCreated={() => {
+          notify.success("Anúncio adicionado");
+          void refresh();
+        }}
       />
     </div>
   );

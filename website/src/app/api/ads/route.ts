@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/server";
 import { sanitizeFilename } from "@/lib/supabase/storage";
 import { generatePreview, detectMediaType } from "@/lib/media-optimizer";
 import type { Ad, AdMedia, AdType } from "@/lib/ads";
+import { createNotification } from "@/lib/notifications";
 
 export const maxDuration = 300;
 
@@ -296,6 +297,18 @@ export async function POST(request: NextRequest) {
     if (mediaInsertError) {
       console.error("[ads:create] ad_media insert failed:", mediaInsertError.message);
     }
+
+    await createNotification({
+      userId: user.id,
+      variant: "post",
+      category: "asset",
+      title: "Anúncio adicionado",
+      description: platform ? `${title} · ${platform}` : title,
+      actionUrl: "/assets/banco-de-anuncios",
+      entityType: "ad",
+      entityId: adId,
+      metadata: { platform: platform ?? null },
+    });
 
     return NextResponse.json({ id: adId, success: true });
   } catch (err) {

@@ -7,6 +7,7 @@ import { SystemSidebar } from "@/components/doc-sidebar";
 import { DocTopbarLabel } from "@/components/doc-breadcrumb";
 import { getChatConversations } from "@/lib/chat-conversations";
 import { AppSwitcher } from "@/components/app-switcher";
+import { AppNotifications } from "@/components/app-notifications";
 import { SystemTracker } from "@/components/system-tracker";
 import { getSystemConfig } from "@/lib/system-configs";
 
@@ -37,6 +38,7 @@ export default async function DocsLayout({
             <DocTopbarLabel label={config.title} basePath={config.basePath} />
           </TopbarBreadcrumb>
           <TopbarActions>
+            <AppNotifications />
             <AppSwitcher />
           </TopbarActions>
         </Topbar>

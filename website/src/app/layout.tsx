@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/lib/auth";
 import { MusicPlayerProvider } from "@/lib/music-player";
 import { FavoritesProvider } from "@/lib/favorites";
+import { NotificationsProvider } from "@/lib/notifications";
+import { Toaster } from "@/components/ui/sonner";
 import { NowPlayingBar } from "@/components/now-playing-bar";
 import { CurioserScreen } from "@/components/curioser-screen";
 import "./globals.css";
@@ -40,15 +42,18 @@ export default function RootLayout({
         className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable} font-body antialiased`}
       >
         <AuthProvider>
-          <FavoritesProvider>
-            <MusicPlayerProvider>
-              <TooltipProvider>
-                {children}
-                <NowPlayingBar />
-                <CurioserScreen />
-              </TooltipProvider>
-            </MusicPlayerProvider>
-          </FavoritesProvider>
+          <NotificationsProvider>
+            <FavoritesProvider>
+              <MusicPlayerProvider>
+                <TooltipProvider>
+                  {children}
+                  <NowPlayingBar />
+                  <CurioserScreen />
+                  <Toaster position="bottom-right" />
+                </TooltipProvider>
+              </MusicPlayerProvider>
+            </FavoritesProvider>
+          </NotificationsProvider>
         </AuthProvider>
       </body>
     </html>

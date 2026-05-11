@@ -18,6 +18,7 @@ import {
   type MyceliumAttachment,
   type MyceliumType,
 } from "@/lib/mycelium-types";
+import { notify } from "@/lib/notifications";
 
 // ─── URL helpers ─────────────────────────────────────────────
 
@@ -106,12 +107,16 @@ export function MyceliumLightbox({
       });
       if (res.ok) {
         onDelete?.();
+        notify.success("Post removido");
       } else {
         const data = await res.json().catch(() => ({}));
-        alert(data?.error ?? "Erro ao excluir referência");
+        notify.error("Falha ao salvar post", {
+          description: data?.error ?? `Erro ${res.status}`,
+        });
       }
-    } catch {
-      alert("Erro ao excluir referência");
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Erro desconhecido";
+      notify.error("Falha ao salvar post", { description: msg });
     } finally {
       setDeleting(false);
     }

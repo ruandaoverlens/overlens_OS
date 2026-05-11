@@ -16,6 +16,7 @@ import {
   EmptyTitle,
   EmptyDescription,
 } from "@/components/ui/empty";
+import { notify } from "@/lib/notifications";
 
 // ─── Types ─────────────────────────────────────────────────────
 
@@ -182,17 +183,28 @@ export function ContentBank({
 }: ContentBankProps) {
   const [items, setItems] = useState<ContentItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
 
   const fetchItems = useCallback(async () => {
     setLoading(true);
     try {
       const res = await fetch(`/api/assets/list-content?type=${encodeURIComponent(slug)}`);
-      if (!res.ok) throw new Error("fetch failed");
+      if (!res.ok) throw new Error(`fetch failed (${res.status})`);
       const { items } = await res.json() as { items: ContentItem[] };
       setItems(items ?? []);
+      setLoadError(null);
     } catch (err) {
+      const msg = err instanceof Error ? err.message : "Erro desconhecido";
       console.error("[content-bank] fetch failed:", err);
       setItems([]);
+      setLoadError(msg);
+      notify.error("Falha ao carregar referências", {
+        description: msg,
+        action: {
+          label: "Tentar novamente",
+          onClick: () => void fetchItems(),
+        },
+      });
     } finally {
       setLoading(false);
     }
@@ -234,6 +246,21 @@ export function ContentBank({
   }
 
   if (filtered.length === 0) {
+    if (loadError) {
+      return (
+        <div className="flex flex-1 items-center justify-center py-16">
+          <Empty className="border-none">
+            <EmptyHeader>
+              <EmptyMedia contained>
+                {SLUG_ICON[slug] ?? <SmInvoiceLineIcon className="size-6" />}
+              </EmptyMedia>
+              <EmptyTitle>Erro ao carregar</EmptyTitle>
+              <EmptyDescription>{loadError}</EmptyDescription>
+            </EmptyHeader>
+          </Empty>
+        </div>
+      );
+    }
     return (
       <div className="flex flex-1 items-center justify-center py-16">
         <Empty className="border-none">

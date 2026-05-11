@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import { createClient } from "@/lib/supabase/server";
 import { sanitizeStorageFilename } from "@/lib/supabase/storage";
+import { createNotification } from "@/lib/notifications";
 
 /**
  * POST /api/assets/rename
@@ -89,6 +90,7 @@ export async function POST(request: NextRequest) {
 
     // Move any preview files that share the basename in asset-previews.
     // Previews may have a different extension (e.g. image originals get a .webp preview).
+    const previewFailures: Array<{ path: string; message: string }> = [];
     try {
       const { data: previews } = await supabase.storage
         .from("asset-previews")
@@ -104,15 +106,37 @@ export async function POST(request: NextRequest) {
         const ext = path.extname(match.name);
         const oldPreviewPath = `${folder}/${match.name}`;
         const newPreviewPath = `${folder}/${newBase}${ext}`;
-        await supabase.storage
+        const { error: moveErr } = await supabase.storage
           .from("asset-previews")
-          .move(oldPreviewPath, newPreviewPath)
-          .catch((err) => {
-            console.warn("[rename] preview move failed", oldPreviewPath, err);
-          });
+          .move(oldPreviewPath, newPreviewPath);
+        if (moveErr) {
+          console.warn("[rename] preview move failed", oldPreviewPath, moveErr);
+          previewFailures.push({ path: oldPreviewPath, message: moveErr.message });
+        }
       }
     } catch (err) {
       console.warn("[rename] preview enumeration failed", err);
+      previewFailures.push({
+        path: `${folder}/*`,
+        message: err instanceof Error ? err.message : "preview enumeration failed",
+      });
+    }
+
+    if (previewFailures.length > 0) {
+      const firstMsg = previewFailures[0]?.message ?? "";
+      await createNotification({
+        userId: user.id,
+        variant: "system",
+        category: "asset",
+        title: "Renomeação parcial",
+        description: `O arquivo foi renomeado, mas o preview não foi movido. ${firstMsg}`.trim(),
+        entityType: "asset",
+        entityId: newOriginalPath,
+        metadata: {
+          issue: "preview-move-failed",
+          failures: previewFailures,
+        },
+      });
     }
 
     // Update asset_metadata PK if a row exists for the old key.

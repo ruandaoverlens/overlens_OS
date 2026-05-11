@@ -14,6 +14,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useAssetMetadata, type AssetMetadataInput } from "@/lib/asset-metadata";
+import { notify } from "@/lib/notifications";
 
 /** Per-bank configuration for which fields to show / what labels to use. */
 export interface AssetEditConfig {
@@ -99,11 +100,13 @@ export function AssetEditDialog({
         const renameResult = await meta.rename(config.folder, initial.filename, filename.trim());
         if (!renameResult.ok) {
           setError(renameResult.error);
+          notify.error("Não foi possível renomear", { description: renameResult.error });
           setSaving(false);
           return;
         }
         currentKey = renameResult.newFilename;
         renamedTo = renameResult.newFilename;
+        notify.success("Asset renomeado");
       }
 
       const input: AssetMetadataInput = {
@@ -121,15 +124,20 @@ export function AssetEditDialog({
       const saveResult = await meta.save(currentKey, input);
       if (!saveResult.ok) {
         setError(saveResult.error);
+        notify.error("Metadados não salvos", { description: saveResult.error });
         setSaving(false);
         return;
       }
 
+      notify.success("Asset atualizado");
       onSaved?.({ renamedTo });
       onOpenChange(false);
     } catch (err) {
       console.error("[asset-edit] save failed", err);
       setError("Erro ao salvar. Tenta de novo.");
+      notify.error("Algo deu errado", {
+        description: (err as Error)?.message ?? "Erro inesperado",
+      });
     } finally {
       setSaving(false);
     }

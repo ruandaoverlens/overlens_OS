@@ -11,6 +11,7 @@ import {
   TopbarActions,
 } from "@/components/ui/topbar";
 import { AppSwitcher } from "@/components/app-switcher";
+import { AppNotifications } from "@/components/app-notifications";
 import { SystemSidebar } from "@/components/doc-sidebar";
 import { ChatBreadcrumb } from "@/components/chat/chat-breadcrumb";
 import { CitableSectionsProvider } from "@/components/chat/citable-sections-provider";
@@ -59,6 +60,7 @@ export default async function ChatLayout({
             </span>
           </TopbarCenter>
           <TopbarActions>
+            <AppNotifications />
             <AppSwitcher />
           </TopbarActions>
         </Topbar>
