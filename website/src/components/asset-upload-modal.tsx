@@ -25,7 +25,8 @@ import {
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { TagsInput } from "@/components/tags-input"
 import { useAuth } from "@/lib/auth"
-import { generateClientPreview, needsClientPreview } from "@/lib/client-media-optimizer"
+import { uploadAssetDirect, type DirectUploadPhase } from "@/lib/direct-upload"
+import { compressImageIfNeeded } from "@/lib/browser-image-compress"
 import type {
   AssetUploadConfig,
   UploadFieldConfig,
@@ -116,6 +117,84 @@ function UploadField({
   }
 }
 
+// ─── Progress helpers ────────────────────────────────────────────
+
+function formatBytes(n: number): string {
+  if (n < 1024) return `${n} B`
+  if (n < 1024 * 1024) return `${(n / 1024).toFixed(0)} KB`
+  return `${(n / (1024 * 1024)).toFixed(1)} MB`
+}
+
+type ProgressPhase = DirectUploadPhase | "compressing" | "done"
+
+function phaseLabel(phase: ProgressPhase, bytes?: number, total?: number): string {
+  switch (phase) {
+    case "signing":
+      return "Preparando upload..."
+    case "compressing":
+      return "Comprimindo imagem..."
+    case "uploading-original":
+      if (bytes != null && total != null && total > 0) {
+        return `Enviando arquivo... (${formatBytes(bytes)} de ${formatBytes(total)})`
+      }
+      return "Enviando arquivo..."
+    case "optimizing":
+      return "Gerando preview..."
+    case "uploading-preview":
+      if (bytes != null && total != null && total > 0) {
+        return `Enviando preview... (${formatBytes(bytes)} de ${formatBytes(total)})`
+      }
+      return "Enviando preview..."
+    case "finalizing":
+      return "Finalizando..."
+    case "done":
+      return "Concluído"
+  }
+}
+
+function overallPercent(p: {
+  completed: number
+  total: number
+  phase: ProgressPhase
+  bytesUploaded?: number
+  totalBytes?: number
+}): number {
+  if (p.total === 0) return 0
+  // Each file has 4 sub-phases worth of progress; weight current-file
+  // upload bytes inside the file's own slice so the bar moves smoothly.
+  const base = (p.completed / p.total) * 100
+  if (p.phase === "done") return 100
+
+  let intra = 0
+  switch (p.phase) {
+    case "signing":
+    case "compressing":
+      intra = 0.05
+      break
+    case "uploading-original":
+      if (p.bytesUploaded != null && p.totalBytes && p.totalBytes > 0) {
+        intra = 0.1 + (p.bytesUploaded / p.totalBytes) * 0.6
+      } else {
+        intra = 0.3
+      }
+      break
+    case "optimizing":
+      intra = 0.75
+      break
+    case "uploading-preview":
+      if (p.bytesUploaded != null && p.totalBytes && p.totalBytes > 0) {
+        intra = 0.8 + (p.bytesUploaded / p.totalBytes) * 0.15
+      } else {
+        intra = 0.85
+      }
+      break
+    case "finalizing":
+      intra = 0.95
+      break
+  }
+  return Math.min(100, base + (intra / p.total) * 100)
+}
+
 // ─── Upload Modal ────────────────────────────────────────────────
 
 interface AssetUploadModalProps {
@@ -139,10 +218,14 @@ export function AssetUploadModal({
   const [formValues, setFormValues] = useState<UploadFormValues>({})
   const [error, setError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
+  const [compressImages, setCompressImages] = useState(false)
   const [uploadProgress, setUploadProgress] = useState<{
-    current: number
+    completed: number
     total: number
-    phase: "uploading" | "optimizing" | "done"
+    phase: DirectUploadPhase | "compressing" | "done"
+    bytesUploaded?: number
+    totalBytes?: number
+    currentName?: string
     savings?: string
   } | null>(null)
   const [previewWarnings, setPreviewWarnings] = useState<string[]>([])
@@ -237,7 +320,7 @@ export function AssetUploadModal({
 
     try {
       if (mode === "link") {
-        setUploadProgress({ current: 1, total: 1, phase: "uploading" })
+        setUploadProgress({ completed: 0, total: 1, phase: "finalizing" })
 
         const formData = new FormData()
         formData.append("url", linkUrl.trim())
@@ -265,68 +348,105 @@ export function AssetUploadModal({
           throw new Error(data.error ?? `Falha ao salvar link (${res.status})`)
         }
 
-        setUploadProgress({ current: 1, total: 1, phase: "done" })
+        setUploadProgress({ completed: 1, total: 1, phase: "done" })
       } else {
         const total = files.length
+        let completed = 0
+        const inFlight = new Map<number, string>() // index → filename
 
-        for (let i = 0; i < total; i++) {
-          if (abort.signal.aborted) break
+        const metadata = {
+          ...formValues,
+          uploadedBy: { id: user.id, name: user.name, email: user.email },
+          uploadedAt: new Date().toISOString(),
+        }
 
-          setUploadProgress({ current: i + 1, total, phase: "uploading" })
+        // Limit concurrent uploads so the browser doesn't open 20 sockets
+        // and crawl. 3 is a good balance for typical residential connections.
+        const CONCURRENCY = 3
+        const queue = files.map((f, i) => ({ file: f, index: i }))
 
-          const currentFile = files[i]
-          const formData = new FormData()
-          formData.append("file", currentFile)
-          formData.append("assetType", config.slug)
-          formData.append(
-            "metadata",
-            JSON.stringify({
-              ...formValues,
-              uploadedBy: { id: user.id, name: user.name, email: user.email },
-              uploadedAt: new Date().toISOString(),
-            })
-          )
+        const renderProgress = (
+          phase: DirectUploadPhase | "compressing",
+          bytesUploaded?: number,
+          totalBytes?: number,
+        ) => {
+          // Show the most recently active file's name as a hint.
+          const lastName = Array.from(inFlight.values()).pop()
+          setUploadProgress({
+            completed,
+            total,
+            phase,
+            bytesUploaded,
+            totalBytes,
+            currentName: lastName,
+          })
+        }
 
-          // Generate client-side preview for video/audio files
-          if (needsClientPreview(currentFile.name)) {
-            setUploadProgress({ current: i + 1, total, phase: "optimizing" })
+        const processOne = async ({ file, index }: { file: File; index: number }) => {
+          inFlight.set(index, file.name)
+          renderProgress("signing")
+
+          // Optional preflight compression for big images.
+          let toUpload = file
+          if (
+            compressImages &&
+            file.type.startsWith("image/") &&
+            file.size > 4 * 1024 * 1024
+          ) {
+            renderProgress("compressing")
             try {
-              const { preview: previewFile } = await generateClientPreview(currentFile)
-              formData.append("preview", previewFile)
+              const result = await compressImageIfNeeded(file, {
+                maxBytes: 4 * 1024 * 1024,
+                signal: abort.signal,
+              })
+              if (result.compressed) {
+                toUpload = result.file
+              }
             } catch (err) {
-              console.warn("[upload] Client-side preview generation failed, uploading without preview:", err)
+              if ((err as Error).name === "AbortError") throw err
+              console.warn("[upload] compression failed, sending original:", err)
             }
           }
 
-          setUploadProgress({ current: i + 1, total, phase: "optimizing" })
-
-          const res = await fetch("/api/assets/upload", {
-            method: "POST",
-            body: formData,
+          const result = await uploadAssetDirect({
+            file: toUpload,
+            assetType: config.slug,
+            metadata,
             signal: abort.signal,
+            onProgress: (p) => {
+              renderProgress(p.phase, p.bytesUploaded, p.totalBytes)
+            },
           })
 
-          if (!res.ok) {
-            const data = await res.json().catch(() => ({ error: "Erro desconhecido" }))
-            throw new Error(data.error ?? `Upload falhou (${res.status})`)
-          }
-
-          const data = await res.json()
-
-          if (data.previewError) {
+          if (result.previewError) {
             setPreviewWarnings((prev) => [
               ...prev,
-              `${currentFile.name}: preview não gerado (${data.previewError}). O original foi salvo, mas pode não aparecer na galeria até o problema ser resolvido.`,
+              `${file.name}: preview não gerado (${result.previewError}). O original foi salvo, mas pode não aparecer na galeria até o problema ser resolvido.`,
             ])
           }
 
-          setUploadProgress({
-            current: i + 1,
-            total,
-            phase: "done",
-            savings: data.preview?.savings,
-          })
+          inFlight.delete(index)
+          completed += 1
+          renderProgress("finalizing")
         }
+
+        // Worker pool — each worker pulls the next item until queue is empty.
+        const workers: Promise<void>[] = []
+        for (let w = 0; w < Math.min(CONCURRENCY, queue.length); w++) {
+          workers.push(
+            (async () => {
+              while (queue.length > 0) {
+                if (abort.signal.aborted) return
+                const next = queue.shift()
+                if (!next) return
+                await processOne(next)
+              }
+            })()
+          )
+        }
+        await Promise.all(workers)
+
+        setUploadProgress({ completed, total, phase: "done" })
       }
 
       // Also call the original onSubmit for any consumer-side logic
@@ -351,6 +471,7 @@ export function AssetUploadModal({
             setFormValues({})
             setError(null)
             setUploadProgress(null)
+            setCompressImages(false)
             onOpenChange(false)
           }, 1200)
         }
@@ -377,6 +498,7 @@ export function AssetUploadModal({
         setSubmitting(false)
         setUploadProgress(null)
         setPreviewWarnings([])
+        setCompressImages(false)
       }
       onOpenChange(open)
     },
@@ -440,6 +562,26 @@ export function AssetUploadModal({
                     />
                   ))}
                 </UploadSummary>
+              )}
+
+              {files.some(
+                (f) => f.type.startsWith("image/") && f.size > 4 * 1024 * 1024,
+              ) && (
+                <div className="flex items-center justify-between gap-3 px-1 pt-1">
+                  <div>
+                    <Label htmlFor="upload-compress" className="text-xs">
+                      Comprimir imagens grandes antes de enviar
+                    </Label>
+                    <p className="text-[11px] text-muted-foreground">
+                      Reduz arquivos &gt; 4 MB para acelerar o envio (mantém qualidade visual).
+                    </p>
+                  </div>
+                  <Switch
+                    id="upload-compress"
+                    checked={compressImages}
+                    onCheckedChange={setCompressImages}
+                  />
+                </div>
               )}
             </Upload>
           )}
@@ -535,29 +677,25 @@ export function AssetUploadModal({
         {uploadProgress && (
           <div className="flex flex-col gap-2 px-1 py-3 border-t border-[var(--surface-900)]">
             <div className="flex items-center justify-between text-xs">
-              <span className="text-muted-foreground">
-                {uploadProgress.phase === "uploading" && "Enviando arquivo..."}
-                {uploadProgress.phase === "optimizing" && "Otimizando preview..."}
-                {uploadProgress.phase === "done" && "Concluido"}
+              <span className="text-muted-foreground truncate pr-2">
+                {phaseLabel(uploadProgress.phase, uploadProgress.bytesUploaded, uploadProgress.totalBytes)}
+                {uploadProgress.currentName && uploadProgress.phase !== "done" && (
+                  <span className="text-foreground/70"> · {uploadProgress.currentName}</span>
+                )}
               </span>
-              <span className="text-muted-foreground tabular-nums">
-                {uploadProgress.current}/{uploadProgress.total}
+              <span className="text-muted-foreground tabular-nums shrink-0">
+                {uploadProgress.completed}/{uploadProgress.total}
               </span>
             </div>
             <div className="h-1 w-full rounded-full bg-[var(--surface-900)] overflow-hidden">
               <div
                 className="h-full rounded-full bg-white transition-all duration-500"
                 style={{
-                  width: `${(uploadProgress.current / uploadProgress.total) * 100}%`,
+                  width: `${overallPercent(uploadProgress)}%`,
                   opacity: uploadProgress.phase === "done" ? 1 : 0.7,
                 }}
               />
             </div>
-            {uploadProgress.savings && (
-              <span className="text-xs text-emerald-400">
-                Preview otimizado: {uploadProgress.savings} menor
-              </span>
-            )}
           </div>
         )}
 
@@ -581,8 +719,8 @@ export function AssetUploadModal({
             }
           >
             {submitting
-              ? uploadProgress?.phase === "optimizing"
-                ? "Otimizando..."
+              ? uploadProgress
+                ? `Enviando ${uploadProgress.completed}/${uploadProgress.total}...`
                 : "Enviando..."
               : mode === "link"
                 ? "Salvar link"
