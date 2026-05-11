@@ -1,10 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { writeFile, mkdir, readFile, rm } from "fs/promises";
 import path from "path";
-import os from "os";
 import { createClient } from "@/lib/supabase/server";
 import {
-  generatePreview,
+  generatePreviewFromBuffer,
   detectMediaType,
   IMAGE_PREVIEW,
   VIDEO_PREVIEW,
@@ -100,39 +98,42 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "File not found" }, { status: 404 });
   }
 
+  // Read once; reuse for both the optimization path and the fallback below.
+  const originalBuffer = Buffer.from(await originalBlob.arrayBuffer());
+  const originalContentType = originalBlob.type || "application/octet-stream";
+
   try {
-    // Write to temp, generate preview with Sharp
-    const tmpDir = path.join(os.tmpdir(), "overlens-preview");
-    await mkdir(tmpDir, { recursive: true });
-    const tmpOriginal = path.join(tmpDir, path.basename(fileParam));
-    const originalBuffer = Buffer.from(await originalBlob.arrayBuffer());
-    await writeFile(tmpOriginal, originalBuffer);
+    // Generate preview from buffer (no temp files — Vercel functions cannot
+    // write outside /tmp and os.tmpdir() may return /var/tmp on some runtimes).
+    const result = await generatePreviewFromBuffer(originalBuffer);
 
-    const result = await generatePreview(tmpOriginal, { force: true });
-    const previewBuffer = await readFile(result.previewPath);
-
-    // Upload preview to public bucket
-    const contentType = MIME_TYPES[previewExt] ?? "application/octet-stream";
+    // Upload preview to public bucket (cached for next requests)
     await supabase.storage
       .from("asset-previews")
-      .upload(previewStoragePath, previewBuffer, {
-        contentType,
+      .upload(previewStoragePath, result.buffer, {
+        contentType: result.contentType,
         upsert: true,
       });
 
-    // Clean up temp files
-    await rm(tmpOriginal, { force: true }).catch(() => {});
-    await rm(result.previewPath, { force: true }).catch(() => {});
-
-    return new NextResponse(previewBuffer, {
+    return new NextResponse(new Uint8Array(result.buffer), {
       headers: {
-        "Content-Type": contentType,
-        "Content-Length": previewBuffer.length.toString(),
+        "Content-Type": result.contentType,
+        "Content-Length": result.buffer.length.toString(),
         "Cache-Control": "public, max-age=31536000, immutable",
       },
     });
   } catch (err) {
-    console.error("[preview] Generation failed:", err);
-    return NextResponse.json({ error: "Preview generation failed" }, { status: 500 });
+    console.error("[preview] Generation failed, falling back to original:", err);
+
+    // Fallback: serve the original file inline so the gallery still shows it.
+    return new NextResponse(originalBuffer, {
+      headers: {
+        "Content-Type": originalContentType,
+        "Content-Length": originalBuffer.length.toString(),
+        // Short cache so a future retry can re-generate the preview
+        "Cache-Control": "public, max-age=300",
+        "X-Preview-Fallback": "original",
+      },
+    });
   }
 }

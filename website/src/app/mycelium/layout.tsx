@@ -1,0 +1,35 @@
+import {
+  SidebarProvider,
+  SidebarInset,
+} from "@/components/ui/sidebar";
+import { Topbar, TopbarBreadcrumb, TopbarActions } from "@/components/ui/topbar";
+import { DocTopbarLabel } from "@/components/doc-breadcrumb";
+import { AppSwitcher } from "@/components/app-switcher";
+import { MyceliumSidebar } from "@/components/mycelium-sidebar";
+import { MyceliumCreateButton } from "@/components/mycelium-create-button";
+
+export default function MyceliumLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <SidebarProvider>
+      <MyceliumSidebar />
+      <SidebarInset>
+        <Topbar>
+          <TopbarBreadcrumb>
+            <DocTopbarLabel label="Mycelium" basePath="/mycelium" />
+          </TopbarBreadcrumb>
+          <TopbarActions>
+            <MyceliumCreateButton />
+            <AppSwitcher />
+          </TopbarActions>
+        </Topbar>
+        <div className="flex-1 overflow-auto">
+          {children}
+        </div>
+      </SidebarInset>
+    </SidebarProvider>
+  );
+}

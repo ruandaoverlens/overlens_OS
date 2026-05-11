@@ -29,6 +29,7 @@ import {
   SmGraphicEqLineIcon,
   SmImageLineIcon,
   SmPlaySolidIcon,
+  SmChartLineIcon,
   SmOpenFolderLineIcon,
   SmArrowBackLineIcon,
 } from "@/components/icons";
@@ -47,6 +48,7 @@ const iconMap: Record<string, React.ReactNode> = {
   "sons-e-audios": <SmGraphicEqLineIcon />,
   "banco-de-imagens": <SmImageLineIcon />,
   "banco-de-videos": <SmPlaySolidIcon />,
+  "banco-de-anuncios": <SmChartLineIcon />,
   "objetos-3d": <SmCognitionLineIcon />,
 };
 

@@ -38,6 +38,8 @@ export interface AssetUploadConfig {
   multiple: boolean
   /** Metadata fields specific to this asset type */
   fields: UploadFieldConfig[]
+  /** Enable a "link" mode in the modal — user can attach a URL instead of a file */
+  allowLink?: boolean
 }
 
 /** Form values collected from upload modal */

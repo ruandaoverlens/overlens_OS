@@ -23,9 +23,11 @@ import {
   SmGraphicEqLineIcon,
   SmImageLineIcon,
   SmPlaySolidIcon,
+  SmChartLineIcon,
 } from "@/components/icons";
 import { AssetPageShell } from "@/components/asset-page-shell";
 import { VideoBank } from "@/components/video-bank";
+import { AdBank } from "@/components/ad-bank";
 import { MusicBank } from "@/components/music-bank";
 import { LogosBank, LOGOS } from "@/components/logos-bank";
 import { ColorBank } from "@/components/color-bank";
@@ -33,6 +35,7 @@ import { TypographyBank } from "@/components/typography-bank";
 import { ImageBank, getAllImageTags } from "@/components/image-bank";
 import { IconGallery } from "@/components/icons/icon-gallery";
 import { FavoritesPage } from "@/components/favorites-page";
+import { ContentBank } from "@/components/content-bank";
 import { useState, useCallback } from "react";
 import { useAuth, canDelete } from "@/lib/auth";
 import { useHiddenAssets } from "@/lib/hidden-assets";
@@ -81,6 +84,27 @@ function LogosBankPage() {
   );
 }
 
+function ContentBankPage({
+  slug,
+  title,
+}: {
+  slug: string;
+  title: string;
+}) {
+  const [search, setSearch] = useState("");
+  return (
+    <AssetPageShell
+      slug={slug}
+      title={title}
+      searchPlaceholder={`Buscar em ${title.toLowerCase()}...`}
+      search={search}
+      onSearchChange={setSearch}
+    >
+      <ContentBank slug={slug} search={search} />
+    </AssetPageShell>
+  );
+}
+
 function IconsPage() {
   const [search, setSearch] = useState("");
   return (
@@ -108,6 +132,7 @@ const iconMap: Record<string, React.ReactNode> = {
   "sons-e-audios": <SmGraphicEqLineIcon className="size-6" />,
   "banco-de-imagens": <SmImageLineIcon className="size-6" />,
   "banco-de-videos": <SmPlaySolidIcon className="size-6" />,
+  "banco-de-anuncios": <SmChartLineIcon className="size-6" />,
   "objetos-3d": <SmCognitionLineIcon className="size-6" />,
 };
 
@@ -164,6 +189,7 @@ function OverviewPage() {
               { title: "Sons e áudios", desc: "Trilhas, efeitos e referências sonoras da marca", slug: "sons-e-audios" },
               { title: "Banco de imagens", desc: "Fotografias, texturas e imagens aprovadas", slug: "banco-de-imagens" },
               { title: "Banco de vídeos", desc: "Material audiovisual da marca", slug: "banco-de-videos" },
+              { title: "Banco de anúncios", desc: "Anúncios pagos com métricas de performance", slug: "banco-de-anuncios" },
             ].map((item) => (
               <Link
                 key={item.slug}
@@ -201,6 +227,10 @@ export function AssetCategoryPage({ category }: { category: AssetCategory }) {
   // Full custom pages (have their own banner/search/tags)
   if (category.slug === "banco-de-videos") {
     return <VideoBank />;
+  }
+
+  if (category.slug === "banco-de-anuncios") {
+    return <AdBank />;
   }
 
   if (category.slug === "sons-e-audios") {
@@ -246,7 +276,16 @@ export function AssetCategoryPage({ category }: { category: AssetCategory }) {
     return <ImageBankPage />;
   }
 
-  // Empty pages with shell (grafismos, templates, docs, 3d, etc.)
+  // Content categories with file + link uploads
+  if (
+    category.slug === "templates-e-layouts" ||
+    category.slug === "documentacao" ||
+    category.slug === "objetos-3d"
+  ) {
+    return <ContentBankPage slug={category.slug} title={category.title} />;
+  }
+
+  // Empty pages with shell (grafismos, etc.)
   return (
     <AssetPageShell
       slug={category.slug}

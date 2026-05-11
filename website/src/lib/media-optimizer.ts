@@ -124,6 +124,59 @@ function buildPreviewPath(originalPath: string, ext: string): string {
 
 // ─── Image Optimization (sharp) ──────────────────────────────
 
+export interface BufferOptimizeResult {
+  /** Preview content as a Buffer (WebP-encoded) */
+  buffer: Buffer;
+  /** Original buffer size in bytes */
+  originalSize: number;
+  /** Preview buffer size in bytes */
+  previewSize: number;
+  /** Compression ratio (preview / original; e.g. 0.15 = 85% smaller) */
+  ratio: number;
+  /** File extension (with leading dot), e.g. ".webp" */
+  ext: string;
+  /** MIME type, e.g. "image/webp" */
+  contentType: string;
+  /** Width of preview */
+  width?: number;
+  /** Height of preview */
+  height?: number;
+}
+
+/**
+ * Generate an optimized preview from an in-memory image buffer.
+ *
+ * Safe on read-only filesystems (Vercel serverless): no temp files written.
+ * This is the preferred entry point for HTTP request handlers — `generatePreview`
+ * exists only for batch scripts that operate on files on disk.
+ */
+export async function generatePreviewFromBuffer(
+  input: Buffer,
+): Promise<BufferOptimizeResult> {
+  const pipeline = sharp(input)
+    .resize(IMAGE_PREVIEW.maxWidth, IMAGE_PREVIEW.maxHeight, {
+      fit: "inside",
+      withoutEnlargement: true,
+    })
+    .webp({ quality: IMAGE_PREVIEW.quality });
+
+  const { data, info } = await pipeline.toBuffer({ resolveWithObject: true });
+  // Normalize to Buffer<ArrayBuffer> so consumers (NextResponse, fetch, etc.)
+  // accept it without TS BodyInit complaints.
+  const buffer = Buffer.from(data);
+
+  return {
+    buffer,
+    originalSize: input.length,
+    previewSize: buffer.length,
+    ratio: buffer.length / input.length,
+    ext: `.${IMAGE_PREVIEW.format}`,
+    contentType: "image/webp",
+    width: info.width,
+    height: info.height,
+  };
+}
+
 async function optimizeImage(inputPath: string): Promise<OptimizeResult> {
   const previewPath = buildPreviewPath(inputPath, `.${IMAGE_PREVIEW.format}`);
   await ensureDir(path.dirname(previewPath));

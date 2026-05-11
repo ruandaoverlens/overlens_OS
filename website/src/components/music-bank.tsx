@@ -37,8 +37,10 @@ import { useAuth, canUpload, canDelete } from "@/lib/auth";
 import { useInfiniteScroll } from "@/lib/use-infinite-scroll";
 import { getStoragePath } from "@/lib/supabase/storage";
 import { useHiddenAssets } from "@/lib/hidden-assets";
+import { useAssetMetadata, type AssetMetadataOverride } from "@/lib/asset-metadata";
 import { AdminAssetTabs } from "@/components/admin-asset-tabs";
 import { AssetUploadModal } from "@/components/asset-upload-modal";
+import { AssetEditDialog } from "@/components/asset-edit-dialog";
 import { getUploadConfig } from "@/lib/upload-configs";
 
 // ─── Waveform Visualizer ──────────────────────────────────────
@@ -146,6 +148,7 @@ function TrackRow({
   isFavorite,
   showDelete,
   onDelete,
+  onEdit,
   isHidden,
   onToggleHide,
 }: {
@@ -161,6 +164,7 @@ function TrackRow({
   isFavorite: boolean;
   showDelete?: boolean;
   onDelete?: () => void;
+  onEdit?: () => void;
   isHidden?: boolean;
   onToggleHide?: () => void;
 }) {
@@ -294,6 +298,16 @@ function TrackRow({
             <TooltipContent side="top">Baixar arquivo</TooltipContent>
           </Tooltip>
         </TooltipProvider>
+        {showDelete && onEdit && (
+          <Button
+            variant="outline"
+            size="sm"
+            className="border-white/20 text-white/60 hover:bg-white/10 hover:border-white/40 hover:text-white text-xs"
+            onClick={onEdit}
+          >
+            <span>Editar</span>
+          </Button>
+        )}
         {showDelete && onToggleHide && (
           <Button
             variant="outline"
@@ -327,6 +341,16 @@ function TrackRow({
 
 // ─── Main Music Bank ──────────────────────────────────────────
 
+function applyOverride(base: Track, override: AssetMetadataOverride | undefined): Track {
+  if (!override) return base;
+  return {
+    ...base,
+    title: override.title ?? base.title,
+    artist: override.author ?? base.artist,
+    tags: override.tags.length > 0 ? override.tags : base.tags,
+  };
+}
+
 export function MusicBank() {
   const { user } = useAuth();
   const allTags = getAllMusicTags();
@@ -335,10 +359,14 @@ export function MusicBank() {
   const [uploadOpen, setUploadOpen] = useState(false);
   const [deleted, setDeleted] = useState<Set<string>>(new Set());
   const [showHidden, setShowHidden] = useState(false);
+  const [editing, setEditing] = useState<Track | null>(null);
   const { isHidden, hide, unhide } = useHiddenAssets("audio");
+  const metadata = useAssetMetadata("audio");
   const showUpload = user && canUpload(user.role);
   const isAdmin = user && canDelete(user.role);
   const uploadConfig = getUploadConfig("sons-e-audios");
+
+  const mergedTracks = tracks.map((t) => applyOverride(t, metadata.get(t.id)));
 
   const {
     activeTrack,
@@ -370,11 +398,11 @@ export function MusicBank() {
     else await hide(id);
   };
 
-  const availableTracks = tracks.filter((t) => !deleted.has(t.id));
+  const availableTracks = mergedTracks.filter((t) => !deleted.has(t.id));
   const hiddenCount = availableTracks.filter((t) => isHidden(t.id)).length;
   const visibleCount = availableTracks.length - hiddenCount;
 
-  const filtered = tracks.filter((t) => {
+  const filtered = mergedTracks.filter((t) => {
     if (deleted.has(t.id)) return false;
     if (showHidden ? !isHidden(t.id) : isHidden(t.id)) return false;
     const matchesTags = activeTags.size === 0 || t.tags.some((tag) => activeTags.has(tag));
@@ -468,6 +496,7 @@ export function MusicBank() {
             isFavorite={isFavorite(track.id)}
             showDelete={!!isAdmin}
             onDelete={() => setDeleted((prev) => new Set(prev).add(track.id))}
+            onEdit={isAdmin ? () => setEditing(track) : undefined}
             isHidden={isHidden(track.id)}
             onToggleHide={() => handleToggleHide(track.id)}
           />
@@ -486,6 +515,30 @@ export function MusicBank() {
           config={uploadConfig}
           open={uploadOpen}
           onOpenChange={setUploadOpen}
+        />
+      )}
+
+      {editing && (
+        <AssetEditDialog
+          open={!!editing}
+          onOpenChange={(open) => { if (!open) setEditing(null); }}
+          config={{
+            assetType: "audio",
+            authorLabel: "Artista",
+            hideCaption: true,
+            hideYear: true,
+            hideSourceUrl: true,
+          }}
+          assetKey={editing.id}
+          initial={{
+            title: editing.title ?? "",
+            caption: "",
+            author: editing.artist ?? "",
+            year: "",
+            sourceUrl: "",
+            tags: editing.tags ?? [],
+          }}
+          onSaved={() => setEditing(null)}
         />
       )}
     </div>

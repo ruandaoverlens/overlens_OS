@@ -52,6 +52,27 @@ export async function POST(request: NextRequest) {
         .catch(() => {});
     }
 
+    // Remove persisted metadata row (best effort).
+    // asset_key is the filename (last segment of storagePath); asset_type is derived
+    // from the folder prefix (Imagens/Footages/Musicas → image/video/audio).
+    const segments = storagePath.split("/");
+    const filename = segments[segments.length - 1] ?? "";
+    const folder = segments[0] ?? "";
+    const folderToType: Record<string, "image" | "video" | "audio"> = {
+      Imagens: "image",
+      Footages: "video",
+      Musicas: "audio",
+    };
+    const canonicalType = folderToType[folder];
+    if (canonicalType && filename) {
+      await supabase
+        .from("asset_metadata")
+        .delete()
+        .eq("asset_type", canonicalType)
+        .eq("asset_key", filename)
+        .then(() => undefined, () => undefined);
+    }
+
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("[delete] Error:", err);

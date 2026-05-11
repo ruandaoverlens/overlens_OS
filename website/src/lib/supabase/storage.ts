@@ -2,6 +2,7 @@
 export const ASSET_TYPE_FOLDERS: Record<string, string> = {
   "banco-de-imagens": "Imagens",
   "banco-de-videos": "Footages",
+  "banco-de-anuncios": "Anuncios",
   "sons-e-audios": "Musicas",
   "simbolos-e-logotipos": "Imagens/logos",
   "ativos-de-cor": "Imagens/cores",
@@ -42,6 +43,26 @@ export function getAssetPreviewUrl(folder: string, filename: string): string {
   const supabaseUrl = "https://lqymftfphjexutgtvjuh.supabase.co";
   const safeName = sanitizeStorageFilename(filename);
   return `${supabaseUrl}/storage/v1/object/public/asset-previews/${folder}/${encodeURIComponent(safeName)}`;
+}
+
+/** Map an asset slug (banco-de-imagens etc.) to the canonical asset_type used in DB tables. */
+export function getAssetType(slug: string): "image" | "video" | "audio" | null {
+  switch (slug) {
+    case "banco-de-imagens":
+    case "simbolos-e-logotipos":
+    case "ativos-de-cor":
+    case "ativos-de-tipografia":
+    case "biblioteca-de-icones":
+    case "grafismos-e-patterns":
+    case "templates-e-layouts":
+      return "image";
+    case "banco-de-videos":
+      return "video";
+    case "sons-e-audios":
+      return "audio";
+    default:
+      return null;
+  }
 }
 
 export function sanitizeFilename(name: string): string {

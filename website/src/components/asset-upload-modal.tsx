@@ -22,6 +22,7 @@ import {
   UploadSummary,
   UploadMessage,
 } from "@/components/ui/upload"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { TagsInput } from "@/components/tags-input"
 import { useAuth } from "@/lib/auth"
 import { generateClientPreview, needsClientPreview } from "@/lib/client-media-optimizer"
@@ -131,7 +132,10 @@ export function AssetUploadModal({
   onSubmit,
 }: AssetUploadModalProps) {
   const { user } = useAuth()
+  const [mode, setMode] = useState<"file" | "link">("file")
   const [files, setFiles] = useState<File[]>([])
+  const [linkUrl, setLinkUrl] = useState("")
+  const [linkThumbnail, setLinkThumbnail] = useState<File | null>(null)
   const [formValues, setFormValues] = useState<UploadFormValues>({})
   const [error, setError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
@@ -141,6 +145,7 @@ export function AssetUploadModal({
     phase: "uploading" | "optimizing" | "done"
     savings?: string
   } | null>(null)
+  const [previewWarnings, setPreviewWarnings] = useState<string[]>([])
   const abortRef = useRef<AbortController | null>(null)
 
   const updateField = useCallback(
@@ -198,30 +203,44 @@ export function AssetUploadModal({
       return
     }
 
-    if (files.length === 0) {
+    if (mode === "file" && files.length === 0) {
       setError("Selecione pelo menos um arquivo.")
       return
+    }
+
+    if (mode === "link") {
+      const trimmed = linkUrl.trim()
+      if (!trimmed) {
+        setError("Cole a URL do link.")
+        return
+      }
+      try {
+        const u = new URL(trimmed)
+        if (u.protocol !== "http:" && u.protocol !== "https:") {
+          setError("A URL precisa começar com http:// ou https://")
+          return
+        }
+      } catch {
+        setError("URL inválida.")
+        return
+      }
     }
 
     if (!user) return
 
     setSubmitting(true)
     setError(null)
+    setPreviewWarnings([])
 
     const abort = new AbortController()
     abortRef.current = abort
 
     try {
-      const total = files.length
+      if (mode === "link") {
+        setUploadProgress({ current: 1, total: 1, phase: "uploading" })
 
-      for (let i = 0; i < total; i++) {
-        if (abort.signal.aborted) break
-
-        setUploadProgress({ current: i + 1, total, phase: "uploading" })
-
-        const currentFile = files[i]
         const formData = new FormData()
-        formData.append("file", currentFile)
+        formData.append("url", linkUrl.trim())
         formData.append("assetType", config.slug)
         formData.append(
           "metadata",
@@ -231,21 +250,11 @@ export function AssetUploadModal({
             uploadedAt: new Date().toISOString(),
           })
         )
-
-        // Generate client-side preview for video/audio files
-        if (needsClientPreview(currentFile.name)) {
-          setUploadProgress({ current: i + 1, total, phase: "optimizing" })
-          try {
-            const { preview: previewFile } = await generateClientPreview(currentFile)
-            formData.append("preview", previewFile)
-          } catch (err) {
-            console.warn("[upload] Client-side preview generation failed, uploading without preview:", err)
-          }
+        if (linkThumbnail) {
+          formData.append("thumbnail", linkThumbnail)
         }
 
-        setUploadProgress({ current: i + 1, total, phase: "optimizing" })
-
-        const res = await fetch("/api/assets/upload", {
+        const res = await fetch("/api/assets/upload-link", {
           method: "POST",
           body: formData,
           signal: abort.signal,
@@ -253,22 +262,76 @@ export function AssetUploadModal({
 
         if (!res.ok) {
           const data = await res.json().catch(() => ({ error: "Erro desconhecido" }))
-          throw new Error(data.error ?? `Upload falhou (${res.status})`)
+          throw new Error(data.error ?? `Falha ao salvar link (${res.status})`)
         }
 
-        const data = await res.json()
+        setUploadProgress({ current: 1, total: 1, phase: "done" })
+      } else {
+        const total = files.length
 
-        setUploadProgress({
-          current: i + 1,
-          total,
-          phase: "done",
-          savings: data.preview?.savings,
-        })
+        for (let i = 0; i < total; i++) {
+          if (abort.signal.aborted) break
+
+          setUploadProgress({ current: i + 1, total, phase: "uploading" })
+
+          const currentFile = files[i]
+          const formData = new FormData()
+          formData.append("file", currentFile)
+          formData.append("assetType", config.slug)
+          formData.append(
+            "metadata",
+            JSON.stringify({
+              ...formValues,
+              uploadedBy: { id: user.id, name: user.name, email: user.email },
+              uploadedAt: new Date().toISOString(),
+            })
+          )
+
+          // Generate client-side preview for video/audio files
+          if (needsClientPreview(currentFile.name)) {
+            setUploadProgress({ current: i + 1, total, phase: "optimizing" })
+            try {
+              const { preview: previewFile } = await generateClientPreview(currentFile)
+              formData.append("preview", previewFile)
+            } catch (err) {
+              console.warn("[upload] Client-side preview generation failed, uploading without preview:", err)
+            }
+          }
+
+          setUploadProgress({ current: i + 1, total, phase: "optimizing" })
+
+          const res = await fetch("/api/assets/upload", {
+            method: "POST",
+            body: formData,
+            signal: abort.signal,
+          })
+
+          if (!res.ok) {
+            const data = await res.json().catch(() => ({ error: "Erro desconhecido" }))
+            throw new Error(data.error ?? `Upload falhou (${res.status})`)
+          }
+
+          const data = await res.json()
+
+          if (data.previewError) {
+            setPreviewWarnings((prev) => [
+              ...prev,
+              `${currentFile.name}: preview não gerado (${data.previewError}). O original foi salvo, mas pode não aparecer na galeria até o problema ser resolvido.`,
+            ])
+          }
+
+          setUploadProgress({
+            current: i + 1,
+            total,
+            phase: "done",
+            savings: data.preview?.savings,
+          })
+        }
       }
 
       // Also call the original onSubmit for any consumer-side logic
       const payload: UploadPayload = {
-        files,
+        files: mode === "file" ? files : [],
         metadata: formValues,
         assetType: config.slug,
         uploadedBy: { id: user.id, name: user.name, email: user.email },
@@ -276,32 +339,44 @@ export function AssetUploadModal({
       }
       onSubmit?.(payload)
 
-      // Brief delay to show completion, then reset
-      setTimeout(() => {
-        setFiles([])
-        setFormValues({})
-        setError(null)
-        setSubmitting(false)
-        setUploadProgress(null)
-        onOpenChange(false)
-      }, 1200)
+      // If there are warnings, keep the modal open so the user can read them.
+      // Otherwise close after a brief delay.
+      setSubmitting(false)
+      setPreviewWarnings((current) => {
+        if (current.length === 0) {
+          setTimeout(() => {
+            setFiles([])
+            setLinkUrl("")
+            setLinkThumbnail(null)
+            setFormValues({})
+            setError(null)
+            setUploadProgress(null)
+            onOpenChange(false)
+          }, 1200)
+        }
+        return current
+      })
     } catch (err) {
       if ((err as Error).name === "AbortError") return
       setError((err as Error).message ?? "Erro ao fazer upload")
       setSubmitting(false)
       setUploadProgress(null)
     }
-  }, [config, files, formValues, user, onSubmit, onOpenChange])
+  }, [config, files, formValues, linkUrl, linkThumbnail, mode, user, onSubmit, onOpenChange])
 
   const handleOpenChange = useCallback(
     (open: boolean) => {
       if (!open) {
         abortRef.current?.abort()
         setFiles([])
+        setLinkUrl("")
+        setLinkThumbnail(null)
+        setMode("file")
         setFormValues({})
         setError(null)
         setSubmitting(false)
         setUploadProgress(null)
+        setPreviewWarnings([])
       }
       onOpenChange(open)
     },
@@ -317,39 +392,103 @@ export function AssetUploadModal({
         </DialogHeader>
 
         <div className="flex flex-col gap-4">
-          {/* File picker */}
-          <Upload>
-            <UploadTrigger
-              accept={config.accept}
-              multiple={config.multiple}
-              onChange={handleFiles}
+          {/* Mode toggle (file vs link) — only if config supports links */}
+          {config.allowLink && (
+            <Tabs
+              value={mode}
+              onValueChange={(v) => {
+                setMode(v as "file" | "link")
+                setError(null)
+              }}
             >
-              Selecionar arquivo{config.multiple ? "s" : ""}
-            </UploadTrigger>
+              <TabsList>
+                <TabsTrigger value="file">Arquivo</TabsTrigger>
+                <TabsTrigger value="link">Link</TabsTrigger>
+              </TabsList>
+            </Tabs>
+          )}
 
-            {error && <UploadMessage variant="error">{error}</UploadMessage>}
+          {/* File picker — only in file mode */}
+          {mode === "file" && (
+            <Upload>
+              <UploadTrigger
+                accept={config.accept}
+                multiple={config.multiple}
+                onChange={handleFiles}
+              >
+                Selecionar arquivo{config.multiple ? "s" : ""}
+              </UploadTrigger>
 
-            {files.length > 0 && files.length <= 3 &&
-              files.map((f, i) => (
-                <UploadFile
-                  key={`${f.name}-${i}`}
-                  name={f.name}
-                  onRemove={() => removeFile(i)}
-                />
-              ))}
+              {error && <UploadMessage variant="error">{error}</UploadMessage>}
 
-            {files.length > 3 && (
-              <UploadSummary count={files.length}>
-                {files.map((f, i) => (
+              {files.length > 0 && files.length <= 3 &&
+                files.map((f, i) => (
                   <UploadFile
                     key={`${f.name}-${i}`}
                     name={f.name}
                     onRemove={() => removeFile(i)}
                   />
                 ))}
-              </UploadSummary>
-            )}
-          </Upload>
+
+              {files.length > 3 && (
+                <UploadSummary count={files.length}>
+                  {files.map((f, i) => (
+                    <UploadFile
+                      key={`${f.name}-${i}`}
+                      name={f.name}
+                      onRemove={() => removeFile(i)}
+                    />
+                  ))}
+                </UploadSummary>
+              )}
+            </Upload>
+          )}
+
+          {/* Link inputs — only in link mode */}
+          {mode === "link" && (
+            <div className="flex flex-col gap-3">
+              <div className="space-y-2">
+                <Label htmlFor="upload-link-url">
+                  URL <span className="text-destructive ml-1">*</span>
+                </Label>
+                <Input
+                  id="upload-link-url"
+                  size="sm"
+                  type="url"
+                  placeholder="https://figma.com/file/..."
+                  value={linkUrl}
+                  onChange={(e) => setLinkUrl(e.target.value)}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="upload-link-thumb">Thumbnail (opcional)</Label>
+                <p className="text-xs text-muted-foreground -mt-1">
+                  Imagem de preview pro card. Se vazio, usamos um ícone genérico.
+                </p>
+                {linkThumbnail ? (
+                  <UploadFile
+                    name={linkThumbnail.name}
+                    onRemove={() => setLinkThumbnail(null)}
+                  />
+                ) : (
+                  <Upload>
+                    <UploadTrigger
+                      accept=".png,.jpg,.jpeg,.webp,.svg"
+                      multiple={false}
+                      onChange={(fl) => {
+                        if (fl && fl[0]) setLinkThumbnail(fl[0])
+                      }}
+                    >
+                      Selecionar thumbnail
+                    </UploadTrigger>
+                  </Upload>
+                )}
+              </div>
+
+              {error && <UploadMessage variant="error">{error}</UploadMessage>}
+            </div>
+          )}
 
           {/* Dynamic metadata fields */}
           {config.fields.map((field) => (
@@ -422,18 +561,32 @@ export function AssetUploadModal({
           </div>
         )}
 
+        {previewWarnings.length > 0 && (
+          <div className="flex flex-col gap-1 px-3 py-2 border border-amber-500/30 bg-amber-500/5 rounded-md text-xs text-amber-300">
+            <span className="font-medium">Upload concluído com aviso</span>
+            {previewWarnings.map((w, i) => (
+              <span key={i} className="text-amber-200/80">{w}</span>
+            ))}
+          </div>
+        )}
+
         <DialogFooter>
           <Button
             variant="default"
             size="sm"
             onClick={handleSubmit}
-            disabled={submitting || files.length === 0}
+            disabled={
+              submitting ||
+              (mode === "file" ? files.length === 0 : linkUrl.trim().length === 0)
+            }
           >
             {submitting
               ? uploadProgress?.phase === "optimizing"
                 ? "Otimizando..."
                 : "Enviando..."
-              : "Fazer upload"}
+              : mode === "link"
+                ? "Salvar link"
+                : "Fazer upload"}
           </Button>
           <Button
             variant="outline"

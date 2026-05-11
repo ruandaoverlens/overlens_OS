@@ -8,6 +8,7 @@ export const contentAssetConfigs: AssetUploadConfig[] = [
     accept: ".psd,.ai,.fig,.sketch,.pdf,.png,.svg,.xd,.zip",
     maxSizeMB: 500,
     multiple: true,
+    allowLink: true,
     fields: [
       {
         name: "titulo",
@@ -95,6 +96,7 @@ export const contentAssetConfigs: AssetUploadConfig[] = [
     accept: ".pdf,.docx,.md,.txt,.pptx,.xlsx,.zip",
     maxSizeMB: 200,
     multiple: true,
+    allowLink: true,
     fields: [
       {
         name: "titulo",
@@ -166,6 +168,7 @@ export const contentAssetConfigs: AssetUploadConfig[] = [
     accept: ".glb,.gltf,.obj,.fbx,.blend,.stl,.zip",
     maxSizeMB: 1024,
     multiple: true,
+    allowLink: true,
     fields: [
       {
         name: "titulo",

@@ -10,6 +10,7 @@ import {
   SmAppsLineIcon,
   SmContrastLineIcon,
   SmDocLineIcon,
+  SmCognitionLineIcon,
   SmCloseLineIcon,
   SmFavoriteLineIcon,
 } from "@/components/icons";
@@ -45,6 +46,7 @@ const typeLabels: Record<FavoriteType, string> = {
   icon: "Ícone",
   color: "Cor",
   typography: "Tipografia",
+  reference: "Referência",
 };
 
 const typeIcons: Record<FavoriteType, React.ReactNode> = {
@@ -55,6 +57,7 @@ const typeIcons: Record<FavoriteType, React.ReactNode> = {
   icon: <SmAppsLineIcon className="size-4" />,
   color: <SmContrastLineIcon className="size-4" />,
   typography: <SmDocLineIcon className="size-4" />,
+  reference: <SmCognitionLineIcon className="size-4" />,
 };
 
 // ─── Card ───────────────────────────────────────────────────

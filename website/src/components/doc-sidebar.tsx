@@ -36,6 +36,7 @@ import {
   SmDocSolidIcon,
   SmMessageCircleLineIcon,
   SmMessageCircleSolidIcon,
+  SmCognitionLineIcon,
 } from "@/components/icons";
 import { useAuth, canAccessRoute } from "@/lib/auth";
 import { SidebarProfile } from "@/components/sidebar-profile";
@@ -466,6 +467,18 @@ export function SystemSidebar({
                       <TooltipContent>
                         {canAccessAssets ? "Assets da Marca" : "Assets da Marca (bloqueado)"}
                       </TooltipContent>
+                    </Tooltip>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Link
+                          href="/mycelium"
+                          aria-label="Mycelium"
+                          className="group/mycelium relative flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+                        >
+                          <SmCognitionLineIcon className="size-6 transition-opacity group-hover/mycelium:opacity-80" />
+                        </Link>
+                      </TooltipTrigger>
+                      <TooltipContent>Mycelium</TooltipContent>
                     </Tooltip>
                     {showTabs && (
                       <Tooltip>

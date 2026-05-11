@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useCallback, useEffect } from "react";
 
-export type FavoriteType = "audio" | "video" | "logo" | "image" | "icon" | "color" | "typography";
+export type FavoriteType = "audio" | "video" | "logo" | "image" | "icon" | "color" | "typography" | "reference";
 
 export interface FavoriteItem {
   id: string;

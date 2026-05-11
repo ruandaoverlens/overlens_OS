@@ -1,11 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { writeFile, mkdir, rm } from "fs/promises";
 import path from "path";
-import os from "os";
 import { createClient } from "@/lib/supabase/server";
-import { getStoragePath, sanitizeFilename } from "@/lib/supabase/storage";
+import { getStoragePath, sanitizeFilename, getAssetType } from "@/lib/supabase/storage";
 import {
-  generatePreview,
+  generatePreviewFromBuffer,
   detectMediaType,
 } from "@/lib/media-optimizer";
 
@@ -67,9 +65,37 @@ export async function POST(request: NextRequest) {
       try { metadata = JSON.parse(metadataRaw); } catch { /* ignore */ }
     }
 
+    // Persist metadata overrides keyed by (asset_type, asset_key=filename).
+    // Best-effort: never fail the upload if the row insert fails.
+    const canonicalType = getAssetType(assetType);
+    if (canonicalType) {
+      const m = metadata as Record<string, unknown>;
+      const asString = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : null);
+      const tags = Array.isArray(m.tags) ? (m.tags as unknown[]).filter((t): t is string => typeof t === "string") : [];
+      try {
+        await supabase.from("asset_metadata").upsert(
+          {
+            asset_type: canonicalType,
+            asset_key: originalName,
+            title: asString(m.title) ?? asString(m.titulo),
+            caption: asString(m.caption) ?? asString(m.legenda) ?? asString(m.notas),
+            author: asString(m.author) ?? asString(m.artist),
+            year: asString(m.year) ?? asString(m.ano),
+            source_url: asString(m.sourceUrl) ?? asString(m.source_url),
+            tags,
+            updated_by: user.id,
+          },
+          { onConflict: "asset_type,asset_key" },
+        );
+      } catch (err) {
+        console.error("[upload] Failed to persist asset_metadata:", err);
+      }
+    }
+
     // Generate preview if media file
     const mediaType = detectMediaType(originalName);
     let preview: { url: string; size: number; ratio: number } | null = null;
+    let previewError: string | null = null;
 
     if (mediaType && clientPreview) {
       // Client-side preview was provided (video/audio processed in browser)
@@ -103,34 +129,22 @@ export async function POST(request: NextRequest) {
           ratio: previewBuffer.length / buffer.length,
         };
       } catch (err) {
+        previewError = (err as Error).message ?? "Falha no upload do preview";
         console.error("[upload] Client preview upload failed:", err);
       }
     } else if (mediaType === "image") {
-      // Server-side image preview via Sharp (works on Vercel)
+      // In-memory preview via Sharp. No temp files — Vercel functions have a
+      // read-only filesystem except for /tmp, and os.tmpdir() can return
+      // /var/tmp (which is not writable), so we avoid disk entirely.
       try {
-        const tmpDir = path.join(os.tmpdir(), "overlens-upload");
-        await mkdir(tmpDir, { recursive: true });
-        const tmpPath = path.join(tmpDir, originalName);
-        await writeFile(tmpPath, buffer);
-
-        const result = await generatePreview(tmpPath, { force: true });
-
-        const { readFile } = await import("fs/promises");
-        const previewBuffer = await readFile(result.previewPath);
-        const previewExt = path.extname(result.previewPath);
+        const result = await generatePreviewFromBuffer(buffer);
         const parsed = path.parse(storagePath);
-        const previewStoragePath = `${parsed.dir}/${parsed.name}${previewExt}`;
-
-        const mimeMap: Record<string, string> = {
-          ".webp": "image/webp",
-          ".mp4": "video/mp4",
-          ".ogg": "audio/ogg",
-        };
+        const previewStoragePath = `${parsed.dir}/${parsed.name}${result.ext}`;
 
         await supabase.storage
           .from("asset-previews")
-          .upload(previewStoragePath, previewBuffer, {
-            contentType: mimeMap[previewExt] ?? "application/octet-stream",
+          .upload(previewStoragePath, result.buffer, {
+            contentType: result.contentType,
             upsert: true,
           });
 
@@ -143,11 +157,8 @@ export async function POST(request: NextRequest) {
           size: result.previewSize,
           ratio: result.ratio,
         };
-
-        // Clean up temp files
-        await rm(tmpPath, { force: true }).catch(() => {});
-        await rm(result.previewPath, { force: true }).catch(() => {});
       } catch (err) {
+        previewError = (err as Error).message ?? "Falha ao gerar preview";
         console.error("[upload] Image preview generation failed:", err);
       }
     }
@@ -170,6 +181,7 @@ export async function POST(request: NextRequest) {
             savings: `${Math.round((1 - preview.ratio) * 100)}%`,
           }
         : null,
+      previewError,
       metadata,
     });
   } catch (err) {

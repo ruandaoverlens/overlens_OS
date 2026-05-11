@@ -24,13 +24,6 @@ export const mediaAssetConfigs: AssetUploadConfig[] = [
         placeholder: "Legenda ou caption descritiva",
       },
       {
-        name: "autor",
-        label: "Autor",
-        type: "text",
-        required: true,
-        placeholder: "Fotógrafo ou autor",
-      },
-      {
         name: "ano",
         label: "Ano",
         type: "text",
@@ -58,18 +51,6 @@ export const mediaAssetConfigs: AssetUploadConfig[] = [
           { value: "horizontal", label: "Horizontal (paisagem)" },
           { value: "vertical", label: "Vertical (retrato)" },
           { value: "quadrado", label: "Quadrado" },
-        ],
-      },
-      {
-        name: "licenca",
-        label: "Licença",
-        type: "select",
-        required: false,
-        options: [
-          { value: "propria", label: "Própria" },
-          { value: "creative-commons", label: "Creative Commons" },
-          { value: "licenciada", label: "Licenciada" },
-          { value: "editorial", label: "Editorial" },
         ],
       },
       {

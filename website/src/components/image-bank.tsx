@@ -9,6 +9,8 @@ import { getAssetPreviewUrl, getStoragePath } from "@/lib/supabase/storage";
 import { useAuth, canDelete } from "@/lib/auth";
 import { useHiddenAssets } from "@/lib/hidden-assets";
 import { useInfiniteScroll } from "@/lib/use-infinite-scroll";
+import { useAssetMetadata, type AssetMetadataOverride } from "@/lib/asset-metadata";
+import { AssetEditDialog } from "@/components/asset-edit-dialog";
 
 // ─── Data ────────────────────────────────────────────────────
 
@@ -20,6 +22,11 @@ export interface ImageAsset {
   year: string;
   tags: string[];
   sourceUrl: string;
+  /** Bucket where the asset lives. When equal to "platform-assets", the
+   * gallery routes the preview URL through /api/assets/preview, which serves
+   * a cached preview (or falls back to the original) instead of hitting the
+   * public asset-previews bucket directly. */
+  bucketSource?: "asset-previews" | "platform-assets";
 }
 
 /** Hardcoded metadata for known images — used to enrich storage listing */
@@ -69,8 +76,13 @@ export function getAllImageTags(): string[] {
   return Array.from(tagSet).sort();
 }
 
-function imageSrc(filename: string) {
-  return getAssetPreviewUrl("Imagens", filename);
+function imageSrc(asset: Pick<ImageAsset, "filename" | "bucketSource">) {
+  if (asset.bucketSource === "platform-assets") {
+    // No preview in the public bucket — let the preview API generate it on
+    // demand (and fall back to the original if generation fails).
+    return `/api/assets/preview?file=${encodeURIComponent(`Imagens/${asset.filename}`)}`;
+  }
+  return getAssetPreviewUrl("Imagens", asset.filename);
 }
 
 // ─── Image Card ─────────────────────────────────────────────
@@ -102,7 +114,7 @@ function ImageCard({
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={imageSrc(asset.filename)}
+        src={imageSrc(asset)}
         alt={asset.title}
         className="w-full h-full object-cover block"
         loading="lazy"
@@ -129,12 +141,14 @@ export function ImageLightbox({
   asset,
   onClose,
   onDelete,
+  onEdit,
   isHidden,
   onToggleHide,
 }: {
   asset: ImageAsset;
   onClose: () => void;
   onDelete?: () => void;
+  onEdit?: () => void;
   isHidden?: boolean;
   onToggleHide?: () => void;
 }) {
@@ -156,7 +170,7 @@ export function ImageLightbox({
 
   const handleDownload = () => {
     const a = document.createElement("a");
-    a.href = imageSrc(asset.filename);
+    a.href = imageSrc(asset);
     a.download = asset.filename;
     a.click();
   };
@@ -196,8 +210,8 @@ export function ImageLightbox({
       onClick={onClose}
     >
       {/* Top bar */}
-      <div className="flex items-center justify-between px-4 py-3 shrink-0" onClick={(e) => e.stopPropagation()}>
-        <div className="flex-1 min-w-0">
+      <div className="flex items-start justify-between px-4 py-3 shrink-0 gap-4" onClick={(e) => e.stopPropagation()}>
+        <div className="flex-1 min-w-0 max-w-xs">
           <p className="text-sm font-medium text-white/80 truncate">
             {asset.title}
           </p>
@@ -208,6 +222,16 @@ export function ImageLightbox({
           )}
         </div>
         <div className="flex items-center gap-2 ml-4">
+          {isAdmin && onEdit && (
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-white/20 text-white/60 hover:bg-white/10 hover:border-white/40 hover:text-white"
+              onClick={onEdit}
+            >
+              <span>Editar</span>
+            </Button>
+          )}
           {isAdmin && onToggleHide && (
             <Button
               variant="outline"
@@ -256,7 +280,7 @@ export function ImageLightbox({
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           ref={imgRef}
-          src={imageSrc(asset.filename)}
+          src={imageSrc(asset)}
           alt={asset.title}
           className="max-h-[80%] max-w-full object-contain rounded-sm"
           onLoad={handleImgLoad}
@@ -298,9 +322,17 @@ function useStorageImages() {
 
   const fetchImages = useCallback(async () => {
     try {
-      const res = await fetch("/api/assets/list?folder=Imagens&bucket=asset-previews");
+      // Ask for asset-previews as the primary source and platform-assets as a
+      // fallback. The API merges entries from platform-assets that have no
+      // corresponding preview, so orphaned originals (uploaded when Sharp
+      // failed) still show up in the gallery.
+      const res = await fetch(
+        "/api/assets/list?folder=Imagens&bucket=asset-previews&fallbackBucket=platform-assets",
+      );
       if (!res.ok) throw new Error("fetch failed");
-      const { files } = await res.json() as { files: { name: string; id: string; createdAt: string }[] };
+      const { files } = (await res.json()) as {
+        files: { name: string; id: string; createdAt: string; source?: string }[];
+      };
 
       // Build image list from storage files
       const result: ImageAsset[] = [];
@@ -315,9 +347,12 @@ function useStorageImages() {
         if (seen.has(baseName)) continue;
         seen.add(baseName);
 
+        const bucketSource: ImageAsset["bucketSource"] =
+          file.source === "platform-assets" ? "platform-assets" : "asset-previews";
+
         const meta = IMAGE_METADATA[file.name];
         if (meta) {
-          result.push({ filename: file.name, ...meta });
+          result.push({ filename: file.name, ...meta, bucketSource });
         } else {
           // Uploaded image without hardcoded metadata
           result.push({
@@ -328,6 +363,7 @@ function useStorageImages() {
             year: "",
             tags: ["upload"],
             sourceUrl: "",
+            bucketSource,
           });
         }
       }
@@ -350,6 +386,20 @@ function useStorageImages() {
 
 // ─── Main Component ──────────────────────────────────────────
 
+/** Apply admin override fields on top of the static asset entry. */
+function applyOverride(base: ImageAsset, override: AssetMetadataOverride | undefined): ImageAsset {
+  if (!override) return base;
+  return {
+    ...base,
+    title: override.title ?? base.title,
+    caption: override.caption ?? base.caption,
+    author: override.author ?? base.author,
+    year: override.year ?? base.year,
+    sourceUrl: override.source_url ?? base.sourceUrl,
+    tags: override.tags.length > 0 ? override.tags : base.tags,
+  };
+}
+
 export function ImageBank({
   showHidden = false,
   onCountChange,
@@ -361,11 +411,15 @@ export function ImageBank({
   const isAdmin = user && canDelete(user.role);
   const { images, loading, refresh } = useStorageImages();
   const { isHidden, hide, unhide } = useHiddenAssets("image");
+  const metadata = useAssetMetadata("image");
   const [selected, setSelected] = useState<ImageAsset | null>(null);
+  const [editing, setEditing] = useState<ImageAsset | null>(null);
   const { isFavorite, toggleFavorite } = useFavorites();
 
-  const hiddenImages = images.filter((img) => isHidden(img.filename));
-  const nonHiddenImages = images.filter((img) => !isHidden(img.filename));
+  const mergedImages = images.map((img) => applyOverride(img, metadata.get(img.filename)));
+
+  const hiddenImages = mergedImages.filter((img) => isHidden(img.filename));
+  const nonHiddenImages = mergedImages.filter((img) => !isHidden(img.filename));
   const visibleImages = showHidden ? hiddenImages : nonHiddenImages;
 
   useEffect(() => {
@@ -404,7 +458,7 @@ export function ImageBank({
             asset={asset}
             onClick={() => setSelected(asset)}
             isFavorite={isFavorite(asset.filename)}
-            onToggleFavorite={() => toggleFavorite({ id: asset.filename, type: "image", title: asset.title, subtitle: `${asset.author}${asset.year ? `, ${asset.year}` : ""}`, thumbnail: imageSrc(asset.filename) })}
+            onToggleFavorite={() => toggleFavorite({ id: asset.filename, type: "image", title: asset.title, subtitle: `${asset.author}${asset.year ? `, ${asset.year}` : ""}`, thumbnail: imageSrc(asset) })}
             showHideButton={!!isAdmin}
             isHidden={isHidden(asset.filename)}
             onToggleHide={() => handleToggleHide(asset.filename)}
@@ -430,8 +484,42 @@ export function ImageBank({
           asset={selected}
           onClose={() => setSelected(null)}
           onDelete={handleDeleted}
+          onEdit={isAdmin ? () => setEditing(selected) : undefined}
           isHidden={isHidden(selected.filename)}
           onToggleHide={() => handleToggleHide(selected.filename)}
+        />
+      )}
+
+      {editing && (
+        <AssetEditDialog
+          open={!!editing}
+          onOpenChange={(open) => { if (!open) setEditing(null); }}
+          config={{
+            assetType: "image",
+            folder: "Imagens",
+            allowRename: true,
+          }}
+          assetKey={editing.filename}
+          initial={{
+            title: editing.title ?? "",
+            caption: editing.caption ?? "",
+            author: editing.author ?? "",
+            year: editing.year ?? "",
+            sourceUrl: editing.sourceUrl ?? "",
+            tags: editing.tags ?? [],
+            filename: editing.filename,
+          }}
+          onSaved={({ renamedTo }) => {
+            setEditing(null);
+            if (renamedTo) {
+              // Filename changed — refetch storage listing so the new key shows up.
+              refresh();
+              setSelected(null);
+            } else if (selected && selected.filename === editing.filename) {
+              // Keep the lightbox open with the freshly merged values.
+              setSelected({ ...selected, ...applyOverride(selected, metadata.get(editing.filename)) });
+            }
+          }}
         />
       )}
     </div>

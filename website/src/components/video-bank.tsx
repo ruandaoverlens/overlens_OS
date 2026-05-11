@@ -34,8 +34,10 @@ import { useAuth, canUpload, canDelete } from "@/lib/auth";
 import { useInfiniteScroll } from "@/lib/use-infinite-scroll";
 import { getStoragePath } from "@/lib/supabase/storage";
 import { useHiddenAssets } from "@/lib/hidden-assets";
+import { useAssetMetadata, type AssetMetadataOverride } from "@/lib/asset-metadata";
 import { AdminAssetTabs } from "@/components/admin-asset-tabs";
 import { AssetUploadModal } from "@/components/asset-upload-modal";
+import { AssetEditDialog } from "@/components/asset-edit-dialog";
 import { getUploadConfig } from "@/lib/upload-configs";
 
 const VIDEO_GRADIENT = "linear-gradient(135deg, #8A3060 0%, #C47098 50%, #E8B0CC 100%)";
@@ -203,6 +205,7 @@ export function VideoLightbox({
   onFavorite,
   isFavorited,
   onDelete,
+  onEdit,
   isHidden,
   onToggleHide,
 }: {
@@ -211,6 +214,7 @@ export function VideoLightbox({
   onFavorite: (id: string) => void;
   isFavorited?: boolean;
   onDelete?: () => void;
+  onEdit?: () => void;
   isHidden?: boolean;
   onToggleHide?: () => void;
 }) {
@@ -282,6 +286,16 @@ export function VideoLightbox({
           </div>
         </div>
         <div className="flex items-center gap-2 ml-4">
+          {isAdmin && onEdit && (
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-white/20 text-white/60 hover:bg-white/10 hover:border-white/40 hover:text-white"
+              onClick={onEdit}
+            >
+              <span>Editar</span>
+            </Button>
+          )}
           {isAdmin && onToggleHide && (
             <Button
               variant="outline"
@@ -373,6 +387,16 @@ export function VideoLightbox({
 
 // ─── Main Video Bank ──────────────────────────────────────────
 
+function applyOverride(base: Footage, override: AssetMetadataOverride | undefined): Footage {
+  if (!override) return base;
+  return {
+    ...base,
+    title: override.title ?? base.title,
+    author: override.author ?? base.author,
+    tags: override.tags.length > 0 ? override.tags : base.tags,
+  };
+}
+
 export function VideoBank() {
   const { user } = useAuth();
   const isAdmin = user && canDelete(user.role);
@@ -380,13 +404,17 @@ export function VideoBank() {
   const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
   const [search, setSearch] = useState("");
   const [selectedFootage, setSelectedFootage] = useState<Footage | null>(null);
+  const [editing, setEditing] = useState<Footage | null>(null);
   const [deleted, setDeleted] = useState<Set<string>>(new Set());
   const [showHidden, setShowHidden] = useState(false);
   const { isHidden, hide, unhide } = useHiddenAssets("video");
+  const metadata = useAssetMetadata("video");
   const { isFavorite: globalIsFavorite, toggleFavorite: globalToggleFavorite } = useFavorites();
   const [uploadOpen, setUploadOpen] = useState(false);
   const showUpload = user && canUpload(user.role);
   const uploadConfig = getUploadConfig("banco-de-videos");
+
+  const mergedFootages = footages.map((f) => applyOverride(f, metadata.get(f.id)));
 
   const handleToggleTag = useCallback((tag: string) => {
     if (tag === "__all__") {
@@ -405,22 +433,22 @@ export function VideoBank() {
   }, []);
 
   const handleFavorite = useCallback((id: string) => {
-    const f = footages.find((ft) => ft.id === id);
+    const f = mergedFootages.find((ft) => ft.id === id);
     if (f) {
       globalToggleFavorite({ id: f.id, type: "video", title: f.title, subtitle: f.author, thumbnail: f.previewUrl });
     }
-  }, [globalToggleFavorite]);
+  }, [globalToggleFavorite, mergedFootages]);
 
   const handleToggleHide = async (id: string) => {
     if (isHidden(id)) await unhide(id);
     else await hide(id);
   };
 
-  const availableFootages = footages.filter((f) => !deleted.has(f.id));
+  const availableFootages = mergedFootages.filter((f) => !deleted.has(f.id));
   const hiddenCount = availableFootages.filter((f) => isHidden(f.id)).length;
   const visibleCount = availableFootages.length - hiddenCount;
 
-  const filtered = footages.filter((f) => {
+  const filtered = mergedFootages.filter((f) => {
     if (deleted.has(f.id)) return false;
     if (showHidden ? !isHidden(f.id) : isHidden(f.id)) return false;
     const matchesTags = activeTags.size === 0 || f.tags.some((t) => activeTags.has(t));
@@ -504,8 +532,37 @@ export function VideoBank() {
             setDeleted((prev) => new Set(prev).add(selectedFootage.id));
             setSelectedFootage(null);
           }}
+          onEdit={isAdmin ? () => setEditing(selectedFootage) : undefined}
           isHidden={isHidden(selectedFootage.id)}
           onToggleHide={() => handleToggleHide(selectedFootage.id)}
+        />
+      )}
+
+      {editing && (
+        <AssetEditDialog
+          open={!!editing}
+          onOpenChange={(open) => { if (!open) setEditing(null); }}
+          config={{
+            assetType: "video",
+            hideCaption: true,
+            hideYear: true,
+            hideSourceUrl: true,
+          }}
+          assetKey={editing.id}
+          initial={{
+            title: editing.title ?? "",
+            caption: "",
+            author: editing.author ?? "",
+            year: "",
+            sourceUrl: "",
+            tags: editing.tags ?? [],
+          }}
+          onSaved={() => {
+            setEditing(null);
+            if (selectedFootage && selectedFootage.id === editing.id) {
+              setSelectedFootage({ ...applyOverride(selectedFootage, metadata.get(editing.id)) });
+            }
+          }}
         />
       )}
 

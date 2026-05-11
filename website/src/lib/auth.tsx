@@ -55,10 +55,10 @@ export const TEST_USERS: Record<
 // --- Permission functions (unchanged API) ---
 
 const ROUTE_ACCESS: Record<UserRole, string[]> = {
-  gratuito: ["/docs", "/pacote", "/plataforma", "/website", "/ferramentas"],
-  assinante: ["/docs", "/pacote", "/plataforma", "/website", "/ferramentas"],
-  staff: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/playbook-conteudo", "/playbook-videos", "/ferramentas"],
-  admin: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/tru", "/playbook-conteudo", "/playbook-videos", "/ferramentas"],
+  gratuito: ["/docs", "/pacote", "/plataforma", "/website", "/ferramentas", "/mycelium"],
+  assinante: ["/docs", "/pacote", "/plataforma", "/website", "/ferramentas", "/mycelium"],
+  staff: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium"],
+  admin: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/tru", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium"],
 };
 
 export function canAccessRoute(role: UserRole, pathname: string): boolean {
