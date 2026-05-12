@@ -36,7 +36,7 @@ import {
   SmDocSolidIcon,
   SmMessageCircleLineIcon,
   SmMessageCircleSolidIcon,
-  SmCognitionLineIcon,
+  SmGraphicEqLineIcon,
 } from "@/components/icons";
 import { useAuth, canAccessRoute } from "@/lib/auth";
 import { SidebarProfile } from "@/components/sidebar-profile";
@@ -356,6 +356,7 @@ export function SystemSidebar({
   const [hasMounted, setHasMounted] = useState(false);
   useEffect(() => setHasMounted(true), []);
   const canAccessAssets = hasMounted && user ? canAccessRoute(user.role, "/assets") : false;
+  const canAccessMycelium = hasMounted && user ? canAccessRoute(user.role, "/mycelium") : false;
 
   const params = useParams();
   const rawSlug = params?.slug;
@@ -470,15 +471,28 @@ export function SystemSidebar({
                     </Tooltip>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <Link
-                          href="/mycelium"
-                          aria-label="Mycelium"
-                          className="group/mycelium relative flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
-                        >
-                          <SmCognitionLineIcon className="size-6 transition-opacity group-hover/mycelium:opacity-80" />
-                        </Link>
+                        {canAccessMycelium ? (
+                          <Link
+                            href="/mycelium"
+                            aria-label="Mycelium"
+                            className="group/mycelium relative flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+                          >
+                            <SmGraphicEqLineIcon className="size-6 transition-opacity group-hover/mycelium:opacity-80" />
+                          </Link>
+                        ) : (
+                          <button
+                            type="button"
+                            disabled
+                            aria-label="Mycelium (bloqueado)"
+                            className="flex size-8 items-center justify-center text-muted-foreground opacity-50 cursor-not-allowed"
+                          >
+                            <SmGraphicEqLineIcon className="size-6" />
+                          </button>
+                        )}
                       </TooltipTrigger>
-                      <TooltipContent>Mycelium</TooltipContent>
+                      <TooltipContent>
+                        {canAccessMycelium ? "Mycelium" : "Mycelium (bloqueado)"}
+                      </TooltipContent>
                     </Tooltip>
                     {showTabs && (
                       <Tooltip>

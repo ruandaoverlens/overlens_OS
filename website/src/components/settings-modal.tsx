@@ -280,6 +280,7 @@ const APPS = [
   { name: "Growth System", route: "/growth", description: "Métricas e crescimento" },
   { name: "Content System", route: "/estudio", description: "Produção de conteúdo" },
   { name: "Assets", route: "/assets", description: "Biblioteca de assets digitais" },
+  { name: "Mycelium", route: "/mycelium", description: "Feed interno da equipe" },
   { name: "Botões Mágicos", route: "/ferramentas", description: "Ferramentas mágicas" },
 ];
 
