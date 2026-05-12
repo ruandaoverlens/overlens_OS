@@ -93,10 +93,11 @@ export async function POST(request: NextRequest) {
     };
 
     const { error: insertError } = await supabase
-      .from("asset_metadata")
+      .from("content_items")
       .insert({
         storage_path: storagePath,
         asset_type: assetType,
+        kind: "link",
         metadata: linkMetadata,
         uploaded_by: user.id,
         uploaded_at: new Date().toISOString(),

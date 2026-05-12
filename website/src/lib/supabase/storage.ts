@@ -45,6 +45,21 @@ export function getAssetPreviewUrl(folder: string, filename: string): string {
   return `${supabaseUrl}/storage/v1/object/public/asset-previews/${folder}/${encodeURIComponent(safeName)}`;
 }
 
+/**
+ * Content Bank slugs — categories backed by `public.content_items` instead of
+ * `public.asset_metadata`. These accept both file uploads and link references,
+ * and store rich per-category metadata in a jsonb column.
+ */
+export const CONTENT_BANK_SLUGS = new Set<string>([
+  "templates-e-layouts",
+  "documentacao",
+  "objetos-3d",
+]);
+
+export function isContentBankSlug(slug: string): boolean {
+  return CONTENT_BANK_SLUGS.has(slug);
+}
+
 /** Map an asset slug (banco-de-imagens etc.) to the canonical asset_type used in DB tables. */
 export function getAssetType(slug: string): "image" | "video" | "audio" | null {
   switch (slug) {

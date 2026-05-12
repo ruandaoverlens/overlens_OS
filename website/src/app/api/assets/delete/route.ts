@@ -52,9 +52,15 @@ export async function POST(request: NextRequest) {
         .catch(() => {});
     }
 
-    // Remove persisted metadata row (best effort).
-    // asset_key is the filename (last segment of storagePath); asset_type is derived
-    // from the folder prefix (Imagens/Footages/Musicas → image/video/audio).
+    // Remove persisted metadata rows (best effort). Two possible homes:
+    //  - public.content_items (Content Bank: templates/docs/3d) keyed by storage_path
+    //  - public.asset_metadata (media overrides) keyed by (asset_type, asset_key=filename)
+    await supabase
+      .from("content_items")
+      .delete()
+      .eq("storage_path", storagePath)
+      .then(() => undefined, () => undefined);
+
     const segments = storagePath.split("/");
     const filename = segments[segments.length - 1] ?? "";
     const folder = segments[0] ?? "";

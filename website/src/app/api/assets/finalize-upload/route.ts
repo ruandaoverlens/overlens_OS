@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { sanitizeFilename, getAssetType } from "@/lib/supabase/storage";
+import { sanitizeFilename, getAssetType, isContentBankSlug } from "@/lib/supabase/storage";
 import {
   generatePreviewFromBuffer,
   detectMediaType,
@@ -130,30 +130,52 @@ export async function POST(request: NextRequest) {
     }
     // For video/audio without clientPreviewPath: graceful fallback — no preview.
 
-    // Persist metadata overrides keyed by (asset_type, asset_key=filename).
+    // Persist metadata. Two destinations, depending on the slug:
+    //  - Content Bank slugs (templates/docs/3d) → public.content_items
+    //    (full payload in jsonb, keyed by storage_path)
+    //  - Media slugs (image/video/audio variants) → public.asset_metadata
+    //    (sparse overrides with fixed columns, keyed by asset_type+asset_key)
     // Best-effort: never fail the request if the row insert fails.
-    const canonicalType = getAssetType(assetType);
-    if (canonicalType) {
-      const m = metadata as Record<string, unknown>;
-      const asString = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : null);
-      const tags = Array.isArray(m.tags) ? (m.tags as unknown[]).filter((t): t is string => typeof t === "string") : [];
+    if (isContentBankSlug(assetType)) {
       try {
-        await admin.from("asset_metadata").upsert(
+        await admin.from("content_items").upsert(
           {
-            asset_type: canonicalType,
-            asset_key: sanitizedName,
-            title: asString(m.title) ?? asString(m.titulo),
-            caption: asString(m.caption) ?? asString(m.legenda) ?? asString(m.notas),
-            author: asString(m.author) ?? asString(m.artist),
-            year: asString(m.year) ?? asString(m.ano),
-            source_url: asString(m.sourceUrl) ?? asString(m.source_url),
-            tags,
-            updated_by: user.id,
+            storage_path: storagePath,
+            asset_type: assetType,
+            kind: "file",
+            metadata,
+            uploaded_by: user.id,
+            uploaded_at: new Date().toISOString(),
           },
-          { onConflict: "asset_type,asset_key" },
+          { onConflict: "storage_path" },
         );
       } catch (err) {
-        console.error("[finalize-upload] Failed to persist asset_metadata:", err);
+        console.error("[finalize-upload] Failed to persist content_items:", err);
+      }
+    } else {
+      const canonicalType = getAssetType(assetType);
+      if (canonicalType) {
+        const m = metadata as Record<string, unknown>;
+        const asString = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : null);
+        const tags = Array.isArray(m.tags) ? (m.tags as unknown[]).filter((t): t is string => typeof t === "string") : [];
+        try {
+          await admin.from("asset_metadata").upsert(
+            {
+              asset_type: canonicalType,
+              asset_key: sanitizedName,
+              title: asString(m.title) ?? asString(m.titulo),
+              caption: asString(m.caption) ?? asString(m.legenda) ?? asString(m.notas),
+              author: asString(m.author) ?? asString(m.artist),
+              year: asString(m.year) ?? asString(m.ano),
+              source_url: asString(m.sourceUrl) ?? asString(m.source_url),
+              tags,
+              updated_by: user.id,
+            },
+            { onConflict: "asset_type,asset_key" },
+          );
+        } catch (err) {
+          console.error("[finalize-upload] Failed to persist asset_metadata:", err);
+        }
       }
     }
 

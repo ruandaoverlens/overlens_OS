@@ -16,8 +16,8 @@ export async function GET(request: NextRequest) {
     }
 
     const { data, error } = await supabase
-      .from("asset_metadata")
-      .select("storage_path, asset_type, metadata, uploaded_by, uploaded_at")
+      .from("content_items")
+      .select("storage_path, asset_type, kind, metadata, uploaded_by, uploaded_at")
       .eq("asset_type", assetType)
       .order("uploaded_at", { ascending: false });
 
@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
 
     const items = (data ?? []).map((row) => {
       const meta = (row.metadata ?? {}) as Record<string, unknown>;
-      const kind = meta.kind === "link" ? "link" : "file";
+      const kind = row.kind === "link" ? "link" : "file";
       return {
         kind,
         storagePath: row.storage_path,
