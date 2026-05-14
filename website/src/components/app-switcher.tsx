@@ -12,7 +12,7 @@ import {
   MdFolderSolidIcon,
   MdLanguageLineIcon,
   MdBoltSolidIcon,
-  MdGraphicEqLineIcon,
+  MdGitForkLineIcon,
 } from "@/components/icons";
 
 function OverlensSymbol() {
@@ -34,7 +34,7 @@ const apps = [
   { name: "Growth System", href: "/growth", icon: <MdChartLineIcon /> },
   { name: "Content System", href: "/estudio", icon: <MdCognitionLineIcon /> },
   { name: "Assets", href: "/assets", icon: <MdFolderSolidIcon /> },
-  { name: "Mycelium", href: "/mycelium", icon: <MdGraphicEqLineIcon /> },
+  { name: "Mycelium", href: "/mycelium", icon: <MdGitForkLineIcon /> },
   { name: "Website", href: "https://overlens.com.br", icon: <MdLanguageLineIcon />, external: true },
 ];
 

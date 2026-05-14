@@ -36,7 +36,7 @@ import {
   SmDocSolidIcon,
   SmMessageCircleLineIcon,
   SmMessageCircleSolidIcon,
-  SmGraphicEqLineIcon,
+  SmGitForkLineIcon,
 } from "@/components/icons";
 import { useAuth, canAccessRoute } from "@/lib/auth";
 import { SidebarProfile } from "@/components/sidebar-profile";
@@ -477,7 +477,7 @@ export function SystemSidebar({
                             aria-label="Mycelium"
                             className="group/mycelium relative flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
                           >
-                            <SmGraphicEqLineIcon className="size-6 transition-opacity group-hover/mycelium:opacity-80" />
+                            <SmGitForkLineIcon className="size-7 transition-opacity group-hover/mycelium:opacity-80 [&_[data-slot=front]]:transition-colors group-hover/mycelium:[&_[data-slot=front]]:fill-current" />
                           </Link>
                         ) : (
                           <button
@@ -486,7 +486,7 @@ export function SystemSidebar({
                             aria-label="Mycelium (bloqueado)"
                             className="flex size-8 items-center justify-center text-muted-foreground opacity-50 cursor-not-allowed"
                           >
-                            <SmGraphicEqLineIcon className="size-6" />
+                            <SmGitForkLineIcon className="size-7" />
                           </button>
                         )}
                       </TooltipTrigger>
