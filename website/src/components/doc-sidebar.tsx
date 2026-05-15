@@ -449,7 +449,7 @@ export function SystemSidebar({
                           <Link
                             href="/assets"
                             aria-label="Assets da Marca"
-                            className="group/asset relative flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+                            className="group/asset relative flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-white"
                           >
                             <SmFolderLineIcon className="size-6 transition-opacity group-hover/asset:opacity-0" />
                             <SmFolderSolidIcon className="absolute size-6 opacity-0 transition-opacity group-hover/asset:opacity-100" />
@@ -475,9 +475,9 @@ export function SystemSidebar({
                           <Link
                             href="/mycelium"
                             aria-label="Mycelium"
-                            className="group/mycelium relative flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+                            className="group/mycelium relative flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-white"
                           >
-                            <SmGitForkLineIcon className="size-7 transition-opacity group-hover/mycelium:opacity-80 [&_[data-slot=front]]:transition-colors group-hover/mycelium:[&_[data-slot=front]]:fill-current" />
+                            <SmGitForkLineIcon className="size-7 [&_[data-slot=front]]:transition-colors group-hover/mycelium:[&_[data-slot=front]]:fill-current" />
                           </Link>
                         ) : (
                           <button
