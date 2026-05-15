@@ -1,6 +1,12 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import {
+  Banner,
+  BannerImage,
+  BannerContent,
+  BannerTitle,
+} from "@/components/ui/banner";
 import { MyceliumCard } from "@/components/mycelium-card";
 import { MyceliumLightbox } from "@/components/mycelium-lightbox";
 import { MyceliumCreateButton } from "@/components/mycelium-create-button";
@@ -11,6 +17,31 @@ import {
   type MyceliumReference,
   type MyceliumType,
 } from "@/lib/mycelium-types";
+
+// ─── Gradient palette (matches AssetPageShell) ───────────────
+
+const GRADIENTS = [
+  "linear-gradient(135deg, #77C5D5 0%, #A8DDE8 50%, #D4F0F7 100%)",
+  "linear-gradient(135deg, #D6A461 0%, #E8C98A 50%, #F5E6C4 100%)",
+  "linear-gradient(135deg, #3A913F 0%, #6BBF6F 50%, #A8DFA9 100%)",
+  "linear-gradient(135deg, #8A3060 0%, #C47098 50%, #E8B0CC 100%)",
+  "linear-gradient(135deg, #4A5FA8 0%, #7B8FCC 50%, #B4C0E8 100%)",
+  "linear-gradient(135deg, #F87C56 0%, #FBA98A 50%, #FDD4C4 100%)",
+  "linear-gradient(135deg, #5A9B9B 0%, #88C4C4 50%, #C0E4E4 100%)",
+  "linear-gradient(135deg, #E8D44D 0%, #F0E27A 50%, #F8F0B0 100%)",
+  "linear-gradient(135deg, #DC625E 0%, #EB9290 50%, #F5C4C3 100%)",
+  "linear-gradient(135deg, #F4C3CC 0%, #F8D8DE 50%, #FCF0F2 100%)",
+  "linear-gradient(135deg, #8BAF6A 0%, #B0CF96 50%, #D4E8C4 100%)",
+  "linear-gradient(135deg, #FBDD7A 0%, #FCEAA3 50%, #FEF5D4 100%)",
+] as const;
+
+function getGradient(str: string): string {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) - hash + str.charCodeAt(i)) | 0;
+  }
+  return GRADIENTS[Math.abs(hash) % GRADIENTS.length];
+}
 
 // The API enriches each reference with cover_url and attachments with
 // preview_url. They're not part of the base type, so we widen here.
@@ -120,13 +151,18 @@ export function MyceliumFeedPage() {
 
   return (
     <div className="flex flex-col h-full">
+      {/* Banner */}
+      <Banner size="sm">
+        <BannerImage gradient={getGradient("Mycelium")} />
+        <BannerContent>
+          <BannerTitle>Mycelium</BannerTitle>
+        </BannerContent>
+      </Banner>
+
       <div className="max-w-[1920px] mx-auto px-6 py-10 w-full space-y-8">
         {/* Header */}
         <div className="flex items-start justify-between gap-4">
           <div className="space-y-4 max-w-3xl">
-            <h1 className="font-heading text-[40px] font-normal uppercase tracking-normal leading-none text-balance">
-              Mycelium
-            </h1>
             <p className="text-sm text-white/60 leading-relaxed">
               Banco coletivo de referências da marca. Todo material que inspira, alimenta e conecta o pensamento da Overlens.
             </p>
