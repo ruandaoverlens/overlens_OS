@@ -11,6 +11,7 @@ import {
   VIDEO_EXTENSIONS,
   AUDIO_EXTENSIONS,
 } from "@/lib/media-optimizer";
+import { fetchOgMetadata, downloadImage } from "@/lib/mycelium-og";
 import type {
   AttachmentKind,
   MyceliumType,
@@ -178,6 +179,42 @@ export async function POST(request: NextRequest) {
         }
       } catch (err) {
         console.error("[mycelium:create] cover unexpected error:", err);
+      }
+    }
+
+    // 2b) Fallback: nenhuma cover enviada e tem URL → puxa OpenGraph image server-side.
+    //     CORS no browser bloqueia o fetch durante o blur do form em muitos sites,
+    //     então essa rota server-side é a garantia.
+    if (!coverPath && url) {
+      try {
+        const og = await fetchOgMetadata(url);
+        if (og.image) {
+          const downloaded = await downloadImage(og.image);
+          if (downloaded) {
+            const coverStoragePath = `${refId}/cover${downloaded.ext}`;
+            const { error: ogCoverError } = await supabase.storage
+              .from("mycelium-previews")
+              .upload(coverStoragePath, downloaded.buffer, {
+                contentType: downloaded.contentType,
+                upsert: true,
+              });
+
+            if (ogCoverError) {
+              console.error(
+                "[mycelium:create] OG cover upload failed:",
+                ogCoverError.message,
+              );
+            } else {
+              coverPath = coverStoragePath;
+              await supabase
+                .from("mycelium_references")
+                .update({ cover_path: coverPath })
+                .eq("id", refId);
+            }
+          }
+        }
+      } catch (err) {
+        console.error("[mycelium:create] OG fallback failed:", err);
       }
     }
 

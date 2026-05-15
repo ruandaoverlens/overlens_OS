@@ -7,6 +7,13 @@ import {
   BannerContent,
   BannerTitle,
 } from "@/components/ui/banner";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+  InputGroupText,
+} from "@/components/ui/input-group";
+import { SmSearchLineIcon } from "@/components/icons";
 import { MyceliumCard } from "@/components/mycelium-card";
 import { MyceliumLightbox } from "@/components/mycelium-lightbox";
 import { MyceliumCreateButton } from "@/components/mycelium-create-button";
@@ -56,37 +63,13 @@ type FeedReference = MyceliumReference & {
   attachments?: FeedAttachment[];
 };
 
-// ─── Filter chip ─────────────────────────────────────────────
-
-function FilterChip({
-  label,
-  active,
-  onClick,
-}: {
-  label: string;
-  active: boolean;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className={`px-3 py-1.5 rounded-sm text-xs uppercase tracking-wider transition-colors ${
-        active
-          ? "bg-white/15 text-white"
-          : "bg-white/[0.03] text-white/50 hover:bg-white/[0.06] hover:text-white/80"
-      }`}
-    >
-      {label}
-    </button>
-  );
-}
-
 // ─── Page ────────────────────────────────────────────────────
 
 export function MyceliumFeedPage() {
   const [references, setReferences] = useState<FeedReference[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeType, setActiveType] = useState<MyceliumType | null>(null);
+  const [search, setSearch] = useState("");
   const [selected, setSelected] = useState<FeedReference | null>(null);
   const { isFavorite, toggleFavorite } = useFavorites();
 
@@ -94,6 +77,7 @@ export function MyceliumFeedPage() {
     setLoading(true);
     const params = new URLSearchParams();
     if (activeType) params.set("type", activeType);
+    if (search.trim()) params.set("q", search.trim());
     params.set("limit", "60");
     try {
       const r = await fetch(`/api/mycelium/list?${params.toString()}`);
@@ -106,10 +90,9 @@ export function MyceliumFeedPage() {
     } finally {
       setLoading(false);
     }
-  }, [activeType]);
+  }, [activeType, search]);
 
-  // Fetch on mount and when filter changes.
-  // TODO: swap `limit=60` for real server-side pagination once usage grows.
+  // Fetch on mount and when filter/search changes.
   useEffect(() => {
     fetchReferences();
   }, [fetchReferences]);
@@ -159,35 +142,54 @@ export function MyceliumFeedPage() {
         </BannerContent>
       </Banner>
 
-      <div className="max-w-[1920px] mx-auto px-6 py-10 w-full space-y-8">
-        {/* Header */}
-        <div className="flex items-start justify-between gap-4">
-          <div className="space-y-4 max-w-3xl">
-            <p className="text-sm text-white/60 leading-relaxed">
-              Banco coletivo de referências da marca. Todo material que inspira, alimenta e conecta o pensamento da Overlens.
-            </p>
-          </div>
-          <MyceliumCreateButton className="shrink-0" />
-        </div>
-
-        {/* Type filters */}
-        <div className="flex flex-wrap gap-2">
-          <FilterChip
-            label="Todos"
-            active={activeType === null}
-            onClick={() => setActiveType(null)}
+      {/* Search + Adicionar */}
+      <div className="flex items-center gap-2 px-4 pt-4 pb-3 max-w-[1920px] mx-auto w-full min-w-0">
+        <InputGroup size="sm" className="flex-1 min-w-0 rounded-full">
+          <InputGroupAddon align="inline-start">
+            <InputGroupText>
+              <SmSearchLineIcon />
+            </InputGroupText>
+          </InputGroupAddon>
+          <InputGroupInput
+            placeholder="Buscar no Mycelium..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
+        </InputGroup>
+        <MyceliumCreateButton className="shrink-0" />
+      </div>
+
+      {/* Type filters */}
+      <div className="px-4 pb-2 max-w-[1920px] mx-auto w-full">
+        <div className="flex flex-wrap gap-1.5">
+          <button
+            onClick={() => setActiveType(null)}
+            className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+              activeType === null
+                ? "bg-white text-black"
+                : "bg-[var(--surface-900)] text-[var(--surface-400)] hover:text-[var(--surface-200)]"
+            }`}
+          >
+            Todos
+          </button>
           {MYCELIUM_TYPES.map((t) => (
-            <FilterChip
+            <button
               key={t.value}
-              label={t.label}
-              active={activeType === t.value}
               onClick={() => setActiveType(t.value)}
-            />
+              className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                activeType === t.value
+                  ? "bg-white text-black"
+                  : "bg-[var(--surface-900)] text-[var(--surface-400)] hover:text-[var(--surface-200)]"
+              }`}
+            >
+              {t.label}
+            </button>
           ))}
         </div>
+      </div>
 
-        {/* Grid / states */}
+      {/* Content */}
+      <div className="flex-1 overflow-y-auto px-4 pt-2 max-w-[1920px] mx-auto w-full">
         {loading ? (
           <div className="flex items-center justify-center py-16">
             <p className="text-sm text-white/40">Carregando referências...</p>
@@ -218,6 +220,7 @@ export function MyceliumFeedPage() {
             )}
           </>
         )}
+        <div className="h-[200px] w-full shrink-0" aria-hidden="true" />
       </div>
 
       {selected && (

@@ -62,7 +62,7 @@ export function MyceliumSidebar() {
       <SidebarHeader>
         <div className="flex h-12 items-center justify-between pb-[2px] pl-4 pr-0">
           <Link href="/mycelium" className="flex items-center gap-2">
-            <SmGitForkLineIcon className="size-5 text-[var(--surface-500)]" />
+            <SmGitForkLineIcon className="size-6 text-[var(--surface-500)]" />
             <span className="text-sm font-medium text-[var(--surface-300)]">
               Mycelium
             </span>
