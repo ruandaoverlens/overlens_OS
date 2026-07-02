@@ -152,7 +152,6 @@ async function main() {
   }
 
   let totalUploaded = 0;
-  let totalSkipped = 0;
   let totalErrors = 0;
 
   for (const group of GROUPS) {

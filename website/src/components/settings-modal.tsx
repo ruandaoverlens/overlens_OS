@@ -53,13 +53,16 @@ export function SettingsModal({ open, onOpenChange }: SettingsModalProps) {
   const [name, setName] = useState(user?.name ?? "");
   const [email, setEmail] = useState(user?.email ?? "");
 
-  // Sync local state when user data loads asynchronously
-  useEffect(() => {
+  // Sync local state when user data loads/changes asynchronously. Adjust during
+  // render (tracking the previous user ref) instead of a setState-in-effect.
+  const [prevUser, setPrevUser] = useState(user);
+  if (user !== prevUser) {
+    setPrevUser(user);
     if (user) {
       setName(user.name);
       setEmail(user.email);
     }
-  }, [user]);
+  }
 
   const isAdmin = canManageMembers(user?.role ?? "gratuito");
 

@@ -281,7 +281,7 @@ async function main() {
     }
 
     // In retry mode, list existing objects so we can skip them
-    let existingPaths = new Set<string>();
+    const existingPaths = new Set<string>();
     if (retryFailed) {
       // List all objects in this group's folder
       let offset = 0;
@@ -361,11 +361,12 @@ async function main() {
           totalUploaded++;
           totalBytes += size;
           completed++;
-        } catch (err: any) {
+        } catch (err) {
           totalErrors++;
           completed++;
+          const message = err instanceof Error ? err.message : String(err);
           console.error(
-            `  [ERROR] ${file.relativePath} (${formatBytes(size)}): ${err.message ?? err}`
+            `  [ERROR] ${file.relativePath} (${formatBytes(size)}): ${message}`
           );
         }
       } else {

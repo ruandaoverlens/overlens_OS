@@ -101,7 +101,7 @@ function NotificationBarContent({
   ...props
 }: React.ComponentProps<typeof PopoverPrimitive.Content>) {
   const isMobile = useIsMobile()
-  const { open, onOpenChange } = React.useContext(NotificationBarContext)
+  const { open } = React.useContext(NotificationBarContext)
 
   if (isMobile) {
     if (!open) return null

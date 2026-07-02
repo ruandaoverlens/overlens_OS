@@ -152,9 +152,9 @@ async function main() {
       await tusUpload(fullPath, storagePath, "video/mp4", supabaseUrl, serviceRoleKey);
       uploaded++;
       totalBytes += size;
-    } catch (err: any) {
+    } catch (err) {
       errors++;
-      console.error(`  ERROR: ${err.message ?? err}`);
+      console.error(`  ERROR: ${err instanceof Error ? err.message : String(err)}`);
     }
   }
 

@@ -98,11 +98,7 @@ export function ColorDetail({
   color: BrandColor;
   onClose: () => void;
 }) {
-  const [hex, setHex] = useState("");
-
-  useEffect(() => {
-    setHex(oklchToHex(color.oklch));
-  }, [color.oklch]);
+  const hex = oklchToHex(color.oklch);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {

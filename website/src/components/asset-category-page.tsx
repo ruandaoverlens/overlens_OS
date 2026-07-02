@@ -12,8 +12,6 @@ import {
 import {
   SmHomeSolidIcon,
   SmFavoriteLineIcon,
-  SmHistoryLineIcon,
-  SmFolderLineIcon,
   SmDocLineIcon,
   SmAsteriskLineIcon,
   SmContrastLineIcon,

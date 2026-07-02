@@ -45,7 +45,13 @@ export function FavoritesProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<FavoriteItem[]>([]);
   const [mounted, setMounted] = useState(false);
 
+  // Intentional mount-time load from localStorage: we render [] on the server
+  // and first client render (avoids hydration mismatch), then hydrate from
+  // storage AND flag mounted in the same pass so the save-effect below never
+  // fires before the load completes. This is the sanctioned "sync with an
+  // external system on mount" use of an effect.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setItems(loadFavorites());
     setMounted(true);
   }, []);

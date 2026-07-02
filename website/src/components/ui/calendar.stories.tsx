@@ -111,7 +111,7 @@ export const Range: Story = {
       <Calendar
         mode="range"
         selected={range}
-        onSelect={(_r: any, day: Date) => {
+        onSelect={(_r: { from: Date; to?: Date } | undefined, day: Date) => {
           if (!range || (range.from && range.to)) {
             setRange({ from: day });
           } else {
@@ -195,7 +195,7 @@ export const AllVariants: Story = {
           <Calendar
             mode="range"
             selected={rangeDate}
-            onSelect={(_r: any, day: Date) => {
+            onSelect={(_r: { from: Date; to?: Date } | undefined, day: Date) => {
               if (!rangeDate || (rangeDate.from && rangeDate.to)) {
                 setRangeDate({ from: day });
               } else {

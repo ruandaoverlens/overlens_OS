@@ -5,6 +5,83 @@ import { Slot } from "radix-ui"
 import { cn } from "@/lib/utils"
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
 
+/** Extract the inner content of a breadcrumb child element. */
+function getInner(child: React.ReactNode): React.ReactNode {
+  return React.isValidElement(child)
+    ? ((child as React.ReactElement).props as { children?: React.ReactNode })
+        .children
+    : child
+}
+
+/** Renders a list of breadcrumb items inside a popover. */
+function PopoverItemList({
+  items,
+  showCurrentPage,
+}: {
+  items: React.ReactNode[]
+  showCurrentPage?: boolean
+}) {
+  return (
+    <nav aria-label="Full breadcrumb trail">
+      <ol className="flex flex-col gap-4 text-sm">
+        {items.map((child, index) => {
+          const inner = getInner(child)
+          const isLast = index === items.length - 1
+          if (
+            isLast &&
+            showCurrentPage &&
+            React.isValidElement(inner) &&
+            inner.type === BreadcrumbPage
+          ) {
+            return (
+              <li
+                key={index}
+                className="inline-flex items-center gap-1.5 text-[var(--surface-500)] pointer-events-none"
+                aria-disabled="true"
+              >
+                {(inner.props as { children?: React.ReactNode }).children}
+              </li>
+            )
+          }
+          return (
+            <li key={index} className="inline-flex items-center gap-1.5">
+              {inner}
+            </li>
+          )
+        })}
+      </ol>
+    </nav>
+  )
+}
+
+/** Ellipsis button that opens a popover with collapsed items. */
+function EllipsisPopover({
+  items,
+  showCurrentPage,
+  label,
+}: {
+  items: React.ReactNode[]
+  showCurrentPage?: boolean
+  label: string
+}) {
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <button
+          type="button"
+          className="flex size-9 items-center justify-center hover:text-foreground transition-colors"
+          aria-label={label}
+        >
+          <SmMoreSolidIcon className="size-6" />
+        </button>
+      </PopoverTrigger>
+      <PopoverContent align="start" className="w-auto max-w-72">
+        <PopoverItemList items={items} showCurrentPage={showCurrentPage} />
+      </PopoverContent>
+    </Popover>
+  )
+}
+
 /** Navigation breadcrumb trail showing the current page hierarchy. */
 function Breadcrumb({ ...props }: React.ComponentProps<"nav">) {
   return <nav aria-label="breadcrumb" data-slot="breadcrumb" {...props} />
@@ -45,81 +122,6 @@ function BreadcrumbList({
   const firstChild = allItems[0]
   const middleItems = allItems.slice(1, -1)
   const lastChild = allItems[allItems.length - 1]
-
-  const getInner = (child: React.ReactNode) =>
-    React.isValidElement(child)
-      ? ((child as React.ReactElement).props as { children?: React.ReactNode })
-          .children
-      : child
-
-  /** Renders a list of items inside a popover */
-  function PopoverItemList({
-    items,
-    showCurrentPage,
-  }: {
-    items: React.ReactNode[]
-    showCurrentPage?: boolean
-  }) {
-    return (
-      <nav aria-label="Full breadcrumb trail">
-        <ol className="flex flex-col gap-4 text-sm">
-          {items.map((child, index) => {
-            const inner = getInner(child)
-            const isLast = index === items.length - 1
-            if (
-              isLast &&
-              showCurrentPage &&
-              React.isValidElement(inner) &&
-              inner.type === BreadcrumbPage
-            ) {
-              return (
-                <li
-                  key={index}
-                  className="inline-flex items-center gap-1.5 text-[var(--surface-500)] pointer-events-none"
-                  aria-disabled="true"
-                >
-                  {(inner.props as { children?: React.ReactNode }).children}
-                </li>
-              )
-            }
-            return (
-              <li key={index} className="inline-flex items-center gap-1.5">
-                {inner}
-              </li>
-            )
-          })}
-        </ol>
-      </nav>
-    )
-  }
-
-  /** Ellipsis button that opens a popover */
-  function EllipsisPopover({
-    items,
-    showCurrentPage,
-    label,
-  }: {
-    items: React.ReactNode[]
-    showCurrentPage?: boolean
-    label: string
-  }) {
-    return (
-      <Popover>
-        <PopoverTrigger asChild>
-          <button
-            type="button"
-            className="flex size-9 items-center justify-center hover:text-foreground transition-colors"
-            aria-label={label}
-          >
-            <SmMoreSolidIcon className="size-6" />
-          </button>
-        </PopoverTrigger>
-        <PopoverContent align="start" className="w-auto max-w-72">
-          <PopoverItemList items={items} showCurrentPage={showCurrentPage} />
-        </PopoverContent>
-      </Popover>
-    )
-  }
 
   return (
     <ol data-slot="breadcrumb-list" className={listClassName} {...props}>

@@ -278,7 +278,6 @@ export async function compressImageIfNeeded(
     if (err instanceof DOMException && err.name === "AbortError") {
       throw err;
     }
-    // eslint-disable-next-line no-console
     console.warn("[image-compress] failed, returning original:", err);
     return unchanged(file);
   }

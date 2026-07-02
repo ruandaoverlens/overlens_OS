@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import {
   Popover,
   PopoverTrigger,
@@ -109,11 +109,7 @@ function ColorValue({ label, value }: { label: string; value: string }) {
 }
 
 function ColorCard({ color }: { color: BrandColor }) {
-  const [hex, setHex] = useState("")
-
-  useEffect(() => {
-    setHex(oklchToHex(color.oklch))
-  }, [color.oklch])
+  const hex = oklchToHex(color.oklch)
 
   return (
     <Popover>

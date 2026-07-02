@@ -62,12 +62,12 @@ export function MusicPlayerProvider({ children }: { children: React.ReactNode })
     };
   }, []);
 
-  const updateProgress = useCallback(() => {
+  const updateProgress = useCallback(function tick() {
     const audio = audioRef.current;
     if (audio && audio.duration) {
       setProgress(audio.currentTime / audio.duration);
     }
-    animRef.current = requestAnimationFrame(updateProgress);
+    animRef.current = requestAnimationFrame(tick);
   }, []);
 
   const playTrack = useCallback(

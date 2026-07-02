@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { SmCloseLineIcon, SmArrowOutwardLineIcon } from "@/components/icons";
+import { SmCloseLineIcon } from "@/components/icons";
 
 // ─── Data ────────────────────────────────────────────────────
 

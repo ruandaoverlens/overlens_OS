@@ -24,10 +24,14 @@ function TopbarProfileWithAuth({ email }: { email: string }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (!user) {
-      login(email, "password");
-    }
-    setReady(true);
+    let cancelled = false;
+    (async () => {
+      if (!user) await login(email, "password");
+      if (!cancelled) setReady(true);
+    })();
+    return () => {
+      cancelled = true;
+    };
   }, [email, login, user]);
 
   if (!ready || !user) return null;

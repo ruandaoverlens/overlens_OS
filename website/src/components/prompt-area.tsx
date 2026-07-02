@@ -143,7 +143,6 @@ export function PromptArea({
   placeholder = "Pergunte alguma coisa",
   className,
   citableSections = [],
-  basePath = "",
   onSubmit,
   disabled = false,
   loading = false,

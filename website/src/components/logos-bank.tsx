@@ -77,7 +77,6 @@ function LogoCard({
       onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick(); } }}
       className="rounded-xl border border-border/40 bg-accent/20 overflow-hidden cursor-pointer hover:bg-accent/40 hover:border-border/60 transition-all text-left w-full group relative"
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <div className="flex items-center justify-center bg-[var(--surface-950)] p-8 aspect-[4/3] relative">
         <img
           src={asset.lightSrc}
@@ -215,7 +214,6 @@ export function LogoModal({
             <p className="text-xs text-white/50 uppercase tracking-wider">
               Dark
             </p>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <div className="w-full aspect-[4/3] bg-black border border-white/10 rounded-lg flex items-center justify-center p-8">
               <img
                 src={asset.lightSrc}
@@ -233,7 +231,6 @@ export function LogoModal({
             <p className="text-xs text-white/50 uppercase tracking-wider">
               Light
             </p>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <div className="w-full aspect-[4/3] bg-white border border-white/10 rounded-lg flex items-center justify-center p-8">
               <img
                 src={asset.darkSrc}

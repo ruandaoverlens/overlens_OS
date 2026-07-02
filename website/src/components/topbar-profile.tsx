@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useMounted } from "@/lib/use-mounted";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,12 +24,10 @@ function getInitials(name?: string): string {
 }
 
 export function TopbarProfile() {
-  const { user, loading, logout } = useAuth();
+  const { user, logout } = useAuth();
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [hasMounted, setHasMounted] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
-
-  useEffect(() => setHasMounted(true), []);
+  const hasMounted = useMounted();
 
   // Don't render during SSR
   if (!hasMounted) return null;

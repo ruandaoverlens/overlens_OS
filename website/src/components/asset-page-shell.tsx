@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useMounted } from "@/lib/use-mounted";
 import {
   Banner,
   BannerImage,
@@ -148,9 +149,7 @@ export function AssetPageShell({
   const [internalSearch, setInternalSearch] = useState("");
   const [internalTags, setInternalTags] = useState<Set<string>>(new Set());
   const [uploadOpen, setUploadOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => { setMounted(true); }, []);
+  const mounted = useMounted();
 
   const currentSearch = search ?? internalSearch;
   const currentOnSearch = onSearchChange ?? setInternalSearch;

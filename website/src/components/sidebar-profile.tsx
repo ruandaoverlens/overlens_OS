@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useMounted } from "@/lib/use-mounted";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -25,10 +26,8 @@ function getInitials(name?: string): string {
 export function SidebarProfile() {
   const { user, logout } = useAuth();
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [hasMounted, setHasMounted] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
-
-  useEffect(() => setHasMounted(true), []);
+  const hasMounted = useMounted();
 
   if (!hasMounted) return null;
 

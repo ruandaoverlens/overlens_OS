@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { useMounted } from "@/lib/use-mounted";
 import { useParams } from "next/navigation";
 import {
   Sidebar,
@@ -37,6 +38,7 @@ import {
   SmMessageCircleLineIcon,
   SmMessageCircleSolidIcon,
   SmGitForkLineIcon,
+  SmChartLineIcon,
 } from "@/components/icons";
 import { useAuth, canAccessRoute } from "@/lib/auth";
 import { SidebarProfile } from "@/components/sidebar-profile";
@@ -152,10 +154,14 @@ function SectionItem({
     findAncestorSlug(section.children, basePath, currentPath)
   );
 
-  useEffect(() => {
+  // Auto-open the ancestor accordion when navigation changes the path.
+  // Adjust state during render (React-recommended) rather than in an effect.
+  const [prevPath, setPrevPath] = useState(currentPath);
+  if (prevPath !== currentPath) {
+    setPrevPath(currentPath);
     const ancestor = findAncestorSlug(section.children, basePath, currentPath);
     if (ancestor) setOpenChildSlug(ancestor);
-  }, [section.children, basePath, currentPath]);
+  }
 
   const handleChildToggle = (slug: string, isOpen: boolean) => {
     setOpenChildSlug(isOpen ? slug : null);
@@ -250,10 +256,14 @@ function NestedSectionItem({
     findAncestorSlug(section.children, basePath, currentPath)
   );
 
-  useEffect(() => {
+  // Auto-open the ancestor accordion when navigation changes the path.
+  // Adjust state during render (React-recommended) rather than in an effect.
+  const [prevPath, setPrevPath] = useState(currentPath);
+  if (prevPath !== currentPath) {
+    setPrevPath(currentPath);
     const ancestor = findAncestorSlug(section.children, basePath, currentPath);
     if (ancestor) setOpenChildSlug(ancestor);
-  }, [section.children, basePath, currentPath]);
+  }
 
   const handleChildToggle = (slug: string, isOpen: boolean) => {
     setOpenChildSlug(isOpen ? slug : null);
@@ -333,7 +343,6 @@ export function SystemSidebar({
   sections,
   basePath,
   title,
-  subtitle,
   backHref,
   backLabel,
   footerLinks,
@@ -353,10 +362,10 @@ export function SystemSidebar({
   defaultView?: "directives" | "conversations";
 }) {
   const { user } = useAuth();
-  const [hasMounted, setHasMounted] = useState(false);
-  useEffect(() => setHasMounted(true), []);
+  const hasMounted = useMounted();
   const canAccessAssets = hasMounted && user ? canAccessRoute(user.role, "/assets") : false;
   const canAccessMycelium = hasMounted && user ? canAccessRoute(user.role, "/mycelium") : false;
+  const isAdmin = hasMounted && user ? user.role === "admin" : false;
 
   const params = useParams();
   const rawSlug = params?.slug;
@@ -376,10 +385,14 @@ export function SystemSidebar({
   const activeConversationId =
     typeof params?.id === "string" ? params.id : undefined;
 
-  useEffect(() => {
+  // Auto-open the ancestor accordion when navigation changes the path.
+  // Adjust state during render (React-recommended) rather than in an effect.
+  const [prevPath, setPrevPath] = useState(currentPath);
+  if (prevPath !== currentPath) {
+    setPrevPath(currentPath);
     const ancestor = findAncestorSlug(sections, basePath, currentPath);
     if (ancestor) setOpenSlug(ancestor);
-  }, [sections, basePath, currentPath]);
+  }
 
   const handleToggle = (slug: string, isOpen: boolean) => {
     setOpenSlug(isOpen ? slug : null);
@@ -494,6 +507,20 @@ export function SystemSidebar({
                         {canAccessMycelium ? "Mycelium" : "Mycelium (bloqueado)"}
                       </TooltipContent>
                     </Tooltip>
+                    {isAdmin && (
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Link
+                            href="/admin/insights"
+                            aria-label="Painel Admin"
+                            className="group/admin relative flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-white"
+                          >
+                            <SmChartLineIcon className="size-6" />
+                          </Link>
+                        </TooltipTrigger>
+                        <TooltipContent>Painel Admin · Insights de IA</TooltipContent>
+                      </Tooltip>
+                    )}
                     {showTabs && (
                       <Tooltip>
                         <TooltipTrigger asChild>

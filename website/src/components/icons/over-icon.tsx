@@ -1,4 +1,4 @@
-import { forwardRef, lazy, Suspense } from "react";
+import { forwardRef, createElement } from "react";
 import type { SVGProps, ComponentType } from "react";
 
 type IconSize = "sm" | "md" | "micro";
@@ -56,7 +56,7 @@ const OverIcon = forwardRef<SVGSVGElement, OverIconProps>(
       return null;
     }
 
-    return <IconComponent ref={ref} {...props} />;
+    return createElement(IconComponent, { ref, ...props });
   }
 );
 

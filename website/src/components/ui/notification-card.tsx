@@ -63,7 +63,8 @@ function NotificationCard({
 }) {
   const { allRead, registerUnread, markAsRead } = useNotificationBar()
   const [read, setRead] = React.useState(false)
-  const cardId = React.useRef(id ?? Math.random().toString(36).slice(2)).current
+  const generatedId = React.useId()
+  const cardId = id ?? generatedId
   const isUnread = unread && !read && !allRead
 
   React.useEffect(() => {

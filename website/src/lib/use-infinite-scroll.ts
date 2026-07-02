@@ -14,11 +14,14 @@ export function useInfiniteScroll<T>(items: T[], pageSize = PAGE_SIZE) {
   const sentinelRef = useRef<HTMLDivElement | null>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
-  // Reset page when items change (e.g. filter/search)
+  // Reset page when items change (e.g. filter/search). Adjust during render
+  // (tracking the previous length) instead of a setState-in-effect.
   const itemsKey = items.length;
-  useEffect(() => {
+  const [prevItemsKey, setPrevItemsKey] = useState(itemsKey);
+  if (prevItemsKey !== itemsKey) {
+    setPrevItemsKey(itemsKey);
     setPage(1);
-  }, [itemsKey]);
+  }
 
   const visibleItems = useMemo(
     () => items.slice(0, page * pageSize),
