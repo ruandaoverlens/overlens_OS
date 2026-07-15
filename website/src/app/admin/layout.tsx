@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   SidebarProvider,
   SidebarInset,
@@ -8,7 +7,6 @@ import { SystemSidebar } from "@/components/doc-sidebar";
 import { getChatConversations } from "@/lib/chat-conversations";
 import { AppSwitcher } from "@/components/app-switcher";
 import { AppNotifications } from "@/components/app-notifications";
-import { SmArrowBackLineIcon } from "@/components/icons";
 import { getSystemConfig } from "@/lib/system-configs";
 
 export default async function AdminLayout({
@@ -33,15 +31,7 @@ export default async function AdminLayout({
       />
       <SidebarInset>
         <Topbar>
-          <TopbarBreadcrumb>
-            <Link
-              href="/docs"
-              className="flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <SmArrowBackLineIcon className="size-4" />
-              <span>Painel Admin</span>
-            </Link>
-          </TopbarBreadcrumb>
+          <TopbarBreadcrumb />
           <TopbarActions>
             <AppNotifications />
             <AppSwitcher />

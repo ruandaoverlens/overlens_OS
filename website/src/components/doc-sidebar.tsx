@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useMounted } from "@/lib/use-mounted";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import {
   Sidebar,
   SidebarContent,
@@ -368,6 +368,8 @@ export function SystemSidebar({
   const isAdmin = hasMounted && user ? user.role === "admin" : false;
 
   const params = useParams();
+  const pathname = usePathname();
+  const isAdminRoute = pathname?.startsWith("/admin") ?? false;
   const rawSlug = params?.slug;
   const currentSegments: string[] = Array.isArray(rawSlug)
     ? rawSlug
@@ -513,7 +515,13 @@ export function SystemSidebar({
                           <Link
                             href="/admin/insights"
                             aria-label="Painel Admin"
-                            className="group/admin relative flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-white"
+                            aria-current={isAdminRoute ? "page" : undefined}
+                            className={cn(
+                              "group/admin relative flex size-8 items-center justify-center transition-colors",
+                              isAdminRoute
+                                ? "text-white"
+                                : "text-muted-foreground hover:text-white",
+                            )}
                           >
                             <SmChartLineIcon className="size-6" />
                           </Link>
