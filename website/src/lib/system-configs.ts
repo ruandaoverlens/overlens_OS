@@ -40,6 +40,8 @@ export type SystemConfig = {
   footerLinks?: SidebarLink[];
   backHref?: string;
   backLabel?: string;
+  /** Links extras exibidos no topo do menu apenas para admins. */
+  adminLinks?: SidebarLink[];
 };
 
 function toNav(sections: DocSection[]): NavSection[] {
@@ -86,6 +88,7 @@ const SYSTEMS: Record<SystemSlug, SystemConfig> = {
     getNav: () => toNav(getSections()),
     separatorAfterIndex: 1,
     footerLinks: [{ title: "Pacote Cultural", href: "/pacote" }],
+    adminLinks: [{ title: "Insights", href: "/admin/insights" }],
   },
   estudio: {
     slug: "estudio",

@@ -47,6 +47,7 @@ export default async function ChatLayout({
         backLabel={config.backLabel}
         conversations={conversations}
         defaultView="conversations"
+        adminLinks={config.adminLinks}
       />
       <SidebarInset className="h-[calc(100svh-var(--now-playing-h,0px))] overflow-hidden">
         <Topbar>

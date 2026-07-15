@@ -136,7 +136,6 @@ export { SmGitForkLineIcon } from "./sm/sm-git-fork-line";
 export { SmBugLineIcon } from "./sm/sm-bug-line";
 export { SmCalendarSolidIcon } from "./sm/sm-calendar-solid";
 export { SmChartLineIcon } from "./sm/sm-chart-line";
-export { SmChartSolidIcon } from "./sm/sm-chart-solid";
 export { SmChatLineIcon } from "./sm/sm-chat-line";
 export { SmChatSolidIcon } from "./sm/sm-chat-solid";
 export { SmCheckLineIcon } from "./sm/sm-check-line";

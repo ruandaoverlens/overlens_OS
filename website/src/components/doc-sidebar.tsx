@@ -38,8 +38,6 @@ import {
   SmMessageCircleLineIcon,
   SmMessageCircleSolidIcon,
   SmGitForkLineIcon,
-  SmChartLineIcon,
-  SmChartSolidIcon,
 } from "@/components/icons";
 import { useAuth, canAccessRoute } from "@/lib/auth";
 import { SidebarProfile } from "@/components/sidebar-profile";
@@ -350,7 +348,7 @@ export function SystemSidebar({
   separatorAfterIndex,
   conversations,
   defaultView = "directives",
-  indexLabel = "Introdução",
+  adminLinks,
 }: {
   sections: NavSection[];
   basePath: string;
@@ -362,7 +360,7 @@ export function SystemSidebar({
   separatorAfterIndex?: number;
   conversations?: ChatConversationLink[];
   defaultView?: "directives" | "conversations";
-  indexLabel?: string;
+  adminLinks?: SidebarLink[];
 }) {
   const { user } = useAuth();
   const hasMounted = useMounted();
@@ -374,19 +372,12 @@ export function SystemSidebar({
   const pathname = usePathname();
   const router = useRouter();
   const isAdminRoute = pathname?.startsWith("/admin") ?? false;
-
-  // Segments of the current route relative to basePath. Derived from the
-  // pathname (not params.slug) so it works for static routes too (e.g. the
-  // admin panel), not only [...slug] catch-alls.
-  const isUnderBasePath =
-    !!pathname && (pathname === basePath || pathname.startsWith(basePath + "/"));
-  const currentSegments: string[] = isUnderBasePath
-    ? pathname!
-        .slice(basePath.length)
-        .split("/")
-        .filter(Boolean)
-        .map(decodeURIComponent)
-    : [];
+  const rawSlug = params?.slug;
+  const currentSegments: string[] = Array.isArray(rawSlug)
+    ? rawSlug
+    : rawSlug
+      ? [rawSlug]
+      : [];
 
   const currentPath = "/" + currentSegments.join("/");
 
@@ -520,33 +511,6 @@ export function SystemSidebar({
                         {canAccessMycelium ? "Mycelium" : "Mycelium (bloqueado)"}
                       </TooltipContent>
                     </Tooltip>
-                    {isAdmin && (
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Link
-                            href="/admin/insights"
-                            aria-label="Painel Admin"
-                            aria-current={isAdminRoute ? "page" : undefined}
-                            className={cn(
-                              "group/admin relative flex size-8 items-center justify-center transition-colors",
-                              isAdminRoute
-                                ? "text-white"
-                                : "text-muted-foreground hover:text-white",
-                            )}
-                          >
-                            {isAdminRoute ? (
-                              <SmChartSolidIcon className="size-6" />
-                            ) : (
-                              <>
-                                <SmChartLineIcon className="size-6 transition-opacity group-hover/admin:opacity-0" />
-                                <SmChartSolidIcon className="absolute size-6 opacity-0 transition-opacity group-hover/admin:opacity-100" />
-                              </>
-                            )}
-                          </Link>
-                        </TooltipTrigger>
-                        <TooltipContent>Painel Admin · Insights de IA</TooltipContent>
-                      </Tooltip>
-                    )}
                     {showTabs && (
                       <Tooltip>
                         <TooltipTrigger asChild>
@@ -626,12 +590,22 @@ export function SystemSidebar({
               {view === "directives" && (
                 <>
                   <SidebarMenuItem className="mt-2">
-                    <SidebarMenuButton isActive={pathname === basePath} size="sm" asChild>
+                    <SidebarMenuButton isActive={currentSegments.length === 0} size="sm" asChild>
                       <Link href={basePath}>
-                        <span>{indexLabel}</span>
+                        <span>Introdução</span>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
+                  {isAdmin &&
+                    adminLinks?.map((link) => (
+                      <SidebarMenuItem key={link.href}>
+                        <SidebarMenuButton isActive={isAdminRoute} size="sm" asChild>
+                          <Link href={link.href}>
+                            <span>{link.title}</span>
+                          </Link>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    ))}
                   {sections.map((section, i) => (
                     <React.Fragment key={section.slug}>
                       <SectionItem

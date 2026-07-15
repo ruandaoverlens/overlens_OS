@@ -31,6 +31,7 @@ export default async function DocsLayout({
         separatorAfterIndex={config.separatorAfterIndex}
         footerLinks={config.footerLinks}
         conversations={conversations}
+        adminLinks={config.adminLinks}
       />
       <SidebarInset>
         <Topbar>
