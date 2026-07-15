@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useMounted } from "@/lib/use-mounted";
-import { useParams, usePathname } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import {
   Sidebar,
   SidebarContent,
@@ -369,6 +369,7 @@ export function SystemSidebar({
 
   const params = useParams();
   const pathname = usePathname();
+  const router = useRouter();
   const isAdminRoute = pathname?.startsWith("/admin") ?? false;
   const rawSlug = params?.slug;
   const currentSegments: string[] = Array.isArray(rawSlug)
@@ -561,7 +562,11 @@ export function SystemSidebar({
                         <TooltipTrigger asChild>
                           <button
                             type="button"
-                            onClick={() => setView("conversations")}
+                            onClick={() => {
+                              setView("conversations");
+                              // Abre a home do sistema (composer "Pergunte alguma coisa")
+                              if (pathname !== basePath) router.push(basePath);
+                            }}
                             aria-label="Conversas"
                             aria-pressed={view === "conversations"}
                             className={cn(

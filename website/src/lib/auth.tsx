@@ -137,6 +137,31 @@ async function fetchProfile(
 // Set to true to bypass auth during development
 const BYPASS_AUTH = false;
 
+// Last known profile per user id, so name/role render instantly on reload
+// instead of flashing the "gratuito" fallback while the network query runs.
+// Cosmetic only — every privileged route/API re-checks the role server-side.
+const PROFILE_CACHE_PREFIX = "overlens:profile:";
+
+function readCachedUser(userId: string): User | null {
+  try {
+    const raw = window.localStorage.getItem(PROFILE_CACHE_PREFIX + userId);
+    if (!raw) return null;
+    const p = JSON.parse(raw) as User;
+    if (p && p.id === userId && typeof p.role === "string") return p;
+  } catch {
+    // localStorage indisponível ou JSON inválido — segue para o fallback
+  }
+  return null;
+}
+
+function writeCachedUser(user: User) {
+  try {
+    window.localStorage.setItem(PROFILE_CACHE_PREFIX + user.id, JSON.stringify(user));
+  } catch {
+    // quota/privacy mode — cache é opcional
+  }
+}
+
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [supabase] = useState(() => createClient());
   const [user, setUser] = useState<User | null>(
@@ -148,6 +173,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // Build a minimal User from the auth session as a fallback when
     // the profiles table query fails (e.g. RLS timing, network).
     function fallbackUser(sessionUser: { id: string; email?: string; user_metadata?: Record<string, unknown> }): User {
+      const cached = readCachedUser(sessionUser.id);
+      if (cached) return cached;
       return {
         id: sessionUser.id,
         name: (sessionUser.user_metadata?.full_name as string) ?? sessionUser.email?.split("@")[0] ?? "",
@@ -166,6 +193,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       fetchProfile(supabase, sessionUser.id).then((profile) => {
         if (profile) {
           console.log("[auth] profile loaded:", profile.name, profile.role);
+          writeCachedUser(profile);
           setUser(profile);
         } else {
           console.log("[auth] profile query failed, using fallback");
