@@ -39,6 +39,7 @@ import {
   SmMessageCircleSolidIcon,
   SmGitForkLineIcon,
   SmChartLineIcon,
+  SmChartSolidIcon,
 } from "@/components/icons";
 import { useAuth, canAccessRoute } from "@/lib/auth";
 import { SidebarProfile } from "@/components/sidebar-profile";
@@ -349,6 +350,7 @@ export function SystemSidebar({
   separatorAfterIndex,
   conversations,
   defaultView = "directives",
+  indexLabel = "Introdução",
 }: {
   sections: NavSection[];
   basePath: string;
@@ -360,6 +362,7 @@ export function SystemSidebar({
   separatorAfterIndex?: number;
   conversations?: ChatConversationLink[];
   defaultView?: "directives" | "conversations";
+  indexLabel?: string;
 }) {
   const { user } = useAuth();
   const hasMounted = useMounted();
@@ -371,12 +374,19 @@ export function SystemSidebar({
   const pathname = usePathname();
   const router = useRouter();
   const isAdminRoute = pathname?.startsWith("/admin") ?? false;
-  const rawSlug = params?.slug;
-  const currentSegments: string[] = Array.isArray(rawSlug)
-    ? rawSlug
-    : rawSlug
-      ? [rawSlug]
-      : [];
+
+  // Segments of the current route relative to basePath. Derived from the
+  // pathname (not params.slug) so it works for static routes too (e.g. the
+  // admin panel), not only [...slug] catch-alls.
+  const isUnderBasePath =
+    !!pathname && (pathname === basePath || pathname.startsWith(basePath + "/"));
+  const currentSegments: string[] = isUnderBasePath
+    ? pathname!
+        .slice(basePath.length)
+        .split("/")
+        .filter(Boolean)
+        .map(decodeURIComponent)
+    : [];
 
   const currentPath = "/" + currentSegments.join("/");
 
@@ -524,7 +534,14 @@ export function SystemSidebar({
                                 : "text-muted-foreground hover:text-white",
                             )}
                           >
-                            <SmChartLineIcon className="size-6" />
+                            {isAdminRoute ? (
+                              <SmChartSolidIcon className="size-6" />
+                            ) : (
+                              <>
+                                <SmChartLineIcon className="size-6 transition-opacity group-hover/admin:opacity-0" />
+                                <SmChartSolidIcon className="absolute size-6 opacity-0 transition-opacity group-hover/admin:opacity-100" />
+                              </>
+                            )}
                           </Link>
                         </TooltipTrigger>
                         <TooltipContent>Painel Admin · Insights de IA</TooltipContent>
@@ -609,9 +626,9 @@ export function SystemSidebar({
               {view === "directives" && (
                 <>
                   <SidebarMenuItem className="mt-2">
-                    <SidebarMenuButton isActive={currentSegments.length === 0} size="sm" asChild>
+                    <SidebarMenuButton isActive={pathname === basePath} size="sm" asChild>
                       <Link href={basePath}>
-                        <span>Introdução</span>
+                        <span>{indexLabel}</span>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
