@@ -1,32 +1,54 @@
 import Link from "next/link";
+import {
+  SidebarProvider,
+  SidebarInset,
+} from "@/components/ui/sidebar";
 import { Topbar, TopbarBreadcrumb, TopbarActions } from "@/components/ui/topbar";
+import { SystemSidebar } from "@/components/doc-sidebar";
+import { getChatConversations } from "@/lib/chat-conversations";
 import { AppSwitcher } from "@/components/app-switcher";
 import { AppNotifications } from "@/components/app-notifications";
 import { SmArrowBackLineIcon } from "@/components/icons";
+import { getSystemConfig } from "@/lib/system-configs";
 
-export default function AdminLayout({
+export default async function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const config = getSystemConfig("docs");
+  const nav = config.getNav();
+  const conversations = await getChatConversations();
+
   return (
-    <div className="flex h-svh flex-col">
-      <Topbar>
-        <TopbarBreadcrumb>
-          <Link
-            href="/docs"
-            className="flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            <SmArrowBackLineIcon className="size-4" />
-            <span>Painel Admin</span>
-          </Link>
-        </TopbarBreadcrumb>
-        <TopbarActions>
-          <AppNotifications />
-          <AppSwitcher />
-        </TopbarActions>
-      </Topbar>
-      <div className="flex-1 overflow-auto">{children}</div>
-    </div>
+    <SidebarProvider>
+      <SystemSidebar
+        sections={nav}
+        basePath={config.basePath}
+        title={config.title}
+        subtitle={config.subtitle}
+        separatorAfterIndex={config.separatorAfterIndex}
+        footerLinks={config.footerLinks}
+        conversations={conversations}
+      />
+      <SidebarInset>
+        <Topbar>
+          <TopbarBreadcrumb>
+            <Link
+              href="/docs"
+              className="flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <SmArrowBackLineIcon className="size-4" />
+              <span>Painel Admin</span>
+            </Link>
+          </TopbarBreadcrumb>
+          <TopbarActions>
+            <AppNotifications />
+            <AppSwitcher />
+          </TopbarActions>
+        </Topbar>
+        <div className="flex-1 overflow-auto">{children}</div>
+      </SidebarInset>
+    </SidebarProvider>
   );
 }
