@@ -267,7 +267,7 @@ export default function AdminInsightsPage() {
                 data.questions.map((q) => (
                   <Link
                     key={q.id}
-                    href={`/chat/${q.conversationId}`}
+                    href={`/admin/conversas/${q.conversationId}`}
                     className="block rounded-lg border p-3 transition-colors hover:bg-accent/50"
                   >
                     <p className="line-clamp-2 text-sm">{q.content}</p>

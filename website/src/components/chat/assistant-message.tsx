@@ -22,6 +22,8 @@ type AssistantMessageProps = {
   messageId: string
   sources?: AssistantSource[] | null
   onRetry?: () => void
+  /** Hides copy/retry/feedback actions (e.g. admin viewing someone else's conversation). */
+  readOnly?: boolean
   className?: string
 }
 
@@ -30,6 +32,7 @@ export function AssistantMessage({
   messageId,
   sources,
   onRetry,
+  readOnly = false,
   className,
 }: AssistantMessageProps) {
   return (
@@ -173,11 +176,13 @@ export function AssistantMessage({
           </div>
         )}
 
-        <AssistantActions
-          messageId={messageId}
-          content={content}
-          onRetry={onRetry}
-        />
+        {!readOnly && (
+          <AssistantActions
+            messageId={messageId}
+            content={content}
+            onRetry={onRetry}
+          />
+        )}
       </div>
     </div>
   )
