@@ -25,6 +25,8 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
+    "fast-xml-parser": "^5.10.1",
+    "fflate": "^0.8.3",
     "gray-matter": "^4.0.3",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.577.0",

@@ -1,1 +1,6 @@
-{}
+{
+  "crons": [
+    { "path": "/api/registros/alertas/scan", "schedule": "0 9 * * *" },
+    { "path": "/api/registros/radar/ingest", "schedule": "0 12 * * 3" }
+  ]
+}

@@ -37,7 +37,7 @@ import {
   SmDocSolidIcon,
   SmMessageCircleLineIcon,
   SmMessageCircleSolidIcon,
-  SmGitForkLineIcon,
+  SmRegisteredLineIcon,
 } from "@/components/icons";
 import { useAuth, canAccessRoute } from "@/lib/auth";
 import { SidebarProfile } from "@/components/sidebar-profile";
@@ -365,7 +365,6 @@ export function SystemSidebar({
   const { user } = useAuth();
   const hasMounted = useMounted();
   const canAccessAssets = hasMounted && user ? canAccessRoute(user.role, "/assets") : false;
-  const canAccessMycelium = hasMounted && user ? canAccessRoute(user.role, "/mycelium") : false;
   const isAdmin = hasMounted && user ? user.role === "admin" : false;
 
   const params = useParams();
@@ -486,31 +485,6 @@ export function SystemSidebar({
                         {canAccessAssets ? "Assets da Marca" : "Assets da Marca (bloqueado)"}
                       </TooltipContent>
                     </Tooltip>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        {canAccessMycelium ? (
-                          <Link
-                            href="/mycelium"
-                            aria-label="Mycelium"
-                            className="group/mycelium relative flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-white"
-                          >
-                            <SmGitForkLineIcon className="size-7 [&_[data-slot=front]]:transition-colors group-hover/mycelium:[&_[data-slot=front]]:fill-current" />
-                          </Link>
-                        ) : (
-                          <button
-                            type="button"
-                            disabled
-                            aria-label="Mycelium (bloqueado)"
-                            className="flex size-8 items-center justify-center text-muted-foreground opacity-50 cursor-not-allowed"
-                          >
-                            <SmGitForkLineIcon className="size-7" />
-                          </button>
-                        )}
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        {canAccessMycelium ? "Mycelium" : "Mycelium (bloqueado)"}
-                      </TooltipContent>
-                    </Tooltip>
                     {showTabs && (
                       <Tooltip>
                         <TooltipTrigger asChild>
@@ -567,6 +541,20 @@ export function SystemSidebar({
                           </button>
                         </TooltipTrigger>
                         <TooltipContent>Conversas</TooltipContent>
+                      </Tooltip>
+                    )}
+                    {isAdmin && (
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Link
+                            href="/registros"
+                            aria-label="Ativos Registrados"
+                            className="flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+                          >
+                            <SmRegisteredLineIcon className="size-6" />
+                          </Link>
+                        </TooltipTrigger>
+                        <TooltipContent>Ativos Registrados</TooltipContent>
                       </Tooltip>
                     )}
                   </div>

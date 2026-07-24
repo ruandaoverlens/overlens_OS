@@ -8,7 +8,7 @@ const ROUTE_ACCESS: Record<UserRole, string[]> = {
   gratuito: ["/docs", "/pacote", "/plataforma", "/website", "/ferramentas"],
   assinante: ["/docs", "/pacote", "/plataforma", "/website", "/ferramentas"],
   staff: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium"],
-  admin: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/tru", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium", "/admin"],
+  admin: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/tru", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium", "/admin", "/registros"],
 };
 
 function matchesPrefix(routes: string[], pathname: string): boolean {

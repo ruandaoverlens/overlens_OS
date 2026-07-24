@@ -13,6 +13,7 @@ import {
   MdLanguageLineIcon,
   MdBoltSolidIcon,
   MdGitForkLineIcon,
+  MdRegisteredLineIcon,
 } from "@/components/icons";
 
 function OverlensSymbol() {
@@ -35,6 +36,9 @@ const apps = [
   { name: "Content System", href: "/estudio", icon: <MdCognitionLineIcon /> },
   { name: "Assets", href: "/assets", icon: <MdFolderSolidIcon /> },
   { name: "Mycelium", href: "/mycelium", icon: <MdGitForkLineIcon /> },
+  // hidden: some áreas (ex.: Ativos Registrados) não devem aparecer nem
+  // desabilitadas para quem não tem acesso — sua existência fica oculta.
+  { name: "Ativos Registrados", href: "/registros", icon: <MdRegisteredLineIcon />, hidden: true },
   { name: "Website", href: "https://overlens.com.br", icon: <MdLanguageLineIcon />, external: true },
 ];
 
@@ -44,7 +48,14 @@ export function AppSwitcher() {
   const [open, setOpen] = useState(false);
   const { user } = useAuth();
 
-  const sorted = [...apps].sort((a, b) => {
+  // Itens marcados como `hidden` só entram na lista quando o usuário tem
+  // acesso — caso contrário são removidos por completo (nem desabilitados).
+  const visible = apps.filter((app) => {
+    if (!("hidden" in app && app.hidden)) return true;
+    return user ? canAccessRoute(user.role, app.href) : false;
+  });
+
+  const sorted = [...visible].sort((a, b) => {
     const aExternal = "external" in a && a.external;
     const bExternal = "external" in b && b.external;
     const aAccess = aExternal || (user ? canAccessRoute(user.role, a.href) : true);

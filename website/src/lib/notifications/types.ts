@@ -10,6 +10,8 @@ export type NotifyVariant =
   | "achievement"
   | "system";
 
+// Espelha o CHECK de `notifications.category` no banco — adicionar um valor
+// aqui exige antes uma migration relaxando a constraint.
 export type NotifyCategory = "asset" | "reference" | "mycelium" | "system" | "social";
 
 export interface Notification {
