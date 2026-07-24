@@ -10,6 +10,16 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Não autenticado" }, { status: 401 });
     }
 
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("role")
+      .eq("id", user.id)
+      .single();
+
+    if (!profile || !["staff", "admin"].includes(profile.role)) {
+      return NextResponse.json({ error: "Sem permissão" }, { status: 403 });
+    }
+
     const assetType = request.nextUrl.searchParams.get("type");
     if (!assetType) {
       return NextResponse.json({ error: "type é obrigatório" }, { status: 400 });

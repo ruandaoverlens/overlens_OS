@@ -34,6 +34,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "userId é obrigatório" }, { status: 400 });
   }
 
+  const validRoles = ["gratuito", "assinante", "staff", "admin"];
+  if (role !== undefined && !validRoles.includes(role)) {
+    return NextResponse.json({ error: "Role inválida" }, { status: 400 });
+  }
+
   try {
     const admin = createAdminClient();
 

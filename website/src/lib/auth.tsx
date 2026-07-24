@@ -25,37 +25,6 @@ export interface User {
   avatarUrl?: string;
 }
 
-// Real users for dev quick-access on login page
-export const TEST_USERS: Record<
-  UserRole,
-  { email: string; password: string; name: string; role: UserRole }
-> = {
-  admin: {
-    email: "admin@overlens.com.br",
-    password: "admin123",
-    name: "Admin Overlens",
-    role: "admin",
-  },
-  staff: {
-    email: "staff@overlens.com.br",
-    password: "staff123",
-    name: "Equipe Overlens",
-    role: "staff",
-  },
-  assinante: {
-    email: "assinante@overlens.com.br",
-    password: "assinante123",
-    name: "Maria Souza",
-    role: "assinante",
-  },
-  gratuito: {
-    email: "visitante@overlens.com.br",
-    password: "visitante123",
-    name: "João Visitante",
-    role: "gratuito",
-  },
-};
-
 // --- Permission functions (unchanged API) ---
 
 export function canEdit(role: UserRole): boolean {
