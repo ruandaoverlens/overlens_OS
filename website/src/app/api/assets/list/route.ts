@@ -11,6 +11,16 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Não autenticado" }, { status: 401 });
     }
 
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("role")
+      .eq("id", user.id)
+      .single();
+
+    if (!profile || !["staff", "admin"].includes(profile.role)) {
+      return NextResponse.json({ error: "Sem permissão" }, { status: 403 });
+    }
+
     const folder = request.nextUrl.searchParams.get("folder");
     const bucket = request.nextUrl.searchParams.get("bucket") || "asset-previews";
     const fallbackBucket = request.nextUrl.searchParams.get("fallbackBucket");

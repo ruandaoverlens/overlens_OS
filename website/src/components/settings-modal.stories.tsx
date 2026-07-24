@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { AuthProvider, useAuth, TEST_USERS } from "@/lib/auth";
+import { AuthProvider, useAuth } from "@/lib/auth";
 import { SettingsModal } from "./settings-modal";
+
+// Emails de exemplo apenas para ilustrar os stories — sem credenciais reais.
+const MOCK_EMAILS = {
+  admin: "exemplo.admin@overlens.com.br",
+  staff: "exemplo.staff@overlens.com.br",
+  assinante: "exemplo.assinante@overlens.com.br",
+  gratuito: "exemplo.visitante@overlens.com.br",
+} as const;
 
 const meta = {
   title: "Components/SettingsModal",
@@ -42,7 +50,7 @@ function SettingsModalWithAuth({ email }: { email: string }) {
 export const AsAdmin: Story = {
   render: () => (
     <AuthProvider>
-      <SettingsModalWithAuth email={TEST_USERS.admin.email} />
+      <SettingsModalWithAuth email={MOCK_EMAILS.admin} />
     </AuthProvider>
   ),
 };
@@ -50,7 +58,7 @@ export const AsAdmin: Story = {
 export const AsStaff: Story = {
   render: () => (
     <AuthProvider>
-      <SettingsModalWithAuth email={TEST_USERS.staff.email} />
+      <SettingsModalWithAuth email={MOCK_EMAILS.staff} />
     </AuthProvider>
   ),
 };
@@ -58,7 +66,7 @@ export const AsStaff: Story = {
 export const AsAssinante: Story = {
   render: () => (
     <AuthProvider>
-      <SettingsModalWithAuth email={TEST_USERS.assinante.email} />
+      <SettingsModalWithAuth email={MOCK_EMAILS.assinante} />
     </AuthProvider>
   ),
 };
@@ -66,7 +74,7 @@ export const AsAssinante: Story = {
 export const AsGratuito: Story = {
   render: () => (
     <AuthProvider>
-      <SettingsModalWithAuth email={TEST_USERS.gratuito.email} />
+      <SettingsModalWithAuth email={MOCK_EMAILS.gratuito} />
     </AuthProvider>
   ),
 };

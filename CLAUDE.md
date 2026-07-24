@@ -36,6 +36,9 @@ Setup details (CLI install, login) are in `website/README.md`.
 ### Editing secrets
 App web do Infisical → `overlens-os` → escolher o ambiente (`dev` / `preview` / `production`). Mudanças sincronizam para Vercel automaticamente em ~10s.
 
+### Architecture Decision Records (ADRs)
+Decisões arquiteturais (plataforma, infraestrutura, processos) são registradas em `docs/adr/` — um arquivo por decisão, `NNNN-titulo-kebab.md`, em português, seguindo `docs/adr/template.md`. Regras: status `Proposto → Aceito → Substituído/Obsoleto`; ADRs aceitos não são editados no mérito (nova decisão = novo ADR que substitui o anterior); todo ADR novo entra no índice do `docs/adr/README.md`. Antes de implementar uma feature estrutural nova, verifique se existe ADR cobrindo a decisão — se não existir, proponha um.
+
 ### Known gotchas
 - Dev, preview, and production share the **same** Supabase project. Destructive queries in dev hit prod data.
 - A few `process.env.X` references exist for unused features (`PERPLEXITY_API_KEY`, `FEEDLY_API_KEY`, `CRON_SECRET`, `NEXT_PUBLIC_SITE_URL`, `IMAGEN_MODEL`). They are **not** in Infisical — these code paths are dead. Don't add them to Infisical without confirming the feature is actually needed.

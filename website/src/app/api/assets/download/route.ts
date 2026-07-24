@@ -24,6 +24,16 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Não autenticado" }, { status: 401 });
   }
 
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("role")
+    .eq("id", user.id)
+    .single();
+
+  if (!profile || !["staff", "admin"].includes(profile.role)) {
+    return NextResponse.json({ error: "Sem permissão" }, { status: 403 });
+  }
+
   // Sanitize the filename portion of the path (keep folder structure)
   const parts = fileParam.split("/");
   const sanitizedPath = parts.map((p, i) =>
