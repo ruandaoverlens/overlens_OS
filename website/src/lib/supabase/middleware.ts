@@ -1,5 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import type { UserRole } from "@/lib/route-access";
 
 const SUPABASE_URL = "https://lqymftfphjexutgtvjuh.supabase.co";
 const SUPABASE_ANON_KEY =
@@ -33,5 +34,17 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  return { user, supabaseResponse };
+  // Resolve the role so the middleware can gate routes server-side.
+  // Defaults to the most restrictive role ("gratuito") if the lookup fails.
+  let role: UserRole = "gratuito";
+  if (user) {
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("role")
+      .eq("id", user.id)
+      .single();
+    if (profile?.role) role = profile.role as UserRole;
+  }
+
+  return { user, role, supabaseResponse };
 }

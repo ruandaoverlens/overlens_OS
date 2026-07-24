@@ -10,8 +10,12 @@ import {
 } from "react";
 import { createClient } from "@/lib/supabase/client";
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { canAccessRoute, type UserRole } from "@/lib/route-access";
 
-export type UserRole = "gratuito" | "assinante" | "staff" | "admin";
+// Re-exported so existing imports from "@/lib/auth" keep working. The rules
+// themselves live in the pure module so the edge middleware can enforce them.
+export { canAccessRoute };
+export type { UserRole };
 
 export interface User {
   id: string;
@@ -53,19 +57,6 @@ export const TEST_USERS: Record<
 };
 
 // --- Permission functions (unchanged API) ---
-
-const ROUTE_ACCESS: Record<UserRole, string[]> = {
-  gratuito: ["/docs", "/pacote", "/plataforma", "/website", "/ferramentas"],
-  assinante: ["/docs", "/pacote", "/plataforma", "/website", "/ferramentas"],
-  staff: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium"],
-  admin: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/tru", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium", "/admin"],
-};
-
-export function canAccessRoute(role: UserRole, pathname: string): boolean {
-  const routes = ROUTE_ACCESS[role];
-  if (!routes) return false;
-  return routes.some((route) => pathname === route || pathname.startsWith(route + "/"));
-}
 
 export function canEdit(role: UserRole): boolean {
   return role === "admin";
