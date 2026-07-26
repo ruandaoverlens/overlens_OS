@@ -143,7 +143,7 @@ async function runScan() {
         // usamos 'system' e identificamos o módulo via entityType.
         category: "system" as const,
         title: al.titulo,
-        description: "Novo alerta de prazo em Ativos Registrados.",
+        description: "Novo alerta de prazo em Registros.",
         actionUrl: "/registros/alertas",
         entityType: "registro_alerta",
         entityId: al.id,

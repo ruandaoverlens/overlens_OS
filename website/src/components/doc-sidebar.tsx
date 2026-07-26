@@ -40,6 +40,7 @@ import {
   SmRegisteredLineIcon,
 } from "@/components/icons";
 import { useAuth, canAccessRoute } from "@/lib/auth";
+import { isOverlensEmail } from "@/lib/route-access";
 import { SidebarProfile } from "@/components/sidebar-profile";
 import {
   Tooltip,
@@ -366,6 +367,8 @@ export function SystemSidebar({
   const hasMounted = useMounted();
   const canAccessAssets = hasMounted && user ? canAccessRoute(user.role, "/assets") : false;
   const isAdmin = hasMounted && user ? user.role === "admin" : false;
+  // Atalho de Registros: exclusivo da equipe interna (@overlens.com.br)
+  const isOverlens = hasMounted && user ? isOverlensEmail(user.email) : false;
 
   const params = useParams();
   const pathname = usePathname();
@@ -543,18 +546,18 @@ export function SystemSidebar({
                         <TooltipContent>Conversas</TooltipContent>
                       </Tooltip>
                     )}
-                    {isAdmin && (
+                    {isOverlens && (
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Link
                             href="/registros"
-                            aria-label="Ativos Registrados"
+                            aria-label="Registros"
                             className="flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
                           >
                             <SmRegisteredLineIcon className="size-6" />
                           </Link>
                         </TooltipTrigger>
-                        <TooltipContent>Ativos Registrados</TooltipContent>
+                        <TooltipContent>Registros</TooltipContent>
                       </Tooltip>
                     )}
                   </div>

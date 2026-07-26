@@ -16,7 +16,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select";
-import { SmAdd2LineIcon } from "@/components/icons";
 import { EVENTO_TIPO_OPTIONS, EVENTO_TIPO_LABEL } from "@/lib/registros/types";
 import type { EventoTipo } from "@/lib/registros/types";
 
@@ -87,7 +86,6 @@ export function EventoDialog({ processos }: EventoDialogProps) {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button variant="outline" size="sm" disabled={processos.length === 0}>
-          <SmAdd2LineIcon />
           Novo evento
         </Button>
       </DialogTrigger>

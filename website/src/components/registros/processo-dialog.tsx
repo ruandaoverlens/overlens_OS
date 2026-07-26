@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select";
-import { SmAdd2LineIcon, SmEditSolidIcon } from "@/components/icons";
+import { SmEditSolidIcon } from "@/components/icons";
 import {
   PROCESSO_STATUS_OPTIONS,
   PROCESSO_STATUS_LABEL,
@@ -92,13 +92,11 @@ export function ProcessoDialog({ marcaId, processo }: ProcessoDialogProps) {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         {isEdit ? (
-          <Button variant="ghost" size="sm">
+          <Button variant="ghost" size="icon" aria-label="Editar">
             <SmEditSolidIcon />
-            Editar
           </Button>
         ) : (
           <Button variant="outline" size="sm">
-            <SmAdd2LineIcon />
             Novo processo
           </Button>
         )}

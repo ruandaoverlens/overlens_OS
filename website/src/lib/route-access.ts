@@ -8,8 +8,18 @@ const ROUTE_ACCESS: Record<UserRole, string[]> = {
   gratuito: ["/docs", "/pacote", "/plataforma", "/website", "/ferramentas"],
   assinante: ["/docs", "/pacote", "/plataforma", "/website", "/ferramentas"],
   staff: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium"],
-  admin: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/tru", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium", "/admin", "/registros"],
+  admin: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/tru", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium", "/admin"],
 };
+
+// "/registros" (Registros) não é gateado por role, e sim por domínio
+// de e-mail: apenas a equipe interna (@overlens.com.br) pode acessar.
+export function isOverlensEmail(email: string | null | undefined): boolean {
+  return (email ?? "").toLowerCase().endsWith("@overlens.com.br");
+}
+
+export function isRegistrosRoute(pathname: string): boolean {
+  return pathname === "/registros" || pathname.startsWith("/registros/");
+}
 
 function matchesPrefix(routes: string[], pathname: string): boolean {
   return routes.some((route) => pathname === route || pathname.startsWith(route + "/"));

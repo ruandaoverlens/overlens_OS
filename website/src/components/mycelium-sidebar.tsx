@@ -29,7 +29,6 @@ import {
   SmChatLineIcon,
   SmLanguageLineIcon,
   SmGitForkLineIcon,
-  SmArrowBackLineIcon,
 } from "@/components/icons";
 import { myceliumCategories } from "@/lib/mycelium";
 import { SidebarProfile } from "@/components/sidebar-profile";
@@ -71,17 +70,6 @@ export function MyceliumSidebar() {
         </div>
       </SidebarHeader>
       <div className="h-2" />
-      <SidebarMenu className="p-2">
-        <SidebarMenuItem>
-          <SidebarMenuButton asChild size="sm">
-            <Link href="/docs">
-              <SmArrowBackLineIcon />
-              <span>Brand System</span>
-            </Link>
-          </SidebarMenuButton>
-        </SidebarMenuItem>
-      </SidebarMenu>
-      <SidebarSeparator />
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>

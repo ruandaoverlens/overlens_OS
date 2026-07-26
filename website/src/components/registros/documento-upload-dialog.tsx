@@ -15,7 +15,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select";
-import { SmUploadLineIcon } from "@/components/icons";
 import { DOCUMENTO_TIPO_OPTIONS, DOCUMENTO_TIPO_LABEL } from "@/lib/registros/types";
 import type { DocumentoTipo } from "@/lib/registros/types";
 
@@ -146,7 +145,6 @@ export function DocumentoUploadDialog({
     >
       <DialogTrigger asChild>
         <Button variant="outline" size="sm">
-          <SmUploadLineIcon />
           {triggerLabel}
         </Button>
       </DialogTrigger>

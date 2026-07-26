@@ -8,8 +8,9 @@ export const maxDuration = 120;
 const BUCKET = "registro-docs";
 
 /**
- * GET /api/registros/documentos/download?id=<uuid>
- * Baixa um documento do bucket privado e devolve como attachment.
+ * GET /api/registros/documentos/download?id=<uuid>[&inline=1]
+ * Baixa um documento do bucket privado. Por padrão devolve como attachment;
+ * com `inline=1` devolve inline (preview no navegador).
  */
 export async function GET(request: NextRequest) {
   const guard = await requireRegistrosAdmin();
@@ -42,12 +43,14 @@ export async function GET(request: NextRequest) {
 
   const buffer = Buffer.from(await file.arrayBuffer());
   const filename = d.storage_path.split("/").pop() ?? d.titulo ?? "documento";
+  const inline = request.nextUrl.searchParams.get("inline") === "1";
+  const disposition = inline ? "inline" : "attachment";
 
   return new NextResponse(buffer, {
     headers: {
       "Content-Type": d.mime_type || file.type || "application/octet-stream",
       "Content-Length": buffer.length.toString(),
-      "Content-Disposition": `attachment; filename="${encodeURIComponent(filename)}"`,
+      "Content-Disposition": `${disposition}; filename="${encodeURIComponent(filename)}"`,
     },
   });
 }

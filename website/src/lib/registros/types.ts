@@ -1,4 +1,4 @@
-// Tipos e mapas de rótulo/variante do módulo "Ativos Registrados".
+// Tipos e mapas de rótulo/variante do módulo "Registros".
 // As tabelas do Supabase não têm tipos gerados no repo, então modelamos aqui
 // o formato das linhas que consumimos (queries retornam `unknown`/`any` e são
 // convertidas para estas interfaces nas páginas server-side).
@@ -101,6 +101,18 @@ export interface AlertaRow {
   metadata: Record<string, unknown>;
   resolved_at: string | null;
   created_at: string;
+}
+
+export interface DominioRow {
+  id: string;
+  dominio: string;
+  registrador: string | null;
+  titular: string | null;
+  data_expiracao: string | null;
+  renovacao_automatica: boolean;
+  observacoes: string | null;
+  created_at: string;
+  updated_at: string;
 }
 
 // ─── Rótulos e variantes ──────────────────────────────────────

@@ -6,33 +6,41 @@ import { AppSwitcher } from "@/components/app-switcher";
 import { AppNotifications } from "@/components/app-notifications";
 import { RegistrosSidebar } from "@/components/registros-sidebar";
 import { createClient } from "@/lib/supabase/server";
+import { isOverlensEmail } from "@/lib/route-access";
 
 export default async function RegistrosLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // Defense-in-depth: reverifica role de admin no server (além do middleware).
-  // Para não-autorizados o módulo responde como se não existisse (404).
+  // Defense-in-depth: reverifica no server (além do middleware) que o usuário
+  // é da equipe interna (@overlens.com.br). Para não-autorizados o módulo
+  // responde como se não existisse (404).
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) notFound();
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("role")
-    .eq("id", user.id)
-    .single();
-  if (!profile || profile.role !== "admin") notFound();
+  if (!user || !isOverlensEmail(user.email)) notFound();
+
+  // Conversas do assistente (do próprio usuário) para a sidebar.
+  const { data: conversasData } = await supabase
+    .from("registro_assistente_conversas")
+    .select("id, titulo")
+    .eq("user_id", user.id)
+    .order("updated_at", { ascending: false })
+    .limit(50);
+  const conversas = (conversasData ?? []).map((c) => ({
+    id: c.id as string,
+    title: c.titulo as string,
+  }));
 
   return (
     <SidebarProvider>
-      <RegistrosSidebar />
+      <RegistrosSidebar conversas={conversas} />
       <SidebarInset>
         <Topbar>
           <TopbarBreadcrumb>
-            <DocTopbarLabel label="Ativos Registrados" basePath="/registros" />
+            <DocTopbarLabel label="Registros" basePath="/registros" />
           </TopbarBreadcrumb>
           <TopbarActions>
             <AppNotifications />

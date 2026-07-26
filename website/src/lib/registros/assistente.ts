@@ -1,4 +1,4 @@
-// Assistente de IA do módulo "Ativos Registrados" — montagem de contexto e
+// Assistente de IA do módulo "Registros" — montagem de contexto e
 // de system prompt. Ver ADR-0001 (sub-decisão 3): o assistente informa e
 // estrutura caminhos, a decisão jurídica é sempre humana; toda resposta deve
 // se apoiar nos dados reais do módulo injetados aqui (grounding obrigatório,
@@ -281,7 +281,7 @@ export async function resolverDocumentos(
 
 // ─── System prompt ──────────────────────────────────────────────
 
-const REGRAS_ASSISTENTE = `Você é o assistente especializado em propriedade intelectual (registros de marca junto ao INPI e LPI — Lei da Propriedade Industrial) da equipe interna da Overlens, atuando dentro do módulo "Ativos Registrados".
+const REGRAS_ASSISTENTE = `Você é o assistente especializado em propriedade intelectual (registros de marca junto ao INPI e LPI — Lei da Propriedade Industrial) da equipe interna da Overlens, atuando dentro do módulo "Registros".
 
 Papel: você INFORMA, contextualiza e estrutura caminhos de ação. Você NÃO decide. A decisão jurídica é sempre humana — do time com o escritório de propriedade intelectual.
 

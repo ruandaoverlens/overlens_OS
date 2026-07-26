@@ -33,6 +33,10 @@ const BodySchema = z.object({
   messages: z.array(UIMessageSchema).min(1),
   marcaId: z.string().uuid().optional().nullable(),
   documentoIds: z.array(z.string().uuid()).optional(),
+  conversaId: z.string().uuid().optional().nullable(),
+  // true na primeira chamada após criar a conversa — a mensagem do usuário
+  // já foi salva por /conversas, não deve ser gravada de novo.
+  skipPersistFirstUser: z.boolean().optional(),
 });
 
 export async function POST(req: NextRequest) {
@@ -49,7 +53,43 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { messages, marcaId, documentoIds = [] } = parsed.data;
+    const {
+      messages,
+      marcaId,
+      documentoIds = [],
+      conversaId = null,
+      skipPersistFirstUser = false,
+    } = parsed.data;
+
+    // Quando a conversa é persistida: valida posse e grava a última mensagem
+    // do usuário (exceto na primeira chamada, já salva por /conversas).
+    if (conversaId) {
+      const { data: conversa } = await guard.supabase
+        .from("registro_assistente_conversas")
+        .select("id, user_id")
+        .eq("id", conversaId)
+        .maybeSingle();
+
+      if (!conversa || conversa.user_id !== guard.userId) {
+        return NextResponse.json({ error: "Conversa não encontrada" }, { status: 404 });
+      }
+
+      if (!skipPersistFirstUser) {
+        const lastUser = [...messages].reverse().find((m) => m.role === "user");
+        if (lastUser) {
+          const { error: insertErr } = await guard.supabase
+            .from("registro_assistente_mensagens")
+            .insert({
+              conversa_id: conversaId,
+              role: "user",
+              content: lastUser.content,
+            });
+          if (insertErr) {
+            return NextResponse.json({ error: insertErr.message }, { status: 500 });
+          }
+        }
+      }
+    }
 
     const admin = createAdminClient();
 
@@ -89,6 +129,21 @@ export async function POST(req: NextRequest) {
           maxTokens: 2000,
           onError: ({ error }) => {
             console.error("[registros/assistente] streamText error:", error);
+          },
+          onFinish: async ({ text }) => {
+            if (!conversaId || !text) return;
+            try {
+              await guard.supabase.from("registro_assistente_mensagens").insert({
+                conversa_id: conversaId,
+                role: "assistant",
+                content: text,
+              });
+            } catch (persistErr) {
+              console.error(
+                "[registros/assistente] falha ao persistir resposta:",
+                persistErr,
+              );
+            }
           },
         });
 

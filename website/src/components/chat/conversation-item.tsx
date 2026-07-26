@@ -40,6 +40,12 @@ type ConversationItemProps = {
   id: string;
   title: string;
   isActive?: boolean;
+  /** Base do link da conversa (default: chat do Brand System). */
+  hrefBase?: string;
+  /** Base da API de renomear/excluir (default: chat do Brand System). */
+  apiBase?: string;
+  /** Rota para onde ir ao excluir a conversa ativa. */
+  homeHref?: string;
 };
 
 function capitalizeFirst(s: string): string {
@@ -47,7 +53,14 @@ function capitalizeFirst(s: string): string {
   return s.charAt(0).toLocaleUpperCase("pt-BR") + s.slice(1);
 }
 
-export function ConversationItem({ id, title, isActive }: ConversationItemProps) {
+export function ConversationItem({
+  id,
+  title,
+  isActive,
+  hrefBase = "/chat",
+  apiBase = "/api/chat/conversations",
+  homeHref = "/chat",
+}: ConversationItemProps) {
   const router = useRouter();
   const displayTitle = capitalizeFirst(title);
   const [renameOpen, setRenameOpen] = React.useState(false);
@@ -68,7 +81,7 @@ export function ConversationItem({ id, title, isActive }: ConversationItemProps)
     }
     setBusy(true);
     try {
-      const res = await fetch(`/api/chat/conversations/${id}`, {
+      const res = await fetch(`${apiBase}/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title: trimmed }),
@@ -89,7 +102,7 @@ export function ConversationItem({ id, title, isActive }: ConversationItemProps)
   async function handleDelete() {
     setBusy(true);
     try {
-      const res = await fetch(`/api/chat/conversations/${id}`, {
+      const res = await fetch(`${apiBase}/${id}`, {
         method: "DELETE",
       });
       if (!res.ok) {
@@ -99,7 +112,7 @@ export function ConversationItem({ id, title, isActive }: ConversationItemProps)
       setDeleteOpen(false);
       // If the user was on this conversation, send them home
       if (isActive) {
-        router.push("/chat");
+        router.push(homeHref);
       } else {
         router.refresh();
       }
@@ -119,7 +132,7 @@ export function ConversationItem({ id, title, isActive }: ConversationItemProps)
           asChild
           className="group-hover/menu-item:bg-sidebar-accent group-hover/menu-item:text-sidebar-accent-foreground group-has-data-[state=open]/menu-item:bg-sidebar-accent group-has-data-[state=open]/menu-item:text-sidebar-accent-foreground"
         >
-          <Link href={`/chat/${id}`} className="truncate">
+          <Link href={`${hrefBase}/${id}`} className="truncate">
             <span className="truncate">{displayTitle || "Sem título"}</span>
           </Link>
         </SidebarMenuButton>

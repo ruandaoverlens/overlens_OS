@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
-import { canAccessRoute, isManagedRoute } from "@/lib/route-access";
+import { canAccessRoute, isManagedRoute, isOverlensEmail, isRegistrosRoute } from "@/lib/route-access";
 
 // Set to true to bypass auth during development
 const BYPASS_AUTH = false;
@@ -34,6 +34,18 @@ export async function proxy(request: NextRequest) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
     return NextResponse.redirect(url);
+  }
+
+  // Gate por domínio: /registros (Registros) é exclusivo da equipe
+  // interna — apenas e-mails @overlens.com.br, independente do role.
+  if (isRegistrosRoute(pathname) && !isOverlensEmail(user.email)) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/docs";
+    const redirect = NextResponse.redirect(url);
+    supabaseResponse.cookies.getAll().forEach((cookie) => {
+      redirect.cookies.set(cookie.name, cookie.value);
+    });
+    return redirect;
   }
 
   // Role gate: block managed routes the user's role can't access.

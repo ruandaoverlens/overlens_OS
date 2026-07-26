@@ -13,7 +13,12 @@ import {
   DESPACHOS_COLIDENCIA,
   type PublicacaoParseada,
 } from "@/lib/registros/rpi";
-import { avaliarSimilaridade, type TipoMatch } from "@/lib/registros/matching";
+import {
+  avaliarSimilaridade,
+  normalizar,
+  fonetico,
+  type TipoMatch,
+} from "@/lib/registros/matching";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 // A ingestão baixa (~8-9 MB), descompacta, parseia e roda matching contra todas
@@ -60,12 +65,14 @@ async function runIngest(revistaSolicitada?: number): Promise<
 
   // 1. Resolver número da revista.
   let rpiNumero: string;
+  let dataPublicacaoRevista: string | null = null;
   try {
     if (revistaSolicitada) {
       rpiNumero = String(revistaSolicitada);
     } else {
       const info = await obterUltimaRevista();
       rpiNumero = info.numero;
+      dataPublicacaoRevista = converterDataPublicacao(info.dataPublicacao);
     }
   } catch (err) {
     return {
@@ -140,6 +147,15 @@ async function runIngest(revistaSolicitada?: number): Promise<
         (c) => `${c.marca_id}|${c.processo_numero}`,
       ),
     );
+  }
+
+  // 4c. Persistir TODAS as publicações no cache local (registro_rpi_publicacoes)
+  //     para a consulta de disponibilidade. Etapa best-effort: falha aqui não
+  //     derruba a ingestão (candidatos/alertas seguem normalmente).
+  try {
+    await persistirPublicacoes(admin, rpiNumero, dataPublicacaoRevista, publicacoes);
+  } catch (err) {
+    console.error("[radar/ingest] persistir publicações no cache local:", err);
   }
 
   // 5. Carregar nossas marcas e processos uma única vez.
@@ -453,13 +469,69 @@ async function notificarAdmins(
       // usamos 'system' e identificamos o módulo via entityType.
       category: "system" as const,
       title: al.titulo,
-      description: "Novo alerta do Radar em Ativos Registrados.",
+      description: "Novo alerta do Radar em Registros.",
       actionUrl: "/registros/radar",
       entityType: "registro_alerta",
       entityId: al.id,
     })),
   );
   await createNotifications(inputs);
+}
+
+/**
+ * Converte a data de publicação da revista para ISO (YYYY-MM-DD). Aceita
+ * "dd/mm/aaaa" ou já-ISO; retorna null quando ausente/irreconhecível.
+ */
+function converterDataPublicacao(valor: string | null | undefined): string | null {
+  const s = (valor ?? "").trim();
+  if (!s) return null;
+  // dd/mm/aaaa
+  const br = s.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+  if (br) return `${br[3]}-${br[2]}-${br[1]}`;
+  // aaaa-mm-dd (com ou sem tempo)
+  const iso = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (iso) return `${iso[1]}-${iso[2]}-${iso[3]}`;
+  return null;
+}
+
+/**
+ * Upsert em lote (chunks) de todas as publicações da revista no cache local.
+ * Conflito em (rpi_numero, processo_numero) é ignorado (ingestão idempotente).
+ */
+async function persistirPublicacoes(
+  admin: SupabaseClient,
+  rpiNumero: string,
+  dataPublicacao: string | null,
+  publicacoes: PublicacaoParseada[],
+): Promise<void> {
+  const CHUNK = 500;
+  const linhas = publicacoes
+    .filter((p) => p.processoNumero && p.marcaNome)
+    .map((p) => ({
+      rpi_numero: rpiNumero,
+      processo_numero: p.processoNumero,
+      marca_nome: p.marcaNome,
+      marca_normalizada: normalizar(p.marcaNome),
+      marca_fonetica: fonetico(p.marcaNome) || null,
+      apresentacao: p.apresentacao || null,
+      classes: p.classes,
+      titular: p.titular || null,
+      despachos: p.despachos,
+      data_publicacao: dataPublicacao,
+    }));
+
+  for (let i = 0; i < linhas.length; i += CHUNK) {
+    const lote = linhas.slice(i, i + CHUNK);
+    const { error } = await admin
+      .from("registro_rpi_publicacoes")
+      .upsert(lote, {
+        onConflict: "rpi_numero,processo_numero",
+        ignoreDuplicates: true,
+      });
+    if (error) {
+      console.error("[radar/ingest] upsert publicações (lote):", error.message);
+    }
+  }
 }
 
 // ─── Handlers HTTP ────────────────────────────────────────────

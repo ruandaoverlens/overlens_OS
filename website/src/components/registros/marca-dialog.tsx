@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { SmAdd2LineIcon, SmEditSolidIcon } from "@/components/icons";
+import { SmEditSolidIcon } from "@/components/icons";
 import type { MarcaRow } from "@/lib/registros/types";
 
 interface MarcaDialogProps {
@@ -71,13 +71,11 @@ export function MarcaDialog({ marca }: MarcaDialogProps) {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         {isEdit ? (
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="icon" aria-label="Editar">
             <SmEditSolidIcon />
-            Editar
           </Button>
         ) : (
           <Button size="sm">
-            <SmAdd2LineIcon />
             Nova marca
           </Button>
         )}

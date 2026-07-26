@@ -1,15 +1,18 @@
-import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from "@/components/ui/empty";
-import { SmRegisteredLineIcon, SmArrowForwardIosLineIcon } from "@/components/icons";
+import { SmRegisteredLineIcon, SmArrowOutwardLineIcon } from "@/components/icons";
 import { MarcaDialog } from "@/components/registros/marca-dialog";
+import {
+  MarcaResumoDrawer,
+  type ProcessoResumo,
+} from "@/components/registros/marca-resumo-drawer";
 import {
   PROCESSO_STATUS_LABEL,
   PROCESSO_STATUS_VARIANT,
 } from "@/lib/registros/types";
-import type { MarcaRow, ProcessoRow, ProcessoStatus } from "@/lib/registros/types";
+import type { MarcaRow, ProcessoStatus } from "@/lib/registros/types";
 
 export const dynamic = "force-dynamic";
 
@@ -18,16 +21,19 @@ export default async function MarcasPage() {
 
   const [{ data: marcasData }, { data: processosData }] = await Promise.all([
     supabase.from("registro_marcas").select("*").order("nome"),
-    supabase.from("registro_processos").select("id, marca_id, status"),
+    supabase
+      .from("registro_processos")
+      .select("id, marca_id, numero, classe, status, proxima_renovacao")
+      .order("numero"),
   ]);
 
   const marcas = (marcasData ?? []) as MarcaRow[];
-  const processos = (processosData ?? []) as Pick<ProcessoRow, "id" | "marca_id" | "status">[];
+  const processos = (processosData ?? []) as Array<ProcessoResumo & { marca_id: string }>;
 
-  const porMarca = new Map<string, ProcessoStatus[]>();
+  const porMarca = new Map<string, ProcessoResumo[]>();
   for (const p of processos) {
     const arr = porMarca.get(p.marca_id) ?? [];
-    arr.push(p.status);
+    arr.push(p);
     porMarca.set(p.marca_id, arr);
   }
 
@@ -59,22 +65,26 @@ export default async function MarcasPage() {
       ) : (
         <div className="grid gap-3 sm:grid-cols-2">
           {marcas.map((marca) => {
-            const statuses = porMarca.get(marca.id) ?? [];
+            const procs = porMarca.get(marca.id) ?? [];
             const contagem = new Map<ProcessoStatus, number>();
-            for (const s of statuses) contagem.set(s, (contagem.get(s) ?? 0) + 1);
+            for (const p of procs) contagem.set(p.status, (contagem.get(p.status) ?? 0) + 1);
             return (
-              <Link key={marca.id} href={`/registros/marcas/${marca.id}`} className="group">
-                <Card className="gap-3 transition-colors hover:bg-[var(--surface-900)]">
+              <MarcaResumoDrawer key={marca.id} marca={marca} processos={procs}>
+                <Card
+                  role="button"
+                  tabIndex={0}
+                  className="group cursor-pointer gap-3 text-left transition-colors hover:bg-[var(--surface-900)]"
+                >
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex flex-col gap-0.5">
                       <span className="text-lg font-medium">{marca.nome}</span>
                       <span className="text-xs text-muted-foreground">{marca.titular}</span>
                     </div>
-                    <SmArrowForwardIosLineIcon className="mt-1 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+                    <SmArrowOutwardLineIcon className="mt-1 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   </div>
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="text-xs text-muted-foreground">
-                      {statuses.length} {statuses.length === 1 ? "processo" : "processos"}
+                      {procs.length} {procs.length === 1 ? "processo" : "processos"}
                     </span>
                     {[...contagem.entries()].map(([status, n]) => (
                       <Badge key={status} variant={PROCESSO_STATUS_VARIANT[status]}>
@@ -83,7 +93,7 @@ export default async function MarcasPage() {
                     ))}
                   </div>
                 </Card>
-              </Link>
+              </MarcaResumoDrawer>
             );
           })}
         </div>

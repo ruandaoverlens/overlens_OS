@@ -19,3 +19,5 @@ Um ADR documenta **uma decisão** com consequências duradouras: o contexto que 
 |-----|--------|--------|
 | [0001](0001-modulo-ativos-registrados.md) | Módulo de Ativos Registrados (gestão de propriedade intelectual) | Aceito |
 | [0002](0002-autorizacao-e-controle-de-acesso.md) | Autorização e controle de acesso por domínio/role | Aceito |
+| [0003](0003-consulta-disponibilidade-marcas.md) | Consulta de disponibilidade de marcas | Aceito |
+| [0004](0004-jornada-guiada-registro-marca.md) | Jornada guiada de registro de marca | Proposto |

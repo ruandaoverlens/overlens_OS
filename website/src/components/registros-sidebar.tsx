@@ -8,6 +8,7 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
+  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -16,14 +17,18 @@ import {
   SidebarSeparator,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { ConversationItem } from "@/components/chat/conversation-item";
 import {
   SmHomeSolidIcon,
   SmRegisteredLineIcon,
   SmDocLineIcon,
   SmAlertLineIcon,
   SmGraphicEqLineIcon,
+  SmSearchLineIcon,
   SmChatLineIcon,
   SmArrowBackLineIcon,
+  SmVerifiedLineIcon,
+  SmLanguageLineIcon,
 } from "@/components/icons";
 import { SidebarProfile } from "@/components/sidebar-profile";
 
@@ -37,15 +42,30 @@ interface RegistrosNavItem {
 
 const navItems: RegistrosNavItem[] = [
   { href: "/registros", title: "Visão Geral", icon: <SmHomeSolidIcon />, exact: true },
+  { href: "/registros/busca", title: "Busca", icon: <SmSearchLineIcon /> },
+  { href: "/registros/assistente", title: "Assistente", icon: <SmChatLineIcon /> },
   { href: "/registros/marcas", title: "Marcas", icon: <SmRegisteredLineIcon /> },
+  { href: "/registros/dominios", title: "Domínios", icon: <SmLanguageLineIcon /> },
+  { href: "/registros/registrar", title: "Processos", icon: <SmVerifiedLineIcon /> },
   { href: "/registros/documentos", title: "Documentos", icon: <SmDocLineIcon /> },
   { href: "/registros/alertas", title: "Alertas", icon: <SmAlertLineIcon /> },
   { href: "/registros/radar", title: "Radar", icon: <SmGraphicEqLineIcon /> },
-  { href: "/registros/assistente", title: "Assistente", icon: <SmChatLineIcon /> },
 ];
 
-export function RegistrosSidebar() {
+export interface RegistrosConversaLink {
+  id: string;
+  title: string;
+}
+
+export function RegistrosSidebar({
+  conversas = [],
+}: {
+  conversas?: RegistrosConversaLink[];
+}) {
   const pathname = usePathname() ?? "/registros";
+  const activeConversaId = pathname.startsWith("/registros/assistente/")
+    ? pathname.split("/")[3]
+    : undefined;
 
   const isActive = (item: RegistrosNavItem) =>
     item.exact
@@ -59,7 +79,7 @@ export function RegistrosSidebar() {
           <Link href="/registros" className="flex items-center gap-2">
             <SmRegisteredLineIcon className="size-5 text-[var(--surface-500)]" />
             <span className="text-sm font-medium text-[var(--surface-300)]">
-              Ativos Registrados
+              Registros
             </span>
           </Link>
           <SidebarTrigger />
@@ -94,6 +114,26 @@ export function RegistrosSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+        {conversas.length > 0 && (
+          <SidebarGroup>
+            <SidebarGroupLabel>Conversas</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                {conversas.map((c) => (
+                  <ConversationItem
+                    key={c.id}
+                    id={c.id}
+                    title={c.title}
+                    isActive={activeConversaId === c.id}
+                    hrefBase="/registros/assistente"
+                    apiBase="/api/registros/assistente/conversas"
+                    homeHref="/registros/assistente"
+                  />
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        )}
       </SidebarContent>
       <SidebarFooter>
         <SidebarProfile />
