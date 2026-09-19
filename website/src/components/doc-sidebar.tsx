@@ -449,9 +449,11 @@ export function SystemSidebar({
               <SidebarMenuItem className="mt-1.5">
                 <div className="flex w-full items-center justify-between">
                   <div className="flex items-center gap-0">
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        {canAccessAssets ? (
+                    {/* Assets some por completo para quem não tem acesso —
+                        um ícone bloqueado só ocupa espaço na barra. */}
+                    {canAccessAssets && (
+                      <Tooltip>
+                        <TooltipTrigger asChild>
                           <Link
                             href="/assets"
                             aria-label="Assets da Marca"
@@ -460,21 +462,10 @@ export function SystemSidebar({
                             <SmFolderLineIcon className="size-6 transition-opacity group-hover/asset:opacity-0" />
                             <SmFolderSolidIcon className="absolute size-6 opacity-0 transition-opacity group-hover/asset:opacity-100" />
                           </Link>
-                        ) : (
-                          <button
-                            type="button"
-                            disabled
-                            aria-label="Assets da Marca (bloqueado)"
-                            className="flex size-8 items-center justify-center text-muted-foreground opacity-50 cursor-not-allowed"
-                          >
-                            <SmFolderLineIcon className="size-6" />
-                          </button>
-                        )}
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        {canAccessAssets ? "Assets da Marca" : "Assets da Marca (bloqueado)"}
-                      </TooltipContent>
-                    </Tooltip>
+                        </TooltipTrigger>
+                        <TooltipContent>Assets da Marca</TooltipContent>
+                      </Tooltip>
+                    )}
                     {showTabs && (
                       <Tooltip>
                         <TooltipTrigger asChild>
