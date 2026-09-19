@@ -58,6 +58,12 @@ export function SystemSwitcher({ basePath }: { basePath: string }) {
     SYSTEMS[0];
   const CurrentIcon = current.icon;
 
+  // Liberados primeiro, bloqueados no fim — a ordem relativa de cada grupo
+  // continua sendo a de SYSTEMS (Array.prototype.sort é estável).
+  const ordered = [...SYSTEMS].sort(
+    (a, b) => Number(hasAccess(b.href)) - Number(hasAccess(a.href)),
+  );
+
   const trigger = (
     <button
       type="button"
@@ -93,7 +99,7 @@ export function SystemSwitcher({ basePath }: { basePath: string }) {
         align="start"
         className="w-(--radix-dropdown-menu-trigger-width) min-w-[220px] bg-[var(--surface-950)]"
       >
-        {SYSTEMS.map((system) => {
+        {ordered.map((system) => {
           const allowed = hasAccess(system.href);
           const Icon = allowed ? system.icon : SmLockLineIcon;
           const isCurrent = system.href === current.href;
