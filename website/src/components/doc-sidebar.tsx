@@ -18,7 +18,6 @@ import {
   SidebarMenuSubItem,
   SidebarFooter,
   SidebarSeparator,
-  SidebarSearch,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import {
@@ -26,7 +25,6 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { CommandGroup, CommandItem } from "@/components/ui/command";
 import {
   SmArrowForwardIosLineIcon,
   SmArrowOutwardLineIcon,
@@ -42,6 +40,7 @@ import {
 import { useAuth, canAccessRoute } from "@/lib/auth";
 import { isOverlensEmail } from "@/lib/route-access";
 import { SidebarProfile } from "@/components/sidebar-profile";
+import { SystemSwitcher } from "@/components/system-switcher";
 import {
   Tooltip,
   TooltipContent,
@@ -445,19 +444,7 @@ export function SystemSidebar({
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarSearch>
-                  {sections.map((section) => (
-                    <CommandGroup key={section.slug} heading={section.title}>
-                      {section.files.map((file) => (
-                        <CommandItem key={file.slug} asChild>
-                          <Link href={basePath + "/" + file.segments.join("/")}>
-                            {file.title}
-                          </Link>
-                        </CommandItem>
-                      ))}
-                    </CommandGroup>
-                  ))}
-                </SidebarSearch>
+                <SystemSwitcher basePath={basePath} />
               </SidebarMenuItem>
               <SidebarMenuItem className="mt-1.5">
                 <div className="flex w-full items-center justify-between">

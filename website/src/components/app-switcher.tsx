@@ -5,10 +5,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { TopbarApps, TopbarAppsContent, TopbarAppsItem } from "@/components/ui/topbar";
 import { useAuth, canAccessRoute } from "@/lib/auth";
 import {
-  MdDocSolidIcon,
-  MdCognitionLineIcon,
-  MdChartLineIcon,
-  MdLibrarySolidIcon,
   MdFolderSolidIcon,
   MdLanguageLineIcon,
   MdBoltSolidIcon,
@@ -28,17 +24,15 @@ function OverlensSymbol() {
 
 const apps = [
   { name: "Área de Estudos", href: "https://plataforma.overlens.com.br", icon: <OverlensSymbol />, external: true },
-  { name: "Brand System", href: "/docs", icon: <MdDocSolidIcon /> },
   { name: "Botões Mágicos", href: "/ferramentas", icon: <MdBoltSolidIcon /> },
-  { name: "Pacote Cultural", href: "/pacote", icon: <MdLibrarySolidIcon /> },
-  { name: "Growth System", href: "/growth", icon: <MdChartLineIcon /> },
-  { name: "Content System", href: "/estudio", icon: <MdCognitionLineIcon /> },
   { name: "Assets", href: "/assets", icon: <MdFolderSolidIcon /> },
   { name: "Mycelium", href: "/mycelium", icon: <MdGitForkLineIcon /> },
   { name: "Website", href: "https://overlens.com.br", icon: <MdLanguageLineIcon />, external: true },
 ];
-// "Registros" (/registros) não aparece no grid de apps — o módulo é
-// interno (@overlens.com.br) e é acessado pelo atalho da sidebar ou URL direta.
+// Os quatro sistemas de documentação (Brand, Content, Growth, Pacote Cultural)
+// saíram do grid: são escolhidos pelo seletor no topo da sidebar (SystemSwitcher).
+// "Registros" (/registros) também não aparece aqui — o módulo é interno
+// (@overlens.com.br) e é acessado pelo atalho da sidebar ou URL direta.
 
 export function AppSwitcher() {
   const pathname = usePathname();
