@@ -14,7 +14,9 @@ Toda página criada para o Brand System da Overlens DEVE:
 2. Usar português brasileiro acessível, sem jargão, sem gíria, sem formalidade excessiva
 3. Respeitar as 4 virtudes: Científica, Profunda, Provocativa, Inspiradora
 4. Incluir os guardrails éticos: sem guru, sem dogma, sem culpabilização
-5. Usar vocabulário oficial: Nexialista, Lente, Sistema Vivo, Capital Simbólico
+5. Usar vocabulário oficial: Empreendedor Nexialista, Nexialista, Lente, Sistema Vivo, Capital Simbólico
+   - **O público da Overlens é o Empreendedor Nexialista e NUNCA deve ser chamado de "designers"** (nem "criativos", nem "criadores"). Design é uma das disciplinas que a Overlens ensina — não é a identidade de quem nos procura. O Empreendedor Nexialista pode vir da engenharia, da arquitetura, da arte, do design ou de nenhuma dessas origens; é definido pelo que faz com a própria ideia
+   - Os 5 perfis medem a distância entre ideia e realidade: Inconscientes (vontade sem direção) → Operantes (executam, não lançam) → Convergentes (lançam, não sustentam) → Emergentes (têm negócio, dispersam energia) → Nexialistas (operam ecossistema próprio)
 6. Seguir metáforas do universo Overlens: fogo controlado, prisma, portal, micélio
 7. EVITAR: lâmpada clichê, varinha mágica, forja, FOMO, hustle porn, promessas vazias
 
@@ -24,6 +26,8 @@ Toda página criada para o Brand System da Overlens DEVE:
 - "vagas limitadas", "última chance"
 - "você pode tudo", "sem limites"
 - "guru", "mestre iluminado"
+- promessas de enriquecimento, faturamento ou "liberdade financeira"
+- "escale seu negócio", "6 em 7", glamourização de rotina extrema, tom de startup bro
 - qualquer promessa de resultado garantido
 
 ## Regra de Imagens

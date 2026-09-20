@@ -1,6 +1,6 @@
 # Swipe Files
 
-## Um swipe file é uma coleção viva de referências que já demonstraram eficácia; anúncios, headlines, estruturas de texto, ofertas. Em vez de partir da folha em branco, o criador consulta padrões reais, identifica mecanismos de persuasão e adapta com precisão e intenção estratégica.
+## Um swipe file é uma coleção viva de referências que já demonstraram eficácia; anúncios, headlines, estruturas de texto, ofertas. Em vez de partir da folha em branco, quem escreve consulta padrões reais, identifica mecanismos de persuasão e adapta com precisão e intenção estratégica.
 
 Um **swipe file** é uma coleção estratégica de materiais de marketing; como anúncios, cartas de vendas, e-mails, páginas de captura e posts de redes sociais; reunidos para servir de referência e inspiração na criação de novos conteúdos. É uma prática consagrada entre copywriters, redatores e profissionais de marketing que entendem o valor de aprender com exemplos que já demonstraram eficácia no mercado.
 

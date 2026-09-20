@@ -20,7 +20,8 @@ Cada revisão avalia 6 dimensões:
 ### P — Propósito
 - A página cumpre seu objetivo dentro do Brand System?
 - Está claro POR QUE esta página existe?
-- O leitor (designer, criador, desenvolvedor, estrategista) sabe como usar esta informação?
+- O leitor (Empreendedor Nexialista — venha da engenharia, da arquitetura, da arte, do design ou de nenhuma delas; ou alguém do time interno) sabe como usar esta informação?
+- A página fala com um empreendedor que quer tirar a própria ideia do papel, não com um "designer" ou "criativo"?
 
 ### R — Ritmo e Tom
 - O tom combina as 4 virtudes na proporção adequada?
@@ -39,7 +40,10 @@ Cada revisão avalia 6 dimensões:
 ### S — Sinergia com o Ecossistema
 - A página dialoga com as seções existentes?
 - Referências cruzadas estão corretas?
-- O vocabulário oficial é respeitado (Nexialista, Lente, Sistema Vivo, Capital Simbólico)?
+- O vocabulário oficial é respeitado (Empreendedor Nexialista, Nexialista, Lente, Sistema Vivo, Capital Simbólico)?
+- O público NÃO é chamado de "designers", "criativos" ou "criadores"? (design é disciplina que ensinamos, não rótulo de público)
+- Os 5 perfis aparecem no eixo correto — distância entre ideia e realidade (Inconscientes: vontade sem direção → Operantes: executam, não lançam → Convergentes: lançam, não sustentam → Emergentes: têm negócio, dispersam energia → Nexialistas: operam ecossistema próprio)?
+- Como o público agora é empreendedor, o risco de hustle porn aumentou: há promessa de enriquecimento, escala rápida, "liberdade financeira", FOMO, tom de guru ou de startup bro? Qualquer ocorrência é reprovação imediata.
 - Os arquétipos (Mago, Criador, Sábio) estão presentes quando relevante?
 - Naming segue as diretrizes (curto, simbólico, evocativo)?
 

@@ -48,7 +48,7 @@ As virtudes orientam a comunicação, comportamento e decisões da Overlens. Cad
 
 *A Overlens inspira pessoas à ação, autonomia e crescimento pessoal e profissional, apontando caminhos para um futuro melhor.*
 
-* **Excesso (utopia ingênua):** Idealização excessiva, romantismo irrealista, desconsideração dos desafios reais.  
+* **Excesso (utopia ingênua):** Idealização excessiva, romantismo irrealista, desconsideração dos desafios reais. Inclui o excesso típico do discurso empreendedor: promessa de enriquecimento, hustle porn, sacrifício heroico como estética.  
 * **Falta (ceticismo e pessimismo):** Falta de esperança, negatividade, ausência de motivação ou propósito claro.
 
 **Alinhamento com os valores:** Liberdade x Responsabilidade, Realização, Inovação, Colaboração.

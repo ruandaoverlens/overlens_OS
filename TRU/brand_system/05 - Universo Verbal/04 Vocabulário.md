@@ -1,6 +1,6 @@
 # Vocabulário
 
-## A linguagem é um dos alicerces que sustenta a identidade da Overlens. Cada termo que usamos carrega intenções, valores e símbolos que refletem nossa visão: formar Designers Nexialistas capazes de pensar sistemicamente, ampliar a imaginação com inteligência artificial e criar marcas, produtos e mundos com propósito real.
+## A linguagem é um dos alicerces que sustenta a identidade da Overlens. Cada termo que usamos carrega intenções, valores e símbolos que refletem nossa visão: formar Empreendedores Nexialistas capazes de pensar sistemicamente, ampliar a imaginação com inteligência artificial e transformar ideias em negócios, produtos e mundos com propósito real.
 
 ![Rosetta Stone](/brand/images/Rosetta%20Stone.jpg)
 
@@ -26,15 +26,17 @@ O Vocabulário da Marca nasce para consolidar esse repertório, dando clareza e 
 
 ## Nexialista
 
-**Definição:** Criador sistêmico que orquestra múltiplas disciplinas, design, filosofia, arte e tecnologia, e utiliza a inteligência artificial como extensão da imaginação. Seu objetivo é transformar complexidade em clareza, gerando valor cultural, simbólico e de negócio.
+**Definição:** Empreendedor sistêmico que orquestra múltiplas disciplinas, design, filosofia, arte e tecnologia, e utiliza a inteligência artificial como extensão da imaginação. Não é definido pela profissão de origem: pode vir da engenharia, da arquitetura, da arte, do design ou de nenhuma delas. É definido pelo que faz com a própria ideia. Seu objetivo é transformar complexidade em clareza e clareza em realidade, gerando valor cultural, simbólico e de negócio.
 
-**Exemplo de uso:** “Na Overlens, formamos Designers Nexialistas: criadores preparados para construir marcas, produtos e mundos que importam.”
+**Exemplo de uso:** “Na Overlens, formamos Empreendedores Nexialistas: pessoas preparadas para transformar as próprias ideias em marcas, produtos e negócios que importam.”
 
 **Observações** 
 
-* Em comunicação externa, sempre contextualizar na primeira menção (ex.: “Designer Nexialista; criador sistêmico formado na Overlens”).  
+* Em comunicação externa, sempre contextualizar na primeira menção (ex.: “Empreendedor Nexialista; construtor sistêmico formado na Overlens”).  
     
-* Evitar reduzir a expressão a apenas “designer” ou “especialista em IA”: o termo carrega a identidade fundacional da Overlens e deve manter sua densidade simbólica.
+* Evitar reduzir a expressão a apenas “empreendedor”, “designer” ou “especialista em IA”: o termo carrega a identidade fundacional da Overlens e deve manter sua densidade simbólica.  
+    
+* Não usar o termo como rótulo de profissão. Nexialista é um modo de operar, não um cargo: engenheiros, artistas, arquitetos, designers e fundadores sem formação criativa cabem igualmente no termo.
 
 ## Sistema Vivo
 
@@ -50,7 +52,7 @@ O Vocabulário da Marca nasce para consolidar esse repertório, dando clareza e 
 
 ## Capital Simbólico
 
-**Definição:** Acúmulo de significado, reputação e legitimidade que a Overlens e seus criadores conquistam ao alinhar discurso, estética e entrega com propósito real. Diferente de métricas passageiras, o capital simbólico é o ativo invisível que fortalece confiança, autoridade cultural e reconhecimento no longo prazo.
+**Definição:** Acúmulo de significado, reputação e legitimidade que a Overlens e quem constrói com ela conquistam ao alinhar discurso, estética e entrega com propósito real. Diferente de métricas passageiras, o capital simbólico é o ativo invisível que fortalece confiança, autoridade cultural e reconhecimento no longo prazo.
 
 **Exemplo de uso:** “Este projeto fortalece nosso capital simbólico ao posicionar a Overlens como referência em design sistêmico e inteligência ampliada.”
 

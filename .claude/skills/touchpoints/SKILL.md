@@ -1,6 +1,6 @@
 ---
 name: touchpoints
-description: Constrói a página de Pontos de Contato mapeando todos os touchpoints da Overlens por jornada do criador, com diretrizes por canal.
+description: Constrói a página de Pontos de Contato mapeando todos os touchpoints da Overlens por jornada do Empreendedor Nexialista, com diretrizes por canal.
 allowed-tools: Read, Write, Edit, Glob, Grep, WebSearch, Agent
 ---
 
@@ -15,4 +15,6 @@ Execute o pipeline para a página de Pontos de Contato:
    - Tom predominante e persona sintética ativa para cada touchpoint
    - Métricas de sucesso por canal
 3. Rodar revisão com agente `revisor`
+
+**Lembrete**: o público é o Empreendedor Nexialista — nunca "designers" ou "criativos". As 5 jornadas seguem os 5 perfis eixados pela distância entre ideia e realidade (Inconsciente → Operante → Convergente → Emergente → Nexialista). Nenhum touchpoint pode usar FOMO, escassez falsa ou promessa de faturamento.
 4. Apresentar resultado ao usuário

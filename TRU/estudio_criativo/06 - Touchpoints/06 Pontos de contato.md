@@ -2,15 +2,17 @@
 
 ## Uma marca não existe onde ela se anuncia. Existe onde ela é experimentada. Cada ponto de contato é uma promessa cumprida; ou quebrada.
 
-A Overlens não é um logotipo que aparece em telas. É uma postura que se manifesta em cada interação; do primeiro Reel que provoca uma dúvida incômoda até a mentoria que reconfigura a carreira de um criador. Cada canal, cada mensagem, cada silêncio carrega a responsabilidade de sustentar o mesmo compromisso: colocar o poder da criação nas mãos das pessoas.
+A Overlens não é um logotipo que aparece em telas. É uma postura que se manifesta em cada interação; do primeiro Reel que provoca uma dúvida incômoda até a mentoria que reconfigura o rumo de quem constrói algo próprio. Cada canal, cada mensagem, cada silêncio carrega a responsabilidade de sustentar o mesmo compromisso: colocar o poder da criação nas mãos das pessoas.
 
-Este documento mapeia como a marca se comporta em cada ponto de contato. Não é uma lista de canais. É um sistema de experiências intencionais, onde tom, persona, perfil de maturidade e objetivo se alinham para guiar o criador em sua jornada; sem empurrá-lo, sem abandoná-lo.
+Este documento mapeia como a marca se comporta em cada ponto de contato. Não é uma lista de canais. É um sistema de experiências intencionais, onde tom, persona, perfil e objetivo se alinham para guiar o empreendedor em sua jornada; sem empurrá-lo, sem abandoná-lo.
 
 ---
 
-## A Jornada do Criador em 5 Fases
+## A Jornada do Empreendedor Nexialista em 5 Fases
 
-A jornada não é um funil. É uma espiral. O criador pode entrar em qualquer ponto, retornar a fases anteriores e aprofundar-se em ciclos progressivos. Mas há uma lógica de maturidade que organiza a experiência:
+A jornada não é um funil. É uma espiral. O empreendedor pode entrar em qualquer ponto, retornar a fases anteriores e aprofundar-se em ciclos progressivos. Mas há uma lógica que organiza a experiência, e ela não mede senioridade nem tempo de carreira: mede a distância entre a ideia e a realidade.
+
+Os cinco perfis citados adiante seguem esse eixo: **Inconscientes** têm vontade sem direção; **Operantes** executam, mas não lançam; **Convergentes** lançam, mas não sustentam; **Emergentes** têm negócio, mas dispersam energia; **Nexialistas** operam um ecossistema próprio. Uma pessoa pode vir da engenharia, da arquitetura, da arte, do design ou de nenhuma dessas origens; o que a posiciona é o que ela faz com a própria ideia.
 
 | Fase | Descrição | Perfil predominante | Movimento |
 |------|-----------|---------------------|-----------|
@@ -28,7 +30,7 @@ Cada fase corresponde a uma camada retórica da comunicação da Overlens; Ethos
 
 ### Onde o desconforto encontra um nome.
 
-O criador ainda não sabe que precisa da Overlens. Talvez nem saiba que precisa de algo. Sente que o mundo mudou, que suas ferramentas já não bastam, que há algo além da execução técnica. A Descoberta não vende; provoca.
+A pessoa ainda não sabe que precisa da Overlens. Talvez nem saiba que precisa de algo. Sente que o mundo mudou, que suas ferramentas já não bastam, que existe uma ideia sua parada em algum lugar. A Descoberta não vende; provoca.
 
 ---
 
@@ -39,8 +41,8 @@ O criador ainda não sabe que precisa da Overlens. Talvez nem saiba que precisa 
 | **Canal e formato** | Instagram; Reels (5-60s), carrosséis (4-10 slides), stories com CTA |
 | **Tom predominante** | 35% Provocativa, 25% Científica, 25% Inspiradora, 15% Profunda |
 | **Persona sintética ativa** | Nenhuma diretamente. Voz institucional da Overlens. D.U.D pode aparecer em stories de reflexão |
-| **Perfil de maturidade** | Inconscientes (60%) e Operantes (40%) |
-| **Objetivo** | Romper a inércia. Fazer o criador parar de rolar o feed e questionar uma certeza |
+| **Perfil predominante** | Inconscientes (60%); vontade sem direção. Operantes (40%); executam, mas não lançam |
+| **Objetivo** | Romper a inércia. Fazer a pessoa parar de rolar o feed e questionar uma certeza |
 
 **Diretrizes de experiência:**
 - **Os primeiros 5 segundos definem tudo.** Headline + imagem precisam ser milimetricamente calibrados. O dedo que desliza é mais rápido do que qualquer argumento.
@@ -73,11 +75,11 @@ Para diretrizes detalhadas de produção no Instagram, consulte a página **Inst
 | **Canal e formato** | YouTube; vídeos longos (8-25 min), Shorts (até 60s) |
 | **Tom predominante** | 30% Profunda, 25% Científica, 25% Provocativa, 20% Inspiradora |
 | **Persona sintética ativa** | Nenhuma. Voz autoral de Ruan Braz (marca pessoal) ou voz institucional |
-| **Perfil de maturidade** | Operantes (50%) e Convergentes (30%), Inconscientes (20%) |
+| **Perfil predominante** | Operantes (50%); executam, mas não lançam. Convergentes (30%); lançam, mas não sustentam. Inconscientes (20%) |
 | **Objetivo** | Estabelecer autoridade e profundidade. Ser o lugar onde a reflexão tem espaço para se desenvolver |
 
 **Diretrizes de experiência:**
-- **Formato investigativo, não tutorial.** O YouTube da Overlens não ensina "como usar ferramenta X". Investiga "por que a maioria dos criadores está presa em loops de execução".
+- **Formato investigativo, não tutorial.** O YouTube da Overlens não ensina "como usar ferramenta X". Investiga "por que tanta gente boa fica presa em loops de execução e nunca coloca a própria ideia de pé".
 - **Thumbnails e títulos seguem a mesma lógica do Instagram:** provocar sem sensacionalizar. A pergunta retórica é a arma preferida.
 - **Vídeos longos são ensaios visuais**, não aulas. A estrutura segue: provocação → evidência → reflexão → convite à ação.
 - **Shorts funcionam como faíscas**; fragmentos densos que apontam para conteúdos mais profundos.
@@ -101,7 +103,7 @@ Para diretrizes detalhadas de produção no Instagram, consulte a página **Inst
 | **Canal e formato** | Boca a boca, referências em comunidades, busca no Google |
 | **Tom predominante** | Neutro; depende do ponto de chegada |
 | **Persona sintética ativa** | T.R.U (se a chegada for via site ou documentação) |
-| **Perfil de maturidade** | Todos; a indicação não filtra maturidade |
+| **Perfil predominante** | Todos; a indicação não filtra estágio |
 | **Objetivo** | Garantir que a primeira impressão seja coerente com o resto da experiência |
 
 **Diretrizes de experiência:**
@@ -118,7 +120,7 @@ Para diretrizes detalhadas de produção no Instagram, consulte a página **Inst
 
 ### Onde a curiosidade se transforma em reconhecimento.
 
-O criador já percebeu que a Overlens tem algo diferente. Agora ele investiga. Lê mais, assiste mais, compara com outras opções. Nesta fase, a Overlens não convence; demonstra.
+O empreendedor já percebeu que a Overlens tem algo diferente. Agora ele investiga. Lê mais, assiste mais, compara com outras opções. Nesta fase, a Overlens não convence; demonstra.
 
 ---
 
@@ -129,13 +131,13 @@ O criador já percebeu que a Overlens tem algo diferente. Agora ele investiga. L
 | **Canal e formato** | Site; páginas de conceito, manifesto, sobre, trilhas |
 | **Tom predominante** | 30% Profunda, 25% Científica, 25% Inspiradora, 20% Provocativa |
 | **Persona sintética ativa** | T.R.U em seções técnicas e de estrutura. D.U.D em áreas de boas-vindas |
-| **Perfil de maturidade** | Operantes (40%) e Convergentes (40%), Emergentes (20%) |
+| **Perfil predominante** | Operantes (40%) e Convergentes (40%), Emergentes (20%); têm negócio, mas dispersam energia |
 | **Objetivo** | Converter curiosidade em confiança. Mostrar que a profundidade é real, não cosmética |
 
 **Diretrizes de experiência:**
 - **Cada página deve funcionar como uma lente.** Não descrever o que a Overlens faz; revelar como pensa.
 - **O manifesto "Era da Criação" deve estar acessível e visível.** É o documento que mais converte curiosos em interessados.
-- **Arquitetura de informação clara.** O criador precisa encontrar rapidamente o que procura, mas ser surpreendido pelo que não esperava encontrar.
+- **Arquitetura de informação clara.** O empreendedor precisa encontrar rapidamente o que procura, mas ser surpreendido pelo que não esperava encontrar.
 - **Design visual coerente:** base preta, acentos em microdoses, tipografia Inter + Outfit em títulos. Nada de templates genéricos.
 
 **Métricas de sucesso:**
@@ -157,7 +159,7 @@ O criador já percebeu que a Overlens tem algo diferente. Agora ele investiga. L
 | **Canal e formato** | PDFs via Gumroad, documentos, artigos no blog |
 | **Tom predominante** | 30% Científica, 30% Profunda, 20% Provocativa, 20% Inspiradora |
 | **Persona sintética ativa** | T.R.U em materiais técnicos. D.U.D em materiais de onboarding e reflexão |
-| **Perfil de maturidade** | Operantes e Convergentes |
+| **Perfil predominante** | Operantes e Convergentes |
 | **Objetivo** | Demonstrar valor real antes de qualquer transação. Dar o melhor conteúdo gratuitamente |
 
 **Diretrizes de experiência:**
@@ -181,7 +183,7 @@ O criador já percebeu que a Overlens tem algo diferente. Agora ele investiga. L
 
 ### Onde a decisão exige coragem, não desconto.
 
-O criador decidiu que quer fazer parte. Não por impulso, não por FOMO; por reconhecimento. Nesta fase, a Overlens facilita a entrada sem baratear a experiência.
+O empreendedor decidiu que quer fazer parte. Não por impulso, não por FOMO; por reconhecimento. Nesta fase, a Overlens facilita a entrada sem baratear a experiência.
 
 ---
 
@@ -192,7 +194,7 @@ O criador decidiu que quer fazer parte. Não por impulso, não por FOMO; por rec
 | **Canal e formato** | Landing pages específicas para produtos (Overpass, Vanguarda, Protocolo 3-2-1) |
 | **Tom predominante** | 25% Inspiradora, 25% Provocativa, 25% Científica, 25% Profunda |
 | **Persona sintética ativa** | Nenhuma. Voz institucional focada e clara |
-| **Perfil de maturidade** | Convergentes (principal), Operantes (secundário) |
+| **Perfil predominante** | Convergentes (principal); lançam, mas não sustentam. Operantes (secundário) |
 | **Objetivo** | Transformar interesse em ação; com transparência sobre o que espera do outro lado |
 
 **Diretrizes de experiência:**
@@ -221,7 +223,7 @@ O criador decidiu que quer fazer parte. Não por impulso, não por FOMO; por rec
 | **Canal e formato** | E-mail marketing, DMs automatizadas via Manychat |
 | **Tom predominante** | 30% Inspiradora, 25% Profunda, 25% Provocativa, 20% Científica |
 | **Persona sintética ativa** | D.U.D em e-mails de cuidado, boas-vindas e retomada. T.R.U em instruções operacionais |
-| **Perfil de maturidade** | Todos; segmentado por estágio |
+| **Perfil predominante** | Todos; segmentado por estágio |
 | **Objetivo** | Manter o fio da conexão sem ser invasivo. Guiar sem empurrar |
 
 **Diretrizes de experiência:**
@@ -248,7 +250,7 @@ O criador decidiu que quer fazer parte. Não por impulso, não por FOMO; por rec
 
 ### Onde criar deixa de ser aspiração e vira prática.
 
-O criador entrou. Agora a experiência precisa cumprir; e exceder; a promessa. A Profundidade é onde a Overlens se diferencia de qualquer outra escola. Não é sobre entregar conteúdo. É sobre provocar transformação.
+O empreendedor entrou. Agora a experiência precisa cumprir; e exceder; a promessa. A Profundidade é onde a Overlens se diferencia de qualquer outra escola. Não é sobre entregar conteúdo. É sobre provocar transformação.
 
 ---
 
@@ -259,21 +261,21 @@ O criador entrou. Agora a experiência precisa cumprir; e exceder; a promessa. A
 | **Canal e formato** | Plataforma própria; trilhas (NexGen, Spectrum, AI First, Chrome, Idea, Gestalt, Signals), missões, desafios |
 | **Tom predominante** | 30% Científica, 25% Profunda, 25% Provocativa, 20% Inspiradora |
 | **Persona sintética ativa** | D.U.D em onboarding e momentos de reflexão. T.R.U em orientações técnicas e de navegação |
-| **Perfil de maturidade** | Convergentes (40%), Emergentes (35%), Operantes (25%) |
-| **Objetivo** | Transformar conhecimento em capacidade aplicada. Construir o Nexialista, não apenas informá-lo |
+| **Perfil predominante** | Convergentes (40%), Emergentes (35%), Operantes (25%) |
+| **Objetivo** | Transformar conhecimento em capacidade aplicada. Construir o Empreendedor Nexialista, não apenas informá-lo |
 
 **Diretrizes de experiência:**
 - **Trilhas são jornadas, não playlists.** Cada trilha tem progressão intencional: contexto → conceito → aplicação → reflexão.
 - **Gamificação com substância.** Cargos simbólicos, missões e desafios devem ter peso real; não badges vazios. Cada elemento gamificado deve conectar com um princípio da marca (Julgamento, Realização, Parcimônia, Unidade).
 - **Lugares simbólicos (Parallax, Arcádia, Téssera, Orbital, Noumenom, Limbo) são mais do que nomes de seções.** São ambientes narrativos que criam atmosfera e pertencimento.
-- **D.U.D acompanha o criador nos momentos de pausa e dúvida.** Um lembrete gentil, uma pergunta suave, um registro de progresso.
+- **D.U.D acompanha o empreendedor nos momentos de pausa e dúvida.** Um lembrete gentil, uma pergunta suave, um registro de progresso.
 - **T.R.U organiza a estrutura.** Índices, pré-requisitos, orientações de navegação.
 
 **Métricas de sucesso:**
 - Taxa de conclusão de trilhas (indica se a estrutura sustenta o engajamento)
 - Qualidade dos projetos entregues nas missões (avaliação qualitativa)
 - Tempo de permanência ativa na plataforma (não tempo ocioso; tempo de criação)
-- Evolução do perfil de maturidade ao longo do tempo
+- Evolução do perfil ao longo do tempo; a distância entre a ideia e a realidade diminuindo
 
 **Anti-padrões:**
 - Aulas gravadas sem contexto narrativo (videoaulas genéricas)
@@ -290,19 +292,19 @@ O criador entrou. Agora a experiência precisa cumprir; e exceder; a promessa. A
 | **Canal e formato** | Comunidade interna; fóruns, canais temáticos, encontros síncronos |
 | **Tom predominante** | 25% Provocativa, 25% Profunda, 25% Inspiradora, 25% Científica |
 | **Persona sintética ativa** | Ambas; D.U.D em acolhimento de novos membros, T.R.U em regras e orientações |
-| **Perfil de maturidade** | Todos os perfis coexistem |
-| **Objetivo** | Criar ambiente de troca real entre criadores em diferentes estágios de maturidade |
+| **Perfil predominante** | Todos os perfis coexistem |
+| **Objetivo** | Criar ambiente de troca real entre empreendedores em diferentes estágios da jornada |
 
 **Diretrizes de experiência:**
 - **A comunidade não é um canal de suporte.** É um espaço de troca entre pares com curadoria de qualidade.
-- **Membros mais maduros (Emergentes, Nexialistas) são convidados a contribuir**, não apenas consumir. A comunidade cresce quando quem já avançou ilumina o caminho para quem chega.
+- **Membros mais adiantados (Emergentes, Nexialistas) são convidados a contribuir**, não apenas consumir. A comunidade cresce quando quem já colocou algo de pé abre caminho para quem chega.
 - **Moderação firme, não autoritária.** As regras existem para proteger a qualidade da conversa, não para silenciar.
 - **Encontros síncronos são rituais**, não reuniões. Cada encontro tem intenção, estrutura e espaço para o inesperado.
 
 **Métricas de sucesso:**
 - Engajamento qualitativo (profundidade das conversas, não volume de mensagens)
 - Retenção de membros ativos ao longo do tempo
-- Contribuições voluntárias de membros mais maduros
+- Contribuições voluntárias de membros mais adiantados na jornada
 
 **Anti-padrões:**
 - Comunidade silenciosa onde ninguém interage
@@ -319,7 +321,7 @@ O criador entrou. Agora a experiência precisa cumprir; e exceder; a promessa. A
 | **Canal e formato** | Mentoria em grupo; Vanguarda. Encontros ao vivo, desafios práticos, feedback direto |
 | **Tom predominante** | 30% Provocativa, 25% Científica, 25% Profunda, 20% Inspiradora |
 | **Persona sintética ativa** | Nenhuma. Voz humana direta; Ruan Braz e equipe |
-| **Perfil de maturidade** | Emergentes (60%) e Convergentes (40%) |
+| **Perfil predominante** | Emergentes (60%); têm negócio, mas dispersam energia. Convergentes (40%) |
 | **Objetivo** | Acelerar a transição para o pensamento nexialista. Confrontar limites com método |
 
 **Diretrizes de experiência:**
@@ -332,7 +334,7 @@ O criador entrou. Agora a experiência precisa cumprir; e exceder; a promessa. A
 - Qualidade e originalidade dos projetos finais
 - Evolução autopercebida pelos participantes (avaliação qualitativa)
 - Taxa de continuidade no ecossistema após a mentoria
-- Impacto real dos projetos no mercado ou na vida do criador
+- Impacto real dos projetos no mercado ou na vida de quem os constrói
 
 **Anti-padrões:**
 - Mentoria que vira aula expositiva
@@ -344,9 +346,9 @@ O criador entrou. Agora a experiência precisa cumprir; e exceder; a promessa. A
 
 ## Fase 5: Legado
 
-### Onde o criador se torna referência; não para a Overlens, mas para o mundo.
+### Onde o empreendedor se torna referência; não para a Overlens, mas para o mundo.
 
-O criador que chega aqui não precisa mais da Overlens para criar. Precisa de um ecossistema que potencialize sua contribuição. O Legado é onde a espiral se completa e recomeça: quem foi transformado começa a transformar.
+Quem chega aqui não precisa mais da Overlens para construir. Precisa de um ecossistema que potencialize sua contribuição. O Legado é onde a espiral se completa e recomeça: quem foi transformado começa a transformar.
 
 ---
 
@@ -357,11 +359,11 @@ O criador que chega aqui não precisa mais da Overlens para criar. Precisa de um
 | **Canal e formato** | Showcases internos, exposição de projetos, publicações |
 | **Tom predominante** | 25% Inspiradora, 25% Profunda, 25% Científica, 25% Provocativa |
 | **Persona sintética ativa** | T.R.U em curadoria e apresentação formal |
-| **Perfil de maturidade** | Emergentes e Nexialistas |
+| **Perfil predominante** | Emergentes e Nexialistas; operam um ecossistema próprio |
 | **Objetivo** | Dar visibilidade à criação autoral. Provar que o método funciona pelo resultado, não pelo discurso |
 
 **Diretrizes de experiência:**
-- **O portfólio de um criador formado pela Overlens é a melhor publicidade da marca.** Sem depoimento, sem case study; o trabalho fala.
+- **O que um empreendedor formado pela Overlens constrói é a melhor publicidade da marca.** Sem depoimento, sem case study; o trabalho fala.
 - **Curadoria com critério.** Não é qualquer projeto que merece showcase. A seleção reflete os valores da marca: autoria, profundidade, coerência.
 - **Créditos e atribuição sempre transparentes.** Se usou IA, diz que usou. Se colaborou, credita. Ética explícita.
 
@@ -379,7 +381,7 @@ O criador que chega aqui não precisa mais da Overlens para criar. Precisa de um
 | **Canal e formato** | Eventos, parcerias, contribuições à comunidade, mentoria entre pares |
 | **Tom predominante** | 25% Profunda, 25% Inspiradora, 25% Provocativa, 25% Científica |
 | **Persona sintética ativa** | Contextual |
-| **Perfil de maturidade** | Nexialistas |
+| **Perfil predominante** | Nexialistas |
 | **Objetivo** | Fechar o ciclo: quem foi movido agora move. O ecossistema se retroalimenta |
 
 **Diretrizes de experiência:**
@@ -421,13 +423,13 @@ Sete princípios que atravessam todos os pontos de contato, independentemente de
 
 **2. Experiência > Exposição.** A Overlens não busca estar em todos os lugares. Busca ser memorável onde decide estar. Melhor um canal excelente do que cinco mediocres.
 
-**3. Respeito pela inteligência do criador.** Em nenhum ponto de contato o criador deve sentir que está sendo manipulado, bajulado ou subestimado. Trate-o como adulto capaz de lidar com verdades incômodas.
+**3. Respeito pela inteligência do empreendedor.** Em nenhum ponto de contato ele deve sentir que está sendo manipulado, bajulado ou subestimado. Trate-o como adulto capaz de lidar com verdades incômodas.
 
 **4. Silêncio é comunicação.** A ausência de mensagem é tão intencional quanto a presença. Não enviar e-mail desnecessário, não publicar por obrigação, não preencher silêncio com ruído.
 
-**5. Cada touchpoint é uma promessa.** Se a Overlens diz que forma Nexialistas, cada interação; da DM ao encontro da Vanguarda; precisa sustentar essa promessa. Promessa quebrada em um ponto compromete todos os outros.
+**5. Cada touchpoint é uma promessa.** Se a Overlens diz que forma Empreendedores Nexialistas, cada interação; da DM ao encontro da Vanguarda; precisa sustentar essa promessa. Promessa quebrada em um ponto compromete todos os outros.
 
-**6. A jornada pertence ao criador, não à marca.** A Overlens guia, provoca, acompanha. Nunca empurra, nunca retém, nunca cria dependência. Autonomia é o destino; e também o caminho.
+**6. A jornada pertence ao empreendedor, não à marca.** A Overlens guia, provoca, acompanha. Nunca empurra, nunca retém, nunca cria dependência. Autonomia é o destino; e também o caminho.
 
 **7. Métricas servem à missão, não o contrário.** Otimizar para números sem propósito é o oposto de tudo que a Overlens defende. Uma métrica só importa se responde: "estamos colocando o poder da criação nas mãos das pessoas?"
 
@@ -444,8 +446,8 @@ Independentemente do canal, estes comportamentos são inegociáveis:
 | Tratar canais como megafones | A Overlens conversa, não grita |
 | Copiar o que "funciona" sem filtro | Se qualquer marca faria igual, não é Overlens |
 | Prometer transformação sem custo | O preço de fazer parte é explícito; escondê-lo é desonestidade |
-| Infantilizar o criador | "Diquinhas", "projetinho", diminutivos condescendentes |
-| Ignorar feedback negativo | A coragem que exigimos do criador, exigimos de nós mesmos |
+| Infantilizar o empreendedor | "Diquinhas", "projetinho", diminutivos condescendentes |
+| Ignorar feedback negativo | A coragem que exigimos de quem constrói, exigimos de nós mesmos |
 | Automatizar sem personalidade | Automação deve soar como D.U.D ou T.R.U, nunca como robô genérico |
 
 ---

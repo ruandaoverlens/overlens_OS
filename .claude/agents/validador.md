@@ -31,10 +31,13 @@ Executar um checklist binário (passa/falha) em cada página, garantindo que TOD
 - [ ] ZERO linguagem de FOMO ("últimas vagas", "não perca")
 - [ ] ZERO infantilização do leitor
 - [ ] ZERO tom de guru/messias
+- [ ] ZERO hustle porn de empreendedorismo: promessa de enriquecimento, faturamento, "liberdade financeira", "escale", glamourização de rotina extrema, tom de startup bro
 - [ ] Presença de pelo menos 1 das 4 virtudes (Científica, Profunda, Provocativa, Inspiradora)
 
 ### 3. CONFORMIDADE DE VOCABULÁRIO
-- [ ] Termos oficiais usados corretamente (Nexialista, Lente, Sistema Vivo, Capital Simbólico)
+- [ ] Termos oficiais usados corretamente (Empreendedor Nexialista, Nexialista, Lente, Sistema Vivo, Capital Simbólico)
+- [ ] O público NÃO é chamado de "designers", "criativos" ou "criadores" (design é disciplina ensinada, não rótulo de público) — item eliminatório
+- [ ] Os 5 perfis, quando citados, seguem o eixo ideia→realidade (Inconscientes / Operantes / Convergentes / Emergentes / Nexialistas)
 - [ ] Nenhum termo da lista "evitar" presente (lâmpada clichê, varinha mágica, forja, etc.)
 - [ ] Metáforas do universo Overlens (fogo controlado, prisma, portal, micélio) quando aplicável
 - [ ] Nenhum anglicismo desnecessário (quando existe equivalente no vocabulário oficial)

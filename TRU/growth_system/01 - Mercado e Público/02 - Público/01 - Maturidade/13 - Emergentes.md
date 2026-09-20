@@ -1,6 +1,6 @@
 # Emergentes
 
-## Emergente já enxerga a complexidade do que precisa ser feito e entende que o futuro exige mais do que soluções simples. Mas ainda tropeça ao tentar conectar essas peças em sistemas vivos e coerentes. Sem essa arquitetura, sua inovação se dispersa. Na Overlens, Emergentes aprendem a estruturar o invisível: alinhando estratégia, execução e visão para construir obras que atravessam o tempo e não apenas o mercado. 
+## Emergente já tem um negócio de pé e inova de verdade, mas dispersa energia em frentes demais. Enxerga a complexidade do que precisa ser feito e ainda tropeça ao conectar essas peças em um sistema vivo e coerente. Sem essa arquitetura, a inovação se espalha e nada aprofunda. Na Overlens, Emergentes aprendem a estruturar o invisível: alinhando estratégia, execução e visão para construir obras que atravessam o tempo e não apenas o mercado. 
 
 **Soluções**: Atlas Overpass Vanguarda 
 
@@ -20,7 +20,7 @@
 | :---- | :---- |
 | **Resumo Essencial** | O Emergente é aquele que já transcendeu a fase da execução e da diferenciação técnica, ele enxerga padrões, reconhece as dinâmicas complexas do novo mundo, e sente o chamado para criar sistemas vivos e sustentáveis. No entanto, sua capacidade de construir realidades ainda é fragmentada: entende o que precisa ser feito, mas luta para integrar múltiplas camadas de conhecimento em arquiteturas robustas. Sua jornada não é mais sobre aprender frameworks, é sobre sintetizar o invisível e navegar a incerteza com maestria. |
 | **Arquétipo** | Arquiteto de Sistemas Emergentes, nascido do Visionário Desestruturado. |
-| **Momento de vida** | Líderes criativos, fundadores de projetos inovadores, estrategistas de produto ou negócio, freelancers sênior que já atuam em múltiplas frentes mas sentem a falta de uma espinha dorsal sistêmica para seus movimentos. Já ultrapassaram o nível de "ferramentas e métodos", mas precisam de síntese, clareza e validação para construir futuros consistentes. |
+| **Momento de vida** | Fundadores com negócio já em operação, líderes de iniciativas próprias, pessoas que tocam produto, marca e receita ao mesmo tempo. Atuam em múltiplas frentes e sentem a falta de uma espinha dorsal sistêmica. Já ultrapassaram o nível de "ferramentas e métodos", mas precisam de síntese, clareza e foco para construir futuros consistentes. |
 | **JTBD Funcional** | Consolidar sua capacidade de criação emergente, estruturando modelos, negócios e projetos que resistam ao tempo e à volatilidade do mercado. |
 | **JTBD Emocional** | Validar internamente que sua visão sistêmica não é utopia, é arquitetura de futuro real. Sentir orgulho de construir não apenas produtos, mas ecossistemas vivos. |
 | **Motivação Primária** | Desejo profundo de ver suas ideias se concretizando como sistemas coerentes, resilientes e impactantes, não como flashes isolados de inovação. Vontade de se tornar uma referência na criação de futuros aplicados, respeitado não apenas por criar algo novo, mas por estruturar o que outros não conseguem. |
@@ -28,7 +28,7 @@
 | **Paradigmas Mentais** | “Enxergar padrões já é suficiente para construir algo sólido.” “Quanto mais redes e possibilidades eu criar, mais forte será minha inovação.” “A incerteza é inevitável, mas talvez eu devesse esperar por condições melhores para agir.” |
 | **Gatilhos de Ação** | Perceber que uma ideia brilhante não se sustentou por falta de estrutura. Ver peers avançando com frameworks claros enquanto ainda está lidando com fragmentação. Sentir que o tempo de inovação espontânea acabou e que agora a excelência exige estratégia deliberada. |
 | **Objeções típicas** | "Será que estruturar minhas ideias não vai engessar minha capacidade criativa?" "E se eu ainda não estiver pronto para transformar visão em sistema?" "Será que vale a pena investir tanto agora, se o futuro ainda é tão incerto?" |
-| **De/Para** | De: Criador de padrões intuitivos, disperso em múltiplas frentes, lidando com inovação fragmentada. Para: Arquiteto de sistemas emergentes, capaz de consolidar redes de valor, construir futuros vivos e sustentar movimentos no tempo. |
+| **De/Para** | De: fundador que inova de verdade, mas dispersa energia em frentes demais ➔ Para: arquiteto de sistemas emergentes, capaz de consolidar redes de valor e sustentar um ecossistema no tempo. |
 | **Lente de sucesso** | Conseguir não apenas inovar, mas construir estruturas que sobrevivam às mudanças — sentir que está criando realidades sistêmicas e deixando marcas que evoluem no tempo. |
 | **Comportamento de consumo** | Plataformas: LinkedIn (networking estratégico e tendências emergentes), Medium (ensaios sobre inovação e complexidade), podcasts sobre negócios futuros, newsletters de futurologia aplicada. |
 | **Padrões de busca** | Conteúdos que falam sobre construção de sistemas, antifragilidade, inovação sustentável, frameworks de negócios emergentes. Evitam "modismos" superficiais e buscam "ferramentas para o invisível". |
@@ -42,9 +42,9 @@ Churn anual \< 10%
 
 ### **Subtipos de Emergentes:**
 
-#### O Criador Visionário
+#### O Construtor Visionário
 
-Alguém movido pela força da imaginação e inovação. Já cria novos conceitos, produtos ou movimentos, mas sente dificuldade em estruturar, validar e sustentar essas criações de forma sistemática.
+Alguém movido pela força da imaginação e da invenção. Já cria novos conceitos, produtos ou movimentos, mas sente dificuldade em estruturar, validar e sustentar essas criações de forma sistemática.
 
 Características principais:  
 \- Muito criativo e intuitivo.  
@@ -70,7 +70,7 @@ Frase representativa: "Vejo as engrenagens do futuro, mas preciso acelerar a con
 
 #### O Conector de Redes
 
-Alguém que percebe que a inovação real acontece em redes colaborativas e busca se posicionar como um catalisador entre criadores, ideias e movimentos.
+Alguém que percebe que a inovação real acontece em redes colaborativas e busca se posicionar como um catalisador entre construtores, ideias e movimentos.
 
 Características principais:  
 \- Habilidade acima da média para conectar pessoas e projetos.  
@@ -89,7 +89,7 @@ Perder o timing da mudança. Angústia de perceber tarde demais que o mundo já 
 
 Fracassar de maneira pública. Não é apenas o erro, é o erro visível. Ser visto como alguém que "não conseguiu sustentar a inovação".
 
-Ser diluído na mediocridade. Pavor secreto de ser "mais um" e não se destacar no cenário de construção de futuros.
+Ser diluído na dispersão. Pavor secreto de tocar muitas frentes e não aprofundar nenhuma.
 
 Ser enganado por modismos. Medo de investir tempo, recursos e reputação em algo que depois será visto como "hype vazio".
 
@@ -113,7 +113,7 @@ Ritmo acelerado de novas tecnologias. Pressão de precisar entender, adaptar e a
 
 Expectativas internas de excelência. São muito exigentes consigo mesmos, querem resultados fora do comum, mas com padrão próprio de sofisticação.
 
-Validação silenciosa da rede. Desejam, ainda que não admitam, o respeito tácito de outros criadores emergentes.
+Validação silenciosa da rede. Desejam, ainda que não admitam, o respeito tácito de outros fundadores emergentes.
 
 Necessidade de eficiência estratégica. Sabem que não podem mais "errar muito", cada decisão errada tem um custo de oportunidade alto.
 
@@ -199,7 +199,7 @@ Identificar e evitar uma armadilha de modismo. Conseguir diferenciar tendência 
 **R**: Programas que mapeiam tendências, tecnologias e frameworks de negócios emergentes validados.  
 **E**: Confiança renovada para agir como um early adopter estratégico.
 
-**R**: Conexão com uma comunidade de criadores, estrategistas e líderes dessa nova era.  
+**R**: Conexão com uma comunidade de fundadores, estrategistas e construtores dessa nova era.  
 **E**: Sentimento de pertencimento a uma linhagem de construtores do futuro.
 
 **R**: Estruturação de iniciativas com base em princípios sólidos de inovação e sustentação de negócios.  

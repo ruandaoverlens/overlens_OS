@@ -8,15 +8,15 @@
 
 <figcaption><a href="https://commons.wikimedia.org/wiki/File:Thomas_Cole_-_The_Voyage_of_Life_Youth,_1842_(National_Gallery_of_Art).jpg">The Voyage of Life: Youth</a>; Thomas Cole, 1842</figcaption>
 
-Marcas que se colocam no centro da própria narrativa cometem um erro estrutural: transformam o público em plateia. E plateia não age; assiste. A Overlens existe para mover pessoas à ação, e por isso adota um princípio narrativo inegociável: **o herói da história é sempre o criador, nunca a escola.**
+Marcas que se colocam no centro da própria narrativa cometem um erro estrutural: transformam o público em plateia. E plateia não age; assiste. A Overlens existe para mover pessoas à ação, e por isso adota um princípio narrativo inegociável: **o herói da história é sempre o empreendedor, nunca a escola.**
 
-Esta página organiza o roteiro narrativo da Overlens a partir do framework SB7 (StoryBrand), cruzado com a Jornada do Herói de Campbell e Vogler, e ancorado nos cinco perfis de maturidade que já estruturam toda a comunicação da marca. Não é um exercício teórico. É o código que orienta cada peça de conteúdo, cada campanha, cada ponto de contato; da primeira impressão ao momento em que o criador publica algo que não existia antes dele.
+Esta página organiza o roteiro narrativo da Overlens a partir do framework SB7 (StoryBrand), cruzado com a Jornada do Herói de Campbell e Vogler, e ancorado nos cinco perfis de maturidade que já estruturam toda a comunicação da marca. Não é um exercício teórico. É o código que orienta cada peça de conteúdo, cada campanha, cada ponto de contato; da primeira impressão ao momento em que o empreendedor coloca no mundo algo que não existia antes dele.
 
 ---
 
-## O Herói <span style="color: #888; font-weight: normal;">; o criador que ainda não sabe o que é</span>
+## O Herói <span style="color: #888; font-weight: normal;">; quem ainda não se reconhece como empreendedor</span>
 
-O herói da narrativa Overlens não é um arquétipo abstrato. Tem rosto, contexto e contradições reais. É a pessoa que sente que pode criar algo relevante, mas está presa entre a insegurança, a fragmentação do mercado e a velocidade das mudanças tecnológicas.
+O herói da narrativa Overlens não é um arquétipo abstrato. Tem rosto, contexto e contradições reais. É a pessoa que sente que pode construir algo relevante, mas está presa entre a insegurança, a fragmentação do mercado e a velocidade das mudanças tecnológicas. Pode vir da engenharia, da arquitetura, da arte, do design ou de nenhuma dessas origens: o que a define não é a profissão, é o que faz com a própria ideia.
 
 Esse herói carrega três marcas:
 
@@ -26,7 +26,7 @@ Esse herói carrega três marcas:
 
 <span style="font-size: 1.3em; font-weight: bold; color: #fff;">Desejo latente</span>
 
-Quer criar, construir, materializar ideias que importam. Não busca fama ou validação superficial. Busca autoria.
+Quer construir, materializar, colocar de pé ideias que importam. Não busca fama ou validação superficial. Busca autoria.
 
 </div>
 
@@ -48,19 +48,19 @@ Vive em um ambiente que recompensa consistência mecânica, não consciência cr
 
 </div>
 
-O herói não é fraco. É alguém com potência real que ainda não encontrou as condições certas para exercê-la. A diferença entre ele e alguém que já cria com propósito não é talento; é clareza.
+O herói não é fraco. É alguém com potência real que ainda não encontrou as condições certas para exercê-la. A diferença entre ele e alguém que já constrói com propósito não é talento; é clareza.
 
 ### Os cinco rostos do herói
 
-O herói não é estático. Ele amadurece. Os cinco perfis de maturidade da Overlens são, na verdade, os cinco estágios da jornada de um mesmo criador:
+O herói não é estático. Ele amadurece. Os cinco perfis de maturidade da Overlens não medem senioridade de carreira; medem a distância entre a ideia e a realidade. São os cinco estágios da jornada de um mesmo empreendedor:
 
 | Estágio | Perfil | Estado narrativo | Pergunta que carrega |
 |---------|--------|-----------------|---------------------|
-| 1 | **Inconsciente** | Sente desconforto, intui que algo precisa mudar, mas não consegue nomear | "Por que nada do que faço parece ter sentido?" |
-| 2 | **Operante** | Percebeu a necessidade, mas está preso a ferramentas e técnicas como solução | "Se eu aprender mais uma ferramenta, será suficiente?" |
-| 3 | **Convergente** | Rompeu crenças limitantes, busca método, mas falta visão sistêmica | "Tenho um processo, por que ainda sinto que falta algo?" |
-| 4 | **Emergente** | Enxerga a complexidade, inova, mas dispersa energia sem direção clara | "Como transformar tudo o que sei em algo que funcione no mundo?" |
-| 5 | **Nexialista** | Busca significado, legado e maestria. Une criação, estratégia, tecnologia e propósito | "Como criar algo que sobreviva a mim?" |
+| 1 | **Inconsciente** | Tem vontade de construir, mas não tem direção. O desconforto existe antes do nome | "Por que nada do que faço parece levar a algum lugar?" |
+| 2 | **Operante** | Executa bem, entrega o que pedem, mas não lança nada que seja seu | "Se eu aprender mais uma ferramenta, finalmente começo?" |
+| 3 | **Convergente** | Lança projetos e encontra o mundo real, mas não sustenta o que lançou | "Por que tudo o que começo perde força no meio do caminho?" |
+| 4 | **Emergente** | Já tem um negócio de pé, mas dispersa energia em frentes demais | "Como transformar o que construí em algo que se sustente sem depender de mim o tempo todo?" |
+| 5 | **Nexialista** | Opera um ecossistema próprio: integra disciplinas, pessoas e tecnologia com critério | "Como criar algo que sobreviva a mim?" |
 
 Cada peça de comunicação da Overlens deve falar com pelo menos um desses rostos. Nunca com todos ao mesmo tempo; isso gera ruído. E nunca com nenhum; isso gera conteúdo genérico.
 
@@ -72,7 +72,7 @@ O framework SB7 distingue três dimensões do problema do herói. Na narrativa O
 
 ### Problema externo (o que ele vê)
 
-O mercado criativo está fragmentado. Informação abundante, formação escassa. Tutoriais infinitos, direção zero. Ferramentas que multiplicam a produção sem multiplicar o sentido. O criador acorda todos os dias diante de um dilema prático: existe mais conteúdo, mais tecnologia e mais acesso do que em qualquer outro momento da história; e ainda assim, criar algo relevante parece mais difícil do que nunca.
+O mercado criativo está fragmentado. Informação abundante, formação escassa. Tutoriais infinitos, direção zero. Ferramentas que multiplicam a produção sem multiplicar o sentido. O empreendedor acorda todos os dias diante de um dilema prático: existe mais conteúdo, mais tecnologia e mais acesso do que em qualquer outro momento da história; e ainda assim, criar algo relevante parece mais difícil do que nunca.
 
 A popularização das inteligências artificiais generativas escancarou essa fratura. Não porque a tecnologia seja o vilão; ela não é. Mas porque revelou que grande parte do que era chamado de "criação" era, na verdade, execução técnica repetitiva. E execução técnica repetitiva agora custa centavos.
 
@@ -80,7 +80,7 @@ A popularização das inteligências artificiais generativas escancarou essa fra
 
 Insegurança criativa. A sensação persistente de que não é bom o suficiente, não sabe o suficiente, não tem o suficiente. O Operante acha que precisa de mais uma ferramenta. O Convergente acha que precisa de mais um método. O Emergente acha que precisa de mais foco. Nenhum deles percebe que o que falta não é recurso; é lente.
 
-Essa insegurança se manifesta de formas diferentes: paralisia criativa, síndrome do impostor, projetos eternamente inacabados, dependência de validação externa, medo de publicar. Mas a raiz é uma só: a ausência de uma visão integrada que conecte o que o criador sabe ao que ele pode construir.
+Essa insegurança se manifesta de formas diferentes: paralisia criativa, síndrome do impostor, projetos eternamente inacabados, dependência de validação externa, medo de publicar. Mas a raiz é uma só: a ausência de uma visão integrada que conecte o que o empreendedor sabe ao que ele pode construir.
 
 ### Problema filosófico (o que está em jogo)
 
@@ -140,13 +140,13 @@ No SB7, o guia é quem já percorreu o caminho e agora oferece empatia e autorid
 
 A Overlens nasceu da mesma dor que o herói carrega. Ruan Braz, em 2015, fez uma promessa diante do espelho depois de ouvir de amigos que criar era perda de tempo: "vou mostrar para as pessoas o poder da criação e colocar esse poder em suas mãos, sem esconder o peso disso". Não é um discurso institucional. É uma experiência vivida que se transformou em método.
 
-A escola entende a insegurança porque veio dela. Entende a hostilidade do mercado porque enfrentou críticas, rótulos e resistência durante anos. Entende a solidão do criador porque construiu durante muito tempo sem que ninguém prestasse atenção.
+A escola entende a insegurança porque veio dela. Entende a hostilidade do mercado porque enfrentou críticas, rótulos e resistência durante anos. Entende a solidão de quem empreende porque construiu durante muito tempo sem que ninguém prestasse atenção.
 
 ### Autoridade
 
 A empatia sem método é consolo. A Overlens oferece mais do que compreensão; oferece estrutura. Autoridade construída por:
 
-- **Resultados concretos**; <span style="color: #aaa;">Criadores que reorganizaram carreiras, publicaram projetos relevantes e passaram a enxergar a realidade com mais clareza</span>
+- **Resultados concretos**; <span style="color: #aaa;">Empreendedores que reorganizaram carreiras, lançaram projetos e negócios relevantes e passaram a enxergar a realidade com mais clareza</span>
 
 - **Frameworks proprietários**; <span style="color: #aaa;">Nexialismo, os 4 Princípios, as 4 Lentes, Metodologia A.C.R.O, os 4 graus de influência da percepção</span>
 
@@ -164,25 +164,25 @@ O guia eficaz não diz "confie em mim". Diz "aqui está o caminho". O plano da O
 
 ### Movimento 1: Inspirar (a criar)
 
-Romper crenças limitantes. Mostrar que criar é possível, necessário e transformador. Confrontar a narrativa da renúncia com evidências, exemplos e provocações que tiram o criador do modo automático.
+Romper crenças limitantes. Mostrar que criar é possível, necessário e transformador. Confrontar a narrativa da renúncia com evidências, exemplos e provocações que tiram o empreendedor do modo automático.
 
 **Como acontece:** conteúdos em redes sociais, manifestos, eventos, exemplo vivido. É a porta de entrada; o momento em que o Inconsciente percebe que o desconforto tem nome e que existe gente enfrentando o mesmo conflito.
 
 ### Movimento 2: Ensinar (a criar)
 
-Construir pensamento crítico, visão sistêmica, criatividade aplicada e uso consciente de tecnologia. Não é transmissão de técnica; é formação de lente. O criador não aprende a usar uma ferramenta; aprende a pensar sobre o que constrói.
+Construir pensamento crítico, visão sistêmica, criatividade aplicada e uso consciente de tecnologia. Não é transmissão de técnica; é formação de lente. O empreendedor não aprende a usar uma ferramenta; aprende a pensar sobre o que constrói.
 
-**Como acontece:** trilhas de conhecimento e missões na plataforma (Atlas, Protocolo 3-2-1, Overpass, NexGen, Spectrum, AI First). Cada trilha endereça um estágio de maturidade específico, guiando o criador do Operante ao Convergente, do Convergente ao Emergente.
+**Como acontece:** trilhas de conhecimento e missões na plataforma (Atlas, Protocolo 3-2-1, Overpass, NexGen, Spectrum, AI First). Cada trilha endereça um estágio de maturidade específico, guiando o empreendedor do Operante ao Convergente, do Convergente ao Emergente.
 
 ### Movimento 3: Mover (a criar)
 
-Transformar conhecimento em ação no mundo real. Publicar. Materializar. Enfrentar o atrito entre a ideia e a realidade. Aqui, o criador deixa de ser aluno e passa a ser autor.
+Transformar conhecimento em ação no mundo real. Publicar. Materializar. Enfrentar o atrito entre a ideia e a realidade. Aqui, o empreendedor deixa de ser aluno e passa a ser autor.
 
 **Como acontece:** bootcamps, mentorias como a Vanguarda, projetos aplicados. O Emergente se torna Nexialista quando para de acumular conhecimento e começa a usá-lo para construir algo que não existia antes.
 
 ### O plano em uma frase
 
-> A Overlens oferece um caminho de três estágios; inspiração, formação e ação; que transforma criadores fragmentados em Nexialistas: pessoas que pensam de forma sistêmica, criam com autonomia e usam tecnologia como extensão do pensamento, não como substituto.
+> A Overlens oferece um caminho de três estágios; inspiração, formação e ação; que transforma ideias dispersas em realidade e forma Empreendedores Nexialistas: pessoas que pensam de forma sistêmica, constroem com autonomia e usam tecnologia como extensão do pensamento, não como substituto.
 
 ---
 
@@ -194,13 +194,13 @@ A chamada direta é clara, sem FOMO, sem urgência artificial:
 
 > "Se está pronto para parar de reagir e começar a criar, este é o caminho."
 
-Não é "inscreva-se agora antes que as vagas acabem". É um convite condicional que respeita a autonomia do criador. A Overlens não precisa convencer; precisa estar visível para quem já decidiu.
+Não é "inscreva-se agora antes que as vagas acabem". É um convite condicional que respeita a autonomia do empreendedor. A Overlens não precisa convencer; precisa estar visível para quem já decidiu.
 
 Variações contextuais:
 - Para o Inconsciente: "O primeiro passo é enxergar o que está acontecendo. Comece por aqui."
 - Para o Operante: "Ferramentas não bastam. Você precisa de direção."
-- Para o Convergente: "Você já tem método. Agora precisa de visão."
-- Para o Emergente: "Está na hora de transformar o que você sabe em algo que funcione no mundo real."
+- Para o Convergente: "Você já lança. O difícil agora é sustentar."
+- Para o Emergente: "Você já construiu. Agora precisa concentrar energia no que sustenta."
 
 ### Chamada transitória
 
@@ -216,15 +216,15 @@ A lógica é simples: quem experimenta a lente não precisa ser convencido de qu
 
 ## O Fracasso <span style="color: #888; font-weight: normal;">; o que acontece se não agir</span>
 
-A Overlens não usa medo como ferramenta de conversão. Mas também não suaviza a realidade. O cenário de inação é apresentado com franqueza, porque o criador merece respeito suficiente para ouvir a verdade.
+A Overlens não usa medo como ferramenta de conversão. Mas também não suaviza a realidade. O cenário de inação é apresentado com franqueza, porque o empreendedor merece respeito suficiente para ouvir a verdade.
 
-Se o criador não agir:
+Se o empreendedor não agir:
 
 - **Obsolescência progressiva**; <span style="color: #aaa;">O que hoje é chamado de profissão será, em poucos anos, uma commodity automatizada. Quem não desenvolver visão sistêmica e capacidade de integração vai competir com algoritmos pelo mesmo trabalho; e vai perder.</span>
 
 - **Renúncia como hábito**; <span style="color: #aaa;">Cada dia sem criar com propósito reforça o padrão de adiamento. A renúncia não acontece em um momento dramático. Acontece em micro-decisões silenciosas: adiar, consumir em vez de produzir, delegar o que deveria ser autoria.</span>
 
-- **Alienação completa**; <span style="color: #aaa;">O criador que renuncia não desaparece. Ele passa a viver os projetos de quem cria. Usa os produtos de quem cria. Aceita a realidade de quem cria. A criação continua; só que sem ele.</span>
+- **Alienação completa**; <span style="color: #aaa;">Quem renuncia não desaparece. Ele passa a viver os projetos de quem cria. Usa os produtos de quem cria. Aceita a realidade de quem cria. A criação continua; só que sem ele.</span>
 
 > O futuro não espera por ninguém. E quem não cria, vive os projetos de quem cria.
 
@@ -236,7 +236,7 @@ Isso não é ameaça. É descrição. A Overlens não culpa quem ainda não agiu
 
 O sucesso na narrativa Overlens não é financeiro, não é métrica, não é seguidores. É transformação real, verificável na prática.
 
-O criador que completa a jornada:
+O empreendedor que completa a jornada:
 
 - **Pensa de forma sistêmica**; <span style="color: #aaa;">Não vê disciplinas isoladas. Conecta design, filosofia, tecnologia, estratégia e narrativa como dimensões de um mesmo ato criativo.</span>
 
@@ -248,32 +248,32 @@ O criador que completa a jornada:
 
 - **Assume responsabilidade**; <span style="color: #aaa;">Entende que criação é liberdade com peso. Que autoria implica consequências. Que o poder de criar exige consciência sobre o que se cria.</span>
 
-> O Nexialista não é um título. É uma postura. É o criador que entendeu que a melhor maneira de prever o futuro é construí-lo; e que está disposto a carregar o peso dessa decisão.
+> O Nexialista não é um título. É uma postura. É o empreendedor que entendeu que a melhor maneira de prever o futuro é construí-lo; e que está disposto a carregar o peso dessa decisão.
 
 ---
 
 ## A Jornada do Herói: de Inconsciente a Nexialista
 
-A Jornada do Herói de Campbell e Vogler, quando aplicada à Overlens, não é metáfora decorativa. É a estrutura real de transformação que cada criador atravessa. Os doze estágios clássicos mapeiam diretamente para os cinco perfis de maturidade:
+A Jornada do Herói de Campbell e Vogler, quando aplicada à Overlens, não é metáfora decorativa. É a estrutura real de transformação que cada empreendedor atravessa. Os doze estágios clássicos mapeiam diretamente para os cinco perfis de maturidade:
 
 ### Ato I; Separação (Inconsciente → Operante)
 
 | Estágio clássico | Tradução Overlens |
 |-------------------|-------------------|
-| **Mundo Comum** | O criador vive no piloto automático. Consome tutoriais, segue tendências, executa o que mandam. Sente desconforto, mas não consegue nomeá-lo. |
+| **Mundo Comum** | O empreendedor vive no piloto automático. Consome tutoriais, segue tendências, executa o que mandam. Sente desconforto, mas não consegue nomeá-lo. |
 | **Chamado à Aventura** | Algo rompe a superfície: um conteúdo da Overlens, uma crise profissional, a percepção de que a IA faz em segundos o que ele levava horas para fazer. O desconforto ganha contorno. |
 | **Recusa do Chamado** | "Isso não é para mim." "Preciso de mais uma ferramenta antes." "Quando eu tiver mais tempo." A resistência é natural. O sistema premia quem fica. |
-| **Encontro com o Mentor** | O primeiro contato real com a Overlens; não como escola, mas como lente. O criador percebe que alguém já mapeou o terreno que ele está tentando atravessar. |
+| **Encontro com o Mentor** | O primeiro contato real com a Overlens; não como escola, mas como lente. O empreendedor percebe que alguém já mapeou o terreno que ele está tentando atravessar. |
 
 ### Ato II; Iniciação (Operante → Convergente → Emergente)
 
 | Estágio clássico | Tradução Overlens |
 |-------------------|-------------------|
-| **Travessia do Primeiro Limiar** | A decisão de investir tempo, energia e vulnerabilidade em uma formação real. Entrar no Overpass, no Protocolo 3-2-1 ou em uma trilha. O criador sai do consumo passivo para o compromisso ativo. |
-| **Testes, Aliados e Inimigos** | O processo de formação: missões, projetos, críticas construtivas, encontro com outros criadores na mesma jornada. Também os inimigos internos; perfeccionismo, síndrome do impostor, medo de publicar. |
-| **Aproximação da Caverna Oculta** | O momento em que o criador precisa enfrentar a pergunta mais difícil: "O que eu realmente quero criar? E por quê?" Aqui, método não basta. É preciso visão. |
+| **Travessia do Primeiro Limiar** | A decisão de investir tempo, energia e vulnerabilidade em uma formação real. Entrar no Overpass, no Protocolo 3-2-1 ou em uma trilha. O empreendedor sai do consumo passivo para o compromisso ativo. |
+| **Testes, Aliados e Inimigos** | O processo de formação: missões, projetos, críticas construtivas, encontro com outros empreendedores na mesma jornada. Também os inimigos internos; perfeccionismo, síndrome do impostor, medo de publicar. |
+| **Aproximação da Caverna Oculta** | O momento em que o empreendedor precisa enfrentar a pergunta mais difícil: "O que eu realmente quero construir? E por quê?" Aqui, método não basta. É preciso visão. |
 | **Provação Suprema** | O primeiro projeto real publicado no mundo. O momento em que a ideia encontra a realidade e sobrevive ao atrito. Não é perfeito. Mas é autoral. |
-| **Recompensa** | Clareza. O criador percebe que pode pensar de forma sistêmica, integrar disciplinas e criar algo que funcione. A insegurança não desaparece; mas deixa de ser paralisante. |
+| **Recompensa** | Clareza. O empreendedor percebe que pode pensar de forma sistêmica, integrar disciplinas e criar algo que funcione. A insegurança não desaparece; mas deixa de ser paralisante. |
 
 ### Ato III; Retorno (Emergente → Nexialista)
 
@@ -298,10 +298,10 @@ Vivemos na Era da Criação; um momento em que a humanidade tem mais poder criat
 O mercado fragmentou o sentido da criação. Ferramentas substituíram visão. Métricas substituíram valor. Produção substituiu propósito. A tecnologia, que deveria ser fogo, tornou-se corrente. A maior parte das pessoas que poderiam criar está presa em ciclos de execução sem autoria.
 
 **Ato II; A Ruptura**
-Criadores começam a perceber que o problema não é falta de ferramenta; é falta de lente. A Overlens surge como espaço de formação que leva a criação a sério: com método, profundidade, ética e recusa a simplificações. Cada criador que entra nesse espaço enfrenta o próprio processo de transformação: da inconsciência à autoria.
+Empreendedores começam a perceber que o problema não é falta de ferramenta; é falta de lente. A Overlens surge como espaço de formação que leva a criação a sério: com método, profundidade, ética e recusa a simplificações. Cada empreendedor que entra nesse espaço enfrenta o próprio processo de transformação: da inconsciência à autoria.
 
 **Ato III; A Nova Realidade**
-Os Nexialistas não resolvem o problema sozinhos. Mas criam as primeiras evidências de que outro modo de operar é possível. Cada projeto publicado, cada carreira reconstruída, cada ideia que encontra o mundo real é uma prova de que a criação consciente funciona. O ciclo não fecha; ele se expande. Cada Nexialista se torna exemplo para o próximo criador que ainda está preso na caverna.
+Os Nexialistas não resolvem o problema sozinhos. Mas criam as primeiras evidências de que outro modo de operar é possível. Cada projeto publicado, cada carreira reconstruída, cada ideia que encontra o mundo real é uma prova de que a criação consciente funciona. O ciclo não fecha; ele se expande. Cada Nexialista se torna exemplo para o próximo empreendedor que ainda está preso na caverna.
 
 ---
 
@@ -309,21 +309,21 @@ Os Nexialistas não resolvem o problema sozinhos. Mas criam as primeiras evidên
 
 A one-liner é a frase de posicionamento narrativo que sintetiza toda a história da marca em uma sentença. Segue a fórmula: problema + solução + resultado.
 
-> **A maioria dos criadores está presa entre o excesso de ferramentas e a falta de direção. A Overlens forma Nexialistas; criadores sistêmicos que pensam com profundidade, criam com autonomia e usam tecnologia como extensão da imaginação, não como substituto do pensamento.**
+> **A maioria de quem tem uma boa ideia está presa entre o excesso de ferramentas e a falta de direção. A Overlens forma Empreendedores Nexialistas; construtores sistêmicos que pensam com profundidade, realizam com autonomia e usam tecnologia como extensão da imaginação, não como substituto do pensamento.**
 
 ### Versão curta (para uso em conversas e bios):
 
-> **A Overlens é a escola que transforma criadores fragmentados em Nexialistas: pessoas que integram design, filosofia, tecnologia e propósito para criar o que ainda não existe.**
+> **A Overlens é a escola que forma Empreendedores Nexialistas: pessoas que integram design, filosofia, arte e tecnologia para transformar as próprias ideias no que ainda não existe.**
 
 ---
 
 ## Elevator Pitch Narrativo
 
-*Imagine um designer, artista ou criador que sente que pode mais, mas está preso. Preso entre tutoriais que ensinam botões e um mercado que reduz criação a execução. Ele tem mais ferramentas do que qualquer geração anterior; e menos clareza sobre o que construir com elas.*
+*Imagine alguém com uma ideia que não sai do papel. Pode ser engenheiro, arquiteto, artista, designer ou nada disso; a origem não importa. Está preso entre tutoriais que ensinam botões e um mercado que reduz criação a execução. Tem mais ferramentas do que qualquer geração anterior; e menos clareza sobre o que construir com elas.*
 
 *Agora imagine que ele encontra um espaço diferente. Não uma escola que ensina técnicas soltas, mas um sistema que forma uma nova lente. Que mostra como pensar de forma sistêmica, usar IA como extensão do pensamento e transformar ideias em projetos reais. Um lugar que exige autoria, responsabilidade e coragem; e em troca, devolve algo que o mercado nunca vai oferecer: autonomia criativa.*
 
-*Isso é a Overlens. Existimos para colocar o poder da criação nas mãos das pessoas. Não como promessa motivacional; como método, estrutura e prática aplicada. Formamos Nexialistas: criadores que não reagem ao futuro, mas o constroem.*
+*Isso é a Overlens. Existimos para colocar o poder da criação nas mãos das pessoas. Não como promessa motivacional; como método, estrutura e prática aplicada. Formamos Empreendedores Nexialistas: pessoas que não reagem ao futuro, mas o constroem.*
 
 ---
 
@@ -347,7 +347,7 @@ Em 2025, encontraram o conceito que batizou o modo de pensar que sempre defender
 
 ### O que sustenta
 
-A Overlens não existe para acompanhar o mercado. Existe para formar criadores capazes de atravessar mudanças profundas sem perder autoria e responsabilidade. Não prometemos proteger ninguém da mudança, nem suavizar a realidade. Estamos aqui para preparar as pessoas que percebem essa realidade para agirem dentro dela.
+A Overlens não existe para acompanhar o mercado. Existe para formar empreendedores capazes de atravessar mudanças profundas sem perder autoria e responsabilidade. Não prometemos proteger ninguém da mudança, nem suavizar a realidade. Estamos aqui para preparar as pessoas que percebem essa realidade para agirem dentro dela.
 
 > O futuro não é um destino. É um projeto. E a melhor maneira de prevê-lo é criando.
 
@@ -382,8 +382,8 @@ A narrativa da Overlens não opera no vácuo. Ela se ancora em tensões reais; f
 | **Medo da irrelevância** | Apresenta o cenário real sem suavizar, mas sempre com caminho de saída | Nunca usar como FOMO. Sempre acompanhar de plano concreto |
 | **Desejo de autoria** | Mostra que criar é direito e que a autonomia é construída, não concedida | Nunca prometer autoria sem custo. Sempre explicitar o preço |
 | **Indignação com o sistema** | Valida a percepção de que algo está errado, sem simplificar em conspirações | Nunca alimentar vitimismo. Sempre direcionar para ação |
-| **Esperança de que é possível** | Mostra exemplos reais, não promessas abstratas. Resultados concretos de criadores reais | Nunca prometer utopia. Sempre mostrar o caminho real com atrito |
-| **Necessidade de pertencimento** | Comunidade de pessoas que pensam e criam de forma semelhante; não fã-clube, mas espaço de prática | Nunca criar dependência. Sempre visar autonomia do criador |
+| **Esperança de que é possível** | Mostra exemplos reais, não promessas abstratas. Resultados concretos de empreendedores reais | Nunca prometer utopia. Sempre mostrar o caminho real com atrito |
+| **Necessidade de pertencimento** | Comunidade de pessoas que pensam e criam de forma semelhante; não fã-clube, mas espaço de prática | Nunca criar dependência. Sempre visar autonomia do empreendedor |
 
 ---
 
@@ -391,7 +391,7 @@ A narrativa da Overlens não opera no vácuo. Ela se ancora em tensões reais; f
 
 | Elemento SB7 | Ponto de contato | Tom predominante |
 |--------------|-----------------|-----------------|
-| **Herói** (o criador) | Personas, conteúdo de topo de funil, abertura de páginas de venda | Provocativo + Inspirador |
+| **Herói** (o empreendedor) | Personas, conteúdo de topo de funil, abertura de páginas de venda | Provocativo + Inspirador |
 | **Problema** (três camadas) | Conteúdo de redes sociais, manifestos, copy de landing pages | Provocativo + Científico |
 | **Guia** (Overlens) | Páginas institucionais, sobre nós, depoimentos, Linha do Tempo | Profundo + Inspirador |
 | **Plano** (três movimentos) | Páginas de produto, trilhas, onboarding | Científico + Profundo |
@@ -405,15 +405,15 @@ A narrativa da Overlens não opera no vácuo. Ela se ancora em tensões reais; f
 
 Sete princípios que governam toda comunicação narrativa da Overlens:
 
-- **O herói é o criador, nunca a marca**; <span style="color: #aaa;">A Overlens é o guia. Se uma peça de conteúdo coloca a Overlens no centro da história, ela precisa ser reescrita.</span>
+- **O herói é o empreendedor, nunca a marca**; <span style="color: #aaa;">A Overlens é o guia. Se uma peça de conteúdo coloca a Overlens no centro da história, ela precisa ser reescrita.</span>
 
 - **O vilão é o mecanismo, nunca a pessoa**; <span style="color: #aaa;">Alienação e renúncia são o antagonista. Nunca culpamos indivíduos pela própria inação. Criamos condições para que a ação seja viável.</span>
 
 - **O problema tem três camadas, nunca uma**; <span style="color: #aaa;">Comunicação que endereça apenas o problema externo (mercado) sem tocar o interno (insegurança) e o filosófico (criação como direito) é superficial.</span>
 
-- **A empatia vem antes da autoridade**; <span style="color: #aaa;">Primeiro o criador precisa sentir que a Overlens entende sua dor. Depois, que tem método para ajudar. Inverter essa ordem gera arrogância.</span>
+- **A empatia vem antes da autoridade**; <span style="color: #aaa;">Primeiro o empreendedor precisa sentir que a Overlens entende sua dor. Depois, que tem método para ajudar. Inverter essa ordem gera arrogância.</span>
 
-- **A chamada respeita a autonomia**; <span style="color: #aaa;">Nunca usar urgência artificial, FOMO ou manipulação emocional. O criador decide quando está pronto. A Overlens precisa estar visível, não insistente.</span>
+- **A chamada respeita a autonomia**; <span style="color: #aaa;">Nunca usar urgência artificial, FOMO ou manipulação emocional. O empreendedor decide quando está pronto. A Overlens precisa estar visível, não insistente.</span>
 
 - **O fracasso é descrito com franqueza, não com medo**; <span style="color: #aaa;">Apresentamos o cenário de inação como descrição, não como ameaça. Respeitar o leitor é tratá-lo como adulto capaz de lidar com verdades incômodas.</span>
 

@@ -23,7 +23,7 @@ Você está iniciando a fase de PESQUISA para a página "$ARGUMENTS".
 
 ## Contexto do Projeto
 
-Este é o Brand System da Overlens — uma escola de criadores nexialistas. O documento central tem ~3079 linhas com páginas completas e páginas vazias. Estamos completando as páginas vazias. Cada nova página deve ser INDISTINGUÍVEL das já escritas.
+Este é o Brand System da Overlens — uma escola de Empreendedores Nexialistas (o público NUNCA é chamado de "designers" nem "criativos"). O documento central tem ~3079 linhas com páginas completas e páginas vazias. Estamos completando as páginas vazias. Cada nova página deve ser INDISTINGUÍVEL das já escritas.
 
 ## Checklist do TASKS
 

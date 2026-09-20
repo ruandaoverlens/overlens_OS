@@ -1,20 +1,20 @@
 # Vanguarda
 
-**Mentoria avançada para criadores que lideram o novo**
+**Mentoria avançada para quem constrói o que ainda não existe**
 
 [**Manual da Vanguarda**](https://docs.google.com/document/d/10HPRcbj0Fa0aMWtLbKIn7naUk7MruSG6CgxOZAse9nM/edit?usp=sharing)
 
-## A Vanguarda é o programa de aceleração de resultados da Overlens. Um espaço reservado para criadores que não apenas acompanham as transformações do presente, mas decidem moldar o que vem depois. É uma mentoria avançada, um laboratório estratégico e um ponto de convergência entre visão, execução e influência.
+## A Vanguarda é o programa de aceleração de resultados da Overlens. Um espaço reservado para quem já tem um negócio de pé e não apenas acompanha as transformações do presente, mas decide moldar o que vem depois. É uma mentoria avançada, um laboratório estratégico e um ponto de convergência entre visão, execução e influência.
 
-Projetada para quem já superou o básico e deseja operar em um novo patamar de maturidade criativa, a Vanguarda forma mentes capazes de pensar sistemicamente, agir com inteligência simbiótica e posicionar-se com autoridade em territórios emergentes. (Habilidades) \> (Negócio)
+Projetada para quem já superou o básico e deseja operar em um novo patamar de maturidade, a Vanguarda forma mentes capazes de pensar sistemicamente, agir com inteligência simbiótica e posicionar o próprio negócio com autoridade em territórios emergentes. (Habilidades) \> (Negócio)
 
 Não há fórmulas prontas. Há orientação, curadoria, desafio e clareza.
 
 ## O que é a Vanguarda?
 
-Um programa de aceleração de resultados para negócios criativos.
+Um programa de aceleração de resultados para negócios emergentes.
 
-* Um programa de mentoria para criadores com visão autoral e desejo de protagonismo  
+* Um programa de mentoria para fundadores com visão autoral e desejo de protagonismo  
 * Um ecossistema de desenvolvimento avançado com trilhas personalizadas por perfil  
 * Um grupo seleto de mentes inquietas, conectadas por propósito  
 * Um ambiente onde estratégia, tecnologia, narrativa e execução se encontram
@@ -42,7 +42,7 @@ A Vanguarda é o vértice mais alto do ecossistema atual. Serve como espaço de 
 
 ## Posicionamento da oferta
 
-A oferta da Vanguarda deve ser comunicada com sobriedade e ambição. Não é para quem busca soluções prontas ou passos genéricos. É para quem deseja clareza estratégica, impacto real e uma comunidade de criadores em estado de criação ativa. A promessa não é sucesso imediato, mas maturidade contínua. Não é só o que você aprende, é quem você se torna no processo.
+A oferta da Vanguarda deve ser comunicada com sobriedade e ambição. Não é para quem busca soluções prontas ou passos genéricos. É para quem deseja clareza estratégica, impacto real e uma comunidade de construtores em atividade. A promessa não é sucesso imediato, mas maturidade contínua. Não é só o que você aprende, é quem você se torna no processo.
 
 ## Ficha técnica: Vanguarda
 

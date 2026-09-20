@@ -67,11 +67,14 @@ Cada página combina estas virtudes em proporções diferentes (definidas no bri
 - Voz ativa predominante
 
 ### Vocabulário Oficial
-- Usar: Nexialista, Lente, Sistema Vivo, Capital Simbólico
+- Usar: Empreendedor Nexialista, Nexialista, Lente, Sistema Vivo, Capital Simbólico
+- **O público é o Empreendedor Nexialista.** NUNCA chame o público de "designers", "criativos" ou "profissionais de design" — design é uma das disciplinas que a Overlens ensina, não quem é nosso público. O Empreendedor Nexialista pode vir da engenharia, da arquitetura, da arte, do design ou de nenhuma dessas origens; é definido pelo que faz com a própria ideia
+- Os 5 perfis medem a distância entre ideia e realidade: Inconscientes (vontade sem direção) → Operantes (executam, não lançam) → Convergentes (lançam, não sustentam) → Emergentes (têm negócio, dispersam energia) → Nexialistas (operam ecossistema próprio)
 - Usar: faísca, brasa, fogueira (energia controlada), prisma, micélio, ponte, portais
 - EVITAR: lâmpada clichê, varinha mágica, forja, jargão esotérico
 - EVITAR: acenda, forje, destrave, hustle porn, FOMO
 - EVITAR: promessas vazias, "vagas limitadas" falsas
+- **Alerta de hustle porn**: falar com empreendedores NÃO autoriza linguagem de negócio agressiva. PROIBIDO: promessa de enriquecimento ou faturamento, "liberdade financeira", "escale seu negócio", "6 em 7", glamourização de rotina extrema, tom de guru de negócios ou de startup bro. Empreender, aqui, é transformar complexidade em clareza e clareza em realidade — com autoria e responsabilidade
 
 ### Filosofia
 - Sempre conectar com propósito (criação, autonomia, responsabilidade)

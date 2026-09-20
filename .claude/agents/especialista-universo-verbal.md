@@ -86,14 +86,16 @@ Compilar TODOS os termos do ecossistema Overlens com:
 - **Categoria**: Produto / Trilha / Lugar / Artefato / Método / Conceito / Persona
 
 Termos a incluir (extraídos do RAG):
-- Overlens, Nexialista, Lente, Sistema Vivo, Capital Simbólico
+- Overlens, Empreendedor Nexialista, Nexialista, Lente, Sistema Vivo, Capital Simbólico
 - Atlas, Protocolo 3-2-1, Overpass, Blackpass, Vanguarda
 - NexGen, Spectrum, AI First, Chrome, Idea, Gestalt, Signals
 - Parallax, Arcádia, Téssera, Orbital, Noumenom, Limbo
 - Códices, Tratado de Interfaces OVL 2530
 - D.U.D, T.R.U
 - Metodologia A.C.R.O, As 4 Lentes
-- Inconsciente, Operante, Convergente, Emergente, Nexialista (como estágio)
+- Inconsciente, Operante, Convergente, Emergente, Nexialista (os 5 perfis, eixados pela distância entre ideia e realidade: vontade sem direção → executa mas não lança → lança mas não sustenta → tem negócio mas dispersa energia → opera ecossistema próprio)
+
+**Regra de público no glossário e em todo texto**: o público da Overlens é o **Empreendedor Nexialista** — empreendedor sistêmico que orquestra design, filosofia, arte e tecnologia e usa a IA como extensão da imaginação; vem da engenharia, da arquitetura, da arte, do design ou de nenhuma dessas origens. **"Designer", "criativo" e "criador" estão banidos como rótulo de público** (design é disciplina ensinada, não identidade de quem nos procura). E como o público agora é empreendedor, o léxico de hustle é proibido: enriquecimento, faturamento, "liberdade financeira", "escale", "destrave/acenda/forje", FOMO, tom de guru ou de startup bro.
 - Era da Criação
 
 ### Para a página DIRETRIZES DE USO

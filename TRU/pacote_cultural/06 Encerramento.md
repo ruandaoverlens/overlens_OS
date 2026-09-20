@@ -1,6 +1,6 @@
 # Seu destino está selado em seus olhos.
 
-## O futuro não acontece; ele é criado por quem decide enxergar além. Estamos no limiar de uma era onde criatividade e tecnologia convergem, e cada pessoa que aprende a transformar ideias em realidade se torna parte de algo maior: o nascimento de uma cultura inteira de criadores
+## O futuro não acontece; ele é criado por quem decide enxergar além. Estamos no limiar de uma era onde criatividade e tecnologia convergem, e cada pessoa que aprende a transformar ideias em realidade se torna parte de algo maior: o nascimento de uma cultura inteira de gente que constrói
 
 > Que parte da sua realidade só existe porque você concorda em vê-la assim? O futuro é algo que simplesmente acontece…ou algo que escolhemos construir?
 
@@ -8,7 +8,7 @@ Todas essas referências compartilham um mesmo fio condutor: a ideia de que o fu
 
 **Nosso propósito é colocar o poder da criação nas mãos das pessoas**. Estamos entrando em uma nova fase da história humana. À medida que as inteligências artificiais assumem tarefas repetitivas e operacionais, surge um espaço cada vez maior para aquilo que sempre foi profundamente humano: imaginar, inventar e criar coisas novas.
 
-Cada vez mais pessoas poderão se tornar inventores, artistas e criadores. Pessoas que transformam ideias em realidade usando a tecnologia como ferramenta. Estamos entrando na era da criação. Uma era em que milhares de novas invenções, descobertas e obras de arte nascerão todos os dias através das pessoas que chamamos de nexialistas. Pessoas capazes de conectar conhecimentos diferentes e usar tecnologia para realizar boas ideias.
+Cada vez mais pessoas poderão se tornar inventores, artistas, engenheiros, arquitetos e fundadores de algo que ainda não existe. Pessoas que transformam ideias em realidade usando a tecnologia como ferramenta. Estamos entrando na era da criação. Uma era em que milhares de novas invenções, descobertas, obras de arte e negócios nascerão todos os dias através das pessoas que chamamos de nexialistas. Pessoas capazes de conectar conhecimentos diferentes e usar tecnologia para realizar boas ideias. Não importa de onde elas vieram; importa o que fazem com a própria ideia.
 
-É nesse momento único da história, quando a criatividade humana e a tecnologia convergem como nunca antes, que nasceu a Overlens, a escola para criadores nexialistas. Um lugar dedicado a preparar pessoas para um novo mundo, onde a criatividade não será apenas uma habilidade.
+É nesse momento único da história, quando a criatividade humana e a tecnologia convergem como nunca antes, que nasceu a Overlens, a escola para Empreendedores Nexialistas. Um lugar dedicado a preparar pessoas para um novo mundo, onde a criatividade não será apenas uma habilidade.
 

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the **Overlens Brand System** — a living document repository containing the complete branding, strategy, identity, and communication guidelines for Overlens, a school that trains "Nexialist Designers" (creators who integrate design, philosophy, technology, and art).
+This is the **Overlens Brand System** — a living document repository containing the complete branding, strategy, identity, and communication guidelines for Overlens, a school that trains "Nexialist Entrepreneurs" (Empreendedores Nexialistas — creators, dreamers, engineers, designers, artists and architects who integrate design, philosophy, technology and art to turn their own ideas into emerging businesses).
 
 The repo is **dual-purpose**: it hosts the Brand System (Markdown documents — the original and primary focus) **and** the Overlens platform code under `website/`. When the user asks for "a new page", clarify which side they mean — Brand System markdown (e.g., `[PAGINA] Nome.md`) or a Next.js route under `website/src/app/`.
 
@@ -117,13 +117,13 @@ Domain skills (`/storybrand`, `/posicionamento`, etc.) include built-in research
 4. **Archetypes**: Mago (Prometheus, method) + Criador (form) + Sábio (ethics). Never guru, never dogmatic
 5. **Structure**: H1 → H2 evocative opening → Paragraphs → Subtitles → Lists → Examples
 6. **Guardrails**: No empty promises, no FOMO, no hustle porn, no messianism, no "acenda/forje/destrave"
-7. **Vocabulary**: Respect official terms (Nexialista, Lente, Sistema Vivo, Capital Simbólico)
+7. **Vocabulary**: Respect official terms (Nexialista, Empreendedor Nexialista, Lente, Sistema Vivo, Capital Simbólico). Never call the audience "designers" — design is a discipline we teach, not who our public is.
 8. **File naming**: `[PAGINA] Nome da Página.md`
 
 ## Key Brand Concepts
 
 - **Purpose**: "Colocar o poder da criação nas mãos das pessoas"
 - **3 Pillars**: Inspirar, Ensinar, Mover (a criar)
-- **5 Maturity Profiles**: Inconscientes → Operantes → Convergentes → Emergentes → Nexialistas
+- **5 Maturity Profiles** (distância entre ideia e realidade, não senioridade): Inconscientes (vontade sem direção) → Operantes (executam, não lançam) → Convergentes (lançam, não sustentam) → Emergentes (têm negócio, dispersam) → Nexialistas (operam ecossistema próprio)
 - **Visual identity**: Black base, micro-dose accents (ice blue, amber, moss green, burgundy), Inter + Outfit
 - **Communication layers**: Provocar atenção (Ethos) → Validar credibilidade → Conexão emocional (Pathos) → Profundidade (Logos)

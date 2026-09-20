@@ -1,4 +1,4 @@
-# Copy \- Lembrete
+# Copy - Lembrete
 
 [Mapa de Criativos \- Lembrete](https://docs.google.com/spreadsheets/d/1dBd8ji3-cQdaHL0yGirmvraedFstDFJSwbJ4dgkD2fU/edit?gid=235710671#gid=235710671)
 

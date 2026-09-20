@@ -1,4 +1,4 @@
-# Copy \- Captação
+# Copy - Captação
 
 [Mapa de Criativos \- Captação](https://docs.google.com/spreadsheets/d/1dBd8ji3-cQdaHL0yGirmvraedFstDFJSwbJ4dgkD2fU/edit?gid=0#gid=0)
 

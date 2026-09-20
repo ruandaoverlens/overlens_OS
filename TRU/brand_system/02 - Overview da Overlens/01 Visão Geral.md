@@ -6,7 +6,7 @@
 
 <figcaption><a href="https://commons.wikimedia.org/wiki/File:Hilma_af_Klint_%E2%80%94_The_Ten_Largest_%E2%80%94_Number_7_Adulthood.jpg">The Ten Largest, No. 7, Adulthood</a>; Hilma af Klint, 1907</figcaption>
 
-A Overlens é uma escola para pessoas que gostam de criar. Aqui as pessoas aprendem a pensar melhor sobre suas ideias, cuidar delas e transformá-las em realidade através de projetos, histórias, imagens e invenções. Não é um lugar de receitas prontas, mas de aprendizado para usar a cabeça, o coração e a imaginação na hora de escolher o que criar e como criar. A Overlens existe para formar pessoas mais curiosas, corajosas e responsáveis, capazes de criar coisas que façam sentido em um mundo que está sempre mudando.
+A Overlens é uma escola para pessoas que querem construir. Aqui elas aprendem a pensar melhor sobre suas ideias, cuidar delas e transformá-las em realidade através de projetos, produtos, negócios, histórias e invenções. Não é um lugar de receitas prontas, mas de aprendizado para usar a cabeça, o coração e a imaginação na hora de escolher o que criar e como criar. A Overlens existe para formar pessoas mais curiosas, corajosas e responsáveis, capazes de criar coisas que façam sentido em um mundo que está sempre mudando.
 
 Leia a [Linha do Tempo]() para conhecer mais sobre a Overlens
 
@@ -18,11 +18,11 @@ Leia: [Por que a Overlens existe?]() para compreender melhor
 
 ## Para quem é a Overlens?
 
-A Overlens é para pessoas que desejam assumir responsabilidade pelo que criam. Criadores, designers, artistas, empreendedores e pensadores que não se satisfazem em apenas executar tarefas ou seguir fórmulas prontas. É para quem aceita lidar com ambiguidade, sustentar decisões difíceis, aprender continuamente e agir no mundo real. Pessoas que buscam sentido, autoria e coerência entre discurso e prática, e que entendem que criar implica consequências, esforço e maturidade.
+A Overlens é para pessoas que desejam assumir responsabilidade pelo que constroem. Criadores, sonhadores, engenheiros, designers, artistas, arquitetos e pensadores que não se satisfazem em apenas executar tarefas ou seguir fórmulas prontas. A origem profissional não importa: o que importa é o que cada um faz com a própria ideia. É para quem aceita lidar com ambiguidade, sustentar decisões difíceis, aprender continuamente e agir no mundo real. Pessoas que buscam sentido, autoria e coerência entre discurso e prática, e que entendem que construir um negócio implica consequências, esforço e maturidade.
 
 ## E para quem NÃO É?
 
-A Overlens não é para quem busca validação constante, segurança emocional ou promessas fáceis. Não é para quem quer apenas consumir conteúdo, aprender atalhos técnicos ou terceirizar responsabilidade para o time, o sistema ou a tecnologia. Também não é para quem espera ser tratado como especial pela dor, pela narrativa pessoal ou pela intenção sem entrega. Quem evita decisões, foge de conflitos reais ou depende de aprovação imediata tende a se frustrar nesse ambiente.
+A Overlens não é para quem busca validação constante, segurança emocional ou promessas fáceis. Também não é para quem trata empreender como atalho para enriquecer rápido: aqui não há fórmula de faturamento, nem culto à pressa. Não é para quem quer apenas consumir conteúdo, aprender atalhos técnicos ou terceirizar responsabilidade para o time, o sistema ou a tecnologia. Também não é para quem espera ser tratado como especial pela dor, pela narrativa pessoal ou pela intenção sem entrega. Quem evita decisões, foge de conflitos reais ou depende de aprovação imediata tende a se frustrar nesse ambiente.
 
 ## Qual é a abordagem da Overlens?
 

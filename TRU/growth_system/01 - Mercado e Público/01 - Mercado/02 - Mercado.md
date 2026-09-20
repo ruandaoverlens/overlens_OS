@@ -2,7 +2,7 @@
 
 A seção "Mercado" do *Livro de Marketing e Vendas da Overlens* apresenta uma análise estratégica e abrangente do cenário no qual a Overlens opera, fornecendo uma base sólida para a compreensão do seu posicionamento, oportunidades e desafios.
 
-## Nosso objetivo é mapear o contexto de mercado da Overlens, uma plataforma de transição criativa que une educação, tecnologia e filosofia aplicada para formar criadores conscientes, capacitados e preparados para liderar na era das inteligências artificiais.
+## Nosso objetivo é mapear o contexto de mercado da Overlens, uma plataforma de transição que une educação, tecnologia e filosofia aplicada para formar empreendedores conscientes, capacitados e preparados para construir negócios na era das inteligências artificiais.
 
 ## **Propósito da Seção**
 
@@ -19,7 +19,7 @@ Essa estrutura permite que a Overlens alinhe suas iniciativas de marketing e ven
 
 ### **Segmento**
 
-A página "Segmento" define o posicionamento da Overlens no mercado, detalhando o setor macro (Educação, Tecnologia e Economia Criativa), o subsetor (Edtech, Design e Futurismo) e a categoria específica (Escola de criação e inovação com foco em IA). Ela destaca o posicionamento único da Overlens como uma plataforma que capacita criadores a realizarem com inteligência, arte e propósito, integrando metodologias gamificadas, narrativas ficcionais e uma comunidade ativa.
+A página "Segmento" define o posicionamento da Overlens no mercado, detalhando o setor macro (Educação, Tecnologia, Economia Criativa e Entretenimento), o subsetor (Edtech, Empreendedorismo e Futurismo) e a categoria específica (Escola de negócios emergentes e inovação com foco em IA). Ela destaca o posicionamento único da Overlens como uma plataforma que capacita pessoas a transformar as próprias ideias em negócios com inteligência, arte e propósito, integrando metodologias gamificadas, narrativas ficcionais e uma comunidade ativa.
 
 **TAM, SAM, SOM**
 
@@ -33,11 +33,11 @@ A página "TAM/SAM/SOM" quantifica o potencial de mercado da Overlens, dividindo
 
 ### **Público-alvo**
 
-A página "Público-Alvo" detalha as características demográficas, profissionais e comportamentais do público da Overlens. Ela abrange:
+A página "Público-Alvo" detalha as características demográficas, de origem e comportamentais dos Empreendedores Nexialistas. Ela abrange:
 
 **Demografia**
 
-**Profissões**
+**Origens profissionais** (engenharia, arquitetura, arte, design, tecnologia ou nenhuma formação específica)
 
 **Comportamento**
 
@@ -47,4 +47,4 @@ Define o cliente ideal da Overlens, refinando o público-alvo para um segmento m
 
 ---
 
-A seção "Mercado" do Livro de Growth da Overlens oferece uma base estratégica para compreender e explorar o vasto potencial da economia criativa na era da IA. Ao mapear o segmento, quantificar o mercado, detalhar o público-alvo e definir o cliente ideal, a Overlens se posiciona como uma plataforma inovadora, pronta para capacitar criadores e liderar a transformação digital com inteligência e propósito.
+A seção "Mercado" do Livro de Growth da Overlens oferece uma base estratégica para compreender e explorar o potencial do empreendedorismo emergente na era da IA. Ao mapear o segmento, quantificar o mercado, detalhar o público-alvo e definir o cliente ideal, a Overlens se posiciona como uma plataforma inovadora, pronta para capacitar quem constrói negócios próprios e liderar essa transformação com inteligência e propósito.

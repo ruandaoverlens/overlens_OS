@@ -16,10 +16,10 @@ Principais pontos que a Overlens pode mapear e aprender com o IFTF:
 
 No **posicionamento**, a Overlens pode aprender com o IFTF principalmente em:
 
-**Autoridade como tradutor do futuro** – O IFTF se posiciona como ponte entre especialistas e público, simplificando tendências complexas. A Overlens pode ocupar o mesmo espaço (**design \+ IA \+ futuros)**.  
+**Autoridade como tradutor do futuro** – O IFTF se posiciona como ponte entre especialistas e público, simplificando tendências complexas. A Overlens pode ocupar o mesmo espaço (**negócios \+ criação \+ IA \+ futuros**).  
 **Neutralidade estratégica** – O instituto evita narrativas apocalípticas ou utópicas extremas, mantendo credibilidade. Esse equilíbrio fortalece a confiança.  
 **Reputação construída por consistência** – Décadas de produção confiável e metodologicamente sólida geram legitimidade. Para a Overlens, consistência na entrega e coerência narrativa serão chaves.  
-**Marca como referência global** – O IFTF não vende apenas produtos, vende a posição de *autoridade do futuro*. A Overlens pode adotar o mesmo para se tornar **a referência nexialista no futuro da criação**.
+**Marca como referência global** – O IFTF não vende apenas produtos, vende a posição de *autoridade do futuro*. A Overlens pode adotar o mesmo para se tornar **a referência nexialista no futuro dos negócios emergentes**.
 
 Sobre **negócio, produtos e marketing**, a Overlens pode aprender com o IFTF nos seguintes pontos:
 

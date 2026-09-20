@@ -16,7 +16,7 @@ Conhecer este território é entender a gravitação invisível que orienta cada
 
 ## Constelações Semânticas
 
-O léxico da Overlens se organiza em seis campos gravitacionais. Cada um deles reúne palavras que compartilham não apenas significado, mas postura; uma orientação comum em direção ao propósito da marca.
+O léxico da Overlens se organiza em sete campos gravitacionais. Cada um deles reúne palavras que compartilham não apenas significado, mas postura; uma orientação comum em direção ao propósito da marca.
 
 Esses campos não são compartimentos estanques. São constelações: conjuntos com identidade própria, mas que se conectam e se iluminam mutuamente.
 
@@ -104,6 +104,20 @@ O campo que sustenta a dimensão do Sábio.
 
 ---
 
+### 7. Realização e Negócio
+
+O campo que ancora o público da marca: o Empreendedor Nexialista.
+
+**Palavras centrais:** empreender, realizar, lançar, sustentar, fundar, operar, validar, decidir, entregar.
+
+**Palavras de apoio:** colocar de pé, atravessar o atrito, tirar do papel, dar continuidade, dimensionar com critério, viver do que constrói.
+
+**Orientação de uso:** aqui a marca corre o maior risco de contaminação. Falar de negócio na Overlens nunca é falar de faturamento como prova de valor. "Empreender" significa assumir a própria ideia até o fim, com as consequências que isso traz; não é sinônimo de vender. Prefira "sustentar" a "escalar", "critério" a "performance", "o que constrói" a "o que fatura". Quando o resultado financeiro aparecer, ele aparece como condição de continuidade, nunca como troféu.
+
+**Campo de tensão:** empreendedorismo não é hustle. Não usamos a estética da pressa, do sacrifício heroico ou do enriquecimento como horizonte. O Empreendedor Nexialista é construtor e pensador, não vendedor.
+
+---
+
 ## Palavras que Usamos vs. Palavras que Evitamos
 
 A identidade verbal de uma marca se define tanto pelo que diz quanto pelo que se recusa a dizer. A tabela abaixo não é arbitrária; cada recusa tem uma razão filosófica ou estratégica.
@@ -121,6 +135,7 @@ A identidade verbal de uma marca se define tanto pelo que diz quanto pelo que se
 | **Lente, sistema vivo, capital simbólico** | Vocabulário proprietário; carregam a cosmologia da marca |
 | **Clareza, precisão, simplicidade** | Qualidades operacionais; comunicação como serviço ao leitor |
 | **E se...? / Imagine / Experimente** | Convites à ação e reflexão; sem imposição, com abertura |
+| **Empreender, lançar, sustentar** | Verbos de realização; a ideia atravessando o atrito do mundo real |
 
 ### Palavras que Evitamos
 
@@ -137,6 +152,9 @@ A identidade verbal de uma marca se define tanto pelo que diz quanto pelo que se
 | **Energia, vibração, universo conspira** | Jargão esotérico; contradiz base científica | *Intenção, direção, propósito* |
 | **Diquinhas, projetinho** | Diminutivos que infantilizam o criativo | *Referência, diretriz, projeto* |
 | **Grind, hustle, no pain no gain** | Hustle porn que contradiz ritmo realista | *Compromisso, consistência, ritmo sustentável* |
+| **Mindset milionário, liberdade financeira** | Empreendedorismo reduzido a promessa de enriquecimento | *Autonomia, sustentar o próprio trabalho, viver do que constrói* |
+| **Escalar, escala infinita** | Crescimento como valor em si, sem critério nem consequência | *Sustentar, dimensionar com critério, crescer com direção* |
+| **Faturamento como prova** | Número no lugar de argumento; espetáculo de resultado | *Evidência concreta: o que foi construído e o que mudou* |
 
 ---
 

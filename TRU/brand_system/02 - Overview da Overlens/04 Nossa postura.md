@@ -28,4 +28,4 @@ Construir, sem intenção, uma ética funcional apenas para os fortes e capacita
 
 ## Quando a frustração vira desprezo
 
-Converter frustração em julgamento moral do outro é um ressentimento que só corrói. Quando o esforço pessoal não encontra eco, o criador pode cair em desprezo pelos “inertes”, amargura e isolamento ético. Isso corrói o próprio sentido que queremos preservar. O cuidado está em entender uma regra objetiva da realidade: pessoas são diferentes, possuem visões de mundo diferentes e desejam coisas diferentes. Não devemos espelhar o que queremos nos outros. Se queremos, nós mesmos devemos buscar.
+Converter frustração em julgamento moral do outro é um ressentimento que só corrói. Quando o esforço pessoal não encontra eco, o empreendedor pode cair em desprezo pelos “inertes”, amargura e isolamento ético. Isso corrói o próprio sentido que queremos preservar. O cuidado está em entender uma regra objetiva da realidade: pessoas são diferentes, possuem visões de mundo diferentes e desejam coisas diferentes. Não devemos espelhar o que queremos nos outros. Se queremos, nós mesmos devemos buscar.

@@ -108,7 +108,7 @@ Göransson traduz em som o momento em que Oppenheimer começa a enxergar a estru
 <img src="/brand/images/cover-album-star-wars.jpg" alt="Star Wars: A New Hope OST; John Williams" style="width:200px; border-radius:8px" />
 <div>
 
-Luke Skywalker olha para o horizonte onde dois sóis se põem. Ele não sabe o que está por vir, mas sabe que não pode continuar onde está. Williams compõe, em menos de três minutos, a anatomia completa do limiar; aquele momento em que alguém decide que o mundo conhecido já não basta e que é hora de atravessar. A melodia é ao mesmo tempo saudade do que se deixa e coragem diante do que se escolhe. Para a Overlens, Binary Sunset é o som exato do momento em que um criador olha além do horizonte familiar e decide que existe algo lá que vale a travessia.
+Luke Skywalker olha para o horizonte onde dois sóis se põem. Ele não sabe o que está por vir, mas sabe que não pode continuar onde está. Williams compõe, em menos de três minutos, a anatomia completa do limiar; aquele momento em que alguém decide que o mundo conhecido já não basta e que é hora de atravessar. A melodia é ao mesmo tempo saudade do que se deixa e coragem diante do que se escolhe. Para a Overlens, Binary Sunset é o som exato do momento em que alguém olha além do horizonte familiar e decide que existe algo lá que vale a travessia.
 
 [Ouvir no Spotify](https://open.spotify.com/track/4IkCtDnBLjxd4UYUEoXOtx)
 

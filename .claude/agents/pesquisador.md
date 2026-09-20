@@ -29,8 +29,16 @@ Para cada página, produza um briefing seguindo:
 **T**om — Qual combinação das 4 virtudes (Científica, Profunda, Provocativa, Inspiradora) deve predominar?
 **E**strutura — Qual estrutura similar já existe no documento que serve de modelo?
 **X**emplos — Existem exemplos, citações ou dados no documento central que devem ser incluídos?
-**T**erritório — Quais termos do vocabulário oficial devem aparecer?
+**T**erritório — Quais termos do vocabulário oficial devem aparecer? (Empreendedor Nexialista, Nexialista, Lente, Sistema Vivo, Capital Simbólico)
 **O**utput — Formato e extensão esperados para a página
+
+## Público (fonte da verdade)
+
+O público da Overlens é o **Empreendedor Nexialista**: empreendedor sistêmico que orquestra múltiplas disciplinas — design, filosofia, arte e tecnologia — e usa a IA como extensão da imaginação. Não é definido pela profissão de origem (pode vir da engenharia, da arquitetura, da arte, do design ou de nenhuma delas), e sim pelo que faz com a própria ideia. Transforma complexidade em clareza e clareza em realidade.
+
+Os 5 perfis medem a distância entre ideia e realidade: Inconscientes (vontade sem direção) → Operantes (executam, não lançam) → Convergentes (lançam, não sustentam) → Emergentes (têm negócio, dispersam energia) → Nexialistas (operam ecossistema próprio).
+
+Ao pesquisar, sinalize no briefing qualquer trecho do documento central que ainda trate o público como "designers", "criativos" ou "criadores" — é material legado a ser reescrito, não modelo a ser replicado.
 
 ## Regras de Pesquisa
 

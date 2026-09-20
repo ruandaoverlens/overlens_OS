@@ -12,8 +12,8 @@
 
 Nosso mundo está repleto de ferramentas, mas a verdadeira criação continua rara. Há excesso de ruído, repetição, fórmulas vazias. Falta profundidade. Falta visão. Falta coragem para construir algo que realmente importa.
 
-Por isso, criamos a Overlens, uma escola de formação para os novos criadores: os Designers Nexialistas. Pessoas que pensam de forma sistêmica, atuam com inteligência ampliada por IA, e criam marcas, produtos e mundos com propósito real.
+Por isso, criamos a Overlens, uma escola de formação para os novos construtores: os Empreendedores Nexialistas. Criadores, sonhadores, engenheiros, designers, artistas e arquitetos. Pessoas que pensam de forma sistêmica, atuam com inteligência ampliada por IA e transformam as próprias ideias em marcas, produtos e negócios com propósito real.
 
-Nosso papel é preparar as mentes criativas para atravessar o caos com discernimento e usar a tecnologia como uma extensão do pensamento, não como substituto. Formamos aqueles que não querem apenas fazer parte do mercado, mas, sem falsa modéstia, redesenhá-lo. Criamos um novo tipo de escola, para um novo tipo de criadores, em um novo tipo de mundo.
+Nosso papel é preparar essas mentes para atravessar o caos com discernimento e usar a tecnologia como uma extensão do pensamento, não como substituto. Formamos aqueles que não querem apenas fazer parte do mercado, mas, sem falsa modéstia, redesenhá-lo. Criamos um novo tipo de escola, para um novo tipo de empreendedor, em um novo tipo de mundo.
 
 > Time to Build.

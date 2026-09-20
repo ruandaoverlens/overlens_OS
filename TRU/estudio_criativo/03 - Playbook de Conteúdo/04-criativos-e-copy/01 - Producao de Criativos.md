@@ -1,6 +1,6 @@
 # Produção de Criativos
 
-## Produzir criativos na Overlens é um ato estratégico. Cada peça nasce como extensão direta da missão maior da marca: estruturar criadores para que assumam autoria do próprio futuro.
+## Produzir criativos na Overlens é um ato estratégico. Cada peça nasce como extensão direta da missão maior da marca: estruturar empreendedores para que assumam autoria do próprio futuro.
 
 Um criativo da Overlens não existe para gerar atenção vazia. Ele existe para criar um ponto de clareza. Ele precisa reduzir ambiguidade, organizar percepção e mover alguém de um estado mental para outro, da dispersão para a estrutura, da intenção para a execução.
 

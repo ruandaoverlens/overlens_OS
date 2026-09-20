@@ -2,7 +2,7 @@
 
 ## O Manual de Produção de Conteúdo da Overlens é um mapa para navegar o território simbólico e estratégico que sustenta a nossa comunicação.
 
-A Overlens nasceu com a missão de preparar Criadores Nexialistas para atravessarem fronteiras entre tecnologia, design e filosofia, transformando ideias em realidades. Cada texto, imagem ou vídeo produzido em nome da Overlens carrega essa essência: clareza, profundidade, impacto e transformação.
+A Overlens nasceu com a missão de preparar Empreendedores Nexialistas para atravessarem as fronteiras entre design, filosofia, arte e tecnologia, transformando ideias em realidades. Cada texto, imagem ou vídeo produzido em nome da Overlens carrega essa essência: clareza, profundidade, impacto e transformação.
 
 Este manual existe para garantir que todas as peças de comunicação expressem a mesma voz, a mesma visão e o mesmo rigor criativo. Aqui reunimos princípios, diretrizes e referências que orientam desde o tom de voz até a identidade visual, passando pelos arquétipos, pela direção estratégica e pelas boas práticas em cada canal.
 

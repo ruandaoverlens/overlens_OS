@@ -18,13 +18,13 @@ Um vocabulário descuidado corrói a marca por dentro. Quando um termo é usado 
 
 As palavras da Overlens operam em camadas:
 
-- **Conceitos fundacionais** como Nexialista, Lente, Sistema Vivo e Capital Simbólico definem a visão de mundo da marca. Sem eles, o ecossistema perde sua base filosófica.
+- **Conceitos fundacionais** como Nexialista, Lente, Sistema Vivo e Capital Simbólico definem a visão de mundo da marca. Sem eles, o ecossistema perde sua base filosófica. Nexialista nomeia o empreendedor sistêmico que a Overlens forma; nunca uma profissão de origem.
 
-- **Nomes de produtos e trilhas** como Atlas, Overpass, Vanguarda, Spectrum e NexGen não são rótulos arbitrários. Cada nome foi escolhido para carregar significado e posicionar a experiência dentro da jornada do criador.
+- **Nomes de produtos e trilhas** como Atlas, Overpass, Vanguarda, Spectrum e NexGen não são rótulos arbitrários. Cada nome foi escolhido para carregar significado e posicionar a experiência dentro da jornada do empreendedor.
 
 - **Personas e proxies** como D.U.D, T.R.U, Brunin, Tella, Ander e Lilly são vozes que habitam o ecossistema, cada uma com função, tom e limites definidos.
 
-- **Perfis de maturidade** (Inconsciente, Operante, Convergente, Emergente, Nexialista) mapeiam a jornada do criador. Não são funil de vendas; são mapa de consciência.
+- **Perfis de maturidade** (Inconsciente, Operante, Convergente, Emergente, Nexialista) mapeiam a jornada do empreendedor pela distância entre a ideia e a realidade: quem tem vontade sem direção, quem executa sem lançar, quem lança sem sustentar, quem já tem negócio mas dispersa energia, e quem opera um ecossistema próprio. Não são funil de vendas; são mapa de consciência.
 
 - **Lugares simbólicos** como Parallax, Arcádia, Téssera, Orbital e Noumenom fazem parte do worldbuilding e representam dimensões da atividade criativa.
 

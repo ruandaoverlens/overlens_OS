@@ -1,4 +1,4 @@
-# Copy \- Carrinho Aberto
+# Copy - Carrinho Aberto
 
 [Mapa de Criativos \- Carrinho Aberto](https://docs.google.com/spreadsheets/d/1dBd8ji3-cQdaHL0yGirmvraedFstDFJSwbJ4dgkD2fU/edit?gid=1734808890#gid=1734808890)
 

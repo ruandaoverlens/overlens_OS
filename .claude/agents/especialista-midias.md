@@ -38,9 +38,13 @@ Você é um estrategista de experiência de marca e especialista em canais. Domi
 
 ### Para a página PONTOS DE CONTATO
 
-Mapear TODOS os touchpoints da Overlens organizados por jornada:
+Mapear TODOS os touchpoints da Overlens organizados por jornada.
 
-**1. Jornada de Descoberta** (Inconsciente → primeiro contato)
+**Público**: o Empreendedor Nexialista — empreendedor sistêmico que orquestra design, filosofia, arte e tecnologia, usa a IA como extensão da imaginação e transforma complexidade em clareza e clareza em realidade. Não é definido pela profissão de origem (engenharia, arquitetura, arte, design ou nenhuma delas), e sim pelo que faz com a própria ideia. **Nunca tratá-lo como "designer" ou "criativo".**
+
+As 5 jornadas seguem os 5 perfis, eixados pela distância entre ideia e realidade:
+
+**1. Jornada de Descoberta** (Inconsciente: vontade sem direção → primeiro contato)
 
 | Touchpoint | Canal | Tom predominante | Objetivo |
 |-----------|-------|-------------------|----------|
@@ -52,7 +56,7 @@ Mapear TODOS os touchpoints da Overlens organizados por jornada:
 | SEO/Blog | Web | Científico + Profundo | Tráfego orgânico, evergreen |
 | Indicação/boca-a-boca | Interpessoal | — | O mais poderoso, gerado por experiência |
 
-**2. Jornada de Consideração** (Operante → avaliando)
+**2. Jornada de Consideração** (Operante: executa, não lança o que é seu → avaliando)
 
 | Touchpoint | Canal | Tom | Objetivo |
 |-----------|-------|-----|----------|
@@ -63,7 +67,7 @@ Mapear TODOS os touchpoints da Overlens organizados por jornada:
 | Depoimentos/cases | Social/Web | Inspirador | Prova social, identificação |
 | Comunidade aberta | Digital | Adaptável | Pertencimento antes da compra |
 
-**3. Jornada de Entrada** (Convergente → comprando/entrando)
+**3. Jornada de Entrada** (Convergente: lança, não sustenta → comprando/entrando)
 
 | Touchpoint | Canal | Tom | Objetivo |
 |-----------|-------|-----|----------|
@@ -74,7 +78,7 @@ Mapear TODOS os touchpoints da Overlens organizados por jornada:
 | Primeira aula/conteúdo | Produto | Científico + Inspirador | Confirmar a decisão |
 | D.U.D (persona sintética) | Produto | Sensível + Curioso | Acolhimento tecnológico |
 
-**4. Jornada de Profundidade** (Emergente → aprofundando)
+**4. Jornada de Profundidade** (Emergente: tem negócio, dispersa energia → aprofundando)
 
 | Touchpoint | Canal | Tom | Objetivo |
 |-----------|-------|-----|----------|
@@ -85,14 +89,14 @@ Mapear TODOS os touchpoints da Overlens organizados por jornada:
 | Eventos presenciais | Presencial | Inspirador + Provocativo | Conexão, imersão |
 | T.R.U (persona sintética) | Produto | Direto + Preciso | Orientação operacional |
 
-**5. Jornada de Legado** (Nexialista → contribuindo)
+**5. Jornada de Legado** (Nexialista: opera ecossistema próprio → contribuindo)
 
 | Touchpoint | Canal | Tom | Objetivo |
 |-----------|-------|-----|----------|
 | Cases publicados | Web/Social | Inspirador | Prova de transformação |
 | Convites para palestras | Interpessoal | Provocativo | Amplificar a visão |
 | Co-criação de conteúdo | Produto | Profundo | Contribuição ao ecossistema |
-| Alumni/rede de nexialistas | Interpessoal | Adaptável | Legado vivo |
+| Alumni/rede de empreendedores nexialistas | Interpessoal | Adaptável | Legado vivo |
 
 ### Diretrizes por Canal
 
@@ -132,7 +136,8 @@ Expandir as 5 diretrizes existentes (linhas 2707-2722 do documento central) com:
 - Consistência visual + verbal + sonora em todos os pontos
 - O tom se ADAPTA ao canal mas a identidade permanece
 - Priorizar qualidade sobre quantidade (parcimônia)
-- Mapear a jornada do CRIADOR, não do "consumidor"
+- Mapear a jornada do EMPREENDEDOR NEXIALISTA, não do "consumidor" — e nunca chamá-lo de "designer" ou "criativo"
+- Página de vendas, e-mails e social falam com empreendedores: risco alto de hustle porn. PROIBIDO prometer faturamento, enriquecimento, "liberdade financeira", escassez falsa, FOMO ou tom de startup bro em qualquer touchpoint
 - Incluir touchpoints onde a marca NÃO está presente mas deveria estar
 - Incluir touchpoints onde a marca está presente e deveria SAIR
 

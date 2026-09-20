@@ -16,4 +16,6 @@ Execute o pipeline completo para a página Storybrand/Roteiro:
 6. Rodar revisão com agente `revisor` (P.R.I.S.M.A)
 7. Apresentar resultado ao usuário
 
-**Lembrete**: O herói é o CRIADOR, não a Overlens. A Overlens é o GUIA.
+**Lembrete**: O herói é o EMPREENDEDOR NEXIALISTA, não a Overlens. A Overlens é o GUIA.
+O herói nunca é chamado de "designer" ou "criativo" — ele pode vir da engenharia, da arquitetura, da arte, do design ou de nenhuma dessas origens, e é definido pelo que faz com a própria ideia.
+Cuidado com hustle porn: o arco narrativo termina em autoria e sustentação, nunca em faturamento, enriquecimento ou "liberdade financeira".
