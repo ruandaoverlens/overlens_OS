@@ -11,18 +11,21 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
+import { useConfirm } from "@/components/ui/confirm-dialog";
 import {
   SmDownloadLineIcon,
   SmDeleteLineIcon,
   SmLockLineIcon,
   SmVisibilitySolidIcon,
 } from "@/components/icons";
+import { notify } from "@/lib/notifications/toast";
 import {
   DOCUMENTO_TIPO_LABEL,
   formatarData,
   formatarTamanho,
 } from "@/lib/registros/types";
 import type { DocumentoRow } from "@/lib/registros/types";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface DocumentoItemProps {
   documento: DocumentoRow;
@@ -32,6 +35,7 @@ interface DocumentoItemProps {
 
 export function DocumentoItem({ documento, marcaNome }: DocumentoItemProps) {
   const router = useRouter();
+  const confirm = useConfirm();
   const [deleting, setDeleting] = useState(false);
   const [previewOpen, setPreviewOpen] = useState(false);
 
@@ -42,7 +46,14 @@ export function DocumentoItem({ documento, marcaNome }: DocumentoItemProps) {
   const suportaPreview = isImagem || isPdf;
 
   async function handleDelete() {
-    if (!confirm("Remover este documento? Esta ação não pode ser desfeita.")) return;
+    const ok = await confirm({
+      title: `Excluir “${documento.titulo}”?`,
+      description: "O arquivo será removido do storage. Esta ação não pode ser desfeita.",
+      confirmLabel: "Excluir",
+      destructive: true,
+    });
+    if (!ok) return;
+
     setDeleting(true);
     try {
       const res = await fetch("/api/registros/documentos", {
@@ -52,18 +63,19 @@ export function DocumentoItem({ documento, marcaNome }: DocumentoItemProps) {
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data.error ?? "Erro ao remover");
+        throw new Error(data.error ?? "Erro ao excluir");
       }
+      notify.success("Documento excluído");
       router.refresh();
     } catch (err) {
-      alert(err instanceof Error ? err.message : "Erro ao remover documento");
+      notify.fromError(err, "Não foi possível excluir o documento");
     } finally {
       setDeleting(false);
     }
   }
 
   return (
-    <div className="flex items-center gap-3 rounded-lg bg-[var(--surface-950)] px-4 py-3">
+    <div className="flex items-center gap-3 rounded-lg bg-surface-950 px-4 py-3">
       <div className="flex min-w-0 flex-1 flex-col gap-1">
         <div className="flex items-center gap-2">
           <span className="truncate text-sm font-medium">{documento.titulo}</span>
@@ -82,28 +94,46 @@ export function DocumentoItem({ documento, marcaNome }: DocumentoItemProps) {
         </div>
       </div>
       <div className="flex shrink-0 items-center gap-1">
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setPreviewOpen(true)}
-          aria-label="Visualizar"
-        >
-          <SmVisibilitySolidIcon />
-        </Button>
-        <Button variant="ghost" size="icon" asChild aria-label="Baixar">
-          <a href={`/api/registros/documentos/download?id=${documento.id}`}>
-            <SmDownloadLineIcon />
-          </a>
-        </Button>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={handleDelete}
-          disabled={deleting}
-          aria-label="Remover"
-        >
-          <SmDeleteLineIcon />
-        </Button>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setPreviewOpen(true)}
+              aria-label={`Visualizar ${documento.titulo}`}
+            >
+              <SmVisibilitySolidIcon />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>Visualizar</TooltipContent>
+        </Tooltip>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant="ghost" size="icon" asChild>
+              <a
+                href={`/api/registros/documentos/download?id=${documento.id}`}
+                aria-label={`Baixar ${documento.titulo}`}
+              >
+                <SmDownloadLineIcon />
+              </a>
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>Baixar</TooltipContent>
+        </Tooltip>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={handleDelete}
+              loading={deleting}
+              aria-label={`Excluir ${documento.titulo}`}
+            >
+              <SmDeleteLineIcon />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>Excluir</TooltipContent>
+        </Tooltip>
       </div>
 
       {/* Modal de preview — o arquivo vem do nosso storage privado via rota
@@ -119,7 +149,7 @@ export function DocumentoItem({ documento, marcaNome }: DocumentoItemProps) {
           </DialogHeader>
           {previewOpen && suportaPreview ? (
             isImagem ? (
-              <div className="flex items-center justify-center rounded-md bg-[var(--surface-900)] p-8">
+              <div className="flex items-center justify-center rounded-md bg-surface-900 p-8">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={inlineUrl}
@@ -131,7 +161,7 @@ export function DocumentoItem({ documento, marcaNome }: DocumentoItemProps) {
               <iframe
                 src={inlineUrl}
                 title={documento.titulo}
-                className="h-[70vh] w-full rounded-md border border-[var(--surface-800)]"
+                className="h-[70vh] w-full rounded-md border border-surface-800"
               />
             )
           ) : (

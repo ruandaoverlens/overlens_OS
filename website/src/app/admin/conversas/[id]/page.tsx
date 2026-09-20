@@ -1,11 +1,13 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import { cache } from "react";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { isStaffOrAdmin } from "@/lib/route-access";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { resolveCitedTitle, resolveSources } from "@/lib/ai/sources";
 import { UserMessage } from "@/components/chat/user-message";
 import { AssistantMessage } from "@/components/chat/assistant-message";
-import { SmArrowBackLineIcon } from "@/components/icons";
+import { PageHeader } from "@/components/page-header";
 import type { ChatAttachment } from "@/lib/ai/types";
 
 function parseAttachments(value: unknown): ChatAttachment[] | null {
@@ -25,29 +27,30 @@ function parseAttachments(value: unknown): ChatAttachment[] | null {
   return items.length > 0 ? items : null;
 }
 
-/**
- * Visão read-only de uma conversa de qualquer membro, para admins.
- * As tabelas de chat têm RLS por dono, então a leitura usa o service role
- * depois de confirmar que quem acessa é admin.
- */
-export default async function AdminConversationPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const { id } = await params;
+type ConversationRow = {
+  id: string;
+  user_id: string;
+  title: string;
+  created_at: string;
+};
 
+/**
+ * Cabeçalho da conversa, só para staff/admin. As tabelas de chat têm RLS
+ * por dono, então a leitura usa o service role depois de confirmar o role.
+ * `cache()` compartilha o resultado entre `generateMetadata` e a página.
+ */
+const getConversation = cache(async (id: string): Promise<ConversationRow | null> => {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) notFound();
+  if (!user) return null;
   const { data: profile } = await supabase
     .from("profiles")
     .select("role")
     .eq("id", user.id)
     .single();
-  if (!profile || profile.role !== "admin") notFound();
+  if (!profile || !isStaffOrAdmin(profile.role)) return null;
 
   const admin = createAdminClient();
   const { data: conversation } = await admin
@@ -55,7 +58,30 @@ export default async function AdminConversationPage({
     .select("id, user_id, title, created_at")
     .eq("id", id)
     .maybeSingle();
+  return (conversation as ConversationRow | null) ?? null;
+});
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const conversation = await getConversation(id);
+  return { title: conversation?.title || "Conversa" };
+}
+
+/** Visão read-only de uma conversa de qualquer membro, para admins. */
+export default async function AdminConversationPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const conversation = await getConversation(id);
   if (!conversation) notFound();
+
+  const admin = createAdminClient();
 
   const [{ data: owner }, { data: messages }] = await Promise.all([
     admin
@@ -70,31 +96,29 @@ export default async function AdminConversationPage({
       .order("created_at", { ascending: true }),
   ]);
 
-  const createdAt = new Date(conversation.created_at as string).toLocaleDateString(
+  const createdAt = new Date(conversation.created_at).toLocaleDateString(
     "pt-BR",
     { day: "2-digit", month: "long", year: "numeric" },
   );
 
+  const description = [
+    owner?.name ?? "Membro desconhecido",
+    owner?.email,
+    createdAt,
+    "visão somente leitura",
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
   return (
     <div className="mx-auto w-full max-w-3xl px-6 py-10">
-      <Link
-        href="/admin/insights"
-        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-      >
-        <SmArrowBackLineIcon className="size-4" />
-        <span>Insights de IA</span>
-      </Link>
-
-      <header className="mt-6 mb-10">
-        <h1 className="text-2xl font-semibold tracking-tight">
-          {conversation.title as string}
-        </h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          {owner?.name ?? "Membro desconhecido"}
-          {owner?.email ? ` · ${owner.email}` : ""} · {createdAt} · visão somente
-          leitura
-        </p>
-      </header>
+      <PageHeader
+        title={conversation.title}
+        description={description}
+        backHref="/admin/insights"
+        backLabel="Insights de IA"
+        className="mb-6"
+      />
 
       <div>
         {(messages ?? [])

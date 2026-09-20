@@ -9,15 +9,15 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
 const inputGroupVariants = cva(
-  "group/input-group bg-accent/50 dark:bg-input/30 border-2 border-transparent hover:bg-accent dark:hover:bg-input/50 relative flex w-full items-center shadow-none transition-all outline-none min-w-0 has-[>textarea]:h-auto has-[[data-slot=input-group-control]:focus-visible]:border-input has-[[data-slot=input-group-control]:focus-visible]:bg-transparent dark:has-[[data-slot=input-group-control]:focus-visible]:bg-transparent has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[[data-slot][aria-invalid=true]]:border-destructive dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40",
+  "group/input-group bg-input/30 border-2 border-transparent hover:bg-input/50 relative flex w-full items-center shadow-none transition-all outline-none min-w-0 has-[>textarea]:h-auto has-[[data-slot=input-group-control]:focus-visible]:border-foreground/60 has-[[data-slot=input-group-control]:focus-visible]:ring-2 has-[[data-slot=input-group-control]:focus-visible]:ring-foreground/70 has-[[data-slot=input-group-control]:focus-visible]:bg-transparent has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[[data-slot][aria-invalid=true]]:border-destructive",
   {
     variants: {
       size: {
-        lg: "h-20 rounded-[12px]",
-        md: "h-16 rounded-[12px]",
-        default: "h-12 rounded-[12px]",
-        sm: "h-10 rounded-[8px]",
-        xs: "h-8 rounded-[6px]",
+        lg: "h-20 rounded-field",
+        md: "h-16 rounded-field",
+        default: "h-12 rounded-field",
+        sm: "h-10 rounded-field-sm",
+        xs: "h-8 pointer-coarse:h-10 rounded-md",
       },
     },
     defaultVariants: {
@@ -26,7 +26,14 @@ const inputGroupVariants = cva(
   }
 )
 
-/** Composite input container that combines an input/textarea with addon slots (icons, buttons, text). */
+/**
+ * Composite input container that combines an input/textarea with addon slots (icons, buttons, text).
+ *
+ * `size="xs"` tem 32px de altura: fica abaixo do alvo mínimo de 40px, então é um
+ * tamanho **de desktop** (tabelas densas, barras de filtro, toolbars). Em ponteiros
+ * grossos (`pointer-coarse:`, ou seja, dedo/caneta) ele sobe sozinho para 40px.
+ * Não force `h-8` por className em telas de toque.
+ */
 function InputGroup({
   className,
   size,
@@ -54,7 +61,7 @@ function InputGroup({
 }
 
 const inputGroupAddonVariants = cva(
-  "text-muted-foreground flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium select-none [&>svg:not([class*='size-'])]:size-6 [&>kbd]:rounded-[calc(var(--radius)-5px)] group-data-[disabled=true]/input-group:opacity-50",
+  "text-muted-foreground flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium select-none [&>svg:not([class*='size-'])]:size-6 [&>kbd]:rounded-xs group-data-[disabled=true]/input-group:opacity-50",
   {
     variants: {
       align: {
@@ -102,11 +109,15 @@ const inputGroupButtonVariants = cva(
   {
     variants: {
       size: {
-        xs: "h-6 gap-1 px-2 rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-3.5 has-[>svg]:px-2",
-        sm: "h-8 px-2.5 gap-1.5 rounded-md has-[>svg]:px-2.5",
+        // 24px visuais; alvo 40x(largura+8): sangria de 8px na vertical e 4px na horizontal.
+        xs: "h-6 gap-1 px-2 rounded-xs [&>svg:not([class*='size-'])]:size-3.5 has-[>svg]:px-2 relative overflow-visible z-0 hover:z-10 focus-visible:z-10 after:absolute after:-inset-y-2 after:-inset-x-1 after:content-['']",
+        // 32px visuais + 4px por lado = 40px de alvo.
+        sm: "h-8 px-2.5 gap-1.5 rounded-md has-[>svg]:px-2.5 relative overflow-visible z-0 hover:z-10 focus-visible:z-10 after:absolute after:-inset-1 after:content-['']",
+        // Visual 32px, hit-area 40px via pseudo-elemento (mantém o nome por compatibilidade).
         "icon-xs":
-          "size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0",
-        "icon-sm": "size-8 p-0 has-[>svg]:p-0",
+          "size-8 rounded-md p-0 has-[>svg]:p-0 relative overflow-visible after:absolute after:-inset-1 after:content-[''] [&>svg:not([class*='size-'])]:size-5",
+        "icon-sm":
+          "size-8 p-0 has-[>svg]:p-0 relative overflow-visible after:absolute after:-inset-1 after:content-['']",
       },
     },
     defaultVariants: {
@@ -157,7 +168,9 @@ function InputGroupInput({
     <Input
       data-slot="input-group-control"
       className={cn(
-        "flex-1 rounded-none border-0 bg-transparent shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent",
+        // O ring de foco fica no container (has-[...]:ring-2); o controle usa ring
+        // transparente para não duplicar (e não cair no outline global de `ring-0`).
+        "flex-1 rounded-none border-0 bg-transparent shadow-none focus-visible:ring-transparent focus-visible:ring-offset-0 hover:bg-transparent",
         className
       )}
       {...props}
@@ -174,7 +187,7 @@ function InputGroupTextarea({
     <Textarea
       data-slot="input-group-control"
       className={cn(
-        "flex-1 resize-none rounded-none border-0 bg-transparent py-3 px-3 shadow-none focus-visible:ring-0 dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent",
+        "flex-1 resize-none rounded-none border-0 bg-transparent py-3 px-3 shadow-none focus-visible:ring-transparent hover:bg-transparent",
         className
       )}
       {...props}

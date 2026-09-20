@@ -33,7 +33,7 @@ O propósito da Overlens é colocar o poder da criação nas mãos das pessoas. 
 
 Julian Treasure demonstrou que o som afeta o ser humano em quatro dimensões simultâneas: fisiológica (altera ritmo cardíaco e respiração), psicológica (modifica estados emocionais), cognitiva (interfere na capacidade de concentração e pensamento) e comportamental (direciona movimentos e decisões). Nenhum outro elemento sensorial opera em todas essas frentes ao mesmo tempo.
 
-Para uma marca que forma criadores, isso não é detalhe. É infraestrutura.
+Para uma marca que forma Empreendedores Nexialistas, isso não é detalhe. É infraestrutura.
 
 O ambiente sonoro de uma aula determina se o aluno entra em estado de foco ou dispersão. A trilha de um vídeo define se a mensagem é percebida como provocação inteligente ou entretenimento descartável. O som de um evento presencial comunica; antes de qualquer slide; se aquele espaço é de profundidade ou de espetáculo.
 
@@ -185,7 +185,7 @@ Michel Chion chamou isso de "silêncio estrutural"; o silêncio que não é esqu
 
 **2. Silêncio como respiração.** Os intervalos entre seções, módulos, ideias. Permite que o ouvinte processe antes de receber nova informação. Um sistema de comunicação que não respira sufoca; e o sufocamento é o oposto da autonomia.
 
-**3. Silêncio como convite.** A pausa que espera o ouvinte preencher com pensamento próprio. A Overlens não ocupa todo o espaço mental; deixa margem para que o criador construa sua própria interpretação. O silêncio como convite é a expressão acústica do princípio "convite e exemplo, não despertar".
+**3. Silêncio como convite.** A pausa que espera o ouvinte preencher com pensamento próprio. A Overlens não ocupa todo o espaço mental; deixa margem para que o ouvinte construa sua própria interpretação. O silêncio como convite é a expressão acústica do princípio "convite e exemplo, não despertar".
 
 **4. Silêncio como ética.** Nem tudo precisa ser dito. Nem tudo precisa ser sonorizado. O silêncio ético é saber quando parar; quando a música se tornaria manipulação emocional, quando o som se tornaria preenchimento sem propósito. Walter Murch propôs a "regra dos dois e meio sentidos": numa cena, nunca sobrecarregar o espectador com estímulos em todas as dimensões sensoriais ao mesmo tempo. A Overlens segue essa lógica; quando o visual é denso, o som recua. Quando o texto é profundo, a trilha cede espaço.
 

@@ -58,7 +58,7 @@ export const mediaAssetConfigs: AssetUploadConfig[] = [
         label: "Tags",
         type: "tags",
         required: false,
-        placeholder: "Ex: pessoa, natureza, tecnologia, estúdio...",
+        placeholder: "Ex: pessoa, natureza, tecnologia, estúdio…",
       },
       {
         name: "notas",
@@ -161,7 +161,7 @@ export const mediaAssetConfigs: AssetUploadConfig[] = [
         label: "Tags",
         type: "tags",
         required: false,
-        placeholder: "Ex: natureza, aéreo, câmera-lenta, tecnologia...",
+        placeholder: "Ex: natureza, aéreo, câmera-lenta, tecnologia…",
       },
       {
         name: "notas",

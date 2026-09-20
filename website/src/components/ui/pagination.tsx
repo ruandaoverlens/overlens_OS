@@ -143,7 +143,7 @@ function PaginationStatus({
       {...props}
     >
       {current}
-      <span className="mx-1 opacity-50">/</span>
+      <span className="mx-1">/</span>
       {total}
     </span>
   )

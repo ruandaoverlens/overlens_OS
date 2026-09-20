@@ -1,16 +1,32 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { SmCloseLineIcon, SmVisibilitySolidIcon, SmVisibilityOffSolidIcon } from "@/components/icons";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { Alert, AlertActions, AlertAction, AlertDescription, AlertHeader, AlertTitle } from "@/components/ui/alert";
+import { AssetUploadModal } from "@/components/asset-upload-modal";
+import { getUploadConfig } from "@/lib/upload-configs";
+import { useConfirm } from "@/components/ui/confirm-dialog";
+import { EmptyState } from "@/components/empty-state";
+import { MediaCardGridSkeleton } from "@/components/skeletons";
+import { SmCloseLineIcon, SmImageLineIcon, SmVisibilitySolidIcon, SmVisibilityOffSolidIcon } from "@/components/icons";
 import { useFavorites } from "@/lib/favorites";
 import { FavoriteButton } from "@/components/favorite-button";
 import { getAssetPreviewUrl, getStoragePath } from "@/lib/supabase/storage";
-import { useAuth, canDelete } from "@/lib/auth";
+import { useAuth, canDelete, canUpload } from "@/lib/auth";
 import { useHiddenAssets } from "@/lib/hidden-assets";
 import { useInfiniteScroll } from "@/lib/use-infinite-scroll";
 import { useAssetMetadata, type AssetMetadataOverride } from "@/lib/asset-metadata";
 import { AssetEditDialog } from "@/components/asset-edit-dialog";
+import { notify } from "@/lib/notifications";
+import { useLightboxItem } from "@/components/asset-page-shell";
+import { normalizeText, matchesNormalized } from "@/lib/normalize-text";
+import { cn } from "@/lib/utils";
+
+const GRID_CLASS = "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2";
+const GRID_SIZES = "(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw";
 
 // ─── Data ────────────────────────────────────────────────────
 
@@ -85,7 +101,32 @@ function imageSrc(asset: Pick<ImageAsset, "filename" | "bucketSource">) {
   return getAssetPreviewUrl("Imagens", asset.filename);
 }
 
+/** A rota /api/assets/preview depende da sessão — o otimizador do next/image não a enxerga. */
+function isUnoptimized(asset: Pick<ImageAsset, "bucketSource">) {
+  return asset.bucketSource === "platform-assets";
+}
+
+/** `needle` já vem de `normalizeText` — normalizar por item seria trabalho repetido. */
+function matchesFilters(asset: ImageAsset, needle: string, activeTags?: Set<string>): boolean {
+  if (activeTags && activeTags.size > 0 && !asset.tags.some((t) => activeTags.has(t))) {
+    return false;
+  }
+  const q = needle;
+  if (!q) return true;
+  return (
+    matchesNormalized(asset.title, q) ||
+    matchesNormalized(asset.author, q) ||
+    matchesNormalized(asset.filename, q) ||
+    asset.tags.some((t) => matchesNormalized(t, q))
+  );
+}
+
 // ─── Image Card ─────────────────────────────────────────────
+
+// Overlay invisível não pode capturar toque: sem hover (touch) ele fica sempre
+// visível e clicável; com hover só ganha pointer-events quando aparece.
+const OVERLAY_CLASS =
+  "absolute top-2 right-2 z-10 flex items-center gap-1.5 opacity-0 pointer-events-none transition-opacity group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto focus-visible:opacity-100 pointer-coarse:opacity-100 pointer-coarse:pointer-events-auto";
 
 function ImageCard({
   asset,
@@ -105,29 +146,42 @@ function ImageCard({
   onToggleHide?: () => void;
 }) {
   return (
-    <div
-      role="button"
-      tabIndex={0}
-      onClick={onClick}
-      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") onClick(); }}
-      className="rounded-sm overflow-hidden cursor-pointer group relative w-full text-left aspect-[4/3]"
-    >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={imageSrc(asset)}
-        alt={asset.title}
-        className="w-full h-full object-cover block"
-        loading="lazy"
-      />
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-200" />
-      <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+    <div className="group relative w-full aspect-4/3">
+      <button
+        type="button"
+        onClick={onClick}
+        aria-label={`Abrir ${asset.title}`}
+        className="relative block w-full h-full rounded-sm overflow-hidden bg-surface-950 text-left outline-none focus-visible:ring-2 focus-visible:ring-foreground"
+      >
+        <Image
+          src={imageSrc(asset)}
+          alt={asset.title}
+          fill
+          sizes={GRID_SIZES}
+          unoptimized={isUnoptimized(asset)}
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-200" />
+      </button>
+      {/* Ações: irmão do botão principal (nunca botão dentro de botão). */}
+      <div className={OVERLAY_CLASS}>
         {showHideButton && onToggleHide && (
-          <button
-            onClick={(e) => { e.stopPropagation(); onToggleHide(); }}
-            className="size-8 rounded-full flex items-center justify-center bg-black/50 text-white/40 hover:text-white/70 hover:bg-black/70 transition-all"
-          >
-            {isHidden ? <SmVisibilityOffSolidIcon className="size-4" /> : <SmVisibilitySolidIcon className="size-4" />}
-          </button>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon-sm"
+                aria-label={isHidden ? "Desocultar imagem" : "Ocultar imagem"}
+                aria-pressed={!!isHidden}
+                onClick={onToggleHide}
+                className="rounded-full bg-black/50 text-white/70 hover:bg-black/70 hover:text-white"
+              >
+                {isHidden ? <SmVisibilityOffSolidIcon className="size-4" /> : <SmVisibilitySolidIcon className="size-4" />}
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="top">{isHidden ? "Desocultar imagem" : "Ocultar imagem"}</TooltipContent>
+          </Tooltip>
         )}
         <FavoriteButton isFavorite={isFavorite} onClick={() => onToggleFavorite()} />
       </div>
@@ -154,19 +208,9 @@ export function ImageLightbox({
 }) {
   const { user } = useAuth();
   const isAdmin = user && canDelete(user.role);
+  const confirm = useConfirm();
   const [deleting, setDeleting] = useState(false);
   const [hiding, setHiding] = useState(false);
-
-  useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", handleKey);
-    return () => document.removeEventListener("keydown", handleKey);
-  }, [onClose]);
-
-  const imgRef = useRef<HTMLImageElement>(null);
-  const [imgWidth, setImgWidth] = useState<number | undefined>(undefined);
 
   const handleDownload = () => {
     const a = document.createElement("a");
@@ -175,14 +219,14 @@ export function ImageLightbox({
     a.click();
   };
 
-  const handleImgLoad = () => {
-    if (imgRef.current) {
-      setImgWidth(imgRef.current.clientWidth);
-    }
-  };
-
   const handleDelete = async () => {
-    if (!confirm("Tem certeza que deseja excluir este asset?")) return;
+    const ok = await confirm({
+      destructive: true,
+      title: "Excluir este asset?",
+      description: "Esta ação não pode ser desfeita.",
+      confirmLabel: "Excluir",
+    });
+    if (!ok) return;
     setDeleting(true);
     try {
       const storagePath = getStoragePath("banco-de-imagens", asset.filename);
@@ -192,125 +236,152 @@ export function ImageLightbox({
         body: JSON.stringify({ storagePath, previewPath: storagePath }),
       });
       if (res.ok) {
+        notify.success("Asset excluído");
         onDelete?.();
+        onClose();
       } else {
-        const data = await res.json();
-        alert(data.error || "Erro ao excluir");
+        const data = await res.json().catch(() => ({}));
+        notify.error("Falha ao excluir asset", { description: data.error });
       }
-    } catch {
-      alert("Erro ao excluir asset");
+    } catch (err) {
+      notify.fromError(err, "Falha ao excluir asset");
     } finally {
       setDeleting(false);
     }
   };
 
   return (
-    <div
-      className="fixed inset-0 z-50 bg-black flex flex-col animate-in fade-in duration-200"
-      onClick={onClose}
-    >
-      {/* Top bar */}
-      <div className="flex items-start justify-between px-4 py-3 shrink-0 gap-4" onClick={(e) => e.stopPropagation()}>
-        <div className="flex-1 min-w-0 max-w-xs">
-          <p className="text-sm font-medium text-white/80 truncate">
-            {asset.title}
-          </p>
-          {asset.author && (
-            <p className="text-xs text-white/40 mt-0.5">
-              {asset.author}{asset.year ? `, ${asset.year}` : ""}
-            </p>
-          )}
-        </div>
-        <div className="flex items-center gap-2 ml-4">
-          {isAdmin && onEdit && (
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-white/20 text-white/60 hover:bg-white/10 hover:border-white/40 hover:text-white"
-              onClick={onEdit}
-            >
-              <span>Editar</span>
-            </Button>
-          )}
-          {isAdmin && onToggleHide && (
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-white/20 text-white/60 hover:bg-white/10 hover:border-white/40 hover:text-white"
-              onClick={async () => {
-                setHiding(true);
-                await onToggleHide();
-                setHiding(false);
-              }}
-              disabled={hiding}
-            >
-              <span>{hiding ? "..." : isHidden ? "Desocultar" : "Ocultar"}</span>
-            </Button>
-          )}
-          {isAdmin && (
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-white/20 text-white/60 hover:bg-white/10 hover:border-white/40 hover:text-white"
-              onClick={handleDelete}
-              disabled={deleting}
-            >
-              <span>{deleting ? "Excluindo..." : "Excluir"}</span>
-            </Button>
-          )}
-          <Button variant="default" size="sm" onClick={handleDownload}>
-            <span>Download</span>
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-white/60 hover:text-white hover:bg-white/10"
-            onClick={onClose}
-          >
-            <SmCloseLineIcon />
-          </Button>
-        </div>
-      </div>
-
-      {/* Image + caption */}
-      <div
-        className="flex-1 flex flex-col items-center justify-center px-4 pb-4 min-h-0"
-        onClick={(e) => e.stopPropagation()}
+    <Dialog open onOpenChange={(open) => { if (!open) onClose(); }}>
+      <DialogContent
+        showCloseButton={false}
+        className="max-w-none sm:max-w-none max-h-none w-screen h-svh rounded-none p-0 bg-black border-0 flex flex-col gap-0 overflow-hidden"
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          ref={imgRef}
-          src={imageSrc(asset)}
-          alt={asset.title}
-          className="max-h-[80%] max-w-full object-contain rounded-sm"
-          onLoad={handleImgLoad}
-        />
-        {asset.caption && (
-          <div
-            className="mt-3 flex items-start justify-between gap-4"
-            style={{ width: imgWidth ? `${imgWidth}px` : "100%", maxWidth: "100%" }}
-          >
-            <div>
-              <p className="text-xs text-white/50 leading-relaxed text-left">
-                {asset.caption}
+        <DialogTitle className="sr-only">{asset.title}</DialogTitle>
+        <DialogDescription className="sr-only">
+          Visualização em tela cheia da imagem{asset.author ? ` de ${asset.author}` : ""}. Use Esc para fechar.
+        </DialogDescription>
+
+        {/* Top bar */}
+        <div className="flex items-start justify-between px-4 py-3 shrink-0 gap-4">
+          <div className="flex-1 min-w-0 max-w-xs">
+            <p className="text-sm font-medium text-white/80 truncate">
+              {asset.title}
+            </p>
+            {asset.author && (
+              <p className="text-xs text-muted-foreground mt-0.5">
+                {asset.author}{asset.year ? `, ${asset.year}` : ""}
               </p>
-              {asset.author && (
-                <p className="text-[14px] text-white/30 mt-1 text-left">
-                  {asset.author}{asset.year ? `, ${asset.year}` : ""}
-                </p>
-              )}
-            </div>
-            {asset.sourceUrl && (
-              <Button variant="ghost" size="sm" asChild className="shrink-0 text-white/40 hover:text-white">
-                <a href={asset.sourceUrl} target="_blank" rel="noopener noreferrer">
-                  <span>Ver original</span>
-                </a>
-              </Button>
             )}
           </div>
-        )}
-      </div>
-    </div>
+          <div className="flex items-center gap-2 ml-4">
+            {isAdmin && onEdit && (
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                className="border-white/20 text-white/60 hover:bg-white/10 hover:border-white/40 hover:text-white"
+                onClick={onEdit}
+              >
+                <span>Editar</span>
+              </Button>
+            )}
+            {isAdmin && onToggleHide && (
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                className="border-white/20 text-white/60 hover:bg-white/10 hover:border-white/40 hover:text-white"
+                onClick={async () => {
+                  setHiding(true);
+                  try {
+                    await onToggleHide();
+                  } catch (err) {
+                    notify.fromError(err, isHidden ? "Falha ao desocultar asset" : "Falha ao ocultar asset");
+                  } finally {
+                    setHiding(false);
+                  }
+                }}
+                loading={hiding}
+                loadingText={isHidden ? "Desocultando…" : "Ocultando…"}
+                aria-pressed={!!isHidden}
+              >
+                <span>{isHidden ? "Desocultar" : "Ocultar"}</span>
+              </Button>
+            )}
+            {isAdmin && (
+              <Button
+                type="button"
+                variant="destructive"
+                size="sm"
+                onClick={handleDelete}
+                loading={deleting}
+                loadingText="Excluindo…"
+              >
+                Excluir
+              </Button>
+            )}
+            <Button type="button" variant="default" size="sm" onClick={handleDownload}>
+              <span>Download</span>
+            </Button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  aria-label="Fechar"
+                  className="text-white/60 hover:text-white hover:bg-white/10"
+                  onClick={onClose}
+                >
+                  <SmCloseLineIcon />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent side="bottom">Fechar (Esc)</TooltipContent>
+            </Tooltip>
+          </div>
+        </div>
+
+        {/* Image + caption */}
+        <div
+          role="presentation"
+          className="flex-1 flex flex-col items-center justify-center px-4 pb-4 min-h-0"
+          onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+        >
+          <div className="relative w-full flex-1 min-h-0">
+            <Image
+              src={imageSrc(asset)}
+              alt={asset.title}
+              fill
+              sizes="100vw"
+              unoptimized={isUnoptimized(asset)}
+              className="object-contain rounded-sm"
+              priority
+            />
+          </div>
+          {asset.caption && (
+            <div className="mt-3 flex items-start justify-between gap-4 w-full max-w-3xl">
+              <div>
+                <p className="text-xs text-white/60 leading-relaxed text-left">
+                  {asset.caption}
+                </p>
+                {asset.author && (
+                  <p className="text-sm text-muted-foreground mt-1 text-left">
+                    {asset.author}{asset.year ? `, ${asset.year}` : ""}
+                  </p>
+                )}
+              </div>
+              {asset.sourceUrl && (
+                <Button variant="ghost" size="sm" asChild className="shrink-0 text-white/60 hover:text-white">
+                  <a href={asset.sourceUrl} target="_blank" rel="noopener noreferrer">
+                    <span>Ver original</span>
+                  </a>
+                </Button>
+              )}
+            </div>
+          )}
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }
 
@@ -319,8 +390,15 @@ export function ImageLightbox({
 function useStorageImages() {
   const [images, setImages] = useState<ImageAsset[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const abortRef = useRef<AbortController | null>(null);
 
   const fetchImages = useCallback(async () => {
+    abortRef.current?.abort();
+    const abort = new AbortController();
+    abortRef.current = abort;
+    setLoading(true);
     try {
       // Ask for asset-previews as the primary source and platform-assets as a
       // fallback. The API merges entries from platform-assets that have no
@@ -328,8 +406,9 @@ function useStorageImages() {
       // failed) still show up in the gallery.
       const res = await fetch(
         "/api/assets/list?folder=Imagens&bucket=asset-previews&fallbackBucket=platform-assets",
+        { signal: abort.signal },
       );
-      if (!res.ok) throw new Error("fetch failed");
+      if (!res.ok) throw new Error(`Falha ao listar imagens (${res.status})`);
       const { files } = (await res.json()) as {
         files: { name: string; id: string; createdAt: string; source?: string }[];
       };
@@ -369,19 +448,27 @@ function useStorageImages() {
       }
 
       setImages(result);
-    } catch {
+      setError(null);
+    } catch (err) {
+      // Desmontou ou refez o fetch: não atualiza estado.
+      if ((err as Error)?.name === "AbortError") return;
       // Fallback to hardcoded images if fetch fails
       setImages(
         Object.entries(IMAGE_METADATA).map(([filename, meta]) => ({ filename, ...meta })),
       );
+      setError(err instanceof Error ? err.message : "Erro desconhecido");
+      notify.fromError(err, "Falha ao carregar imagens");
     } finally {
-      setLoading(false);
+      if (!abort.signal.aborted) setLoading(false);
     }
   }, []);
 
-  useEffect(() => { fetchImages(); }, [fetchImages]);
+  useEffect(() => {
+    void fetchImages();
+    return () => abortRef.current?.abort();
+  }, [fetchImages]);
 
-  return { images, loading, refresh: fetchImages };
+  return { images, loading, error, refresh: fetchImages };
 }
 
 // ─── Main Component ──────────────────────────────────────────
@@ -403,24 +490,66 @@ function applyOverride(base: ImageAsset, override: AssetMetadataOverride | undef
 export function ImageBank({
   showHidden = false,
   onCountChange,
+  search = "",
+  searching = false,
+  activeTags,
+  onClearFilters,
 }: {
   showHidden?: boolean;
   onCountChange?: (visible: number, hidden: number) => void;
+  search?: string;
+  /** Há busca digitada ainda não aplicada (debounce). Atenua a grade e marca `aria-busy`. */
+  searching?: boolean;
+  activeTags?: Set<string>;
+  onClearFilters?: () => void;
 } = {}) {
   const { user } = useAuth();
   const isAdmin = user && canDelete(user.role);
-  const { images, loading, refresh } = useStorageImages();
+  const canSend = !!user && canUpload(user.role);
+  const uploadConfig = getUploadConfig("banco-de-imagens");
+  const [uploadOpen, setUploadOpen] = useState(false);
+  const { images, loading, error, refresh } = useStorageImages();
   const { isHidden, hide, unhide } = useHiddenAssets("image");
   const metadata = useAssetMetadata("image");
-  const [selected, setSelected] = useState<ImageAsset | null>(null);
+  // O item aberto no lightbox vive na URL (?item=<filename>) para ser compartilhável.
+  const [selectedId, openItem, closeItem, setSelectedId] = useLightboxItem();
   const [editing, setEditing] = useState<ImageAsset | null>(null);
   const { isFavorite, toggleFavorite } = useFavorites();
 
-  const mergedImages = images.map((img) => applyOverride(img, metadata.get(img.filename)));
+  // Metadados (overrides do admin) indisponíveis: avisa uma vez, segue com o básico.
+  const metadataWarned = useRef(false);
+  useEffect(() => {
+    if (!metadata.error || metadataWarned.current) return;
+    metadataWarned.current = true;
+    notify.warning("Metadados dos assets indisponíveis", { description: "Exibindo informações básicas." });
+  }, [metadata.error]);
 
-  const hiddenImages = mergedImages.filter((img) => isHidden(img.filename));
-  const nonHiddenImages = mergedImages.filter((img) => !isHidden(img.filename));
-  const visibleImages = showHidden ? hiddenImages : nonHiddenImages;
+  const mergedImages = useMemo(
+    () => images.map((img) => applyOverride(img, metadata.get(img.filename))),
+    [images, metadata],
+  );
+
+  const selected = useMemo(
+    () => mergedImages.find((img) => img.filename === selectedId) ?? null,
+    [mergedImages, selectedId],
+  );
+
+  // Item inexistente na lista carregada: limpa a chave da URL.
+  useEffect(() => {
+    if (loading || !selectedId) return;
+    if (!mergedImages.some((img) => img.filename === selectedId)) closeItem();
+  }, [loading, selectedId, mergedImages, closeItem]);
+
+  const hiddenImages = useMemo(() => mergedImages.filter((img) => isHidden(img.filename)), [mergedImages, isHidden]);
+  const nonHiddenImages = useMemo(() => mergedImages.filter((img) => !isHidden(img.filename)), [mergedImages, isHidden]);
+  const scopedImages = showHidden ? hiddenImages : nonHiddenImages;
+
+  const visibleImages = useMemo(() => {
+    // Busca insensível a acento: "sao" encontra "São", "memoria" encontra "memória".
+    const needle = normalizeText(search);
+    return scopedImages.filter((img) => matchesFilters(img, needle, activeTags));
+  }, [scopedImages, search, activeTags]);
+  const hasFilters = search.trim().length > 0 || (activeTags?.size ?? 0) > 0;
 
   useEffect(() => {
     onCountChange?.(nonHiddenImages.length, hiddenImages.length);
@@ -429,7 +558,7 @@ export function ImageBank({
   const { visibleItems: pagedImages, hasMore, setSentinel } = useInfiniteScroll(visibleImages);
 
   const handleDeleted = () => {
-    setSelected(null);
+    closeItem();
     refresh();
   };
 
@@ -441,22 +570,48 @@ export function ImageBank({
     }
   };
 
-  if (loading) {
+  // Primeira carga mostra esqueleto; recarga mantém a grade (atenuada) no lugar.
+  if (loading && images.length === 0) {
+    return <MediaCardGridSkeleton count={10} className={GRID_CLASS} />;
+  }
+
+  const busy = loading || searching;
+
+  if (error && images.length === 0) {
     return (
-      <div className="flex items-center justify-center py-16">
-        <p className="text-sm text-white/40">Carregando imagens...</p>
-      </div>
+      <EmptyState
+        variant="error"
+        icon={<SmImageLineIcon className="size-6" />}
+        title="Não foi possível carregar as imagens"
+        description={error}
+        onRetry={() => void refresh()}
+        className="border-none py-16"
+      />
     );
   }
 
   return (
     <div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
+      {error && (
+        <Alert variant="destructive" className="mb-4">
+          <AlertHeader>
+            <AlertTitle>Não foi possível atualizar a lista de imagens</AlertTitle>
+          </AlertHeader>
+          <AlertDescription>Exibindo a coleção padrão. {error}</AlertDescription>
+          <AlertActions>
+            <AlertAction onClick={() => void refresh()}>Tentar novamente</AlertAction>
+          </AlertActions>
+        </Alert>
+      )}
+      <div
+        aria-busy={busy || undefined}
+        className={cn(GRID_CLASS, "transition-opacity", busy && "opacity-60")}
+      >
         {pagedImages.map((asset) => (
           <ImageCard
             key={asset.filename}
             asset={asset}
-            onClick={() => setSelected(asset)}
+            onClick={() => openItem(asset.filename)}
             isFavorite={isFavorite(asset.filename)}
             onToggleFavorite={() => toggleFavorite({ id: asset.filename, type: "image", title: asset.title, subtitle: `${asset.author}${asset.year ? `, ${asset.year}` : ""}`, thumbnail: imageSrc(asset) })}
             showHideButton={!!isAdmin}
@@ -465,24 +620,54 @@ export function ImageBank({
           />
         ))}
       </div>
-      {hasMore && (
-        <div ref={setSentinel} className="flex items-center justify-center py-8">
-          <p className="text-xs text-white/30">Carregando mais...</p>
-        </div>
+      {hasMore && <div ref={setSentinel} className="h-8" aria-hidden="true" />}
+
+      {visibleImages.length === 0 && !busy && (
+        hasFilters ? (
+          <EmptyState
+            variant="filtered"
+            icon={<SmImageLineIcon className="size-6" />}
+            title="Nenhuma imagem encontrada"
+            description="Nenhum resultado para a busca ou as tags selecionadas."
+            onClear={onClearFilters}
+            className="border-none py-16"
+          />
+        ) : (
+          <EmptyState
+            icon={<SmImageLineIcon className="size-6" />}
+            title={showHidden ? "Nenhum asset oculto" : "Nenhuma imagem ainda"}
+            description={
+              showHidden
+                ? "Imagens ocultadas aparecem aqui."
+                : canSend
+                  ? "Envie a primeira imagem para começar o banco."
+                  : "Ainda não há imagens publicadas nesta categoria."
+            }
+            action={
+              !showHidden && canSend && uploadConfig ? (
+                <Button type="button" variant="default" size="sm" onClick={() => setUploadOpen(true)}>
+                  Fazer upload
+                </Button>
+              ) : undefined
+            }
+            className="border-none py-16"
+          />
+        )
       )}
 
-      {visibleImages.length === 0 && (
-        <div className="flex items-center justify-center py-16">
-          <p className="text-sm text-white/40">
-            {showHidden ? "Nenhum asset oculto" : "Nenhuma imagem encontrada"}
-          </p>
-        </div>
+      {uploadConfig && (
+        <AssetUploadModal
+          config={uploadConfig}
+          open={uploadOpen}
+          onOpenChange={setUploadOpen}
+          onSubmit={() => void refresh()}
+        />
       )}
 
       {selected && (
         <ImageLightbox
           asset={selected}
-          onClose={() => setSelected(null)}
+          onClose={closeItem}
           onDelete={handleDeleted}
           onEdit={isAdmin ? () => setEditing(selected) : undefined}
           isHidden={isHidden(selected.filename)}
@@ -512,13 +697,11 @@ export function ImageBank({
           onSaved={({ renamedTo }) => {
             setEditing(null);
             if (renamedTo) {
-              // Filename changed — refetch storage listing so the new key shows up.
+              // Filename changed — refetch storage listing and aponta a URL para a nova chave.
               refresh();
-              setSelected(null);
-            } else if (selected && selected.filename === editing.filename) {
-              // Keep the lightbox open with the freshly merged values.
-              setSelected({ ...selected, ...applyOverride(selected, metadata.get(editing.filename)) });
+              setSelectedId(selectedId === editing.filename ? renamedTo : selectedId);
             }
+            // Sem rename: `selected` deriva de `mergedImages`, que já reflete o override salvo.
           }}
         />
       )}

@@ -1,11 +1,11 @@
 ---
 title: Brunin - O Jovem Inconsciente
-summary: Persona do estudante de Publicidade de 18 anos em São Paulo, freelancer iniciante de social media, inconsciente que consome conteúdos sem estruturar, com perfil INFP e oferta ideal Protocolo 3-2-1 e Overpass.
-topics: [persona, brunin, inconsciente, jovem criativo, freelancer iniciante]
-keywords: [brunin, bruno, persona, inconsciente, estudante, publicidade, social media, freelancer, INFP, são paulo, protocolo 3-2-1, overpass, tiktok, mapa de empatia]
+summary: Persona do jovem de 18 anos em São Paulo que carrega ideias sem nunca ter tirado nenhuma do papel — estuda Publicidade, faz bicos de social media para se sustentar e sonha com algo próprio. Inconsciente, perfil INFP, oferta ideal Protocolo 3-2-1 e Overpass.
+topics: [persona, brunin, inconsciente, empreendedor nexialista, ideia engavetada, primeiros passos]
+keywords: [brunin, bruno, persona, inconsciente, empreendedor nexialista, vontade sem direção, ideia engavetada, estudante, publicidade, social media, INFP, são paulo, protocolo 3-2-1, overpass, tiktok, mapa de empatia]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre Brunin, persona do jovem inconsciente, estudante criativo iniciante, ou ao desenhar campanha de topo de funil, comunicação para 18-24 anos, conteúdo educativo gratuito ou onboarding de freelancers iniciantes.
+  Use quando o usuário perguntar sobre Brunin, persona do jovem inconsciente, quem tem vontade de construir algo próprio mas nenhuma direção, ou ao desenhar campanha de topo de funil, comunicação para 18-24 anos, conteúdo educativo gratuito e primeiras portas de entrada.
 related: []
 ---
 
@@ -24,7 +24,7 @@ related: []
 |  | **Oferta ideal** | Protocolo 3-2-1 e Overpass |
 |  | **Estado civil** | Solteiro |
 |  | **Região** | São Paulo (PR) |
-|  | **Ocupação** | Freelancer Social Media e editor de cortes de vídeos |
+|  | **Ocupação** | Faz bicos de social media e cortes de vídeo para se sustentar |
 |  | **Formação** | Graduação em andamento (1º ano em Publicidade) |
 |  | **Renda** | Variável, R$1200 no mês |
 |  | **Maturidade** | Inconsciente |
@@ -45,17 +45,17 @@ related: []
 
 ## Biografia
 
-Brunin tem 18 anos e mora em São Paulo com os pais. Estuda Publicidade em uma faculdade particular, mas ainda não sente que a graduação por si só vai garantir futuro. Sempre foi considerado “criativo” pelos amigos, mas essa criatividade nunca pareceu suficiente para transformá-lo em alguém realmente valorizado no mercado.
+Brunin tem 18 anos e mora em São Paulo com os pais. Estuda Publicidade em uma faculdade particular, mas ainda não sente que a graduação por si só vai garantir futuro. Sempre foi considerado “o cara das ideias” pelos amigos — tem uns cinco projetos anotados no celular, nenhum deles começado.
 
-Ele consegue alguns freelas pequenos de social media e edição de cortes e vídeos, mas nada consistente. O dinheiro que ganha, cerca de R$1.200 por mês, somando freelas e ajuda da família, mal cobre as próprias saídas com os amigos e pequenas compras pessoais. Brunin sonha em conquistar independência financeira, mas ainda não vê um caminho claro para isso.
+Ele consegue alguns bicos pequenos de social media e edição de cortes, mas nada consistente — e nenhum deles é o que ele quer fazer da vida. O dinheiro que ganha, cerca de R$1.200 por mês, somando bicos e ajuda da família, mal cobre as próprias saídas e pequenas compras. Brunin sonha em ter algo que seja dele, mas ainda não vê um caminho claro para isso.
 
-Passa horas no TikTok, YouTube e Instagram consumindo tutoriais, trends e referências visuais. Tem dezenas de PDFs de cursos e materiais salvos no computador, mas raramente finaliza algum. Sente uma mistura de entusiasmo e ansiedade: percebe que o mundo criativo está mudando rápido, principalmente com a chegada da IA, mas não sabe como agir sem se perder.
+Passa horas no TikTok, YouTube e Instagram consumindo tutoriais, trends e histórias de gente que construiu algo do zero. Tem dezenas de PDFs de cursos e materiais salvos no computador, mas raramente finaliza algum. Sente uma mistura de entusiasmo e ansiedade: percebe que o mundo está mudando rápido, principalmente com a chegada da IA, mas não sabe como agir sem se perder.
 
 Ao mesmo tempo em que acha fascinante o que as novas tecnologias permitem, sente culpa de usar “atalhos”. Tem medo de ser julgado pelos colegas ou até de estar “trapaceando” o ofício criativo. Esse conflito o deixa paralisado: quer experimentar mais, mas não consegue assumir isso com confiança.
 
-O maior sonho de Brunin é construir um portfólio que o faça se sentir orgulhoso, algo que ele possa mostrar sem medo de comparação. Quer trabalhar em uma agência ou estúdio criativo que reconheça seu talento, e ao mesmo tempo deseja liberdade para explorar projetos próprios. No fundo, ele procura uma trilha clara, guiada e prática, algo que mostre que ele não está sozinho, que existe um caminho realista para se preparar para o futuro sem jogar fora tudo que já construiu.
+O maior sonho de Brunin é ver uma das ideias que ele carrega existindo de verdade — algo que ele possa apontar e dizer “isso aqui é meu”. Ele não sonha em ser contratado; sonha em construir. Mas não faz ideia de por onde uma pessoa começa, e por isso ainda repete o roteiro que ouve em casa. No fundo, procura uma trilha clara, guiada e prática, algo que mostre que ele não está sozinho e que existe um caminho realista sem jogar fora tudo que já construiu.
 
-Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sabe que precisa mudar, mas ainda está preso na esperança de que “um dia as coisas se resolvem”. Ele representa o início da jornada: alguém que sente o chamado do novo, mas ainda não deu o primeiro passo firme para atravessar o portal.
+Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sabe que precisa mudar, mas ainda está preso na esperança de que “um dia as coisas se resolvem”. Ele representa o início da jornada: tem vontade, não tem direção — sente o chamado do novo, mas ainda não deu o primeiro passo firme para atravessar o portal.
 
 ### Tom de Voz do Brunin
 
@@ -80,12 +80,13 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 * Termos criativos: “estética”, “referência”, “paleta”, “mood”.  
 * Mistura com inglês: “layout clean”, “trend”, “vibe”, “cringe”.  
 * Expressões de comparação: “todo mundo já tá lá”, “eu tô atrasado”, “os caras já tão voando”.  
+* Frases de ideia guardada: “eu tinha pensado nisso antes”, “tenho uma ideia massa aqui”.  
 * Palavras de procrastinação: “depois eu vejo”, “um dia eu faço”, “vou deixar salvo aqui”.  
 * Cultura digital: TikTok, Spotify, Pinterest, IAzinha.
 
 ### Fala típica
 
-“Mano, eu fico vendo TikTok e a galera já trampando com IA e eu aqui tentando terminar um freela… Ai, sei lá, parece que tô sempre atrasado, tá ligado? Não sei se faz sentido, mas sinto que se eu não aprender logo, já era… ta ligado? kkk.”
+“Mano, eu fico vendo TikTok e a galera já construindo as parada delas com IA, e eu aqui tentando terminar um bico… Ai, sei lá, tenho umas ideias salvas no bloco de notas há uns dois anos, tá ligado? Não sei se faz sentido, mas parece que se eu não começar logo, já era… kkk.”
 
 ## Mapa de Empatia
 
@@ -96,21 +97,21 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 * Professores e familiares reforçando que faculdade \+ estágio são o “caminho seguro”.  
 * Colegas de curso mais engajados em ferramentas novas (IA, apps, softwares).  
 * Conteúdo infinito no TikTok e YouTube prometendo sucesso rápido.  
-* Portfólios no Instagram/Behance que parecem inalcançáveis.  
-* O mercado de trabalho cada vez mais competitivo, mas distante da sua realidade.
+* Gente da idade dele lançando produtos, marcas e canais que parecem inalcançáveis.  
+* Um mundo em que tudo parece já estar inventado por outra pessoa.
 
 ### O que Brunin ouve:
 
 * “Termina a faculdade que tudo se resolve.”  
 * “Mano, precisa aprender a mexer na IA, senão vai ficar pra trás.”  
 * “O importante é ter disciplina e prática, não só inspiração.”  
-* “Se você não se atualizar, vai ser engolido pelo mercado.”  
-* Ambiente geral: comentários sobre crise, desemprego e “mercado saturado”.
+* “Empreender é muito arriscado, primeiro garante o básico.”  
+* Ambiente geral: comentários sobre crise, desemprego e instabilidade.
 
 ### O que ele pensa e sente
 
 * Mistura de curiosidade e ansiedade: sabe que algo está mudando, mas não entende o que.  
-* Medo de se tornar irrelevante antes mesmo de começar.  
+* Medo de nunca começar nada e ver as ideias envelhecerem com ele.  
 * Sensação de que está atrasado em relação aos outros.  
 * Insegurança em relação ao próprio talento: “Será que eu sou bom de verdade?”  
 * Esperança de que exista um atalho confiável, mas não sabe qual.  
@@ -119,51 +120,52 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 ### O que ele fala
 
 * “Preciso aprender umas coisas novas, mas não sei nem por onde começar.”  
-* “Será que a faculdade vai me dar emprego mesmo?”  
+* “Será que a faculdade vai resolver mesmo?”  
 * “Todo mundo fala de IA, mas eu nem entendo direito.”  
 * “Tenho medo de perder tempo em coisa inútil.”  
-* “Queria ter um portfólio massa, mas nunca termino nada.”
+* “Tenho umas ideias boas, mas nunca tiro nenhuma do papel.”
 
 ### Como ele age
 
 * Consome tutoriais, PDFs e cursos gratuitos, mas raramente conclui.  
 * Compartilha memes e referências criativas nas redes, mas evita postar trabalhos próprios por insegurança.  
 * Experimenta apps e ferramentas novas de forma superficial.  
-* Entra em freelas pequenos sem consistência (às vezes até mal remunerados).  
+* Pega bicos pequenos sem consistência, sempre fazendo o que é do outro e nunca o que é dele.  
 * Passa horas rolando TikTok/YouTube para “se inspirar”, mas sem estruturar aprendizado.  
 * Evita falar abertamente que já testou IA, por medo de julgamento.
 
 ### O que Brunin deseja
 
-* Reconstruir sua identidade criativa e sentir orgulho autoral.  
-* Ter um portfólio que não só mostre competência, mas cause admiração.  
-* Se posicionar como um profissional indispensável e estratégico.  
-* Encontrar frameworks que o ajudem a criar sistemas próprios, não só repetir padrões.  
-* Sentir que está **blindado contra a substituição** por IA ou concorrência massiva.
+* Ver uma ideia dele existindo no mundo, mesmo que pequena.  
+* Descobrir por onde, na prática, uma pessoa começa a construir algo próprio.  
+* Sentir que a vontade que ele tem é legítima e não bobagem de adolescente.  
+* Ter uma primeira prova concreta de que consegue terminar o que começa.  
+* Ganhar o próprio dinheiro com algo que seja dele, e não só com bico.
 
 ### O que irrita Brunin
 
-* Comparações com colegas: quando vê amigos da faculdade com portfólios “profissionais” ou gente da idade dele já conseguindo vagas.  
+* Comparações com colegas: quando vê gente da idade dele já com um projeto próprio rodando.  
 * Críticas vagas: ouvir “tá fraco”, “não gostei” sem explicarem o porquê.  
 * Pressão familiar: pai e mãe falando “faz faculdade direitinho que dá tudo certo”, como se isso resolvesse tudo.  
 * Cursos longos e teóricos: odeia gastar tempo em aulas que prometem muito mas não mostram resultado prático rápido.  
 * Tecnologia travando: notebook lento, software fechando do nada, internet caindo.  
 * Falar mal de IA ou das referências dele: quando dizem “isso aí qualquer um faz com IA” ou que “TikTok é perda de tempo”, se sente invalidado.  
 * Trabalhos não valorizados: cliente pedindo desconto, atrasando pagamento, tratando como “favor”.  
+* Ouvir que “isso aí já existe” sempre que conta uma ideia.  
 * Excesso de informação: se perde com tanta dica, curso e tutorial diferente.
 
 ### O que deixa Brunin muito feliz
 
 * Reconhecimento do trabalho: receber um elogio sincero de um professor, colega ou até um like inesperado no Behance/Instagram.  
-* Primeiras conquistas visíveis: terminar um projeto que ele realmente gosta, sentir que evoluiu em relação ao que fazia antes.  
+* Primeiras conquistas visíveis: terminar algo que era ideia dele e ver aquilo existindo de verdade.  
 * Descobrir ferramentas novas: encontrar um plugin ou IA que economiza horas de trabalho, dando a sensação de “superpoder”.  
 * Feedback construtivo: alguém que explica como melhorar de forma prática, sem julgamento.  
 * Rolês simples com amigos: café no centro, passear na Paulista fechada, jogar conversa fora no barzinho.  
 * Sentir pertencimento: conversar com alguém que entende suas inseguranças e não julga.  
-* Independência financeira (mesmo pequena): pagar uma conta com dinheiro do freela e sentir “tô virando adulto”.
+* Independência financeira (mesmo pequena): pagar uma conta com dinheiro que ele mesmo gerou e sentir “tô virando adulto”.
 
 ### Análise
 
 ---
 
-Brunin é uma representação precisa e específica dos Inconscientes. Ele encarna a maioria do público (jovens criativos em início de carreira, 18–24 anos), sem deixar de refletir dores que também aparecem em perfis mais velhos.
+Brunin é uma representação precisa e específica dos Inconscientes: tem vontade, não tem direção. A origem dele é publicitária por acaso, não por definição — o mesmo padrão aparece em quem estuda engenharia, arquitetura ou nada, e o traço transversal é sempre o mesmo: **ideias guardadas há anos \+ nenhum primeiro passo dado**. Ele encarna a faixa mais jovem do público (18–24 anos), sem deixar de refletir dores que também aparecem em perfis muito mais velhos.

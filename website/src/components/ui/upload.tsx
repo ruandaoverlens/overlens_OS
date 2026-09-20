@@ -7,8 +7,8 @@ import {
   SmCloseSolidIcon,
   SmAlertSolidIcon,
 } from "@/components/icons"
-import { InputGroup } from "@/components/ui/input-group"
-import { Input } from "@/components/ui/input"
+import { inputGroupVariants } from "@/components/ui/input-group"
+import { Button } from "@/components/ui/button"
 import {
   Collapsible,
   CollapsibleTrigger,
@@ -28,42 +28,71 @@ function Upload({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-/** Trigger that uses InputGroup with a hidden file input. */
+/**
+ * Botão focável (estilo de campo) que aciona um input de arquivo oculto.
+ * `aria-describedby` vai para o botão (ex.: id da mensagem de formatos aceitos).
+ * `aria-invalid` vira `data-invalid` no botão: o ARIA não define `aria-invalid`
+ * para `role=button`, e o botão é o próprio container (o seletor `has-[…]` do
+ * inputGroupVariants espera um descendente), então o estado de erro é estilizado
+ * por atributo de dado.
+ */
 function UploadTrigger({
   className,
   accept,
   multiple,
   onChange,
   children,
+  disabled,
+  "aria-describedby": ariaDescribedBy,
+  "aria-invalid": ariaInvalid,
+  "aria-label": ariaLabel,
+  "aria-labelledby": ariaLabelledBy,
   ...props
 }: Omit<React.ComponentProps<"div">, "onChange"> & {
   accept?: string
   multiple?: boolean
+  disabled?: boolean
   onChange?: (files: FileList | null) => void
 }) {
   const inputRef = React.useRef<HTMLInputElement>(null)
 
   return (
-    <InputGroup
-      data-slot="upload-trigger"
-      className={cn("cursor-pointer", className)}
-      onClick={() => inputRef.current?.click()}
-      {...props}
-    >
-      <div className="flex flex-1 items-center justify-center gap-2 text-sm font-medium text-muted-foreground">
-        <SmUploadLineIcon className="size-5 shrink-0" />
+    <div data-slot="upload-trigger" className={cn("relative", className)} {...props}>
+      <button
+        type="button"
+        disabled={disabled}
+        aria-describedby={ariaDescribedBy}
+        data-invalid={ariaInvalid === true || ariaInvalid === "true" ? "true" : undefined}
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
+        onClick={() => inputRef.current?.click()}
+        className={cn(
+          inputGroupVariants(),
+          "cursor-pointer justify-center gap-2 text-sm font-medium text-muted-foreground",
+          "focus-visible:border-foreground/60 focus-visible:ring-2 focus-visible:ring-foreground/70",
+          "data-[invalid=true]:border-destructive data-[invalid=true]:ring-2 data-[invalid=true]:ring-destructive/40",
+          "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+        )}
+      >
+        <SmUploadLineIcon className="size-5 shrink-0" aria-hidden="true" />
         <span>{children ?? "Carregar arquivos"}</span>
-      </div>
-      <Input
+      </button>
+      <input
         ref={inputRef}
         type="file"
         accept={accept}
         multiple={multiple}
+        disabled={disabled}
         className="sr-only"
         tabIndex={-1}
-        onChange={(e) => onChange?.(e.target.files)}
+        aria-hidden="true"
+        onChange={(e) => {
+          onChange?.(e.target.files)
+          // Permite selecionar o mesmo arquivo de novo após remoção.
+          e.target.value = ""
+        }}
       />
-    </InputGroup>
+    </div>
   )
 }
 
@@ -123,22 +152,24 @@ function UploadFile({
     <div
       data-slot="upload-file"
       className={cn(
-        "flex items-center gap-1.5 py-1 text-sm text-[var(--surface-300)]",
+        "flex items-center gap-2 py-1 text-sm text-surface-300",
         className
       )}
       {...props}
     >
-      <SmDocSolidIcon className="size-6 shrink-0 text-muted-foreground" />
+      <SmDocSolidIcon className="size-6 shrink-0 text-muted-foreground" aria-hidden="true" />
       <span className="truncate">{name}</span>
       {onRemove && (
-        <button
+        <Button
           type="button"
-          aria-label={`Remover ${name}`}
+          variant="ghost"
+          size="icon-xs"
+          aria-label={`Remover arquivo ${name}`}
           onClick={onRemove}
-          className="inline-flex items-center justify-center size-6 shrink-0 text-muted-foreground opacity-70 hover:opacity-100 transition-opacity"
+          className="shrink-0 text-muted-foreground hover:text-foreground"
         >
           <SmCloseSolidIcon className="size-5" />
-        </button>
+        </Button>
       )}
     </div>
   )
@@ -159,18 +190,18 @@ function UploadSummary({
   return (
     <Collapsible data-slot="upload-summary" defaultOpen={defaultOpen} className={cn("flex flex-col gap-2", className)} {...props}>
       <CollapsibleTrigger className="inline-flex items-center gap-1.5 pl-2 py-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-        <SmOpenFolderLineIcon className="size-5 shrink-0 text-[var(--brand-sahara)]" />
+        <SmOpenFolderLineIcon className="size-5 shrink-0 text-brand-sahara" aria-hidden="true" />
         <span>Ver todos (+{count})</span>
       </CollapsibleTrigger>
       <CollapsibleContent>
         <div
           data-slot="upload-file-list"
-          className="rounded-[12px] bg-input/30 px-4 py-3 flex flex-col"
+          className="rounded-field bg-input/30 px-4 py-3 flex flex-col"
         >
-          <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground pt-1 pb-4">
+          <span className="text-xs font-mono uppercase tracking-wide text-muted-foreground pt-1 pb-4">
             Arquivos carregados
           </span>
-          <div className="flex flex-col divide-y divide-[var(--surface-200)]/10 max-h-40 overflow-y-auto pr-3 [&::-webkit-scrollbar]:w-[2px] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-foreground/80 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-foreground/30 [&_[data-slot=upload-file]]:pb-2">
+          <div className="flex flex-col divide-y divide-surface-200/10 max-h-40 overflow-y-auto pr-3 scrollbar-thin [&_[data-slot=upload-file]]:pb-2">
             {children}
           </div>
         </div>
@@ -189,15 +220,15 @@ function UploadFileList({
     <div
       data-slot="upload-file-list"
       className={cn(
-        "rounded-[12px] bg-input/30 px-4 py-3 flex flex-col",
+        "rounded-field bg-input/30 px-4 py-3 flex flex-col",
         className
       )}
       {...props}
     >
-      <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground pb-1">
+      <span className="text-xs font-mono uppercase tracking-wide text-muted-foreground pb-1">
         Arquivos carregados
       </span>
-      <div className="flex flex-col divide-y divide-[var(--surface-200)]/10">
+      <div className="flex flex-col divide-y divide-surface-200/10">
         {children}
       </div>
     </div>

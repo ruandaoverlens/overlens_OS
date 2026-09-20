@@ -15,7 +15,7 @@ related: []
 
 ### Nosso propósito é colocar o poder da criação nas mãos das pessoas.
 
-Você está prestes a entrar em um ecossistema que vai desafiar suas certezas, desconstruir fórmulas fáceis e exigir coragem para questionar tudo, inclusive a si mesmo. Este Brand System é o mapa das pessoas criadoras: um documento, feito para revelar as engrenagens, códigos e crenças dos novos criadores. Cada decisão, símbolo e narrativa aqui foi desenhada para expandir essa visão para o futuro.
+Você está prestes a entrar em um ecossistema que vai desafiar suas certezas, desconstruir fórmulas fáceis e exigir coragem para questionar tudo, inclusive a si mesmo. Este Brand System é o mapa de quem constrói: um documento, feito para revelar as engrenagens, códigos e crenças dos Empreendedores Nexialistas. Cada decisão, símbolo e narrativa aqui foi desenhada para expandir essa visão para o futuro.
 
 <figure>
 

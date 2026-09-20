@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { isStaffOrAdmin } from "@/lib/route-access";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { resolveSources } from "@/lib/ai/sources";
 import type { SupabaseClient } from "@supabase/supabase-js";
@@ -71,7 +72,7 @@ export async function GET(request: NextRequest) {
       .select("role")
       .eq("id", user.id)
       .single();
-    if (!profile || profile.role !== "admin") {
+    if (!profile || !isStaffOrAdmin(profile.role)) {
       return NextResponse.json({ error: "Sem permissão" }, { status: 403 });
     }
 

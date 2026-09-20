@@ -1,8 +1,8 @@
 ---
 title: Ensaio Manifesto
-summary: Ensaio direto e desconfortável sobre o salto evolutivo imposto pela IA, dividindo a humanidade em três grupos — Nexialistas, Operantes e Obsoletos — e convocando à escolha imediata.
+summary: "Ensaio direto e desconfortável sobre o salto evolutivo imposto pela IA, dividindo a humanidade em três grupos — Nexialistas, Operantes e Obsoletos — e convocando à escolha imediata. A taxonomia é a do mundo Overlens: o topo não é quem opera melhor, é quem constrói o próprio jogo."
 topics: [manifesto, ensaio, ia, evolução, nexialistas]
-keywords: [ensaio, manifesto, nexialistas, operantes, obsoletos, bifurcação, ia, salto evolutivo, singularidade, criação]
+keywords: [ensaio, manifesto, empreendedores nexialistas, nexialistas, operantes, obsoletos, bifurcação, ia, salto evolutivo, singularidade, criação]
 priority: low
 ai_when_to_use: |
   Use APENAS quando o usuário pedir explicitamente exemplos/referências de manifesto, ensaio ou copy similar como inspiração para conteúdo.
@@ -45,9 +45,9 @@ E sabe o mais insano? 99% das pessoas estão usando esse poder para gerar imagen
 
 Aos poucos,o mundo se dividirá em três grupos:
 
-Os Nexialistas (1%) que dominam as IAs, criam novos mundos e definem as regras do jogo.
+Os Nexialistas (1%) que dominam as IAs, constroem os próprios negócios e definem as regras do jogo.
 
-Os Operantes (9%) que aprendem a usar bem as ferramentas para executar as visões dos Arquitetos e assim sobrevivem se adaptando.
+Os Operantes (9%) que aprendem a usar bem as ferramentas para executar as visões dos Nexialistas e assim sobrevivem se adaptando.
 
 E os Obsoletos (90%), que negam a mudança, se recusam a evoluir e desaparecem.
 
@@ -55,7 +55,7 @@ E os Obsoletos (90%), que negam a mudança, se recusam a evoluir e desaparecem.
 
 > A única escolha real que você tem é: em qual grupo vai estar?
 
-> Nós decidimos formar Nexialistas.
+> Nós decidimos formar Empreendedores Nexialistas.
 
 > O futuro não é bom nem mau. É implacável.
 

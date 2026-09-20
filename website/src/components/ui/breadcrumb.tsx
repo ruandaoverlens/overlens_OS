@@ -36,7 +36,7 @@ function PopoverItemList({
             return (
               <li
                 key={index}
-                className="inline-flex items-center gap-1.5 text-[var(--surface-500)] pointer-events-none"
+                className="inline-flex items-center gap-1.5 text-surface-500 pointer-events-none"
                 aria-disabled="true"
               >
                 {(inner.props as { children?: React.ReactNode }).children}
@@ -69,7 +69,7 @@ function EllipsisPopover({
       <PopoverTrigger asChild>
         <button
           type="button"
-          className="flex size-9 items-center justify-center hover:text-foreground transition-colors"
+          className="flex size-10 items-center justify-center rounded-full text-muted-foreground hover:text-foreground transition-colors outline-none focus-visible:ring-2 focus-visible:ring-foreground"
           aria-label={label}
         >
           <SmMoreSolidIcon className="size-6" />
@@ -221,7 +221,7 @@ function BreadcrumbPage({ className, ...props }: React.ComponentProps<"span">) {
       role="link"
       aria-disabled="true"
       aria-current="page"
-      className={cn("text-[var(--surface-500)] font-normal", className)}
+      className={cn("text-surface-500 font-normal", className)}
       {...props}
     />
   )

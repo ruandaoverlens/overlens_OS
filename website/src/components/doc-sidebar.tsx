@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { Suspense, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useMounted } from "@/lib/use-mounted";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import {
@@ -17,8 +18,10 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarFooter,
+  SidebarMenuSkeleton,
   SidebarSeparator,
   SidebarTrigger,
+  useSidebar,
 } from "@/components/ui/sidebar";
 import {
   Collapsible,
@@ -26,6 +29,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import {
+  SmAdd2LineIcon,
   SmArrowForwardIosLineIcon,
   SmArrowOutwardLineIcon,
   SmArrowBackLineIcon,
@@ -37,18 +41,28 @@ import {
   SmMessageCircleSolidIcon,
   SmRegisteredLineIcon,
 } from "@/components/icons";
-import { useAuth, canAccessRoute } from "@/lib/auth";
+import { useAuth, canAccessRoute, isStaffOrAdmin } from "@/lib/auth";
 import { isOverlensEmail } from "@/lib/route-access";
 import { SidebarProfile } from "@/components/sidebar-profile";
 import { SystemSwitcher } from "@/components/system-switcher";
+import {
+  CommandPalette,
+  CommandPaletteButton,
+  CommandPaletteProvider,
+  useResolvedConversations,
+  type ConversationsInput,
+  type SystemPagesIndex,
+} from "@/components/command-palette";
+import { Button } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { ConversationItem } from "@/components/chat/conversation-item";
-import { Plus } from "lucide-react";
+import { EmptyState } from "@/components/empty-state";
 import { cn } from "@/lib/utils";
+import { useUrlState } from "@/lib/use-url-state";
 
 export type ChatConversationLink = {
   id: string;
@@ -295,9 +309,11 @@ function NestedSectionItem({
     >
       <SidebarMenuSubItem>
         <CollapsibleTrigger asChild>
-          <SidebarMenuSubButton asChild={false} className="cursor-pointer">
-            <span>{section.title}</span>
-            <SmArrowForwardIosLineIcon className={`ml-auto transition-transform ${open ? "rotate-90" : ""}`} />
+          <SidebarMenuSubButton asChild className="cursor-pointer">
+            <button type="button" aria-expanded={open}>
+              <span>{section.title}</span>
+              <SmArrowForwardIosLineIcon className={`ml-auto transition-transform ${open ? "rotate-90" : ""}`} />
+            </button>
           </SidebarMenuSubButton>
         </CollapsibleTrigger>
         <CollapsibleContent>
@@ -336,7 +352,87 @@ function NestedSectionItem({
   );
 }
 
+// ─── Conversas (resolve a Promise dentro do Suspense) ───
+
+function SidebarConversations({
+  conversations,
+  activeConversationId,
+}: {
+  conversations: ConversationsInput;
+  activeConversationId?: string;
+}) {
+  const list = useResolvedConversations(conversations);
+  if (list.length === 0) {
+    return (
+      <li>
+        <EmptyState
+          size="sm"
+          className="border-none"
+          icon={<SmMessageCircleLineIcon />}
+          title="Nenhuma conversa ainda"
+          description="Comece uma conversa com o assistente a partir de qualquer sistema."
+          action={
+            <Button size="sm" asChild>
+              <Link href="/chat/new">Nova conversa</Link>
+            </Button>
+          }
+        />
+      </li>
+    );
+  }
+  return (
+    <>
+      {list.map((c) => (
+        <ConversationItem
+          key={c.id}
+          id={c.id}
+          title={c.title}
+          isActive={activeConversationId === c.id}
+        />
+      ))}
+    </>
+  );
+}
+
+function SidebarConversationsSkeleton() {
+  return (
+    <>
+      {Array.from({ length: 5 }, (_, i) => (
+        <li key={i} aria-hidden="true">
+          <SidebarMenuSkeleton showIcon />
+        </li>
+      ))}
+    </>
+  );
+}
+
 // ─── Unified Sidebar ────────────────────────────────────
+
+type SidebarView = "directives" | "conversations";
+
+const VIEW_STORAGE_KEY = "overlens:sidebar-view";
+
+function isSidebarView(value: string | null): value is SidebarView {
+  return value === "directives" || value === "conversations";
+}
+
+/** localStorage pode lançar (modo privativo, cookies bloqueados) — nunca quebra a sidebar. */
+function readStoredView(): SidebarView | null {
+  try {
+    const v = window.localStorage.getItem(VIEW_STORAGE_KEY);
+    return isSidebarView(v) ? v : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeStoredView(view: SidebarView): void {
+  try {
+    window.localStorage.setItem(VIEW_STORAGE_KEY, view);
+  } catch {
+    // sem persistência — a escolha vale só para esta sessão
+  }
+}
 
 export function SystemSidebar({
   sections,
@@ -349,6 +445,8 @@ export function SystemSidebar({
   conversations,
   defaultView = "directives",
   adminLinks,
+  allSections,
+  collapsible,
 }: {
   sections: NavSection[];
   basePath: string;
@@ -358,14 +456,19 @@ export function SystemSidebar({
   backLabel?: string;
   footerLinks?: SidebarLink[];
   separatorAfterIndex?: number;
-  conversations?: ChatConversationLink[];
+  /** Array ou Promise (não awaitada no layout — o shell não espera o banco). */
+  conversations?: ConversationsInput;
   defaultView?: "directives" | "conversations";
   adminLinks?: SidebarLink[];
+  /** Índice de páginas dos demais systems para a command palette. */
+  allSections?: SystemPagesIndex[];
+  /** Modo de colapso da Sidebar — `icon` mantém busca e "+" visíveis. */
+  collapsible?: "offcanvas" | "icon" | "none";
 }) {
   const { user } = useAuth();
   const hasMounted = useMounted();
   const canAccessAssets = hasMounted && user ? canAccessRoute(user.role, "/assets") : false;
-  const isAdmin = hasMounted && user ? user.role === "admin" : false;
+  const isAdmin = hasMounted && user ? isStaffOrAdmin(user.role) : false;
   // Atalho de Registros: exclusivo da equipe interna (@overlens.com.br)
   const isOverlens = hasMounted && user ? isOverlensEmail(user.email) : false;
 
@@ -385,8 +488,45 @@ export function SystemSidebar({
   const [openSlug, setOpenSlug] = useState<string | null>(
     findAncestorSlug(sections, basePath, currentPath) ?? findFirstAccordionSlug(sections)
   );
-  const [view, setView] = useState<"directives" | "conversations">(defaultView);
-  const showTabs = Array.isArray(conversations);
+  const showTabs = conversations !== undefined;
+
+  // A aba (Diretrizes/Conversas) vive na URL (`?view=`): o link fica
+  // compartilhável e o Back do navegador desfaz a troca. O localStorage segue
+  // como memória entre visitas — é o fallback quando a URL não diz nada.
+  const [urlView, setUrlView] = useUrlState<string>("view", "");
+  // Lido uma única vez, na montagem: se o fallback acompanhasse a escolha
+  // corrente, o Back (que só remove `?view=`) leria o valor novo e consumiria
+  // uma entrada do histórico sem mudar nada na tela.
+  const [storedView, setStoredView] = useState<SidebarView | null>(null);
+  const readStorageOnce = useRef(false);
+
+  // Só depois de montar: localStorage não existe no SSR e ler durante o
+  // render causaria divergência de hidratação.
+  React.useEffect(() => {
+    if (!showTabs || readStorageOnce.current) return;
+    readStorageOnce.current = true;
+    setStoredView(readStoredView());
+  }, [showTabs]);
+
+  const view: SidebarView = isSidebarView(urlView)
+    ? urlView
+    : (storedView ?? defaultView);
+
+  // Persistir a aba corrente é seguro: `storedView` (o fallback desta
+  // montagem) não muda junto, então o histórico continua reversível.
+  React.useEffect(() => {
+    if (!showTabs) return;
+    writeStoredView(view);
+  }, [showTabs, view]);
+
+  const changeView = React.useCallback(
+    (next: SidebarView) => {
+      // `push`: o Back volta para a aba anterior em vez de sair da página.
+      setUrlView(next, { history: "push" });
+    },
+    [setUrlView],
+  );
+
   const activeConversationId =
     typeof params?.id === "string" ? params.id : undefined;
 
@@ -403,43 +543,66 @@ export function SystemSidebar({
     setOpenSlug(isOpen ? slug : null);
   };
 
+  const { isMobile, setOpenMobile } = useSidebar();
+  // No mobile a Sidebar é um drawer: fecha ao concluir uma navegação, para que
+  // clicar num link não custe um toque extra. Só o pathname dispara — abrir
+  // acordeões e trocar de aba (`?view=`) mantêm o drawer aberto.
+  React.useEffect(() => {
+    if (isMobile) setOpenMobile(false);
+  }, [pathname, isMobile, setOpenMobile]);
+
   return (
-    <Sidebar>
+    <CommandPaletteProvider>
+      {/* Irmã de <Sidebar>: no mobile a Sidebar vira drawer e some junto com o
+          seu conteúdo — a palette vive fora dela para continuar montada. */}
+      <CommandPalette
+        sections={sections}
+        basePath={basePath}
+        title={title}
+        conversations={conversations}
+        footerLinks={footerLinks}
+        adminLinks={adminLinks}
+        allSections={allSections}
+      />
+    <Sidebar collapsible={collapsible}>
       <SidebarHeader>
-        <div className="flex h-12 items-center justify-between pb-[2px] pl-4 pr-0">
-          <Link href={basePath}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+        <div className="flex h-12 items-center justify-between pb-0.5 pl-4 pr-0 group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:pl-0">
+          <Link
+            href={basePath}
+            aria-label={`${title} — início`}
+            className="rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-foreground group-data-[collapsible=icon]:hidden"
+          >
+            {/* Tema é dark fixo: só a versão clara do logo é servida. */}
+            <Image
               src="/brand/logo-light.svg"
               alt={title}
-              className="hidden h-5 w-auto dark:block"
-            />
-            <img
-              src="/brand/logo-dark.svg"
-              alt={title}
-              className="h-5 w-auto dark:hidden"
+              width={264}
+              height={34}
+              priority
+              className="h-5 w-auto"
             />
           </Link>
           <SidebarTrigger />
         </div>
       </SidebarHeader>
-      <div className="h-2" />
-      {backHref && backLabel && (
-        <>
-          <SidebarMenu className="p-2">
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild size="sm">
-                <Link href={backHref}>
-                  <SmArrowBackLineIcon />
-                  <span>{backLabel}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-          </SidebarMenu>
-          <SidebarSeparator />
-        </>
-      )}
       <SidebarContent>
+        {/* "Voltar ao system" abre o bloco de navegação do drawer no mobile
+            e da sidebar no desktop. */}
+        {backHref && backLabel && (
+          <>
+            <SidebarMenu className="p-2 pt-4">
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild size="sm">
+                  <Link href={backHref}>
+                    <SmArrowBackLineIcon />
+                    <span>{backLabel}</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+            <SidebarSeparator />
+          </>
+        )}
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
@@ -447,21 +610,27 @@ export function SystemSidebar({
                 <SystemSwitcher basePath={basePath} />
               </SidebarMenuItem>
               <SidebarMenuItem className="mt-1.5">
+                <CommandPaletteButton />
+              </SidebarMenuItem>
+              <SidebarMenuItem className="mt-1.5">
                 <div className="flex w-full items-center justify-between">
-                  <div className="flex items-center gap-0">
+                  <div className="flex items-center gap-2">
                     {/* Assets some por completo para quem não tem acesso —
                         um ícone bloqueado só ocupa espaço na barra. */}
                     {canAccessAssets && (
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <Link
-                            href="/assets"
-                            aria-label="Assets da Marca"
-                            className="group/asset relative flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-white"
+                          <Button
+                            variant="ghost"
+                            size="icon-sm"
+                            asChild
+                            className="group/asset text-muted-foreground hover:text-foreground"
                           >
-                            <SmFolderLineIcon className="size-6 transition-opacity group-hover/asset:opacity-0" />
-                            <SmFolderSolidIcon className="absolute size-6 opacity-0 transition-opacity group-hover/asset:opacity-100" />
-                          </Link>
+                            <Link href="/assets" aria-label="Assets da Marca">
+                              <SmFolderLineIcon className="size-6 transition-opacity group-hover/asset:opacity-0" />
+                              <SmFolderSolidIcon className="absolute size-6 opacity-0 transition-opacity group-hover/asset:opacity-100" />
+                            </Link>
+                          </Button>
                         </TooltipTrigger>
                         <TooltipContent>Assets da Marca</TooltipContent>
                       </Tooltip>
@@ -469,14 +638,15 @@ export function SystemSidebar({
                     {showTabs && (
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <button
+                          <Button
                             type="button"
-                            onClick={() => setView("directives")}
+                            variant="ghost"
+                            size="icon-sm"
+                            onClick={() => changeView("directives")}
                             aria-label="Diretrizes"
                             aria-pressed={view === "directives"}
                             className={cn(
-                              "group/dir relative flex size-8 items-center justify-center transition-colors outline-none",
-                              "text-muted-foreground hover:text-foreground",
+                              "group/dir text-muted-foreground hover:text-foreground",
                               view === "directives" && "text-foreground",
                             )}
                           >
@@ -488,7 +658,7 @@ export function SystemSidebar({
                                 <SmDocSolidIcon className="absolute size-6 opacity-0 transition-opacity group-hover/dir:opacity-100" />
                               </>
                             )}
-                          </button>
+                          </Button>
                         </TooltipTrigger>
                         <TooltipContent>Diretrizes</TooltipContent>
                       </Tooltip>
@@ -496,18 +666,22 @@ export function SystemSidebar({
                     {showTabs && (
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <button
+                          <Button
                             type="button"
+                            variant="ghost"
+                            size="icon-sm"
                             onClick={() => {
-                              setView("conversations");
                               // Abre a home do sistema (composer "Pergunte alguma coisa")
-                              if (pathname !== basePath) router.push(basePath);
+                              if (pathname !== basePath) {
+                                router.push(`${basePath}?view=conversations`);
+                              } else {
+                                changeView("conversations");
+                              }
                             }}
                             aria-label="Conversas"
                             aria-pressed={view === "conversations"}
                             className={cn(
-                              "group/conv relative flex size-8 items-center justify-center transition-colors outline-none",
-                              "text-muted-foreground hover:text-foreground",
+                              "group/conv text-muted-foreground hover:text-foreground",
                               view === "conversations" && "text-foreground",
                             )}
                           >
@@ -519,7 +693,7 @@ export function SystemSidebar({
                                 <SmMessageCircleSolidIcon className="absolute size-6 opacity-0 transition-opacity group-hover/conv:opacity-100" />
                               </>
                             )}
-                          </button>
+                          </Button>
                         </TooltipTrigger>
                         <TooltipContent>Conversas</TooltipContent>
                       </Tooltip>
@@ -527,13 +701,16 @@ export function SystemSidebar({
                     {isOverlens && (
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <Link
-                            href="/registros"
-                            aria-label="Registros"
-                            className="flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+                          <Button
+                            variant="ghost"
+                            size="icon-sm"
+                            asChild
+                            className="text-muted-foreground hover:text-foreground"
                           >
-                            <SmRegisteredLineIcon className="size-6" />
-                          </Link>
+                            <Link href="/registros" aria-label="Registros">
+                              <SmRegisteredLineIcon className="size-6" />
+                            </Link>
+                          </Button>
                         </TooltipTrigger>
                         <TooltipContent>Registros</TooltipContent>
                       </Tooltip>
@@ -542,15 +719,22 @@ export function SystemSidebar({
                   {showTabs && (
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <Link
-                          href="/chat/new"
-                          aria-label="Nova conversa"
-                          className="flex size-10 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          asChild
+                          className="shrink-0 text-muted-foreground hover:text-foreground"
                         >
-                          <Plus className="size-6" />
-                        </Link>
+                          <Link
+                            href="/chat/new"
+                            aria-label="Nova conversa"
+                            aria-keyshortcuts="Control+Shift+O Meta+Shift+O"
+                          >
+                            <SmAdd2LineIcon className="size-6" />
+                          </Link>
+                        </Button>
                       </TooltipTrigger>
-                      <TooltipContent>Nova conversa</TooltipContent>
+                      <TooltipContent>Nova conversa (Ctrl+Shift+O)</TooltipContent>
                     </Tooltip>
                   )}
                 </div>
@@ -607,25 +791,15 @@ export function SystemSidebar({
                 </>
               )}
 
-              {view === "conversations" && conversations && (
+              {view === "conversations" && conversations !== undefined && (
                 <>
                   <li className="h-2" aria-hidden="true" />
-                  {conversations.length === 0 ? (
-                    <div className="px-3 py-6 text-center text-xs text-muted-foreground">
-                      Nenhuma conversa ainda.
-                      <br />
-                      Comece pela home de qualquer sistema.
-                    </div>
-                  ) : (
-                    conversations.map((c) => (
-                      <ConversationItem
-                        key={c.id}
-                        id={c.id}
-                        title={c.title}
-                        isActive={activeConversationId === c.id}
-                      />
-                    ))
-                  )}
+                  <Suspense fallback={<SidebarConversationsSkeleton />}>
+                    <SidebarConversations
+                      conversations={conversations}
+                      activeConversationId={activeConversationId}
+                    />
+                  </Suspense>
                 </>
               )}
             </SidebarMenu>
@@ -636,5 +810,6 @@ export function SystemSidebar({
         <SidebarProfile />
       </SidebarFooter>
     </Sidebar>
+    </CommandPaletteProvider>
   );
 }

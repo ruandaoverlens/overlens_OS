@@ -1,8 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { RotateCcw } from "lucide-react"
-import { SmAlertSolidIcon } from "@/components/icons"
+import { SmAlertSolidIcon, SmHistoryLineIcon } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import type { ChatErrorKind } from "@/lib/ai/chat-errors"
@@ -40,7 +39,7 @@ export function MessageError({
     >
       <div className="w-full rounded-lg border border-destructive/30 bg-destructive/5 p-4">
         <div className="flex items-start gap-3">
-          <SmAlertSolidIcon className="size-5 shrink-0 text-destructive" />
+          <SmAlertSolidIcon className="size-5 shrink-0 text-destructive" aria-hidden="true" />
           <div className="flex-1 space-y-1">
             <p className="text-sm font-semibold text-foreground">
               {KIND_LABEL[kind]}
@@ -55,9 +54,8 @@ export function MessageError({
               size="sm"
               variant="outline"
               onClick={onRetry}
-              className="gap-2"
             >
-              <RotateCcw className="size-4" />
+              <SmHistoryLineIcon className="size-4" />
               Tentar novamente
             </Button>
           </div>

@@ -36,11 +36,17 @@ export interface AssetMetadataInput {
 export function useAssetMetadata(assetType: string) {
   const [rows, setRows] = useState<Record<string, AssetMetadataOverride>>({});
   const [loading, setLoading] = useState(true);
+  /** Mensagem do último erro de carregamento (null quando OK). */
+  const [error, setError] = useState<string | null>(null);
 
-  const refresh = useCallback(async () => {
+  const refresh = useCallback(async (): Promise<{ ok: true } | { ok: false; error: string }> => {
     try {
       const res = await fetch(`/api/assets/metadata?type=${encodeURIComponent(assetType)}`);
-      if (!res.ok) return;
+      if (!res.ok) {
+        const msg = `Falha ao carregar metadados (${res.status})`;
+        setError(msg);
+        return { ok: false, error: msg };
+      }
       const { metadata } = (await res.json()) as { metadata: AssetMetadataRow[] };
       const map: Record<string, AssetMetadataOverride> = {};
       for (const m of metadata) {
@@ -54,15 +60,19 @@ export function useAssetMetadata(assetType: string) {
         };
       }
       setRows(map);
-    } catch {
-      // silent
+      setError(null);
+      return { ok: true };
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Falha ao carregar metadados";
+      setError(msg);
+      return { ok: false, error: msg };
     } finally {
       setLoading(false);
     }
   }, [assetType]);
 
   useEffect(() => {
-    refresh();
+    void refresh();
   }, [refresh]);
 
   const get = useCallback(
@@ -143,7 +153,7 @@ export function useAssetMetadata(assetType: string) {
   );
 
   return useMemo(
-    () => ({ rows, loading, get, save, remove, rename, refresh }),
-    [rows, loading, get, save, remove, rename, refresh],
+    () => ({ rows, loading, error, get, save, remove, rename, refresh }),
+    [rows, loading, error, get, save, remove, rename, refresh],
   );
 }

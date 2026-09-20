@@ -39,16 +39,27 @@ const TYPE_LABELS: Record<MyceliumType, string> = MYCELIUM_TYPES.reduce(
   {} as Record<MyceliumType, string>,
 );
 
+/** Placeholder por tipo: cor de marca em micro-dose sobre a superfície mais escura. */
+function placeholder(brand: string): string {
+  return `color-mix(in oklab, var(--brand-${brand}) 25%, var(--surface-950))`;
+}
+
 const TYPE_PLACEHOLDER: Record<MyceliumType, string> = {
-  artigo: "#292524",
-  video: "#4c0519",
-  imagem: "#1e1b4b",
-  audio: "#022c22",
-  pdf: "#451a03",
-  skill: "#2e1065",
-  post: "#082f49",
-  site: "#1e293b",
+  artigo: placeholder("arena"),
+  video: placeholder("cotta"),
+  imagem: placeholder("kobold"),
+  audio: placeholder("midori"),
+  pdf: placeholder("sahara"),
+  skill: placeholder("boreal"),
+  post: placeholder("bleu"),
+  site: placeholder("azzay"),
 };
+
+const DEFAULT_PLACEHOLDER = "var(--surface-950)";
+
+/** Grade de 1/2/3/4 colunas (sm/md/xl) — largura esperada da imagem por breakpoint. */
+const CARD_IMAGE_SIZES =
+  "(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw";
 
 // ─── Time helper ─────────────────────────────────────────────
 
@@ -82,7 +93,7 @@ export function MyceliumCard({
     previewUrl(firstImage?.preview_path ?? firstImage?.storage_path ?? null);
 
   const typeLabel = TYPE_LABELS[reference.type] ?? reference.type;
-  const placeholderColor = TYPE_PLACEHOLDER[reference.type] ?? "#1c1917";
+  const placeholderColor = TYPE_PLACEHOLDER[reference.type] ?? DEFAULT_PLACEHOLDER;
 
   return (
     <MediaCard>
@@ -90,15 +101,19 @@ export function MyceliumCard({
         src={cover ?? undefined}
         color={cover ? undefined : placeholderColor}
         alt={reference.title}
+        sizes={CARD_IMAGE_SIZES}
+        aria-label={`Abrir ${reference.title}`}
         onClick={onClick}
-      >
-        <div
-          className="absolute right-2 top-2 z-20 opacity-0 transition-opacity group-hover:opacity-100"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <FavoriteButton isFavorite={isFavorite} onClick={() => onToggleFavorite()} />
-        </div>
-      </MediaCardImage>
+      />
+      {/* Overlay de favorito: irmão absoluto da imagem (MediaCardImage é um <button>
+          e não pode conter outro controle). `action-overlay` revela no hover e no
+          foco e mantém o botão alcançável no toque (onde não existe hover). */}
+      <div className="action-overlay absolute right-2 top-2 z-20">
+        <FavoriteButton
+          isFavorite={isFavorite}
+          onClick={() => onToggleFavorite()}
+        />
+      </div>
       <MediaCardContent>
         <MediaCardTitle onClick={onClick}>{reference.title}</MediaCardTitle>
         <MediaCardMeta>

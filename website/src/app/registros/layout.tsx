@@ -1,12 +1,24 @@
-import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import { Topbar, TopbarBreadcrumb, TopbarActions } from "@/components/ui/topbar";
-import { DocTopbarLabel } from "@/components/doc-breadcrumb";
+import { DocTopbarLabel, DocTopbarUpLink } from "@/components/doc-breadcrumb";
 import { AppSwitcher } from "@/components/app-switcher";
 import { AppNotifications } from "@/components/app-notifications";
+import { CommandPaletteIconButton } from "@/components/command-palette";
 import { RegistrosSidebar } from "@/components/registros-sidebar";
+import { AccessRestricted } from "@/app/_shared/access-restricted";
 import { createClient } from "@/lib/supabase/server";
 import { isOverlensEmail } from "@/lib/route-access";
+import { getSystemConfig } from "@/lib/system-configs";
+import { getChatConversations } from "@/lib/chat-conversations";
+import { getSystemsPagesIndex } from "@/lib/palette-index";
+import { REGISTROS_LABELS } from "@/lib/registros-nav";
+
+export const metadata: Metadata = {
+  title: "Registros",
+};
 
 export default async function RegistrosLayout({
   children,
@@ -14,13 +26,19 @@ export default async function RegistrosLayout({
   children: React.ReactNode;
 }) {
   // Defense-in-depth: reverifica no server (além do middleware) que o usuário
-  // é da equipe interna (@overlens.com.br). Para não-autorizados o módulo
-  // responde como se não existisse (404).
-  const supabase = await createClient();
+  // é da equipe interna (@overlens.com.br).
+  const [supabase, cookieStore] = await Promise.all([createClient(), cookies()]);
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user || !isOverlensEmail(user.email)) notFound();
+  if (!user) redirect("/login?next=/registros");
+  if (!isOverlensEmail(user.email)) return <AccessRestricted label="Registros" />;
+
+  const lastSystem = cookieStore.get("overlens_last_system")?.value;
+  // `sidebar_state`: quem recolhe a sidebar continua com ela recolhida no
+  // próximo carregamento (o cookie é escrito pelo `SidebarProvider`).
+  const sidebarOpen = cookieStore.get("sidebar_state")?.value !== "false";
+  const config = getSystemConfig(lastSystem);
 
   // Conversas do assistente (do próprio usuário) para a sidebar.
   const { data: conversasData } = await supabase
@@ -35,14 +53,29 @@ export default async function RegistrosLayout({
   }));
 
   return (
-    <SidebarProvider>
-      <RegistrosSidebar conversas={conversas} />
-      <SidebarInset>
+    <SidebarProvider defaultOpen={sidebarOpen}>
+      <RegistrosSidebar
+        conversas={conversas}
+        backHref={config.basePath}
+        backLabel={config.title}
+        palette={{
+          sections: config.getNav(),
+          basePath: config.basePath,
+          title: config.title,
+          allSections: getSystemsPagesIndex(),
+          conversations: getChatConversations(),
+        }}
+      />
+      <SidebarInset id="main-content">
         <Topbar>
+          <DocTopbarUpLink label="Registros" basePath="/registros" labels={REGISTROS_LABELS} />
           <TopbarBreadcrumb>
-            <DocTopbarLabel label="Registros" basePath="/registros" />
+            <DocTopbarLabel label="Registros" basePath="/registros" labels={REGISTROS_LABELS} />
           </TopbarBreadcrumb>
           <TopbarActions>
+            {/* Só aparece no mobile: aqui a sidebar recolhe em modo "icon" e
+                mantém o próprio botão de busca visível no desktop. */}
+            <CommandPaletteIconButton sidebarCollapsesToIcon />
             <AppNotifications />
             <AppSwitcher />
           </TopbarActions>

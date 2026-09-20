@@ -2,7 +2,16 @@
 
 import React, { createContext, useContext, useState, useCallback, useEffect } from "react";
 
-export type FavoriteType = "audio" | "video" | "logo" | "image" | "icon" | "color" | "typography" | "reference";
+export type FavoriteType =
+  | "audio"
+  | "video"
+  | "logo"
+  | "image"
+  | "icon"
+  | "color"
+  | "typography"
+  | "reference"
+  | "doc";
 
 export interface FavoriteItem {
   id: string;
@@ -10,6 +19,8 @@ export interface FavoriteItem {
   title: string;
   subtitle?: string;
   thumbnail?: string;
+  /** Link de destino (usado por favoritos do tipo `doc`). */
+  href?: string;
 }
 
 interface FavoritesState {

@@ -52,7 +52,7 @@ function TooltipContent({
         {...props}
       >
         {children}
-        <TooltipPrimitive.Arrow className="bg-foreground fill-foreground z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px]" />
+        <TooltipPrimitive.Arrow className="bg-foreground fill-foreground z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-xs" />
       </TooltipPrimitive.Content>
     </TooltipPrimitive.Portal>
   )
@@ -67,7 +67,7 @@ function TooltipShortcut({
     <kbd
       data-slot="tooltip-shortcut"
       className={cn(
-        "bg-black text-white inline-flex items-center justify-center rounded-[4px] px-1.5 py-0.5 -my-0.5 font-mono text-xs font-medium",
+        "bg-black text-white inline-flex items-center justify-center rounded-sm px-1.5 py-0.5 -my-0.5 font-mono text-xs font-medium",
         className
       )}
       {...props}

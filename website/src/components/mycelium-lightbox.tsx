@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import {
   Dialog,
   DialogContent,
@@ -10,6 +11,9 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { HeadingTitle } from "@/components/ui/heading";
+import { FavoriteButton } from "@/components/favorite-button";
+import { useConfirm } from "@/components/ui/confirm-dialog";
 import {
   SmPlaySolidIcon,
   SmGraphicEqLineIcon,
@@ -19,6 +23,7 @@ import {
   SmDownloadLineIcon,
 } from "@/components/icons";
 import { useAuth, canDelete } from "@/lib/auth";
+import { useFavorites } from "@/lib/favorites";
 import {
   MYCELIUM_TYPES,
   type MyceliumReference,
@@ -69,6 +74,25 @@ const TYPE_LABELS: Record<MyceliumType, string> = MYCELIUM_TYPES.reduce(
   {} as Record<MyceliumType, string>,
 );
 
+const DELETE_ERROR = "Não foi possível excluir a referência";
+
+// ─── Stage image ─────────────────────────────────────────────
+
+/** Imagem do palco: `fill` + `object-contain` dentro de uma área com altura fixa. */
+function StageImage({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="relative w-full h-[50vh] min-h-[256px]">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="100vw"
+        className="object-contain rounded-sm"
+      />
+    </div>
+  );
+}
+
 // ─── Modal ───────────────────────────────────────────────────
 
 export function MyceliumLightbox({
@@ -81,6 +105,8 @@ export function MyceliumLightbox({
   onDelete?: () => void;
 }) {
   const { user } = useAuth();
+  const confirm = useConfirm();
+  const { isFavorite, toggleFavorite } = useFavorites();
   const isAdmin = user && canDelete(user.role);
   const [deleting, setDeleting] = useState(false);
   const attachments = reference.attachments ?? [];
@@ -88,25 +114,33 @@ export function MyceliumLightbox({
   const hasMultiple = attachments.length > 1;
   const current = attachments[currentIdx];
   const typeLabel = TYPE_LABELS[reference.type] ?? reference.type;
+  const total = attachments.length;
 
-  const goPrev = () =>
-    setCurrentIdx((i) => (i - 1 + attachments.length) % attachments.length);
-  const goNext = () =>
-    setCurrentIdx((i) => (i + 1) % attachments.length);
+  const goPrev = () => setCurrentIdx((i) => (i - 1 + total) % total);
+  const goNext = () => setCurrentIdx((i) => (i + 1) % total);
 
+  // Navegação por setas (mantida): usa o total para não depender dos handlers.
   useEffect(() => {
     if (!hasMultiple) return;
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "ArrowLeft") goPrev();
-      else if (e.key === "ArrowRight") goNext();
+      if (e.key === "ArrowLeft") {
+        setCurrentIdx((i) => (i - 1 + total) % total);
+      } else if (e.key === "ArrowRight") {
+        setCurrentIdx((i) => (i + 1) % total);
+      }
     };
     document.addEventListener("keydown", handleKey);
     return () => document.removeEventListener("keydown", handleKey);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hasMultiple, attachments.length]);
+  }, [hasMultiple, total]);
 
   const handleDelete = async () => {
-    if (!confirm("Excluir esta referência?")) return;
+    const ok = await confirm({
+      title: "Excluir esta referência?",
+      description: `"${reference.title}" será removida do Mycelium. Esta ação não pode ser desfeita.`,
+      confirmLabel: "Excluir",
+      destructive: true,
+    });
+    if (!ok) return;
     setDeleting(true);
     try {
       const res = await fetch(`/api/mycelium/${reference.id}`, {
@@ -114,16 +148,15 @@ export function MyceliumLightbox({
       });
       if (res.ok) {
         onDelete?.();
-        notify.success("Post removido");
+        notify.success("Referência excluída");
       } else {
         const data = await res.json().catch(() => ({}));
-        notify.error("Falha ao salvar post", {
+        notify.error(DELETE_ERROR, {
           description: data?.error ?? `Erro ${res.status}`,
         });
       }
     } catch (err) {
-      const msg = err instanceof Error ? err.message : "Erro desconhecido";
-      notify.error("Falha ao salvar post", { description: msg });
+      notify.fromError(err, DELETE_ERROR);
     } finally {
       setDeleting(false);
     }
@@ -134,19 +167,14 @@ export function MyceliumLightbox({
     if (attachments.length === 0) {
       const cover = previewUrl(reference.cover_path);
       if (cover) {
-        return (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={cover}
-            alt={reference.title}
-            className="max-h-full max-w-full object-contain rounded-sm"
-          />
-        );
+        return <StageImage src={cover} alt={reference.title} />;
       }
       return (
         <div className="flex flex-col items-center gap-4 text-muted-foreground">
           <SmGraphicEqLineIcon className="size-12" />
-          <span className="text-xs uppercase tracking-wider">{typeLabel}</span>
+          <HeadingTitle as="h3" size="eyebrow">
+            {typeLabel}
+          </HeadingTitle>
         </div>
       );
     }
@@ -157,32 +185,31 @@ export function MyceliumLightbox({
 
     switch (current.kind) {
       case "image":
-        return (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={url ?? ""}
-            alt={reference.title}
-            className="max-h-full max-w-full object-contain rounded-sm"
-          />
-        );
+        return url ? <StageImage src={url} alt={reference.title} /> : null;
       case "video":
         return (
           <video
             src={original ?? url ?? ""}
             controls
+            preload="metadata"
             className="max-h-full max-w-full object-contain rounded-sm"
           />
         );
       case "audio":
         return (
           <div className="flex flex-col items-center gap-5 w-full max-w-md">
-            <div className="size-24 rounded-full bg-white/5 flex items-center justify-center text-white/40">
+            <div className="size-24 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground">
               <SmPlaySolidIcon className="size-10" />
             </div>
             <p className="text-sm text-muted-foreground truncate max-w-full">
               {attachmentName(current)}
             </p>
-            <audio src={original ?? url ?? ""} controls className="w-full" />
+            <audio
+              src={original ?? url ?? ""}
+              controls
+              preload="metadata"
+              className="w-full"
+            />
           </div>
         );
       case "file":
@@ -195,7 +222,7 @@ export function MyceliumLightbox({
             {original && (
               <Button variant="default" size="sm" asChild>
                 <a href={original} download={attachmentName(current)}>
-                  <SmDownloadLineIcon className="size-4 mr-1" />
+                  <SmDownloadLineIcon className="size-4" />
                   <span>Download</span>
                 </a>
               </Button>
@@ -209,42 +236,53 @@ export function MyceliumLightbox({
 
   return (
     <Dialog open onOpenChange={(o) => !o && onClose()}>
-      <DialogContent className="sm:max-w-2xl max-h-[85vh] overflow-y-auto [&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-foreground/20 [&::-webkit-scrollbar-track]:bg-transparent">
+      <DialogContent className="sm:max-w-2xl">
         <DialogHeader>
           <div className="flex items-center gap-2 pl-1">
             <Badge variant="secondary">{typeLabel}</Badge>
             {hasMultiple && (
-              <span className="text-[11px] text-muted-foreground">
+              <span className="text-xs text-muted-foreground" aria-live="polite">
                 {currentIdx + 1} / {attachments.length}
               </span>
             )}
           </div>
           <DialogTitle>{reference.title}</DialogTitle>
-          {reference.description && (
+          {reference.description ? (
             <DialogDescription>{reference.description}</DialogDescription>
+          ) : (
+            <DialogDescription className="sr-only">
+              {typeLabel}
+              {reference.author?.name ? ` · ${reference.author.name}` : ""}
+            </DialogDescription>
           )}
         </DialogHeader>
 
         {/* Media stage */}
         <div className="relative flex items-center justify-center min-h-[280px] max-h-[60vh] rounded-lg bg-black/30 px-2 py-3 overflow-hidden">
           {hasMultiple && (
-            <button
+            <Button
+              type="button"
+              size="icon-sm"
+              variant="secondary"
               onClick={goPrev}
-              aria-label="Anterior"
-              className="absolute left-2 top-1/2 -translate-y-1/2 size-8 rounded-full bg-black/60 text-white/70 hover:text-white hover:bg-black/80 flex items-center justify-center transition-all z-10"
+              aria-label="Mídia anterior"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/60 text-white hover:bg-black/80"
             >
               <SmArrowBackIosNewLineIcon className="size-4" />
-            </button>
+            </Button>
           )}
           {renderStage()}
           {hasMultiple && (
-            <button
+            <Button
+              type="button"
+              size="icon-sm"
+              variant="secondary"
               onClick={goNext}
-              aria-label="Próximo"
-              className="absolute right-2 top-1/2 -translate-y-1/2 size-8 rounded-full bg-black/60 text-white/70 hover:text-white hover:bg-black/80 flex items-center justify-center transition-all z-10"
+              aria-label="Próxima mídia"
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/60 text-white hover:bg-black/80"
             >
               <SmArrowForwardIosLineIcon className="size-4" />
-            </button>
+            </Button>
           )}
         </div>
 
@@ -260,17 +298,29 @@ export function MyceliumLightbox({
 
         {/* Tags */}
         {reference.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 pl-1">
+          <ul className="flex flex-wrap gap-1.5 pl-1" aria-label="Tags">
             {reference.tags.map((tag) => (
-              <Badge key={tag} variant="outline">
-                {tag}
-              </Badge>
+              <li key={tag}>
+                <Badge variant="outline">{tag}</Badge>
+              </li>
             ))}
-          </div>
+          </ul>
         )}
 
         {/* Actions */}
         <div className="flex flex-wrap items-center gap-2 pt-1 pl-1">
+          <FavoriteButton
+            isFavorite={isFavorite(reference.id)}
+            onClick={() =>
+              toggleFavorite({
+                id: reference.id,
+                type: "reference",
+                title: reference.title,
+                subtitle: typeLabel,
+                thumbnail: previewUrl(reference.cover_path) ?? "",
+              })
+            }
+          />
           {reference.url && (
             <Button variant="default" size="sm" asChild>
               <a href={reference.url} target="_blank" rel="noopener noreferrer">
@@ -280,12 +330,14 @@ export function MyceliumLightbox({
           )}
           {isAdmin && (
             <Button
+              type="button"
               variant="outline"
               size="sm"
               onClick={handleDelete}
-              disabled={deleting}
+              loading={deleting}
+              loadingText="Excluindo…"
             >
-              <span>{deleting ? "Excluindo..." : "Excluir"}</span>
+              <span>Excluir</span>
             </Button>
           )}
         </div>

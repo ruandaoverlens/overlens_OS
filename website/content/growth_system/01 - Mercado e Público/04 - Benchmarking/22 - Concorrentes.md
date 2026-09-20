@@ -1,17 +1,28 @@
 ---
 title: Concorrentes
-summary: Mapeia os concorrentes da Overlens em três níveis (Diretos, Indiretos, Plataformas Substitutas) com marcas como Somos Tera, Human Academy, Domestika, Alura, Hotmart e creators independentes.
-topics: [concorrentes, benchmarking, mercado competitivo, edtech brasil]
-keywords: [concorrentes, somos tera, human academy, marcelo kimura, montag school, design boost, brandster, marcados, domestika, alura, laje, descola, EBAC, perestroika, hotmart, kiwify, monetizze, coursera, udemy]
+summary: Mapeia os concorrentes da Overlens em três níveis (Diretos, Indiretos, Plataformas Substitutas). ATENÇÃO — o mapa atual foi levantado quando o público era de profissionais criativos e está desatualizado — com o público de Empreendedores Nexialistas, os concorrentes reais passam a ser escolas de negócio, comunidades de fundadores e aceleradoras. Requer nova pesquisa.
+topics: [concorrentes, benchmarking, mercado competitivo, edtech brasil, pesquisa pendente]
+keywords: [concorrentes, escolas de negócio, comunidades de fundadores, aceleradoras, somos tera, human academy, marcelo kimura, montag school, design boost, brandster, marcados, domestika, alura, laje, descola, EBAC, perestroika, hotmart, kiwify, monetizze, coursera, udemy, mapa desatualizado]
 priority: medium
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre concorrentes da Overlens, escolas que disputam o mesmo público, plataformas substitutas como Hotmart e Domestika, ou ao mapear cenário competitivo e identificar lacunas de posicionamento.
+  Use quando o usuário perguntar sobre concorrentes da Overlens, escolas que disputam o mesmo público, plataformas substitutas como Hotmart e Domestika, ou ao mapear cenário competitivo e identificar lacunas de posicionamento. Avise sempre que o mapa listado reflete o público antigo e precisa de nova pesquisa.
 related: []
 ---
 
 # Concorrentes
 
-(Precisa de atualização)
+> **⚠️ Mapa desatualizado — requer nova pesquisa antes de ser usado em decisão.**
+>
+> A lista abaixo foi construída quando o público da Overlens era descrito como "designers e criadores". Com o eixo em **Empreendedores Nexialistas** — pessoas que querem transformar as próprias ideias em negócios, vindas de qualquer origem profissional —, **o conjunto competitivo muda de categoria**: deixa de ser formado por escolas de design e branding e passa a ser formado por escolas de negócio, comunidades de fundadores, aceleradoras, programas de empreendedorismo e mentorias de construção de produto.
+>
+> **Nenhum concorrente novo foi adicionado aqui, porque nenhum foi verificado.** As entradas existentes permanecem como registro histórico e continuam válidas apenas parcialmente: várias delas seguem disputando atenção do mesmo público, mas já não representam o principal vetor de competição.
+>
+> **O que a nova pesquisa precisa mapear:**
+> * Escolas e programas brasileiros de empreendedorismo e construção de negócios voltados a fundadores solo.
+> * Comunidades pagas de fundadores e construtores independentes (incluindo as de origem técnica).
+> * Aceleradoras e pré-aceleradoras que atendem estágio pré-tração.
+> * Mentorias e programas de produto/IA voltados a quem já tem algo no ar.
+> * Em cada caso: proposta, ticket, formato, público real atendido e onde há sobreposição com a Overlens.
 
 ## Operamos em um território altamente dinâmico, onde marcas, plataformas e indivíduos disputam atenção, autoridade e pertencimento. Compreender esse cenário é fundamental para preservar clareza estratégica, reforçar nossos diferenciais e reconhecer onde há sobreposição, ruído ou oportunidade.
 
@@ -19,7 +30,9 @@ Dividimos nossos concorrentes em níveis. Cada grupo representa um tipo distinto
 
 ## Concorrentes Diretos
 
-**Disputam o mesmo público com propostas formativas semelhantes.** Estes concorrentes atuam com criadores, designers e profissionais criativos que buscam desenvolvimento em branding, estratégia, criatividade e inteligência artificial. Compartilham, em graus variados, a intenção de oferecer algo autoral, simbólico e posicionado para o futuro.
+**Disputam o mesmo público com propostas formativas semelhantes.**
+
+*Registro do mapa anterior.* Os nomes abaixo atendem profissionais criativos que buscam desenvolvimento em branding, estratégia, criação e inteligência artificial. Sob o público de Empreendedores Nexialistas, **eles deixaram de ser o eixo da concorrência direta**: seguem relevantes porque parte do nosso público passa por eles em algum momento, mas quem disputa de fato a mesma decisão de compra hoje são escolas de negócio, comunidades de fundadores e aceleradoras — **ainda não mapeadas, ver aviso no topo**.
 
 **Somos Tera** [https://somostera.com/](https://somostera.com/)
 

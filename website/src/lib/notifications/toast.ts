@@ -21,6 +21,18 @@ export const notify = {
   error(title: string, opts?: NotifyOptions) {
     return toast.error(title, opts);
   },
+  /** Toast de erro a partir de um `unknown` (Error, string, objeto com `message`). */
+  fromError(err: unknown, fallback: string) {
+    const description =
+      err instanceof Error
+        ? err.message
+        : typeof err === "string"
+          ? err
+          : err && typeof err === "object" && "message" in err && typeof err.message === "string"
+            ? err.message
+            : undefined;
+    return toast.error(fallback, description ? { description } : undefined);
+  },
   warning(title: string, opts?: NotifyOptions) {
     return toast.warning(title, opts);
   },
@@ -47,7 +59,7 @@ export const notify = {
   // ─── Presets (assets) ─────────────────────────────────
   uploadStarted(count: number) {
     return toast.loading(
-      count === 1 ? "Enviando arquivo..." : `Enviando ${count} arquivos...`,
+      count === 1 ? "Enviando arquivo…" : `Enviando ${count} arquivos…`,
       { id: "upload-batch" },
     );
   },

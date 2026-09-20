@@ -60,7 +60,7 @@ A marca tipográfica OVERLENS® em sua forma primária. Utilizada como assinatur
 
 ## Atlas
 
-Marca do programa Atlas Overlens®; o mapeamento formativo que organiza territórios de conhecimento e traça rotas de aprendizado para o criador nexialista.
+Marca do programa Atlas Overlens®; o mapeamento formativo que organiza territórios de conhecimento e traça rotas de aprendizado para o Empreendedor Nexialista.
 
 <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
   <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; flex: 1; min-width: 0;">
@@ -81,7 +81,7 @@ Marca do programa Atlas Overlens®; o mapeamento formativo que organiza territó
 
 ## Protocolo 3-2-1
 
-Marca do método proprietário da Overlens; o framework de aprendizado que estrutura a jornada do criador em ciclos de profundidade crescente.
+Marca do método proprietário da Overlens; o framework de aprendizado que estrutura a jornada do empreendedor em ciclos de profundidade crescente.
 
 <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
   <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; flex: 1; min-width: 0;">
@@ -102,7 +102,7 @@ Marca do método proprietário da Overlens; o framework de aprendizado que estru
 
 ## Vanguarda
 
-Marca do programa Vanguarda™; a linha de frente da Overlens, onde criadores avançados exploram territórios emergentes e ampliam os limites da prática nexialista.
+Marca do programa Vanguarda™; a linha de frente da Overlens, onde empreendedores avançados exploram territórios emergentes e ampliam os limites da prática nexialista.
 
 <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
   <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; flex: 1; min-width: 0;">

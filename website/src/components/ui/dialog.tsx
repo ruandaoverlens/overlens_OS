@@ -44,7 +44,7 @@ function DialogOverlay({
     <DialogPrimitive.Overlay
       data-slot="dialog-overlay"
       className={cn(
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fill-mode-both fixed inset-0 z-50 bg-black/90 backdrop-blur-sm",
+        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fill-mode-both fixed inset-0 z-50 bg-scrim-strong backdrop-blur-sm",
         className
       )}
       {...props}
@@ -67,19 +67,23 @@ function DialogContent({
       <DialogPrimitive.Content
         data-slot="dialog-content"
         className={cn(
-          "bg-[var(--surface-950)] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fill-mode-both fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-xl px-4 pt-6 pb-5 shadow-none dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)] duration-200 outline-none sm:max-w-lg",
+          "bg-surface-950 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fill-mode-both fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] max-h-[calc(100svh-2rem)] overflow-y-auto scrollbar-thin -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl px-4 pt-6 pb-5 shadow-popover duration-200 outline-none sm:max-w-lg",
           className
         )}
         {...props}
       >
         {children}
         {showCloseButton && (
-          <DialogPrimitive.Close
-            data-slot="dialog-close"
-            className="outline-none focus-visible:ring-2 focus-visible:ring-foreground data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute top-4 right-4 rounded-full opacity-70 transition-opacity hover:opacity-100 disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-6"
-          >
-            <SmCloseLineIcon />
-            <span className="sr-only">Fechar</span>
+          <DialogPrimitive.Close asChild>
+            <Button
+              data-slot="dialog-close"
+              variant="ghost"
+              size="icon-sm"
+              aria-label="Fechar"
+              className="absolute top-3 right-3 text-muted-foreground hover:text-foreground data-[state=open]:bg-accent"
+            >
+              <SmCloseLineIcon className="size-6" />
+            </Button>
           </DialogPrimitive.Close>
         )}
       </DialogPrimitive.Content>
@@ -134,7 +138,7 @@ function DialogTitle({
   return (
     <DialogPrimitive.Title
       data-slot="dialog-title"
-      className={cn("text-lg leading-none font-semibold pl-1", className)}
+      className={cn("text-lg leading-none font-medium pl-1", className)}
       {...props}
     />
   )

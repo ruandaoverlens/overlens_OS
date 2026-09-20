@@ -30,7 +30,7 @@ export function ReasoningTrace({
       <summary className="cursor-pointer select-none text-muted-foreground hover:text-foreground">
         {summary}
       </summary>
-      <div className="mt-2 whitespace-pre-wrap break-words text-muted-foreground/90">
+      <div className="mt-2 whitespace-pre-wrap break-words text-muted-foreground">
         {content}
       </div>
     </details>

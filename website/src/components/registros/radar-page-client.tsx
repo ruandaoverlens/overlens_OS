@@ -5,8 +5,10 @@ import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from "@/components/ui/empty";
+import { EmptyState } from "@/components/empty-state";
+import { HeadingTitle } from "@/components/ui/heading";
 import { SmGraphicEqLineIcon } from "@/components/icons";
+import { notify } from "@/lib/notifications/toast";
 import { formatarData } from "@/lib/registros/types";
 import {
   RADAR_EXECUCAO_STATUS_LABEL,
@@ -37,6 +39,7 @@ export function RadarPageClient({ execucoes, candidatos }: RadarPageClientProps)
   const [msg, setMsg] = useState<string | null>(null);
 
   async function handleRun() {
+    if (running) return;
     setRunning(true);
     setMsg(null);
     try {
@@ -62,27 +65,58 @@ export function RadarPageClient({ execucoes, candidatos }: RadarPageClientProps)
       }
       router.refresh();
     } catch (err) {
-      setMsg(err instanceof Error ? err.message : "Erro inesperado");
+      setMsg(null);
+      notify.fromError(err, "Não foi possível executar o radar");
     } finally {
       setRunning(false);
     }
   }
 
-  async function changeStatus(id: string, status: RadarCandidatoStatus) {
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    void handleRun();
+  }
+
+  async function patchStatus(id: string, status: RadarCandidatoStatus) {
+    const res = await fetch("/api/registros/radar/candidatos", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, status }),
+    });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      throw new Error(data.error ?? "Erro ao atualizar");
+    }
+  }
+
+  async function changeStatus(
+    id: string,
+    status: RadarCandidatoStatus,
+    anterior: RadarCandidatoStatus,
+  ) {
     setBusyId(id);
     try {
-      const res = await fetch("/api/registros/radar/candidatos", {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id, status }),
-      });
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error ?? "Erro ao atualizar");
+      await patchStatus(id, status);
+      if (status === "descartado") {
+        notify.success("Descartado", {
+          action: {
+            label: "Desfazer",
+            onClick: () => {
+              void patchStatus(id, anterior)
+                .then(() => {
+                  notify.success("Candidato restaurado");
+                  router.refresh();
+                })
+                .catch((err) => notify.fromError(err, "Não foi possível desfazer"));
+            },
+          },
+        });
+      } else {
+        notify.success("Alerta gerado");
       }
       router.refresh();
     } catch (err) {
-      alert(err instanceof Error ? err.message : "Erro ao atualizar candidato");
+      notify.fromError(err, "Não foi possível atualizar o candidato");
     } finally {
       setBusyId(null);
     }
@@ -90,45 +124,55 @@ export function RadarPageClient({ execucoes, candidatos }: RadarPageClientProps)
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex flex-wrap items-center gap-3">
+      {/* Form para que Enter no campo dispare a execução. */}
+      <form onSubmit={handleSubmit} className="flex flex-wrap items-center gap-3">
         <Input
           size="sm"
           className="w-40"
           placeholder="Nº da revista (opcional)"
+          aria-label="Número da revista (opcional)"
           inputMode="numeric"
           value={revista}
+          disabled={running}
           onChange={(e) => setRevista(e.target.value)}
         />
-        <Button size="sm" onClick={handleRun} disabled={running}>
-          {running ? "Executando…" : "Executar radar agora"}
+        <Button
+          type="submit"
+          size="sm"
+          loading={running}
+          loadingText="Executando…"
+        >
+          Executar radar agora
         </Button>
-        {msg && <span className="text-sm text-muted-foreground">{msg}</span>}
-      </div>
+        {msg && (
+          <span className="text-sm text-muted-foreground" aria-live="polite">
+            {msg}
+          </span>
+        )}
+      </form>
 
       {/* Candidatos pendentes/alerta */}
       <section className="flex flex-col gap-2">
-        <h2 className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
+        <HeadingTitle as="h2" size="eyebrow">
           Candidatos para revisão
-        </h2>
+        </HeadingTitle>
         {candidatos.length === 0 ? (
-          <Empty>
-            <EmptyHeader>
-              <EmptyMedia contained>
-                <SmGraphicEqLineIcon />
-              </EmptyMedia>
-              <EmptyTitle>Nenhum candidato pendente</EmptyTitle>
-              <EmptyDescription>
-                Execute o radar para verificar as publicações mais recentes da RPI
-                contra as marcas cadastradas.
-              </EmptyDescription>
-            </EmptyHeader>
-          </Empty>
+          <EmptyState
+            icon={<SmGraphicEqLineIcon />}
+            title="Nenhum candidato pendente"
+            description="Execute o radar para verificar as publicações mais recentes da RPI contra as marcas cadastradas."
+            action={
+              <Button type="button" onClick={() => void handleRun()} loading={running} loadingText="Executando…">
+                Executar radar agora
+              </Button>
+            }
+          />
         ) : (
           <div className="flex flex-col gap-2">
             {candidatos.map((c) => (
               <div
                 key={c.id}
-                className="flex flex-col gap-3 rounded-lg bg-[var(--surface-950)] px-4 py-3 sm:flex-row sm:items-start"
+                className="flex flex-col gap-3 rounded-lg bg-surface-950 px-4 py-3 sm:flex-row sm:items-start"
               >
                 <div className="flex min-w-0 flex-1 flex-col gap-1">
                   <div className="flex flex-wrap items-center gap-2">
@@ -157,7 +201,7 @@ export function RadarPageClient({ execucoes, candidatos }: RadarPageClientProps)
                     <Button
                       size="sm"
                       disabled={busyId === c.id}
-                      onClick={() => changeStatus(c.id, "alerta")}
+                      onClick={() => changeStatus(c.id, "alerta", c.status)}
                     >
                       Gerar alerta
                     </Button>
@@ -167,7 +211,7 @@ export function RadarPageClient({ execucoes, candidatos }: RadarPageClientProps)
                       variant="ghost"
                       size="sm"
                       disabled={busyId === c.id}
-                      onClick={() => changeStatus(c.id, "descartado")}
+                      onClick={() => changeStatus(c.id, "descartado", c.status)}
                     >
                       Descartar
                     </Button>
@@ -181,17 +225,32 @@ export function RadarPageClient({ execucoes, candidatos }: RadarPageClientProps)
 
       {/* Histórico de execuções */}
       <section className="flex flex-col gap-2">
-        <h2 className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
+        <HeadingTitle as="h2" size="eyebrow">
           Execuções recentes
-        </h2>
+        </HeadingTitle>
         {execucoes.length === 0 ? (
-          <p className="text-sm text-muted-foreground">Nenhuma execução ainda.</p>
+          <EmptyState
+            size="sm"
+            title="Nenhuma execução ainda"
+            description="O histórico aparece aqui depois da primeira execução do radar."
+            action={
+              <Button
+                type="button"
+                size="sm"
+                onClick={() => void handleRun()}
+                loading={running}
+                loadingText="Executando…"
+              >
+                Executar radar agora
+              </Button>
+            }
+          />
         ) : (
           <div className="flex flex-col gap-1">
             {execucoes.map((e) => (
               <div
                 key={e.id}
-                className="flex flex-wrap items-center gap-3 rounded-lg bg-[var(--surface-950)] px-4 py-2 text-xs"
+                className="flex flex-wrap items-center gap-3 rounded-lg bg-surface-950 px-4 py-2 text-xs"
               >
                 <Badge variant={RADAR_EXECUCAO_STATUS_VARIANT[e.status]}>
                   {RADAR_EXECUCAO_STATUS_LABEL[e.status]}

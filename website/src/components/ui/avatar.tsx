@@ -41,12 +41,12 @@ function AvatarImage({
 }
 
 const brandColors = [
-  "bg-[var(--brand-antar)] text-black",
-  "bg-[var(--brand-arena)] text-black",
-  "bg-[var(--brand-atmos)] text-black",
-  "bg-[var(--brand-calla)] text-black",
-  "bg-[var(--brand-cloro)] text-black",
-  "bg-[var(--brand-nubia)] text-black",
+  "bg-brand-antar text-black",
+  "bg-brand-arena text-black",
+  "bg-brand-atmos text-black",
+  "bg-brand-calla text-black",
+  "bg-brand-cloro text-black",
+  "bg-brand-nubia text-black",
 ] as const
 
 function hashString(str: string): number {
@@ -73,7 +73,7 @@ function AvatarFallback({
     <AvatarPrimitive.Fallback
       data-slot="avatar-fallback"
       className={cn(
-        "flex size-full items-center justify-center rounded-full overflow-hidden font-mono text-sm leading-none font-medium group-data-[size=sm]/avatar:text-[10px]",
+        "flex size-full items-center justify-center rounded-full overflow-hidden font-mono text-sm leading-none font-medium group-data-[size=sm]/avatar:text-caption",
         colorClass,
         className
       )}

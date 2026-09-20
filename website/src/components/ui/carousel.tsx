@@ -203,7 +203,7 @@ function CarouselContent({
       <div
         ref={emblaRef}
         data-slot="carousel-viewport"
-        className={cn("overflow-hidden p-[3px] -m-[3px]", orientation === "vertical" && className)}
+        className={cn("overflow-hidden p-0.75 -m-0.75", orientation === "vertical" && className)}
       >
         <div
           data-slot="carousel-content"
@@ -265,9 +265,9 @@ function CarouselPrevious({
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       className={cn(
-        "absolute z-10 flex items-center justify-center border-0 bg-transparent cursor-pointer",
+        "absolute z-10 flex items-center justify-center border-0 bg-transparent cursor-pointer rounded-full outline-none focus-visible:ring-2 focus-visible:ring-foreground",
         "opacity-0 transition-opacity duration-300",
-        "group-hover/carousel:opacity-100",
+        "group-hover/carousel:opacity-100 group-focus-within/carousel:opacity-100 focus-visible:opacity-100",
         !canScrollPrev && "!opacity-0 pointer-events-none",
         orientation === "horizontal"
           ? "left-2 top-1/2 -translate-y-1/2"
@@ -276,7 +276,7 @@ function CarouselPrevious({
       )}
       {...props}
     >
-      <span className="flex items-center justify-center size-9 rounded-full bg-foreground/10 backdrop-blur-sm text-foreground/80 hover:bg-foreground/20 hover:text-foreground transition-colors">
+      <span className="flex items-center justify-center size-10 rounded-full bg-foreground/10 backdrop-blur-sm text-foreground hover:bg-foreground/20 hover:text-foreground transition-colors">
         <MdArrowBackIosNewLineIcon className={cn("size-6", orientation === "vertical" && "rotate-90")} />
       </span>
       <span className="sr-only">Previous slide</span>
@@ -304,9 +304,9 @@ function CarouselNext({
       disabled={!canScrollNext}
       onClick={scrollNext}
       className={cn(
-        "absolute z-10 flex items-center justify-center border-0 bg-transparent cursor-pointer",
+        "absolute z-10 flex items-center justify-center border-0 bg-transparent cursor-pointer rounded-full outline-none focus-visible:ring-2 focus-visible:ring-foreground",
         "opacity-0 transition-opacity duration-300",
-        "group-hover/carousel:opacity-100",
+        "group-hover/carousel:opacity-100 group-focus-within/carousel:opacity-100 focus-visible:opacity-100",
         !canScrollNext && "!opacity-0 pointer-events-none",
         orientation === "horizontal"
           ? "right-2 top-1/2 -translate-y-1/2"
@@ -315,7 +315,7 @@ function CarouselNext({
       )}
       {...props}
     >
-      <span className="flex items-center justify-center size-9 rounded-full bg-foreground/10 backdrop-blur-sm text-foreground/80 hover:bg-foreground/20 hover:text-foreground transition-colors">
+      <span className="flex items-center justify-center size-10 rounded-full bg-foreground/10 backdrop-blur-sm text-foreground hover:bg-foreground/20 hover:text-foreground transition-colors">
         <MdArrowForwardIosLineIcon className={cn("size-6", orientation === "vertical" && "rotate-90")} />
       </span>
       <span className="sr-only">Next slide</span>

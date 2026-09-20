@@ -59,6 +59,83 @@
   --color-info: var(--info);
   --color-info-foreground: var(--info-foreground);
 
+  /* --- Surface scale aliases (geram text-surface-500, bg-surface-950, ...) --- */
+  --color-surface-white: var(--surface-white);
+  --color-surface-100: var(--surface-100);
+  --color-surface-200: var(--surface-200);
+  --color-surface-300: var(--surface-300);
+  --color-surface-400: var(--surface-400);
+  --color-surface-500: var(--surface-500);
+  --color-surface-600: var(--surface-600);
+  --color-surface-700: var(--surface-700);
+  --color-surface-800: var(--surface-800);
+  --color-surface-900: var(--surface-900);
+  --color-surface-950: var(--surface-950);
+  --color-surface-black: var(--surface-black);
+
+  /* --- Brand palette aliases (geram bg-brand-sahara/10, text-brand-atmos, ...) --- */
+  --color-brand-atmos: var(--brand-atmos);
+  --color-brand-kobold: var(--brand-kobold);
+  --color-brand-bleu: var(--brand-bleu);
+  --color-brand-midori: var(--brand-midori);
+  --color-brand-sahara: var(--brand-sahara);
+  --color-brand-boreal: var(--brand-boreal);
+  --color-brand-cotta: var(--brand-cotta);
+  --color-brand-antar: var(--brand-antar);
+  --color-brand-azzay: var(--brand-azzay);
+  --color-brand-cloro: var(--brand-cloro);
+  --color-brand-arena: var(--brand-arena);
+  --color-brand-carota: var(--brand-carota);
+  --color-brand-khewra: var(--brand-khewra);
+  --color-brand-nubia: var(--brand-nubia);
+  --color-brand-calla: var(--brand-calla);
+
+  /* --- Typography scale (geram text-display, text-h2, text-lead, text-body...) --- */
+  --text-display: 2.5rem;
+  --text-display--line-height: 1.1;
+  --text-h2: 1.75rem;
+  --text-h2--line-height: 1.2;
+  /* H1 de página (22px). Mesmo valor de `--text-h3` — a hierarquia real do app é
+     display (40) > h2 (28) > h1/h3 (22) — mas com nome honesto: o título de
+     ~17 rotas é um H1 e não deve ser escrito como "h3". */
+  --text-h1: 1.375rem;
+  --text-h1--line-height: 1.3;
+  --text-h3: 1.375rem;
+  --text-h3--line-height: 1.3;
+  /* Subtítulo/linha de apoio de um bloco (19px) */
+  --text-lead: 1.1875rem;
+  --text-lead--line-height: 1.6;
+  /* Prosa corrida: parágrafos longos, descrições, corpo de documento (15px) */
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.75;
+  /* Legendas, códigos, metadados (12px — piso de legibilidade) */
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.4;
+
+  /* --- Véus (scrims) e superfícies elevadas --------------------------------
+   * Substituem as opacidades mágicas espalhadas pelos componentes. Sempre
+   * prefira estes tokens a `bg-black/NN` e `bg-white/[0.0N]`:
+   *
+   *   bg-black/40  → bg-scrim-soft      (véu leve: gradientes sobre imagem)
+   *   bg-black/60  → bg-scrim           (overlay padrão de drawer/sheet/dialog)
+   *   bg-black/70..90 → bg-scrim-strong (overlay opaco, modal bloqueante)
+   *   bg-white/[0.02..0.08] → bg-surface-raised-2 (elevação sutil/hover sobre o card)
+   *
+   * Para BORDAS não use opacidade crua: `border-border` (branco 10%),
+   * `border-surface-800` (sólida) ou `border-foreground/20` (realce). */
+  --color-scrim-soft: oklch(0 0 0 / 40%);
+  --color-scrim: oklch(0 0 0 / 60%);
+  --color-scrim-strong: oklch(0 0 0 / 80%);
+  --color-surface-raised-2: oklch(1 0 0 / 8%);
+
+  /* Vermelho destrutivo para TEXTO sobre o realce de menu (`--accent`, #303030).
+   * `--destructive` puro dá 3,74:1 ali, abaixo do 4,5:1 exigido para texto;
+   * esta variante clara dá 5,4:1. Use só no item destrutivo em foco/hover. */
+  --color-destructive-emphasis: var(--destructive-emphasis);
+
+  /* --- Shadows --- */
+  --shadow-popover: 0 4px 24px rgb(0 0 0 / 0.3);
+
   /* --- Typography (Figma font tokens) --- */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
@@ -73,6 +150,62 @@
   --radius-2xl: calc(var(--radius) + 16px);
   --radius-3xl: calc(var(--radius) + 24px);
   --radius-4xl: calc(var(--radius) + 40px);
+  /* Campos de formulário (input, select, textarea, upload) */
+  --radius-field: 0.75rem;
+  --radius-field-sm: 0.5rem;
+  /* Cards (14px) e prompts/pílulas de busca (28px) */
+  --radius-card: 0.875rem;
+  --radius-prompt: 1.75rem;
+  /* Camada interna de um card (borda de 1px + respiro): rounded-card-inner */
+  --radius-card-inner: 0.6875rem;
+}
+
+/* Scrollbar discreta (3px) para áreas roláveis internas: dialogs, listas, painéis. */
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--foreground) 20%, transparent) transparent;
+  &::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background: color-mix(in oklab, var(--foreground) 20%, transparent);
+  }
+}
+
+/* Overlay de ações revelado no hover do container `.group`.
+ *
+ * Substitui o par `opacity-0 group-hover:opacity-100`, que no toque deixa o
+ * controle INVISÍVEL mas ainda CLICÁVEL (não há hover em touch, então o botão
+ * fantasma continua interceptando o toque). Aqui a opacidade anda junto com
+ * `pointer-events`, o foco de teclado também revela o overlay e, em aparelhos
+ * sem hover, ele fica permanentemente visível.
+ *
+ * Uso: o container recebe `group`, o overlay recebe `action-overlay`.
+ *   <div class="group …"><div class="action-overlay …">…</div></div>
+ */
+@utility action-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms ease;
+
+  .group:hover &,
+  .group:focus-within &,
+  &:focus-within,
+  &:has(:focus-visible) {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Touch / caneta: sem hover, o overlay não pode ficar invisível e clicável. */
+  @media (hover: none) {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 /* ============================================================
@@ -100,9 +233,14 @@
   --accent: oklch(0.309 0 0);                 /* surface/800   #303030 */
   --accent-foreground: oklch(0.961 0 0);      /* surface/100   #F2F2F2 */
   --destructive: oklch(0.646 0.154 24.222);   /* brand/Khewra  #DC625E */
+  --destructive-emphasis: oklch(0.74 0.13 24.222); /* #F28882 — 5,4:1 sobre --accent */
   --border: oklch(1 0 0 / 10%);              /* surface/white @ 10% */
   --input: oklch(1 0 0 / 15%);               /* surface/white @ 15% */
-  --ring: oklch(0.482 0 0);                   /* surface/600   #5E5E5E */
+  --ring: oklch(0.795 0 0);                   /* surface/400   #C4C4C4 — >=3:1 em qualquer superfície */
+  /* Equivalente opaco do fundo de repouso dos inputs (`bg-input/30`, ou seja
+     branco a 15% x 30% sobre o --background). Usado no autofill do Chrome,
+     que so aceita cor solida via inset box-shadow. */
+  --input-autofill: color-mix(in srgb, oklch(1 0 0) 4.5%, var(--background));
 
   /* --- Chart (brand palette) --- */
   --chart-1: oklch(0.779 0.08 212.201);       /* brand/Atmos   #77C5D5 */
@@ -119,7 +257,7 @@
   --sidebar-accent: oklch(0.173 0 0);         /* surface/950   #101010 — hover visible against black */
   --sidebar-accent-foreground: oklch(0.961 0 0); /* surface/100 #F2F2F2 */
   --sidebar-border: transparent;              /* no visual separation */
-  --sidebar-ring: oklch(0.482 0 0);           /* surface/600   #5E5E5E */
+  --sidebar-ring: oklch(0.795 0 0);           /* surface/400   #C4C4C4 — >=3:1 (surface/600 ficava em ~2,9:1) */
 
   /* --- Extensions (brand semantic) --- */
   --success: oklch(0.585 0.145 144.414);      /* brand/Midori  #3A913F */
@@ -179,6 +317,70 @@
     color: var(--foreground);
   }
 
+  /* --- Acessibilidade: movimento reduzido --- */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    /* Indicadores de carregamento continuam animando: sem eles o usuário
+       não sabe que algo está acontecendo. */
+    .animate-spin,
+    .animate-pulse,
+    [role="status"] .animate-spin,
+    [role="status"] .animate-pulse {
+      animation-iteration-count: infinite !important;
+    }
+    .animate-spin,
+    [role="status"] .animate-spin {
+      animation-duration: 1s !important;
+    }
+    .animate-pulse,
+    [role="status"] .animate-pulse {
+      animation-duration: 2s !important;
+    }
+  }
+
+  /* --- Skip link: invisível até receber foco --- */
+  .skip-link {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .skip-link:focus,
+  .skip-link:focus-visible {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0.625rem 1rem;
+    overflow: visible;
+    clip: auto;
+    border-radius: 9999px;
+    background: var(--foreground);
+    color: var(--background);
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    text-decoration: none;
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
   /* --- Container utility --- */
   .container-content {
     width: 100%;
@@ -216,7 +418,10 @@
     color-scheme: dark;
   }
 
-  /* Remove autofill background tint via background-clip: text */
+  /* O Chrome pinta o fundo do autofill por cima do background do elemento e
+     ignora `background-color`. A unica forma de recuperar o fundo do campo e
+     cobri-lo com um inset box-shadow opaco — `background-clip: text` apagaria
+     tambem o fundo proprio do input, deixando o campo sem superficie. */
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
@@ -230,10 +435,28 @@
   select:-webkit-autofill:focus,
   select:-webkit-autofill:active {
     -webkit-text-fill-color: var(--foreground) !important;
-    -webkit-background-clip: text !important;
-    background-clip: text !important;
+    box-shadow: inset 0 0 0 1000px var(--input-autofill) !important;
     caret-color: var(--foreground);
   }
+}
+
+/* --- Acessibilidade: foco visível consistente ---
+   Fora de qualquer @layer de propósito: estilos sem layer vencem as
+   utilities `outline-none`/`outline-hidden`. Só se aplica a elementos
+   interativos que NÃO declaram ring próprio. Quem tem `focus-visible:ring-0`
+   (ring desligado explicitamente) volta a receber o outline. */
+:is(
+  a,
+  button,
+  [role="button"],
+  input,
+  textarea,
+  select,
+  [tabindex]:not([tabindex="-1"]),
+  [contenteditable="true"]
+):focus-visible:not([class*="focus-visible:ring-"]:not([class*="focus-visible:ring-0"])) {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
 }
 
 @keyframes banner-gradient {
@@ -271,3 +494,119 @@
   background-size: 300% 300%;
   animation: icon-gradient 6s ease infinite;
 }
+
+/* ─── Editor de páginas (Tiptap) ───────────────────────────
+   Espelha a tipografia do MarkdownRenderer para que o admin edite vendo
+   algo próximo do resultado final. Largura segue o container da página. */
+.doc-editor {
+  min-height: 60vh;
+  color: var(--muted-foreground);
+  font-size: var(--text-body);
+  line-height: var(--text-body--line-height);
+  text-wrap: pretty;
+}
+.doc-editor > * + * { margin-top: 1rem; }
+.doc-editor h1 {
+  font-family: var(--font-heading, inherit);
+  font-size: var(--text-display);
+  line-height: var(--text-display--line-height);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--foreground);
+  text-wrap: balance;
+}
+.doc-editor h2 {
+  margin-top: 3rem;
+  font-size: var(--text-h2);
+  line-height: var(--text-h2--line-height);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+  text-wrap: balance;
+}
+.doc-editor h2:first-child { margin-top: 0; }
+.doc-editor h3 {
+  margin-top: 2rem;
+  font-size: var(--text-h3);
+  line-height: var(--text-h3--line-height);
+  font-weight: 500;
+  color: var(--foreground);
+}
+.doc-editor h4 {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+.doc-editor strong { font-weight: 600; color: var(--foreground); }
+.doc-editor a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+.doc-editor blockquote {
+  border-left: 2px solid color-mix(in oklab, var(--primary) 50%, transparent);
+  padding-left: 1.5rem;
+  font-size: var(--text-lead);
+  line-height: var(--text-lead--line-height);
+  font-style: italic;
+  color: color-mix(in oklab, var(--foreground) 80%, transparent);
+}
+.doc-editor ul, .doc-editor ol { padding-left: 1.5rem; }
+.doc-editor ul { list-style: disc; }
+.doc-editor ol { list-style: decimal; }
+.doc-editor li + li { margin-top: 0.5rem; }
+.doc-editor li > p { margin: 0; }
+.doc-editor code {
+  border-radius: 0.25rem;
+  background: var(--muted);
+  padding: 0.125rem 0.375rem;
+  font-size: 0.875rem;
+  color: var(--foreground);
+}
+.doc-editor pre {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--muted);
+  padding: 1rem;
+  font-size: 0.875rem;
+}
+.doc-editor pre code { background: transparent; padding: 0; }
+.doc-editor hr { margin: 2rem 0; border: 0; border-top: 1px solid color-mix(in oklab, var(--border) 50%, transparent); }
+.doc-editor img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+.doc-editor img.ProseMirror-selectednode { outline: 2px solid var(--ring); outline-offset: 2px; }
+.doc-editor table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.doc-editor th, .doc-editor td {
+  border: 1px solid color-mix(in oklab, var(--border) 50%, transparent);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  min-width: 4rem;
+}
+.doc-editor th { background: color-mix(in oklab, var(--accent) 50%, transparent); font-weight: 600; color: var(--foreground); }
+.doc-editor th > p, .doc-editor td > p { margin: 0; }
+.doc-editor .selectedCell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: color-mix(in oklab, var(--primary) 12%, transparent);
+  pointer-events: none;
+}
+.doc-editor .selectedCell { position: relative; }
+.doc-editor p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  color: var(--muted-foreground);
+  opacity: 0.6;
+  pointer-events: none;
+}
+.doc-editor ::selection { background: var(--primary); color: var(--primary-foreground); }

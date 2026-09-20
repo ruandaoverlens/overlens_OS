@@ -7,9 +7,22 @@ export type UserRole = "gratuito" | "assinante" | "staff" | "admin";
 const ROUTE_ACCESS: Record<UserRole, string[]> = {
   gratuito: ["/docs", "/pacote", "/plataforma", "/website", "/ferramentas"],
   assinante: ["/docs", "/pacote", "/plataforma", "/website", "/ferramentas"],
-  staff: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium"],
-  admin: ["/docs", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/tru", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium", "/admin"],
+  // Staff tem o mesmo alcance de rotas do admin. O que separa os dois não é
+  // navegação, e sim duas ações: apagar membros e editar textos (ver
+  // `isAdmin` / `canDeleteMembers` / `canEditDocs`).
+  staff: ["/docs", "/business", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/tru", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium", "/admin"],
+  admin: ["/docs", "/business", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/tru", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium", "/admin"],
 };
+
+/** Equipe interna com poderes de gestão (tudo, exceto o que é só de admin). */
+export function isStaffOrAdmin(role: string | null | undefined): boolean {
+  return role === "staff" || role === "admin";
+}
+
+/** Ações exclusivas do admin: apagar membros e editar textos das páginas. */
+export function isAdmin(role: string | null | undefined): boolean {
+  return role === "admin";
+}
 
 // "/registros" (Registros) não é gateado por role, e sim por domínio
 // de e-mail: apenas a equipe interna (@overlens.com.br) pode acessar.

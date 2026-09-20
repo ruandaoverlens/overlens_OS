@@ -44,6 +44,7 @@ function resolveTRU(...subpath: string[]): string {
 const BRAND_SYSTEM_DIR = resolveTRU("brand_system");
 const ESTUDIO_DIR = resolveTRU("estudio_criativo");
 const GROWTH_DIR = resolveTRU("growth_system");
+const BUSINESS_DIR = resolveTRU("business_doc");
 const PACOTE_DIR = resolveTRU("pacote_cultural");
 const PLAYBOOK_CONTEUDO_DIR = resolveTRU("estudio_criativo", "03 - Playbook de Conteúdo");
 const PLAYBOOK_VIDEOS_DIR = resolveTRU("estudio_criativo", "04 - Playbook de Edição de Vídeos");
@@ -357,6 +358,36 @@ export function getFirstGrowthSegments(): string[] | null {
 
 export function getAllGrowthFlat(): DocFile[] {
   return flattenFiles(getGrowthSections());
+}
+
+// ─── Business Doc API ────────────────────────────────────
+
+let _businessCache: DocSection[] | null = null;
+
+export function getBusinessSections(): DocSection[] {
+  if (_businessCache) return _businessCache;
+  _businessCache = scanContentDir(BUSINESS_DIR);
+  return _businessCache;
+}
+
+export function getBusinessDocBySegments(
+  segments: string[]
+): { file: DocFile; section: DocSection; breadcrumbs: DocSection[] } | null {
+  return resolveSegments(getBusinessSections(), segments);
+}
+
+export function getAllBusinessSegments(): string[][] {
+  return flattenSegments(getBusinessSections());
+}
+
+export function getFirstBusinessSegments(): string[] | null {
+  const sections = getBusinessSections();
+  if (sections.length === 0 || sections[0].files.length === 0) return null;
+  return sections[0].files[0].segments;
+}
+
+export function getAllBusinessFlat(): DocFile[] {
+  return flattenFiles(getBusinessSections());
 }
 
 // ─── Pacote Cultural API ─────────────────────────────────

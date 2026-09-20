@@ -36,7 +36,7 @@ export const myceliumReferenceConfig: AssetUploadConfig = {
       label: "URL",
       type: "text",
       required: false,
-      placeholder: "https://...",
+      placeholder: "https://…",
       helperText: "Link primário da referência (artigo, vídeo, post, etc).",
     },
     {
@@ -44,7 +44,7 @@ export const myceliumReferenceConfig: AssetUploadConfig = {
       label: "Tags",
       type: "tags",
       required: false,
-      placeholder: "Ex: design, filosofia, ferramenta, inspiração...",
+      placeholder: "Ex: design, filosofia, ferramenta, inspiração…",
     },
   ],
 };

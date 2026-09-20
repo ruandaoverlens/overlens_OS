@@ -2,14 +2,14 @@
 
 import * as React from "react"
 import { useChat } from "ai/react"
-import { toast } from "sonner"
+import { notify } from "@/lib/notifications/toast"
 import { cn } from "@/lib/utils"
 import type { ModelId } from "@/lib/ai/models"
 import type { ChatAttachment, UIMessage } from "@/lib/ai/types"
 import { classifyClientError, type ChatErrorInfo } from "@/lib/ai/chat-errors"
 import { PromptArea, type PromptSubmitPayload } from "@/components/prompt-area"
 import { MessageList } from "./message-list"
-import { EmptyState } from "./empty-state"
+import { ChatWelcome } from "./chat-welcome"
 import type { AssistantSource } from "./assistant-message"
 import { useCitableSections } from "./citable-sections-provider"
 
@@ -26,6 +26,8 @@ type ChatExperienceProps = {
   initialMessages: UIMessage[]
   initialCitedSegments?: string[] | null
   initialMeta?: Record<string, ChatMessageMeta>
+  /** Título da conversa — vira o h1 (sr-only) da rota. */
+  title?: string | null
   className?: string
 }
 
@@ -63,8 +65,10 @@ export function ChatExperience({
   initialMessages,
   initialCitedSegments,
   initialMeta,
+  title,
   className,
 }: ChatExperienceProps) {
+  const pageTitle = title?.trim() || "Conversa"
   const { citableSections, basePath } = useCitableSections()
 
   const {
@@ -98,7 +102,7 @@ export function ChatExperience({
 
   React.useEffect(() => {
     if (!errorInfo) return
-    toast.error(errorInfo.message)
+    notify.error(errorInfo.message)
   }, [errorInfo])
 
   // Auto-trigger assistant response when initial messages end in a user turn
@@ -142,7 +146,7 @@ export function ChatExperience({
         )
       } catch (err) {
         console.error("Falha ao processar anexos:", err)
-        toast.error("Não foi possível processar os anexos.")
+        notify.error("Não foi possível processar os anexos.")
         return
       }
     }
@@ -203,6 +207,7 @@ export function ChatExperience({
       onSubmit={handleSubmit}
       loading={isLoading}
       autoFocus
+      focusShortcut
     />
   )
 
@@ -212,9 +217,10 @@ export function ChatExperience({
         data-slot="chat-experience"
         className={cn("flex h-full min-h-0 w-full flex-col", className)}
       >
+        <h1 className="sr-only">{pageTitle}</h1>
         <div className="flex flex-1 items-center justify-center px-4 pb-40">
           <div className="w-full max-w-[780px]">
-            <EmptyState />
+            <ChatWelcome as="h2" />
             <div className="mt-9">{promptArea}</div>
           </div>
         </div>
@@ -227,6 +233,7 @@ export function ChatExperience({
       data-slot="chat-experience"
       className={cn("flex h-full min-h-0 w-full flex-col", className)}
     >
+      <h1 className="sr-only">{pageTitle}</h1>
       <div className="flex min-h-0 flex-1 flex-col">
         <MessageList
           messages={messages as UIMessage[]}

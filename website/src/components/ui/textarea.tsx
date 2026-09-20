@@ -8,22 +8,22 @@ import { cn } from "@/lib/utils"
 const textareaVariants = cva(
   [
     "placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground",
-    "bg-accent/50 dark:bg-input/30",
+    "bg-input/30",
     "w-full field-sizing-content font-normal font-body shadow-none border-2 border-transparent",
     "transition-[color,border-color,background-color] outline-none resize-none",
-    "hover:bg-accent dark:hover:bg-input/50",
-    "focus-visible:border-input focus-visible:bg-transparent dark:focus-visible:bg-transparent",
+    "hover:bg-input/50",
+    "focus-visible:border-foreground/60 focus-visible:ring-2 focus-visible:ring-foreground/70 focus-visible:bg-transparent",
     "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
-    "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:ring-2 aria-invalid:ring-destructive",
-    "autofill:shadow-[inset_0_0_0px_1000px_oklch(0.21_0_0)] autofill:[-webkit-text-fill-color:var(--color-foreground)]",
-    "[&::-webkit-scrollbar]:w-2.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-muted-foreground/30 [&::-webkit-scrollbar-thumb]:border-[4px] [&::-webkit-scrollbar-thumb]:border-transparent [&::-webkit-scrollbar-thumb]:bg-clip-content [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-track]:mt-1 [&::-webkit-scrollbar-track]:mb-5",
+    "aria-invalid:ring-destructive/40 aria-invalid:ring-2 aria-invalid:ring-destructive aria-invalid:focus-visible:ring-destructive/60",
+    "autofill:shadow-[inset_0_0_0px_1000px_var(--input-autofill)] autofill:[-webkit-text-fill-color:var(--color-foreground)]",
+    "scrollbar-thin",
   ].join(" "),
   {
     variants: {
       size: {
-        lg: "min-h-[120px] rounded-[12px] px-4 pt-3 pb-5 text-base",
-        default: "min-h-[100px] rounded-[12px] px-4 pt-3 pb-4 text-base",
-        sm: "min-h-[80px] rounded-[12px] px-4 pt-2.5 pb-3 text-sm",
+        lg: "min-h-30 rounded-field px-4 pt-3 pb-5 text-base",
+        default: "min-h-25 rounded-field px-4 pt-3 pb-4 text-base",
+        sm: "min-h-20 rounded-field px-4 pt-2.5 pb-3 text-sm",
       },
     },
     defaultVariants: {
@@ -84,7 +84,7 @@ function Textarea({
         onPointerDown={handlePointerDown}
         className="cursor-ns-resize [grid-area:1/1] z-10 self-end justify-self-end mr-2 mb-1.5 size-4 flex items-center justify-center"
       >
-        <span className="h-3 w-[2px] origin-bottom-right rotate-45 rounded-full bg-muted-foreground/40" />
+        <span className="h-3 w-0.5 origin-bottom-right rotate-45 rounded-full bg-muted-foreground/40" />
       </span>
     </div>
   )

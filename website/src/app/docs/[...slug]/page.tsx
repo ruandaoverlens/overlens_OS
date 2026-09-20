@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
   getDocBySegments,
@@ -5,10 +6,22 @@ import {
   getAllDocsFlat,
 } from "@/lib/docs";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
+import { DocPageView } from "@/components/doc-page-view";
+import { resolveDocContent, docPathKey } from "@/lib/doc-overrides";
 import { DocPagination } from "@/components/doc-pagination";
 
 export function generateStaticParams() {
   return getAllDocSegments().map((segments) => ({ slug: segments }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string[] }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const result = getDocBySegments(slug);
+  return { title: result ? result.file.title : "Não encontrado" };
 }
 
 export default async function DocPage({
@@ -22,6 +35,7 @@ export default async function DocPage({
   if (!result) notFound();
 
   const { file } = result;
+  const { content, override } = await resolveDocContent("docs", file);
 
   // prev / next
   const flat = getAllDocsFlat();
@@ -33,7 +47,14 @@ export default async function DocPage({
 
   return (
     <div className="mx-auto max-w-4xl px-6 pt-4 pb-8 md:px-8 md:pt-5 md:pb-10">
-      <MarkdownRenderer content={file.content} title={file.title} />
+      <DocPageView
+        system="docs"
+        path={docPathKey(file.segments)}
+        markdown={content}
+        hasOverride={!!override}
+      >
+        <MarkdownRenderer content={content} title={file.title} />
+      </DocPageView>
       <DocPagination prev={prev} next={next} />
     </div>
   );

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { isStaffOrAdmin } from "@/lib/route-access";
 import type { MyceliumType } from "@/lib/mycelium-types";
 
 const VALID_TYPES: ReadonlySet<MyceliumType> = new Set([
@@ -43,7 +44,7 @@ async function requireAdmin(supabase: Awaited<ReturnType<typeof createClient>>) 
     .select("role")
     .eq("id", user.id)
     .single();
-  if (!profile || profile.role !== "admin") {
+  if (!profile || !isStaffOrAdmin(profile.role)) {
     return { error: "Sem permissão", status: 403 as const };
   }
   return { user, role: "admin" as const };

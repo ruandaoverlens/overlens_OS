@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
+import { PageHeader } from "@/components/page-header";
 import {
   AlertasPageClient,
   type AlertaComContexto,
@@ -6,6 +8,8 @@ import {
 import type { AlertaRow, ProcessoRow, MarcaRow } from "@/lib/registros/types";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = { title: "Alertas" };
 
 const STATUS_ORDER: Record<string, number> = {
   pendente: 0,
@@ -41,13 +45,10 @@ export default async function AlertasPage() {
 
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-6 p-6">
-      <div>
-        <h1 className="text-2xl font-heading uppercase tracking-wide">Alertas</h1>
-        <p className="text-sm text-muted-foreground">
-          Prazos de renovação, exigências e oposições. O sistema espelha o controle;
-          a responsabilidade formal permanece com o escritório de PI.
-        </p>
-      </div>
+      <PageHeader
+        title="Alertas"
+        description="Prazos de renovação, exigências e oposições. O sistema espelha o controle; a responsabilidade formal permanece com o escritório de PI."
+      />
       <AlertasPageClient alertas={alertas} />
     </div>
   );

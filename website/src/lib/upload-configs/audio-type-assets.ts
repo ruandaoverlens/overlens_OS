@@ -91,7 +91,7 @@ export const audioTypeAssetConfigs: AssetUploadConfig[] = [
         label: "Tags",
         type: "tags",
         required: false,
-        placeholder: "Ex: instrumental, piano, ambiente, tech...",
+        placeholder: "Ex: instrumental, piano, ambiente, tech…",
       },
       {
         name: "notas",
@@ -167,14 +167,14 @@ export const audioTypeAssetConfigs: AssetUploadConfig[] = [
         label: "Uso Recomendado",
         type: "text",
         required: false,
-        placeholder: "Ex: títulos H1-H3, corpo de texto, UI...",
+        placeholder: "Ex: títulos H1-H3, corpo de texto, UI…",
       },
       {
         name: "tags",
         label: "Tags",
         type: "tags",
         required: false,
-        placeholder: "Ex: sans-serif, geométrica, moderna...",
+        placeholder: "Ex: sans-serif, geométrica, moderna…",
       },
       {
         name: "notas",

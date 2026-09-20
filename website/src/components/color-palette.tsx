@@ -98,7 +98,7 @@ function ColorValue({ label, value }: { label: string; value: string }) {
         setCopied(true)
         setTimeout(() => setCopied(false), 1500)
       }}
-      className="flex w-full items-center justify-between rounded-md bg-accent/30 px-2.5 py-1.5 text-xs transition-colors hover:bg-accent/50 cursor-copy"
+      className="flex w-full items-center justify-between rounded-md bg-accent/30 px-2.5 py-1.5 text-xs outline-none transition-colors hover:bg-accent/50 focus-visible:ring-2 focus-visible:ring-foreground cursor-copy"
     >
       <span className="text-muted-foreground">{label}</span>
       <span className="font-mono text-foreground">

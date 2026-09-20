@@ -23,23 +23,25 @@ function RadioGroup({
 const radioItemVariants = cva(
   [
     "peer shrink-0 aspect-square rounded-full border-2 transition-all outline-none",
+    /* Hit-area (>=40px) via pseudo-elemento */
+    "relative after:absolute after:content-['']",
     /* Default border */
     "border-foreground",
     /* Hover - border goes to primary (white in dark) */
     "hover:border-primary",
     /* Focus ring */
-    "focus-visible:ring-2 focus-visible:ring-primary",
+    "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
     /* Disabled */
     "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-20",
     /* A11y */
-    "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+    "aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   ].join(" "),
   {
     variants: {
       size: {
-        default: "size-6",
-        sm: "size-5",
-        lg: "size-8",
+        default: "size-6 after:-inset-2",
+        sm: "size-5 after:-inset-2.5",
+        lg: "size-8 after:-inset-1",
       },
     },
     defaultVariants: {
@@ -54,7 +56,12 @@ const dotSizeMap: Record<string, string> = {
   lg: "size-5",
 }
 
-/** Individual radio option within a RadioGroup. Supports multiple sizes. */
+/**
+ * Individual radio option within a RadioGroup. Supports multiple sizes.
+ *
+ * A11y: o alvo visual é menor que 40px, mas um pseudo-elemento `after` expande a área clicável
+ * para pelo menos 40x40px em todos os tamanhos.
+ */
 function RadioGroupItem({
   className,
   size = "default",

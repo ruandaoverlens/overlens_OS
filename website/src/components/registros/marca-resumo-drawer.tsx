@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { EmptyState } from "@/components/empty-state";
+import { HeadingTitle, headingTitleVariants } from "@/components/ui/heading";
 import {
   PROCESSO_STATUS_LABEL,
   PROCESSO_STATUS_VARIANT,
@@ -42,9 +44,10 @@ export function MarcaResumoDrawer({ marca, processos, children }: MarcaResumoDra
   return (
     <Drawer direction="right">
       <DrawerTrigger asChild>{children}</DrawerTrigger>
-      <DrawerContent className="bg-[var(--surface-950)] border-l border-[var(--surface-800)]">
-        <DrawerHeader>
-          <DrawerTitle className="font-heading text-xl uppercase tracking-wide">
+      <DrawerContent className="border-l border-surface-800 bg-surface-950">
+        <DrawerHeader className="pr-12">
+          {/* Mesma escala do design system (HeadingTitle size="sm"), sem duplicar as classes. */}
+          <DrawerTitle className={headingTitleVariants({ size: "sm" })}>
             {marca.nome}
           </DrawerTitle>
           <DrawerDescription>{marca.titular}</DrawerDescription>
@@ -52,24 +55,33 @@ export function MarcaResumoDrawer({ marca, processos, children }: MarcaResumoDra
 
         <div className="flex flex-1 flex-col gap-5 overflow-y-auto px-4">
           <div className="flex flex-col gap-0.5">
-            <span className="text-xs uppercase tracking-wide text-muted-foreground">
+            <HeadingTitle as="h3" size="eyebrow">
               Apresentação
-            </span>
+            </HeadingTitle>
             <span className="text-sm capitalize">{marca.apresentacao}</span>
           </div>
 
           <div className="flex flex-col gap-2">
-            <span className="text-xs uppercase tracking-wide text-muted-foreground">
+            <HeadingTitle as="h3" size="eyebrow">
               Processos ({processos.length})
-            </span>
+            </HeadingTitle>
             {processos.length === 0 ? (
-              <p className="text-sm text-muted-foreground">Nenhum processo cadastrado.</p>
+              <EmptyState
+                size="sm"
+                title="Nenhum processo cadastrado"
+                description="Cadastre o processo junto ao INPI na página da marca."
+                action={
+                  <Button asChild variant="outline" size="sm">
+                    <Link href={`/registros/marcas/${marca.id}`}>Abrir marca</Link>
+                  </Button>
+                }
+              />
             ) : (
               <div className="flex flex-col gap-2">
                 {processos.map((p) => (
                   <div
                     key={p.id}
-                    className="flex items-center justify-between gap-2 rounded-md border border-[var(--surface-800)] px-3 py-2"
+                    className="flex items-center justify-between gap-2 rounded-md border border-surface-800 px-3 py-2"
                   >
                     <div className="flex min-w-0 flex-col gap-0.5">
                       <span className="font-mono text-xs">{p.numero}</span>
@@ -91,9 +103,9 @@ export function MarcaResumoDrawer({ marca, processos, children }: MarcaResumoDra
 
           {marca.observacoes && (
             <div className="flex flex-col gap-0.5">
-              <span className="text-xs uppercase tracking-wide text-muted-foreground">
+              <HeadingTitle as="h3" size="eyebrow">
                 Observações
-              </span>
+              </HeadingTitle>
               <span className="text-sm whitespace-pre-wrap text-muted-foreground">
                 {marca.observacoes}
               </span>

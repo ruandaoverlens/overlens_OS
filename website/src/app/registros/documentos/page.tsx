@@ -1,4 +1,8 @@
+import { Suspense } from "react";
+import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
+import { ListSkeleton } from "@/components/skeletons";
+import { PageHeader } from "@/components/page-header";
 import {
   DocumentosPageClient,
   type DocumentoComMarca,
@@ -6,6 +10,8 @@ import {
 import type { DocumentoRow, MarcaRow } from "@/lib/registros/types";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = { title: "Documentos" };
 
 export default async function DocumentosPage() {
   const supabase = await createClient();
@@ -25,13 +31,14 @@ export default async function DocumentosPage() {
 
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-6 p-6">
-      <div>
-        <h1 className="text-2xl font-heading uppercase tracking-wide">Documentos</h1>
-        <p className="text-sm text-muted-foreground">
-          Certificados, protocolos, despachos e demais documentos jurídicos das marcas.
-        </p>
-      </div>
-      <DocumentosPageClient documentos={documentos} marcas={marcas} />
+      <PageHeader
+        title="Documentos"
+        description="Certificados, protocolos, despachos e demais documentos jurídicos das marcas."
+      />
+      {/* useUrlState (useSearchParams) exige Suspense no App Router. */}
+      <Suspense fallback={<ListSkeleton rows={4} />}>
+        <DocumentosPageClient documentos={documentos} marcas={marcas} />
+      </Suspense>
     </div>
   );
 }

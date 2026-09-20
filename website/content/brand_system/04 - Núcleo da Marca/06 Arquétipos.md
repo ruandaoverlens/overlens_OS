@@ -1,11 +1,11 @@
 ---
 title: Arquétipos
-summary: Define a tríade arquetípica da Overlens — Mago (primário, transformação com método), Criador (secundário, forma e realização) e Sábio (terciário, ética e explicabilidade) — com guardrails para evitar charlatanismo e limites inegociáveis.
-topics: [arquétipos, Mago, Criador, Sábio, narrativa simbólica, guardrails éticos]
-keywords: [Mago, Criador, Sábio, Prometheus, Ironman, cientista, sábio-trickster, anti-herói, assombro sem truque, microdoses de caos, replicabilidade, deepfake, Marcel Duchamp, Fountain, faísca, brasa, fogueira, prisma, micélio, Bauhaus, Media Lab, Gestalt]
+summary: Define a tríade arquetípica da Overlens — Mago (primário, transformação com método), Criador (secundário, forma e realização) e Sábio (terciário, ética e explicabilidade) — aplicada à formação de Empreendedores Nexialistas, com guardrails para evitar charlatanismo e limites inegociáveis.
+topics: [arquétipos, Mago, Criador, Sábio, narrativa simbólica, guardrails éticos, empreendedores nexialistas]
+keywords: [Mago, Criador, Sábio, Prometheus, Empreendedor Nexialista, Ironman, cientista, sábio-trickster, anti-herói, assombro sem truque, microdoses de caos, replicabilidade, deepfake, Marcel Duchamp, Fountain, faísca, brasa, fogueira, prisma, micélio, Bauhaus, Media Lab, Gestalt]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre os arquétipos da marca, sobre o papel de Mago/Criador/Sábio, quando precisar decidir o tom arquetípico de uma campanha, ou quando estiver verificando se uma peça respeita os guardrails (sem charlatanismo, sem deepfake, sem promessas irreais).
+  Use quando o usuário perguntar sobre os arquétipos da marca, sobre o papel de Mago/Criador/Sábio, quando precisar decidir o tom arquetípico de uma campanha ou de uma peça dirigida a Empreendedores Nexialistas, ou quando estiver verificando se uma peça respeita os guardrails (sem charlatanismo, sem deepfake, sem promessas irreais).
 related: ["brand_system/04 - Núcleo da Marca/05 Virtudes.md", "brand_system/04 - Núcleo da Marca/04 Storybrand.md", "brand_system/04 - Núcleo da Marca/07 Proxies.md"]
 ---
 
@@ -54,18 +54,18 @@ Sprints de produto e vendas enterprise → **Criador ► Mago** (mesmo núcleo, 
 
 ## Como chegamos nessa resposta?
 
-A Overlens foi criada para **designers, artistas e pessoas criativas**, diante das **mudanças tecnológicas**, o **futuro da criação** com IAs generativas e a mudança na relevância do trabalho. Nós prometemos transformá-los em **nexialistas**, capazes de conectar diversas áreas para chegar em soluções inovadoras, PRINCIPALMENTE para REALIZAR suas IDEIAS. Tornamo-os mais autônomos e preparados para o que está por vir, para que juntos possamos criar futuros melhores para a humanidade.
+A Overlens foi criada para **quem quer construir**: criadores, sonhadores, engenheiros, designers, artistas e arquitetos, diante das **mudanças tecnológicas**, o **futuro da criação** com IAs generativas e a mudança na relevância do trabalho. A origem não define ninguém aqui; o que define é o que a pessoa faz com a própria ideia. Nós prometemos transformá-los em **Empreendedores Nexialistas**, capazes de conectar diversas áreas para chegar em soluções inovadoras, PRINCIPALMENTE para REALIZAR suas IDEIAS. Tornamo-os mais autônomos e preparados para o que está por vir, para que juntos possamos criar futuros melhores para a humanidade.
 
-A Overlens **empodera criativos a se tornarem “nexialistas”** (conectores de múltiplas áreas) para **realizar ideias com autonomia** no novo contexto de IA generativa, reduzindo a ansiedade sobre relevância futura. 
+A Overlens **prepara pessoas para se tornarem Empreendedores Nexialistas** (construtores que conectam múltiplas áreas) para **transformar ideias em negócios com autonomia** no novo contexto de IA generativa, reduzindo a ansiedade sobre relevância futura. 
 
-**O futuro não é um destino, é um projeto.** A melhor maneira de prever o futuro é criando. **Designers são profetas**. A Overlens nasceu da ideia de que, aquelas pessoas capazes de colocar diversas lentes e enxergar perspectivas diferentes, aliadas ao poder da criação, são capazes de moldar o destino. **Existimos para dar o poder da criação para as pessoas, como Prometeus**. Nos recusamos a deixar a passividade levar o mundo para uma direção ruim. Nos recusamos a ver ideias ruins se proliferarem enquanto ideias boas ficam guardadas na gaveta. Nos recusamos a enxergar o futuro trágico que podemos viver e ficar parados. Nossos valores inegociáveis são o JULGAMENTO (Ethos), a REALIZAÇÃO, LIBERDADE/AUTONOMIA, RESPONSABILIDADE, SIMPLICIDADE (Gestalt/Heurísticas), MAESTRIA, COMUNICAÇÃO, CURIOSIDADE, INOVAÇÃO, COLABORAÇÃO, HONESTIDADE e, para conseguirmos manter tudo isso, CORAGEM.
+**O futuro não é um destino, é um projeto.** A melhor maneira de prever o futuro é construindo. **Quem constrói, profetiza**; não porque adivinha o que vem depois, mas porque decide o que vai existir. A profecia aqui não é dom nem cargo: é consequência de quem assume a própria ideia. A Overlens nasceu da ideia de que aquelas pessoas capazes de colocar diversas lentes e enxergar perspectivas diferentes, aliadas ao poder da criação, são capazes de moldar o destino. **Existimos para dar o poder da criação para as pessoas, como Prometeus**. Nos recusamos a deixar a passividade levar o mundo para uma direção ruim. Nos recusamos a ver ideias ruins se proliferarem enquanto ideias boas ficam guardadas na gaveta. Nos recusamos a enxergar o futuro trágico que podemos viver e ficar parados. Nossos valores inegociáveis são o JULGAMENTO (Ethos), a REALIZAÇÃO, LIBERDADE/AUTONOMIA, RESPONSABILIDADE, SIMPLICIDADE (Gestalt/Heurísticas), MAESTRIA, COMUNICAÇÃO, CURIOSIDADE, INOVAÇÃO, COLABORAÇÃO, HONESTIDADE e, para conseguirmos manter tudo isso, CORAGEM.
 
 ## Limites que não cruzamos
 
 * Nada de deepfakes enganosos ou manipulação de métricas.  
 * Sem coleta de dados sem consentimento explícito.  
 * Não vendemos promessas irreais (“faça X em 1 clique”).  
-* Não infantilizamos o criativo nem fazemos gaslighting.  
+* Não infantilizamos quem constrói nem fazemos gaslighting.  
 * Transparência sobre limitações da IA e trade-offs.  
 * Nada de marketing barato ou “mentirinhas inocentes” (ex.: “vagas limitadas” falsas).
 
@@ -79,7 +79,7 @@ Paleta: base preto/branco (Gestalt); acentos azul gelo/céu (amplitude e frieza 
 
 Formas & composição: grid claro, diagonais de avanço, redes orgânicas suaves, vazios generosos; tipografia neo-grotesca com cortes mono nas camadas técnicas; ruído controlado (micro-glitches, discretos) para sinalizar anti-conformismo. Evitar: vidro/gel excessivo, skeumorfismo pesado, “efeito hacker” exagerado.
 
-Ritmo verbal & tom: convocatório + provocativo + ironia leve (“imagine”, “experimente”, “publique”, “e se…?”), frases curtas, contrastes (visão × execução; ordem × caos), afeto crítico. Evitar: hype/FOMO, promessas 1-clique, “hustle porn”, “acenda/forje/destrave”.
+Ritmo verbal & tom: convocatório + provocativo + ironia leve (“imagine”, “experimente”, “construa”, “publique”, “e se…?”), frases curtas, contrastes (visão × execução; ordem × caos), afeto crítico. Evitar: hype/FOMO, promessas 1-clique, “hustle porn”, “acenda/forje/destrave”.
 
 Referências culturais: Prometeu (dom do fazer), Trickster/anti-herói (subversão criativa), Bauhaus (ofício+função), Media Lab (interdisciplinaridade), Gestalt (clareza), sci-fi (de Museu de Profecias a Galeria de Futuros). Evitar: gurus de growth, tecnognose salvacionista, distopia cyberpunk como estética dominante, “artesão digital” como rótulo.
 

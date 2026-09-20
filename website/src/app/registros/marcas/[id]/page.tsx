@@ -1,10 +1,14 @@
-import Link from "next/link";
+import { cache } from "react";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { SmArrowBackLineIcon } from "@/components/icons";
+import { PageHeader } from "@/components/page-header";
+import { EmptyState } from "@/components/empty-state";
+import { HeadingTitle } from "@/components/ui/heading";
 import { MarcaDialog } from "@/components/registros/marca-dialog";
+import { JornadaNovaDialog } from "@/components/registros/jornada-nova-dialog";
 import { ProcessoDialog } from "@/components/registros/processo-dialog";
 import { EventoDialog } from "@/components/registros/evento-dialog";
 import { DocumentoUploadDialog } from "@/components/registros/documento-upload-dialog";
@@ -24,6 +28,27 @@ import type {
 
 export const dynamic = "force-dynamic";
 
+// Deduplicado por request: generateMetadata e a página usam a mesma consulta.
+const getMarca = cache(async (id: string) => {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("registro_marcas")
+    .select("*")
+    .eq("id", id)
+    .single();
+  return data;
+});
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const marca = await getMarca(id);
+  return { title: marca ? (marca as MarcaRow).nome : "Não encontrado" };
+}
+
 export default async function MarcaDetalhePage({
   params,
 }: {
@@ -32,11 +57,7 @@ export default async function MarcaDetalhePage({
   const { id } = await params;
   const supabase = await createClient();
 
-  const { data: marcaData } = await supabase
-    .from("registro_marcas")
-    .select("*")
-    .eq("id", id)
-    .single();
+  const marcaData = await getMarca(id);
 
   if (!marcaData) notFound();
   const marca = marcaData as MarcaRow;
@@ -75,38 +96,40 @@ export default async function MarcaDetalhePage({
 
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-6 p-6">
-      <Link
-        href="/registros/marcas"
-        className="flex w-fit items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
-      >
-        <SmArrowBackLineIcon />
-        Marcas
-      </Link>
-
       {/* Cabeçalho + dados da marca */}
-      <div className="flex items-start justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-heading uppercase tracking-wide">{marca.nome}</h1>
-          <p className="text-sm text-muted-foreground">{marca.titular}</p>
-        </div>
-        <MarcaDialog marca={marca} />
-      </div>
+      <PageHeader
+        title={marca.nome}
+        description={marca.titular}
+        backHref="/registros/marcas"
+        backLabel="Marcas"
+        actions={
+          <>
+            <JornadaNovaDialog
+              defaultNome={marca.nome}
+              defaultTitular={marca.titular}
+              triggerLabel="Iniciar registro"
+              triggerVariant="outline"
+            />
+            <MarcaDialog marca={marca} />
+          </>
+        }
+      />
 
       <Card>
         <CardContent className="flex flex-col gap-3">
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="flex flex-col gap-0.5">
-              <span className="text-xs uppercase tracking-wide text-muted-foreground">Titular</span>
+              <HeadingTitle as="h3" size="eyebrow">Titular</HeadingTitle>
               <span className="text-sm">{marca.titular}</span>
             </div>
             <div className="flex flex-col gap-0.5">
-              <span className="text-xs uppercase tracking-wide text-muted-foreground">Apresentação</span>
+              <HeadingTitle as="h3" size="eyebrow">Apresentação</HeadingTitle>
               <span className="text-sm">{marca.apresentacao}</span>
             </div>
           </div>
           {marca.observacoes && (
             <div className="flex flex-col gap-0.5">
-              <span className="text-xs uppercase tracking-wide text-muted-foreground">Observações</span>
+              <HeadingTitle as="h3" size="eyebrow">Observações</HeadingTitle>
               <span className="text-sm whitespace-pre-wrap">{marca.observacoes}</span>
             </div>
           )}
@@ -116,11 +139,18 @@ export default async function MarcaDetalhePage({
       {/* Processos / classes */}
       <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-heading uppercase tracking-wide">Processos e classes</h2>
+          <HeadingTitle as="h2" size="sm">
+            Processos e classes
+          </HeadingTitle>
           <ProcessoDialog marcaId={marca.id} />
         </div>
         {processos.length === 0 ? (
-          <p className="text-sm text-muted-foreground">Nenhum processo cadastrado ainda.</p>
+          <EmptyState
+            size="sm"
+            title="Nenhum processo cadastrado ainda"
+            description="Registre o número, a classe e o status do processo junto ao INPI."
+            action={<ProcessoDialog marcaId={marca.id} />}
+          />
         ) : (
           <div className="flex flex-col gap-3">
             {processos.map((p) => (
@@ -166,12 +196,14 @@ export default async function MarcaDetalhePage({
       {/* Timeline agregada */}
       <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-heading uppercase tracking-wide">Timeline</h2>
+          <HeadingTitle as="h2" size="sm">
+            Timeline
+          </HeadingTitle>
           <EventoDialog processos={processoOptions} />
         </div>
         <Card>
           <CardContent>
-            <Timeline eventos={eventos} />
+            <Timeline eventos={eventos} processos={processoOptions} />
           </CardContent>
         </Card>
       </div>
@@ -179,7 +211,9 @@ export default async function MarcaDetalhePage({
       {/* Documentos da marca */}
       <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-heading uppercase tracking-wide">Documentos</h2>
+          <HeadingTitle as="h2" size="sm">
+            Documentos
+          </HeadingTitle>
           <DocumentoUploadDialog
             marcas={[{ id: marca.id, nome: marca.nome }]}
             fixedMarcaId={marca.id}
@@ -187,7 +221,18 @@ export default async function MarcaDetalhePage({
           />
         </div>
         {documentos.length === 0 ? (
-          <p className="text-sm text-muted-foreground">Nenhum documento enviado ainda.</p>
+          <EmptyState
+            size="sm"
+            title="Nenhum documento enviado ainda"
+            description="Certificados, protocolos e despachos desta marca ficam aqui."
+            action={
+              <DocumentoUploadDialog
+                marcas={[{ id: marca.id, nome: marca.nome }]}
+                fixedMarcaId={marca.id}
+                processos={processoOptions}
+              />
+            }
+          />
         ) : (
           <div className="flex flex-col gap-2">
             {documentos.map((doc) => (

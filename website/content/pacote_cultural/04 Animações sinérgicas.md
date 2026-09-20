@@ -64,7 +64,7 @@ Arcane demonstra o que acontece quando world building é levado a sério como di
 <img src="/brand/images/cover-ghost-shell.jpg" alt="Ghost in the Shell" style="width:200px; border-radius:8px" />
 <div>
 
-O filme de Mamoru Oshii é um divisor de águas na história da animação e da ficção científica. A pergunta central de Ghost in the Shell permanece sem resposta satisfatória três décadas depois: onde termina o humano e começa a máquina? A Major Kusanagi não é apenas uma personagem. Ela é uma investigação em movimento sobre identidade, consciência e os limites do corpo como definição do eu. Para a Overlens, essa obra reforça um princípio fundamental: a tecnologia não é ferramenta neutra. Ela reconfigura quem somos. Criadores que ignoram essa dimensão produzem objetos. Criadores que a compreendem projetam futuros.
+O filme de Mamoru Oshii é um divisor de águas na história da animação e da ficção científica. A pergunta central de Ghost in the Shell permanece sem resposta satisfatória três décadas depois: onde termina o humano e começa a máquina? A Major Kusanagi não é apenas uma personagem. Ela é uma investigação em movimento sobre identidade, consciência e os limites do corpo como definição do eu. Para a Overlens, essa obra reforça um princípio fundamental: a tecnologia não é ferramenta neutra. Ela reconfigura quem somos. Quem ignora essa dimensão produz objetos. Quem a compreende projeta futuros.
 
 [Disponível em plataformas de aluguel digital](https://www.primevideo.com)
 

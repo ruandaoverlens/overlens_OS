@@ -32,7 +32,7 @@ function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
   return (
     <thead
       data-slot="table-header"
-      className={cn("[&_tr]:border-b [&_tr>th:first-child]:rounded-l-[6px] [&_tr>th:last-child]:rounded-r-[6px]", className)}
+      className={cn("[&_tr]:border-b [&_tr>th:first-child]:rounded-l-md [&_tr>th:last-child]:rounded-r-md", className)}
       {...props}
     />
   )
@@ -69,7 +69,7 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
     <tr
       data-slot="table-row"
       className={cn(
-        "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors hover:border-transparent [&>td]:transition-colors [&:hover>td:first-child]:rounded-l-[6px] [&:hover>td:last-child]:rounded-r-[6px] [&[data-state=selected]>td:first-child]:rounded-l-[6px] [&[data-state=selected]>td:last-child]:rounded-r-[6px] [&:has(+:hover)]:border-transparent",
+        "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors hover:border-transparent [&>td]:transition-colors [&:hover>td:first-child]:rounded-l-md [&:hover>td:last-child]:rounded-r-md [&[data-state=selected]>td:first-child]:rounded-l-md [&[data-state=selected]>td:last-child]:rounded-r-md [&:has(+:hover)]:border-transparent",
         className
       )}
       {...props}
@@ -77,14 +77,15 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
   )
 }
 
-/** Table header cell. */
-function TableHead({ className, ...props }: React.ComponentProps<"th">) {
+/** Table header cell. `scope="col"` por padrão (sobrescreva com `scope="row"` em cabeçalhos de linha). */
+function TableHead({ className, scope = "col", ...props }: React.ComponentProps<"th">) {
   const { size } = React.useContext(TableContext)
   return (
     <th
       data-slot="table-head"
+      scope={scope}
       className={cn(
-        "text-[var(--surface-200)] px-2 text-left align-middle font-medium font-body whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+        "text-surface-200 px-2 text-left align-middle font-medium font-body whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-0.5",
         size === "sm" && "h-10",
         size === "md" && "h-12",
         size === "lg" && "h-14",
@@ -102,7 +103,7 @@ function TableCell({ className, ...props }: React.ComponentProps<"td">) {
     <td
       data-slot="table-cell"
       className={cn(
-        "px-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+        "px-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-0.5",
         size === "sm" && "py-2",
         size === "md" && "py-3",
         size === "lg" && "py-4",

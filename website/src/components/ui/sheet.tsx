@@ -5,6 +5,7 @@ import { SmCloseLineIcon } from "@/components/icons"
 import { Dialog as SheetPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 
 /** Slide-over panel that overlays page content from any edge. */
 function Sheet({ ...props }: React.ComponentProps<typeof SheetPrimitive.Root>) {
@@ -41,7 +42,7 @@ function SheetOverlay({
     <SheetPrimitive.Overlay
       data-slot="sheet-overlay"
       className={cn(
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fill-mode-both fixed inset-0 z-50 bg-black/70 backdrop-blur-sm",
+        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fill-mode-both fixed inset-0 z-50 bg-scrim backdrop-blur-sm",
         className
       )}
       {...props}
@@ -65,9 +66,8 @@ function SheetContent({
       <SheetOverlay />
       <SheetPrimitive.Content
         data-slot="sheet-content"
-        onOpenAutoFocus={(e) => e.preventDefault()}
         className={cn(
-          "bg-(--surface-950) text-card-foreground data-[state=open]:animate-in data-[state=closed]:animate-out fill-mode-both fixed z-50 flex flex-col gap-4 p-4 shadow-none dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)] transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+          "bg-(--surface-950) text-card-foreground data-[state=open]:animate-in data-[state=closed]:animate-out fill-mode-both fixed z-50 flex flex-col gap-4 p-4 shadow-popover transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
           side === "right" &&
             "data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right inset-y-0 right-0 h-full w-3/4 sm:max-w-sm",
           side === "left" &&
@@ -82,9 +82,15 @@ function SheetContent({
       >
         {children}
         {showCloseButton && (
-          <SheetPrimitive.Close className="outline-none focus-visible:ring-2 focus-visible:ring-foreground data-[state=open]:bg-secondary absolute top-4 right-4 rounded-full opacity-70 transition-all hover:opacity-100 disabled:pointer-events-none">
-            <SmCloseLineIcon className="size-6" />
-            <span className="sr-only">Fechar</span>
+          <SheetPrimitive.Close asChild>
+            <Button
+              variant="ghost"
+              size="icon-sm"
+              aria-label="Fechar"
+              className="absolute top-3 right-3 text-muted-foreground hover:text-foreground data-[state=open]:bg-secondary"
+            >
+              <SmCloseLineIcon className="size-6" />
+            </Button>
           </SheetPrimitive.Close>
         )}
       </SheetPrimitive.Content>
@@ -122,7 +128,7 @@ function SheetTitle({
   return (
     <SheetPrimitive.Title
       data-slot="sheet-title"
-      className={cn("text-foreground font-semibold", className)}
+      className={cn("text-foreground text-lg leading-none font-medium", className)}
       {...props}
     />
   )

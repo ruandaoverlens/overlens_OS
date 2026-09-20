@@ -1,12 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
-import { useAuth, getRoleLabel, type UserRole } from "@/lib/auth";
+import { useAuth, getRoleLabel, type UserRole, isStaffOrAdmin } from "@/lib/auth";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Table,
   TableBody,
+  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -15,6 +16,17 @@ import {
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Skeleton } from "@/components/ui/skeleton";
+import { EmptyState } from "@/components/empty-state";
+import { PageHeader } from "@/components/page-header";
+import { notify } from "@/lib/notifications/toast";
+import { useUrlState } from "@/lib/use-url-state";
+import { useDebouncedValue } from "@/lib/use-debounced-value";
+import { useSlashFocus } from "@/lib/use-slash-focus";
+import { SmSearchLineIcon } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
 // ─── Types (espelham /api/admin/insights) ──────────────────
 
@@ -86,6 +98,20 @@ function fmtDate(iso: string | null): string {
   }
 }
 
+async function fetchInsights(q: string, signal: AbortSignal): Promise<InsightsData> {
+  const url = q ? `/api/admin/insights?q=${encodeURIComponent(q)}` : "/api/admin/insights";
+  const res = await fetch(url, { signal });
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    throw new Error(body.error ?? `Erro ${res.status}`);
+  }
+  return (await res.json()) as InsightsData;
+}
+
+function isAbort(err: unknown): boolean {
+  return err instanceof DOMException && err.name === "AbortError";
+}
+
 function StatTile({ label, value, hint }: { label: string; value: string; hint?: string }) {
   return (
     <Card>
@@ -100,74 +126,122 @@ function StatTile({ label, value, hint }: { label: string; value: string; hint?:
 
 // ─── Page ──────────────────────────────────────────────────
 
+function InsightsSkeleton() {
+  return (
+    <div
+      role="status"
+      aria-busy="true"
+      aria-live="polite"
+      className="mx-auto max-w-6xl px-6 py-8"
+    >
+      <span className="sr-only">Carregando insights</span>
+      <Skeleton className="h-8 w-48" />
+      <Skeleton className="mt-2 h-4 w-80" />
+      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {Array.from({ length: 4 }, (_, i) => (
+          <Skeleton key={i} className="h-24" />
+        ))}
+      </div>
+      <Skeleton className="mt-8 h-64" />
+    </div>
+  );
+}
+
 export default function AdminInsightsPage() {
+  // `useUrlState` lê `useSearchParams`, que exige um limite de Suspense na rota.
+  return (
+    <Suspense fallback={<InsightsSkeleton />}>
+      <AdminInsightsContent />
+    </Suspense>
+  );
+}
+
+function AdminInsightsContent() {
   const { user, loading: authLoading } = useAuth();
+  const searchId = useId();
+  const searchRef = useRef<HTMLInputElement>(null);
+  useSlashFocus(searchRef);
   const [data, setData] = useState<InsightsData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [search, setSearch] = useState("");
   const [searching, setSearching] = useState(false);
+  const [reloadKey, setReloadKey] = useState(0);
 
-  const isAdmin = !!user && user.role === "admin";
+  const canView = !!user && isStaffOrAdmin(user.role);
 
-  const load = useCallback(async (q?: string) => {
-    const url = q ? `/api/admin/insights?q=${encodeURIComponent(q)}` : "/api/admin/insights";
-    const res = await fetch(url);
-    if (!res.ok) {
-      const body = await res.json().catch(() => ({}));
-      throw new Error(body.error ?? `Erro ${res.status}`);
-    }
-    return (await res.json()) as InsightsData;
-  }, []);
+  // Busca: a URL (?q=) é a fonte de verdade; o input é local e vai para a URL
+  // com debounce. Quando a URL muda (voltar/avançar, limpar), o input sincroniza.
+  const [q, setQ] = useUrlState<string>("q", "");
+  // A aba ativa vai para a URL para permitir link direto.
+  const [tab, setTab] = useUrlState<string>("tab", "perguntas");
+  const [search, setSearch] = useState(q);
+  const [prevQ, setPrevQ] = useState(q);
+  if (q !== prevQ) {
+    setPrevQ(q);
+    setSearch(q);
+  }
+  const debouncedSearch = useDebouncedValue(search, 250);
+  useEffect(() => {
+    if (search !== debouncedSearch) return; // ainda digitando
+    if (debouncedSearch.trim() !== q) setQ(debouncedSearch.trim());
+  }, [search, debouncedSearch, q, setQ]);
 
+  // Carrega (ou refaz a busca) sempre que a query da URL muda. Requisições
+  // anteriores são abortadas para não sobrescrever o resultado mais recente.
   useEffect(() => {
     if (authLoading) return;
-    if (!isAdmin) {
+    if (!canView) {
       setLoading(false);
       return;
     }
-    let alive = true;
-    setLoading(true);
-    load()
-      .then((d) => alive && setData(d))
-      .catch((e) => alive && setError(e.message))
-      .finally(() => alive && setLoading(false));
-    return () => {
-      alive = false;
-    };
-  }, [authLoading, isAdmin, load]);
-
-  const runSearch = useCallback(
-    async (e: React.FormEvent) => {
-      e.preventDefault();
-      setSearching(true);
-      setError(null);
-      try {
-        const d = await load(search.trim() || undefined);
-        setData(d);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Erro na busca");
-      } finally {
+    const controller = new AbortController();
+    const initial = data === null;
+    if (initial) setLoading(true);
+    else setSearching(true);
+    setError(null);
+    fetchInsights(q, controller.signal)
+      .then((d) => setData(d))
+      .catch((e) => {
+        if (isAbort(e)) return;
+        if (initial) setError(e instanceof Error ? e.message : "Erro ao carregar");
+        else notify.fromError(e, "Erro na busca");
+      })
+      .finally(() => {
+        if (controller.signal.aborted) return;
+        setLoading(false);
         setSearching(false);
-      }
+      });
+    return () => controller.abort();
+    // `data` só decide se é carga inicial ou busca; não deve disparar o efeito.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [authLoading, canView, q, reloadKey]);
+
+  const clearSearch = useCallback(() => {
+    setSearch("");
+    setQ("");
+  }, [setQ]);
+
+  // Busca ao vivo (debounce de 250ms). O botão Buscar existe para dar alvo ao
+  // submit e mostrar o estado: sem ele só o Enter funcionava e nada indicava
+  // que uma requisição estava em voo.
+  const runSearch = useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault();
+      setQ(search.trim());
     },
-    [load, search],
+    [search, setQ],
   );
 
   if (authLoading || loading) {
-    return (
-      <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
-        Carregando insights…
-      </div>
-    );
+    return <InsightsSkeleton />;
   }
 
-  if (!isAdmin) {
+  if (!canView) {
     return (
       <div className="flex h-full flex-col items-center justify-center gap-2 text-center">
         <p className="text-sm font-medium">Acesso restrito</p>
         <p className="text-sm text-muted-foreground">
-          Este painel é exclusivo para administradores.
+          Este painel é exclusivo para a equipe.
         </p>
         <Link href="/docs" className="mt-2 text-sm text-primary hover:underline">
           Voltar ao Brand System
@@ -178,9 +252,13 @@ export default function AdminInsightsPage() {
 
   if (error) {
     return (
-      <div className="flex h-full flex-col items-center justify-center gap-2 text-center">
-        <p className="text-sm font-medium text-destructive">Erro ao carregar</p>
-        <p className="text-sm text-muted-foreground">{error}</p>
+      <div className="flex h-full items-center justify-center">
+        <EmptyState
+          variant="error"
+          title="Erro ao carregar"
+          description={error}
+          onRetry={() => setReloadKey((k) => k + 1)}
+        />
       </div>
     );
   }
@@ -193,12 +271,11 @@ export default function AdminInsightsPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-8">
-      <header className="mb-6">
-        <h1 className="text-2xl font-semibold tracking-tight">Insights de IA</h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          O que os {nf.format(o.totalMembers)} membros estão perguntando à Gemma e como usam o sistema.
-        </p>
-      </header>
+      <PageHeader
+        title="Insights de IA"
+        description={`O que os ${nf.format(o.totalMembers)} membros estão perguntando à Gemma e como usam o sistema.`}
+        className="mb-6"
+      />
 
       {/* Overview */}
       <section className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
@@ -211,7 +288,7 @@ export default function AdminInsightsPage() {
       </section>
 
       <div className="mt-8">
-        <Tabs defaultValue="perguntas">
+        <Tabs value={tab} onValueChange={setTab}>
           <TabsList>
             <TabsTrigger value="perguntas">Perguntas</TabsTrigger>
             <TabsTrigger value="membros">Membros</TabsTrigger>
@@ -220,60 +297,80 @@ export default function AdminInsightsPage() {
 
           {/* ── Perguntas ── */}
           <TabsContent value="perguntas" className="mt-4">
-            <form onSubmit={runSearch} className="mb-4 flex gap-2">
-              <Input
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Buscar nas perguntas dos membros… (ex: posicionamento, tom de voz)"
-                className="max-w-md"
-              />
-              <button
+            <form onSubmit={runSearch} role="search" className="mb-4 flex flex-wrap items-center gap-2">
+              <Label htmlFor={searchId} className="sr-only">
+                Buscar nas perguntas dos membros
+              </Label>
+              <div className="relative flex-1 max-w-md">
+                <Input
+                  id={searchId}
+                  ref={searchRef}
+                  type="search"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Buscar nas perguntas dos membros… (ex: posicionamento, tom de voz)"
+                  aria-keyshortcuts="/"
+                  className="pr-10"
+                />
+                <kbd
+                  aria-hidden="true"
+                  className="pointer-events-none absolute right-3 top-1/2 hidden -translate-y-1/2 rounded border border-border/60 bg-surface-900 px-1.5 text-caption font-mono text-muted-foreground sm:block"
+                >
+                  /
+                </kbd>
+              </div>
+              <Button
                 type="submit"
-                disabled={searching}
-                className="rounded-md bg-primary px-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50"
+                variant="secondary"
+                size="sm"
+                loading={searching}
+                loadingText="Buscando…"
               >
-                {searching ? "Buscando…" : "Buscar"}
-              </button>
-              {data.query && (
-                <button
+                <SmSearchLineIcon className="size-4" aria-hidden="true" />
+                <span>Buscar</span>
+              </Button>
+              {(data.query || search) && (
+                <Button
                   type="button"
-                  onClick={() => {
-                    setSearch("");
-                    setSearching(true);
-                    load()
-                      .then(setData)
-                      .catch((e) => setError(e.message))
-                      .finally(() => setSearching(false));
-                  }}
-                  className="rounded-md border px-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  variant="outline"
+                  size="sm"
+                  disabled={searching}
+                  onClick={clearSearch}
                 >
                   Limpar
-                </button>
+                </Button>
               )}
             </form>
 
-            <p className="mb-2 text-xs text-muted-foreground">
-              {data.query
-                ? `${data.questions.length} resultado(s) para "${data.query}"`
-                : `${data.questions.length} perguntas mais recentes`}
+            <p aria-live="polite" className="mb-2 text-xs text-muted-foreground">
+              {searching
+                ? "Buscando…"
+                : data.query
+                  ? `${data.questions.length} resultado(s) para "${data.query}"`
+                  : `${data.questions.length} perguntas mais recentes`}
             </p>
 
-            <div className="space-y-2">
+            <div
+              aria-busy={searching || undefined}
+              className={cn("space-y-2 transition-opacity", searching && "opacity-60")}
+            >
               {data.questions.length === 0 ? (
-                <p className="py-8 text-center text-sm text-muted-foreground">
-                  Nenhuma pergunta encontrada.
-                </p>
+                <EmptyState
+                  title="Nenhuma pergunta encontrada"
+                  variant={data.query ? "filtered" : "empty"}
+                  onClear={data.query ? clearSearch : undefined}
+                />
               ) : (
                 data.questions.map((q) => (
                   <Link
                     key={q.id}
                     href={`/admin/conversas/${q.conversationId}`}
-                    className="block rounded-lg border p-3 transition-colors hover:bg-accent/50"
+                    className="block rounded-lg border p-3 transition-colors hover:bg-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground"
                   >
                     <p className="line-clamp-2 text-sm">{q.content}</p>
                     <div className="mt-1.5 flex items-center gap-2 text-xs text-muted-foreground">
-                      <span className="font-medium text-foreground/70">{q.name || q.email}</span>
-                      <span>·</span>
+                      <span className="font-medium text-foreground">{q.name || q.email}</span>
+                      <span aria-hidden="true">·</span>
                       <span>{fmtDate(q.createdAt)}</span>
                     </div>
                   </Link>
@@ -289,14 +386,15 @@ export default function AdminInsightsPage() {
             </p>
             <Card>
               <Table>
+                <TableCaption className="sr-only">Membros que mais usaram a IA</TableCaption>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Membro</TableHead>
-                    <TableHead>Papel</TableHead>
-                    <TableHead className="text-right">Perguntas</TableHead>
-                    <TableHead className="text-right">Conversas</TableHead>
-                    <TableHead className="text-right">Tokens</TableHead>
-                    <TableHead className="text-right">Última atividade</TableHead>
+                    <TableHead scope="col">Membro</TableHead>
+                    <TableHead scope="col">Papel</TableHead>
+                    <TableHead scope="col" className="text-right">Perguntas</TableHead>
+                    <TableHead scope="col" className="text-right">Conversas</TableHead>
+                    <TableHead scope="col" className="text-right">Tokens</TableHead>
+                    <TableHead scope="col" className="text-right">Última atividade</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -331,7 +429,11 @@ export default function AdminInsightsPage() {
                 </CardHeader>
                 <CardContent className="space-y-2">
                   {data.topTopics.length === 0 ? (
-                    <p className="text-sm text-muted-foreground">Sem dados de roteamento ainda.</p>
+                    <EmptyState
+                      size="sm"
+                      title="Sem dados de roteamento ainda"
+                      description="Os temas aparecem conforme os membros conversam com a Gemma."
+                    />
                   ) : (
                     data.topTopics.map((t) => {
                       const max = data.topTopics[0]?.count || 1;
@@ -348,7 +450,7 @@ export default function AdminInsightsPage() {
                         </>
                       );
                       return t.href ? (
-                        <Link key={t.id} href={t.href} className="block transition-opacity hover:opacity-80">
+                        <Link key={t.id} href={t.href} className="block rounded-md transition-colors hover:bg-accent/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground">
                           {inner}
                         </Link>
                       ) : (
@@ -364,14 +466,14 @@ export default function AdminInsightsPage() {
                   <CardTitle className="text-base">Qualidade das respostas</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-3 gap-3 text-center">
+                  <div className="grid grid-cols-1 gap-3 text-center sm:grid-cols-3">
                     <div>
-                      <div className="text-2xl font-semibold text-green-500">{nf.format(fb.up)}</div>
-                      <div className="text-xs text-muted-foreground">👍 Positivos</div>
+                      <div className="text-2xl font-semibold text-success">{nf.format(fb.up)}</div>
+                      <div className="text-xs text-muted-foreground"><span aria-hidden="true">👍</span> Positivos</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-semibold text-red-500">{nf.format(fb.down)}</div>
-                      <div className="text-xs text-muted-foreground">👎 Negativos</div>
+                      <div className="text-2xl font-semibold text-destructive">{nf.format(fb.down)}</div>
+                      <div className="text-xs text-muted-foreground"><span aria-hidden="true">👎</span> Negativos</div>
                     </div>
                     <div>
                       <div className="text-2xl font-semibold text-muted-foreground">{nf.format(fb.none)}</div>

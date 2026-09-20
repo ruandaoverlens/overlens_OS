@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useMounted } from "@/lib/use-mounted";
-import { useAuth, canAccessRoute } from "@/lib/auth";
+import { useAuth, canAccessRoute, type UserRole } from "@/lib/auth";
 import { useSidebar } from "@/components/ui/sidebar";
 import {
   DropdownMenu,
@@ -18,28 +18,44 @@ import {
 } from "@/components/ui/tooltip";
 import {
   MdDocSolidIcon,
+  MdInvoiceSolidIcon,
   MdCognitionLineIcon,
   MdChartLineIcon,
   MdLibrarySolidIcon,
   SmArrowDownIosLineIcon,
-  SmLockLineIcon,
+  SmCheckLineIcon,
 } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
 /**
  * Sistemas navegáveis pelo seletor da sidebar. A ordem aqui é a ordem exibida.
  * O acesso segue as mesmas regras de rota de `canAccessRoute` — os sistemas
- * fechados aparecem desabilitados com cadeado em vez de serem escondidos.
+ * fechados aparecem desabilitados em vez de serem escondidos.
  */
-const SYSTEMS = [
+export const SYSTEMS = [
+  { name: "Business Doc", href: "/business", icon: MdInvoiceSolidIcon },
   { name: "Brand System", href: "/docs", icon: MdDocSolidIcon },
   { name: "Content System", href: "/estudio", icon: MdCognitionLineIcon },
   { name: "Growth System", href: "/growth", icon: MdChartLineIcon },
   { name: "Pacote Cultural", href: "/pacote", icon: MdLibrarySolidIcon },
 ] as const;
 
+export type SystemEntry = (typeof SYSTEMS)[number];
+
 /** Rotas abertas a qualquer usuário — usadas antes do perfil carregar. */
 const PUBLIC_HREFS = new Set<string>(["/docs", "/pacote"]);
+
+/**
+ * Regra de acesso compartilhada entre o seletor e a command palette:
+ * enquanto o perfil não carrega, só os sistemas públicos ficam liberados —
+ * evita piscar opções que o usuário não pode abrir.
+ */
+export function canAccessSystem(
+  role: UserRole | null | undefined,
+  href: string,
+): boolean {
+  return role ? canAccessRoute(role, href) : PUBLIC_HREFS.has(href);
+}
 
 export function SystemSwitcher({ basePath }: { basePath: string }) {
   const router = useRouter();
@@ -48,14 +64,12 @@ export function SystemSwitcher({ basePath }: { basePath: string }) {
   const { state } = useSidebar();
   const [open, setOpen] = useState(false);
 
-  // Enquanto o perfil não carrega, só os sistemas públicos ficam liberados —
-  // evita piscar opções que o usuário não pode abrir.
   const hasAccess = (href: string) =>
-    hasMounted && user ? canAccessRoute(user.role, href) : PUBLIC_HREFS.has(href);
+    canAccessSystem(hasMounted ? user?.role : null, href);
 
   const current =
     SYSTEMS.find((s) => basePath === s.href || basePath.startsWith(s.href + "/")) ??
-    SYSTEMS[0];
+    SYSTEMS.find((s) => s.href === "/docs")!;
   const CurrentIcon = current.icon;
 
   // Liberados primeiro, bloqueados no fim — a ordem relativa de cada grupo
@@ -68,12 +82,13 @@ export function SystemSwitcher({ basePath }: { basePath: string }) {
     <button
       type="button"
       data-slot="system-switcher"
+      aria-label={`Sistema atual: ${current.name}. Trocar de sistema`}
       className={cn(
-        "bg-accent/50 dark:bg-input/30 hover:bg-accent dark:hover:bg-input/50 flex h-12 w-full items-center gap-2 rounded-[8px] px-2 text-sm text-foreground outline-none transition-colors [&>svg]:size-6 [&>svg]:shrink-0",
+        "bg-accent/50 dark:bg-input/30 hover:bg-accent dark:hover:bg-input/50 flex h-12 w-full items-center gap-2 rounded-field-sm px-2 text-sm text-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-foreground [&>svg]:size-6 [&>svg]:shrink-0",
         "group-data-[collapsible=icon]:size-10! group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:rounded-md group-data-[collapsible=icon]:bg-transparent group-data-[collapsible=icon]:px-0! group-data-[collapsible=icon]:hover:bg-sidebar-accent",
       )}
     >
-      <CurrentIcon />
+      <CurrentIcon className="hidden group-data-[collapsible=icon]:block" />
       <span className="flex-1 text-left group-data-[collapsible=icon]:hidden">
         {current.name}
       </span>
@@ -97,25 +112,31 @@ export function SystemSwitcher({ basePath }: { basePath: string }) {
       )}
       <DropdownMenuContent
         align="start"
-        className="w-(--radix-dropdown-menu-trigger-width) min-w-[220px] bg-[var(--surface-950)]"
+        className="w-(--radix-dropdown-menu-trigger-width) min-w-[220px] bg-surface-950"
       >
         {ordered.map((system) => {
           const allowed = hasAccess(system.href);
-          const Icon = allowed ? system.icon : SmLockLineIcon;
           const isCurrent = system.href === current.href;
           return (
             <DropdownMenuItem
               key={system.href}
               disabled={!allowed}
-              className={cn("h-10 cursor-pointer", isCurrent && "bg-accent/50")}
+              aria-current={isCurrent ? "page" : undefined}
+              className={cn(
+                "h-10 cursor-pointer",
+                isCurrent && "bg-accent/50 text-foreground",
+              )}
               onSelect={() => {
                 if (!allowed) return;
                 setOpen(false);
                 router.push(system.href);
               }}
             >
-              <Icon />
               <span className="flex-1">{system.name}</span>
+              {/* O fundo sozinho não diferencia do item sob o cursor. */}
+              {isCurrent && (
+                <SmCheckLineIcon className="size-5 shrink-0" aria-hidden="true" />
+              )}
             </DropdownMenuItem>
           );
         })}

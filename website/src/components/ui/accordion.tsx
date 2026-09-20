@@ -62,7 +62,7 @@ function AccordionContent({
       className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm"
       {...props}
     >
-      <div className={cn("pt-0 pb-4 pl-2 text-[var(--surface-400)] hover:text-[var(--surface-200)] transition-colors", className)}>{children}</div>
+      <div className={cn("pt-0 pb-4 pl-2 text-surface-400 hover:text-surface-200 transition-colors", className)}>{children}</div>
     </AccordionPrimitive.Content>
   )
 }

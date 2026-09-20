@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
+import { PageHeader } from "@/components/page-header";
 import {
   RadarPageClient,
   type CandidatoComContexto,
@@ -10,6 +12,8 @@ import type {
 import type { MarcaRow } from "@/lib/registros/types";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = { title: "Radar" };
 
 export default async function RadarPage() {
   const supabase = await createClient();
@@ -42,13 +46,10 @@ export default async function RadarPage() {
 
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-6 p-6">
-      <div>
-        <h1 className="text-2xl font-heading uppercase tracking-wide">Radar</h1>
-        <p className="text-sm text-muted-foreground">
-          Monitoramento de publicações semelhantes na Revista da Propriedade
-          Industrial. Todo alerta é revisado por uma pessoa antes de virar ação.
-        </p>
-      </div>
+      <PageHeader
+        title="Radar"
+        description="Monitoramento de publicações semelhantes na Revista da Propriedade Industrial. Todo alerta é revisado por uma pessoa antes de virar ação."
+      />
       <RadarPageClient execucoes={execucoes} candidatos={candidatos} />
     </div>
   );

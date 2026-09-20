@@ -5,7 +5,7 @@ import { Popover as PopoverPrimitive } from "radix-ui"
 import { SmHistoryLineIcon, SmCheckLineIcon, SmArrowBackLineIcon } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
-import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/components/ui/tooltip"
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip"
 import { useIsMobile } from "@/hooks/use-mobile"
 
 import { cn } from "@/lib/utils"
@@ -111,7 +111,7 @@ function NotificationBarContent({
         data-slot="notification-bar-content"
         data-mobile=""
         className={cn(
-          "fixed inset-0 z-50 flex flex-col bg-[var(--surface-950)] text-card-foreground animate-in slide-in-from-right-full duration-200 fill-mode-both",
+          "fixed inset-0 z-50 flex flex-col bg-surface-950 text-card-foreground animate-in slide-in-from-right-full duration-200 fill-mode-both",
           className
         )}
       >
@@ -128,7 +128,7 @@ function NotificationBarContent({
         sideOffset={4}
         collisionPadding={{ right: 12 }}
         className={cn(
-          "bg-[var(--surface-950)] text-card-foreground w-80 max-w-[calc(100vw-1rem)] h-[min(32rem,calc(100vh-4rem))] rounded-xl shadow-none dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)] outline-hidden flex flex-col p-0 z-50",
+          "bg-surface-950 text-card-foreground w-80 max-w-[calc(100vw-1rem)] h-[min(32rem,calc(100vh-4rem))] rounded-xl shadow-popover outline-hidden flex flex-col p-0 z-50",
           "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 fill-mode-both",
           className
         )}
@@ -203,7 +203,6 @@ function NotificationBarResolveAll({
   const { unreadCount, markAllAsRead } = React.useContext(NotificationBarContext)
 
   return (
-    <TooltipProvider>
       <Tooltip open={tooltipOpen} onOpenChange={setTooltipOpen}>
         <TooltipTrigger asChild>
           <div className="relative">
@@ -223,15 +222,14 @@ function NotificationBarResolveAll({
             </Button>
             {unreadCount > 0 && (
               <span className="pointer-events-none absolute top-1 right-1 flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--brand-atmos)] opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--brand-atmos)]" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-atmos opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-atmos" />
               </span>
             )}
           </div>
         </TooltipTrigger>
         <TooltipContent>Marcar como lidas</TooltipContent>
       </Tooltip>
-    </TooltipProvider>
   )
 }
 
@@ -244,7 +242,6 @@ function NotificationBarClearAll({
   const { clearAll } = React.useContext(NotificationBarContext)
 
   return (
-    <TooltipProvider>
       <Tooltip open={tooltipOpen} onOpenChange={setTooltipOpen}>
         <TooltipTrigger asChild>
           <Button
@@ -264,7 +261,6 @@ function NotificationBarClearAll({
         </TooltipTrigger>
         <TooltipContent>Concluir todas</TooltipContent>
       </Tooltip>
-    </TooltipProvider>
   )
 }
 
@@ -283,7 +279,7 @@ function NotificationBarBody({
       data-slot="notification-bar-body"
       className={cn(
         "flex flex-col gap-2.5 px-2 pt-2 pb-2",
-        !isMobile && "flex-1 overflow-y-auto [&::-webkit-scrollbar]:w-2.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-muted-foreground/30 [&::-webkit-scrollbar-thumb]:border-[4px] [&::-webkit-scrollbar-thumb]:border-transparent [&::-webkit-scrollbar-thumb]:bg-clip-content [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-track]:mt-1 [&::-webkit-scrollbar-track]:mb-1",
+        !isMobile && "flex-1 overflow-y-auto scrollbar-thin",
         cleared && "items-center justify-center pb-10",
         className
       )}
@@ -319,7 +315,7 @@ function NotificationBarTabs({
         <TabsTrigger value="inbox" className="gap-1.5">
           Amigos
           {unreadCount > 0 && (
-            <span className="inline-flex items-center justify-center rounded-full bg-[var(--brand-atmos)] px-1.5 text-[10px] font-semibold leading-4 text-black">
+            <span className="inline-flex items-center justify-center rounded-full bg-brand-atmos px-1.5 text-caption font-semibold leading-4 text-black">
               {unreadCount}
             </span>
           )}
@@ -346,7 +342,7 @@ function NotificationBarFooter({
     <div
       data-slot="notification-bar-footer"
       className={cn(
-        "flex shrink-0 items-center justify-center border-t border-white/5 px-2 py-2",
+        "flex shrink-0 items-center justify-center border-t border-border px-2 py-2",
         className
       )}
       {...props}

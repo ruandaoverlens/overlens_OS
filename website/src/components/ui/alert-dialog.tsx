@@ -41,7 +41,7 @@ function AlertDialogOverlay({
     <AlertDialogPrimitive.Overlay
       data-slot="alert-dialog-overlay"
       className={cn(
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fill-mode-both fixed inset-0 z-50 bg-black/70 backdrop-blur-sm",
+        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fill-mode-both fixed inset-0 z-50 bg-scrim backdrop-blur-sm",
         className
       )}
       {...props}
@@ -66,7 +66,7 @@ function AlertDialogContent({
         data-slot="alert-dialog-content"
         data-size={size}
         className={cn(
-          "bg-[var(--surface-950)] text-card-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fill-mode-both group/alert-dialog-content fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-xl px-4 pt-3.5 pb-4 shadow-none dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)] duration-200 data-[size=sm]:w-fit data-[size=default]:sm:max-w-lg",
+          "bg-surface-950 text-card-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fill-mode-both group/alert-dialog-content fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl px-4 pt-3.5 pb-4 shadow-popover duration-200 data-[size=sm]:w-fit data-[size=default]:sm:max-w-lg",
           className
         )}
         {...props}
@@ -166,7 +166,7 @@ function AlertDialogMedia({
     <div
       data-slot="alert-dialog-media"
       className={cn(
-        "hidden sm:inline-flex shrink-0 items-center justify-center text-[var(--surface-200)] *:[svg]:size-8",
+        "hidden sm:inline-flex shrink-0 items-center justify-center text-surface-200 *:[svg]:size-8",
         className
       )}
       {...props}
@@ -183,7 +183,7 @@ function AlertDialogClose({
     <AlertDialogPrimitive.Cancel
       data-slot="alert-dialog-close"
       className={cn(
-        "ml-auto inline-flex size-8 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground outline-none focus-visible:ring-2 focus-visible:ring-foreground",
+        "ml-auto relative inline-flex size-8 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground outline-none focus-visible:ring-2 focus-visible:ring-foreground after:absolute after:-inset-1 after:content-['']",
         className
       )}
       {...props}
@@ -207,22 +207,32 @@ function AlertDialogBody({
   )
 }
 
-/** Primary action button that confirms the alert dialog. */
+/**
+ * Primary action button that confirms the alert dialog.
+ * `loading`/`loadingText` seguem o padrão do Button (spinner + aria-busy + disabled).
+ * Para manter o diálogo aberto durante uma ação assíncrona, chame `e.preventDefault()`
+ * no `onClick` (o Radix só fecha quando o evento não foi cancelado).
+ */
 function AlertDialogAction({
   className,
   variant = "default",
   size = "default",
+  loading,
+  loadingText,
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Action> &
-  Pick<React.ComponentProps<typeof Button>, "variant" | "size">) {
+  Pick<React.ComponentProps<typeof Button>, "variant" | "size" | "loading" | "loadingText">) {
   return (
-    <Button variant={variant} size={size} asChild>
-      <AlertDialogPrimitive.Action
-        data-slot="alert-dialog-action"
+    <AlertDialogPrimitive.Action data-slot="alert-dialog-action" asChild>
+      <Button
+        variant={variant}
+        size={size}
+        loading={loading}
+        loadingText={loadingText}
         className={cn(className)}
         {...props}
       />
-    </Button>
+    </AlertDialogPrimitive.Action>
   )
 }
 

@@ -2,7 +2,7 @@
 title: Tom de Voz
 summary: Define os 4 tons da Overlens (Científico, Profundo, Provocativo, Inspirador) mais a virtude transversal Adaptável, com excessos a evitar, faltas a corrigir, exemplos práticos lado a lado e a estratégia em camadas Ethos-Pathos-Logos.
 topics: [tom de voz, virtudes, Ethos Pathos Logos, exemplos práticos, diretrizes de redação]
-keywords: [científico, profundo, provocativo, inspirador, adaptável, virtudes, excesso, falta, Ethos, Pathos, Logos, Magritte, The Treachery of Images, Honestidade, Maestria, Coragem, Curiosidade, Realização, evergreen, headlines, CTA, onboarding]
+keywords: [científico, profundo, provocativo, inspirador, adaptável, virtudes, excesso, falta, Ethos, Pathos, Logos, Magritte, The Treachery of Images, Honestidade, Maestria, Coragem, Curiosidade, Realização, hustle porn, empreendedorismo sem promessa, evergreen, headlines, CTA, onboarding]
 priority: high
 ai_when_to_use: |
   Use quando o usuário perguntar sobre tom de voz, como escrever no estilo Overlens, exemplos do que evitar, qual tom usar em cada contexto (redes sociais, cursos, manifestos, evergreen), ou quando estiver redigindo conteúdo que precise soar como a marca.
@@ -59,7 +59,7 @@ As virtudes orientam a comunicação, comportamento e decisões da Overlens. Cad
 
 *A Overlens inspira pessoas à ação, autonomia e crescimento pessoal e profissional, apontando caminhos para um futuro melhor.*
 
-* **Excesso (utopia ingênua):** Idealização excessiva, romantismo irrealista, desconsideração dos desafios reais.  
+* **Excesso (utopia ingênua):** Idealização excessiva, romantismo irrealista, desconsideração dos desafios reais. Inclui o excesso típico do discurso empreendedor: promessa de enriquecimento, hustle porn, sacrifício heroico como estética.  
 * **Falta (ceticismo e pessimismo):** Falta de esperança, negatividade, ausência de motivação ou propósito claro.
 
 **Alinhamento com os valores:** Liberdade x Responsabilidade, Realização, Inovação, Colaboração.

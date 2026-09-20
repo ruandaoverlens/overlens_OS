@@ -1,3 +1,5 @@
+import { cache } from "react";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import {
@@ -7,6 +9,27 @@ import {
 import type { DocumentoRow, MarcaRow } from "@/lib/registros/types";
 
 export const dynamic = "force-dynamic";
+
+// Deduplicado por request: generateMetadata e a página usam a mesma consulta.
+const getConversa = cache(async (id: string) => {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("registro_assistente_conversas")
+    .select("id, titulo, marca_id")
+    .eq("id", id)
+    .maybeSingle();
+  return data as { id: string; titulo: string | null; marca_id: string | null } | null;
+});
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const conversa = await getConversa(id);
+  return { title: conversa ? conversa.titulo?.trim() || "Conversa" : "Não encontrado" };
+}
 
 export default async function AssistenteConversaPage({
   params,
@@ -19,12 +42,7 @@ export default async function AssistenteConversaPage({
   const { docs } = await searchParams;
   const supabase = await createClient();
 
-  const { data: conversa } = await supabase
-    .from("registro_assistente_conversas")
-    .select("id, titulo, marca_id")
-    .eq("id", id)
-    .maybeSingle();
-
+  const conversa = await getConversa(id);
   if (!conversa) notFound();
 
   const [{ data: mensagensData }, { data: marcasData }, { data: documentosData }] =
@@ -60,8 +78,9 @@ export default async function AssistenteConversaPage({
       documentos={documentos}
       conversaId={conversa.id}
       initialMessages={initialMessages}
-      initialMarcaId={conversa.marca_id as string | null}
+      initialMarcaId={conversa.marca_id}
       initialDocIds={initialDocIds}
+      titulo={conversa.titulo}
       className="h-full"
     />
   );

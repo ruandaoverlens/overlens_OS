@@ -1,8 +1,11 @@
+import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import { AssistenteHome } from "@/components/registros/assistente-home";
 import type { DocumentoRow, MarcaRow } from "@/lib/registros/types";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = { title: "Assistente" };
 
 export default async function AssistentePage() {
   const supabase = await createClient();

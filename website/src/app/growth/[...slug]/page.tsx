@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
   getGrowthDocBySegments,
@@ -5,10 +6,22 @@ import {
   getAllGrowthFlat,
 } from "@/lib/docs";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
+import { DocPageView } from "@/components/doc-page-view";
+import { resolveDocContent, docPathKey } from "@/lib/doc-overrides";
 import { DocPagination } from "@/components/doc-pagination";
 
 export function generateStaticParams() {
   return getAllGrowthSegments().map((segments) => ({ slug: segments }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string[] }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const result = getGrowthDocBySegments(slug);
+  return { title: result ? result.file.title : "Não encontrado" };
 }
 
 export default async function GrowthDocPage({
@@ -22,6 +35,7 @@ export default async function GrowthDocPage({
   if (!result) notFound();
 
   const { file } = result;
+  const { content, override } = await resolveDocContent("growth", file);
 
   const flat = getAllGrowthFlat();
   const idx = flat.findIndex(
@@ -32,7 +46,14 @@ export default async function GrowthDocPage({
 
   return (
     <div className="mx-auto max-w-4xl px-6 pt-4 pb-8 md:px-8 md:pt-5 md:pb-10">
-      <MarkdownRenderer content={file.content} title={file.title} />
+      <DocPageView
+        system="growth"
+        path={docPathKey(file.segments)}
+        markdown={content}
+        hasOverride={!!override}
+      >
+        <MarkdownRenderer content={content} title={file.title} />
+      </DocPageView>
       <DocPagination prev={prev} next={next} basePath="/growth" />
     </div>
   );

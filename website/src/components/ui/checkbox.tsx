@@ -9,7 +9,9 @@ import { cn } from "@/lib/utils"
 
 const checkboxVariants = cva(
   [
-    "peer shrink-0 border-2 overflow-clip transition-all outline-none",
+    "peer shrink-0 border-2 transition-all outline-none",
+    /* Hit-area (>=40px) via pseudo-elemento */
+    "relative after:absolute after:content-['']",
     /* Unchecked border */
     "border-foreground",
     /* Checked fill + border */
@@ -23,18 +25,18 @@ const checkboxVariants = cva(
     "data-[state=checked]:text-background",
     "data-[state=indeterminate]:text-foreground",
     /* Focus ring */
-    "focus-visible:ring-2 focus-visible:ring-primary",
+    "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
     /* Disabled */
     "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-20",
     /* A11y */
-    "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+    "aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   ].join(" "),
   {
     variants: {
       size: {
-        default: "size-6 rounded-[6px]",
-        sm: "size-5 rounded-[6px]",
-        lg: "size-8 rounded-lg",
+        default: "size-6 rounded-md after:-inset-2",
+        sm: "size-5 rounded-md after:-inset-2.5",
+        lg: "size-8 rounded-lg after:-inset-1",
       },
     },
     defaultVariants: {
@@ -49,7 +51,12 @@ const checkIconSizeMap: Record<string, string> = {
   lg: "size-5",
 }
 
-/** Checkbox form control with checked, unchecked, and indeterminate states. Supports multiple sizes. */
+/**
+ * Checkbox form control with checked, unchecked, and indeterminate states. Supports multiple sizes.
+ *
+ * A11y: o alvo visual é menor que 40px, mas um pseudo-elemento `after` expande a área clicável
+ * para pelo menos 40x40px em todos os tamanhos.
+ */
 function Checkbox({
   className,
   size = "default",
@@ -64,7 +71,7 @@ function Checkbox({
     >
       <CheckboxPrimitive.Indicator
         data-slot="checkbox-indicator"
-        className="grid place-content-center text-current transition-none"
+        className="grid place-content-center overflow-clip text-current transition-none"
       >
         <SmCheckLineIcon className={checkIconSizeMap[size ?? "default"]} />
       </CheckboxPrimitive.Indicator>

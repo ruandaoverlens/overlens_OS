@@ -1,11 +1,11 @@
 ---
 title: Arquitetura de Marca
 summary: Mapeia o modelo de arquitetura independente da Overlens em camadas — marca principal, produtos (Atlas, Protocolo 3-2-1, Overpass, Blackpass, Vanguarda), marca pessoal Ruan Braz, personas sintéticas, trilhas, lugares, artefatos, documentos e métodos.
-topics: [arquitetura de marca, ecossistema, hierarquia de marcas, produtos, trilhas, lugares simbólicos]
-keywords: [Pieter Bruegel, Tower of Babel, Atlas, Protocolo 3-2-1, Overpass, Blackpass, Vanguarda, Ruan Braz, D.U.D, T.R.U, Brunin, Tella, Ander, Lilly, NexGen, Spectrum, AI First, Chrome, Idea, Gestalt, Signals, Parallax, Arcádia, Téssera, Orbital, Noumenom, Limbo, Códices, A.C.R.O, 4 lentes]
+topics: [arquitetura de marca, ecossistema, hierarquia de marcas, produtos, trilhas, lugares simbólicos, perfis de maturidade]
+keywords: [Pieter Bruegel, Tower of Babel, Atlas, Protocolo 3-2-1, Overpass, Blackpass, Vanguarda, Ruan Braz, D.U.D, T.R.U, Brunin, Tella, Ander, Lilly, NexGen, Spectrum, AI First, Chrome, Idea, Gestalt, Signals, Parallax, Arcádia, Téssera, Orbital, Noumenom, Limbo, Códices, A.C.R.O, 4 lentes, Empreendedor Nexialista]
 priority: medium
 ai_when_to_use: |
-  Use quando o usuário perguntar como a Overlens organiza seus produtos e sub-marcas, qual a hierarquia entre marca principal e marcas filhas, quais trilhas e lugares existem no ecossistema, ou quando precisar mapear como uma nova entidade se encaixa na arquitetura.
+  Use quando o usuário perguntar como a Overlens organiza seus produtos e sub-marcas, qual a hierarquia entre marca principal e marcas filhas, quais trilhas, lentes e lugares existem no ecossistema, ou quando precisar mapear como uma nova entidade se encaixa na arquitetura.
 related: ["brand_system/05 - Universo Verbal/06 Glossário.md", "brand_system/04 - Núcleo da Marca/07 Proxies.md"]
 ---
 
@@ -26,13 +26,13 @@ Em vez de concentrar tudo em uma única marca rígida, a Overlens organiza seu u
 
 ## Marca Principal
 
-No centro do sistema está a Overlens. Ela é a plataforma, escola e ecossistema que conecta todos os elementos.  A Overlens representa a visão maior: preparar criadores para construir realidades no novo mundo, combinando design, tecnologia, filosofia e imaginação. Tudo o que existe dentro da arquitetura deriva dessa fonte central.
+No centro do sistema está a Overlens. Ela é a plataforma, escola e ecossistema que conecta todos os elementos.  A Overlens representa a visão maior: preparar Empreendedores Nexialistas para construir realidades no novo mundo, combinando design, filosofia, arte e tecnologia. Tudo o que existe dentro da arquitetura deriva dessa fonte central.
 
 **Marca principal:** Overlens
 
 ## Produtos
 
-Os produtos são experiências concretas dentro da jornada do criador.  Eles representam diferentes formas de acessar conhecimento, métodos e comunidades da Overlens. Cada produto possui um propósito claro dentro da escala de valor.
+Os produtos são experiências concretas dentro da jornada do empreendedor.  Eles representam diferentes formas de acessar conhecimento, métodos e comunidades da Overlens. Cada produto possui um propósito claro dentro da escala de valor.
 
 **Produtos**
 
@@ -42,7 +42,7 @@ Os produtos são experiências concretas dentro da jornada do criador.  Eles rep
 * Blackpass  
 * Vanguarda
 
-Esses produtos funcionam como portais de entrada e aprofundamento, permitindo que diferentes perfis de criadores encontrem seu caminho dentro do ecossistema.
+Esses produtos funcionam como portais de entrada e aprofundamento, permitindo que diferentes perfis de empreendedores encontrem seu caminho dentro do ecossistema.
 
 ## Marca Pessoal
 
@@ -67,7 +67,7 @@ Cada persona ocupa um lugar específico dentro do imaginário do ecossistema.
 
 ## Trilhas
 
-As trilhas representam caminhos estruturados de desenvolvimento dentro da plataforma. Elas organizam o aprendizado e guiam os criadores ao longo de competências e habilidades específicas.
+As trilhas representam caminhos estruturados de desenvolvimento dentro da plataforma. Elas organizam o aprendizado e guiam os empreendedores ao longo de competências e habilidades específicas.
 
 **Trilhas**
 
@@ -124,7 +124,7 @@ Os métodos representam os modelos mentais e frameworks que orientam a prática 
 
 * Os 4 graus de influência da percepção  
 * Metodologia A.C.R.O  
-* As 4 lentes (Operante, Convergente, Emergente, Nexialista)  
+* As 4 lentes (Operante, Convergente, Emergente, Nexialista); os estágios pelos quais um empreendedor atravessa a distância entre a ideia e a realidade  
 * Os 4 fundamentos do design visual
 
 Esses métodos funcionam como **instrumentos de pensamento e criação**.

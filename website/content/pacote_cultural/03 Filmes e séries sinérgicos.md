@@ -34,7 +34,7 @@ Brad Bird constrói em *Tomorrowland* uma tese disfarçada de aventura: o pessim
 <img src="/brand/images/cover-inception.jpg" alt="Inception; A Origem" style="width:200px; border-radius:8px" />
 <div>
 
-Christopher Nolan transforma espionagem em epistemologia: *Inception* não é um filme sobre roubar segredos, mas sobre o que acontece quando uma ideia se instala com profundidade suficiente para alterar a realidade de quem a carrega. A operação central do filme; plantar um pensamento na mente de alguém de modo que ele acredite ser seu; revela algo que criadores e designers conhecem na prática: ideias não são abstrações inofensivas. Elas reorganizam decisões, redefinem identidades, movem mercados inteiros. O filme também expõe a arquitetura invisível da persuasão; camadas dentro de camadas, cada uma com suas próprias regras. Para a Overlens, *Inception* é um lembrete de que quem aprende a construir ideias com consciência assume uma responsabilidade proporcional ao poder que isso carrega.
+Christopher Nolan transforma espionagem em epistemologia: *Inception* não é um filme sobre roubar segredos, mas sobre o que acontece quando uma ideia se instala com profundidade suficiente para alterar a realidade de quem a carrega. A operação central do filme; plantar um pensamento na mente de alguém de modo que ele acredite ser seu; revela algo que quem trabalha com ideias conhece na prática: elas não são abstrações inofensivas. Elas reorganizam decisões, redefinem identidades, movem mercados inteiros. O filme também expõe a arquitetura invisível da persuasão; camadas dentro de camadas, cada uma com suas próprias regras. Para a Overlens, *Inception* é um lembrete de que quem aprende a construir ideias com consciência assume uma responsabilidade proporcional ao poder que isso carrega.
 
 [Disponível para aluguel nas principais plataformas de streaming](https://www.justwatch.com/br/filme/inception)
 
@@ -73,7 +73,7 @@ A saga de Frank Herbert, traduzida por Denis Villeneuve em escala épica, é um 
 <img src="/brand/images/cover-matrix.jpg" alt="The Matrix" style="width:200px; border-radius:8px" />
 <div>
 
-Poucas obras na história do cinema colocaram com tanta clareza a pergunta que atravessa toda a filosofia da Overlens: você quer ver o mundo como ele realmente é, mesmo que isso mude tudo? *The Matrix* não é apenas um filme sobre tecnologia ou simulação; é sobre o momento em que alguém decide parar de aceitar as molduras prontas e começa a construir as próprias. A pílula vermelha é uma metáfora precisa para o que acontece quando um criador desperta para o funcionamento invisível dos sistemas ao seu redor. O filme também nos alerta: ver mais longe traz responsabilidade, não superioridade.
+Poucas obras na história do cinema colocaram com tanta clareza a pergunta que atravessa toda a filosofia da Overlens: você quer ver o mundo como ele realmente é, mesmo que isso mude tudo? *The Matrix* não é apenas um filme sobre tecnologia ou simulação; é sobre o momento em que alguém decide parar de aceitar as molduras prontas e começa a construir as próprias. A pílula vermelha é uma metáfora precisa para o que acontece quando alguém desperta para o funcionamento invisível dos sistemas ao seu redor. O filme também nos alerta: ver mais longe traz responsabilidade, não superioridade.
 
 [Disponível na Max](https://www.max.com/)
 
@@ -86,7 +86,7 @@ Poucas obras na história do cinema colocaram com tanta clareza a pergunta que a
 <img src="/brand/images/cover-interstellar.jpg" alt="Interstellar" style="width:200px; border-radius:8px" />
 <div>
 
-Christopher Nolan constrói uma narrativa onde ciência e afeto não competem entre si; eles se completam. *Interstellar* mostra que os problemas mais complexos da humanidade não se resolvem apenas com cálculo ou apenas com coragem, mas com a disposição de atravessar o desconhecido carregando as duas coisas. O filme é um lembrete de que a criação genuína exige aceitar a incerteza sem abandonar o rigor. Para a Overlens, a cena da estante; onde passado, presente e futuro coexistem; é quase uma definição visual do pensamento nexialista: tudo está conectado, e o criador é quem aprende a ler essas conexões.
+Christopher Nolan constrói uma narrativa onde ciência e afeto não competem entre si; eles se completam. *Interstellar* mostra que os problemas mais complexos da humanidade não se resolvem apenas com cálculo ou apenas com coragem, mas com a disposição de atravessar o desconhecido carregando as duas coisas. O filme é um lembrete de que a criação genuína exige aceitar a incerteza sem abandonar o rigor. Para a Overlens, a cena da estante; onde passado, presente e futuro coexistem; é quase uma definição visual do pensamento nexialista: tudo está conectado, e o nexialista é quem aprende a ler essas conexões.
 
 [Disponível na Amazon Prime Video](https://www.primevideo.com/)
 

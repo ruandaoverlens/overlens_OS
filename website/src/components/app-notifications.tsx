@@ -22,21 +22,18 @@ import {
   NotificationCardTitle,
 } from "@/components/ui/notification-card";
 import { TopbarNotifications } from "@/components/ui/topbar";
+import { EmptyState } from "@/components/empty-state";
 import { useNotifications } from "@/lib/notifications";
 import type { Notification } from "@/lib/notifications";
 
 const emptyState = (
-  <div className="flex flex-col items-center gap-3 text-center pb-10">
-    <SmNotificationSolidIcon className="size-10 text-muted-foreground/40" />
-    <div className="flex flex-col gap-1">
-      <p className="text-sm font-medium text-muted-foreground">
-        Nenhuma notificação
-      </p>
-      <p className="text-xs text-muted-foreground/60">
-        Você está em dia com tudo.
-      </p>
-    </div>
-  </div>
+  <EmptyState
+    size="sm"
+    className="border-none pb-10"
+    icon={<SmNotificationSolidIcon aria-hidden="true" />}
+    title="Nenhuma notificação"
+    description="Você está em dia com tudo."
+  />
 );
 
 function isSocial(n: Notification) {
@@ -45,7 +42,7 @@ function isSocial(n: Notification) {
 
 export function AppNotifications() {
   const router = useRouter();
-  const { items, markRead } = useNotifications();
+  const { items, unreadCount, markRead } = useNotifications();
 
   const general = items.filter((n) => !isSocial(n));
   const social = items.filter(isSocial);
@@ -55,8 +52,13 @@ export function AppNotifications() {
     if (n.actionUrl) router.push(n.actionUrl);
   };
 
+  const triggerLabel =
+    unreadCount > 0
+      ? `Notificações, ${unreadCount} não lida${unreadCount === 1 ? "" : "s"}`
+      : "Notificações";
+
   return (
-    <TopbarNotifications>
+    <TopbarNotifications aria-label={triggerLabel}>
       <NotificationBarContent>
         <NotificationBarHeader>
           <NotificationBarTitle>Notificações</NotificationBarTitle>

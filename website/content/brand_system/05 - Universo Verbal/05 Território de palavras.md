@@ -1,11 +1,11 @@
 ---
 title: Território de Palavras
-summary: Cartografa as 6 constelações semânticas da Overlens (Criação, Conhecimento, Sistemas, Autonomia, Transformação, Filosofia), lista palavras que usamos vs. evitamos, define metáforas estruturais (Lente, Sistema Vivo, Fogo, Camadas) e quatro registros de intensidade.
-topics: [território semântico, constelações de palavras, metáforas estruturais, registros de intensidade, palavras evitadas]
-keywords: [Flammarion Engraving, criar, construir, integrar, autonomia, autoria, agência, emergir, consciência, propósito, Lente, Sistema Vivo, Fogo, Camadas, Prometheus, prisma, micélio, travessia, registro provocativo, registro acolhedor, registro técnico, registro inspirador, acenda, forje, destrave, empoderamento, sinergia, despertar, vagas limitadas, hustle, grind]
+summary: Cartografa as 7 constelações semânticas da Overlens (Criação, Conhecimento, Sistemas, Autonomia, Transformação, Filosofia, Realização e Negócio), lista palavras que usamos vs. evitamos, define metáforas estruturais (Lente, Sistema Vivo, Fogo, Camadas) e quatro registros de intensidade.
+topics: [território semântico, constelações de palavras, metáforas estruturais, registros de intensidade, palavras evitadas, vocabulário de empreendedorismo]
+keywords: [Flammarion Engraving, criar, construir, integrar, empreender, lançar, sustentar, autonomia, autoria, agência, emergir, consciência, propósito, Lente, Sistema Vivo, Fogo, Camadas, Prometheus, prisma, micélio, travessia, registro provocativo, registro acolhedor, registro técnico, registro inspirador, acenda, forje, destrave, empoderamento, sinergia, despertar, vagas limitadas, hustle, grind, mindset milionário, liberdade financeira]
 priority: medium
 ai_when_to_use: |
-  Use quando o usuário perguntar quais palavras a Overlens usa ou evita, qual o campo semântico de uma palavra, qual metáfora aplicar, qual registro de intensidade adequado a um contexto, ou quando estiver revisando texto em busca de termos proibidos (acenda, destrave, empoderamento, vagas limitadas etc.).
+  Use quando o usuário perguntar quais palavras a Overlens usa ou evita, qual o campo semântico de uma palavra, como falar de negócio e empreendedorismo sem cair em hustle porn, qual metáfora aplicar, qual registro de intensidade adequado a um contexto, ou quando estiver revisando texto em busca de termos proibidos (acenda, destrave, empoderamento, vagas limitadas, mindset milionário etc.).
 related: ["brand_system/05 - Universo Verbal/03 Tom de Voz.md", "brand_system/05 - Universo Verbal/04 Vocabulário.md", "brand_system/05 - Universo Verbal/06 Glossário.md"]
 ---
 
@@ -27,7 +27,7 @@ Conhecer este território é entender a gravitação invisível que orienta cada
 
 ## Constelações Semânticas
 
-O léxico da Overlens se organiza em seis campos gravitacionais. Cada um deles reúne palavras que compartilham não apenas significado, mas postura; uma orientação comum em direção ao propósito da marca.
+O léxico da Overlens se organiza em sete campos gravitacionais. Cada um deles reúne palavras que compartilham não apenas significado, mas postura; uma orientação comum em direção ao propósito da marca.
 
 Esses campos não são compartimentos estanques. São constelações: conjuntos com identidade própria, mas que se conectam e se iluminam mutuamente.
 
@@ -115,6 +115,20 @@ O campo que sustenta a dimensão do Sábio.
 
 ---
 
+### 7. Realização e Negócio
+
+O campo que ancora o público da marca: o Empreendedor Nexialista.
+
+**Palavras centrais:** empreender, realizar, lançar, sustentar, fundar, operar, validar, decidir, entregar.
+
+**Palavras de apoio:** colocar de pé, atravessar o atrito, tirar do papel, dar continuidade, dimensionar com critério, viver do que constrói.
+
+**Orientação de uso:** aqui a marca corre o maior risco de contaminação. Falar de negócio na Overlens nunca é falar de faturamento como prova de valor. "Empreender" significa assumir a própria ideia até o fim, com as consequências que isso traz; não é sinônimo de vender. Prefira "sustentar" a "escalar", "critério" a "performance", "o que constrói" a "o que fatura". Quando o resultado financeiro aparecer, ele aparece como condição de continuidade, nunca como troféu.
+
+**Campo de tensão:** empreendedorismo não é hustle. Não usamos a estética da pressa, do sacrifício heroico ou do enriquecimento como horizonte. O Empreendedor Nexialista é construtor e pensador, não vendedor.
+
+---
+
 ## Palavras que Usamos vs. Palavras que Evitamos
 
 A identidade verbal de uma marca se define tanto pelo que diz quanto pelo que se recusa a dizer. A tabela abaixo não é arbitrária; cada recusa tem uma razão filosófica ou estratégica.
@@ -132,6 +146,7 @@ A identidade verbal de uma marca se define tanto pelo que diz quanto pelo que se
 | **Lente, sistema vivo, capital simbólico** | Vocabulário proprietário; carregam a cosmologia da marca |
 | **Clareza, precisão, simplicidade** | Qualidades operacionais; comunicação como serviço ao leitor |
 | **E se...? / Imagine / Experimente** | Convites à ação e reflexão; sem imposição, com abertura |
+| **Empreender, lançar, sustentar** | Verbos de realização; a ideia atravessando o atrito do mundo real |
 
 ### Palavras que Evitamos
 
@@ -148,6 +163,9 @@ A identidade verbal de uma marca se define tanto pelo que diz quanto pelo que se
 | **Energia, vibração, universo conspira** | Jargão esotérico; contradiz base científica | *Intenção, direção, propósito* |
 | **Diquinhas, projetinho** | Diminutivos que infantilizam o criativo | *Referência, diretriz, projeto* |
 | **Grind, hustle, no pain no gain** | Hustle porn que contradiz ritmo realista | *Compromisso, consistência, ritmo sustentável* |
+| **Mindset milionário, liberdade financeira** | Empreendedorismo reduzido a promessa de enriquecimento | *Autonomia, sustentar o próprio trabalho, viver do que constrói* |
+| **Escalar, escala infinita** | Crescimento como valor em si, sem critério nem consequência | *Sustentar, dimensionar com critério, crescer com direção* |
+| **Faturamento como prova** | Número no lugar de argumento; espetáculo de resultado | *Evidência concreta: o que foi construído e o que mudou* |
 
 ---
 

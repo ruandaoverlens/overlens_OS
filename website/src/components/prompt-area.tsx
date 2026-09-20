@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { cn } from "@/lib/utils"
+import { useSlashFocus } from "@/lib/use-slash-focus"
 import {
   SmAdd2LineIcon,
   SmArrowUpwardLineIcon,
@@ -11,6 +12,14 @@ import {
   SmFolderLineIcon,
 } from "@/components/icons"
 import { CitationPill } from "@/components/chat/citation-pill"
+import { Button } from "@/components/ui/button"
+import { Spinner } from "@/components/ui/spinner"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+import { notify } from "@/lib/notifications/toast"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -52,9 +61,32 @@ type PromptAreaProps = {
   autoFocus?: boolean
   /** When true, clears the textarea after a successful submit. Default: true. */
   clearOnSubmit?: boolean
+  /**
+   * Registra o atalho global "/" para focar o composer. Só deve ser ligado
+   * pelo composer principal da rota (chat); índices de system não o usam.
+   * Default: false.
+   */
+  focusShortcut?: boolean
+  /** Texto inicial do composer (ex.: vindo de `?q=`). */
+  initialValue?: string
+  /** Anexos iniciais (ex.: restaurados após uma falha de envio). */
+  initialAttachments?: File[]
 }
 
 const ACCEPTED_TYPES = "image/*,.pdf,.md"
+/** Limite por anexo — acima disso o arquivo é recusado com aviso. */
+const MAX_ATTACHMENT_BYTES = 10 * 1024 * 1024
+const ACCEPTED_TYPES_LABEL = "Imagens, PDF ou Markdown"
+
+/** Tipos aceitos: qualquer imagem, PDF ou Markdown (por MIME ou extensão). */
+function isAcceptedType(file: File): boolean {
+  if (file.type.startsWith("image/")) return true
+  if (file.type === "application/pdf") return true
+  if (file.type === "text/markdown") return true
+  return /\.(pdf|md|markdown)$/i.test(file.name)
+}
+
+type RejectReason = "size" | "type"
 
 function isImage(file: File) {
   return file.type.startsWith("image/")
@@ -82,7 +114,7 @@ function ImagePreview({ file, onRemove }: ImagePreviewProps) {
   return (
     <div
       data-slot="prompt-area-image-preview"
-      className="relative h-[72px] w-[72px] shrink-0 overflow-hidden rounded-xl border border-border/50 bg-muted"
+      className="relative size-18 shrink-0 overflow-hidden rounded-xl border border-border/50 bg-muted"
     >
       {url && (
         // eslint-disable-next-line @next/next/no-img-element
@@ -92,17 +124,16 @@ function ImagePreview({ file, onRemove }: ImagePreviewProps) {
           className="h-full w-full object-cover"
         />
       )}
-      <button
+      <Button
         type="button"
+        variant="ghost"
+        size="icon-xs"
         onClick={onRemove}
         aria-label={`Remover ${file.name}`}
-        className={cn(
-          "absolute right-1 top-1 flex size-5 items-center justify-center rounded-full transition-colors outline-none",
-          "bg-black/70 text-white hover:bg-black/85",
-        )}
+        className="absolute right-1 top-1 bg-black/70 text-white hover:bg-black/85 hover:text-white"
       >
         <SmCloseLineIcon className="size-3.5" />
-      </button>
+      </Button>
     </div>
   )
 }
@@ -118,23 +149,22 @@ function FileChip({ file, onRemove }: FileChipProps) {
       data-slot="prompt-area-file-chip"
       className={cn(
         "inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full pl-3 pr-1 text-sm font-medium transition-colors",
-        "bg-[#D6A461]/10 text-[#D6A461]",
+        "bg-brand-sahara/10 text-brand-sahara",
       )}
     >
-      <SmFolderLineIcon className="size-4" />
+      <SmFolderLineIcon className="size-4" aria-hidden="true" />
       <span className="max-w-[180px] truncate">{file.name}</span>
-      <span className="text-xs opacity-70">{formatBytes(file.size)}</span>
-      <button
+      <span className="text-xs">{formatBytes(file.size)}</span>
+      <Button
         type="button"
+        variant="ghost"
+        size="icon-xs"
         onClick={onRemove}
         aria-label={`Remover ${file.name}`}
-        className={cn(
-          "ml-0.5 flex size-7 shrink-0 items-center justify-center rounded-full transition-colors outline-none",
-          "text-[#D6A461] hover:bg-[#D6A461]/15",
-        )}
+        className="ml-0.5 shrink-0 text-brand-sahara hover:bg-brand-sahara/15 hover:text-brand-sahara"
       >
         <SmCloseLineIcon className="size-4" />
-      </button>
+      </Button>
     </div>
   )
 }
@@ -148,16 +178,21 @@ export function PromptArea({
   loading = false,
   autoFocus = false,
   clearOnSubmit = true,
+  focusShortcut = false,
+  initialValue,
+  initialAttachments,
 }: PromptAreaProps) {
-  const [value, setValue] = React.useState("")
+  const [value, setValue] = React.useState(initialValue ?? "")
   const [planMode, setPlanMode] = React.useState(false)
   const [selectedSection, setSelectedSection] = React.useState<SelectedSection | null>(null)
   const [sectionPickerOpen, setSectionPickerOpen] = React.useState(false)
   const [isDragOver, setIsDragOver] = React.useState(false)
-  const [attachments, setAttachments] = React.useState<File[]>([])
+  const [attachments, setAttachments] = React.useState<File[]>(initialAttachments ?? [])
+  const [attachmentError, setAttachmentError] = React.useState<string | null>(null)
   const dragCounter = React.useRef(0)
   const textareaRef = React.useRef<HTMLTextAreaElement>(null)
   const fileInputRef = React.useRef<HTMLInputElement>(null)
+  const attachmentErrorId = React.useId()
 
   const hasValue = value.trim().length > 0
   const hasAttachments = attachments.length > 0
@@ -167,13 +202,53 @@ export function PromptArea({
     if (autoFocus) textareaRef.current?.focus()
   }, [autoFocus])
 
+  // "/" foca o composer quando o foco não está num campo de texto.
+  // Só o composer principal da rota registra o atalho (focusShortcut).
+  useSlashFocus(textareaRef, focusShortcut && !disabled)
+
   function appendFiles(files: File[]) {
     if (files.length === 0) return
-    setAttachments((prev) => [...prev, ...files])
+    const accepted: File[] = []
+    const rejected: { file: File; reason: RejectReason }[] = []
+    for (const file of files) {
+      if (!isAcceptedType(file)) rejected.push({ file, reason: "type" })
+      else if (file.size > MAX_ATTACHMENT_BYTES) rejected.push({ file, reason: "size" })
+      else accepted.push(file)
+    }
+    if (rejected.length > 0) {
+      const tooBig = rejected.filter((r) => r.reason === "size")
+      const badType = rejected.filter((r) => r.reason === "type")
+      const parts: string[] = []
+      if (tooBig.length > 0) {
+        parts.push(
+          tooBig.length === 1
+            ? `"${tooBig[0].file.name}" ultrapassa ${formatBytes(MAX_ATTACHMENT_BYTES)}.`
+            : `${tooBig.length} arquivos ultrapassam ${formatBytes(MAX_ATTACHMENT_BYTES)}.`,
+        )
+      }
+      if (badType.length > 0) {
+        parts.push(
+          badType.length === 1
+            ? `"${badType[0].file.name}" não é um formato aceito (${ACCEPTED_TYPES_LABEL}).`
+            : `${badType.length} arquivos não são de um formato aceito (${ACCEPTED_TYPES_LABEL}).`,
+        )
+      }
+      const message = parts.join(" ")
+      setAttachmentError(message)
+      notify.warning(
+        rejected.length === 1 ? "Anexo recusado" : "Anexos recusados",
+        { description: message },
+      )
+    } else {
+      setAttachmentError(null)
+    }
+    if (accepted.length === 0) return
+    setAttachments((prev) => [...prev, ...accepted])
   }
 
   function removeAttachment(index: number) {
     setAttachments((prev) => prev.filter((_, i) => i !== index))
+    setAttachmentError(null)
   }
 
   async function handleSubmit() {
@@ -194,8 +269,13 @@ export function PromptArea({
         attachments: filesToSend,
       })
     } catch (err) {
-      // Parent is responsible for surfacing errors (toast, etc.)
+      // Parent is responsible for surfacing errors (toast, etc.), but o rascunho
+      // é nosso: um envio que falha não pode apagar o que a pessoa escreveu.
       console.error("PromptArea submit failed:", err)
+      if (clearOnSubmit) {
+        setValue((current) => (current.trim().length > 0 ? current : trimmed))
+        setAttachments((current) => (current.length > 0 ? current : filesToSend))
+      }
     }
   }
 
@@ -303,14 +383,13 @@ export function PromptArea({
         onDrop={handleDrop}
         onPaste={handlePaste}
         className={cn(
-          "group/prompt relative -mx-0.5 flex w-[calc(100%+4px)] flex-col gap-7 overflow-hidden rounded-3xl px-2 pt-4 pb-2",
-          "bg-accent/50 dark:bg-input/30",
+          "group/prompt relative -mx-0.5 flex w-[calc(100%+4px)] flex-col gap-7 overflow-hidden rounded-prompt px-2 pt-4 pb-2",
+          "bg-input/30",
           "border-2 border-transparent",
-          "transition-[background-color,border-color]",
-          "hover:bg-accent dark:hover:bg-input/50",
-          "focus-within:border-input focus-within:bg-transparent",
-          "dark:focus-within:bg-transparent",
-          isDragOver && "border-[#D6A461] bg-[#D6A461]/5 dark:bg-[#D6A461]/5",
+          "transition-[background-color,border-color,box-shadow]",
+          "hover:bg-input/50",
+          "focus-within:ring-2 focus-within:ring-foreground/70 focus-within:bg-transparent",
+          isDragOver && "border-brand-sahara bg-brand-sahara/5",
           className
         )}
       >
@@ -347,10 +426,24 @@ export function PromptArea({
           </div>
         )}
 
+        {attachmentError && (
+          <p
+            id={attachmentErrorId}
+            role="alert"
+            data-slot="prompt-area-attachment-error"
+            className={cn("-mb-4 px-3 text-sm text-destructive", hasAttachments && "-mt-2")}
+          >
+            {attachmentError}
+          </p>
+        )}
+
         <div className="flex items-start gap-2 pl-3 pr-2">
           <textarea
             ref={textareaRef}
             data-slot="prompt-area-input"
+            aria-label={placeholder}
+            aria-describedby={attachmentError ? attachmentErrorId : undefined}
+            aria-keyshortcuts={focusShortcut ? "/" : undefined}
             placeholder={placeholder}
             value={value}
             disabled={disabled}
@@ -364,7 +457,7 @@ export function PromptArea({
               void handleSubmit()
             }}
             className={cn(
-              "min-h-[24px] max-h-[160px] w-full resize-none overflow-y-auto bg-transparent font-body text-base leading-[1.6] tracking-[0.16px] outline-none",
+              "min-h-[24px] max-h-[160px] w-full resize-none overflow-y-auto bg-transparent font-body text-base leading-relaxed tracking-normal outline-none",
               "placeholder:text-muted-foreground",
               "text-foreground",
               "field-sizing-content",
@@ -378,20 +471,20 @@ export function PromptArea({
           <div className="flex items-center gap-1.5">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button
+                <Button
                   type="button"
+                  variant="ghost"
+                  size="icon"
                   data-slot="prompt-area-add"
-                  aria-label="Adicionar"
+                  aria-label="Adicionar anexos, Modo Plano ou citação"
                   className={cn(
-                    "flex size-9 shrink-0 items-center justify-center rounded-full transition-colors outline-none",
-                    "text-muted-foreground/60 hover:bg-accent hover:text-foreground",
-                    "dark:hover:bg-input/50",
-                    "data-[state=open]:bg-accent data-[state=open]:text-foreground",
-                    "dark:data-[state=open]:bg-input/50",
+                    "shrink-0 text-muted-foreground hover:text-foreground",
+                    "hover:bg-input/50",
+                    "data-[state=open]:bg-input/50 data-[state=open]:text-foreground",
                   )}
                 >
                   <SmAdd2LineIcon className="size-6" />
-                </button>
+                </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" sideOffset={8} className="min-w-[220px] pb-2">
                 <DropdownMenuItem onSelect={handleAddFilesClick}>
@@ -413,22 +506,21 @@ export function PromptArea({
               <div
                 className={cn(
                   "flex h-9 shrink-0 items-center gap-1.5 rounded-full pl-3 pr-2 text-sm font-medium transition-colors",
-                  "bg-[#77C5D5]/10 text-[#77C5D5]",
+                  "bg-brand-atmos/10 text-brand-atmos",
                 )}
               >
-                <SmCognitionLineIcon className="size-4" />
+                <SmCognitionLineIcon className="size-4" aria-hidden="true" />
                 <span>Modo Plano</span>
-                <button
+                <Button
                   type="button"
+                  variant="ghost"
+                  size="icon-xs"
                   onClick={() => setPlanMode(false)}
                   aria-label="Desativar Modo Plano"
-                  className={cn(
-                    "flex size-6 shrink-0 items-center justify-center rounded-full transition-colors outline-none",
-                    "text-[#77C5D5] hover:bg-[#77C5D5]/15",
-                  )}
+                  className="shrink-0 text-brand-atmos hover:bg-brand-atmos/15 hover:text-brand-atmos"
                 >
                   <SmCloseLineIcon className="size-4" />
-                </button>
+                </Button>
               </div>
             )}
 
@@ -440,29 +532,30 @@ export function PromptArea({
             )}
           </div>
 
-          <button
-            type="button"
-            data-slot="prompt-area-submit"
-            disabled={!canSubmit}
-            onClick={handleSubmit}
-            aria-label={loading ? "Enviando" : "Enviar"}
-            aria-busy={loading || undefined}
-            className={cn(
-              "flex size-9 shrink-0 items-center justify-center rounded-full transition-colors outline-none",
-              "bg-white text-black",
-              "hover:bg-white/90",
-              "disabled:opacity-30 disabled:pointer-events-none",
-            )}
-          >
-            {loading ? (
-              <span
-                aria-hidden="true"
-                className="size-4 animate-spin rounded-full border-2 border-black/20 border-t-black"
-              />
-            ) : (
-              <SmArrowUpwardLineIcon className="size-5" />
-            )}
-          </button>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                type="button"
+                variant="inverted"
+                size="icon"
+                data-slot="prompt-area-submit"
+                disabled={!canSubmit}
+                onClick={handleSubmit}
+                aria-label={loading ? "Enviando" : "Enviar"}
+                aria-busy={loading || undefined}
+                className="shrink-0 bg-white text-black hover:bg-white/90 disabled:opacity-30"
+              >
+                {loading ? (
+                  <Spinner aria-hidden="true" role="presentation" className="size-4 text-black" />
+                ) : (
+                  <SmArrowUpwardLineIcon className="size-5" />
+                )}
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="top">
+              {loading ? "Enviando…" : "Enviar"}
+            </TooltipContent>
+          </Tooltip>
         </div>
       </div>
 
@@ -471,9 +564,9 @@ export function PromptArea({
         onOpenChange={setSectionPickerOpen}
         title="Citar seção"
         description="Busque e selecione uma seção para citar."
-        placeholder="Buscar seção..."
+        placeholder="Buscar seção…"
         showCloseButton={false}
-        className="rounded-[28px]"
+        className="rounded-prompt"
         suggestions={groupedSections.map(([groupTitle, items]) => (
           <CommandGroup key={groupTitle} heading={groupTitle}>
             {items.map((section) => {

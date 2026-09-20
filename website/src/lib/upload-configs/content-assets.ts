@@ -12,7 +12,7 @@ export const contentAssetConfigs: AssetUploadConfig[] = [
     fields: [
       {
         name: "titulo",
-        label: "Titulo",
+        label: "Título",
         type: "text",
         required: true,
         placeholder: "Nome do template",
@@ -47,7 +47,7 @@ export const contentAssetConfigs: AssetUploadConfig[] = [
       },
       {
         name: "dimensoes",
-        label: "Dimensoes",
+        label: "Dimensões",
         type: "text",
         required: false,
         placeholder: "Dimensões (ex: 1920x1080, A4, Stories)",
@@ -68,7 +68,7 @@ export const contentAssetConfigs: AssetUploadConfig[] = [
       },
       {
         name: "editavel",
-        label: "Editavel",
+        label: "Editável",
         type: "switch",
         required: false,
         helperText: "O template é editável/aberto?",
@@ -78,7 +78,7 @@ export const contentAssetConfigs: AssetUploadConfig[] = [
         label: "Tags",
         type: "tags",
         required: false,
-        placeholder: "Ex: instagram, apresentação, slide, editorial...",
+        placeholder: "Ex: instagram, apresentação, slide, editorial…",
       },
       {
         name: "notas",
@@ -100,7 +100,7 @@ export const contentAssetConfigs: AssetUploadConfig[] = [
     fields: [
       {
         name: "titulo",
-        label: "Titulo",
+        label: "Título",
         type: "text",
         required: true,
         placeholder: "Título do documento",
@@ -121,14 +121,14 @@ export const contentAssetConfigs: AssetUploadConfig[] = [
       },
       {
         name: "versao",
-        label: "Versao",
+        label: "Versão",
         type: "text",
         required: false,
         placeholder: "Versão do documento (ex: 1.0, 2.3)",
       },
       {
         name: "publico_alvo",
-        label: "Publico Alvo",
+        label: "Público-alvo",
         type: "select",
         required: false,
         options: [
@@ -150,7 +150,7 @@ export const contentAssetConfigs: AssetUploadConfig[] = [
         label: "Tags",
         type: "tags",
         required: false,
-        placeholder: "Ex: onboarding, brand, processo, guia...",
+        placeholder: "Ex: onboarding, brand, processo, guia…",
       },
       {
         name: "notas",
@@ -172,7 +172,7 @@ export const contentAssetConfigs: AssetUploadConfig[] = [
     fields: [
       {
         name: "titulo",
-        label: "Titulo",
+        label: "Título",
         type: "text",
         required: true,
         placeholder: "Nome do objeto 3D",
@@ -231,7 +231,7 @@ export const contentAssetConfigs: AssetUploadConfig[] = [
         label: "Tags",
         type: "tags",
         required: false,
-        placeholder: "Ex: produto, mockup, cenário, personagem...",
+        placeholder: "Ex: produto, mockup, cenário, personagem…",
       },
       {
         name: "notas",

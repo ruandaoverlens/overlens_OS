@@ -1,10 +1,17 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
-import { SmCloseLineIcon } from "@/components/icons";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import { EmptyState } from "@/components/empty-state";
+import { SmCloseLineIcon, SmContrastLineIcon, SmInfoLineIcon } from "@/components/icons";
 import { useFavorites } from "@/lib/favorites";
 import { FavoriteButton } from "@/components/favorite-button";
+import { notify } from "@/lib/notifications";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { useLightboxItem } from "@/components/asset-page-shell";
+import { normalizeText, matchesNormalized } from "@/lib/normalize-text";
+import { HeadingTitle, headingTitleVariants } from "@/components/ui/heading";
 
 // ─── Types ───────────────────────────────────────────────────
 
@@ -45,6 +52,19 @@ export function getAllColorTags(): string[] {
   return ["primary", "secondary", "tertiary"];
 }
 
+/** `needle` já vem de `normalizeText` — normalizar por item seria trabalho repetido. */
+function matchesFilters(color: BrandColor, needle: string, activeTags?: Set<string>): boolean {
+  if (activeTags && activeTags.size > 0 && !activeTags.has(color.group)) return false;
+  const q = needle;
+  if (!q) return true;
+  return (
+    matchesNormalized(color.name, q) ||
+    matchesNormalized(color.family, q) ||
+    matchesNormalized(color.description, q) ||
+    matchesNormalized(color.group, q)
+  );
+}
+
 // ─── OKLCh to HEX (via canvas) ──────────────────────────────
 
 function oklchToHex(oklchValue: string): string {
@@ -76,13 +96,15 @@ function CopyRow({ label, value }: { label: string; value: string }) {
 
   return (
     <button
+      type="button"
       onClick={handleCopy}
-      className="flex items-center justify-between w-full px-4 py-3 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] transition-colors text-left group"
+      aria-label={`Copiar ${label}: ${value}`}
+      className="flex items-center justify-between w-full px-4 py-3 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] transition-colors text-left outline-none focus-visible:ring-2 focus-visible:ring-foreground"
     >
-      <span className="text-xs text-[var(--surface-400)] uppercase tracking-wider">
+      <span className={headingTitleVariants({ size: "eyebrow" })}>
         {label}
       </span>
-      <span className="text-sm text-white font-mono">
+      <span className="text-sm text-white font-mono" aria-live="polite">
         {copied ? "Copiado!" : value}
       </span>
     </button>
@@ -98,64 +120,75 @@ export function ColorDetail({
   color: BrandColor;
   onClose: () => void;
 }) {
-  const hex = oklchToHex(color.oklch);
-
-  useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [onClose]);
+  const hex = useMemo(() => oklchToHex(color.oklch), [color.oklch]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-black flex flex-col">
-      {/* Top bar */}
-      <div className="flex items-center justify-between px-4 py-3 shrink-0">
-        <div className="flex-1 min-w-0">
-          <p className="text-sm font-medium text-white/80 truncate">{color.name}</p>
-          <p className="text-xs text-white/40 mt-0.5">{color.family}</p>
-        </div>
-        <div className="flex items-center gap-2 ml-4">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onClose}
-            className="text-white/60 hover:text-white hover:bg-white/10"
-          >
-            <SmCloseLineIcon />
-          </Button>
-        </div>
-      </div>
+    <Dialog open onOpenChange={(open) => { if (!open) onClose(); }}>
+      <DialogContent
+        showCloseButton={false}
+        className="max-w-none sm:max-w-none max-h-none w-screen h-svh rounded-none p-0 bg-black border-0 flex flex-col gap-0 overflow-hidden"
+      >
+        <DialogTitle className="sr-only">{color.name}</DialogTitle>
+        <DialogDescription className="sr-only">
+          Detalhes da cor {color.family}: clique em um valor para copiá-lo. Use Esc para fechar.
+        </DialogDescription>
 
-      {/* Content */}
-      <div className="flex-1 overflow-auto px-6 pb-10">
-        {/* Large swatch */}
-        <div
-          className="h-48 w-full max-w-md rounded-2xl mx-auto mb-8"
-          style={{ backgroundColor: color.oklch }}
-        />
-
-        {/* Info grid */}
-        <div className="max-w-md mx-auto flex flex-col gap-2">
-          <CopyRow label="Nome" value={color.name} />
-          <CopyRow label="Família" value={color.family} />
-          <div className="px-4 py-3 rounded-lg bg-white/[0.04]">
-            <span className="text-xs text-[var(--surface-400)] uppercase tracking-wider block">
-              Descrição
-            </span>
-            <p className="text-sm text-white mt-[12px] leading-relaxed">
-              {color.description}
-            </p>
+        {/* Top bar */}
+        <div className="flex items-center justify-between px-4 py-3 shrink-0">
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-medium text-white/80 truncate">{color.name}</p>
+            <p className="text-xs text-muted-foreground mt-0.5">{color.family}</p>
           </div>
-          {hex && <CopyRow label="HEX" value={hex} />}
-          <CopyRow label="OKLCh" value={color.oklch} />
-          <CopyRow label="CSS Variable" value={`var(${color.cssVar})`} />
-          <CopyRow label="CMYK" value={color.cmyk} />
-          <CopyRow label="Pantone" value={color.pantone} />
+          <div className="flex items-center gap-2 ml-4">
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  aria-label="Fechar"
+                  onClick={onClose}
+                  className="text-white/60 hover:text-white hover:bg-white/10"
+                >
+                  <SmCloseLineIcon />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent side="bottom">Fechar (Esc)</TooltipContent>
+            </Tooltip>
+          </div>
         </div>
-      </div>
-    </div>
+
+        {/* Content */}
+        <div className="flex-1 overflow-auto scrollbar-thin px-6 pb-10">
+          {/* Large swatch */}
+          <div
+            className="h-48 w-full max-w-md rounded-2xl mx-auto mb-8"
+            style={{ backgroundColor: color.oklch }}
+            role="img"
+            aria-label={`Amostra da cor ${color.name}`}
+          />
+
+          {/* Info grid */}
+          <div className="max-w-md mx-auto flex flex-col gap-2">
+            <CopyRow label="Nome" value={color.name} />
+            <CopyRow label="Família" value={color.family} />
+            <div className="px-4 py-3 rounded-lg bg-white/[0.04]">
+              <HeadingTitle as="h3" size="eyebrow" className="block text-surface-400">
+                Descrição
+              </HeadingTitle>
+              <p className="text-sm text-white mt-3 leading-relaxed">
+                {color.description}
+              </p>
+            </div>
+            {hex && <CopyRow label="HEX" value={hex} />}
+            <CopyRow label="OKLCh" value={color.oklch} />
+            <CopyRow label="CSS Variable" value={`var(${color.cssVar})`} />
+            <CopyRow label="CMYK" value={color.cmyk} />
+            <CopyRow label="Pantone" value={color.pantone} />
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }
 
@@ -173,55 +206,134 @@ function getTextColor(oklch: string): string {
 
 function ColorCard({
   color,
-  onClick,
+  onOpenDetail,
   isFavorite,
   onToggleFavorite,
 }: {
   color: BrandColor;
-  onClick: () => void;
+  onOpenDetail: () => void;
   isFavorite: boolean;
   onToggleFavorite: () => void;
 }) {
   const textColor = getTextColor(color.oklch);
+  const onDark = textColor === "white";
+
+  const handleCopyHex = async () => {
+    const hex = oklchToHex(color.oklch);
+    if (!hex) {
+      notify.error("Não foi possível calcular o HEX");
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(hex);
+      notify.success("HEX copiado", { description: `${color.name} · ${hex}` });
+    } catch (err) {
+      notify.fromError(err, "Não foi possível copiar");
+    }
+  };
 
   return (
-    <div
-      onClick={onClick}
-      className="rounded-xl overflow-hidden cursor-pointer hover:scale-[1.03] transition-all h-32 flex flex-col justify-end p-3 relative group"
-      style={{ backgroundColor: color.oklch, color: textColor }}
-    >
-      <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+    <div className="group relative h-32 rounded-xl overflow-hidden hover:scale-[1.03] transition-all">
+      <button
+        type="button"
+        onClick={handleCopyHex}
+        aria-label={`Copiar HEX de ${color.name}`}
+        className="w-full h-full flex flex-col justify-end p-3 text-left outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-inset"
+        style={{ backgroundColor: color.oklch, color: textColor }}
+      >
+        <span className="text-sm font-medium">{color.name}</span>
+      </button>
+      {/* Ações: irmãs do botão principal. */}
+      {/* Overlay invisível não captura toque: no touch fica sempre visível. */}
+      <div className="absolute top-2 right-2 z-10 flex items-center gap-2.5 opacity-0 pointer-events-none transition-opacity group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto focus-visible:opacity-100 pointer-coarse:opacity-100 pointer-coarse:pointer-events-auto">
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon-sm"
+          aria-label={`Detalhes de ${color.name}`}
+          onClick={onOpenDetail}
+          className={
+            onDark
+              ? "rounded-full bg-black/50 text-white/70 hover:bg-black/70 hover:text-white"
+              : "rounded-full bg-white/60 text-black/70 hover:bg-white/80 hover:text-black"
+          }
+        >
+          <SmInfoLineIcon className="size-4" />
+        </Button>
         <FavoriteButton isFavorite={isFavorite} onClick={() => onToggleFavorite()} />
       </div>
-      <span className="text-sm font-medium">{color.name}</span>
     </div>
   );
 }
 
 // ─── Main Component ──────────────────────────────────────────
 
-export function ColorBank() {
-  const [selectedColor, setSelectedColor] = useState<BrandColor | null>(null);
+export function ColorBank({
+  search = "",
+  activeTags,
+  onClearFilters,
+  onCountChange,
+}: {
+  search?: string;
+  activeTags?: Set<string>;
+  onClearFilters?: () => void;
+  /** Quantidade de cores visíveis após os filtros (para o contador do shell). */
+  onCountChange?: (count: number) => void;
+} = {}) {
+  // A cor aberta vive na URL (?item=<nome>) para ser compartilhável.
+  const [selectedId, openItem, closeItem] = useLightboxItem();
   const { isFavorite, toggleFavorite } = useFavorites();
+
+  const selectedColor = useMemo(
+    () => COLORS.find((c) => c.name === selectedId) ?? null,
+    [selectedId],
+  );
+
+  // Nome inexistente na paleta: limpa a chave da URL.
+  useEffect(() => {
+    if (selectedId && !selectedColor) closeItem();
+  }, [selectedId, selectedColor, closeItem]);
+
+  const visibleColors = useMemo(() => {
+    // Busca insensível a acento: "ambar" encontra "Âmbar".
+    const needle = normalizeText(search);
+    return COLORS.filter((c) => matchesFilters(c, needle, activeTags));
+  }, [search, activeTags]);
+  const hasFilters = search.trim().length > 0 || (activeTags?.size ?? 0) > 0;
+
+  useEffect(() => {
+    onCountChange?.(visibleColors.length);
+  }, [visibleColors.length, onCountChange]);
 
   return (
     <>
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">
-        {COLORS.map((color) => (
+        {visibleColors.map((color) => (
           <ColorCard
             key={color.name}
             color={color}
-            onClick={() => setSelectedColor(color)}
+            onOpenDetail={() => openItem(color.name)}
             isFavorite={isFavorite(color.name)}
             onToggleFavorite={() => toggleFavorite({ id: color.name, type: "color", title: color.name, subtitle: color.family, thumbnail: color.oklch })}
           />
         ))}
       </div>
 
+      {visibleColors.length === 0 && (
+        <EmptyState
+          variant={hasFilters ? "filtered" : "empty"}
+          icon={<SmContrastLineIcon className="size-6" />}
+          title="Nenhuma cor encontrada"
+          description={hasFilters ? "Nenhum resultado para a busca ou o grupo selecionado." : "A paleta oficial ainda não foi publicada neste banco."}
+          onClear={onClearFilters}
+          className="border-none py-16"
+        />
+      )}
+
       {selectedColor && (
         <ColorDetail
           color={selectedColor}
-          onClose={() => setSelectedColor(null)}
+          onClose={closeItem}
         />
       )}
     </>

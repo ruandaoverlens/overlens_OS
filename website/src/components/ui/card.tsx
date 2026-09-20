@@ -1,6 +1,7 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
+import { headingTitleVariants } from "@/components/ui/heading"
 
 /** Container component for grouping related content with consistent styling. */
 function Card({ className, ...props }: React.ComponentProps<"div">) {
@@ -8,7 +9,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card"
       className={cn(
-        "bg-[var(--surface-950)] text-card-foreground flex min-w-0 flex-col gap-4 rounded-xl px-4 py-6 shadow-none dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]",
+        "bg-surface-950 text-card-foreground flex min-w-0 flex-col gap-4 rounded-xl px-4 py-6 shadow-popover",
         className
       )}
       {...props}
@@ -30,12 +31,30 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-/** Title text for the card header. */
-function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
+/**
+ * Title text for the card header.
+ * `size="sm"` usa a variante de rótulo (Outfit, caixa alta) usada em cards densos.
+ */
+function CardTitle({
+  className,
+  size = "default",
+  ...props
+}: React.ComponentProps<"div"> & { size?: "default" | "sm" }) {
   return (
     <div
       data-slot="card-title"
-      className={cn("flex items-center justify-between px-1 text-lg leading-none font-medium", className)}
+      data-size={size}
+      className={cn(
+        "flex items-center justify-between px-1",
+        size === "sm"
+          // Mesma receita de título do design system (Outfit, caixa alta).
+          ? headingTitleVariants({ size: "label" })
+          // Exceção deliberada: o título padrão do card é prosa (Inter, caixa
+          // mista) — não é um heading de bloco, e virar caixa alta mudaria
+          // todos os cards do app.
+          : "text-lg leading-none font-medium",
+        className
+      )}
       {...props}
     />
   )

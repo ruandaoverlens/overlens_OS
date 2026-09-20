@@ -3,11 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { toast } from "sonner";
+import { notify } from "@/lib/notifications/toast";
+import { HeadingTitle } from "@/components/ui/heading";
+import { EmptyState } from "@/components/empty-state";
+import { SmDocLineIcon } from "@/components/icons";
+import { Button } from "@/components/ui/button";
 import type { DocSection } from "@/lib/docs";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import {
-  FileText,
   BookMarked,
   Scan,
   LayoutGrid,
@@ -44,10 +47,14 @@ import {
   ClipboardList,
   FileCheck,
   BadgeDollarSign,
+  Briefcase,
+  Compass,
+  History,
   type LucideIcon,
 } from "lucide-react";
 import { PromptArea } from "@/components/prompt-area";
 import { flattenForCitation } from "@/lib/citable-sections";
+import { getGradient } from "@/lib/brand-gradients";
 
 export type { CitableSection } from "@/lib/citable-sections";
 
@@ -66,38 +73,30 @@ function findFirstFile(s: DocSection): DocSection["files"][0] | undefined {
 
 interface SectionMeta {
   icon: LucideIcon;
-  gradient: string;
 }
 
 /* ─── Brand System ─── */
 const brandSections: Record<string, SectionMeta> = {
   definição: {
     icon: BookMarked,
-    gradient: "linear-gradient(135deg, #77C5D5 0%, #A8DDE8 50%, #77C5D5 100%)",
   },
   "overview da overlens": {
     icon: Scan,
-    gradient: "linear-gradient(135deg, #D6A461 0%, #FBDD7A 50%, #D6A461 100%)",
   },
   "plataforma da marca": {
     icon: LayoutGrid,
-    gradient: "linear-gradient(135deg, #F87C56 0%, #FBA98A 50%, #F87C56 100%)",
   },
   "núcleo da marca": {
     icon: Fingerprint,
-    gradient: "linear-gradient(135deg, #F4C3CC 0%, #F9DDE3 50%, #F4C3CC 100%)",
   },
   "universo verbal": {
     icon: PenLine,
-    gradient: "linear-gradient(135deg, #3A913F 0%, #6BBF6F 50%, #3A913F 100%)",
   },
   "universo visual": {
     icon: Eye,
-    gradient: "linear-gradient(135deg, #9B6FD6 0%, #C5A3F0 50%, #9B6FD6 100%)",
   },
   "universo sonoro": {
     icon: Waves,
-    gradient: "linear-gradient(135deg, #4A8CB5 0%, #77C5D5 50%, #4A8CB5 100%)",
   },
 };
 
@@ -105,23 +104,18 @@ const brandSections: Record<string, SectionMeta> = {
 const growthSections: Record<string, SectionMeta> = {
   introdução: {
     icon: BookOpen,
-    gradient: "linear-gradient(135deg, #E8B86D 0%, #F5D9A0 50%, #E8B86D 100%)",
   },
   "mercado e público": {
     icon: Users,
-    gradient: "linear-gradient(135deg, #E07B5A 0%, #F4A98C 50%, #E07B5A 100%)",
   },
   ofertas: {
     icon: Package,
-    gradient: "linear-gradient(135deg, #D4645C 0%, #F09C96 50%, #D4645C 100%)",
   },
   estratégia: {
     icon: ChartLine,
-    gradient: "linear-gradient(135deg, #C75B8E 0%, #E8A0C0 50%, #C75B8E 100%)",
   },
   produtos: {
     icon: ShoppingBag,
-    gradient: "linear-gradient(135deg, #9B6FD6 0%, #C5A3F0 50%, #9B6FD6 100%)",
   },
 };
 
@@ -129,19 +123,15 @@ const growthSections: Record<string, SectionMeta> = {
 const contentSections: Record<string, SectionMeta> = {
   "estúdio criativo": {
     icon: Clapperboard,
-    gradient: "linear-gradient(135deg, #5CB8A4 0%, #8ED6C8 50%, #5CB8A4 100%)",
   },
   conteúdo: {
     icon: PenLine,
-    gradient: "linear-gradient(135deg, #4A8CB5 0%, #77C5D5 50%, #4A8CB5 100%)",
   },
   "personas sintéticas": {
     icon: Bot,
-    gradient: "linear-gradient(135deg, #9B6FD6 0%, #C5A3F0 50%, #9B6FD6 100%)",
   },
   touchpoints: {
     icon: Radio,
-    gradient: "linear-gradient(135deg, #E07B5A 0%, #F4A98C 50%, #E07B5A 100%)",
   },
 };
 
@@ -149,23 +139,18 @@ const contentSections: Record<string, SectionMeta> = {
 const pacoteSections: Record<string, SectionMeta> = {
   "pacote cultural": {
     icon: Library,
-    gradient: "linear-gradient(135deg, #D6A461 0%, #FBDD7A 50%, #D6A461 100%)",
   },
   livros: {
     icon: BookOpen,
-    gradient: "linear-gradient(135deg, #5CB8A4 0%, #8ED6C8 50%, #5CB8A4 100%)",
   },
   filmes: {
     icon: Film,
-    gradient: "linear-gradient(135deg, #E07B5A 0%, #F4A98C 50%, #E07B5A 100%)",
   },
   músicas: {
     icon: Music,
-    gradient: "linear-gradient(135deg, #9B6FD6 0%, #C5A3F0 50%, #9B6FD6 100%)",
   },
   encerramento: {
     icon: Sparkles,
-    gradient: "linear-gradient(135deg, #F4C3CC 0%, #F9DDE3 50%, #F4C3CC 100%)",
   },
 };
 
@@ -173,23 +158,18 @@ const pacoteSections: Record<string, SectionMeta> = {
 const playbookConteudoSections: Record<string, SectionMeta> = {
   fundamentos: {
     icon: FlaskConical,
-    gradient: "linear-gradient(135deg, #4A8CB5 0%, #77C5D5 50%, #4A8CB5 100%)",
   },
   "pesquisa": {
     icon: Search,
-    gradient: "linear-gradient(135deg, #5CB8A4 0%, #8ED6C8 50%, #5CB8A4 100%)",
   },
   enquadramento: {
     icon: Frame,
-    gradient: "linear-gradient(135deg, #D6A461 0%, #FBDD7A 50%, #D6A461 100%)",
   },
   ferramentas: {
     icon: Wrench,
-    gradient: "linear-gradient(135deg, #E07B5A 0%, #F4A98C 50%, #E07B5A 100%)",
   },
   criativos: {
     icon: BrushIcon,
-    gradient: "linear-gradient(135deg, #9B6FD6 0%, #C5A3F0 50%, #9B6FD6 100%)",
   },
 };
 
@@ -197,15 +177,12 @@ const playbookConteudoSections: Record<string, SectionMeta> = {
 const playbookVideosSections: Record<string, SectionMeta> = {
   fundamentos: {
     icon: FlaskConical,
-    gradient: "linear-gradient(135deg, #4A8CB5 0%, #77C5D5 50%, #4A8CB5 100%)",
   },
   produção: {
     icon: Video,
-    gradient: "linear-gradient(135deg, #E07B5A 0%, #F4A98C 50%, #E07B5A 100%)",
   },
   métricas: {
     icon: Gauge,
-    gradient: "linear-gradient(135deg, #D6A461 0%, #FBDD7A 50%, #D6A461 100%)",
   },
 };
 
@@ -213,35 +190,27 @@ const playbookVideosSections: Record<string, SectionMeta> = {
 const playbookOperacaoSections: Record<string, SectionMeta> = {
   fundamentos: {
     icon: FlaskConical,
-    gradient: "linear-gradient(135deg, #4A8CB5 0%, #77C5D5 50%, #4A8CB5 100%)",
   },
   comercial: {
     icon: Handshake,
-    gradient: "linear-gradient(135deg, #5CB8A4 0%, #8ED6C8 50%, #5CB8A4 100%)",
   },
   papéis: {
     icon: UserCheck,
-    gradient: "linear-gradient(135deg, #D6A461 0%, #FBDD7A 50%, #D6A461 100%)",
   },
   "sales": {
     icon: BadgeDollarSign,
-    gradient: "linear-gradient(135deg, #3A913F 0%, #6BBF6F 50%, #3A913F 100%)",
   },
   roteiros: {
     icon: ScrollText,
-    gradient: "linear-gradient(135deg, #E07B5A 0%, #F4A98C 50%, #E07B5A 100%)",
   },
   "fluxos": {
     icon: Route,
-    gradient: "linear-gradient(135deg, #9B6FD6 0%, #C5A3F0 50%, #9B6FD6 100%)",
   },
   outbound: {
     icon: Mail,
-    gradient: "linear-gradient(135deg, #C75B8E 0%, #E8A0C0 50%, #C75B8E 100%)",
   },
   operacional: {
     icon: Settings,
-    gradient: "linear-gradient(135deg, #D4645C 0%, #F09C96 50%, #D4645C 100%)",
   },
 };
 
@@ -249,27 +218,40 @@ const playbookOperacaoSections: Record<string, SectionMeta> = {
 const playbookGestaoSections: Record<string, SectionMeta> = {
   fundamentos: {
     icon: FlaskConical,
-    gradient: "linear-gradient(135deg, #4A8CB5 0%, #77C5D5 50%, #4A8CB5 100%)",
   },
   operação: {
     icon: Settings,
-    gradient: "linear-gradient(135deg, #5CB8A4 0%, #8ED6C8 50%, #5CB8A4 100%)",
   },
   contratação: {
     icon: UserCheck,
-    gradient: "linear-gradient(135deg, #D6A461 0%, #FBDD7A 50%, #D6A461 100%)",
   },
   sla: {
     icon: ClipboardList,
-    gradient: "linear-gradient(135deg, #E07B5A 0%, #F4A98C 50%, #E07B5A 100%)",
   },
   roteiros: {
     icon: ScrollText,
-    gradient: "linear-gradient(135deg, #9B6FD6 0%, #C5A3F0 50%, #9B6FD6 100%)",
   },
   documentos: {
     icon: FileCheck,
-    gradient: "linear-gradient(135deg, #3A913F 0%, #6BBF6F 50%, #3A913F 100%)",
+  },
+};
+
+/* ─── Business Doc ─── */
+const businessSections: Record<string, SectionMeta> = {
+  overview: {
+    icon: Scan,
+  },
+  modelos: {
+    icon: LayoutGrid,
+  },
+  arquitetura: {
+    icon: Briefcase,
+  },
+  "histórico": {
+    icon: History,
+  },
+  "direção": {
+    icon: Compass,
   },
 };
 
@@ -283,32 +265,25 @@ const allSections: Record<string, SectionMeta> = {
   ...playbookVideosSections,
   ...playbookOperacaoSections,
   ...playbookGestaoSections,
+  ...businessSections,
 };
-
-/* Color pool for unknown sections - cycles through distinct hues */
-const fallbackGradients = [
-  "linear-gradient(135deg, #77C5D5 0%, #A8DDE8 50%, #77C5D5 100%)",
-  "linear-gradient(135deg, #D6A461 0%, #FBDD7A 50%, #D6A461 100%)",
-  "linear-gradient(135deg, #E07B5A 0%, #F4A98C 50%, #E07B5A 100%)",
-  "linear-gradient(135deg, #5CB8A4 0%, #8ED6C8 50%, #5CB8A4 100%)",
-  "linear-gradient(135deg, #9B6FD6 0%, #C5A3F0 50%, #9B6FD6 100%)",
-  "linear-gradient(135deg, #C75B8E 0%, #E8A0C0 50%, #C75B8E 100%)",
-  "linear-gradient(135deg, #3A913F 0%, #6BBF6F 50%, #3A913F 100%)",
-  "linear-gradient(135deg, #F4C3CC 0%, #F9DDE3 50%, #F4C3CC 100%)",
-];
 
 const fallbackIcons: LucideIcon[] = [
   Globe, BookOpen, Sparkles, Package, ChartLine, Users, Wrench, Radio,
 ];
 
-function getSectionMeta(title: string, index: number): SectionMeta {
+/**
+ * Ícone + gradiente de marca por seção. O gradiente é determinístico pela
+ * chave da seção (`getGradient`), então a mesma seção tem sempre a mesma cor.
+ */
+function getSectionMeta(title: string, index: number): SectionMeta & { gradient: string } {
   const key = title.toLowerCase();
   for (const [match, meta] of Object.entries(allSections)) {
-    if (key.includes(match)) return meta;
+    if (key.includes(match)) return { ...meta, gradient: getGradient(match) };
   }
   return {
     icon: fallbackIcons[index % fallbackIcons.length],
-    gradient: fallbackGradients[index % fallbackGradients.length],
+    gradient: getGradient(key || index),
   };
 }
 
@@ -355,7 +330,7 @@ function SectionCard({
           <Icon className="size-5" strokeWidth={1.8} />
         </div>
         <div className="min-w-0 flex-1">
-          <CardTitle className="truncate font-heading text-sm font-semibold text-balance">
+          <CardTitle size="sm" className="truncate text-balance">
             {section.title}
           </CardTitle>
           <CardDescription className="mt-0.5 text-xs text-pretty">
@@ -378,7 +353,11 @@ function SectionCard({
   return (
     <Card className="group transition-all duration-200 hover:border-muted-foreground/30 hover:bg-accent/50 hover:-translate-y-0.5 hover:shadow-md">
       {href ? (
-        <Link href={href} className="block">
+        <Link
+          href={href}
+          aria-label={`Abrir seção ${section.title}`}
+          className="block rounded-[inherit] outline-none focus-visible:ring-2 focus-visible:ring-foreground"
+        >
           {content}
         </Link>
       ) : (
@@ -431,18 +410,18 @@ export function SystemIndex({
       router.push(`/chat/${id}`);
     } catch (err) {
       const message = err instanceof Error ? err.message : "Erro inesperado.";
-      toast.error(message);
+      notify.error(message);
       setSubmitting(false);
     }
     // NÃO setSubmitting(false) no caminho de sucesso — a navegação cuida.
   }
 
   return (
-    <div className="mx-auto max-w-4xl px-6 pt-4 pb-8 max-[479px]:px-2 md:px-8 md:pt-5 md:pb-10">
+    <div className="mx-auto max-w-4xl px-4 pt-4 pb-8 md:px-8 md:pt-5 md:pb-10">
       <div className="mb-8 px-2">
-        <h1 className="font-heading text-[40px] font-normal uppercase tracking-normal leading-none text-balance">
+        <HeadingTitle as="h1" size="xl" className="font-normal tracking-normal leading-none text-balance">
           {title}
-        </h1>
+        </HeadingTitle>
         <p className="mt-5 text-sm leading-7 text-pretty text-muted-foreground">
           {description}
         </p>
@@ -454,6 +433,7 @@ export function SystemIndex({
           basePath={basePath}
           onSubmit={handleSubmit}
           loading={submitting}
+          focusShortcut={false}
         />
       </div>
 
@@ -464,12 +444,17 @@ export function SystemIndex({
       </div>
 
       {sections.length === 0 && (
-        <div className="flex flex-col items-center justify-center gap-3 py-20 text-center">
-          <FileText className="size-10 text-muted-foreground/40" />
-          <p className="text-sm text-muted-foreground">
-            Nenhuma seção encontrada.
-          </p>
-        </div>
+        <EmptyState
+          icon={<SmDocLineIcon className="size-10" />}
+          title="Nenhuma seção encontrada"
+          description="Este system ainda não tem páginas publicadas. Você pode explorar outro system enquanto isso."
+          action={
+            <Button asChild variant="outline" size="sm">
+              <Link href="/">Ver todos os systems</Link>
+            </Button>
+          }
+          className="py-20"
+        />
       )}
     </div>
   );

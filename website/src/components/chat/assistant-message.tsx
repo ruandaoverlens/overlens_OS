@@ -41,55 +41,57 @@ export function AssistantMessage({
       className={cn("mb-6 flex w-full justify-start", className)}
     >
       <div className="w-full">
-        <article className="max-w-none space-y-6 text-[15px] leading-relaxed text-pretty text-muted-foreground">
+        <article className="max-w-none space-y-6 text-body text-pretty text-muted-foreground">
           <ReactMarkdown
             remarkPlugins={[remarkGfm, remarkBreaks]}
             rehypePlugins={[rehypeRaw, rehypeSlug]}
             components={{
-              h1: ({ children }) => (
-                <h1 className="mt-8 mb-4 font-body text-[24px] font-semibold tracking-tight text-balance text-foreground first:mt-0">
-                  {children}
-                </h1>
-              ),
-              h2: ({ children }) => (
-                <h2 className="mt-8 mb-3 font-body text-[20px] font-semibold tracking-tight text-balance text-foreground first:mt-0">
+              // Headings rebaixados um nível: o H1 da página é o título da
+              // conversa, então a resposta começa em H2.
+              h1: ({ children, id }) => (
+                <h2 id={id} className="mt-8 mb-4 font-body text-h2 font-medium tracking-tight text-balance text-foreground first:mt-0">
                   {children}
                 </h2>
               ),
-              h3: ({ children }) => (
-                <h3 className="mt-6 mb-2 font-body text-[17px] font-semibold text-balance text-foreground">
+              h2: ({ children, id }) => (
+                <h3 id={id} className="mt-8 mb-3 font-body text-h3 font-medium tracking-tight text-balance text-foreground first:mt-0">
                   {children}
                 </h3>
               ),
-              h4: ({ children }) => (
-                <h4 className="mt-5 mb-2 font-body text-[15px] font-semibold text-balance text-foreground">
+              h3: ({ children, id }) => (
+                <h4 id={id} className="mt-6 mb-2 font-body text-lead font-medium text-balance text-foreground">
                   {children}
                 </h4>
               ),
+              h4: ({ children, id }) => (
+                <h5 id={id} className="mt-5 mb-2 font-body text-body font-medium text-balance text-foreground">
+                  {children}
+                </h5>
+              ),
               p: ({ children }) => (
-                <p className="text-[15px] leading-[1.75] text-pretty">{children}</p>
+                <p className="text-body text-pretty">{children}</p>
               ),
               strong: ({ children }) => (
                 <strong className="font-semibold text-foreground">{children}</strong>
               ),
               em: ({ children }) => <em className="italic">{children}</em>,
               ul: ({ children }) => (
-                <ul className="space-y-2 pl-5 list-disc marker:text-muted-foreground/60">
+                <ul className="space-y-2 pl-5 list-disc marker:text-muted-foreground">
                   {children}
                 </ul>
               ),
               ol: ({ children }) => (
-                <ol className="space-y-2 pl-5 list-decimal marker:text-muted-foreground/60">
+                <ol className="space-y-2 pl-5 list-decimal marker:text-muted-foreground">
                   {children}
                 </ol>
               ),
               li: ({ children }) => (
-                <li className="text-[15px] leading-[1.75] text-pretty [&>strong]:text-foreground">
+                <li className="text-body text-pretty [&>strong]:text-foreground">
                   {children}
                 </li>
               ),
               blockquote: ({ children }) => (
-                <blockquote className="border-l-2 border-primary/50 pl-6 text-[20px] italic leading-relaxed text-pretty text-foreground/80">
+                <blockquote className="border-l-2 border-primary/50 pl-6 text-lead italic text-pretty text-foreground/80">
                   {children}
                 </blockquote>
               ),
@@ -130,7 +132,7 @@ export function AssistantMessage({
                 <thead className="bg-accent/50">{children}</thead>
               ),
               th: ({ children }) => (
-                <th className="px-4 py-3 text-left font-semibold text-foreground align-top">
+                <th scope="col" className="px-4 py-3 text-left font-semibold text-foreground align-top">
                   {children}
                 </th>
               ),
@@ -158,7 +160,7 @@ export function AssistantMessage({
                 <Link
                   key={s.id}
                   href={s.href}
-                  className="inline-flex h-7 max-w-[260px] items-center gap-1.5 rounded-full bg-accent/50 px-2.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                  className="inline-flex min-h-9 max-w-[260px] items-center gap-1.5 rounded-full bg-accent/50 px-3 text-xs font-medium text-muted-foreground outline-none transition-colors hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-foreground"
                 >
                   <SmFolderLineIcon className="size-3.5 shrink-0" />
                   <span className="truncate">{s.title}</span>
@@ -166,7 +168,7 @@ export function AssistantMessage({
               ) : (
                 <span
                   key={s.id}
-                  className="inline-flex h-7 max-w-[260px] items-center gap-1.5 rounded-full bg-accent/50 px-2.5 text-xs font-medium text-muted-foreground"
+                  className="inline-flex min-h-9 max-w-[260px] items-center gap-1.5 rounded-full bg-accent/50 px-3 text-xs font-medium text-muted-foreground"
                 >
                   <SmFolderLineIcon className="size-3.5 shrink-0" />
                   <span className="truncate">{s.title}</span>

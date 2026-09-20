@@ -1,13 +1,18 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useId, useMemo } from "react";
+import { useUrlState } from "@/lib/use-url-state";
 import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select";
-import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from "@/components/ui/empty";
+import { EmptyState } from "@/components/empty-state";
 import { SmDocLineIcon } from "@/components/icons";
 import { DocumentoItem } from "./documento-item";
 import { DocumentoUploadDialog } from "./documento-upload-dialog";
 import { DOCUMENTO_TIPO_OPTIONS, DOCUMENTO_TIPO_LABEL } from "@/lib/registros/types";
 import type { DocumentoRow, DocumentoTipo } from "@/lib/registros/types";
+
+function isDocumentoTipo(v: string): v is DocumentoTipo {
+  return (DOCUMENTO_TIPO_OPTIONS as readonly string[]).includes(v);
+}
 
 interface MarcaOption {
   id: string;
@@ -24,8 +29,13 @@ interface DocumentosPageClientProps {
 }
 
 export function DocumentosPageClient({ documentos, marcas }: DocumentosPageClientProps) {
-  const [filtroTipo, setFiltroTipo] = useState<DocumentoTipo | "">("");
-  const [filtroMarca, setFiltroMarca] = useState<string>("");
+  const id = useId();
+  // Filtros na URL (?tipo=&marca=) para serem compartilháveis/recarregáveis.
+  const [tipoParam, setFiltroTipo] = useUrlState<string>("tipo", "");
+  const [filtroMarca, setFiltroMarca] = useUrlState<string>("marca", "");
+  const filtroTipo: DocumentoTipo | "" = isDocumentoTipo(tipoParam) ? tipoParam : "";
+
+  const temFiltro = !!filtroTipo || !!filtroMarca;
 
   const filtrados = useMemo(() => {
     return documentos.filter((d) => {
@@ -35,11 +45,22 @@ export function DocumentosPageClient({ documentos, marcas }: DocumentosPageClien
     });
   }, [documentos, filtroTipo, filtroMarca]);
 
+  function limparFiltros() {
+    setFiltroTipo("");
+    setFiltroMarca("");
+  }
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-wrap items-center gap-3">
         <div className="w-48">
-          <NativeSelect size="sm" value={filtroMarca} onChange={(e) => setFiltroMarca(e.target.value)}>
+          <NativeSelect
+            id={`${id}-marca`}
+            aria-label="Filtrar por marca"
+            size="sm"
+            value={filtroMarca}
+            onChange={(e) => setFiltroMarca(e.target.value)}
+          >
             <NativeSelectOption value="">Todas as marcas</NativeSelectOption>
             {marcas.map((m) => (
               <NativeSelectOption key={m.id} value={m.id}>
@@ -49,7 +70,13 @@ export function DocumentosPageClient({ documentos, marcas }: DocumentosPageClien
           </NativeSelect>
         </div>
         <div className="w-48">
-          <NativeSelect size="sm" value={filtroTipo} onChange={(e) => setFiltroTipo(e.target.value as DocumentoTipo | "")}>
+          <NativeSelect
+            id={`${id}-tipo`}
+            aria-label="Filtrar por tipo"
+            size="sm"
+            value={filtroTipo}
+            onChange={(e) => setFiltroTipo(e.target.value)}
+          >
             <NativeSelectOption value="">Todos os tipos</NativeSelectOption>
             {DOCUMENTO_TIPO_OPTIONS.map((t) => (
               <NativeSelectOption key={t} value={t}>
@@ -63,20 +90,27 @@ export function DocumentosPageClient({ documentos, marcas }: DocumentosPageClien
         </div>
       </div>
 
+      <span className="text-xs text-muted-foreground" aria-live="polite">
+        {filtrados.length} {filtrados.length === 1 ? "documento" : "documentos"}
+      </span>
+
       {filtrados.length === 0 ? (
-        <Empty>
-          <EmptyHeader>
-            <EmptyMedia contained>
-              <SmDocLineIcon />
-            </EmptyMedia>
-            <EmptyTitle>Nenhum documento</EmptyTitle>
-            <EmptyDescription>
-              {documentos.length === 0
-                ? "Envie certificados, protocolos e despachos para centralizá-los aqui."
-                : "Nenhum documento corresponde aos filtros selecionados."}
-            </EmptyDescription>
-          </EmptyHeader>
-        </Empty>
+        documentos.length === 0 ? (
+          <EmptyState
+            icon={<SmDocLineIcon />}
+            title="Nenhum documento"
+            description="Envie certificados, protocolos e despachos para centralizá-los aqui."
+            action={<DocumentoUploadDialog marcas={marcas} />}
+          />
+        ) : (
+          <EmptyState
+            icon={<SmDocLineIcon />}
+            title="Nenhum documento encontrado"
+            description="Nenhum documento corresponde aos filtros selecionados."
+            variant="filtered"
+            onClear={temFiltro ? limparFiltros : undefined}
+          />
+        )
       ) : (
         <div className="flex flex-col gap-2">
           {filtrados.map((doc) => (

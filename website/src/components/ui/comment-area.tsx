@@ -89,13 +89,12 @@ function CommentArea({
       data-disabled={disabled || undefined}
       data-filled={hasValue || undefined}
       className={cn(
-        "group/comment relative flex w-full flex-col gap-1 overflow-hidden rounded-2xl px-3 pb-3.5 pt-5 sm:w-[420px]",
-        "bg-accent/50 dark:bg-input/30",
+        "group/comment relative flex w-full flex-col gap-1 overflow-hidden rounded-2xl px-3 pb-3.5 pt-5 sm:w-105",
+        "bg-input/30",
         "border-2 border-transparent",
         "transition-[background-color,border-color]",
-        "hover:bg-accent dark:hover:bg-input/50",
+        "hover:bg-input/50",
         "focus-within:border-input focus-within:bg-transparent",
-        "dark:focus-within:bg-transparent",
         "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         className
       )}
@@ -111,12 +110,13 @@ function CommentArea({
           maxLength={maxLength}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
+          aria-label={placeholder}
           className={cn(
-            "min-h-[40px] max-h-[160px] w-full resize-none overflow-y-auto bg-transparent font-body text-base leading-[1.6] tracking-[0.16px] outline-none",
+            "min-h-10 max-h-40 w-full resize-none overflow-y-auto bg-transparent font-body text-base leading-relaxed tracking-normal outline-none focus-visible:ring-2 focus-visible:ring-foreground/70 rounded-sm",
             "placeholder:text-muted-foreground",
             "text-foreground",
             "field-sizing-content",
-            "[&::-webkit-scrollbar]:w-2.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-muted-foreground/30 [&::-webkit-scrollbar-thumb]:border-[4px] [&::-webkit-scrollbar-thumb]:border-transparent [&::-webkit-scrollbar-thumb]:bg-clip-content [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-track]:mt-1 [&::-webkit-scrollbar-track]:mb-1",
+            "scrollbar-thin",
           )}
         />
       </div>
@@ -130,7 +130,7 @@ function CommentArea({
             <Tag
               key={file.id}
               size="sm"
-              className="max-w-[160px]"
+              className="max-w-40"
               onDismiss={
                 disabled ? undefined : () => onFileRemove?.(file.id)
               }
@@ -177,7 +177,7 @@ function CommentArea({
         {/* Counter + Submit */}
         <div className="flex items-center gap-2">
           {maxLength !== undefined && (
-            <span className="pt-0.5 font-mono text-sm text-[var(--surface-600)]">
+            <span className="pt-0.5 font-mono text-sm text-muted-foreground">
               ({value.length}/{maxLength})
             </span>
           )}
@@ -188,7 +188,7 @@ function CommentArea({
           onClick={handleSubmit}
           aria-label="Enviar comentário"
           className={cn(
-            "flex size-8 shrink-0 items-center justify-center rounded-full transition-colors outline-none",
+            "relative flex size-8 shrink-0 items-center justify-center rounded-full transition-colors outline-none after:absolute after:-inset-1 after:content-[''] focus-visible:ring-2 focus-visible:ring-foreground",
             "bg-foreground/80 text-background",
             "hover:bg-foreground",
             "disabled:opacity-30 disabled:pointer-events-none"
@@ -213,7 +213,7 @@ function CommentAreaAction({
       type="button"
       data-slot="comment-area-action"
       className={cn(
-        "flex size-8 shrink-0 items-center justify-center rounded-full transition-colors outline-none",
+        "relative flex size-8 shrink-0 items-center justify-center rounded-full transition-colors outline-none after:absolute after:-inset-1 after:content-['']",
         "text-muted-foreground",
         "hover:text-foreground hover:bg-accent",
         "focus-visible:ring-2 focus-visible:ring-foreground",

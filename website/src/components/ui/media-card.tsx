@@ -1,4 +1,5 @@
 import * as React from "react"
+import Image from "next/image"
 import { cva, type VariantProps } from "class-variance-authority"
 import { SmCheckLineIcon } from "@/components/icons"
 
@@ -21,7 +22,7 @@ const MediaCardContext = React.createContext<{
 
 // --- Root variants ---
 
-const mediaCardVariants = cva("group flex cursor-pointer", {
+const mediaCardVariants = cva("group relative flex cursor-pointer", {
   variants: {
     variant: {
       default: "text-sm",
@@ -33,7 +34,7 @@ const mediaCardVariants = cva("group flex cursor-pointer", {
     },
   },
   compoundVariants: [
-    { orientation: "vertical", variant: "compact", class: "w-full max-w-[180px] min-w-[120px]" },
+    { orientation: "vertical", variant: "compact", class: "w-full max-w-45 min-w-30" },
     { orientation: "vertical", variant: "default", class: "w-full" },
   ],
   defaultVariants: {
@@ -50,7 +51,7 @@ const imageAspectMap: Record<MediaCardVariant, string> = {
 }
 
 // Horizontal image - fixed dimensions regardless of variant
-const HORIZONTAL_IMAGE_CLASSES = "aspect-video min-w-[140px] w-[140px] sm:w-[160px]"
+const HORIZONTAL_IMAGE_CLASSES = "aspect-video min-w-35 w-35 sm:w-40"
 
 /**
  * Media card - image separated from title/metadata.
@@ -96,9 +97,17 @@ function MediaCard({
 
 const VIDEO_EXTENSIONS = /\.(mp4|webm|ogg|mov)(\?|$)/i
 
+/** `blob:`/`data:` URLs (previews locais) não passam pelo otimizador do next/image. */
+const LOCAL_URL = /^(blob|data):/i
+
+const DEFAULT_IMAGE_SIZES =
+  "(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
+
 /** Image area - aspect ratio driven by card variant.
  *  Supports image, video, animated gradient, and solid color (same API as Banner/Card3D).
- *  Renders bg-[var(--surface-950)] fallback when no media is provided. */
+ *  Renders bg-surface-950 fallback when no media is provided.
+ *  It is a `<button>`: never nest another interactive element inside it — overlay
+ *  controls (favorite, check) go as absolute siblings inside `MediaCard`. */
 function MediaCardImage({
   className,
   src,
@@ -106,6 +115,8 @@ function MediaCardImage({
   poster,
   gradient,
   color,
+  sizes = DEFAULT_IMAGE_SIZES,
+  type = "button",
   children,
   ...props
 }: React.ComponentProps<"button"> & {
@@ -114,6 +125,8 @@ function MediaCardImage({
   poster?: string
   gradient?: string
   color?: string
+  /** Atributo `sizes` do next/image (largura esperada por breakpoint). */
+  sizes?: string
 }) {
   const { variant, orientation, active } = React.useContext(MediaCardContext)
   const isVideo = src ? VIDEO_EXTENSIONS.test(src) : false
@@ -142,10 +155,12 @@ function MediaCardImage({
 
   return (
     <button
+      type={type}
       data-slot="media-card-image"
       className={cn(
-        "relative shrink-0 overflow-hidden bg-[var(--surface-950)] cursor-pointer outline-none",
-        orientation === "horizontal" ? "rounded-lg" : "rounded-[14px]",
+        "relative shrink-0 overflow-hidden bg-surface-950 cursor-pointer outline-none",
+        "focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        orientation === "horizontal" ? "rounded-lg" : "rounded-card",
         orientation === "horizontal"
           ? HORIZONTAL_IMAGE_CLASSES
           : ["w-full", imageAspectMap[variant]],
@@ -164,15 +179,18 @@ function MediaCardImage({
       {gradient && (
         <div
           aria-hidden="true"
-          className="absolute inset-0 animate-[banner-gradient_8s_ease_infinite] [background-size:300%_300%]"
+          className="absolute inset-0 motion-safe:animate-[banner-gradient_8s_ease_infinite] [background-size:300%_300%]"
           style={{ backgroundImage: gradient }}
         />
       )}
       {src && !isVideo && (
-        <img
+        <Image
           src={src}
           alt={alt}
-          className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+          fill
+          sizes={sizes}
+          unoptimized={LOCAL_URL.test(src) || undefined}
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         />
       )}
       {src && isVideo && (
@@ -192,7 +210,7 @@ function MediaCardImage({
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             onLoadedData={handleLoadedData}
             onCanPlayThrough={handleCanPlayThrough}
             className={cn(
@@ -204,7 +222,7 @@ function MediaCardImage({
       )}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-10 rounded-[inherit] bg-white/[0.06] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        className="pointer-events-none absolute inset-0 z-10 rounded-[inherit] bg-surface-raised-2 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
       />
       {children}
     </button>
@@ -262,14 +280,14 @@ function MediaCardTitle({
       data-slot="media-card-title"
       title={titleText}
       className={cn(
-        "font-medium leading-[1.2] text-left cursor-pointer outline-none",
+        "font-medium leading-tight text-left cursor-pointer outline-none",
         "focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm",
         "transition-colors duration-500",
-        "text-[var(--surface-200)]",
+        "text-surface-200",
         orientation === "horizontal"
           ? "line-clamp-2 group-has-[[data-slot=media-card-description]]/content:line-clamp-1"
           : "line-clamp-1",
-        variant === "compact" ? "text-[14px]" : "text-[16px]",
+        variant === "compact" ? "text-sm" : "text-base",
         className
       )}
       {...props}
@@ -292,7 +310,7 @@ function MediaCardMeta({
     <div
       data-slot="media-card-meta"
       className={cn(
-        "flex items-center gap-x-1.5 overflow-hidden flex-nowrap whitespace-nowrap font-sans text-[14px]",
+        "flex items-center gap-x-1.5 overflow-hidden flex-nowrap whitespace-nowrap font-body text-sm",
         className
       )}
       {...props}
@@ -300,7 +318,7 @@ function MediaCardMeta({
       {items.map((item, i) => (
         <React.Fragment key={i}>
           {i > 0 && (
-            <span aria-hidden="true" className="text-[0.5em] leading-none text-[var(--foreground)] opacity-50 select-none">
+            <span aria-hidden="true" className="text-[0.5em] leading-none text-foreground opacity-50 select-none">
               ·
             </span>
           )}
@@ -320,7 +338,7 @@ function MediaCardMetaItem({
     <span
       data-slot="media-card-meta-item"
       className={cn(
-        "text-[length:inherit] leading-relaxed text-[var(--foreground)] opacity-50",
+        "text-[length:inherit] leading-relaxed text-foreground opacity-50",
         className
       )}
       {...props}
@@ -337,7 +355,7 @@ function MediaCardMetaAuthor({
     <button
       data-slot="media-card-meta-author"
       className={cn(
-        "min-w-0 truncate text-[length:inherit] leading-relaxed font-medium text-[var(--surface-500)] cursor-pointer",
+        "min-w-0 truncate text-[length:inherit] leading-relaxed font-medium text-surface-500 cursor-pointer",
         className
       )}
       {...props}
@@ -354,7 +372,7 @@ function MediaCardMetaAction({
     <button
       data-slot="media-card-meta-action"
       className={cn(
-        "text-[length:inherit] leading-relaxed font-medium text-[var(--surface-500)] cursor-pointer",
+        "text-[length:inherit] leading-relaxed font-medium text-surface-500 cursor-pointer",
         className
       )}
       {...props}
@@ -363,7 +381,8 @@ function MediaCardMetaAction({
 }
 
 /** Circular check toggle overlaid on the image area (top-left).
- *  Must be rendered as a child of MediaCardImage. */
+ *  Render it as a sibling of MediaCardImage (MediaCard is `relative`), never inside it —
+ *  MediaCardImage is a button and cannot contain another interactive control. */
 function MediaCardCheck({
   className,
   checked = false,
@@ -381,9 +400,11 @@ function MediaCardCheck({
       data-slot="media-card-check"
       className={cn(
         "absolute left-2 top-2 z-20 shrink-0 size-5 rounded-full border-2 grid place-content-center transition-all outline-none cursor-pointer",
+        // Hit-area de 40px sem alterar o tamanho visual.
+        "after:absolute after:-inset-2.5 after:content-['']",
         checked
           ? "border-foreground bg-foreground text-background"
-          : "border-foreground/30 bg-black/40 hover:border-primary",
+          : "border-foreground/30 bg-scrim-soft hover:border-primary",
         "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         className
       )}
@@ -414,7 +435,7 @@ function MediaCardDescription({
     <p
       data-slot="media-card-description"
       className={cn(
-        "line-clamp-1 text-[14px] leading-[1.4] font-medium text-[var(--surface-600)] group-hover:text-[var(--surface-500)] transition-colors duration-500 pointer-events-none",
+        "line-clamp-1 text-sm leading-snug font-medium text-surface-500 group-hover:text-surface-400 transition-colors duration-500 pointer-events-none",
         className
       )}
       {...props}

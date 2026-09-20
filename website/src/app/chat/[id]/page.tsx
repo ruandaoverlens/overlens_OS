@@ -1,3 +1,5 @@
+import { cache } from "react";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import {
@@ -25,6 +27,31 @@ function parseAttachments(value: unknown): ChatAttachment[] | null {
   return items.length > 0 ? items : null;
 }
 
+// Deduplicado por request: generateMetadata e a página usam a mesma consulta.
+const getConversation = cache(async (id: string) => {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("chat_conversations")
+    .select("*")
+    .eq("id", id)
+    .maybeSingle();
+  return data;
+});
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const conversation = await getConversation(id);
+  const title =
+    conversation && typeof conversation.title === "string" && conversation.title.trim()
+      ? conversation.title
+      : null;
+  return { title: conversation ? (title ?? "Conversa") : "Não encontrado" };
+}
+
 export default async function ChatConversationPage({
   params,
 }: {
@@ -33,11 +60,7 @@ export default async function ChatConversationPage({
   const { id } = await params;
   const supabase = await createClient();
 
-  const { data: conversation } = await supabase
-    .from("chat_conversations")
-    .select("*")
-    .eq("id", id)
-    .maybeSingle();
+  const conversation = await getConversation(id);
 
   if (!conversation) notFound();
 
@@ -94,6 +117,7 @@ export default async function ChatConversationPage({
       initialMessages={initialMessages}
       initialCitedSegments={initialCitedSegments}
       initialMeta={initialMeta}
+      title={typeof conversation.title === "string" ? conversation.title : null}
     />
   );
 }

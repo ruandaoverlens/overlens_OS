@@ -1,15 +1,32 @@
-import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import { connection } from "next/server";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import {
   SidebarProvider,
   SidebarInset,
 } from "@/components/ui/sidebar";
 import { Topbar, TopbarBreadcrumb, TopbarActions } from "@/components/ui/topbar";
 import { SystemSidebar } from "@/components/doc-sidebar";
+import { DocTopbarLabel, DocTopbarUpLink } from "@/components/doc-breadcrumb";
 import { getChatConversations } from "@/lib/chat-conversations";
 import { AppSwitcher } from "@/components/app-switcher";
 import { AppNotifications } from "@/components/app-notifications";
+import { CommandPaletteIconButton } from "@/components/command-palette";
+import { AccessRestricted } from "@/app/_shared/access-restricted";
 import { getSystemConfig } from "@/lib/system-configs";
+import { getSystemsPagesIndex } from "@/lib/palette-index";
 import { createClient } from "@/lib/supabase/server";
+import { isStaffOrAdmin } from "@/lib/route-access";
+
+export const metadata: Metadata = {
+  title: "Admin",
+};
+
+const ADMIN_LABELS: Record<string, string> = {
+  insights: "Insights de IA",
+  conversas: "Conversas",
+};
 
 export default async function AdminLayout({
   children,
@@ -21,20 +38,29 @@ export default async function AdminLayout({
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) notFound();
+  if (!user) redirect("/login?next=/admin/insights");
   const { data: profile } = await supabase
     .from("profiles")
     .select("role")
     .eq("id", user.id)
     .single();
-  if (!profile || profile.role !== "admin") notFound();
+  if (!profile || !isStaffOrAdmin(profile.role)) {
+    return <AccessRestricted label="A área administrativa" />;
+  }
 
   const config = getSystemConfig("docs");
   const nav = config.getNav();
-  const conversations = await getChatConversations();
+  // Promise não awaitada — resolve no Suspense da sidebar.
+  // Garante renderização dinâmica (conversas são por usuário) sem bloquear o shell.
+  await connection();
+  // `sidebar_state`: quem recolhe a sidebar continua com ela recolhida no
+  // próximo carregamento (o cookie é escrito pelo `SidebarProvider`).
+  const cookieStore = await cookies();
+  const sidebarOpen = cookieStore.get("sidebar_state")?.value !== "false";
+  const conversations = getChatConversations();
 
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={sidebarOpen}>
       <SystemSidebar
         sections={nav}
         basePath={config.basePath}
@@ -44,11 +70,18 @@ export default async function AdminLayout({
         footerLinks={config.footerLinks}
         conversations={conversations}
         adminLinks={config.adminLinks}
+        allSections={getSystemsPagesIndex()}
       />
-      <SidebarInset>
+      <SidebarInset id="main-content">
         <Topbar>
-          <TopbarBreadcrumb />
+          <DocTopbarUpLink label="Admin" basePath="/admin/insights" labels={ADMIN_LABELS} />
+          <TopbarBreadcrumb>
+            <DocTopbarLabel label="Admin" basePath="/admin/insights" labels={ADMIN_LABELS} />
+          </TopbarBreadcrumb>
           <TopbarActions>
+            {/* Só aparece quando a sidebar não mostra a própria busca:
+                drawer no mobile, recolhida abaixo de 1180px. */}
+            <CommandPaletteIconButton />
             <AppNotifications />
             <AppSwitcher />
           </TopbarActions>

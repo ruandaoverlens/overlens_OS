@@ -280,7 +280,7 @@ Cada componente da identidade sonora da Overlens não existe por preferência es
 | **Melodias ascendentes** | Possibilidade, abertura, futuro. "Algo está começando." | Os três pilares: Inspirar, Ensinar, Mover; todos apontam para cima. |
 | **Texturas orgânicas** | Humanidade, imperfeição intencional. "Isso foi feito por alguém." | Contra o artificial vazio. Criação com autoria e presença. |
 | **Sintetizadores analógicos** | Tecnologia com alma. "A máquina a serviço do humano." | IA como extensão da imaginação, não substituição da criação. |
-| **Silêncio** | Confiança, respeito, espaço. "Você é capaz de preencher este vazio." | Autonomia. A Overlens não ocupa todo o espaço; deixa lugar para o criador. |
+| **Silêncio** | Confiança, respeito, espaço. "Você é capaz de preencher este vazio." | Autonomia. A Overlens não ocupa todo o espaço; deixa lugar para quem ouve. |
 | **Ritmos complexos** | Pensamento sistêmico. "Há mais camadas do que parecem." | Nexialismo; a capacidade de perceber padrões entre disciplinas. |
 | **Dissonância controlada** | Provocação. "Algo aqui merece ser questionado." | Virtude Provocativa; desafiar sem agredir, incomodar sem destruir. |
 | **Resolução harmônica** | Clareza após complexidade. "O caos tem estrutura." | Princípio da Parcimônia; a simplicidade como resultado de profundidade. |

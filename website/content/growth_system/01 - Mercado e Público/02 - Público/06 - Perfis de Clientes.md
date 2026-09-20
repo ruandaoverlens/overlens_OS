@@ -2,7 +2,7 @@
 title: Perfis de Clientes
 summary: Define os cinco perfis de clientes da Overlens por estágio de maturidade (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas) e a estrutura padrão de 14 campos que cada perfil deve preencher.
 topics: [perfis de clientes, maturidade, segmentação comportamental, jtbd, jornada]
-keywords: [perfis de clientes, ICP, inconscientes, operantes, convergentes, emergentes, nexialistas, jtbd, arquétipo, paradigmas mentais, micro-gatilhos, jornada nexialista]
+keywords: [perfis de clientes, ICP, empreendedores nexialistas, maturação de negócio, inconscientes, operantes, convergentes, emergentes, nexialistas, jtbd, arquétipo, paradigmas mentais, micro-gatilhos, jornada nexialista]
 priority: high
 ai_when_to_use: |
   Use quando o usuário perguntar sobre os perfis de clientes da Overlens, segmentação por maturidade, ICP, como construir um perfil novo, ou ao desenhar campanhas, jornadas, onboarding e ofertas alinhadas a estágios de consciência.
@@ -17,7 +17,7 @@ Perfis de Clientes são representações estratégicas de grupos de pessoas que 
 
 ### Objetivo dos Perfis
 
-O objetivo dos Perfis de Clientes é guiar com precisão todas as ações de comunicação, produto, experiência e estratégia. Elas servem para garantir que cada solução, cada mensagem e cada jornada criada pela Overlens esteja conectada às necessidades reais e latentes de nossos diferentes públicos; acelerando a lucidez, a evolução e a realização criativa dos Nexialistas em formação.
+O objetivo dos Perfis de Clientes é guiar com precisão todas as ações de comunicação, produto, experiência e estratégia. Elas servem para garantir que cada solução, cada mensagem e cada jornada criada pela Overlens esteja conectada às necessidades reais e latentes de nossos diferentes públicos; acelerando a lucidez, a evolução e a realização dos Empreendedores Nexialistas em formação.
 
 ### Quando devem ser utilizados
 
@@ -36,20 +36,23 @@ Sempre que houver interação, entrega ou desenvolvimento de novos pontos de con
 
 ## Perfis de Clientes da Overlens
 
-**Operantes** \> Juniores  
-**Convergente** \> Plenos  
-**Emergentes** \> Empreendedores Individuais  
-**Nexialistas** \> Seniores ou Líderes de equipes
+Os perfis não medem senioridade profissional nem tempo de carreira. Medem **a distância entre a ideia e a realidade** — o quanto a pessoa já consegue transformar o que imagina em algo que existe, sustenta e cresce. Um engenheiro de vinte anos de casa pode ser Operante; um arquiteto recém-formado pode ser Emergente.
 
-**Inconscientes**: Pessoas que ainda vivem sob paradigmas ultrapassados, mas começam a sentir um desconforto interno diante das mudanças do mundo. Intuem que precisam mudar, mas ainda não conseguem nomear ou estruturar essa transformação.
+**Inconscientes** \> têm vontade, não têm direção  
+**Operantes** \> executam, não lançam  
+**Convergentes** \> lançam projetos, não sustentam  
+**Emergentes** \> têm negócio, dispersam energia  
+**Nexialistas** \> operam ecossistema próprio
 
-**Operantes**: Criadores que perceberam a necessidade de mudar, mas continuam presos a velhos paradigmas. Focam demais em ferramentas e técnicas, sem perceber que o verdadeiro desafio está em reconstruir sua mentalidade e arquitetura de valor.
+**Inconscientes**: Pessoas que carregam ideias há anos sem nunca ter tirado nenhuma do papel. Sentem um desconforto crescente diante das mudanças do mundo e intuem que precisam construir algo próprio, mas ainda não conseguem nomear o que querem nem por onde começar.
 
-**Convergentes**: Criadores que já romperam algumas crenças, mas ainda carregam correntes invisíveis. Avançaram além da execução técnica, mas se prendem em metodologias sem desenvolver uma visão sistêmica verdadeira.
+**Operantes**: Pessoas que já decidiram construir algo próprio e executam bem, mas não lançam. Acumulam ferramentas, cursos e começos sem fechar ciclos, sem perceber que o desafio real não é técnico: é reconstruir a própria arquitetura de valor e colocar algo no mundo.
 
-**Emergentes**: Profissionais que já enxergam a complexidade dos novos tempos e começam a inovar, mas ainda têm dificuldade em conectar suas ideias em sistemas vivos e coerentes. Precisam estruturar seu pensamento para transcender a dispersão criativa.
+**Convergentes**: Pessoas que já lançam — têm projetos no ar, clientes ou primeiros produtos — mas não sustentam. Cada entrega recomeça do zero porque se prendem a metodologias sem construir um sistema próprio que funcione sem elas.
 
-**Nexialistas**: Criadores que atravessaram todas as fases anteriores e agora buscam significado, legado e maestria. Desejam construir realidades que sobrevivam ao tempo, unindo criação, estratégia, tecnologia e propósito em obras autorais e transformadoras.
+**Emergentes**: Pessoas que já têm um negócio de pé e inovam de verdade, mas dispersam energia em frentes demais. Enxergam a complexidade dos novos tempos e ainda têm dificuldade de conectar as próprias ideias em um sistema vivo e coerente que escale sem consumi-las.
+
+**Nexialistas**: Pessoas que atravessaram todas as fases anteriores e operam um ecossistema próprio — negócios, obras e redes que se sustentam e se retroalimentam. Buscam significado, legado e maestria: construir realidades que sobrevivam ao tempo, unindo criação, estratégia, tecnologia e propósito.
 
 ## Estrutura dos Perfis
 
@@ -74,7 +77,7 @@ Resuma as principais características de forma objetiva e compacta:
 
 * **Resumo Essencial**: Qual é o perfil e qual seu principal desafio.  
 * **Arquétipo**: Síntese simbólica ou combinada que representa seu perfil.  
-* **Momento de Vida**: Situação atual (profissional, educacional, pessoal).  
+* **Momento de Vida**: Situação atual (estágio do negócio ou da ideia, profissional, pessoal).  
 * **JTBD Funcional**: O que ela precisa fazer na prática.  
 * **JTBD Emocional**: A necessidade profunda que a impulsiona.  
 * **Motivação Primária**: Desejo mais forte que guia suas ações.  
@@ -117,7 +120,7 @@ Para cada objeção típica, construa um **antídoto direto, plausível e não e
 
 #### 10\. Resultado dos Sonhos
 
-Redija uma **única frase** que sintetize o grande objetivo ou sonho do perfil. Exemplo: "Me tornar alguém único no mercado, com habilidades que me protegem da substituição."
+Redija uma **única frase** que sintetize o grande objetivo ou sonho do perfil. Exemplo: "Ver a ideia que carrego há anos existindo no mundo e se sustentando sem mim."
 
 #### 11\. Garantias de Realização
 
@@ -153,6 +156,6 @@ Além disso, sugira imagens ou símbolos visuais relacionados. Crie metáforas t
 
 ---
 
-**Observação Final:** A linguagem utilizada deve ser **científica, instigante e acessível**, equilibrando clareza e profundidade. Evitar gírias, exageros, jargões técnicos desnecessários. Priorizar mensagens que despertam **visão sistêmica, coragem intelectual e responsabilidade criativa**.
+**Observação Final:** A linguagem utilizada deve ser **científica, instigante e acessível**, equilibrando clareza e profundidade. Evitar gírias, exageros, jargões técnicos desnecessários. Priorizar mensagens que despertam **visão sistêmica, coragem intelectual e responsabilidade sobre a própria construção**.
 
 ---

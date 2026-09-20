@@ -1,5 +1,6 @@
 import {
   getSections,
+  getBusinessSections,
   getEstudioSections,
   getGrowthSections,
   getPacoteSections,
@@ -10,6 +11,7 @@ import {
 import type { NavSection, SidebarLink } from "@/components/doc-sidebar";
 
 export type SystemSlug =
+  | "business"
   | "docs"
   | "estudio"
   | "growth"
@@ -18,6 +20,7 @@ export type SystemSlug =
   | "playbook-videos";
 
 const SYSTEM_SLUGS = new Set<string>([
+  "business",
   "docs",
   "estudio",
   "growth",
@@ -80,6 +83,13 @@ function getEstudioNav(): NavSection[] {
 }
 
 const SYSTEMS: Record<SystemSlug, SystemConfig> = {
+  business: {
+    slug: "business",
+    basePath: "/business",
+    title: "Business Doc",
+    subtitle: "Negócio & Estratégia",
+    getNav: () => toNav(getBusinessSections()),
+  },
   docs: {
     slug: "docs",
     basePath: "/docs",

@@ -10,13 +10,25 @@ interface TagsInputProps {
   onChange: (tags: string[]) => void
   placeholder?: string
   className?: string
+  /** `id` do input — use com `<Label htmlFor>`. */
+  id?: string
+  /** Nome acessível quando não há `<Label>` associado. */
+  "aria-label"?: string
+  /** Repassado ao input interno para sinalizar erro de validação. */
+  "aria-invalid"?: boolean
+  /** Repassado ao input interno — id da mensagem de erro/ajuda. */
+  "aria-describedby"?: string
 }
 
 export function TagsInput({
   value,
   onChange,
-  placeholder = "Digite e pressione Enter...",
+  placeholder = "Digite e pressione Enter…",
   className,
+  id,
+  "aria-label": ariaLabel,
+  "aria-invalid": ariaInvalid,
+  "aria-describedby": ariaDescribedBy,
 }: TagsInputProps) {
   const [input, setInput] = useState("")
 
@@ -50,6 +62,10 @@ export function TagsInput({
   return (
     <div className={cn("flex flex-col gap-2", className)}>
       <Input
+        id={id}
+        aria-label={ariaLabel}
+        aria-invalid={ariaInvalid}
+        aria-describedby={ariaDescribedBy}
         size="sm"
         value={input}
         onChange={(e) => setInput(e.target.value)}
@@ -62,13 +78,14 @@ export function TagsInput({
           {value.map((tag) => (
             <span
               key={tag}
-              className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[var(--surface-900)] text-[var(--surface-300)]"
+              className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-surface-900 text-surface-300"
             >
               {tag}
               <button
                 type="button"
                 onClick={() => removeTag(tag)}
-                className="inline-flex items-center justify-center size-3.5 rounded-full opacity-60 hover:opacity-100 transition-opacity"
+                aria-label={`Remover ${tag}`}
+                className="relative inline-flex items-center justify-center size-3.5 rounded-full text-surface-500 hover:text-foreground focus-visible:text-foreground transition-colors outline-none focus-visible:ring-2 focus-visible:ring-foreground after:absolute after:-inset-2 after:content-['']"
               >
                 <SmCloseSolidIcon className="size-3" />
               </button>

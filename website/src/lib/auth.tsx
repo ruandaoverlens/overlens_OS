@@ -10,11 +10,11 @@ import {
 } from "react";
 import { createClient } from "@/lib/supabase/client";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { canAccessRoute, type UserRole } from "@/lib/route-access";
+import { canAccessRoute, isStaffOrAdmin, isAdmin, type UserRole } from "@/lib/route-access";
 
 // Re-exported so existing imports from "@/lib/auth" keep working. The rules
 // themselves live in the pure module so the edge middleware can enforce them.
-export { canAccessRoute };
+export { canAccessRoute, isStaffOrAdmin, isAdmin };
 export type { UserRole };
 
 export interface User {
@@ -25,26 +25,41 @@ export interface User {
   avatarUrl?: string;
 }
 
-// --- Permission functions (unchanged API) ---
+// --- Permission functions ---
+// Staff e admin compartilham todas as permissões, com duas exceções que
+// continuam exclusivas do admin: apagar membros e editar os textos das páginas.
 
-export function canEdit(role: UserRole): boolean {
-  return role === "admin";
+/** Editar o texto das páginas dos systems (Brand System, Content System...). */
+export function canEditDocs(role: UserRole): boolean {
+  return isAdmin(role);
 }
 
+/** @deprecated use canEditDocs — mantido para os imports antigos. */
+export function canEdit(role: UserRole): boolean {
+  return canEditDocs(role);
+}
+
+/** Ver, convidar e editar membros (o painel de Membros nas configurações). */
 export function canManageMembers(role: UserRole): boolean {
-  return role === "admin";
+  return isStaffOrAdmin(role);
+}
+
+/** Remover um membro da plataforma. */
+export function canDeleteMembers(role: UserRole): boolean {
+  return isAdmin(role);
 }
 
 export function canDownload(role: UserRole): boolean {
-  return role === "staff" || role === "admin";
+  return isStaffOrAdmin(role);
 }
 
 export function canUpload(role: UserRole): boolean {
-  return role === "staff" || role === "admin";
+  return isStaffOrAdmin(role);
 }
 
+/** Apagar assets, posts e demais conteúdos (não confundir com membros). */
 export function canDelete(role: UserRole): boolean {
-  return role === "admin";
+  return isStaffOrAdmin(role);
 }
 
 export function getRoleLabel(role: UserRole): string {

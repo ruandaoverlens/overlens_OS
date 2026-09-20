@@ -2,7 +2,10 @@
 
 import * as React from "react"
 import { Drawer as DrawerPrimitive } from "vaul"
+import { SmCloseLineIcon } from "@/components/icons"
 import { cn } from "@/lib/utils"
+import { menuGroupLabelClasses } from "@/components/ui/menu-recipes"
+import { Button } from "@/components/ui/button"
 
 /** Swipeable drawer panel powered by Vaul, slides from any direction. */
 function Drawer({
@@ -41,7 +44,7 @@ function DrawerOverlay({
     <DrawerPrimitive.Overlay
       data-slot="drawer-overlay"
       className={cn(
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fill-mode-both fixed inset-0 z-50 bg-black/70 backdrop-blur-sm",
+        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fill-mode-both fixed inset-0 z-50 bg-scrim backdrop-blur-sm",
         className
       )}
       {...props}
@@ -49,19 +52,22 @@ function DrawerOverlay({
   )
 }
 
-/** Drawer panel with direction-aware borders and a drag handle for bottom drawers. */
+/** Drawer panel with direction-aware borders, a drag handle for bottom drawers and an accessible close button. */
 function DrawerContent({
   className,
   children,
+  showCloseButton = true,
   ...props
-}: React.ComponentProps<typeof DrawerPrimitive.Content>) {
+}: React.ComponentProps<typeof DrawerPrimitive.Content> & {
+  showCloseButton?: boolean
+}) {
   return (
     <DrawerPortal data-slot="drawer-portal">
       <DrawerOverlay />
       <DrawerPrimitive.Content
         data-slot="drawer-content"
         className={cn(
-          "group/drawer-content bg-background/70 backdrop-blur-xl text-card-foreground fixed z-50 flex h-auto flex-col pb-6 shadow-none dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]",
+          "group/drawer-content bg-background/70 backdrop-blur-xl text-card-foreground fixed z-50 flex h-auto flex-col pb-6 shadow-popover",
           "data-[vaul-drawer-direction=top]:inset-x-0 data-[vaul-drawer-direction=top]:top-0 data-[vaul-drawer-direction=top]:mb-24 data-[vaul-drawer-direction=top]:max-h-[80vh] data-[vaul-drawer-direction=top]:rounded-b-xl",
           "data-[vaul-drawer-direction=bottom]:inset-x-0 data-[vaul-drawer-direction=bottom]:bottom-0 data-[vaul-drawer-direction=bottom]:mt-24 data-[vaul-drawer-direction=bottom]:max-h-[80vh] data-[vaul-drawer-direction=bottom]:rounded-t-xl",
           "data-[vaul-drawer-direction=right]:inset-y-0 data-[vaul-drawer-direction=right]:right-0 data-[vaul-drawer-direction=right]:w-full data-[vaul-drawer-direction=right]:sm:max-w-sm",
@@ -70,9 +76,22 @@ function DrawerContent({
         )}
         {...props}
       >
-        <div className="bg-[var(--surface-700)] mx-auto mt-4 mb-5 hidden h-0.5 w-[100px] shrink-0 rounded-full group-data-[vaul-drawer-direction=bottom]/drawer-content:block" />
+        <div className="bg-surface-700 mx-auto mt-4 mb-5 hidden h-0.5 w-25 shrink-0 rounded-full group-data-[vaul-drawer-direction=bottom]/drawer-content:block" />
         {children}
-        <div className="bg-[var(--surface-700)] mx-auto mb-4 hidden h-0.5 w-[100px] shrink-0 rounded-full group-data-[vaul-drawer-direction=top]/drawer-content:block" />
+        <div className="bg-surface-700 mx-auto mb-4 hidden h-0.5 w-25 shrink-0 rounded-full group-data-[vaul-drawer-direction=top]/drawer-content:block" />
+        {showCloseButton && (
+          <DrawerPrimitive.Close asChild>
+            <Button
+              data-slot="drawer-close"
+              variant="ghost"
+              size="icon-sm"
+              aria-label="Fechar"
+              className="absolute top-3 right-3 text-muted-foreground hover:text-foreground"
+            >
+              <SmCloseLineIcon className="size-6" />
+            </Button>
+          </DrawerPrimitive.Close>
+        )}
       </DrawerPrimitive.Content>
     </DrawerPortal>
   )
@@ -84,7 +103,7 @@ function DrawerHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="drawer-header"
       className={cn(
-        "flex flex-col gap-0.5 p-4 group-data-[vaul-drawer-direction=bottom]/drawer-content:text-center md:gap-1.5 md:text-left",
+        "flex flex-col gap-0.5 p-4 pr-12 group-data-[vaul-drawer-direction=bottom]/drawer-content:text-center md:gap-1.5 md:text-left",
         className
       )}
       {...props}
@@ -111,7 +130,7 @@ function DrawerTitle({
   return (
     <DrawerPrimitive.Title
       data-slot="drawer-title"
-      className={cn("text-foreground font-semibold", className)}
+      className={cn("text-foreground text-lg leading-none font-medium", className)}
       {...props}
     />
   )
@@ -154,7 +173,8 @@ function DrawerMenuLabel({
     <span
       data-slot="drawer-menu-label"
       className={cn(
-        "text-muted-foreground font-heading uppercase tracking-wide px-5 py-2 text-xs",
+        menuGroupLabelClasses,
+        "px-5 py-2",
         className
       )}
       {...props}
@@ -179,11 +199,12 @@ function DrawerMenuItem({
       data-active={isActive}
       type="button"
       className={cn(
-        "flex w-full items-center gap-2 rounded-md p-2 text-left text-sm font-normal text-[var(--surface-500)] outline-hidden transition-colors",
-        "hover:bg-[var(--surface-900)] hover:text-foreground focus-visible:bg-[var(--surface-900)] focus-visible:text-foreground active:bg-[var(--surface-900)] active:text-foreground",
-        "data-[active=true]:bg-[var(--surface-900)] data-[active=true]:font-medium data-[active=true]:text-foreground data-[active=true]:[&>svg]:opacity-100",
-        "data-[variant=destructive]:text-destructive data-[variant=destructive]:hover:bg-accent data-[variant=destructive]:focus-visible:bg-accent",
-        "[&>svg]:size-6 [&>svg]:shrink-0 [&>svg]:opacity-50 [&>svg]:pointer-events-none hover:[&>svg]:opacity-100",
+        "flex w-full items-center gap-2 rounded-md p-2 text-left text-sm font-normal text-surface-500 outline-hidden transition-colors",
+        "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring",
+        "hover:bg-surface-900 hover:text-foreground focus-visible:bg-surface-900 focus-visible:text-foreground active:bg-surface-900 active:text-foreground",
+        "data-[active=true]:bg-surface-900 data-[active=true]:font-medium data-[active=true]:text-foreground data-[active=true]:[&>svg]:opacity-100",
+        "data-[variant=destructive]:text-destructive data-[variant=destructive]:hover:bg-accent data-[variant=destructive]:hover:text-destructive-emphasis data-[variant=destructive]:focus-visible:bg-accent data-[variant=destructive]:focus-visible:text-destructive-emphasis",
+        "[&>svg]:size-6 [&>svg]:shrink-0 [&>svg]:opacity-70 [&>svg]:pointer-events-none hover:[&>svg]:opacity-100",
         "[&>span:last-child]:truncate",
         "disabled:pointer-events-none disabled:opacity-50",
         className

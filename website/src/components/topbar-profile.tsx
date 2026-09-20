@@ -49,10 +49,14 @@ export function TopbarProfile() {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <button className="inline-flex size-9 cursor-pointer items-center justify-center rounded-full outline-none transition-opacity hover:opacity-80">
+          <button
+            type="button"
+            aria-label={user?.name ? `Perfil de ${user.name}` : "Perfil"}
+            className="inline-flex size-10 cursor-pointer items-center justify-center rounded-full outline-none transition-opacity hover:opacity-80 focus-visible:ring-2 focus-visible:ring-foreground"
+          >
             <Avatar size="sm">
-              <AvatarImage src={user?.avatarUrl ?? ""} alt="Perfil" />
-              <AvatarFallback>{getInitials(user?.name)}</AvatarFallback>
+              <AvatarImage src={user?.avatarUrl ?? ""} alt="" />
+              <AvatarFallback aria-hidden>{getInitials(user?.name)}</AvatarFallback>
             </Avatar>
           </button>
         </DropdownMenuTrigger>
@@ -64,7 +68,7 @@ export function TopbarProfile() {
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handleLogout} disabled={loggingOut}>
             <SmLogoutLineIcon />
-            <span>{loggingOut ? "Saindo..." : "Desconectar"}</span>
+            <span>{loggingOut ? "Saindo…" : "Desconectar"}</span>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

@@ -1,8 +1,8 @@
 ---
 title: Fluxos
-summary: Apresenta a arquitetura invisível que sustenta o crescimento da Overlens — growth loops, funis principais, sequências de venda e o alinhamento entre conteúdo, canais e timing em cada etapa da jornada do criador.
+summary: Apresenta a arquitetura invisível que sustenta o crescimento da Overlens — growth loops, funis principais, sequências de venda e o alinhamento entre conteúdo, canais e timing em cada etapa da jornada nexialista.
 topics: [fluxos, funis, growth loops, sequências de venda, jornada]
-keywords: [fluxos, funis, growth loops, sequências, lançamentos, ativações, reativações, jornada do criador, conteúdo, canais, timing, conversão]
+keywords: [fluxos, funis, growth loops, sequências, lançamentos, ativações, reativações, jornada nexialista, empreendedores nexialistas, conteúdo, canais, timing, conversão]
 priority: high
 ai_when_to_use: |
   Use quando o usuário perguntar sobre fluxos de marketing da Overlens, funis de venda, sequências de e-mail, ciclos de aquisição/retenção, growth loops em geral, ou ao planejar uma campanha, lançamento ou ativação que precise alinhar conteúdo, canal e timing.

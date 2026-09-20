@@ -47,6 +47,8 @@ export function UserMessage({
               <img
                 src={att.url}
                 alt={att.name}
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -56,10 +58,10 @@ export function UserMessage({
               key={`file-${i}-${att.name}`}
               className={cn(
                 "inline-flex h-7 shrink-0 items-center gap-1.5 rounded-full pl-2.5 pr-3 text-xs font-medium",
-                "bg-[#D6A461]/10 text-[#D6A461]",
+                "bg-brand-sahara/10 text-brand-sahara",
               )}
             >
-              <SmFolderLineIcon className="size-3.5" />
+              <SmFolderLineIcon className="size-3.5" aria-hidden="true" />
               <span className="max-w-[180px] truncate">{att.name}</span>
             </div>
           ))}

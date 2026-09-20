@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import { createClient } from "@/lib/supabase/server";
+import { isStaffOrAdmin } from "@/lib/route-access";
 import { sanitizeStorageFilename } from "@/lib/supabase/storage";
 import { createNotification } from "@/lib/notifications";
 
@@ -27,7 +28,7 @@ export async function POST(request: NextRequest) {
       .eq("id", user.id)
       .single();
 
-    if (!profile || profile.role !== "admin") {
+    if (!profile || !isStaffOrAdmin(profile.role)) {
       return NextResponse.json({ error: "Sem permissão" }, { status: 403 });
     }
 

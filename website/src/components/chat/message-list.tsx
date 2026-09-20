@@ -51,6 +51,22 @@ export function MessageList({
   const showThinking = isLoading && lastRole !== "assistant" && !error
   const showError = !!error && !isLoading
 
+  // Anúncio único ao fim do stream: o log NÃO é aria-live (anunciaria cada
+  // fragmento durante o streaming); só o status sr-only fala "Resposta concluída".
+  const wasLoadingRef = React.useRef(false)
+  const [announcement, setAnnouncement] = React.useState("")
+  React.useEffect(() => {
+    if (isLoading) {
+      wasLoadingRef.current = true
+      return
+    }
+    if (!wasLoadingRef.current) return
+    wasLoadingRef.current = false
+    setAnnouncement(
+      error ? "A resposta falhou." : lastRole === "assistant" ? "Resposta concluída." : "",
+    )
+  }, [isLoading, error, lastRole])
+
   return (
     <div
       ref={scrollRef}
@@ -61,7 +77,14 @@ export function MessageList({
         className
       )}
     >
-      <div className="mx-auto w-full max-w-3xl px-4 py-8">
+      <div role="status" aria-live="polite" className="sr-only">
+        {announcement}
+      </div>
+      <div
+        role="log"
+        aria-label="Mensagens da conversa"
+        className="mx-auto w-full max-w-3xl px-4 py-8"
+      >
         {messages.map((m) => {
           const messageMeta = meta?.[m.id]
           if (m.role === "user") {
@@ -92,6 +115,7 @@ export function MessageList({
 
         {showThinking && (
           <div
+            aria-hidden="true"
             data-slot="chat-thinking"
             className="mb-6 flex justify-start text-base text-muted-foreground animate-pulse"
           >

@@ -1,8 +1,8 @@
 ---
 title: Linha do Tempo
 summary: Narra a trajetória da Overlens de 2015 a 2025 — da tensão criadora na faculdade ao nascimento do nexialismo — não como narrativa de sucesso, mas como contrato implícito de alinhamento.
-topics: [história da overlens, marcos institucionais, fundação, nexialismo, vanguarda]
-keywords: [ruan, rafael, 2015, 2018, 2021, 2022, 2023, 2024, 2025, vanguarda, nexialismo, the voyage of the space beagle, salvador dali, persistência da memória, inteligência artificial generativa, fundação]
+topics: [história da overlens, marcos institucionais, fundação, nexialismo, vanguarda, empreendedores nexialistas]
+keywords: [ruan, rafael, 2015, 2018, 2021, 2022, 2023, 2024, 2025, vanguarda, nexialismo, Empreendedor Nexialista, the voyage of the space beagle, salvador dali, persistência da memória, inteligência artificial generativa, fundação]
 priority: high
 ai_when_to_use: |
   Use quando o usuário perguntar sobre a história da Overlens, quando/por que foi fundada, quem são os fundadores (Ruan e Rafael), origem do nome Overlens, surgimento da Vanguarda, origem do nexialismo, ou marcos cronológicos da escola.
@@ -23,7 +23,7 @@ Essa linha do tempo existe para colocar você dentro da história da Overlens. N
 
 ## Antes da Overlens
 
-É importante destacar que, muito antes das tecnologias atuais e inteligências artificiais, há muitas décadas, a humanidade já vivia em um cenário difícil para quem quer criar de verdade. Criar nunca foi proibido, mas sempre foi condicionado. Você pode criar desde que não questione o sistema, não ameace privilégios e não tente mudar nada importante. Já faz um tempo que muitas ideias frágeis passaram a ser repetidas como verdades, muitas vezes por medo, cansaço ou adaptação, como se desejar mais fosse egoísmo, buscar autoria fosse arrogância e querer transformar o mundo fosse ingenuidade. Um ambiente que induz artistas, designers, cientistas, engenheiros e criadores de modo geral a se adaptarem, seguindo tendências e renunciando a muitos futuros possíveis.
+É importante destacar que, muito antes das tecnologias atuais e inteligências artificiais, há muitas décadas, a humanidade já vivia em um cenário difícil para quem quer criar de verdade. Criar nunca foi proibido, mas sempre foi condicionado. Você pode criar desde que não questione o sistema, não ameace privilégios e não tente mudar nada importante. Já faz um tempo que muitas ideias frágeis passaram a ser repetidas como verdades, muitas vezes por medo, cansaço ou adaptação, como se desejar mais fosse egoísmo, buscar autoria fosse arrogância e querer transformar o mundo fosse ingenuidade. Um ambiente que induz artistas, designers, arquitetos, cientistas, engenheiros, empreendedores e criadores de modo geral a se adaptarem, seguindo tendências e renunciando a muitos futuros possíveis.
 
 Socialmente, abrir mão dos próprios desejos passou a ser visto como uma virtude máxima, sem considerar que existem diversos contextos. Estabilidade virou sinônimo de maturidade, enquanto criar com propósito próprio passou a ser tratado como risco ou imaturidade. No mercado, buscam liberdade, mas acabam trabalhando apenas para sobreviver, às vezes escondendo isso atrás de discursos polidos e teorias vazias. Trabalhar só para pagar as contas passou a ser tratado como inevitável. E essa lógica sempre nos incomodou muito.
 
@@ -61,9 +61,9 @@ Mesmo assim, seguimos em frente pelas pessoas que vinham até nós buscando ajud
 
 Em 2024, ficou claro que a Overlens não era mais apenas uma ideia diferente ou uma leitura alternativa do momento. Ela havia se tornado necessária para muitas pessoas. A audiência cresceu, as conversas ficaram mais profundas e os problemas trazidos pelos alunos deixaram de ser apenas técnicos. Criadores começaram a perceber que o desafio real não era aprender novas ferramentas, mas reconstruir a própria forma de pensar, decidir e criar. Com isso, a responsabilidade aumentou. Já não bastava provocar. Era preciso estruturar, aprofundar e sustentar aquilo que estava sendo colocado em movimento.
 
-Nesse instante, também ficou claro que não havia mais volta. A Overlens deixou de ser algo que poderia ser abandonado sem consequências. Havia pessoas reorganizando suas carreiras, mudando decisões importantes e assumindo riscos reais a partir do que aprendiam ali. Isso exigiu mais rigor, mais clareza e mais critério. Passamos a recusar simplificações, promessas fáceis e atalhos, mesmo quando isso limitava o crescimento rápido. O ano de 2024 marcou o ponto em que ficou claro que a Overlens não existia para acompanhar o mercado, mas para formar criadores capazes de atravessar mudanças profundas sem perder autoria e responsabilidade.
+Nesse instante, também ficou claro que não havia mais volta. A Overlens deixou de ser algo que poderia ser abandonado sem consequências. Havia pessoas reorganizando suas carreiras, mudando decisões importantes e assumindo riscos reais a partir do que aprendiam ali. Isso exigiu mais rigor, mais clareza e mais critério. Passamos a recusar simplificações, promessas fáceis e atalhos, mesmo quando isso limitava o crescimento rápido. O ano de 2024 marcou o ponto em que ficou claro que a Overlens não existia para acompanhar o mercado, mas para formar empreendedores capazes de atravessar mudanças profundas sem perder autoria e responsabilidade.
 
-Foi então que decidimos criar um espaço ainda mais envolvente e poderoso. Fundamos a Vanguarda, um programa de aprofundamento e aceleração para criadores que querem transformar sua visão em algo que de fato funcione no mundo real. Pessoas dispostas a assumir decisões difíceis, abandonar ilusões confortáveis e sustentar suas ideias no tempo. Deixamos claro que nem todos precisavam seguir adiante, mas quem seguisse, precisaria levar a criação a sério.
+Foi então que decidimos criar um espaço ainda mais envolvente e poderoso. Fundamos a Vanguarda, um programa de aprofundamento e aceleração para empreendedores que querem transformar sua visão em algo que de fato funcione no mundo real. Pessoas dispostas a assumir decisões difíceis, abandonar ilusões confortáveis e sustentar suas ideias no tempo. Deixamos claro que nem todos precisavam seguir adiante, mas quem seguisse, precisaria levar a criação a sério.
 
 ## (2025) A maturidade da visão
 

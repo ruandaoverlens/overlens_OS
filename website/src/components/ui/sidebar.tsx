@@ -15,6 +15,7 @@ import { Slot } from "radix-ui"
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cn } from "@/lib/utils"
+import { isTypingTarget } from "@/lib/is-typing-target"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
@@ -38,6 +39,9 @@ const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
 const SIDEBAR_WIDTH = "16rem"
 const SIDEBAR_WIDTH_ICON = "3rem"
 const SIDEBAR_KEYBOARD_SHORTCUT = "b"
+// Mesmo valor de `useIsMobile`; duplicado aqui porque o layout effect precisa
+// medir a largura de forma síncrona, antes do efeito passivo do hook resolver.
+const MOBILE_BREAKPOINT = 768
 const SIDEBAR_COLLAPSE_BREAKPOINT = 1180
 
 type SidebarContextProps = {
@@ -51,6 +55,10 @@ type SidebarContextProps = {
 }
 
 const SidebarContext = React.createContext<SidebarContextProps | null>(null)
+
+/** `useLayoutEffect` no cliente, `useEffect` no SSR (evita o aviso do React). */
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? React.useLayoutEffect : React.useEffect
 
 /** Hook that provides sidebar state and toggle controls. */
 function useSidebar() {
@@ -84,7 +92,7 @@ function SidebarProvider({
   const [_open, _setOpen] = React.useState(defaultOpen)
   const open = openProp ?? _open
   const setOpen = React.useCallback(
-    (value: boolean | ((value: boolean) => boolean)) => {
+    (value: boolean | ((value: boolean) => boolean), persist = true) => {
       const openState = typeof value === "function" ? value(open) : value
       if (setOpenProp) {
         setOpenProp(openState)
@@ -92,28 +100,37 @@ function SidebarProvider({
         _setOpen(openState)
       }
 
-      // This sets the cookie to keep the sidebar state.
-      document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`
+      // Só persiste quando a mudança partiu do usuário. O recolhimento
+      // automático por viewport (abaixo) não deve marcar "recolhida" no cookie,
+      // senão uma visita num monitor estreito deixaria a sidebar fechada para
+      // sempre, inclusive em telas largas e em outras sessões.
+      if (persist) {
+        document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`
+      }
     },
     [setOpenProp, open]
   )
 
   // Auto-collapse sidebar when viewport crosses below the breakpoint.
   const setOpenRef = React.useRef(setOpen)
-  const isMobileRef = React.useRef(isMobile)
   React.useEffect(() => { setOpenRef.current = setOpen }, [setOpen])
-  React.useEffect(() => { isMobileRef.current = isMobile }, [isMobile])
 
-  React.useEffect(() => {
+  // Layout effect na montagem: roda antes da pintura, então a faixa
+  // 768–1179px (que começa expandida quando o cookie não diz o contrário) não
+  // pisca a sidebar aberta antes de recolher.
+  useIsomorphicLayoutEffect(() => {
     const mql = window.matchMedia(`(max-width: ${SIDEBAR_COLLAPSE_BREAKPOINT - 1}px)`)
+    // `useIsMobile` só resolve num efeito passivo, que roda depois deste layout
+    // effect — por isso a checagem de mobile é feita pela largura real.
+    const isMobileWidth = () => window.innerWidth < MOBILE_BREAKPOINT
     const onChange = (e: MediaQueryListEvent) => {
-      if (e.matches && !isMobileRef.current) {
-        setOpenRef.current(false)
+      if (e.matches && !isMobileWidth()) {
+        setOpenRef.current(false, false)
       }
     }
     // Collapse on mount if already below breakpoint
-    if (mql.matches && !isMobileRef.current) {
-      setOpenRef.current(false)
+    if (mql.matches && !isMobileWidth()) {
+      setOpenRef.current(false, false)
     }
     mql.addEventListener("change", onChange)
     return () => mql.removeEventListener("change", onChange)
@@ -127,6 +144,7 @@ function SidebarProvider({
   // Adds a keyboard shortcut to toggle the sidebar.
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (isTypingTarget(event.target)) return
       if (
         event.key === SIDEBAR_KEYBOARD_SHORTCUT &&
         (event.metaKey || event.ctrlKey)
@@ -217,10 +235,15 @@ function Sidebar({
   }
 
   if (isMobile) {
-    // Filter children to only render SidebarContent (skip header/footer/logo)
-    const contentOnly = React.Children.toArray(children).filter((child) => {
-      return React.isValidElement(child) && child.type === SidebarContent
-    })
+    // No drawer mobile renderizamos o cabeçalho (só quando não há `mobileHeader`
+    // próprio), o conteúdo e o rodapé — o rodapé carrega blocos de navegação
+    // como "Voltar ao system", que antes sumiam.
+    const all = React.Children.toArray(children)
+    const pick = (type: React.ElementType) =>
+      all.filter((child) => React.isValidElement(child) && child.type === type)
+    const headerChildren = mobileHeader ? [] : pick(SidebarHeader)
+    const contentChildren = pick(SidebarContent)
+    const footerChildren = pick(SidebarFooter)
 
     return (
       <>
@@ -229,22 +252,23 @@ function Sidebar({
           data-slot="sidebar-mobile-trigger"
           variant="ghost"
           size="icon"
-          className="fixed top-1.5 left-3 z-50 size-9 text-muted-foreground hover:bg-transparent dark:hover:bg-transparent hover:text-foreground md:hidden"
+          className="fixed top-1.5 left-3 z-50 text-muted-foreground hover:bg-transparent hover:text-foreground md:hidden"
           onClick={() => setOpenMobile(true)}
         >
           <SmDehazeLineIcon className="size-6" />
-          <span className="sr-only">Open menu</span>
+          <span className="sr-only">Abrir menu</span>
         </Button>
         <Drawer open={openMobile} onOpenChange={setOpenMobile}>
           <DrawerContent
             data-sidebar="sidebar"
             data-slot="sidebar"
             data-mobile="true"
+            showCloseButton={false}
             className="text-sidebar-foreground max-h-[80vh] p-0 [&>button]:hidden [&_[data-sidebar=search]]:hidden"
           >
             <DrawerHeader className="sr-only">
-              <DrawerTitle>Sidebar</DrawerTitle>
-              <DrawerDescription>Displays the mobile sidebar.</DrawerDescription>
+              <DrawerTitle>Menu</DrawerTitle>
+              <DrawerDescription>Navegação lateral em tela pequena.</DrawerDescription>
             </DrawerHeader>
             <div className="flex h-full w-full flex-col overflow-y-auto p-2 pb-6">
               {mobileHeader && (
@@ -252,7 +276,11 @@ function Sidebar({
                   {mobileHeader}
                 </div>
               )}
-              {contentOnly}
+              {headerChildren}
+              {contentChildren}
+              {footerChildren.length > 0 && (
+                <div className="mt-auto pt-4">{footerChildren}</div>
+              )}
             </div>
           </DrawerContent>
         </Drawer>
@@ -285,7 +313,7 @@ function Sidebar({
           <SidebarTrigger
             data-slot="sidebar-offcanvas-trigger"
             className={cn(
-              "fixed top-[9px] left-3 z-40 transition-opacity duration-200",
+              "fixed top-2.25 left-3 z-40 transition-opacity duration-200",
               state === "collapsed" ? "opacity-100" : "opacity-0 pointer-events-none"
             )}
           />
@@ -302,12 +330,16 @@ function Sidebar({
             : "group-data-[collapsible=icon]:w-(--sidebar-width-icon)",
           className
         )}
+        // Recolhida em offcanvas ela só sai da tela via `left`: sem `inert`,
+        // os controles (busca, links) continuariam na ordem de tabulação,
+        // invisíveis.
+        inert={collapsible === "offcanvas" && state === "collapsed"}
         {...props}
       >
         <div
           data-sidebar="sidebar"
           data-slot="sidebar-inner"
-          className="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col overflow-hidden group-data-[variant=floating]:rounded-xl group-data-[variant=floating]:border group-data-[variant=floating]:shadow-none dark:group-data-[variant=floating]:shadow-[0_4px_24px_rgba(0,0,0,0.3)]"
+          className="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col overflow-hidden group-data-[variant=floating]:rounded-xl group-data-[variant=floating]:border group-data-[variant=floating]:shadow-popover"
         >
           {children}
         </div>
@@ -316,34 +348,49 @@ function Sidebar({
   )
 }
 
-/** Icon button that toggles the sidebar open/collapsed state. */
+/**
+ * Icon button that toggles the sidebar open/collapsed state.
+ * Só existe no desktop: no mobile a barra vira um drawer (com seu próprio gatilho
+ * e fechamento), e o trigger apenas fecharia o painel com o rótulo errado —
+ * por isso retorna `null` quando `isMobile`.
+ */
 function SidebarTrigger({
   className,
   onClick,
   ...props
 }: React.ComponentProps<typeof Button>) {
-  const { toggleSidebar } = useSidebar()
+  const { toggleSidebar, isMobile } = useSidebar()
+
+  if (isMobile) return null
 
   return (
     <Button
       data-sidebar="trigger"
       data-slot="sidebar-trigger"
       variant="ghost"
-      size="icon"
-      className={cn("size-7 text-[var(--surface-700)] hover:bg-transparent dark:hover:bg-transparent hover:text-foreground", className)}
+      size="icon-sm"
+      className={cn("text-surface-500 hover:bg-transparent hover:text-foreground", className)}
       onClick={(event) => {
         onClick?.(event)
         toggleSidebar()
       }}
       {...props}
     >
-      <SmDockToRightLineIcon className="size-[22px]" />
-      <span className="sr-only">Toggle Sidebar</span>
+      <SmDockToRightLineIcon className="size-5.5" />
+      <span className="sr-only">Alternar barra lateral</span>
     </Button>
   )
 }
 
-/** Search button in the sidebar that opens a command dialog with keyboard shortcut. */
+/**
+ * Search button in the sidebar that opens a command dialog with keyboard shortcut.
+ *
+ * @deprecated Legado: nenhuma rota do app o usa (só as stories). Registra um
+ * segundo listener global de ⌘/Ctrl+K e, se montado junto da command palette do
+ * app, abriria as duas ao mesmo tempo. Não use em telas novas — prefira o
+ * `CommandDialog` de `@/components/ui/command`. Mantido apenas enquanto
+ * `sidebar.stories.tsx` depender dele.
+ */
 function SidebarSearch({
   className,
   shortcut = "K",
@@ -371,16 +418,16 @@ function SidebarSearch({
       data-slot="sidebar-search"
       data-sidebar="search"
       className={cn(
-        "bg-accent/50 dark:bg-input/30 hover:bg-accent dark:hover:bg-input/50 flex h-12 w-full items-center gap-2 rounded-[8px] px-2 text-sm text-muted-foreground outline-none transition-colors [&>svg]:size-6 [&>svg]:shrink-0 group-data-[collapsible=icon]:size-10! group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:rounded-md group-data-[collapsible=icon]:bg-transparent group-data-[collapsible=icon]:px-0! group-data-[collapsible=icon]:hover:bg-sidebar-accent",
+        "bg-input/30 hover:bg-input/50 flex h-12 w-full items-center gap-2 rounded-field-sm px-2 text-sm text-muted-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-foreground [&>svg]:size-6 [&>svg]:shrink-0 group-data-[collapsible=icon]:size-10! group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:rounded-md group-data-[collapsible=icon]:bg-transparent group-data-[collapsible=icon]:px-0! group-data-[collapsible=icon]:hover:bg-sidebar-accent",
         className
       )}
       onClick={() => setOpen(true)}
       {...props}
     >
       <SmSearchLineIcon />
-      <span className="flex-1 text-left group-data-[collapsible=icon]:hidden">Buscar...</span>
-      <kbd className="pointer-events-none hidden h-5 items-center gap-0.5 rounded border-none bg-[var(--surface-400)] hover:bg-[var(--surface-300)] dark:bg-[var(--surface-900)] dark:hover:bg-[var(--surface-800)] px-1.5 pt-1 font-mono text-[11px] font-medium text-[var(--surface-600)] dark:text-[var(--surface-500)] select-none sm:flex group-data-[collapsible=icon]:!hidden">
-        <span className="text-[13px]">⌘</span>{shortcut}
+      <span className="flex-1 text-left group-data-[collapsible=icon]:hidden">Buscar…</span>
+      <kbd className="pointer-events-none hidden h-5 items-center gap-0.5 rounded border-none bg-surface-900 px-1.5 pt-1 font-mono text-caption font-medium text-surface-500 select-none sm:flex group-data-[collapsible=icon]:!hidden">
+        <span className="text-xs">⌘</span>{shortcut}
       </kbd>
     </button>
   )
@@ -398,12 +445,12 @@ function SidebarSearch({
         searchButton
       )}
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogHeader className="sr-only">
-          <DialogTitle>Buscar</DialogTitle>
-          <DialogDescription>Buscar páginas e comandos</DialogDescription>
-        </DialogHeader>
-        <DialogContent className="overflow-visible p-0 shadow-none bg-transparent sm:max-w-[620px] top-[80px] translate-y-0" showCloseButton={false}>
-          <Command className="bg-[var(--surface-950)] rounded-2xl">
+        <DialogContent className="overflow-visible p-0 shadow-none bg-transparent sm:max-w-155 top-20 translate-y-0" showCloseButton={false}>
+          <DialogHeader className="sr-only">
+            <DialogTitle>Buscar</DialogTitle>
+            <DialogDescription>Buscar páginas e comandos</DialogDescription>
+          </DialogHeader>
+          <Command className="bg-surface-950 rounded-2xl">
             {children}
           </Command>
         </DialogContent>
@@ -420,12 +467,12 @@ function SidebarRail({ className, ...props }: React.ComponentProps<"button">) {
     <button
       data-sidebar="rail"
       data-slot="sidebar-rail"
-      aria-label="Toggle Sidebar"
+      aria-label="Alternar barra lateral"
       tabIndex={-1}
       onClick={toggleSidebar}
-      title="Toggle Sidebar"
+      title="Alternar barra lateral"
       className={cn(
-        "hover:after:bg-sidebar-border absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 transition-all ease-linear -right-4 after:absolute after:inset-y-0 after:left-1/2 after:w-[2px] sm:flex",
+        "hover:after:bg-sidebar-border absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 transition-all ease-linear -right-4 after:absolute after:inset-y-0 after:left-1/2 after:w-0.5 sm:flex",
         "cursor-w-resize",
         "[[data-state=collapsed]_&]:cursor-e-resize",
         "hover:group-data-[collapsible=offcanvas]:bg-sidebar group-data-[collapsible=offcanvas]:translate-x-0 group-data-[collapsible=offcanvas]:after:left-full",
@@ -433,17 +480,20 @@ function SidebarRail({ className, ...props }: React.ComponentProps<"button">) {
         className
       )}
       {...props}
-    />
+    >
+      <span className="sr-only">Alternar barra lateral</span>
+    </button>
   )
 }
 
-/** Main content area that adjusts layout when paired with a sidebar. */
+/** Main content area that adjusts layout when paired with a sidebar. Focável programaticamente (skip link). */
 function SidebarInset({ className, ...props }: React.ComponentProps<"main">) {
   return (
     <main
       data-slot="sidebar-inset"
+      tabIndex={-1}
       className={cn(
-        "bg-background relative flex min-w-0 w-full flex-1 flex-col",
+        "bg-background relative flex min-w-0 w-full flex-1 flex-col outline-none",
         "md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow-sm md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2",
         className
       )}
@@ -500,20 +550,25 @@ function SidebarSeparator({
     <Separator
       data-slot="sidebar-separator"
       data-sidebar="separator"
-      className={cn("bg-[var(--surface-800)] mx-2 w-auto", className)}
+      className={cn("bg-surface-800 mx-2 w-auto", className)}
       {...props}
     />
   )
 }
 
-/** Scrollable main content area of the sidebar. */
-function SidebarContent({ className, ...props }: React.ComponentProps<"div">) {
+/** Scrollable main content area of the sidebar. Renderiza um landmark `<nav>` (aria-label sobrescrevível). */
+function SidebarContent({
+  className,
+  "aria-label": ariaLabel = "Navegação lateral",
+  ...props
+}: React.ComponentProps<"nav">) {
   return (
-    <div
+    <nav
       data-slot="sidebar-content"
       data-sidebar="content"
+      aria-label={ariaLabel}
       className={cn(
-        "flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto overflow-x-hidden group-data-[collapsible=icon]:overflow-hidden scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none]",
+        "flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto overflow-x-hidden group-data-[collapsible=icon]:overflow-hidden scrollbar-hidden",
         className
       )}
       {...props}
@@ -546,7 +601,7 @@ function SidebarGroupLabel({
       data-slot="sidebar-group-label"
       data-sidebar="group-label"
       className={cn(
-        "text-sidebar-foreground/70 ring-sidebar-ring flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-6 [&>svg]:shrink-0",
+        "text-sidebar-foreground/70 ring-ring flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-6 [&>svg]:shrink-0",
         "group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0",
         className
       )}
@@ -580,9 +635,9 @@ function SidebarGroupAction({
       data-slot="sidebar-group-action"
       data-sidebar="group-action"
       variant="ghost"
-      size="icon"
+      size="icon-sm"
       className={cn(
-        "absolute top-2 right-2 size-7 text-sidebar-foreground/70 hover:text-sidebar-foreground",
+        "absolute top-2 right-2 text-sidebar-foreground/70 hover:text-sidebar-foreground",
         "group-data-[collapsible=icon]:hidden",
         className
       )}
@@ -631,12 +686,12 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<"li">) {
 }
 
 const sidebarMenuButtonVariants = cva(
-  "peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm font-normal text-[var(--surface-500)] outline-hidden ring-sidebar-ring transition-[width,height,padding] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:p-0! group-data-[collapsible=icon]:[&>span]:hidden [&>span:last-child]:truncate [&>svg]:size-6 [&>svg]:shrink-0 [&>svg]:opacity-50 data-[active=true]:[&>svg]:opacity-100 hover:[&>svg]:opacity-100",
+  "peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm font-normal text-surface-500 outline-hidden ring-ring transition-[width,height,padding] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:p-0! group-data-[collapsible=icon]:[&>span]:hidden [&>span:last-child]:truncate [&>svg]:size-6 [&>svg]:shrink-0 [&>svg]:opacity-70 data-[active=true]:[&>svg]:opacity-100 hover:[&>svg]:opacity-100",
   {
     variants: {
       size: {
         default: "h-10 text-sm group-data-[collapsible=icon]:size-10!",
-        sm: "h-8 text-sm group-data-[collapsible=icon]:size-8!",
+        sm: "h-9 text-sm group-data-[collapsible=icon]:size-9!",
         lg: "h-12 text-sm group-data-[collapsible=icon]:size-12! group-data-[collapsible=icon]:p-0!",
       },
     },
@@ -670,10 +725,11 @@ function SidebarMenuButton({
       data-sidebar="menu-button"
       data-size={size}
       data-active={isActive}
+      aria-current={isActive ? "page" : undefined}
       className={cn(
         sidebarMenuButtonVariants({ size }),
         outlined
-          ? "bg-background shadow-[0_0_0_1px_hsl(var(--sidebar-border))] hover:shadow-[0_0_0_1px_hsl(var(--sidebar-accent))]"
+          ? "bg-background ring-1 ring-sidebar-border hover:ring-sidebar-accent"
           : "",
         className
       )}
@@ -741,9 +797,9 @@ function SidebarMenuAction({
       data-slot="sidebar-menu-action"
       data-sidebar="menu-action"
       variant="ghost"
-      size="icon"
+      size="icon-sm"
       className={cn(
-        "size-7 text-sidebar-foreground/70 hover:text-sidebar-foreground",
+        "text-sidebar-foreground/70 hover:text-sidebar-foreground",
         sharedClassName
       )}
       {...props}
@@ -790,9 +846,12 @@ function SidebarMenuSkeleton({
     <div
       data-slot="sidebar-menu-skeleton"
       data-sidebar="menu-skeleton"
+      role="status"
+      aria-busy="true"
       className={cn("flex h-8 items-center gap-2 rounded-md px-2", className)}
       {...props}
     >
+      <span className="sr-only">Carregando</span>
       {showIcon && (
         <Skeleton
           className="size-4 rounded-md"
@@ -864,8 +923,9 @@ function SidebarMenuSubButton({
       data-sidebar="menu-sub-button"
       data-size={size}
       data-active={isActive}
+      aria-current={isActive ? "page" : undefined}
       className={cn(
-        "text-[var(--surface-500)] ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground active:bg-sidebar-accent active:text-sidebar-accent-foreground flex h-8 min-w-0 w-full items-center gap-2 overflow-hidden rounded-md px-2 outline-hidden focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate",
+        "text-surface-500 ring-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground active:bg-sidebar-accent active:text-sidebar-accent-foreground flex h-9 min-w-0 w-full items-center gap-2 overflow-hidden rounded-md px-2 outline-hidden focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate",
         "data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground",
         size === "sm" && "text-sm",
         size === "md" && "text-sm",

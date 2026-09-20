@@ -18,7 +18,10 @@ export async function proxy(request: NextRequest) {
     // If logged in and visiting /login, redirect to /docs
     if (user && pathname.startsWith("/login")) {
       const url = request.nextUrl.clone();
-      url.pathname = "/docs";
+      const next = request.nextUrl.searchParams.get("next");
+      url.search = "";
+      url.pathname =
+        next && next.startsWith("/") && !next.startsWith("//") ? next : "/docs";
       const redirect = NextResponse.redirect(url);
       // Forward session cookies so refreshed tokens aren't lost
       supabaseResponse.cookies.getAll().forEach((cookie) => {
@@ -29,10 +32,13 @@ export async function proxy(request: NextRequest) {
     return supabaseResponse;
   }
 
-  // No user → redirect to login
+  // No user → redirect to login, preservando o destino em ?next=
   if (!user) {
+    const { pathname: from, search } = request.nextUrl;
     const url = request.nextUrl.clone();
     url.pathname = "/login";
+    url.search = "";
+    url.searchParams.set("next", `${from}${search}`);
     return NextResponse.redirect(url);
   }
 

@@ -1,4 +1,5 @@
 import * as React from "react"
+import Image from "next/image"
 
 import { cn } from "@/lib/utils"
 import { useNotificationBar } from "@/components/ui/notification-bar"
@@ -76,7 +77,7 @@ function NotificationCard({
       data-slot="notification-card"
       data-unread={isUnread ? "" : undefined}
       className={cn(
-        "relative flex shrink-0 cursor-pointer flex-col gap-2 rounded-[12px] bg-white/3 p-2 transition-all hover:bg-foreground/10",
+        "relative flex shrink-0 cursor-pointer flex-col gap-2 rounded-field bg-surface-950 p-2 transition-all hover:bg-foreground/10",
         className
       )}
       onPointerEnter={() => {
@@ -90,10 +91,15 @@ function NotificationCard({
       {isUnread && (
         <span
           aria-hidden
-          className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-[12px]"
+          className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-field"
         >
           <span className="absolute inset-0 [animation:border-travel_3s_linear_infinite] [background:conic-gradient(from_var(--border-angle),transparent_25%,var(--surface-600)_50%,transparent_75%)]" />
-          <span className="absolute inset-px rounded-[11px] bg-[var(--surface-950)]" /><span className="absolute inset-px rounded-[11px] bg-gradient-to-b from-white/7 to-transparent" />
+          <span className="absolute inset-px rounded-card-inner bg-surface-950" />
+          {/* Brilho sutil no topo do card. Antes era `from-white/7` (7%), que parecia
+              erro de digitacao mas era intencional: um veu quase imperceptivel.
+              Agora usa o token `surface-raised-2` (branco a 8%) — mesmo efeito,
+              sem numero magico. */}
+          <span className="absolute inset-px rounded-card-inner bg-gradient-to-b from-surface-raised-2 to-transparent" />
         </span>
       )}
       <NotificationCardContext.Provider value={{ isUnread, variant }}>
@@ -108,29 +114,37 @@ function NotificationCard({
  * Aceita `src` para exibir uma imagem ou pode ser usado como div com bg customizado.
  * Definida pelo criador da notificacao ou pelo sistema.
  */
+const LOCAL_URL = /^(blob|data):/i
+
 function NotificationCardCover({
   className,
   src,
   alt = "",
+  sizes = "(max-width: 640px) 100vw, 400px",
   ...props
 }: React.ComponentProps<"div"> & {
   src?: string
   alt?: string
+  /** Atributo `sizes` do next/image (o card vive em painéis estreitos). */
+  sizes?: string
 }) {
   return (
     <div
       data-slot="notification-card-cover"
       className={cn(
-        "relative h-24 w-full shrink-0 overflow-hidden rounded-[6px] bg-muted",
+        "relative h-24 w-full shrink-0 overflow-hidden rounded-md bg-muted",
         className
       )}
       {...props}
     >
       {src && (
-        <img
+        <Image
           src={src}
           alt={alt}
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          sizes={sizes}
+          unoptimized={LOCAL_URL.test(src) || undefined}
+          className="object-cover"
         />
       )}
     </div>
@@ -244,7 +258,7 @@ function NotificationCardStatus({
       {isUnread ? (
         <>
           Não lida
-          <span className="h-2 w-2 rounded-full bg-[var(--brand-atmos)]" />
+          <span className="h-2 w-2 rounded-full bg-brand-atmos" />
         </>
       ) : (
         timeLabel

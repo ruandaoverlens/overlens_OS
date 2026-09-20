@@ -16,6 +16,7 @@ import {
   SidebarFooter,
   SidebarSeparator,
   SidebarTrigger,
+  useSidebar,
 } from "@/components/ui/sidebar";
 import { ConversationItem } from "@/components/chat/conversation-item";
 import {
@@ -31,26 +32,28 @@ import {
   SmLanguageLineIcon,
 } from "@/components/icons";
 import { SidebarProfile } from "@/components/sidebar-profile";
+import { REGISTROS_NAV_ITEMS } from "@/lib/registros-nav";
+import {
+  CommandPalette,
+  CommandPaletteButton,
+  CommandPaletteProvider,
+  NewConversationButton,
+  type PaletteSource,
+} from "@/components/command-palette";
 
-interface RegistrosNavItem {
-  href: string;
-  title: string;
-  icon: React.ReactNode;
-  /** true = ativo apenas no match exato; false = ativo em qualquer subrota. */
-  exact?: boolean;
-}
+const ICONS: Record<string, React.ReactNode> = {
+  "/registros": <SmHomeSolidIcon />,
+  "/registros/busca": <SmSearchLineIcon />,
+  "/registros/assistente": <SmChatLineIcon />,
+  "/registros/marcas": <SmRegisteredLineIcon />,
+  "/registros/dominios": <SmLanguageLineIcon />,
+  "/registros/registrar": <SmVerifiedLineIcon />,
+  "/registros/documentos": <SmDocLineIcon />,
+  "/registros/alertas": <SmAlertLineIcon />,
+  "/registros/radar": <SmGraphicEqLineIcon />,
+};
 
-const navItems: RegistrosNavItem[] = [
-  { href: "/registros", title: "Visão Geral", icon: <SmHomeSolidIcon />, exact: true },
-  { href: "/registros/busca", title: "Busca", icon: <SmSearchLineIcon /> },
-  { href: "/registros/assistente", title: "Assistente", icon: <SmChatLineIcon /> },
-  { href: "/registros/marcas", title: "Marcas", icon: <SmRegisteredLineIcon /> },
-  { href: "/registros/dominios", title: "Domínios", icon: <SmLanguageLineIcon /> },
-  { href: "/registros/registrar", title: "Processos", icon: <SmVerifiedLineIcon /> },
-  { href: "/registros/documentos", title: "Documentos", icon: <SmDocLineIcon /> },
-  { href: "/registros/alertas", title: "Alertas", icon: <SmAlertLineIcon /> },
-  { href: "/registros/radar", title: "Radar", icon: <SmGraphicEqLineIcon /> },
-];
+type RegistrosNavItem = (typeof REGISTROS_NAV_ITEMS)[number];
 
 export interface RegistrosConversaLink {
   id: string;
@@ -59,8 +62,16 @@ export interface RegistrosConversaLink {
 
 export function RegistrosSidebar({
   conversas = [],
+  backHref = "/docs",
+  backLabel = "Brand System",
+  palette,
 }: {
   conversas?: RegistrosConversaLink[];
+  /** Destino do link "voltar" no topo da sidebar. */
+  backHref?: string;
+  backLabel?: string;
+  /** Páginas indexadas pela command palette (último system + demais). */
+  palette?: PaletteSource;
 }) {
   const pathname = usePathname() ?? "/registros";
   const activeConversaId = pathname.startsWith("/registros/assistente/")
@@ -72,72 +83,99 @@ export function RegistrosSidebar({
       ? pathname === item.href
       : pathname === item.href || pathname.startsWith(item.href + "/");
 
+  const { isMobile, setOpenMobile } = useSidebar();
+  // No mobile a Sidebar é um drawer: fecha ao concluir uma navegação, para
+  // que clicar num link não custe um toque extra. Só o pathname dispara —
+  // acordeões e alternância de abas (query string) não fecham o drawer.
+  React.useEffect(() => {
+    if (isMobile) setOpenMobile(false);
+  }, [pathname, isMobile, setOpenMobile]);
+
   return (
-    <Sidebar>
-      <SidebarHeader>
-        <div className="flex h-12 items-center justify-between pb-[2px] pl-4 pr-0">
-          <Link href="/registros" className="flex items-center gap-2">
-            <SmRegisteredLineIcon className="size-5 text-[var(--surface-500)]" />
-            <span className="text-sm font-medium text-[var(--surface-300)]">
-              Registros
-            </span>
-          </Link>
-          <SidebarTrigger />
-        </div>
-      </SidebarHeader>
-      <div className="h-2" />
-      <SidebarMenu className="p-2">
-        <SidebarMenuItem>
-          <SidebarMenuButton asChild size="sm">
-            <Link href="/docs">
-              <SmArrowBackLineIcon />
-              <span>Brand System</span>
+    <CommandPaletteProvider>
+      <CommandPalette
+        sections={palette?.sections}
+        basePath={palette?.basePath ?? backHref}
+        title={palette?.title ?? backLabel}
+        allSections={palette?.allSections}
+        conversations={palette?.conversations}
+      />
+      <Sidebar collapsible="icon">
+        <SidebarHeader>
+          <div className="flex h-12 items-center justify-between pb-0.5 pl-4 pr-0 group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:pl-0">
+            <Link
+              href="/registros"
+              className="flex items-center gap-2 rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-foreground group-data-[collapsible=icon]:hidden"
+            >
+              <SmRegisteredLineIcon className="size-5 text-surface-500" aria-hidden="true" />
+              <span className="text-sm font-medium text-surface-300">
+                Registros
+              </span>
             </Link>
-          </SidebarMenuButton>
-        </SidebarMenuItem>
-      </SidebarMenu>
-      <SidebarSeparator />
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {navItems.map((item) => (
-                <SidebarMenuItem key={item.href}>
-                  <SidebarMenuButton isActive={isActive(item)} size="sm" asChild>
-                    <Link href={item.href}>
-                      {item.icon}
-                      <span>{item.title}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-        {conversas.length > 0 && (
+            <SidebarTrigger />
+          </div>
+        </SidebarHeader>
+        <SidebarContent>
+          {/* "Voltar ao system" abre o bloco de navegação do drawer no mobile
+              e da sidebar no desktop. */}
+          <SidebarMenu className="p-2 pt-4">
+            <SidebarMenuItem>
+              <SidebarMenuButton asChild size="sm">
+                <Link href={backHref}>
+                  <SmArrowBackLineIcon aria-hidden="true" />
+                  <span>{backLabel}</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+          <SidebarSeparator />
           <SidebarGroup>
-            <SidebarGroupLabel>Conversas</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                {conversas.map((c) => (
-                  <ConversationItem
-                    key={c.id}
-                    id={c.id}
-                    title={c.title}
-                    isActive={activeConversaId === c.id}
-                    hrefBase="/registros/assistente"
-                    apiBase="/api/registros/assistente/conversas"
-                    homeHref="/registros/assistente"
-                  />
+                <SidebarMenuItem className="mb-1.5">
+                  <div className="flex items-center gap-1">
+                    <CommandPaletteButton className="flex-1" />
+                    <NewConversationButton />
+                  </div>
+                </SidebarMenuItem>
+                {REGISTROS_NAV_ITEMS.map((item) => (
+                  <SidebarMenuItem key={item.href}>
+                    <SidebarMenuButton isActive={isActive(item)} size="sm" asChild>
+                      <Link href={item.href}>
+                        {ICONS[item.href]}
+                        <span>{item.title}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
                 ))}
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
-        )}
-      </SidebarContent>
-      <SidebarFooter>
-        <SidebarProfile />
-      </SidebarFooter>
-    </Sidebar>
+          {conversas.length > 0 && (
+            <SidebarGroup>
+              <SidebarGroupLabel>Conversas</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {conversas.map((c) => (
+                    <ConversationItem
+                      key={c.id}
+                      id={c.id}
+                      title={c.title}
+                      isActive={activeConversaId === c.id}
+                      hrefBase="/registros/assistente"
+                      apiBase="/api/registros/assistente/conversas"
+                      homeHref="/registros/assistente"
+                    />
+                  ))}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          )}
+        </SidebarContent>
+        <SidebarFooter>
+          <SidebarProfile />
+        </SidebarFooter>
+      </Sidebar>
+    </CommandPaletteProvider>
   );
 }

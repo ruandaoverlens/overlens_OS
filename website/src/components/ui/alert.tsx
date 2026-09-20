@@ -3,6 +3,7 @@ import { SmCloseLineIcon } from "@/components/icons"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 
 const alertVariants = cva(
   "relative w-full rounded-xl overflow-hidden text-card-foreground text-sm",
@@ -37,10 +38,10 @@ function Alert({
     <div
       data-slot="alert"
       role="alert"
-      className={cn(alertVariants({ variant }), "bg-[var(--surface-950)]", className)}
+      className={cn(alertVariants({ variant }), "bg-surface-950", className)}
       {...props}
     >
-      <div className="bg-gradient-to-r from-[var(--surface-200)]/[0.04] to-[var(--surface-200)]/[0.08] pl-3 pr-4 pt-3 pb-4 flex flex-col gap-2">
+      <div className="bg-gradient-to-r from-surface-200/[0.04] to-surface-200/[0.08] pl-3 pr-4 pt-3 pb-4 flex flex-col gap-2">
         {children}
       </div>
     </div>
@@ -110,19 +111,21 @@ function AlertClose({
   ...props
 }: React.ComponentProps<"button">) {
   return (
-    <button
+    <Button
       data-slot="alert-close"
       type="button"
-      aria-label="Close"
+      variant="ghost"
+      size="icon-sm"
+      aria-label="Fechar"
       className={cn(
-        "inline-flex size-6 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground outline-none focus-visible:ring-2 focus-visible:ring-foreground",
+        "-my-1 -mr-1 shrink-0 text-muted-foreground hover:text-foreground",
         className
       )}
       onClick={onClick}
       {...props}
     >
       <SmCloseLineIcon className="size-6" />
-    </button>
+    </Button>
   )
 }
 
@@ -156,7 +159,7 @@ function AlertAction({
       data-slot="alert-action"
       type="button"
       className={cn(
-        "inline-flex h-6 items-center rounded-full px-3 text-xs font-heading font-medium uppercase tracking-wide transition-colors outline-none focus-visible:ring-2 focus-visible:ring-foreground",
+        "inline-flex h-10 items-center rounded-full px-3 text-xs font-heading font-medium uppercase tracking-wide transition-colors outline-none focus-visible:ring-2 focus-visible:ring-foreground",
         variant === "primary" &&
           "bg-foreground/10 text-foreground/80 hover:bg-foreground/15",
         variant === "secondary" &&

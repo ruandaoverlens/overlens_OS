@@ -56,6 +56,25 @@ const CUSTOM_COMPONENTS: Record<string, React.ComponentType> = {
 
 const COMPONENT_TAG_RE = /<(color-palette|icon-gallery)\s*(?:\/>|><\/\1>)/g;
 
+const MD_IMAGE_RE = /!\[[^\]]*\]\(\s*<?([^\s)>]+)>?/;
+const HTML_IMAGE_RE = /<img\b[^>]*?\bsrc\s*=\s*["']([^"']+)["']/i;
+
+/**
+ * Descobre o `src` da primeira imagem ainda na fase de parse.
+ *
+ * O `fetchPriority="high"` da primeira imagem é decidido comparando o `src` —
+ * contar imagens durante o render faria o StrictMode (que renderiza duas vezes
+ * em dev) perder a prioridade da primeira.
+ */
+function findFirstImageSrc(md: string): string | null {
+  const fromMarkdown = MD_IMAGE_RE.exec(md);
+  const fromHtml = HTML_IMAGE_RE.exec(md);
+  if (fromMarkdown && fromHtml) {
+    return fromMarkdown.index <= fromHtml.index ? fromMarkdown[1] : fromHtml[1];
+  }
+  return fromMarkdown?.[1] ?? fromHtml?.[1] ?? null;
+}
+
 function splitByCustomTags(md: string): Array<{ type: "md"; value: string } | { type: "component"; name: string }> {
   const parts: Array<{ type: "md"; value: string } | { type: "component"; name: string }> = [];
   let lastIndex = 0;
@@ -79,16 +98,20 @@ function splitByCustomTags(md: string): Array<{ type: "md"; value: string } | { 
 export function MarkdownRenderer({ content, title }: { content: string; title?: string }) {
   const { content: cleaned, description } = parseLeadingContent(content);
   const segments = splitByCustomTags(cleaned);
+  // A primeira imagem do documento costuma estar acima da dobra (candidata a LCP):
+  // ela carrega com prioridade; as seguintes continuam preguiçosas. O `src` é
+  // resolvido no parse, não contando imagens durante o render.
+  const firstImageSrc = findFirstImageSrc(cleaned);
 
   return (
-    <article className="max-w-none space-y-6 text-[15px] leading-relaxed text-pretty text-muted-foreground">
+    <article className="max-w-none space-y-6 text-body text-pretty text-muted-foreground">
       {title && (
-        <h1 className="font-heading text-[40px] font-normal uppercase tracking-normal leading-none text-balance text-foreground">
+        <h1 className="font-heading text-display font-normal uppercase tracking-normal leading-none text-balance text-foreground">
           {title}
         </h1>
       )}
       {description && (
-        <p className="text-[19px] italic leading-[1.75] text-balance text-[var(--surface-200)]">
+        <p className="text-lead italic text-balance text-surface-200">
           {description}
         </p>
       )}
@@ -103,29 +126,29 @@ export function MarkdownRenderer({ content, title }: { content: string; title?: 
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw, rehypeSlug]}
         components={{
-          h1: ({ children }) => (
-            <h1 className="font-heading text-[40px] font-normal uppercase tracking-normal leading-none text-balance text-foreground">
+          h1: ({ children, id }) => (
+            <h1 id={id} className="font-heading text-display font-normal uppercase tracking-normal leading-none text-balance text-foreground">
               {children}
             </h1>
           ),
-          h2: ({ children }) => {
+          h2: ({ children, id }) => {
             const text = typeof children === "string" ? children : Array.isArray(children) ? children.map((c) => (typeof c === "string" ? c : "")).join("") : "";
             const isInter = text.trim().toUpperCase() === "INTER";
             const isOutfit = text.trim().toUpperCase() === "OUTFIT";
             const fontClass = isInter ? "font-body" : isOutfit ? "font-heading uppercase" : "font-body";
             return (
-              <h2 className={`mt-12 mb-4 text-[28px] font-medium tracking-tight text-balance text-foreground first:mt-0 ${fontClass}`}>
+              <h2 id={id} className={`mt-12 mb-4 text-h2 font-medium tracking-tight text-balance text-foreground first:mt-0 ${fontClass}`}>
                 {children}
               </h2>
             );
           },
-          h3: ({ children }) => (
-            <h3 className="mt-8 mb-3 font-body text-[22px] font-medium text-balance text-foreground">
+          h3: ({ children, id }) => (
+            <h3 id={id} className="mt-8 mb-3 font-body text-h3 font-medium text-balance text-foreground">
               {children}
             </h3>
           ),
-          h4: ({ children }) => (
-            <h4 className="mt-6 mb-2 font-body text-sm font-medium text-balance text-muted-foreground">
+          h4: ({ children, id }) => (
+            <h4 id={id} className="mt-6 mb-2 font-body text-sm font-medium text-balance text-muted-foreground">
               {children}
             </h4>
           ),
@@ -143,7 +166,7 @@ export function MarkdownRenderer({ content, title }: { content: string; title?: 
 
             if (isItalicOnly) {
               return (
-                <p className="text-[19px] italic leading-[1.75] text-balance text-[var(--surface-200)]">
+                <p className="text-lead italic text-balance text-surface-200">
                   {children}
                 </p>
               );
@@ -164,7 +187,7 @@ export function MarkdownRenderer({ content, title }: { content: string; title?: 
               );
             }
 
-            return <p className="text-[15px] leading-[1.75] text-pretty">{children}</p>;
+            return <p className="text-body text-pretty">{children}</p>;
           },
           strong: ({ children }) => (
             <strong className="font-semibold text-foreground">{children}</strong>
@@ -204,7 +227,7 @@ export function MarkdownRenderer({ content, title }: { content: string; title?: 
             );
           },
           ol: ({ children }) => (
-            <ol className="space-y-2 pl-5 list-decimal marker:text-muted-foreground/60">{children}</ol>
+            <ol className="space-y-2 pl-5 list-decimal marker:text-muted-foreground">{children}</ol>
           ),
           li: ({ children }) => {
             const childArray = Array.isArray(children) ? children : [children];
@@ -245,7 +268,7 @@ export function MarkdownRenderer({ content, title }: { content: string; title?: 
             );
           },
           blockquote: ({ children }) => (
-            <blockquote className="border-l-2 border-primary/50 pl-6 text-[20px] italic leading-relaxed text-pretty text-foreground/80">
+            <blockquote className="border-l-2 border-primary/50 pl-6 text-lead italic text-pretty text-foreground/80">
               {children}
             </blockquote>
           ),
@@ -279,21 +302,48 @@ export function MarkdownRenderer({ content, title }: { content: string; title?: 
             <figure className="space-y-2">{children}</figure>
           ),
           figcaption: ({ children }) => (
-            <figcaption className="text-center text-xs italic text-muted-foreground/70">
+            <figcaption className="text-center text-xs italic text-muted-foreground">
               {children}
             </figcaption>
           ),
           hr: () => <hr className="my-8 border-border/50" />,
-          img: ({ src, alt, style, ...rest }) => {
+          img: ({ src, alt, style, width, height, ...rest }) => {
             let resolvedSrc = src;
             if (typeof src === "string" && src.startsWith("/brand/images/")) {
               const filename = src.replace("/brand/images/", "");
               resolvedSrc = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/asset-previews/Imagens/${filename}`;
             }
-            return (
+            // `data-aspect` (ex.: "16/9") reserva o espaço da imagem antes do
+            // carregamento quando o markdown não informa width/height.
+            const dataAspect = (rest as Record<string, unknown>)["data-aspect"];
+            const hasDimensions = width !== undefined && height !== undefined;
+            const isFirstImage = typeof src === "string" && src === firstImageSrc;
+            const img = (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={resolvedSrc} alt={alt || ""} className="rounded-lg" style={style} {...rest} />
+              <img
+                src={resolvedSrc}
+                alt={alt || ""}
+                width={width}
+                height={height}
+                loading={isFirstImage ? "eager" : "lazy"}
+                fetchPriority={isFirstImage ? "high" : undefined}
+                decoding="async"
+                className={hasDimensions ? "h-auto max-w-full rounded-lg" : "rounded-lg"}
+                style={style}
+                {...rest}
+              />
             );
+            if (!hasDimensions && typeof dataAspect === "string" && dataAspect.trim()) {
+              return (
+                <span
+                  className="block w-full overflow-hidden rounded-lg [&>img]:h-full [&>img]:w-full [&>img]:object-cover"
+                  style={{ aspectRatio: dataAspect.trim() }}
+                >
+                  {img}
+                </span>
+              );
+            }
+            return img;
           },
           table: ({ children }) => (
             <div className="-mr-6 overflow-x-auto scrollbar-hidden lg:mr-0 lg:rounded-lg lg:border lg:border-border">
@@ -304,7 +354,7 @@ export function MarkdownRenderer({ content, title }: { content: string; title?: 
             <thead className="bg-accent/50">{children}</thead>
           ),
           th: ({ children }) => (
-            <th className="px-4 py-3 text-left font-semibold text-foreground align-top">
+            <th scope="col" className="px-4 py-3 text-left font-semibold text-foreground align-top">
               {children}
             </th>
           ),

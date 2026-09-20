@@ -1,8 +1,12 @@
 "use client"
 
 import * as React from "react"
-import { Copy, RotateCcw, ThumbsDown, ThumbsUp } from "lucide-react"
-import { toast } from "sonner"
+// Copy/ThumbsUp/ThumbsDown não têm equivalente em @/components/icons
+// (verificado: não há SmCopy*/SmThumb*). Mantidos em lucide.
+import { Copy, ThumbsDown, ThumbsUp } from "lucide-react"
+import { SmHistoryLineIcon } from "@/components/icons"
+import { Button } from "@/components/ui/button"
+import { notify } from "@/lib/notifications/toast"
 import { cn } from "@/lib/utils"
 
 type Feedback = 1 | -1 | null
@@ -27,10 +31,10 @@ export function AssistantActions({
     try {
       await navigator.clipboard.writeText(content)
       setCopied(true)
-      toast.success("Copiado")
+      notify.success("Copiado")
       window.setTimeout(() => setCopied(false), 1500)
     } catch {
-      toast.error("Não foi possível copiar")
+      notify.error("Não foi possível copiar")
     }
   }
 
@@ -44,13 +48,15 @@ export function AssistantActions({
         body: JSON.stringify({ feedback: next ?? 0 }),
       })
     } catch {
-      toast.error("Falha ao enviar feedback")
+      notify.error("Falha ao enviar feedback")
     }
   }
 
   return (
     <div
       data-slot="chat-assistant-actions"
+      role="group"
+      aria-label="Ações da resposta"
       className={cn("mt-2 flex items-center gap-1", className)}
     >
       <ActionButton
@@ -65,6 +71,7 @@ export function AssistantActions({
         label="Útil"
         onClick={() => sendFeedback(1)}
         active={feedback === 1}
+        toggle
       >
         <ThumbsUp className="size-4" />
       </ActionButton>
@@ -73,6 +80,7 @@ export function AssistantActions({
         label="Não útil"
         onClick={() => sendFeedback(-1)}
         active={feedback === -1}
+        toggle
       >
         <ThumbsDown className="size-4" />
       </ActionButton>
@@ -82,7 +90,7 @@ export function AssistantActions({
         onClick={() => onRetry?.()}
         disabled={!onRetry}
       >
-        <RotateCcw className="size-4" />
+        <SmHistoryLineIcon className="size-4" />
       </ActionButton>
     </div>
   )
@@ -93,6 +101,8 @@ type ActionButtonProps = {
   onClick: () => void
   active?: boolean
   disabled?: boolean
+  /** Botão de alternância (Útil/Não útil): expõe `aria-pressed`. */
+  toggle?: boolean
   children: React.ReactNode
 }
 
@@ -101,24 +111,27 @@ function ActionButton({
   onClick,
   active,
   disabled,
+  toggle = false,
   children,
 }: ActionButtonProps) {
   return (
-    <button
+    <Button
       type="button"
+      variant="ghost"
+      size="icon-sm"
       onClick={onClick}
       disabled={disabled}
       aria-label={label}
+      aria-pressed={toggle ? Boolean(active) : undefined}
       title={label}
       data-active={active || undefined}
       className={cn(
-        "flex size-8 items-center justify-center rounded-full transition-colors outline-none",
-        "text-muted-foreground/70 hover:bg-accent hover:text-foreground",
+        "text-muted-foreground hover:text-foreground",
         "data-[active]:bg-accent data-[active]:text-foreground",
-        "disabled:opacity-30 disabled:pointer-events-none"
+        "disabled:opacity-30",
       )}
     >
       {children}
-    </button>
+    </Button>
   )
 }

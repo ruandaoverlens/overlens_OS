@@ -24,10 +24,18 @@ const headingTitleVariants = cva(
   {
     variants: {
       size: {
+        /** Rótulo pequeno acima de um bloco (muted). `uppercase`/`tracking-wide` vêm da base. */
+        eyebrow: "text-caption text-muted-foreground font-medium",
+        /** Título de bloco pequeno. */
         sm: "text-lg",
-        default: "text-2xl",
-        lg: "text-3xl font-light",
-        xl: "text-4xl font-light",
+        /** Rótulo de card denso (CardTitle size="sm"). */
+        label: "text-sm font-medium",
+        /* `default` e o H1 de ~17 paginas via PageHeader. Usa o token `--text-h1`
+           (22px), que existe justamente para o titulo de pagina nao ser escrito
+           com o nome "h3". Hierarquia: sm 18 -> default 22 -> lg 28 -> xl 40. */
+        default: "text-h1",
+        lg: "text-h2 font-light",
+        xl: "text-display font-light",
       },
     },
     defaultVariants: {
@@ -36,15 +44,18 @@ const headingTitleVariants = cva(
   }
 )
 
-/** Uppercase heading rendered in Outfit (font-heading). */
+/** Uppercase heading rendered in Outfit (font-heading). `as` controla o nível semântico (h1|h2|h3, padrão h2). */
 function HeadingTitle({
   className,
   size,
+  as: Comp = "h2",
   ...props
 }: React.ComponentProps<"h2"> &
-  VariantProps<typeof headingTitleVariants>) {
+  VariantProps<typeof headingTitleVariants> & {
+    as?: "h1" | "h2" | "h3"
+  }) {
   return (
-    <h2
+    <Comp
       data-slot="heading-title"
       className={cn(headingTitleVariants({ size }), className)}
       {...props}
@@ -53,13 +64,16 @@ function HeadingTitle({
 }
 
 const headingDescriptionVariants = cva(
-  "font-body text-[var(--surface-500)]",
+  "font-body text-surface-500",
   {
     variants: {
       size: {
-        sm: "text-sm",
-        default: "text-base",
-        lg: "text-lg",
+        /** Linha de apoio curta (legenda). */
+        sm: "text-caption",
+        /** Subtítulo de página/bloco — prosa corrida (15px). */
+        default: "text-body",
+        /** Subtítulo de destaque (19px). */
+        lg: "text-lead",
       },
     },
     defaultVariants: {

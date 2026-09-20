@@ -1,11 +1,11 @@
 "use client";
 
 import * as React from "react";
-import { useRouter } from "next/navigation";
-import { toast } from "sonner";
+import { useRouter, useSearchParams } from "next/navigation";
+import { notify } from "@/lib/notifications/toast";
 import { PromptArea, type PromptSubmitPayload } from "@/components/prompt-area";
 import { MessageList } from "@/components/chat/message-list";
-import { EmptyState } from "@/components/chat/empty-state";
+import { ChatWelcome } from "@/components/chat/chat-welcome";
 import { useCitableSections } from "@/components/chat/citable-sections-provider";
 import type { ChatAttachment, UIMessage } from "@/lib/ai/types";
 
@@ -30,9 +30,20 @@ async function fileToAttachment(file: File): Promise<ChatAttachment> {
 
 export function NewChatPrompt() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const initialQuery = searchParams.get("q") ?? "";
   const { citableSections, basePath } = useCitableSections();
   const [optimisticMessage, setOptimisticMessage] =
     React.useState<UIMessage | null>(null);
+  /*
+   * O composer original desmonta quando a mensagem otimista entra. Se o envio
+   * falhar, ele volta a montar vazio — então guardamos o rascunho aqui e o
+   * devolvemos como estado inicial.
+   */
+  const [draft, setDraft] = React.useState<{
+    text: string;
+    files: File[];
+  } | null>(null);
 
   async function handleSubmit(payload: PromptSubmitPayload) {
     let attachments: ChatAttachment[] = [];
@@ -43,11 +54,12 @@ export function NewChatPrompt() {
         );
       } catch (err) {
         console.error("Falha ao processar anexos:", err);
-        toast.error("Não foi possível processar os anexos.");
+        notify.error("Não foi possível processar os anexos.");
         return;
       }
     }
 
+    setDraft({ text: payload.text, files: payload.attachments });
     setOptimisticMessage({
       id: "optimistic-user",
       role: "user",
@@ -76,11 +88,11 @@ export function NewChatPrompt() {
       }
 
       const data = (await res.json()) as { id: string };
+      setDraft(null);
       router.push(`/chat/${data.id}`);
     } catch (err) {
-      const message =
-        err instanceof Error ? err.message : "Erro ao criar conversa";
-      toast.error(message);
+      notify.fromError(err, "Erro ao criar conversa");
+      // Restaura o composer com o texto e os anexos do envio que falhou.
       setOptimisticMessage(null);
     }
   }
@@ -91,6 +103,7 @@ export function NewChatPrompt() {
         data-slot="new-chat-optimistic"
         className="flex h-full min-h-0 w-full flex-col"
       >
+        <h1 className="sr-only">Nova conversa</h1>
         <div className="flex min-h-0 flex-1 flex-col">
           <MessageList messages={[optimisticMessage]} isLoading />
         </div>
@@ -107,13 +120,16 @@ export function NewChatPrompt() {
     <div className="flex flex-1 flex-col">
       <div className="flex flex-1 items-center justify-center px-4 pb-40">
         <div className="w-full max-w-3xl">
-          <EmptyState />
+          <ChatWelcome />
           <div className="mt-9">
             <PromptArea
               citableSections={citableSections}
               basePath={basePath}
               onSubmit={handleSubmit}
               autoFocus
+              focusShortcut
+              initialValue={draft?.text ?? initialQuery}
+              initialAttachments={draft?.files}
             />
           </div>
         </div>

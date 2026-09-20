@@ -1,8 +1,11 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { EmptyState } from "@/components/empty-state";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
@@ -22,7 +25,9 @@ import {
   SmArrowUpwardLineIcon,
   SmLockLineIcon,
 } from "@/components/icons";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { DOCUMENTO_TIPO_LABEL } from "@/lib/registros/types";
+import { useSlashFocus } from "@/lib/use-slash-focus";
 import type { DocumentoRow, MarcaRow } from "@/lib/registros/types";
 
 function isTextMime(mime: string | null): boolean {
@@ -67,6 +72,9 @@ export function AssistenteComposer({
     if (autoFocus) textareaRef.current?.focus();
   }, [autoFocus]);
 
+  // Atalho "/" foca o composer (ignorado enquanto se digita em outro campo).
+  useSlashFocus(textareaRef);
+
   const docsDaMarca = React.useMemo(
     () => documentos.filter((d) => !marcaId || d.marca_id === marcaId),
     [documentos, marcaId],
@@ -88,13 +96,13 @@ export function AssistenteComposer({
     <div
       data-slot="assistente-prompt-area"
       className={cn(
-        "group/prompt relative -mx-0.5 flex w-[calc(100%+4px)] flex-col gap-7 overflow-hidden rounded-3xl px-2 pt-4 pb-2",
-        "bg-accent/50 dark:bg-input/30",
+        "group/prompt relative -mx-0.5 flex w-[calc(100%+4px)] flex-col gap-7 overflow-hidden rounded-prompt px-2 pt-4 pb-2",
+        "bg-input/30",
         "border-2 border-transparent",
         "transition-[background-color,border-color]",
-        "hover:bg-accent dark:hover:bg-input/50",
+        "hover:bg-input/50",
         "focus-within:border-input focus-within:bg-transparent",
-        "dark:focus-within:bg-transparent",
+        "focus-within:ring-2 focus-within:ring-foreground/70",
       )}
     >
       <div className="flex items-start gap-2 pl-3 pr-2">
@@ -102,6 +110,8 @@ export function AssistenteComposer({
           ref={textareaRef}
           data-slot="prompt-area-input"
           placeholder={placeholder}
+          aria-label={placeholder}
+          aria-keyshortcuts="/"
           value={value}
           disabled={loading}
           onChange={(e) => setValue(e.target.value)}
@@ -112,7 +122,7 @@ export function AssistenteComposer({
             void handleSubmit();
           }}
           className={cn(
-            "min-h-[24px] max-h-[160px] w-full resize-none overflow-y-auto bg-transparent font-body text-base leading-[1.6] tracking-[0.16px] outline-none",
+            "min-h-[24px] max-h-[160px] w-full resize-none overflow-y-auto bg-transparent font-body text-base leading-relaxed tracking-normal outline-none",
             "placeholder:text-muted-foreground",
             "text-foreground",
             "field-sizing-content",
@@ -125,28 +135,36 @@ export function AssistenteComposer({
       <div className="flex items-center justify-between gap-2 px-1 pb-1">
         <div className="flex items-center gap-1.5">
           <Popover>
-            <PopoverTrigger asChild>
-              <button
-                type="button"
-                data-slot="prompt-area-add"
-                aria-label="Anexar documentos"
-                className={cn(
-                  "flex size-9 shrink-0 items-center justify-center rounded-full transition-colors outline-none",
-                  "text-muted-foreground/60 hover:bg-accent hover:text-foreground",
-                  "dark:hover:bg-input/50",
-                  "data-[state=open]:bg-accent data-[state=open]:text-foreground",
-                  "dark:data-[state=open]:bg-input/50",
-                )}
-              >
-                <SmAdd2LineIcon className="size-6" />
-              </button>
-            </PopoverTrigger>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <PopoverTrigger asChild>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="icon"
+                    data-slot="prompt-area-add"
+                    aria-label="Anexar documentos"
+                    className="text-muted-foreground hover:text-foreground data-[state=open]:bg-accent data-[state=open]:text-foreground"
+                  >
+                    <SmAdd2LineIcon />
+                  </Button>
+                </PopoverTrigger>
+              </TooltipTrigger>
+              <TooltipContent>Anexar documentos</TooltipContent>
+            </Tooltip>
             <PopoverContent align="start" sideOffset={8} className="w-80">
               <div className="flex max-h-72 flex-col gap-1 overflow-y-auto">
                 {docsDaMarca.length === 0 && (
-                  <p className="p-2 text-sm text-muted-foreground">
-                    Nenhum documento disponível para esta seleção.
-                  </p>
+                  <EmptyState
+                    size="sm"
+                    title="Nenhum documento disponível"
+                    description="Não há documentos para esta seleção de marca."
+                    action={
+                      <Button asChild variant="outline" size="sm">
+                        <Link href="/registros/documentos">Enviar documento</Link>
+                      </Button>
+                    }
+                  />
                 )}
                 {docsDaMarca.map((doc) => (
                   <label
@@ -178,22 +196,18 @@ export function AssistenteComposer({
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button
+              <Button
                 type="button"
-                aria-label="Marca"
-                className={cn(
-                  "flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3 text-sm font-medium transition-colors outline-none",
-                  "text-muted-foreground hover:bg-accent hover:text-foreground",
-                  "dark:hover:bg-input/50",
-                  "data-[state=open]:bg-accent data-[state=open]:text-foreground",
-                  "dark:data-[state=open]:bg-input/50",
-                )}
+                variant="ghost"
+                size="sm"
+                aria-label="Marca em foco"
+                className="text-muted-foreground hover:text-foreground data-[state=open]:bg-accent data-[state=open]:text-foreground"
               >
                 <span>
                   {marcas.find((m) => m.id === marcaId)?.nome ?? "Portfólio inteiro"}
                 </span>
-                <SmArrowDownIosLineIcon className="size-4" />
-              </button>
+                <SmArrowDownIosLineIcon className="size-4" aria-hidden="true" />
+              </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" sideOffset={8} className="min-w-[220px] pb-2">
               <DropdownMenuRadioGroup value={marcaId} onValueChange={onMarcaChange}>
@@ -220,29 +234,22 @@ export function AssistenteComposer({
           )}
         </div>
 
-        <button
-          type="button"
-          data-slot="prompt-area-submit"
-          disabled={!canSubmit}
-          onClick={() => void handleSubmit()}
-          aria-label={loading ? "Enviando" : "Enviar"}
-          aria-busy={loading || undefined}
-          className={cn(
-            "flex size-9 shrink-0 items-center justify-center rounded-full transition-colors outline-none",
-            "bg-white text-black",
-            "hover:bg-white/90",
-            "disabled:opacity-30 disabled:pointer-events-none",
-          )}
-        >
-          {loading ? (
-            <span
-              aria-hidden="true"
-              className="size-4 animate-spin rounded-full border-2 border-black/20 border-t-black"
-            />
-          ) : (
-            <SmArrowUpwardLineIcon className="size-5" />
-          )}
-        </button>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              type="button"
+              size="icon"
+              data-slot="prompt-area-submit"
+              disabled={!canSubmit}
+              loading={loading}
+              onClick={() => void handleSubmit()}
+              aria-label={loading ? "Enviando" : "Enviar"}
+            >
+              <SmArrowUpwardLineIcon />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>Enviar (Enter)</TooltipContent>
+        </Tooltip>
       </div>
     </div>
   );

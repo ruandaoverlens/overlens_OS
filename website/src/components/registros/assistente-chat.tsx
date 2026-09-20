@@ -2,9 +2,10 @@
 
 import * as React from "react";
 import { useChat } from "ai/react";
-import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { HeadingTitle } from "@/components/ui/heading";
+import { notify } from "@/lib/notifications/toast";
 import { UserMessage } from "@/components/chat/user-message";
 import { AssistantMessage } from "@/components/chat/assistant-message";
 import { AssistenteComposer } from "@/components/registros/assistente-composer";
@@ -25,6 +26,8 @@ interface AssistenteChatProps {
   initialMessages?: AssistenteMensagem[];
   initialMarcaId?: string | null;
   initialDocIds?: string[];
+  /** Título da conversa (vira o h1 da rota, visível só para leitores de tela). */
+  titulo?: string | null;
   className?: string;
 }
 
@@ -35,6 +38,7 @@ export function AssistenteChat({
   initialMessages,
   initialMarcaId,
   initialDocIds,
+  titulo,
   className,
 }: AssistenteChatProps) {
   const [marcaId, setMarcaId] = React.useState<string>(initialMarcaId ?? "");
@@ -89,13 +93,17 @@ export function AssistenteChat({
 
   React.useEffect(() => {
     if (!errorInfo) return;
-    toast.error(errorInfo.message);
+    notify.error(errorInfo.message);
   }, [errorInfo]);
 
   // Auto-scroll para o fim quando chegam mensagens novas.
   const bottomRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    bottomRef.current?.scrollIntoView({
+      behavior: reduceMotion ? "auto" : "smooth",
+      block: "end",
+    });
   }, [messages.length, isLoading]);
 
   async function sendMessage(text: string) {
@@ -118,6 +126,7 @@ export function AssistenteChat({
   }
 
   const hasMessages = messages.length > 0;
+  const tituloRota = titulo?.trim() || "Assistente";
 
   const composer = (
     <AssistenteComposer
@@ -139,12 +148,13 @@ export function AssistenteChat({
         data-slot="assistente-chat"
         className={cn("flex h-full min-h-0 w-full flex-col", className)}
       >
+        <h1 className="sr-only">{tituloRota}</h1>
         <div className="flex flex-1 items-center justify-center px-4 pb-40">
           <div className="w-full max-w-2xl">
             <div className="mb-9 text-center">
-              <h2 className="text-lg font-medium text-foreground">
+              <HeadingTitle as="h2" size="sm">
                 Pergunte sobre o portfólio de marcas
-              </h2>
+              </HeadingTitle>
               <p className="mx-auto mt-1 max-w-md text-balance text-sm text-muted-foreground">
                 As respostas se apoiam nos dados cadastrados no módulo, nunca de memória.
                 A decisão jurídica final é sempre do time com o escritório.
@@ -162,6 +172,7 @@ export function AssistenteChat({
       data-slot="assistente-chat"
       className={cn("flex h-full min-h-0 w-full flex-col", className)}
     >
+      <h1 className="sr-only">{tituloRota}</h1>
       <div className="min-h-0 flex-1 overflow-y-auto">
         <div className="mx-auto flex w-full max-w-2xl flex-col px-4 pt-6">
           {messages.map((m) =>

@@ -1,12 +1,18 @@
 "use client";
 
-import { useRef, useState, useCallback, type SVGProps, type ComponentType } from "react";
+import { useEffect, useMemo, useRef, useState, useCallback, type SVGProps, type ComponentType } from "react";
 import {
   Popover,
   PopoverTrigger,
   PopoverContent,
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
+import { EmptyState } from "@/components/empty-state";
+import { notify } from "@/lib/notifications/toast";
+import { useUrlState } from "@/lib/use-url-state";
+import { useDebouncedValue } from "@/lib/use-debounced-value";
+import { useSlashFocus } from "@/lib/use-slash-focus";
+import { normalizeText } from "@/lib/normalize-text";
 
 import {
   MdAdd2LineIcon, MdAlertLineIcon, MdAlertSolidIcon, MdAlertSolid1Icon,
@@ -330,21 +336,34 @@ const allIcons: IconEntry[] = [
   e("MicroShieldIcon", MicroShieldIcon, "micro", "other"),
 ];
 
-function CopySvgButton({ svgRef }: { svgRef: React.RefObject<SVGSVGElement | null> }) {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = useCallback(() => {
+function CopySvgButton({
+  svgRef,
+  name,
+}: {
+  svgRef: React.RefObject<SVGSVGElement | null>;
+  name: string;
+}) {
+  const handleCopy = useCallback(async () => {
     if (!svgRef.current) return;
     const svg = svgRef.current.outerHTML;
-    navigator.clipboard.writeText(svg).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
+    try {
+      await navigator.clipboard.writeText(svg);
+      notify.success("Copiado");
+    } catch (err) {
+      notify.fromError(err, "Não foi possível copiar");
+    }
   }, [svgRef]);
 
   return (
-    <Button variant="secondary" size="sm" onClick={handleCopy} className="w-full">
-      {copied ? "Copied!" : "Copy SVG"}
+    <Button
+      type="button"
+      variant="secondary"
+      size="sm"
+      onClick={handleCopy}
+      className="w-full"
+      aria-label={`Copiar SVG de ${name}`}
+    >
+      Copiar SVG
     </Button>
   );
 }
@@ -367,8 +386,8 @@ function IconCard({ entry }: { entry: IconEntry }) {
           type="button"
           className="group flex flex-col items-center gap-2 rounded-lg border border-transparent p-3 transition-colors hover:border-foreground/10 hover:bg-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground"
         >
-          <Icon className="size-6 text-foreground transition-transform group-hover:scale-110" />
-          <span className="max-w-full truncate text-[10px] leading-tight text-muted-foreground">
+          <Icon className="size-6 text-foreground transition-transform motion-safe:group-hover:scale-110" aria-hidden="true" />
+          <span className="max-w-full truncate text-xs leading-tight text-muted-foreground">
             {displayName}
           </span>
         </button>
@@ -386,14 +405,14 @@ function IconCard({ entry }: { entry: IconEntry }) {
           </div>
         </div>
         <div className="rounded-md bg-accent/50 px-2.5 py-1.5">
-          <code className="block truncate text-[11px] text-muted-foreground">
+          <code className="block truncate text-caption text-muted-foreground">
             {`import { ${entry.name} }`}
           </code>
-          <code className="block truncate text-[11px] text-muted-foreground">
+          <code className="block truncate text-caption text-muted-foreground">
             {`  from "@/components/icons"`}
           </code>
         </div>
-        <CopySvgButton svgRef={svgRef} />
+        <CopySvgButton svgRef={svgRef} name={entry.name} />
       </PopoverContent>
     </Popover>
   );
@@ -402,73 +421,144 @@ function IconCard({ entry }: { entry: IconEntry }) {
 type SizeFilter = "all" | "md" | "sm" | "micro";
 type VariantFilter = "all" | "line" | "solid";
 
-function IconGallery({ externalSearch }: { externalSearch?: string } = {}) {
-  const [internalSearch, setInternalSearch] = useState("");
-  const [sizeFilter, setSizeFilter] = useState<SizeFilter>("all");
-  const [variantFilter, setVariantFilter] = useState<VariantFilter>("all");
+const SIZE_FILTERS: readonly SizeFilter[] = ["all", "md", "sm", "micro"];
+const VARIANT_FILTERS: readonly VariantFilter[] = ["all", "line", "solid"];
 
+function isSizeFilter(v: string): v is SizeFilter {
+  return (SIZE_FILTERS as readonly string[]).includes(v);
+}
+function isVariantFilter(v: string): v is VariantFilter {
+  return (VARIANT_FILTERS as readonly string[]).includes(v);
+}
+
+const FILTER_ACTIVE = "bg-foreground text-background hover:bg-foreground/90";
+
+interface IconGalleryProps {
+  /** Busca controlada por fora (ex.: campo do AssetPageShell). Quando ausente, o campo interno é exibido. */
+  externalSearch?: string;
+  /** Limpa a busca externa — chamado por "Limpar filtros". */
+  onClearSearch?: () => void;
+  /** Reporta quantos ícones sobraram após os filtros (contador do shell). */
+  onCountChange?: (count: number) => void;
+  /**
+   * Persiste busca, tamanho e variante na URL (`?q=&size=&variant=`). Exige um
+   * `<Suspense>` acima (useSearchParams). Fora do shell de assets (ex.: o
+   * markdown-renderer das docs) deixe desligado — lá o estado é local.
+   */
+  syncUrl?: boolean;
+}
+
+interface FilterState {
+  sizeFilter: SizeFilter;
+  setSizeFilter: (v: SizeFilter) => void;
+  variantFilter: VariantFilter;
+  setVariantFilter: (v: VariantFilter) => void;
+  /** Busca do campo interno (ignorada quando há `externalSearch`). */
+  internalSearch: string;
+  setInternalSearch: (v: string) => void;
+}
+
+function IconGalleryView({
+  externalSearch,
+  onClearSearch,
+  onCountChange,
+  sizeFilter,
+  setSizeFilter,
+  variantFilter,
+  setVariantFilter,
+  internalSearch,
+  setInternalSearch,
+}: Omit<IconGalleryProps, "syncUrl"> & FilterState) {
   const search = externalSearch ?? internalSearch;
+  const searchRef = useRef<HTMLInputElement>(null);
+  // "/" só pertence a esta galeria quando ela mostra o próprio campo; com
+  // `externalSearch` quem responde é a busca do shell.
+  useSlashFocus(searchRef, externalSearch === undefined);
 
-  const filtered = allIcons.filter((entry) => {
-    if (sizeFilter !== "all" && entry.size !== sizeFilter) return false;
-    if (variantFilter !== "all" && entry.variant !== variantFilter) return false;
-    if (search) {
-      const q = search.toLowerCase();
-      return entry.name.toLowerCase().includes(q);
-    }
-    return true;
-  });
+  const filtered = useMemo(() => {
+    // Busca insensível a acento (os nomes são ASCII, o termo digitado nem sempre).
+    const q = normalizeText(search);
+    return allIcons.filter((entry) => {
+      if (sizeFilter !== "all" && entry.size !== sizeFilter) return false;
+      if (variantFilter !== "all" && entry.variant !== variantFilter) return false;
+      if (q) return normalizeText(entry.name).includes(q);
+      return true;
+    });
+  }, [search, sizeFilter, variantFilter]);
+
+  useEffect(() => {
+    onCountChange?.(filtered.length);
+  }, [filtered.length, onCountChange]);
+
+  const clearAll = () => {
+    setInternalSearch("");
+    onClearSearch?.();
+    setSizeFilter("all");
+    setVariantFilter("all");
+  };
 
   return (
     <div className="space-y-8">
       <div className="flex flex-wrap items-center gap-2">
         {externalSearch === undefined && (
-          <input
-            type="text"
-            placeholder="Search icons..."
-            value={internalSearch}
-            onChange={(e) => setInternalSearch(e.target.value)}
-            className="h-8 w-56 rounded-md border border-foreground/15 bg-transparent px-3 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground"
-          />
+          <div className="relative w-56">
+            <input
+              ref={searchRef}
+              type="search"
+              placeholder="Buscar ícones…"
+              aria-label="Buscar ícones"
+              aria-keyshortcuts="/"
+              value={internalSearch}
+              onChange={(e) => setInternalSearch(e.target.value)}
+              className="h-9 w-full rounded-field border border-foreground/15 bg-transparent pl-3 pr-9 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/70"
+            />
+            <kbd
+              aria-hidden="true"
+              className="pointer-events-none absolute top-1/2 right-2 hidden -translate-y-1/2 rounded border border-border/60 bg-surface-900 px-1.5 font-mono text-caption text-muted-foreground sm:block"
+            >
+              /
+            </kbd>
+          </div>
         )}
 
-        <div className="flex gap-1">
-          {(["all", "md", "sm", "micro"] as const).map((s) => (
-            <button
+        <div className="flex gap-1" role="group" aria-label="Filtrar por tamanho">
+          {SIZE_FILTERS.map((s) => (
+            <Button
               key={s}
               type="button"
+              variant="secondary"
+              size="sm"
               onClick={() => setSizeFilter(s)}
-              className={`h-8 rounded-full px-3 text-xs font-medium transition-colors ${
-                sizeFilter === s
-                  ? "bg-foreground text-background"
-                  : "bg-accent text-foreground hover:bg-accent/80"
-              }`}
+              aria-pressed={sizeFilter === s}
+              className={`rounded-full ${sizeFilter === s ? FILTER_ACTIVE : ""}`}
             >
-              {s === "all" ? "All sizes" : s.toUpperCase()}
-            </button>
+              {s === "all" ? "Todos os tamanhos" : s.toUpperCase()}
+            </Button>
           ))}
         </div>
 
-        <div className="flex gap-1">
-          {(["all", "line", "solid"] as const).map((v) => (
-            <button
+        <div className="flex gap-1" role="group" aria-label="Filtrar por variante">
+          {VARIANT_FILTERS.map((v) => (
+            <Button
               key={v}
               type="button"
+              variant="secondary"
+              size="sm"
               onClick={() => setVariantFilter(v)}
-              className={`h-8 rounded-full px-3 text-xs font-medium transition-colors ${
-                variantFilter === v
-                  ? "bg-foreground text-background"
-                  : "bg-accent text-foreground hover:bg-accent/80"
-              }`}
+              aria-pressed={variantFilter === v}
+              className={`rounded-full ${variantFilter === v ? FILTER_ACTIVE : ""}`}
             >
-              {v === "all" ? "All variants" : v.charAt(0).toUpperCase() + v.slice(1)}
-            </button>
+              {v === "all" ? "Todas as variantes" : v.charAt(0).toUpperCase() + v.slice(1)}
+            </Button>
           ))}
         </div>
 
-        <span className="ml-auto text-xs text-muted-foreground">
-          {filtered.length} icons
-        </span>
+        {/* Contador local só quando ninguém acima já exibe um (evita duplicar o aria-live). */}
+        {!onCountChange && (
+          <span className="ml-auto text-xs text-muted-foreground" aria-live="polite">
+            {filtered.length} {filtered.length === 1 ? "ícone" : "ícones"}
+          </span>
+        )}
       </div>
 
       <div className="grid grid-cols-[repeat(auto-fill,minmax(80px,1fr))] gap-1">
@@ -478,12 +568,82 @@ function IconGallery({ externalSearch }: { externalSearch?: string } = {}) {
       </div>
 
       {filtered.length === 0 && (
-        <p className="py-12 text-center text-sm text-muted-foreground">
-          No icons found.
-        </p>
+        <EmptyState
+          variant="filtered"
+          title="Nenhum ícone encontrado"
+          description="Tente outro termo ou limpe os filtros."
+          onClear={clearAll}
+        />
       )}
     </div>
   );
+}
+
+function noop() {}
+
+/**
+ * Busca, tamanho e variante persistidos na query string (`?q=&size=&variant=`).
+ *
+ * Quando o shell da página já controla a busca (`externalSearch`), ele é o dono
+ * de `?q=` — aqui o campo interno nem é renderizado, então escrever na mesma
+ * chave só criaria dois escritores com dois debounces.
+ */
+function UrlFilteredIconGallery(props: Omit<IconGalleryProps, "syncUrl">) {
+  const shellOwnsSearch = props.externalSearch !== undefined;
+  const [sizeRaw, setSizeRaw] = useUrlState<string>("size", "all");
+  const [variantRaw, setVariantRaw] = useUrlState<string>("variant", "all");
+  const [qRaw, setQRaw] = useUrlState<string>("q", "");
+  const q = shellOwnsSearch ? "" : qRaw;
+  const setQ = shellOwnsSearch ? noop : setQRaw;
+
+  // Input local (digitação fluida) → debounce 250ms → URL. Nunca ligue o
+  // `value` do campo direto à URL.
+  const [search, setSearch] = useState(q);
+  const [prevQ, setPrevQ] = useState(q);
+  if (q !== prevQ) {
+    // A URL mudou por fora (voltar/avançar, limpar filtros): sincroniza.
+    setPrevQ(q);
+    setSearch(q);
+  }
+  const debouncedSearch = useDebouncedValue(search, 250);
+  useEffect(() => {
+    if (search !== debouncedSearch) return; // ainda digitando
+    if (debouncedSearch !== q) setQ(debouncedSearch);
+  }, [search, debouncedSearch, q, setQ]);
+
+  return (
+    <IconGalleryView
+      {...props}
+      sizeFilter={isSizeFilter(sizeRaw) ? sizeRaw : "all"}
+      setSizeFilter={setSizeRaw}
+      variantFilter={isVariantFilter(variantRaw) ? variantRaw : "all"}
+      setVariantFilter={setVariantRaw}
+      internalSearch={search}
+      setInternalSearch={setSearch}
+    />
+  );
+}
+
+/** Filtros em estado local (uso em docs/markdown, sem Suspense). */
+function LocalFilteredIconGallery(props: Omit<IconGalleryProps, "syncUrl">) {
+  const [sizeFilter, setSizeFilter] = useState<SizeFilter>("all");
+  const [variantFilter, setVariantFilter] = useState<VariantFilter>("all");
+  const [search, setSearch] = useState("");
+  return (
+    <IconGalleryView
+      {...props}
+      sizeFilter={sizeFilter}
+      setSizeFilter={setSizeFilter}
+      variantFilter={variantFilter}
+      setVariantFilter={setVariantFilter}
+      internalSearch={search}
+      setInternalSearch={setSearch}
+    />
+  );
+}
+
+function IconGallery({ syncUrl = false, ...props }: IconGalleryProps = {}) {
+  return syncUrl ? <UrlFilteredIconGallery {...props} /> : <LocalFilteredIconGallery {...props} />;
 }
 
 export { IconGallery };

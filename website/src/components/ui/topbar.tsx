@@ -34,9 +34,9 @@ function Topbar({ className, ...props }: React.ComponentProps<"header">) {
     <header
       data-slot="topbar"
       className={cn(
-        "sticky top-0 z-30 flex h-12 w-full items-center justify-end pb-[2px]",
-        "bg-[var(--surface-black)] md:bg-background/70 md:backdrop-blur-xl md:justify-between md:pl-5",
-        "md:shadow-[inset_3rem_0_2rem_-1rem_oklch(0_0_0)]",
+        "sticky top-0 z-30 flex h-12 w-full items-center justify-end pb-0.5",
+        "bg-surface-black md:bg-background/70 md:backdrop-blur-xl md:justify-between md:pl-5",
+        "md:shadow-[inset_3rem_0_2rem_-1rem_var(--surface-black)]",
         className
       )}
       {...props}
@@ -102,14 +102,15 @@ function TopbarFractals({
       <TooltipTrigger asChild>
         <button
           data-slot="topbar-fractals"
+          aria-label={`Fractals: ${count.toLocaleString()}`}
           className={cn(
-            "hidden h-[32px] cursor-pointer items-center rounded-full border-0 bg-transparent text-[16px] font-mono text-muted-foreground tabular-nums outline-none transition-colors hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 md:inline-flex",
+            "hidden h-9 cursor-pointer items-center rounded-full border-0 bg-transparent text-base font-mono text-muted-foreground tabular-nums outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-foreground md:inline-flex",
             className
           )}
           {...props}
         >
-          <span style={{ paddingLeft: 10 }}>{count.toLocaleString()}</span>
-          <SmAsteriskLineIcon style={{ marginLeft: 4, marginRight: 6 }} className="size-5" />
+          <span className="pl-2.5">{count.toLocaleString()}</span>
+          <SmAsteriskLineIcon className="ml-1 mr-1.5 size-5" aria-hidden="true" />
         </button>
       </TooltipTrigger>
       <TooltipContent>Fractals</TooltipContent>
@@ -130,14 +131,15 @@ function TopbarStreak({
       <TooltipTrigger asChild>
         <button
           data-slot="topbar-streak"
+          aria-label={`Ofensiva: ${count.toLocaleString()} ${count === 1 ? "dia" : "dias"}`}
           className={cn(
-            "hidden h-[32px] cursor-pointer items-center rounded-full border-0 bg-transparent text-[16px] font-mono text-muted-foreground tabular-nums outline-none transition-colors hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 md:inline-flex",
+            "hidden h-9 cursor-pointer items-center rounded-full border-0 bg-transparent text-base font-mono text-muted-foreground tabular-nums outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-foreground md:inline-flex",
             className
           )}
           {...props}
         >
-          <span style={{ paddingLeft: 10 }}>{count.toLocaleString()}</span>
-          <MdBoltSolidIcon style={{ marginLeft: 4, marginRight: 6 }} className="size-5" />
+          <span className="pl-2.5">{count.toLocaleString()}</span>
+          <MdBoltSolidIcon className="ml-1 mr-1.5 size-5" aria-hidden="true" />
         </button>
       </TooltipTrigger>
       <TooltipContent>Ofensiva</TooltipContent>
@@ -151,8 +153,8 @@ function TopbarNotificationsBadge() {
   if (unreadCount <= 0) return null
   return (
     <span className="pointer-events-none absolute top-1 right-1 flex h-2 w-2">
-      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--brand-atmos)] opacity-75" />
-      <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--brand-atmos)]" />
+      <span className="absolute inline-flex h-full w-full motion-safe:animate-ping rounded-full bg-brand-atmos opacity-75" />
+      <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-atmos" />
     </span>
   )
 }
@@ -172,7 +174,7 @@ function TopbarNotificationsButton({
           variant="ghost"
           size="icon"
           className={cn(
-            "group/notif size-9 text-muted-foreground",
+            "group/notif text-muted-foreground",
             open && "bg-accent/50 text-foreground",
             className
           )}
@@ -239,14 +241,15 @@ function TopbarRankPosition({
       <TooltipTrigger asChild>
         <button
           data-slot="topbar-rank-position"
+          aria-label={`Ranking: posição ${position}`}
           className={cn(
-            "hidden h-[32px] cursor-pointer items-center rounded-full border-0 bg-transparent text-[16px] font-mono text-muted-foreground tabular-nums outline-none transition-colors hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 md:inline-flex",
+            "hidden h-9 cursor-pointer items-center rounded-full border-0 bg-transparent text-base font-mono text-muted-foreground tabular-nums outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-foreground md:inline-flex",
             className
           )}
           {...props}
         >
-          <span style={{ paddingLeft: 10 }}>{position}</span>
-          <SmCrownSolidIcon style={{ marginLeft: 4, marginRight: 6 }} className="size-5" />
+          <span className="pl-2.5">{position}</span>
+          <SmCrownSolidIcon className="ml-1 mr-1.5 size-5" aria-hidden="true" />
         </button>
       </TooltipTrigger>
       <TooltipContent>Ranking</TooltipContent>
@@ -266,7 +269,7 @@ function TopbarRanking({
           data-slot="topbar-ranking"
           variant="ghost"
           size="icon"
-          className={cn("group/rank size-9 text-muted-foreground", className)}
+          className={cn("group/rank text-muted-foreground", className)}
           {...props}
         >
           <SmCrownLineIcon className="size-5.5 group-hover/rank:hidden" />
@@ -291,7 +294,7 @@ function TopbarSearch({
           data-slot="topbar-search"
           variant="ghost"
           size="icon"
-          className={cn("size-9 text-muted-foreground md:hidden", className)}
+          className={cn("text-muted-foreground md:hidden", className)}
           {...props}
         >
           <SmSearchLineIcon className="size-5" />
@@ -335,7 +338,7 @@ function TopbarApps({
             <button
               data-slot="topbar-apps"
               className={cn(
-                "inline-flex size-9 cursor-pointer items-center justify-center text-muted-foreground transition-colors hover:text-foreground",
+                "inline-flex size-10 cursor-pointer items-center justify-center rounded-full text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-foreground",
                 className
               )}
               {...props}
@@ -361,7 +364,7 @@ function TopbarAppsContent({
     <PopoverContent
       align="end"
       sideOffset={8}
-      className={cn("mt-2 w-[280px] bg-[#050505] p-3 pb-[16px]", className)}
+      className={cn("mt-2 w-70 bg-background p-3 pb-4", className)}
     >
       <div
         data-slot="topbar-apps-grid"

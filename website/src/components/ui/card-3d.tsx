@@ -1,4 +1,5 @@
 import * as React from "react"
+import Image from "next/image"
 import { type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
@@ -198,7 +199,7 @@ function Card3D({
         type={type}
         data-slot="card-3d"
         className={cn(
-          "relative w-full aspect-square overflow-hidden rounded-[14px] bg-[var(--surface-950)] select-none cursor-pointer text-left transition-transform duration-200 ease-out will-change-transform focus-visible:ring-2 focus-visible:ring-[var(--surface-200)] focus-visible:outline-none",
+          "relative w-full aspect-square overflow-hidden rounded-card bg-surface-950 select-none cursor-pointer text-left transition-transform duration-200 ease-out will-change-transform focus-visible:ring-2 focus-visible:ring-surface-200 focus-visible:outline-none",
           className
         )}
         style={fgStyle}
@@ -220,6 +221,11 @@ function Card3D({
 
 const VIDEO_EXTENSIONS = /\.(mp4|webm|ogg|mov)(\?|$)/i
 
+/** `blob:`/`data:` URLs não passam pelo otimizador do next/image. */
+const LOCAL_URL = /^(blob|data):/i
+
+const DEFAULT_IMAGE_SIZES = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+
 /** Background media - supports image, video, animated gradient, and solid color. */
 function Card3DImage({
   className,
@@ -228,6 +234,7 @@ function Card3DImage({
   poster,
   gradient,
   color,
+  sizes = DEFAULT_IMAGE_SIZES,
   ...props
 }: React.ComponentProps<"div"> & {
   src?: string
@@ -235,6 +242,8 @@ function Card3DImage({
   poster?: string
   gradient?: string
   color?: string
+  /** Atributo `sizes` do next/image (largura esperada por breakpoint). */
+  sizes?: string
 }) {
   const isVideo = src ? VIDEO_EXTENSIONS.test(src) : false
   const videoRef = React.useRef<HTMLVideoElement>(null)
@@ -276,26 +285,32 @@ function Card3DImage({
       {gradient && (
         <div
           aria-hidden="true"
-          className="absolute inset-0 animate-[banner-gradient_8s_ease_infinite] [background-size:300%_300%]"
+          className="absolute inset-0 motion-safe:animate-[banner-gradient_8s_ease_infinite] [background-size:300%_300%]"
           style={{ backgroundImage: gradient }}
         />
       )}
       {src && !isVideo && (
-        <img
+        <Image
           src={src}
           alt={alt}
-          className="h-full w-full object-cover"
+          fill
+          sizes={sizes}
+          unoptimized={LOCAL_URL.test(src) || undefined}
+          className="object-cover"
         />
       )}
       {src && isVideo && (
         <>
           {poster && (
-            <img
+            <Image
               src={poster}
               alt={alt}
+              fill
+              sizes={sizes}
+              unoptimized={LOCAL_URL.test(poster) || undefined}
               aria-hidden={frameReady || videoReady}
               className={cn(
-                "absolute inset-0 h-full w-full object-cover transition-opacity duration-500",
+                "object-cover transition-opacity duration-500",
                 frameReady || videoReady ? "opacity-0" : "opacity-100"
               )}
             />
@@ -314,7 +329,7 @@ function Card3DImage({
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             onLoadedData={handleLoadedData}
             onCanPlayThrough={handleCanPlayThrough}
             className={cn(
@@ -338,7 +353,7 @@ function Card3DOverlay({
     <div
       data-slot="card-3d-overlay"
       className={cn(
-        "absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/20",
+        "absolute inset-0 bg-gradient-to-b from-scrim-strong via-scrim to-transparent",
         className
       )}
       {...props}
@@ -358,10 +373,10 @@ function Card3DContent({
   return (
     <div
       data-slot="card-3d-content"
-      className="relative z-[1] h-full p-3 sm:p-5"
+      className="relative z-1 h-full p-3 sm:p-5"
       {...props}
     >
-      <div className={cn("relative z-[1] flex h-full justify-between", inverted ? "flex-col-reverse" : "flex-col", className)}>
+      <div className={cn("relative z-1 flex h-full justify-between", inverted ? "flex-col-reverse" : "flex-col", className)}>
         {children}
       </div>
     </div>
@@ -377,7 +392,7 @@ function Card3DTitle({
     <h3
       data-slot="card-3d-title"
       className={cn(
-        "text-balance font-heading uppercase text-[2rem] leading-[120%] text-[var(--card-3d-fg,var(--foreground))] font-[var(--card-3d-title-fw,300)]",
+        "text-balance font-heading uppercase text-h2 text-(--card-3d-fg,var(--foreground)) font-(weight:--card-3d-title-fw,300)",
         className
       )}
       {...props}
@@ -394,7 +409,7 @@ function Card3DDescription({
     <p
       data-slot="card-3d-description"
       className={cn(
-        "mt-1 text-pretty text-xs leading-relaxed text-[var(--card-3d-fg,var(--foreground))] font-[var(--card-3d-desc-fw,500)] opacity-80 sm:text-sm",
+        "mt-1 text-pretty text-xs leading-relaxed text-(--card-3d-fg,var(--foreground)) font-(weight:--card-3d-desc-fw,500) opacity-80 sm:text-sm",
         className
       )}
       {...props}

@@ -1,11 +1,11 @@
 ---
 title: Tella - A Artista Operante
-summary: Persona da designer/artista de 23 anos em Belo Horizonte, formanda em design gráfico, perfil ENFP operante que acumula cursos sem finalizar, com oferta ideal Overpass ou Protocolo 3-2-1.
-topics: [persona, tella, operante, designer, artista, portfólio]
-keywords: [tella, stella, persona, operante, designer gráfico, artista, ENFP, belo horizonte, overpass, protocolo 3-2-1, portfólio, IA, mapa de empatia, loop técnico]
+summary: Persona de 23 anos em Belo Horizonte, formanda em design gráfico e artista, que já decidiu construir algo próprio mas não lança — perfil ENFP operante que acumula cursos e começos sem fechar ciclos. Oferta ideal Overpass ou Protocolo 3-2-1.
+topics: [persona, tella, operante, empreendedora nexialista, primeira oferta, fechamento de ciclo]
+keywords: [tella, stella, persona, operante, empreendedora nexialista, executa não lança, primeira oferta no ar, designer gráfico, artista, ENFP, belo horizonte, overpass, protocolo 3-2-1, IA, mapa de empatia, loop técnico]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre Tella, persona da artista operante, designer recém-formada, perfil que acumula cursos sem concluir, ou ao desenhar comunicação para criadores em transição de estudante para profissional, oferta de portfólio guiado e Overpass.
+  Use quando o usuário perguntar sobre Tella, persona da artista operante, pessoa que acumula cursos e começos sem lançar nada próprio, ou ao desenhar comunicação para quem está saindo da execução para a construção de uma primeira oferta, e ao posicionar Overpass.
 related: []
 ---
 
@@ -23,7 +23,7 @@ related: []
 |  | **Idade** | 23 anos |
 |  | **Estado civil** | Solteira |
 |  | **Região** | Belo Horizonte (MG) |
-|  | **Ocupação** | Designer e Artista |
+|  | **Ocupação** | Artista e designer; quer viver do que cria, por conta própria |
 |  | **Formação** | Último ano de Bacharel em design gráfico |
 |  | **Renda** | Cerca de R$2.000, variável |
 |  | **Maturidade** | Operante |
@@ -34,7 +34,7 @@ related: []
 
 | Personalidade | ENFPExtrovertida (E): se conecta e busca grupos e cursos. Intuitiva (N): aberta a ideias novas, mas dispersa.Sentimento (F): lida com a culpa, vergonha e busca aceitação. Percepção (P): acumula cursos, adora começar, mas falta fechamento |
 | :---- | :---- |
-| **Frase típica** | ***“Esse vai ser o projeto que vai mudar meu portfólio\!”*** Família e amigos riem porque ela repete isso em todo novo freela ou trabalho de faculdade, mas depois acaba não finalizando ou se frustrando com o resultado. |
+| **Frase típica** | ***“Esse vai ser o projeto que finalmente vai virar alguma coisa\!”*** Família e amigos riem porque ela repete isso a cada nova ideia, mas depois acaba não finalizando ou se frustrando com o resultado. |
 | **Estilo Musical** | Ouve muito **Billie Eilish, Doja Cat, The Weeknd, Rosalía, Jão e Ludmilla**. Gosta de **indie pop/alternativo** (Tame Impala, Arctic Monkeys, Florence \+ The Machine). Costuma ouvir playlists do **Spotify** como **“Indie Brasil”, “Lo-fi Beats”** e **“Focus no Trabalho”** para estudar ou trabalhar. Vai em shows acessíveis, como **Lollapalooza (SP)** ou festivais universitários. |
 | **Mídias Sociais** | Passa horas no **Instagram e TikTok**; usa o **Behance e Pinterest** para referência visual. Adora vídeos curtos de dicas de **IA no TikTok**. Consome podcasts como **Mamilos**, **Braincast (B9)** e **Naruhodo**. |
 | **Games** | Curte jogar **The Sims 4, Animal Crossing, Minecraft e Valorant**. Joga no notebook intermediário, mas sonha em ter um PC gamer. Assiste streams na **Twitch**, principalmente artistas digitais e game designers independentes. |
@@ -47,13 +47,13 @@ related: []
 
 Tella é uma jovem de 23 anos, sonhadora e otimista, que adora imaginar e criar. Escolheu a faculdade de design por identificação com a área e deve se formar este ano, ou no máximo no próximo. Pensa em fazer uma pós, mas está ansiosa para entrar no mercado.
 
-Muito curiosa e com sede por aprendizado, maratona tutoriais, salva links e compra cursos baratos — mas costuma acumular conteúdos sem concluir. Foca em softwares e truques de execução, ainda sem uma narrativa clara sobre quem é, que problema resolve e por que seu trabalho importa. Procura algo guiado, com começo–meio–fim e resultado prático visível, para sentir segurança de que está evoluindo e não ficando para trás.
+Muito curiosa e com sede por aprendizado, maratona tutoriais, salva links e compra cursos baratos — mas costuma acumular conteúdos sem concluir. Foca em softwares e truques de execução, ainda sem uma narrativa clara sobre quem é, que problema resolve e por que aquilo que ela faz vale dinheiro. Procura algo guiado, com começo–meio–fim e resultado prático visível, para sentir segurança de que está evoluindo e não ficando para trás.
 
 Tella ainda está confusa sobre o uso de IAs na criação. Ao mesmo tempo que se sente entusiasmada, também se sente mal por não entender a tecnologia. Escuta de pessoas próximas que a IA “roubou o trabalho de muita gente” e fica dividida, como se tivesse que escolher entre evoluir e ser leal ao que aprendeu. Fascinada pela IA, mas culpada e envergonhada, evita admitir que já usa essas ferramentas em seus processos.
 
-Atualmente, trabalha em projetos de design e arte para amigos e conhecidos. Consegue alguns pequenos freelas, mas nada consistente. Sua renda gira em torno de R$2.500, de ganhos variáveis. Mora com os pais, tem tempo para estudar e busca oportunidades de crescimento. O plano imediato é construir um portfólio que chame atenção e abra portas em uma empresa que valorize seu trabalho e ofereça espaço para evoluir.
+Atualmente, faz projetos de design e arte para amigos e conhecidos, e vende umas peças autorais quando alguém pede. Nada consistente. Sua renda gira em torno de R$2.500, de ganhos variáveis. Mora com os pais, tem tempo para estudar e busca oportunidades de crescimento. O plano imediato mudou de lugar: ela parou de querer um emprego que a valorize e passou a querer transformar o que faz em algo próprio que venda — uma linha de produtos, um estúdio, uma oferta que exista sem depender de alguém a contratar. O que trava não é talento, é nunca fechar nada.
 
-Tella trabalha em um notebook intermediário e sonha com o dia em que terá equipamentos de ponta e um escritório só dela. O que ganha, gasta com passeios, roupas e algumas despesas da família. Guarda um pouco e investe em livros, cursos e melhorias no setup. Tem um cartão com limite baixo e, sempre que pode, prefere pagar pelo Pix.
+Tella trabalha em um notebook intermediário e sonha com o dia em que terá equipamentos de ponta e um estúdio próprio, com nome na porta. O que ganha, gasta com passeios, roupas e algumas despesas da família. Guarda um pouco e investe em livros, cursos e melhorias no setup. Tem um cartão com limite baixo e, sempre que pode, prefere pagar pelo Pix.
 
 ### Tom de Voz da Tella
 
@@ -82,7 +82,7 @@ Se refere às IAs como “as AIs” ou “IAzinha”, com ironia e desconfiança
 
 ### Fala típica
 
-“Sério, eu preciso atualizar meu portfólio logo…, tenho várias ideias, várias vibes diferentes, mas não consigo fechar nada que eu olhe e fale: é isso\! Ai, socorro… e agora com essa IAzinha, parece que tudo ficou mais rápido e eu fico meio perdida, sabe? Não sei se faz sentido, mas parece que tô sempre correndo e nunca chego.”
+“Sério, eu preciso lançar alguma coisa logo…, tenho várias ideias, várias vibes diferentes, mas não consigo fechar nada que eu olhe e fale: é isso, tá pronto, tá à venda\! Ai, socorro… e agora com essa IAzinha, parece que tudo ficou mais rápido e eu fico meio perdida, sabe? Não sei se faz sentido, mas parece que tô sempre correndo e nunca chego.”
 
 ## Mapa de Empatia
 
@@ -90,29 +90,29 @@ Se refere às IAs como “as AIs” ou “IAzinha”, com ironia e desconfiança
 
 ### O que Tella vê:
 
-* Um mercado competitivo, cheio de jovens criativos disputando vagas.  
+* Gente da idade dela vendendo o próprio trabalho direto, sem intermediário.  
 * Amigos e colegas comentando sobre as IAs, alguns fascinados e outros assustados.  
 * Muitos cursos online baratos, mas com promessas genéricas.  
-* Portfólios inspiradores no Behance e Instagram, que parecem distantes da sua realidade.
+* Marcas pequenas e independentes no Instagram que parecem distantes da sua realidade.
 
 ### O que Tella ouve:
 
-* “IA vai roubar seu emprego” (amigos e familiares desconfiados).  
-* “Precisa dominar as ferramentas certas para ser alguém no mercado” (professores, grupos).  
-* “O importante é ter um portfólio forte” (colegas de curso, recrutadores).  
+* “IA vai acabar com esse tipo de trabalho” (amigos e familiares desconfiados).  
+* “Precisa dominar as ferramentas certas para ser alguém” (professores, grupos).  
+* “Arte não dá dinheiro, arruma um emprego primeiro” (família).  
 * “Tem que se atualizar sempre, senão fica para trás” (redes sociais, creators).
 
 ### O que ela pensa e sente
 
 * Mistura de entusiasmo e medo em relação à IA.  
 * Insegurança sobre suas próprias habilidades e sobre ser “boa o suficiente”.  
-* Ansiedade por ainda não ter clareza de como entrar no mercado com força.  
-* Sonha em trabalhar em um lugar que valorize sua criatividade e a ajude a crescer.  
+* Ansiedade por ainda não ter clareza de como transformar o que faz em algo que venda.  
+* Sonha em viver do próprio trabalho sem precisar pedir espaço a ninguém.  
 * Crença limitante: usar IA pode ser “trapacear” ou “desrespeitar a profissão”.
 
 ### O que ela fala
 
-* “Preciso atualizar meu portfólio logo.”  
+* “Preciso colocar alguma coisa minha no ar logo.”  
 * “Tenho medo de ficar para trás com IA.”  
 * “Quero algo guiado e com garantia.”  
 * “Será que vou usar mesmo?”  
@@ -125,27 +125,27 @@ Se refere às IAs como “as AIs” ou “IAzinha”, com ironia e desconfiança
 * Compra vários cursos, mas raramente finaliza.  
 * Publica pouco seu trabalho por insegurança.  
 * Experimenta ferramentas de IA em segredo.  
-* Aceita freelas pequenos, mas não divulga muito para não ser julgada.
+* Aceita trabalhos pequenos de conhecidos, mas nunca chega a oferecer nada formalmente.
 
 ### O que Tella deseja
 
-* Ter um portfólio que chame atenção de recrutadores e clientes.  
+* Colocar uma primeira oferta própria no ar e ver alguém comprar.  
 * Sentir confiança ao usar IA sem culpa.  
-* Conseguir um emprego em um estúdio ou agência que a valorize.  
-* Estruturar sua rotina de aprendizado em algo guiado e prático.  
-* Conquistar autonomia financeira para investir em equipamentos e experiências próprias.
+* Construir um estúdio ou marca própria, em vez de esperar ser contratada.  
+* Estruturar sua rotina de aprendizado em algo guiado, com começo, meio e fim.  
+* Conquistar autonomia financeira a partir do que ela mesma cria.
 
 ###  O que irrita Tella
 
 **Críticas vazias:** Fica frustrada quando alguém diz só “não gostei” ou “tá estranho” sem dar um feedback construtivo. Se irrita porque sente que não sabe “pra onde ir” com a crítica.
 
-**Comparações com outros designers:** Quando amigos ou professores mostram o portfólio de alguém e dizem “olha como essa pessoa já está muito à frente”. Faz Tella se sentir pequena e atrasada.
+**Comparações:** Quando amigos ou professores mostram o trabalho de alguém e dizem “olha como essa pessoa já está muito à frente”. Faz Tella se sentir pequena e atrasada.
 
 **Gente que desdenha da IA:** Frases como “isso aí qualquer um faz com IA” ou “isso não é design de verdade” a deixam desconfortável e culpada. Toca direto na crença limitante dela.
 
-**Excesso de teoria sem aplicação:** Cursos longos, cheios de conceitos, mas sem resultado visível rápido. Irrita-se porque sente que está “perdendo tempo” e não consegue mostrar nada novo no portfólio.
+**Excesso de teoria sem aplicação:** Cursos longos, cheios de conceitos, mas sem resultado visível rápido. Irrita-se porque sente que está “perdendo tempo” e continua sem nada terminado para mostrar.
 
-**Trabalhos não valorizados:** Quando faz um freela e o cliente pede desconto, atrasa o pagamento ou trata como se fosse “favorzinho”. Faz Tella sentir que ninguém leva seu esforço a sério.
+**Trabalhos não valorizados:** Quando faz algo e a pessoa pede desconto, atrasa o pagamento ou trata como se fosse “favorzinho”. Faz Tella sentir que ninguém leva seu esforço a sério.
 
 **Falar mal de seus gostos:** Se alguém diz que **Billie Eilish é chata**, que **anime é coisa de criança** ou que **Pinterest é só “modinha”**, ela retruca na hora. Irrita porque sente que estão desrespeitando suas referências pessoais.
 
@@ -155,7 +155,7 @@ Se refere às IAs como “as AIs” ou “IAzinha”, com ironia e desconfiança
 
 **Reconhecimento do trabalho:** Quando alguém comenta “amei esse design” ou compartilha seu post. Likes no Behance/Instagram a fazem sorrir por dias.
 
-**Portfólio em evolução:** Concluir uma peça que ela realmente gosta e sentir que “ficou profissional”. Quando consegue comparar com trabalhos antigos e vê melhora.
+**Ciclo fechado:** Concluir uma peça que ela realmente gosta e sentir que “ficou pronta de verdade”. Quando consegue comparar com trabalhos antigos e vê melhora.
 
 **Descobrir ferramentas novas:** Encontrar uma função no Photoshop/Figma ou experimentar uma IA que agiliza horas de trabalho. Sente-se “superpoderosa”.
 
@@ -176,6 +176,6 @@ A música a transporta para um lugar de sonho e liberdade.
 
 ---
 
-Tella é um arquétipo transversal de **Operantes**. Para se comunicar com escritores, músicos, editores, artistas visuais e até devs. Troque o léxico e o canal, mas mantenha o núcleo: **quebrar o loop técnico → publicar provas de valor → medir impacto → iterar**.
+Tella é um arquétipo transversal de **Operantes**. Serve para falar com escritores, músicos, editores, artistas visuais, engenheiros e devs. Troque o léxico e o canal, mas mantenha o núcleo: **quebrar o loop técnico → fechar um ciclo → colocar uma oferta no ar → medir a resposta → iterar**.
 
-Tella não é “design-only”; ela encarna um **padrão mental Operante** que aparece em **qualquer área criativa**. O traço transversal é o ***loop técnico*** (acumular ferramentas/atalhos) \+ ***adiamento da publicação*** \+ ***busca de validação*** \+ ***medo de irrelevância/IA***.
+Tella não é “design-only”; ela encarna um **padrão mental Operante** que aparece em **qualquer origem profissional**. O traço transversal é o ***loop técnico*** (acumular ferramentas/atalhos) \+ ***adiamento do lançamento*** \+ ***busca de validação*** \+ ***medo de irrelevância/IA***. O que define a Tella não é ser designer: é ter decidido construir algo próprio e ainda não ter colocado nada no mundo.

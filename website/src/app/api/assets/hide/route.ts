@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { isStaffOrAdmin } from "@/lib/route-access";
 
 /** GET — list all hidden asset keys (optionally filtered by asset_type) */
 export async function GET(request: NextRequest) {
@@ -54,7 +55,7 @@ export async function POST(request: NextRequest) {
       .eq("id", user.id)
       .single();
 
-    if (!profile || profile.role !== "admin") {
+    if (!profile || !isStaffOrAdmin(profile.role)) {
       return NextResponse.json({ error: "Sem permissão" }, { status: 403 });
     }
 
@@ -94,7 +95,7 @@ export async function DELETE(request: NextRequest) {
       .eq("id", user.id)
       .single();
 
-    if (!profile || profile.role !== "admin") {
+    if (!profile || !isStaffOrAdmin(profile.role)) {
       return NextResponse.json({ error: "Sem permissão" }, { status: 403 });
     }
 

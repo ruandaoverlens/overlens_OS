@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { isStaffOrAdmin } from "@/lib/route-access";
 import { createAdminClient } from "@/lib/supabase/admin";
 
 export async function POST(req: NextRequest) {
@@ -18,7 +19,7 @@ export async function POST(req: NextRequest) {
     .eq("id", user.id)
     .single();
 
-  if (!profile || profile.role !== "admin") {
+  if (!profile || !isStaffOrAdmin(profile.role)) {
     return NextResponse.json({ error: "Sem permissão" }, { status: 403 });
   }
 
@@ -41,6 +42,22 @@ export async function POST(req: NextRequest) {
 
   try {
     const admin = createAdminClient();
+
+    // Staff gerencia membros, mas não escala privilégios: não promove a admin
+    // nem edita quem já é admin.
+    if (profile.role !== "admin") {
+      if (role === "admin") {
+        return NextResponse.json({ error: "Apenas administradores podem promover a administrador" }, { status: 403 });
+      }
+      const { data: target } = await admin
+        .from("profiles")
+        .select("role")
+        .eq("id", userId)
+        .single();
+      if (target?.role === "admin") {
+        return NextResponse.json({ error: "Apenas administradores podem editar outros administradores" }, { status: 403 });
+      }
+    }
 
     const updateData: Record<string, string> = {};
     if (name !== undefined) updateData.name = name;

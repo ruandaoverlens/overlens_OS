@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { PageHeader } from "@/components/page-header";
+import { EmptyState } from "@/components/empty-state";
+import { Button } from "@/components/ui/button";
+import { DocumentoUploadDialog } from "@/components/registros/documento-upload-dialog";
 import {
   PROCESSO_STATUS_LABEL,
   PROCESSO_STATUS_VARIANT,
@@ -18,6 +23,12 @@ import type {
   DocumentoRow,
   MarcaRow,
 } from "@/lib/registros/types";
+
+export const metadata: Metadata = {
+  title: "Visão Geral",
+  description:
+    "Panorama dos registros de marca: processos por status, alertas pendentes e documentos recentes.",
+};
 
 export const dynamic = "force-dynamic";
 
@@ -53,17 +64,15 @@ export default async function VisaoGeralPage() {
 
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-6 p-6">
-      <div>
-        <h1 className="text-2xl font-heading uppercase tracking-wide">Visão Geral</h1>
-        <p className="text-sm text-muted-foreground">
-          Panorama do portfólio de marcas, processos e prazos.
-        </p>
-      </div>
+      <PageHeader
+        title="Visão Geral"
+        description="Panorama do portfólio de marcas, processos e prazos."
+      />
 
       <div className="grid gap-3 sm:grid-cols-3">
         <Card>
           <CardContent className="flex flex-col gap-1">
-            <span className="text-4xl font-heading">{totalMarcas ?? 0}</span>
+            <span className="text-h2 font-light tabular-nums md:text-display">{totalMarcas ?? 0}</span>
             <span className="text-sm text-muted-foreground">
               {totalMarcas === 1 ? "marca" : "marcas"}
             </span>
@@ -71,7 +80,7 @@ export default async function VisaoGeralPage() {
         </Card>
         <Card>
           <CardContent className="flex flex-col gap-1">
-            <span className="text-4xl font-heading">{processos.length}</span>
+            <span className="text-h2 font-light tabular-nums md:text-display">{processos.length}</span>
             <span className="text-sm text-muted-foreground">
               {processos.length === 1 ? "processo" : "processos"}
             </span>
@@ -79,7 +88,7 @@ export default async function VisaoGeralPage() {
         </Card>
         <Card>
           <CardContent className="flex flex-col gap-1">
-            <span className="text-4xl font-heading">{alertas.length}</span>
+            <span className="text-h2 font-light tabular-nums md:text-display">{alertas.length}</span>
             <span className="text-sm text-muted-foreground">alertas pendentes</span>
           </CardContent>
         </Card>
@@ -92,7 +101,16 @@ export default async function VisaoGeralPage() {
           </CardHeader>
           <CardContent className="flex flex-wrap gap-2">
             {contagem.size === 0 ? (
-              <span className="text-sm text-muted-foreground">Nenhum processo cadastrado.</span>
+              <EmptyState
+                size="sm"
+                title="Nenhum processo cadastrado"
+                description="Cadastre uma marca e seus processos junto ao INPI."
+                action={
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="/registros/marcas">Cadastrar marca</Link>
+                  </Button>
+                }
+              />
             ) : (
               [...contagem.entries()].map(([status, n]) => (
                 <Badge key={status} variant={PROCESSO_STATUS_VARIANT[status]}>
@@ -114,7 +132,16 @@ export default async function VisaoGeralPage() {
           </CardHeader>
           <CardContent className="flex flex-col gap-2">
             {alertas.length === 0 ? (
-              <span className="text-sm text-muted-foreground">Nenhum alerta pendente.</span>
+              <EmptyState
+                size="sm"
+                title="Nenhum alerta pendente"
+                description="Verifique os prazos na página de alertas para gerar novos avisos."
+                action={
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="/registros/alertas">Ver alertas</Link>
+                  </Button>
+                }
+              />
             ) : (
               alertas.map((a) => (
                 <div key={a.id} className="flex items-center justify-between gap-2">
@@ -146,7 +173,12 @@ export default async function VisaoGeralPage() {
         </CardHeader>
         <CardContent className="flex flex-col gap-2">
           {documentos.length === 0 ? (
-            <span className="text-sm text-muted-foreground">Nenhum documento enviado.</span>
+            <EmptyState
+              size="sm"
+              title="Nenhum documento enviado"
+              description="Certificados, protocolos e despachos ficam centralizados aqui."
+              action={<DocumentoUploadDialog marcas={marcas} />}
+            />
           ) : (
             documentos.map((d) => (
               <div key={d.id} className="flex items-center justify-between gap-2">

@@ -4,8 +4,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from "@/components/ui/empty";
+import { EmptyState } from "@/components/empty-state";
 import { SmAlertLineIcon } from "@/components/icons";
+import { notify } from "@/lib/notifications/toast";
 import {
   ALERTA_TIPO_LABEL,
   ALERTA_STATUS_LABEL,
@@ -49,27 +50,49 @@ export function AlertasPageClient({ alertas }: AlertasPageClientProps) {
       );
       router.refresh();
     } catch (err) {
-      setMsg(err instanceof Error ? err.message : "Erro inesperado");
+      setMsg(null);
+      notify.fromError(err, "Não foi possível verificar os prazos");
     } finally {
       setScanning(false);
     }
   }
 
-  async function changeStatus(id: string, status: AlertaStatus) {
+  async function patchStatus(id: string, status: AlertaStatus) {
+    const res = await fetch("/api/registros/alertas", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, status }),
+    });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      throw new Error(data.error ?? "Erro ao atualizar");
+    }
+  }
+
+  async function changeStatus(id: string, status: AlertaStatus, anterior: AlertaStatus) {
     setBusyId(id);
     try {
-      const res = await fetch("/api/registros/alertas", {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id, status }),
-      });
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error ?? "Erro ao atualizar");
+      await patchStatus(id, status);
+      if (status === "descartado") {
+        notify.success("Descartado", {
+          action: {
+            label: "Desfazer",
+            onClick: () => {
+              void patchStatus(id, anterior)
+                .then(() => {
+                  notify.success("Alerta restaurado");
+                  router.refresh();
+                })
+                .catch((err) => notify.fromError(err, "Não foi possível desfazer"));
+            },
+          },
+        });
+      } else {
+        notify.success("Alerta atualizado");
       }
       router.refresh();
     } catch (err) {
-      alert(err instanceof Error ? err.message : "Erro ao atualizar alerta");
+      notify.fromError(err, "Não foi possível atualizar o alerta");
     } finally {
       setBusyId(null);
     }
@@ -78,29 +101,36 @@ export function AlertasPageClient({ alertas }: AlertasPageClientProps) {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-wrap items-center gap-3">
-        <Button size="sm" onClick={handleScan} disabled={scanning}>
-          {scanning ? "Verificando…" : "Verificar prazos agora"}
+        <Button
+          size="sm"
+          onClick={handleScan}
+          loading={scanning}
+          loadingText="Verificando…"
+        >
+          Verificar prazos agora
         </Button>
-        {msg && <span className="text-sm text-muted-foreground">{msg}</span>}
+        {msg && (
+          <span className="text-sm text-muted-foreground" aria-live="polite">
+            {msg}
+          </span>
+        )}
       </div>
 
       {alertas.length === 0 ? (
-        <Empty>
-          <EmptyHeader>
-            <EmptyMedia contained>
-              <SmAlertLineIcon />
-            </EmptyMedia>
-            <EmptyTitle>Nenhum alerta</EmptyTitle>
-            <EmptyDescription>
-              Use &ldquo;Verificar prazos agora&rdquo; para gerar alertas de renovação,
-              exigência e oposição a partir dos processos cadastrados.
-            </EmptyDescription>
-          </EmptyHeader>
-        </Empty>
+        <EmptyState
+          icon={<SmAlertLineIcon />}
+          title="Nenhum alerta"
+          description="Verifique os prazos para gerar alertas de renovação, exigência e oposição a partir dos processos cadastrados."
+          action={
+            <Button onClick={handleScan} loading={scanning} loadingText="Verificando…">
+              Verificar prazos agora
+            </Button>
+          }
+        />
       ) : (
         <div className="flex flex-col gap-2">
           {alertas.map((a) => (
-            <div key={a.id} className="flex flex-col gap-3 rounded-lg bg-[var(--surface-950)] px-4 py-3 sm:flex-row sm:items-center">
+            <div key={a.id} className="flex flex-col gap-3 rounded-lg bg-surface-950 px-4 py-3 sm:flex-row sm:items-center">
               <div className="flex min-w-0 flex-1 flex-col gap-1">
                 <div className="flex flex-wrap items-center gap-2">
                   <Badge variant="outline">{ALERTA_TIPO_LABEL[a.tipo]}</Badge>
@@ -126,7 +156,7 @@ export function AlertasPageClient({ alertas }: AlertasPageClientProps) {
                     variant={act.variant}
                     size="sm"
                     disabled={busyId === a.id}
-                    onClick={() => changeStatus(a.id, act.status)}
+                    onClick={() => changeStatus(a.id, act.status, a.status)}
                   >
                     {act.label}
                   </Button>

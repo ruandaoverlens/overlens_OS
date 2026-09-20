@@ -14,11 +14,11 @@ export function AdminAssetTabs({
   hiddenCount: number;
 }) {
   return (
-    <div className="px-4 pt-4 max-w-[1920px] mx-auto w-full">
+    <div className="container-content pt-4">
       <Tabs value={showHidden ? "hidden" : "all"} onValueChange={(v) => onShowHiddenChange(v === "hidden")}>
         <TabsList underline>
-          <TabsTrigger value="all" className="text-[14px]">Todos{totalCount != null ? ` (${totalCount})` : ""}</TabsTrigger>
-          <TabsTrigger value="hidden" className="text-[14px]">Ocultos ({hiddenCount})</TabsTrigger>
+          <TabsTrigger value="all" className="text-sm">Todos{totalCount != null ? ` (${totalCount})` : ""}</TabsTrigger>
+          <TabsTrigger value="hidden" className="text-sm">Ocultos ({hiddenCount})</TabsTrigger>
         </TabsList>
       </Tabs>
     </div>

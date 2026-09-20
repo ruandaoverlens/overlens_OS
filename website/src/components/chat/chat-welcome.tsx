@@ -3,24 +3,29 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 
-type EmptyStateProps = {
+type ChatWelcomeProps = {
   className?: string
   children?: React.ReactNode
 }
 
-export function EmptyState({ className, children }: EmptyStateProps) {
+/**
+ * Boas-vindas do chat vazio. É o h1 da rota `/chat/new` (a conversa ainda
+ * não tem título); em `/chat/[id]` sem mensagens o h1 sr-only vem do
+ * ChatExperience, então aqui vira h2.
+ */
+export function ChatWelcome({ className, children, as: Heading = "h1" }: ChatWelcomeProps & { as?: "h1" | "h2" }) {
   return (
     <div
-      data-slot="chat-empty-state"
+      data-slot="chat-welcome"
       className={cn(
         "flex flex-col items-center justify-center gap-6 text-center",
         className
       )}
     >
-      <h2 className="text-3xl font-semibold text-foreground">
+      <Heading className="text-h2 md:text-display font-light text-balance text-foreground">
         O que você quer construir hoje?
-      </h2>
-      <p className="text-base text-muted-foreground">
+      </Heading>
+      <p className="text-base text-pretty text-muted-foreground">
         Pergunte, planeje, busque referências da Overlens.
       </p>
       {children}

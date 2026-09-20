@@ -6,7 +6,6 @@ import { useFavorites } from "@/lib/favorites";
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
-  TooltipProvider,
   TooltipTrigger,
   TooltipContent,
 } from "@/components/ui/tooltip";
@@ -17,16 +16,39 @@ import {
   SmStarLineIcon,
   SmStarSolidIcon,
   SmCloseLineIcon,
+  SmPlaySolidIcon,
+  SmSoundSolidIcon,
+  SmMediumSoundSolidIcon,
+  SmNoSoundSolidIcon,
 } from "@/components/icons";
-import { Play, Pause, SkipBack, SkipForward, Volume2, Volume1, VolumeX } from "lucide-react";
+// Pause/SkipBack/SkipForward não têm equivalente na biblioteca de ícones (ver lucide-mapping.ts).
+import { Pause, SkipBack, SkipForward } from "lucide-react";
+
+/** Cor do texto (`--foreground`) resolvida do tema para pintar o canvas. */
+function themeForeground(): string {
+  if (typeof document === "undefined") return "#ffffff";
+  const value = getComputedStyle(document.documentElement).getPropertyValue("--foreground").trim();
+  return value || "#ffffff";
+}
+
+// ─── Format Time ─────────────────────────────────────────────
+
+function formatTime(seconds: number): string {
+  if (!isFinite(seconds)) return "0:00";
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return `${m}:${s.toString().padStart(2, "0")}`;
+}
 
 // ─── Mini Waveform ───────────────────────────────────────────
 
 function MiniWaveform({
   progress,
+  duration,
   onSeek,
 }: {
   progress: number;
+  duration: number;
   onSeek: (pct: number) => void;
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -60,6 +82,7 @@ function MiniWaveform({
     const barCount = Math.floor(w / totalBarWidth);
 
     ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = themeForeground();
 
     for (let i = 0; i < barCount; i++) {
       const barIndex = Math.floor((i / barCount) * bars.length);
@@ -68,11 +91,8 @@ function MiniWaveform({
       const y = (h - barH) / 2;
       const pct = (i + 1) / barCount;
 
-      if (pct <= progress) {
-        ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
-      } else {
-        ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
-      }
+      // Mesma cor do tema em duas intensidades: tocado vs. restante.
+      ctx.globalAlpha = pct <= progress ? 0.8 : 0.1;
 
       ctx.beginPath();
       ctx.roundRect(x, y, barWidth, barH, 1);
@@ -87,24 +107,39 @@ function MiniWaveform({
     onSeek(Math.max(0, Math.min(1, pct)));
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowRight" || e.key === "ArrowUp") {
+      e.preventDefault();
+      onSeek(Math.min(1, progress + 0.05));
+    } else if (e.key === "ArrowLeft" || e.key === "ArrowDown") {
+      e.preventDefault();
+      onSeek(Math.max(0, progress - 0.05));
+    } else if (e.key === "Home") {
+      e.preventDefault();
+      onSeek(0);
+    } else if (e.key === "End") {
+      e.preventDefault();
+      onSeek(1);
+    }
+  };
+
   return (
     <div
       ref={containerRef}
-      className="flex-1 h-8 cursor-pointer"
+      role="slider"
+      tabIndex={0}
+      aria-label="Posição da faixa"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={Math.round(progress * 100)}
+      aria-valuetext={`${formatTime(duration * progress)} de ${formatTime(duration)}`}
+      className="flex-1 h-8 cursor-pointer rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-foreground"
       onClick={handleClick}
+      onKeyDown={handleKeyDown}
     >
-      <canvas ref={canvasRef} className="w-full h-full" />
+      <canvas ref={canvasRef} className="w-full h-full" aria-hidden="true" />
     </div>
   );
-}
-
-// ─── Format Time ─────────────────────────────────────────────
-
-function formatTime(seconds: number): string {
-  if (!isFinite(seconds)) return "0:00";
-  const m = Math.floor(seconds / 60);
-  const s = Math.floor(seconds % 60);
-  return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
 // ─── Now Playing Bar ─────────────────────────────────────────
@@ -147,7 +182,7 @@ export function NowPlayingBar() {
     };
   }, []);
 
-  const barRef = useRef<HTMLDivElement>(null);
+  const barRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -171,54 +206,69 @@ export function NowPlayingBar() {
 
   if (!activeTrack) return null;
 
-  const VolumeIcon = volume === 0 ? VolumeX : volume < 0.5 ? Volume1 : Volume2;
+  const VolumeIcon = volume === 0 ? SmNoSoundSolidIcon : volume < 0.5 ? SmMediumSoundSolidIcon : SmSoundSolidIcon;
+  const favorited = isFavorite(activeTrack.id);
 
   return (
-    <div
+    <section
       ref={barRef}
-      className="fixed bottom-0 left-0 right-0 z-40 bg-[var(--surface-950)] border-t border-[var(--surface-900)]"
+      aria-label="Player de áudio"
+      className="fixed bottom-0 left-0 right-0 z-40 bg-surface-950 border-t border-surface-900"
     >
       <div className="flex items-center gap-3 px-4 pt-2.5">
         {/* Prev */}
-        <button
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon-sm"
+          aria-label="Faixa anterior"
           onClick={prevTrack}
-          className="size-8 flex items-center justify-center text-[var(--surface-400)] hover:text-white transition-colors shrink-0"
+          className="text-surface-400 hover:text-white shrink-0"
         >
           <SkipBack className="size-4 fill-current" />
-        </button>
+        </Button>
 
         {/* Play/Pause */}
-        <button
+        <Button
+          type="button"
+          variant="inverted"
+          size="icon"
+          aria-label={isPlaying ? "Pausar" : "Reproduzir"}
+          aria-pressed={isPlaying}
           onClick={togglePlayPause}
-          className="size-10 rounded-full bg-white flex items-center justify-center hover:scale-105 transition-transform shrink-0"
+          className="rounded-full bg-white text-black hover:bg-white/90 hover:scale-105 transition-transform shrink-0 dark:bg-white dark:text-black dark:hover:bg-white/90"
         >
           {isPlaying ? (
-            <Pause className="size-4 text-black fill-black" />
+            <Pause className="size-4 fill-current" />
           ) : (
-            <Play className="size-4 text-black fill-black" />
+            <SmPlaySolidIcon className="size-5" />
           )}
-        </button>
+        </Button>
 
         {/* Next */}
-        <button
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon-sm"
+          aria-label="Próxima faixa"
           onClick={nextTrack}
-          className="size-8 flex items-center justify-center text-[var(--surface-400)] hover:text-white transition-colors shrink-0"
+          className="text-surface-400 hover:text-white shrink-0"
         >
           <SkipForward className="size-4 fill-current" />
-        </button>
+        </Button>
 
         {/* Track info */}
-        <div className="min-w-0 flex-1">
+        <div className="min-w-0 flex-1" aria-live="polite">
           <p className="text-sm text-white font-medium truncate">
             {activeTrack.title}
           </p>
-          <p className="text-xs text-[var(--surface-500)] truncate">
+          <p className="text-xs text-surface-500 truncate">
             {activeTrack.artist}
           </p>
         </div>
 
         {/* Time */}
-        <span className="text-xs text-[var(--surface-500)] tabular-nums shrink-0">
+        <span className="text-xs text-surface-500 tabular-nums shrink-0">
           {formatTime(duration * progress)} / {formatTime(duration)}
         </span>
 
@@ -228,13 +278,14 @@ export function NowPlayingBar() {
           <Popover open={volumeOpen} onOpenChange={setVolumeOpen}>
             <PopoverTrigger asChild>
               <Button
+                type="button"
                 variant="ghost"
                 size="icon"
-                className="text-[var(--surface-500)] hover:text-white hover:bg-white/10"
+                className="text-surface-500 hover:text-white hover:bg-white/10"
                 onMouseEnter={openVolume}
                 onMouseLeave={scheduleCloseVolume}
                 onClick={() => setVolume(volume === 0 ? 1 : 0)}
-                aria-label="Volume"
+                aria-label={volume === 0 ? "Ativar som" : "Silenciar"}
               >
                 <VolumeIcon className="size-5" />
               </Button>
@@ -246,9 +297,10 @@ export function NowPlayingBar() {
               onOpenAutoFocus={(e) => e.preventDefault()}
               onMouseEnter={openVolume}
               onMouseLeave={scheduleCloseVolume}
-              className="w-40 p-3 bg-[var(--surface-900)] border border-[var(--surface-800)]"
+              className="w-40 p-3 bg-surface-900 border border-surface-800"
             >
               <Slider
+                aria-label="Volume"
                 value={[volume * 100]}
                 min={0}
                 max={100}
@@ -258,66 +310,66 @@ export function NowPlayingBar() {
             </PopoverContent>
           </Popover>
 
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className={`text-[var(--surface-500)] hover:text-white hover:bg-white/10 ${
-                    isFavorite(activeTrack.id) ? "text-white" : ""
-                  }`}
-                  onClick={() => globalToggleFavorite({ id: activeTrack.id, type: "audio", title: activeTrack.title, subtitle: activeTrack.artist })}
-                >
-                  {isFavorite(activeTrack.id) ? <SmStarSolidIcon /> : <SmStarLineIcon />}
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent side="top">Salvar nos favoritos</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-[var(--surface-500)] hover:text-white hover:bg-white/10"
-                  onClick={() => {
-                    const a = document.createElement("a");
-                    a.href = activeTrack.downloadUrl;
-                    a.download = activeTrack.filename;
-                    a.click();
-                  }}
-                >
-                  <SmDownloadSolidIcon />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent side="top">Baixar arquivo</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-[var(--surface-500)] hover:text-white hover:bg-white/10"
-                  onClick={closePlayer}
-                  aria-label="Fechar player"
-                >
-                  <SmCloseLineIcon />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent side="top">Fechar</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                aria-label={favorited ? "Remover dos favoritos" : "Salvar nos favoritos"}
+                aria-pressed={favorited}
+                className={`text-surface-500 hover:text-white hover:bg-white/10 ${
+                  favorited ? "text-white" : ""
+                }`}
+                onClick={() => globalToggleFavorite({ id: activeTrack.id, type: "audio", title: activeTrack.title, subtitle: activeTrack.artist })}
+              >
+                {favorited ? <SmStarSolidIcon /> : <SmStarLineIcon />}
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="top">{favorited ? "Remover dos favoritos" : "Salvar nos favoritos"}</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                aria-label={`Baixar ${activeTrack.title}`}
+                className="text-surface-500 hover:text-white hover:bg-white/10"
+                onClick={() => {
+                  const a = document.createElement("a");
+                  a.href = activeTrack.downloadUrl;
+                  a.download = activeTrack.filename;
+                  a.click();
+                }}
+              >
+                <SmDownloadSolidIcon />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="top">Baixar arquivo</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                className="text-surface-500 hover:text-white hover:bg-white/10"
+                onClick={closePlayer}
+                aria-label="Fechar player"
+              >
+                <SmCloseLineIcon />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="top">Fechar</TooltipContent>
+          </Tooltip>
         </div>
       </div>
 
       {/* Waveform below */}
-      <div className="px-4 pb-2.5 pt-1.5">
-        <MiniWaveform progress={progress} onSeek={seekTrack} />
+      <div className="px-4 pb-2.5 pt-1.5 flex">
+        <MiniWaveform progress={progress} duration={duration} onSeek={seekTrack} />
       </div>
-    </div>
+    </section>
   );
 }

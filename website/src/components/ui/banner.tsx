@@ -1,4 +1,5 @@
 import * as React from "react"
+import Image from "next/image"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
@@ -62,9 +63,9 @@ const bannerVariants = cva(
   {
     variants: {
       size: {
-        sm: "md:h-[280px]",
-        md: "md:h-[400px]",
-        lg: "md:h-[500px]",
+        sm: "md:h-70",
+        md: "md:h-100",
+        lg: "md:h-125",
       },
     },
     defaultVariants: {
@@ -75,8 +76,10 @@ const bannerVariants = cva(
 
 /**
  * Full-width banner.
- * Mobile: two separate containers (image + content).
- * Desktop (md+): single container with overlay.
+ * Mobile: image block on top, content in flow below it.
+ * Desktop (md+): single container with the content overlaying the image.
+ * Children are rendered once (a single layout that adapts via CSS), so the page
+ * keeps exactly one `<h1>` from `BannerTitle`.
  * Auto-detects light/dark backgrounds from color/gradient props.
  */
 function Banner({
@@ -113,46 +116,37 @@ function Banner({
     contentChildren.push(child)
   })
 
-  const fgStyle = isLight
-    ? ({
-        "--banner-fg": "oklch(0.15 0 0)",
-        "--banner-title-fw": "400",
-        "--banner-desc-fw": "500",
-      } as React.CSSProperties)
-    : undefined
+  // Light backgrounds only affect the desktop overlay: on mobile the content sits
+  // below the image, on the dark page background, so the variables are md-only.
+  const lightFgClasses =
+    "md:[--banner-fg:oklch(0.15_0_0)] md:[--banner-title-fw:400] md:[--banner-desc-fw:500]"
 
   return (
-    <div data-slot="banner" data-variant={size} className="w-full max-w-[1920px] mx-auto p-3">
+    <div
+      data-slot="banner"
+      data-variant={size}
+      className="w-full max-w-(--container-max-width) mx-auto p-3"
+    >
       <BannerContext value={{ hasMedia, isLight, size: size ?? "md" }}>
-        {/* Mobile layout */}
-        <div
-          className="flex flex-col md:hidden"
-        >
-          {mobileImage && (
-            <div className="relative overflow-hidden rounded-[14px] h-48 bg-[var(--surface-950)] shrink-0">
-              {imageChildren}
-            </div>
-          )}
-          <div>
-            {contentChildren}
-          </div>
-        </div>
-
-        {/* Desktop layout */}
         <div
           className={cn(
-            "@container hidden md:block relative w-full overflow-hidden rounded-[14px] bg-[var(--surface-950)]",
+            "@container relative flex w-full flex-col md:block md:overflow-hidden md:rounded-card md:bg-surface-950",
             bannerVariants({ size }),
+            isLight && lightFgClasses,
             className
           )}
-          style={fgStyle}
           {...props}
         >
-          {imageChildren.length > 0 && (
-            <div className="absolute inset-0">
-              {imageChildren}
-            </div>
-          )}
+          <div
+            className={cn(
+              "relative h-48 shrink-0 overflow-hidden rounded-card bg-surface-950",
+              "md:absolute md:inset-0 md:h-auto md:rounded-none md:bg-transparent",
+              !mobileImage && "hidden",
+              imageChildren.length > 0 ? "md:block" : "md:hidden"
+            )}
+          >
+            {imageChildren}
+          </div>
           {contentChildren}
         </div>
       </BannerContext>
@@ -162,7 +156,11 @@ function Banner({
 
 const VIDEO_EXTENSIONS = /\.(mp4|webm|ogg|mov)(\?|$)/i
 
+/** `blob:`/`data:` URLs não passam pelo otimizador do next/image. */
+const LOCAL_URL = /^(blob|data):/i
+
 /** Background media for the banner - supports image, video, animated gradient, and solid color.
+ *  Image: rendered with next/image (`fill`, `priority`, `sizes="100vw"`) — it is above the fold.
  *  Video: captures first frame as poster, fades in when ready to play.
  *  Gradient: animated CSS gradient background.
  *  Color: solid background color. */
@@ -173,6 +171,7 @@ function BannerImage({
   poster,
   gradient,
   color,
+  sizes = "100vw",
   ...props
 }: React.ComponentProps<"div"> & {
   src?: string
@@ -180,6 +179,8 @@ function BannerImage({
   poster?: string
   gradient?: string
   color?: string
+  /** Atributo `sizes` do next/image. */
+  sizes?: string
 }) {
   const isVideo = src ? VIDEO_EXTENSIONS.test(src) : false
   const videoRef = React.useRef<HTMLVideoElement>(null)
@@ -223,15 +224,19 @@ function BannerImage({
       {gradient && (
         <div
           aria-hidden="true"
-          className="absolute inset-0 animate-[banner-gradient_8s_ease_infinite] [background-size:300%_300%]"
+          className="absolute inset-0 motion-safe:animate-[banner-gradient_8s_ease_infinite] [background-size:300%_300%]"
           style={{ backgroundImage: gradient }}
         />
       )}
       {src && !isVideo && (
-        <img
+        <Image
           src={src}
           alt={alt}
-          className="h-full w-full object-cover object-left"
+          fill
+          priority
+          sizes={sizes}
+          unoptimized={LOCAL_URL.test(src) || undefined}
+          className="object-cover object-left"
         />
       )}
       {src && isVideo && (
@@ -251,7 +256,7 @@ function BannerImage({
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             onLoadedData={handleLoadedData}
             onCanPlayThrough={handleCanPlayThrough}
             className={cn(
@@ -275,7 +280,7 @@ function BannerOverlay({
     <div
       data-slot="banner-overlay"
       className={cn(
-        "absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent",
+        "absolute inset-0 bg-gradient-to-r from-scrim-strong via-scrim-soft to-transparent",
         className
       )}
       {...props}
@@ -307,11 +312,11 @@ function BannerContent({
         <>
           <div
             aria-hidden="true"
-            className="hidden md:block absolute inset-0 rounded-[14px] backdrop-blur-[10px] [mask-image:radial-gradient(circle_at_0%_50%,black_30%,transparent_90%)] z-0 select-none pointer-events-none"
+            className="hidden md:block absolute inset-0 rounded-card backdrop-blur-md [mask-image:radial-gradient(circle_at_0%_50%,black_30%,transparent_90%)] z-0 select-none pointer-events-none"
           />
           <div
             aria-hidden="true"
-            className="hidden md:block absolute inset-0 rounded-[14px] bg-[radial-gradient(circle_at_0%_50%,rgba(255,255,255,0.05)_30%,transparent_90%)] z-0 select-none pointer-events-none"
+            className="hidden md:block absolute inset-0 rounded-card bg-[radial-gradient(circle_at_0%_50%,color-mix(in_oklab,var(--foreground)_5%,transparent)_30%,transparent_90%)] z-0 select-none pointer-events-none"
           />
         </>
       )}
@@ -331,7 +336,7 @@ function BannerTitle({
     <h1
       data-slot="banner-title"
       className={cn(
-        "z-[1] px-1 md:px-0 md:pl-1 max-w-full sm:max-w-[432px] text-balance font-heading uppercase text-[2.25rem] sm:text-[2.25rem] md:text-[2.5rem] leading-[120%] text-[var(--banner-fg,var(--foreground))] font-[var(--banner-title-fw,300)]",
+        "z-1 px-1 md:px-0 md:pl-1 max-w-full sm:max-w-108 text-balance font-heading uppercase text-h2 md:text-display text-(--banner-fg,var(--foreground)) font-(weight:--banner-title-fw,300)",
         className
       )}
       {...props}
@@ -491,7 +496,7 @@ function BannerDescription({
       ref={descRef}
       data-slot="banner-description"
       className={cn(
-        "z-[1] px-1 md:px-0 md:pl-1 max-w-full sm:max-w-[25.5rem] md:max-w-[23rem] text-pretty text-base leading-relaxed text-[var(--banner-fg,var(--foreground))] font-[var(--banner-desc-fw,300)] opacity-80",
+        "z-1 px-1 md:px-0 md:pl-1 max-w-full sm:max-w-102 md:max-w-92 text-pretty text-base leading-relaxed text-(--banner-fg,var(--foreground)) font-(weight:--banner-desc-fw,300) opacity-80",
         className
       )}
       {...props}
@@ -513,7 +518,7 @@ function BannerActions({
     return (
       <div
         data-slot="banner-actions"
-        className={cn("z-[1] mt-1 flex flex-wrap items-center gap-2", className)}
+        className={cn("z-1 mt-1 flex flex-wrap items-center gap-2", className)}
         {...props}
       >
         {children}
@@ -548,7 +553,7 @@ function BannerActions({
   return (
     <div
       data-slot="banner-actions"
-      className={cn("z-[1] mt-1 flex flex-wrap items-center gap-2", className)}
+      className={cn("z-1 mt-1 flex flex-wrap items-center gap-2", className)}
       {...props}
     >
       {/* Mobile: force non-inverted (content sits on dark bg below image) */}

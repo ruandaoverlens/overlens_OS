@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { isStaffOrAdmin } from "@/lib/route-access";
 import { createAdminClient } from "@/lib/supabase/admin";
 
 export async function POST(req: NextRequest) {
@@ -18,7 +19,7 @@ export async function POST(req: NextRequest) {
     .eq("id", user.id)
     .single();
 
-  if (!profile || profile.role !== "admin") {
+  if (!profile || !isStaffOrAdmin(profile.role)) {
     return NextResponse.json({ error: "Sem permissão" }, { status: 403 });
   }
 
@@ -40,6 +41,12 @@ export async function POST(req: NextRequest) {
 
   const validRoles = ["gratuito", "assinante", "staff", "admin"];
   const userRole = validRoles.includes(role ?? "") ? role! : "gratuito";
+
+  // Só admin pode criar outro admin — staff gerencia membros, mas não
+  // escala privilégios.
+  if (userRole === "admin" && profile.role !== "admin") {
+    return NextResponse.json({ error: "Apenas administradores podem criar administradores" }, { status: 403 });
+  }
 
   // 3. Create auth user with admin client (skips email confirmation)
   const admin = createAdminClient();

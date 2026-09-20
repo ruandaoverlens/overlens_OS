@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Outfit, JetBrains_Mono } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ConfirmProvider } from "@/components/ui/confirm-dialog";
 import { AuthProvider } from "@/lib/auth";
 import { MusicPlayerProvider } from "@/lib/music-player";
 import { FavoritesProvider } from "@/lib/favorites";
@@ -26,9 +27,19 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Overlens Brand System",
+  metadataBase: new URL("https://overlens-os.vercel.app"),
+  title: { default: "Overlens OS", template: "%s · Overlens OS" },
   description:
-    "Documentação completa do sistema de marca da Overlens; escola de Designers Nexialistas.",
+    "Sistema operacional da Overlens: brand system, assets, micélio e registros da escola de Empreendedores Nexialistas.",
+  robots: { index: false, follow: false },
+  icons: { icon: "/icon.svg" },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -41,15 +52,20 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable} font-body antialiased`}
       >
+        <a href="#main-content" className="skip-link">
+          Pular para o conteúdo
+        </a>
         <AuthProvider>
           <NotificationsProvider>
             <FavoritesProvider>
               <MusicPlayerProvider>
                 <TooltipProvider>
-                  {children}
-                  <NowPlayingBar />
-                  <CurioserScreen />
-                  <Toaster position="bottom-right" />
+                  <ConfirmProvider>
+                    {children}
+                    <NowPlayingBar />
+                    <CurioserScreen />
+                    <Toaster position="bottom-right" />
+                  </ConfirmProvider>
                 </TooltipProvider>
               </MusicPlayerProvider>
             </FavoritesProvider>

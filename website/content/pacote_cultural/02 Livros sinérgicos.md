@@ -13,7 +13,7 @@ related: []
 
 ## Leituras que expandem a percepção sobre criação, conhecimento e futuro; obras que atravessam disciplinas, conectam padrões invisíveis entre ciência e arte, e demonstram que as respostas mais poderosas nascem na interseção entre áreas que o mundo insiste em separar
 
-Alguns livros influenciaram profundamente a forma como a Overlens enxerga o mundo e o papel dos criadores dentro dele.
+Alguns livros influenciaram profundamente a forma como a Overlens enxerga o mundo e o papel de quem constrói algo próprio dentro dele.
 
 ## The Beginning of Infinity
 
@@ -49,7 +49,7 @@ Uma das obras mais fascinantes já escritas sobre mente, consciência, matemáti
 
 Nassim Nicholas Taleb
 
-Taleb introduz um conceito que não existia antes deste livro: o antifrágil, aquilo que se fortalece com o estresse, a desordem e a volatilidade. Não se trata apenas de resistir ao caos, mas de se beneficiar dele. Sistemas antifrágeis prosperam justamente porque são expostos a choques. Essa ideia ressoa diretamente com a filosofia da Overlens: criadores nexialistas não são formados para sobreviver à incerteza, mas para usar a incerteza como combustível de criação. O aprendizado real não nasce do conforto, nasce da exposição intencional ao desconhecido.
+Taleb introduz um conceito que não existia antes deste livro: o antifrágil, aquilo que se fortalece com o estresse, a desordem e a volatilidade. Não se trata apenas de resistir ao caos, mas de se beneficiar dele. Sistemas antifrágeis prosperam justamente porque são expostos a choques. Essa ideia ressoa diretamente com a filosofia da Overlens: Empreendedores Nexialistas não são formados para sobreviver à incerteza, mas para usar a incerteza como combustível de criação. O aprendizado real não nasce do conforto, nasce da exposição intencional ao desconhecido.
 
 </div>
 </div>
@@ -75,7 +75,7 @@ A Retórica é o tratado fundador sobre a arte de persuadir. Aristóteles sistem
 
 Ayn Rand
 
-Rand constrói um mundo onde os criadores param; e o sistema colapsa. A premissa é provocativa: o que acontece quando quem pensa e produz se retira? Nesse ponto, a obra acerta ao reconhecer que a criação é um motor insubstituível da sociedade. Mas a filosofia política de Rand é controversa; seu individualismo radical trata a interdependência como fraqueza, ignorando que criação significativa raramente acontece no vácuo. Para a Overlens, a lição que permanece não é o isolamento heroico do criador, mas o reconhecimento de que autonomia intelectual e responsabilidade coletiva não são opostos: quem cria com consciência sabe que seu trabalho só ganha sentido quando se conecta ao mundo, não quando se retira dele.
+Rand constrói um mundo onde os criadores param; e o sistema colapsa. A premissa é provocativa: o que acontece quando quem pensa e produz se retira? Nesse ponto, a obra acerta ao reconhecer que a criação é um motor insubstituível da sociedade. Mas a filosofia política de Rand é controversa; seu individualismo radical trata a interdependência como fraqueza, ignorando que criação significativa raramente acontece no vácuo. Para a Overlens, a lição que permanece não é o isolamento heroico do indivíduo, mas o reconhecimento de que autonomia intelectual e responsabilidade coletiva não são opostos: quem cria com consciência sabe que seu trabalho só ganha sentido quando se conecta ao mundo, não quando se retira dele.
 
 </div>
 </div>
@@ -88,7 +88,7 @@ Rand constrói um mundo onde os criadores param; e o sistema colapsa. A premissa
 
 Leonard Mlodinow
 
-Mlodinow revela como o acaso governa muito mais da nossa vida do que estamos dispostos a admitir. Decisões que atribuímos à habilidade frequentemente são produto da aleatoriedade. O livro desmonta narrativas lineares de sucesso e fracasso, mostrando que padrões aparentes podem ser ilusões estatísticas. Para criadores, essa perspectiva é libertadora: entender a aleatoriedade permite separar o que está sob nosso controle do que não está, investir em processo em vez de resultado, e manter a clareza intelectual mesmo quando o mundo parece caótico.
+Mlodinow revela como o acaso governa muito mais da nossa vida do que estamos dispostos a admitir. Decisões que atribuímos à habilidade frequentemente são produto da aleatoriedade. O livro desmonta narrativas lineares de sucesso e fracasso, mostrando que padrões aparentes podem ser ilusões estatísticas. Para quem constrói algo próprio, essa perspectiva é libertadora: entender a aleatoriedade permite separar o que está sob nosso controle do que não está, investir em processo em vez de resultado, e manter a clareza intelectual mesmo quando o mundo parece caótico.
 
 </div>
 </div>
@@ -114,7 +114,7 @@ Por trás da aparente fantasia infantil, Carroll construiu um tratado sobre lóg
 
 Yuval Noah Harari
 
-Harari traça a trajetória da espécie humana a partir de uma tese provocativa: o que nos separou dos demais animais não foi a força física nem a inteligência isolada, mas a capacidade de criar ficções compartilhadas; religiões, nações, dinheiro, corporações. Tudo o que sustenta a civilização é, em última instância, uma história em que escolhemos acreditar coletivamente. Para criadores nexialistas, essa perspectiva muda o jogo: quem compreende a mecânica das narrativas que organizam o mundo ganha a capacidade de questionar as que já existem e projetar as que ainda não foram escritas.
+Harari traça a trajetória da espécie humana a partir de uma tese provocativa: o que nos separou dos demais animais não foi a força física nem a inteligência isolada, mas a capacidade de criar ficções compartilhadas; religiões, nações, dinheiro, corporações. Tudo o que sustenta a civilização é, em última instância, uma história em que escolhemos acreditar coletivamente. Para Empreendedores Nexialistas, essa perspectiva muda o jogo: quem compreende a mecânica das narrativas que organizam o mundo ganha a capacidade de questionar as que já existem e projetar as que ainda não foram escritas.
 
 </div>
 </div>
@@ -140,7 +140,7 @@ Kuhn demonstrou que a ciência não avança em linha reta. Ela opera dentro de p
 
 Carl Sagan
 
-Sagan escreveu este livro como uma defesa apaixonada do pensamento crítico num mundo cada vez mais vulnerável à pseudociência, ao charlatanismo e à superstição. Sua proposta não é elitismo intelectual; é o oposto: democratizar as ferramentas do ceticismo para que qualquer pessoa possa distinguir evidência de ilusão. A Overlens compartilha essa urgência. Num ecossistema saturado de gurus, fórmulas mágicas e promessas vazias, formar criadores que pensam com rigor e questionam com método não é luxo acadêmico. É sobrevivência intelectual.
+Sagan escreveu este livro como uma defesa apaixonada do pensamento crítico num mundo cada vez mais vulnerável à pseudociência, ao charlatanismo e à superstição. Sua proposta não é elitismo intelectual; é o oposto: democratizar as ferramentas do ceticismo para que qualquer pessoa possa distinguir evidência de ilusão. A Overlens compartilha essa urgência. Num ecossistema saturado de gurus, fórmulas mágicas e promessas vazias, formar pessoas que pensam com rigor e questionam com método não é luxo acadêmico. É sobrevivência intelectual.
 
 </div>
 </div>

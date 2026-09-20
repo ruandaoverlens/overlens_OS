@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import { headingTitleVariants } from "@/components/ui/heading"
 
 /** Empty state container for displaying placeholder content when no data is available. */
 function Empty({ className, ...props }: React.ComponentProps<"div">) {
@@ -55,7 +56,7 @@ function EmptyTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="empty-title"
-      className={cn("text-lg font-heading uppercase tracking-wide", className)}
+      className={cn(headingTitleVariants({ size: "sm" }), className)}
       {...props}
     />
   )

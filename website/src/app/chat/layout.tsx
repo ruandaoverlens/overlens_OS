@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { connection } from "next/server";
+import { Suspense } from "react";
 import { cookies } from "next/headers";
 import { requireAuth } from "@/lib/auth-guard";
 import {
@@ -12,30 +15,51 @@ import {
 } from "@/components/ui/topbar";
 import { AppSwitcher } from "@/components/app-switcher";
 import { AppNotifications } from "@/components/app-notifications";
+import { CommandPaletteIconButton } from "@/components/command-palette";
 import { SystemSidebar } from "@/components/doc-sidebar";
 import { ChatBreadcrumb } from "@/components/chat/chat-breadcrumb";
 import { CitableSectionsProvider } from "@/components/chat/citable-sections-provider";
 import { getChatConversations } from "@/lib/chat-conversations";
 import { getSystemConfig } from "@/lib/system-configs";
 import { flattenForCitation } from "@/lib/citable-sections";
+import { getSystemsPagesIndex } from "@/lib/palette-index";
+import type { ChatConversationLink } from "@/components/doc-sidebar";
+
+export const metadata: Metadata = {
+  title: "Conversas",
+};
+
+/** O breadcrumb precisa da lista resolvida — resolve em stream, sem travar o shell. */
+async function ChatBreadcrumbLoader({
+  conversations,
+}: {
+  conversations: Promise<ChatConversationLink[]>;
+}) {
+  return <ChatBreadcrumb conversations={await conversations} />;
+}
 
 export default async function ChatLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  await requireAuth();
-
-  const cookieStore = await cookies();
+  // A auth precisa preceder (redirect); cookie e conversas seguem em paralelo.
+  const [, cookieStore] = await Promise.all([requireAuth(), cookies()]);
   const lastSystem = cookieStore.get("overlens_last_system")?.value;
+  // `sidebar_state`: quem recolhe a sidebar continua com ela recolhida no
+  // próximo carregamento (o cookie é escrito pelo `SidebarProvider`).
+  const sidebarOpen = cookieStore.get("sidebar_state")?.value !== "false";
   const config = getSystemConfig(lastSystem);
 
-  const conversations = await getChatConversations();
+  // Promise não awaitada: a sidebar e o breadcrumb resolvem em Suspense.
+  // Garante renderização dinâmica (conversas são por usuário) sem bloquear o shell.
+  await connection();
+  const conversations = getChatConversations();
   const nav = config.getNav();
   const citableSections = flattenForCitation(nav);
 
   return (
-    <SidebarProvider className="h-[calc(100svh-var(--now-playing-h,0px))] overflow-hidden">
+    <SidebarProvider defaultOpen={sidebarOpen} className="h-[calc(100svh-var(--now-playing-h,0px))] overflow-hidden">
       <SystemSidebar
         sections={nav}
         basePath={config.basePath}
@@ -48,11 +72,14 @@ export default async function ChatLayout({
         conversations={conversations}
         defaultView="conversations"
         adminLinks={config.adminLinks}
+        allSections={getSystemsPagesIndex()}
       />
-      <SidebarInset className="h-[calc(100svh-var(--now-playing-h,0px))] overflow-hidden">
+      <SidebarInset id="main-content" className="h-[calc(100svh-var(--now-playing-h,0px))] overflow-hidden">
         <Topbar>
           <TopbarBreadcrumb>
-            <ChatBreadcrumb conversations={conversations} />
+            <Suspense fallback={<ChatBreadcrumb conversations={[]} />}>
+              <ChatBreadcrumbLoader conversations={conversations} />
+            </Suspense>
           </TopbarBreadcrumb>
           <TopbarCenter>
             <span className="text-xs text-muted-foreground">
@@ -61,6 +88,9 @@ export default async function ChatLayout({
             </span>
           </TopbarCenter>
           <TopbarActions>
+            {/* Só aparece quando a sidebar não mostra a própria busca:
+                drawer no mobile, recolhida abaixo de 1180px. */}
+            <CommandPaletteIconButton />
             <AppNotifications />
             <AppSwitcher />
           </TopbarActions>

@@ -1,10 +1,9 @@
 import { redirect } from "next/navigation";
-import { getChatConversations } from "@/lib/chat-conversations";
 
-export default async function ChatHome() {
-  const conversations = await getChatConversations();
-  if (conversations.length > 0) {
-    redirect(`/chat/${conversations[0].id}`);
-  }
+/**
+ * `/chat` é o destino do crumb "Conversas": sempre a nova conversa, um
+ * destino previsível (antes caía na conversa mais recente, que muda).
+ */
+export default function ChatHome() {
   redirect("/chat/new");
 }

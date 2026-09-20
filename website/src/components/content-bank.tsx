@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import {
   SmArrowOutwardLineIcon,
   SmDownloadLineIcon,
@@ -9,14 +10,19 @@ import {
   SmCognitionLineIcon,
   SmLink2LineIcon,
 } from "@/components/icons";
-import {
-  Empty,
-  EmptyHeader,
-  EmptyMedia,
-  EmptyTitle,
-  EmptyDescription,
-} from "@/components/ui/empty";
+import { EmptyState } from "@/components/empty-state";
+import { MediaCardGridSkeleton } from "@/components/skeletons";
+import { Button } from "@/components/ui/button";
+import { headingTitleVariants } from "@/components/ui/heading";
+import { cn } from "@/lib/utils";
+import { AssetUploadModal } from "@/components/asset-upload-modal";
+import { getUploadConfig } from "@/lib/upload-configs";
+import { useAuth, canUpload } from "@/lib/auth";
 import { notify } from "@/lib/notifications";
+import { normalizeText, matchesNormalized } from "@/lib/normalize-text";
+
+const GRID_CLASS = "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 px-4 pb-4";
+const GRID_SIZES = "(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw";
 
 // ─── Types ─────────────────────────────────────────────────────
 
@@ -33,19 +39,25 @@ interface ContentBankProps {
   slug: string;
   /** Search query (filters by title/tags) */
   search?: string;
+  /** Há busca digitada ainda não aplicada (debounce). Atenua a grade e marca `aria-busy`. */
+  searching?: boolean;
   /** Optional active tag filter */
   activeTags?: Set<string>;
   /** Fallback empty message */
   emptyTitle?: string;
   emptyDescription?: string;
+  /** Limpa busca/tags (usado no estado "sem resultados"). */
+  onClearFilters?: () => void;
+  /** Reporta a quantidade de itens visíveis (após busca/tags). */
+  onCountChange?: (visible: number) => void;
 }
 
 // ─── Helpers ───────────────────────────────────────────────────
 
 const SLUG_ICON: Record<string, React.ReactNode> = {
-  "templates-e-layouts": <SmInvoiceLineIcon className="size-8 text-white/40" />,
-  "documentacao": <SmDocLineIcon className="size-8 text-white/40" />,
-  "objetos-3d": <SmCognitionLineIcon className="size-8 text-white/40" />,
+  "templates-e-layouts": <SmInvoiceLineIcon className="size-8 text-muted-foreground" />,
+  "documentacao": <SmDocLineIcon className="size-8 text-muted-foreground" />,
+  "objetos-3d": <SmCognitionLineIcon className="size-8 text-muted-foreground" />,
 };
 
 function getMetaString(meta: Record<string, unknown>, key: string): string {
@@ -129,19 +141,21 @@ function ContentCard({
     <button
       type="button"
       onClick={handleClick}
-      className="group flex flex-col rounded-md overflow-hidden bg-[var(--surface-900)] border border-white/5 hover:border-white/15 transition-colors text-left"
+      aria-label={isLink ? `Abrir link: ${title}` : `Baixar ${title}`}
+      className="group flex flex-col rounded-md overflow-hidden bg-surface-900 border border-white/5 hover:border-white/15 transition-colors text-left outline-none focus-visible:ring-2 focus-visible:ring-foreground"
     >
-      <div className="relative aspect-[4/3] w-full bg-black/40 flex items-center justify-center overflow-hidden">
+      <div className="relative aspect-4/3 w-full bg-black/40 flex items-center justify-center overflow-hidden">
         {thumbnailUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             src={thumbnailUrl}
             alt={title}
-            className="w-full h-full object-cover"
-            loading="lazy"
+            fill
+            sizes={GRID_SIZES}
+            unoptimized
+            className="object-cover"
           />
         ) : (
-          SLUG_ICON[slug] ?? <SmInvoiceLineIcon className="size-8 text-white/40" />
+          SLUG_ICON[slug] ?? <SmInvoiceLineIcon className="size-8 text-muted-foreground" />
         )}
 
         {/* Action badge — top-right */}
@@ -155,16 +169,16 @@ function ContentCard({
 
         {/* Link badge — bottom-left */}
         {isLink && (
-          <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-sm text-[10px] uppercase tracking-wider text-white/80 flex items-center gap-1">
+          <p className={cn(headingTitleVariants({ size: "eyebrow" }), "absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-sm flex items-center gap-1")}>
             <SmLink2LineIcon className="size-3" />
             <span>Link</span>
-          </div>
+          </p>
         )}
       </div>
 
       <div className="flex flex-col gap-0.5 px-3 py-3">
         <p className="text-sm font-medium text-white/90 truncate">{title}</p>
-        <p className="text-xs text-white/40 truncate">
+        <p className="text-xs text-muted-foreground truncate">
           {[typeLabel, tool].filter(Boolean).join(" · ") || "—"}
         </p>
       </div>
@@ -177,23 +191,36 @@ function ContentCard({
 export function ContentBank({
   slug,
   search = "",
+  searching = false,
   activeTags,
   emptyTitle = "Nada por aqui ainda",
   emptyDescription = "Faça upload de um arquivo ou cole um link para começar.",
+  onClearFilters,
+  onCountChange,
 }: ContentBankProps) {
   const [items, setItems] = useState<ContentItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
+  const abortRef = useRef<AbortController | null>(null);
+  const { user } = useAuth();
+  const canSend = !!user && canUpload(user.role);
+  const uploadConfig = getUploadConfig(slug);
+  const [uploadOpen, setUploadOpen] = useState(false);
 
   const fetchItems = useCallback(async () => {
+    abortRef.current?.abort();
+    const abort = new AbortController();
+    abortRef.current = abort;
     setLoading(true);
     try {
-      const res = await fetch(`/api/assets/list-content?type=${encodeURIComponent(slug)}`);
+      const res = await fetch(`/api/assets/list-content?type=${encodeURIComponent(slug)}`, { signal: abort.signal });
       if (!res.ok) throw new Error(`fetch failed (${res.status})`);
       const { items } = await res.json() as { items: ContentItem[] };
       setItems(items ?? []);
       setLoadError(null);
     } catch (err) {
+      // Desmontou ou refez o fetch: não atualiza estado.
+      if ((err as Error)?.name === "AbortError") return;
       const msg = err instanceof Error ? err.message : "Erro desconhecido";
       console.error("[content-bank] fetch failed:", err);
       setItems([]);
@@ -206,21 +233,23 @@ export function ContentBank({
         },
       });
     } finally {
-      setLoading(false);
+      if (!abort.signal.aborted) setLoading(false);
     }
   }, [slug]);
 
   useEffect(() => {
-    fetchItems();
+    void fetchItems();
+    return () => abortRef.current?.abort();
   }, [fetchItems]);
 
   const filtered = useMemo(() => {
-    const q = search.trim().toLowerCase();
+    // Busca insensível a acento: "apresentacao" encontra "Apresentação".
+    const q = normalizeText(search);
     return items.filter((item) => {
       if (q) {
-        const title = getDisplayTitle(item).toLowerCase();
-        const tags = getMetaArray(item.metadata, "tags").map((t) => t.toLowerCase());
-        if (!title.includes(q) && !tags.some((t) => t.includes(q))) {
+        const title = getDisplayTitle(item);
+        const tags = getMetaArray(item.metadata, "tags");
+        if (!matchesNormalized(title, q) && !tags.some((t) => matchesNormalized(t, q))) {
           return false;
         }
       }
@@ -232,55 +261,87 @@ export function ContentBank({
     });
   }, [items, search, activeTags]);
 
+  useEffect(() => {
+    onCountChange?.(filtered.length);
+  }, [filtered.length, onCountChange]);
+
+  const hasFilters = search.trim().length > 0 || (activeTags?.size ?? 0) > 0;
+  const icon = SLUG_ICON[slug] ?? <SmInvoiceLineIcon className="size-6" />;
+
+  const uploadModal = canSend && uploadConfig ? (
+    <AssetUploadModal
+      config={uploadConfig}
+      open={uploadOpen}
+      onOpenChange={setUploadOpen}
+      onSubmit={() => void fetchItems()}
+    />
+  ) : null;
+
   if (loading) {
-    return (
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 px-4 pb-4">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <div
-            key={i}
-            className="aspect-[4/3] rounded-md bg-[var(--surface-900)] animate-pulse"
-          />
-        ))}
-      </div>
-    );
+    return <MediaCardGridSkeleton count={8} className={GRID_CLASS} />;
   }
 
-  if (filtered.length === 0) {
+  // Ainda digitando: mantém a grade (atenuada) em vez de piscar um vazio.
+  if (filtered.length === 0 && !searching) {
     if (loadError) {
       return (
         <div className="flex flex-1 items-center justify-center py-16">
-          <Empty className="border-none">
-            <EmptyHeader>
-              <EmptyMedia contained>
-                {SLUG_ICON[slug] ?? <SmInvoiceLineIcon className="size-6" />}
-              </EmptyMedia>
-              <EmptyTitle>Erro ao carregar</EmptyTitle>
-              <EmptyDescription>{loadError}</EmptyDescription>
-            </EmptyHeader>
-          </Empty>
+          <EmptyState
+            variant="error"
+            icon={icon}
+            title="Erro ao carregar"
+            description={loadError}
+            onRetry={() => void fetchItems()}
+            className="border-none"
+          />
+        </div>
+      );
+    }
+    if (hasFilters) {
+      return (
+        <div className="flex flex-1 items-center justify-center py-16">
+          <EmptyState
+            variant="filtered"
+            icon={icon}
+            title="Nenhum resultado"
+            description="Nada corresponde à busca ou às tags selecionadas."
+            onClear={onClearFilters}
+            className="border-none"
+          />
         </div>
       );
     }
     return (
       <div className="flex flex-1 items-center justify-center py-16">
-        <Empty className="border-none">
-          <EmptyHeader>
-            <EmptyMedia contained>
-              {SLUG_ICON[slug] ?? <SmInvoiceLineIcon className="size-6" />}
-            </EmptyMedia>
-            <EmptyTitle>{emptyTitle}</EmptyTitle>
-            <EmptyDescription>{emptyDescription}</EmptyDescription>
-          </EmptyHeader>
-        </Empty>
+        <EmptyState
+          icon={icon}
+          title={emptyTitle}
+          description={canSend ? emptyDescription : "Ainda não há itens publicados nesta categoria."}
+          action={
+            canSend && uploadConfig ? (
+              <Button type="button" variant="default" size="sm" onClick={() => setUploadOpen(true)}>
+                Fazer upload
+              </Button>
+            ) : undefined
+          }
+          className="border-none"
+        />
+        {uploadModal}
       </div>
     );
   }
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 px-4 pb-4">
-      {filtered.map((item) => (
-        <ContentCard key={item.storagePath} item={item} slug={slug} />
-      ))}
-    </div>
+    <>
+      <div
+        aria-busy={searching || undefined}
+        className={cn(GRID_CLASS, "transition-opacity", searching && "opacity-60")}
+      >
+        {filtered.map((item) => (
+          <ContentCard key={item.storagePath} item={item} slug={slug} />
+        ))}
+      </div>
+      {uploadModal}
+    </>
   );
 }

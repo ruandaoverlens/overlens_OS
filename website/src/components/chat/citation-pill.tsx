@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { SmCloseLineIcon, SmFolderLineIcon } from "@/components/icons"
+import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 type CitationPillProps = {
@@ -28,28 +29,26 @@ export function CitationPill({
     <div
       data-slot="citation-pill"
       className={cn(
-        "inline-flex shrink-0 items-center gap-1.5 rounded-full font-medium text-[#D6A461] bg-[#D6A461]/10 transition-colors",
+        "inline-flex shrink-0 items-center gap-1.5 rounded-full font-medium text-brand-sahara bg-brand-sahara/10 transition-colors",
         isCompact
           ? "h-7 pl-2.5 pr-3 text-xs"
           : "h-9 pl-3 pr-2 text-sm",
         className,
       )}
     >
-      <SmFolderLineIcon className={isCompact ? "size-3.5" : "size-4"} />
+      <SmFolderLineIcon className={isCompact ? "size-3.5" : "size-4"} aria-hidden="true" />
       <span className="max-w-[240px] truncate">{title}</span>
       {onRemove && (
-        <button
+        <Button
           type="button"
+          variant="ghost"
+          size="icon-xs"
           onClick={onRemove}
-          aria-label="Remover seção"
-          className={cn(
-            "flex shrink-0 items-center justify-center rounded-full transition-colors outline-none",
-            "text-[#D6A461] hover:bg-[#D6A461]/15",
-            "size-6",
-          )}
+          aria-label={`Remover seção citada: ${title}`}
+          className="shrink-0 text-brand-sahara hover:bg-brand-sahara/15 hover:text-brand-sahara"
         >
           <SmCloseLineIcon className="size-4" />
-        </button>
+        </Button>
       )}
     </div>
   )

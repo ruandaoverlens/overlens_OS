@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { HeadingTitle } from "@/components/ui/heading";
 import { CLASSES_COMUNS_OVERLENS } from "@/lib/registros/jornada";
 import type { JornadaRow, AnaliseResultado, AnaliseTermo } from "@/lib/registros/jornada";
+import { FieldError } from "@/components/ui/field";
 
 type Analise = AnaliseResultado;
 
@@ -42,6 +44,7 @@ export function JornadaTermosPesquisa({ jornada }: { jornada: JornadaRow }) {
   );
 
   async function handleGerar() {
+    if (loading) return;
     setLoading(true);
     setError(null);
     try {
@@ -54,7 +57,7 @@ export function JornadaTermosPesquisa({ jornada }: { jornada: JornadaRow }) {
   }
 
   return (
-    <div className="flex flex-col gap-4 rounded-lg bg-[var(--surface-950)] p-4">
+    <div className="flex flex-col gap-4 rounded-lg bg-surface-950 p-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-col gap-1">
           <span className="text-sm font-medium">
@@ -70,28 +73,27 @@ export function JornadaTermosPesquisa({ jornada }: { jornada: JornadaRow }) {
           variant="outline"
           size="sm"
           onClick={handleGerar}
-          disabled={loading}
+          loading={loading}
+          loadingText="Gerando…"
         >
-          {loading
-            ? "Gerando…"
-            : analise
-              ? "Gerar novamente"
-              : "Sugerir termos de pesquisa"}
+          {analise ? "Gerar novamente" : "Sugerir termos de pesquisa"}
         </Button>
       </div>
 
-      {error && <p className="text-sm text-destructive">{error}</p>}
+      {error && (
+        <FieldError className="pl-0">{error}</FieldError>
+      )}
 
       {analise && (
-        <div className="flex flex-col gap-4 border-t border-[var(--surface-800)] pt-4">
+        <div className="flex flex-col gap-4 border-t border-surface-800 pt-4">
           {TIPO_TERMO_ORDEM.map((tipo) => {
             const termos = analise.termos.filter((t) => t.tipo === tipo);
             if (termos.length === 0) return null;
             return (
               <div key={tipo} className="flex flex-col gap-1.5">
-                <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                <HeadingTitle as="h3" size="eyebrow">
                   {TIPO_TERMO_LABEL[tipo]}
-                </span>
+                </HeadingTitle>
                 <div className="flex flex-wrap gap-1.5">
                   {termos.map((t) => (
                     <a
@@ -103,7 +105,7 @@ export function JornadaTermosPesquisa({ jornada }: { jornada: JornadaRow }) {
                     >
                       <Badge
                         variant="secondary"
-                        className="cursor-pointer transition-colors hover:bg-[var(--surface-800)]"
+                        className="cursor-pointer transition-colors hover:bg-surface-800"
                       >
                         {t.termo}
                       </Badge>
@@ -129,18 +131,23 @@ export function JornadaTermosPesquisa({ jornada }: { jornada: JornadaRow }) {
 
 /** Passo 2 — classes comuns da Overlens e sugestão de classes pelo objetivo. */
 export function JornadaSugestaoClasses({ jornada }: { jornada: JornadaRow }) {
+  const objetivoId = useId();
   const [objetivo, setObjetivo] = useState("");
   const [loading, setLoading] = useState(false);
+  const [fieldError, setFieldError] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [analise, setAnalise] = useState<Analise | null>(
     jornada.analise?.classes ?? null,
   );
 
   async function handleSugerir() {
+    if (loading) return;
     if (!objetivo.trim()) {
-      setError("Descreva o objetivo do registro para gerar as sugestões.");
+      setFieldError("Descreva o objetivo do registro para gerar as sugestões.");
+      document.getElementById(objetivoId)?.focus();
       return;
     }
+    setFieldError(null);
     setLoading(true);
     setError(null);
     try {
@@ -153,7 +160,7 @@ export function JornadaSugestaoClasses({ jornada }: { jornada: JornadaRow }) {
   }
 
   return (
-    <div className="flex flex-col gap-4 rounded-lg bg-[var(--surface-950)] p-4">
+    <div className="flex flex-col gap-4 rounded-lg bg-surface-950 p-4">
       <div className="flex flex-col gap-1">
         <span className="text-sm font-medium">Apoio à escolha de classes</span>
         <p className="text-xs text-muted-foreground">
@@ -164,9 +171,9 @@ export function JornadaSugestaoClasses({ jornada }: { jornada: JornadaRow }) {
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+        <HeadingTitle as="h3" size="eyebrow">
           Classes comuns da Overlens
-        </span>
+        </HeadingTitle>
         <div className="flex flex-wrap gap-1.5">
           {CLASSES_COMUNS_OVERLENS.map((c) => (
             <Badge key={c.classe} variant="outline" title={c.uso}>
@@ -177,16 +184,26 @@ export function JornadaSugestaoClasses({ jornada }: { jornada: JornadaRow }) {
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <Label>Qual o objetivo do registro?</Label>
+        <Label htmlFor={objetivoId}>Qual o objetivo do registro?</Label>
         <div className="flex flex-wrap gap-2">
           <Input
+            id={objetivoId}
             size="sm"
             className="min-w-56 flex-1"
             value={objetivo}
-            onChange={(e) => setObjetivo(e.target.value)}
+            onChange={(e) => {
+              setObjetivo(e.target.value);
+              if (fieldError) setFieldError(null);
+            }}
+            disabled={loading}
             placeholder="Ex.: proteger o nome da escola e da plataforma de cursos online"
+            aria-invalid={!!fieldError || undefined}
+            aria-describedby={fieldError ? `${objetivoId}-erro` : undefined}
             onKeyDown={(e) => {
-              if (e.key === "Enter") handleSugerir();
+              if (e.key === "Enter" && !loading) {
+                e.preventDefault();
+                handleSugerir();
+              }
             }}
           />
           <Button
@@ -194,22 +211,26 @@ export function JornadaSugestaoClasses({ jornada }: { jornada: JornadaRow }) {
             variant="outline"
             size="sm"
             onClick={handleSugerir}
-            disabled={loading}
+            loading={loading}
+            loadingText="Analisando…"
           >
-            {loading ? "Analisando…" : analise ? "Gerar novamente" : "Sugerir classes"}
+            {analise ? "Gerar novamente" : "Sugerir classes"}
           </Button>
         </div>
+        <FieldError id={`${objetivoId}-erro`}>{fieldError}</FieldError>
       </div>
 
-      {error && <p className="text-sm text-destructive">{error}</p>}
+      {error && (
+        <FieldError className="pl-0">{error}</FieldError>
+      )}
 
       {analise && (
-        <div className="flex flex-col gap-4 border-t border-[var(--surface-800)] pt-4">
+        <div className="flex flex-col gap-4 border-t border-surface-800 pt-4">
           {analise.classes.length > 0 && (
             <div className="flex flex-col gap-1.5">
-              <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+              <HeadingTitle as="h3" size="eyebrow">
                 Classes sugeridas para o objetivo
-              </span>
+              </HeadingTitle>
               <div className="flex flex-col gap-1">
                 {analise.classes.map((c) => (
                   <div key={c.classe} className="flex items-baseline gap-2 text-sm">

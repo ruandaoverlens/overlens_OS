@@ -45,7 +45,7 @@ O maior vilão do nosso tempo não é a tecnologia, nem a inteligência artifici
 
 Ensinam, direta ou indiretamente, que a autonomia criativa é perigosa. Recompensam obediência em vez de visão, repetição em vez de imaginação, consumo em vez de construção. Se divertem com a ignorância alheia. Nesse ambiente, pensar diferente vira risco, errar vira vergonha e imaginar parece apenas uma grande perda de tempo.
 
-O resultado disso não é apenas estagnação econômica ou cultural. É algo mais profundo. Quando indivíduos deixam de assumir a responsabilidade de criar, o mundo não avança, ele entra em colapso silencioso, por falta de criadores dispostos a sustentar o peso das próprias ideias. Então, o futuro não é destruído, é abandonado. E toda vez que alguém desiste de criar, os controladores vencem.
+O resultado disso não é apenas estagnação econômica ou cultural. É algo mais profundo. Quando indivíduos deixam de assumir a responsabilidade de criar, o mundo não avança, ele entra em colapso silencioso, por falta de pessoas dispostas a sustentar o peso das próprias ideias. Então, o futuro não é destruído, é abandonado. E toda vez que alguém desiste de criar, os controladores vencem.
 
 O Papel da Overlens
 

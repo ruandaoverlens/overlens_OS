@@ -70,13 +70,13 @@ function ToggleGroupItem({
       data-spacing={context.spacing}
       className={cn(
         "inline-flex items-center justify-center gap-2 text-sm font-medium outline-none transition-all disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-6 focus-visible:ring-2 focus-visible:ring-foreground whitespace-nowrap",
-        "w-auto min-w-0 shrink-0 rounded-[6px] border-none bg-transparent shadow-none",
-        "text-[var(--surface-700)] dark:text-[var(--surface-400)]",
-        "hover:bg-accent hover:text-[var(--surface-200)] dark:hover:text-[var(--surface-200)]",
-        "data-[state=on]:bg-accent data-[state=on]:text-[var(--surface-200)]",
-        context.size === "sm" || size === "sm" ? "h-8 px-2 min-w-8" :
+        "w-auto min-w-0 shrink-0 rounded-md border-none bg-transparent shadow-none",
+        "text-surface-400",
+        "hover:bg-accent hover:text-surface-200",
+        "data-[state=on]:bg-accent data-[state=on]:text-surface-200",
+        context.size === "sm" || size === "sm" ? "h-10 px-2 min-w-10" :
         context.size === "lg" || size === "lg" ? "h-10 px-3 min-w-10" :
-        "h-9 px-2.5 min-w-9",
+        "h-10 px-2.5 min-w-10",
         "focus:z-10 focus-visible:z-10",
         className
       )}

@@ -2,49 +2,42 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { toast } from "sonner";
-import {
-  FileQuestion,
-  Scale,
-  Radar,
-  RefreshCw,
-  type LucideIcon,
-} from "lucide-react";
+import { Scale, RefreshCw } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { PageHeader } from "@/components/page-header";
+import { SmQuestionLineIcon, SmGraphicEqLineIcon } from "@/components/icons";
 import { AssistenteComposer } from "@/components/registros/assistente-composer";
+import { notify } from "@/lib/notifications/toast";
+import { getGradient } from "@/lib/brand-gradients";
 import type { DocumentoRow, MarcaRow } from "@/lib/registros/types";
 
 interface Sugestao {
   titulo: string;
   pergunta: string;
-  icon: LucideIcon;
-  gradient: string;
+  icon: React.ComponentType<{ className?: string; "aria-hidden"?: boolean | "true" }>;
 }
 
+// Scale/RefreshCw seguem no lucide: a biblioteca de ícones não tem equivalente.
 const SUGESTOES: Sugestao[] = [
   {
     titulo: "Exigências",
     pergunta: "O que significa uma exigência?",
-    icon: FileQuestion,
-    gradient: "linear-gradient(135deg, #77C5D5 0%, #A8DDE8 50%, #77C5D5 100%)",
+    icon: SmQuestionLineIcon,
   },
   {
     titulo: "Processos",
     pergunta: "Qual a situação atual dos nossos processos?",
     icon: Scale,
-    gradient: "linear-gradient(135deg, #D6A461 0%, #FBDD7A 50%, #D6A461 100%)",
   },
   {
     titulo: "Radar",
     pergunta: "Há riscos nos candidatos do radar?",
-    icon: Radar,
-    gradient: "linear-gradient(135deg, #9B6FD6 0%, #C5A3F0 50%, #9B6FD6 100%)",
+    icon: SmGraphicEqLineIcon,
   },
   {
     titulo: "Renovação",
     pergunta: "O que precisamos para a renovação da OVERLENS?",
     icon: RefreshCw,
-    gradient: "linear-gradient(135deg, #3A913F 0%, #6BBF6F 50%, #3A913F 100%)",
   },
 ];
 
@@ -95,25 +88,20 @@ export function AssistenteHome({ marcas, documentos }: AssistenteHomeProps) {
       router.push(`/registros/assistente/${id}${query}`);
       router.refresh();
     } catch (err) {
-      const message = err instanceof Error ? err.message : "Erro inesperado.";
-      toast.error(message);
+      notify.fromError(err, "Não foi possível iniciar a conversa");
       setSubmitting(false);
     }
     // Sem setSubmitting(false) no sucesso — a navegação cuida.
   }
 
   return (
-    <div className="mx-auto max-w-4xl px-6 pt-4 pb-8 max-[479px]:px-2 md:px-8 md:pt-5 md:pb-10">
-      <div className="mb-8 px-2">
-        <h1 className="font-heading text-[40px] font-normal uppercase tracking-normal leading-none text-balance">
-          Assistente
-        </h1>
-        <p className="mt-5 text-sm leading-7 text-pretty text-muted-foreground">
-          Copiloto de análise jurídica com validação humana obrigatória. As respostas
-          se apoiam nos dados cadastrados no módulo, nunca de memória. A decisão
-          jurídica final é sempre do time com o escritório.
-        </p>
-      </div>
+    <div className="mx-auto max-w-4xl px-4 pt-4 pb-8 md:px-8 md:pt-5 md:pb-10">
+      <PageHeader
+        title="Assistente"
+        size="xl"
+        description="Copiloto de análise jurídica com validação humana obrigatória. As respostas se apoiam nos dados cadastrados no módulo, nunca de memória. A decisão jurídica final é sempre do time com o escritório."
+        className="mb-6 px-2"
+      />
 
       <div className="mb-8 px-2">
         <AssistenteComposer
@@ -128,41 +116,44 @@ export function AssistenteHome({ marcas, documentos }: AssistenteHomeProps) {
         />
       </div>
 
-      <div className="grid gap-3 px-2 sm:grid-cols-2">
+      <ul className="grid gap-3 px-2 sm:grid-cols-2" aria-label="Sugestões de perguntas">
         {SUGESTOES.map((s) => {
           const Icon = s.icon;
           return (
-            <Card
-              key={s.titulo}
-              className="group cursor-pointer transition-all duration-200 hover:border-muted-foreground/30 hover:bg-accent/50 hover:-translate-y-0.5 hover:shadow-md"
-              onClick={() => void iniciarConversa(s.pergunta)}
-            >
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div
-                    className="flex size-12 shrink-0 items-center justify-center rounded-xl text-black"
-                    style={{
-                      background: s.gradient,
-                      backgroundSize: "300% 300%",
-                      animation: "icon-gradient 6s ease infinite",
-                    }}
+            <li key={s.titulo}>
+              <Card className="group relative h-full transition-all duration-200 hover:border-muted-foreground/30 hover:bg-accent/50 hover:-translate-y-0.5 hover:shadow-md focus-within:ring-2 focus-within:ring-foreground">
+                <CardHeader>
+                  <button
+                    type="button"
+                    disabled={submitting}
+                    onClick={() => void iniciarConversa(s.pergunta)}
+                    className="flex w-full items-center gap-3 text-left outline-none after:absolute after:inset-0 after:content-[''] disabled:cursor-not-allowed"
                   >
-                    <Icon className="size-5" strokeWidth={1.8} />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <CardTitle className="truncate font-heading text-sm font-semibold text-balance">
-                      {s.titulo}
-                    </CardTitle>
-                    <CardDescription className="mt-0.5 text-xs text-pretty">
-                      {s.pergunta}
-                    </CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-            </Card>
+                    <span
+                      className="flex size-12 shrink-0 items-center justify-center rounded-xl text-black"
+                      style={{
+                        background: getGradient(s.titulo),
+                        backgroundSize: "300% 300%",
+                        animation: "icon-gradient 6s ease infinite",
+                      }}
+                    >
+                      <Icon className="size-5" aria-hidden="true" />
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <CardTitle size="sm" className="truncate text-balance">
+                        {s.titulo}
+                      </CardTitle>
+                      <CardDescription className="mt-0.5 text-xs text-pretty">
+                        {s.pergunta}
+                      </CardDescription>
+                    </span>
+                  </button>
+                </CardHeader>
+              </Card>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 }

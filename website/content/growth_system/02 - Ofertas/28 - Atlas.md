@@ -1,8 +1,8 @@
 ---
 title: Atlas
-summary: Atlas é a porta de entrada da Overlens — imersão de 2 dias (front-end / ingresso) que ensina a construir um Brand System com IA num fim de semana. Ingresso a partir de R$19, persona Tella e Ander.
+summary: Atlas é a porta de entrada da Overlens — imersão de 2 dias (front-end / ingresso) que ensina a construir um Brand System com IA num fim de semana, para quem está erguendo um negócio próprio. Ingresso a partir de R$19, persona Tella e Ander.
 topics: [atlas, oferta front-end, brand system, imersão, porta de entrada]
-keywords: [atlas, brand system, imersão, ingresso, front-end, product led growth, tella, ander, agentes de ia, R$19, R$29,90, fim de semana]
+keywords: [atlas, brand system, imersão, ingresso, front-end, product led growth, empreendedores nexialistas, fundadores, tella, ander, agentes de ia, R$19, R$29,90, fim de semana]
 priority: high
 ai_when_to_use: |
   Use quando o usuário perguntar sobre o Atlas, ingresso de entrada da Overlens, imersão de fim de semana, como construir um Brand System com IA, preço do Atlas, ficha técnica, persona alvo (Tella ou Ander), ou recomendar uma oferta inicial / front-end.
@@ -12,7 +12,7 @@ related: [growth_system/02 - Ofertas/23 - Ofertas]
 
 **O caminho mais rápido para começar**
 
-## O Atlas é a porta de entrada para o universo da Overlens. Foi pensado para quem sente que as ferramentas mudaram e quer aprender na prática como dominá-las.
+## O Atlas é a porta de entrada para o universo da Overlens. Foi pensado para quem está construindo algo próprio, sente que as ferramentas mudaram e quer aprender na prática como colocá-las a serviço do próprio negócio.
 
 Criar apps e sistemas ficou fácil. Em poucos meses, milhões de soluções vão entrar no mercado. Vencerá quem souber se diferenciar. Aprenda e avance para o próximo passo.
 
@@ -49,16 +49,16 @@ Não basta gerar ativos bonitos. Você precisa do sistema que os conecta, organi
 
 ## Para quem é o Atlas Brand System?
 
-Fundador  
+Fundador em início  
 Construindo uma marca do zero e quer evitar ficar refém de peças avulsas. Precisa de um sistema que sustente o crescimento desde o início.
 
-Designer  
-Cansado de entregar assets soltos que se perdem em pastas. Quer operar em outro nível, construindo sistemas que conectam marca, IA e operação.
+Quem vem do ofício técnico  
+Engenheiro, arquiteto, desenvolvedor ou artista que domina uma disciplina e agora precisa transformá-la em negócio próprio. Sabe construir a coisa; falta construir a marca que a sustenta.
 
-Gestor de Marca  
-Responsável por manter consistência em escala. Precisa centralizar assets, diretrizes e agentes de IA em um só lugar para que cada peça saia dentro do padrão.
+Quem já tem negócio rodando  
+Responsável por manter consistência enquanto cresce. Precisa centralizar assets, diretrizes e agentes de IA em um só lugar para que cada peça saia dentro do padrão, sem depender de si para tudo.
 
-Criador Independente  
+Construtor independente  
 Sabe usar IA para gerar, mas quer dar o próximo passo: parar de competir no COMO e começar a se diferenciar pelos PORQUÊS.
 
 ## O que você leva do Atlas Brand System
