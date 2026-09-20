@@ -1,3 +1,13 @@
+---
+title: Definição
+summary: Apresenta o Business Document como a sobrecamada executiva do negócio da Overlens — o que ele responde, quais sistemas são fonte de verdade sobre cada assunto, a escala de classificação de certeza (DEFINIDO, EM VALIDAÇÃO, HIPÓTESE, HISTÓRICO, PENDENTE), as regras de evolução do documento e a estrutura das seis seções.
+topics: [business document, definição, escopo, fontes de verdade, classificação de certeza, governança documental]
+keywords: [Business Document, Brand System, Growth System, Product System, Community System, fontes de verdade, DEFINIDO, EM VALIDAÇÃO, HIPÓTESE, HISTÓRICO, PENDENTE, Mapa de Empatia, Value Proposition Canvas, ADR, criação de valor, captura de valor, documento interno]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar o que é o Business Document, qual o seu escopo, qual sistema é fonte de verdade sobre determinado assunto, como interpretar as marcações de certeza, por que Mapa de Empatia e Value Proposition Canvas não vivem aqui, ou quais são as regras para atualizar este documento.
+related: ["business_doc/01 - Overview/01 - Executive Overview.md", "growth_system/00 - Definição/01 - Definição.md", "brand_system/01 - Definição/01 Definição.md", "product_system/00 - Definição/01 - Definição.md"]
+---
 # Definição
 
 Documento interno · Acesso restrito · Em transição

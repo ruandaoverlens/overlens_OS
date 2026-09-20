@@ -2,7 +2,7 @@
 title: Introdução
 summary: Introdução ao Manual de Produção de Conteúdo da Overlens, com a parábola "O Cego que Enxergava o Invisível" e os símbolos que sustentam a filosofia de tornar visível o valor das ideias.
 topics: [introdução, manual, narrativa fundadora, simbolismo, comunicação]
-keywords: [empreendedores nexialistas, londrina, diamante escondido, valor percebido, simbolismo, parábola, manual, identidade, voz da marca]
+keywords: [empreendedor, escola de negócios criação e realização, nexialismo, londrina, diamante escondido, valor percebido, simbolismo, parábola, manual, identidade, voz da marca]
 priority: high
 ai_when_to_use: |
   Use quando o usuário pedir o contexto fundador do Manual de Produção de Conteúdo, quiser a parábola do "Cego que Enxergava o Invisível" ou precisar entender o porquê filosófico por trás da comunicação Overlens antes de criar conteúdo.
@@ -13,7 +13,11 @@ related: []
 
 ## O Manual de Produção de Conteúdo da Overlens é um mapa para navegar o território simbólico e estratégico que sustenta a nossa comunicação.
 
-A Overlens nasceu com a missão de preparar Empreendedores Nexialistas para atravessarem as fronteiras entre design, filosofia, arte e tecnologia, transformando ideias em realidades. Cada texto, imagem ou vídeo produzido em nome da Overlens carrega essa essência: clareza, profundidade, impacto e transformação.
+A Overlens é uma escola de negócios, criação e realização. Existe para pessoas que têm uma ideia, uma ambição ou uma visão de futuro e querem transformá-la em realidade. **DEFINIDO.**
+
+O público é o **empreendedor**, e o que o define é o estado, não a profissão: ele pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa, de um ofício manual ou de nenhuma dessas origens. Atravessar fronteiras entre conhecimentos — filosofia, arte, tecnologia, negócio, design — é uma capacidade que a Overlens desenvolve (nexialismo), não um rótulo que colamos em quem nos procura. IA é infraestrutura do que fazemos, não a categoria da escola.
+
+Cada texto, imagem ou vídeo produzido em nome da Overlens carrega essa essência: clareza, profundidade, impacto e transformação.
 
 Este manual existe para garantir que todas as peças de comunicação expressem a mesma voz, a mesma visão e o mesmo rigor criativo. Aqui reunimos princípios, diretrizes e referências que orientam desde o tom de voz até a identidade visual, passando pelos arquétipos, pela direção estratégica e pelas boas práticas em cada canal.
 

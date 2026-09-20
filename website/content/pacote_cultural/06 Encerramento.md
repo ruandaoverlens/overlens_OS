@@ -1,11 +1,11 @@
 ---
 title: Seu destino está selado em seus olhos.
-summary: Encerramento do Pacote Cultural — costura o fio condutor de todas as referências (o futuro como projeto criado), retoma o propósito da Overlens (colocar o poder da criação nas mãos das pessoas) e apresenta a Overlens como a escola para Empreendedores Nexialistas, nascida na convergência entre imaginação humana e tecnologia.
+summary: Encerramento do Pacote Cultural — costura o fio condutor de todas as referências (o futuro como projeto criado), retoma o propósito da Overlens (colocar o poder da criação nas mãos das pessoas) e apresenta a Overlens como escola de negócios, criação e realização, nascida na convergência entre imaginação humana e tecnologia.
 topics: [encerramento, propósito, era da criação, futuro, nexialismo, empreendedorismo, manifesto]
-keywords: [futuro, era da criação, propósito overlens, nexialista, empreendedor nexialista, inventores, artistas, engenheiros, arquitetos, fundadores, tecnologia, inteligência artificial, manifesto, fechamento, pacote cultural]
+keywords: [futuro, era da criação, propósito overlens, pensamento nexialista, empreendedor, inventores, artistas, engenheiros, arquitetos, fundadores, tecnologia, inteligência artificial, manifesto, fechamento, pacote cultural]
 priority: medium
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre o fechamento/conclusão do Pacote Cultural, sobre o fio condutor que une todas as referências culturais da Overlens, sobre como o repertório cultural se conecta ao propósito da escola e à era da criação, ou sobre a definição da Overlens como escola para Empreendedores Nexialistas.
+  Use quando o usuário perguntar sobre o fechamento/conclusão do Pacote Cultural, sobre o fio condutor que une todas as referências culturais da Overlens, sobre como o repertório cultural se conecta ao propósito da escola e à era da criação, ou sobre a definição da Overlens como escola de negócios, criação e realização.
 related: []
 ---
 
@@ -21,5 +21,5 @@ Todas essas referências compartilham um mesmo fio condutor: a ideia de que o fu
 
 Cada vez mais pessoas poderão se tornar inventores, artistas, engenheiros, arquitetos e fundadores de algo que ainda não existe. Pessoas que transformam ideias em realidade usando a tecnologia como ferramenta. Estamos entrando na era da criação. Uma era em que milhares de novas invenções, descobertas, obras de arte e negócios nascerão todos os dias através das pessoas que chamamos de nexialistas. Pessoas capazes de conectar conhecimentos diferentes e usar tecnologia para realizar boas ideias. Não importa de onde elas vieram; importa o que fazem com a própria ideia.
 
-É nesse momento único da história, quando a criatividade humana e a tecnologia convergem como nunca antes, que nasceu a Overlens, a escola para Empreendedores Nexialistas. Um lugar dedicado a preparar pessoas para um novo mundo, onde a criatividade não será apenas uma habilidade.
+É nesse momento único da história, quando a criatividade humana e a tecnologia convergem como nunca antes, que nasceu a Overlens, a escola de negócios, criação e realização. Um lugar dedicado a preparar pessoas para um novo mundo, onde a criatividade não será apenas uma habilidade.
 

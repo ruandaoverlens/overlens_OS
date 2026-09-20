@@ -7,6 +7,8 @@ import type { NavFile, NavSection } from "@/components/doc-sidebar";
 const ALL_SYSTEM_SLUGS: SystemSlug[] = [
   "business",
   "docs",
+  "product",
+  "community",
   "estudio",
   "growth",
   "pacote",

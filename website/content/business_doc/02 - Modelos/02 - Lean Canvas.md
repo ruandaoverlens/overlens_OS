@@ -1,3 +1,13 @@
+---
+title: Lean Canvas
+summary: PENDENTE DE CONSTRUÇÃO — a página apresenta o Lean Canvas de Ash Maurya como o artefato de trabalho mais útil para uma companhia em transição, lista o status pendente de cada um dos nove blocos, compara Lean Canvas e Business Model Canvas e fixa a regra de que toda hipótese precisa declarar como seria refutada. Nenhum bloco está preenchido.
+topics: [lean canvas, hipóteses de negócio, risco e aprendizado, artefato pendente, comparação de modelos]
+keywords: [Lean Canvas, Ash Maurya, Business Model Canvas, nove blocos, problema, segmentos de clientes, proposta de valor única, solução, canais, fontes de receita, estrutura de custos, métricas-chave, vantagem injusta, early adopters, JTBD, hipótese refutável, PENDENTE]
+priority: medium
+ai_when_to_use: |
+  Use apenas para explicar que o Lean Canvas da Overlens está PENDENTE DE CONSTRUÇÃO, por que ele é o artefato de trabalho durante a transição e qual a diferença de função entre ele e o Business Model Canvas. Não apresente nenhum bloco como preenchido nem infira conteúdo a partir de documentos anteriores.
+related: ["business_doc/02 - Modelos/01 - Business Model Canvas.md", "business_doc/04 - Estratégia/02 - Strategic Bets.md", "business_doc/04 - Estratégia/01 - Moats.md", "business_doc/03 - Arquitetura/02 - Arquitetura de Receita.md"]
+---
 # Lean Canvas
 
 ## Estrutura criada, conteúdo pendente. O Lean Canvas oficial da Overlens será construído separadamente e incorporado aqui.

@@ -1,6 +1,8 @@
 import {
   getSections,
   getBusinessSections,
+  getProductSections,
+  getCommunitySections,
   getEstudioSections,
   getGrowthSections,
   getPacoteSections,
@@ -12,6 +14,8 @@ import type { NavSection, SidebarLink } from "@/components/doc-sidebar";
 
 export type SystemSlug =
   | "business"
+  | "product"
+  | "community"
   | "docs"
   | "estudio"
   | "growth"
@@ -21,6 +25,8 @@ export type SystemSlug =
 
 const SYSTEM_SLUGS = new Set<string>([
   "business",
+  "product",
+  "community",
   "docs",
   "estudio",
   "growth",
@@ -89,6 +95,20 @@ const SYSTEMS: Record<SystemSlug, SystemConfig> = {
     title: "Business Doc",
     subtitle: "Negócio & Estratégia",
     getNav: () => toNav(getBusinessSections()),
+  },
+  product: {
+    slug: "product",
+    basePath: "/product",
+    title: "Product System",
+    subtitle: "Produto & Experiência",
+    getNav: () => toNav(getProductSections()),
+  },
+  community: {
+    slug: "community",
+    basePath: "/community",
+    title: "Community System",
+    subtitle: "Comunidade & Cultura",
+    getNav: () => toNav(getCommunitySections()),
   },
   docs: {
     slug: "docs",

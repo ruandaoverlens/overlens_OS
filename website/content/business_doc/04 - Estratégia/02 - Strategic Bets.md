@@ -1,3 +1,13 @@
+---
+title: Strategic Bets
+summary: Registra as nove apostas estratégicas da companhia — aprendizagem baseada em projetos, IA como infraestrutura, negócios para criadores, comunidade como infraestrutura, aceleração e incubação, serviços e B2B, produtos físicos como artefatos, sistema operacional de aprendizagem e realização, e operação por sistemas —, cada uma com nível de certeza, justificativa, o que precisaria ser verdade e como saberíamos que está errada.
+topics: [apostas estratégicas, nível de certeza, hipóteses refutáveis, priorização, direção da companhia]
+keywords: [strategic bets, apostas, PBL, aprendizagem baseada em projetos, IA como infraestrutura, escola de negócios dos criadores, comunidade como infraestrutura, aceleração, incubação, assessoria, B2B, artefatos de pertencimento, grafo de capacidades, evidências, operação por sistemas, lançamentos, CRM, EM VALIDAÇÃO, HIPÓTESE]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar quais são as apostas estratégicas da Overlens, em que a companhia está apostando e com que grau de certeza, o que precisaria ser verdade para cada aposta se confirmar, ou como saberíamos que uma delas está errada. Aposta não é decisão — sempre transmita o nível de certeza junto com o conteúdo.
+related: ["business_doc/04 - Estratégia/01 - Moats.md", "business_doc/04 - Estratégia/04 - Riscos e Incertezas.md", "business_doc/01 - Overview/04 - Business Thesis.md", "business_doc/03 - Arquitetura/01 - Arquitetura de Produtos e Serviços.md"]
+---
 # Strategic Bets
 
 ## As apostas estratégicas atuais da Overlens. Aposta não é decisão consolidada — e esta página existe para que essa diferença não se perca.

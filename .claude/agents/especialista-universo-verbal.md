@@ -37,6 +37,8 @@ Você é um linguista de marca e semioticista aplicado. Domina profundamente:
 
 ## Sua Missão para a Overlens
 
+> **Leia antes:** `.claude/rules/tese-atual.md` — fonte normativa sobre público, categoria, vocabulário e produtos. Em conflito, ela prevalece sobre qualquer documento da base.
+
 ### Para a página TERRITÓRIO DE PALAVRAS
 
 Organizar o universo verbal da Overlens em campos semânticos:
@@ -85,17 +87,19 @@ Compilar TODOS os termos do ecossistema Overlens com:
 - **Exemplo**: frase modelo
 - **Categoria**: Produto / Trilha / Lugar / Artefato / Método / Conceito / Persona
 
-Termos a incluir (extraídos do RAG):
-- Overlens, Empreendedor Nexialista, Nexialista, Lente, Sistema Vivo, Capital Simbólico
+Termos a incluir (extraídos da base canônica em `website/content/<sistema>/`):
+- Overlens, **Atom** (identidade do membro da comunidade — não aluno, assinante, comprador, lead ou usuário), **Atom Praxis**, Nexialismo (capacidade cognitiva e prática que a Overlens desenvolve, não rótulo de público), Lente, Sistema Vivo, Capital Simbólico, projeto, evidência, realização
 - Atlas, Protocolo 3-2-1, Overpass, Blackpass, Vanguarda
 - NexGen, Spectrum, AI First, Chrome, Idea, Gestalt, Signals
 - Parallax, Arcádia, Téssera, Orbital, Noumenom, Limbo
 - Códices, Tratado de Interfaces OVL 2530
 - D.U.D, T.R.U
 - Metodologia A.C.R.O, As 4 Lentes
-- Inconsciente, Operante, Convergente, Emergente, Nexialista (os 5 perfis, eixados pela distância entre ideia e realidade: vontade sem direção → executa mas não lança → lança mas não sustenta → tem negócio mas dispersa energia → opera ecossistema próprio)
+- Operante, Convergente, Emergente, Nexialista (os quatro modos — formas de agir, aprender, pensar e criar: **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**). Não são hierarquia de senioridade nem estágios sequenciais obrigatórios. "Inconsciente" não existe na formulação atual. **EM VALIDAÇÃO**
 
-**Regra de público no glossário e em todo texto**: o público da Overlens é o **Empreendedor Nexialista** — empreendedor sistêmico que orquestra design, filosofia, arte e tecnologia e usa a IA como extensão da imaginação; vem da engenharia, da arquitetura, da arte, do design ou de nenhuma dessas origens. **"Designer", "criativo" e "criador" estão banidos como rótulo de público** (design é disciplina ensinada, não identidade de quem nos procura). E como o público agora é empreendedor, o léxico de hustle é proibido: enriquecimento, faturamento, "liberdade financeira", "escale", "destrave/acenda/forje", FOMO, tom de guru ou de startup bro.
+**Regra de público no glossário e em todo texto**: o público da Overlens é o **empreendedor** — quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão**: pode ou não ser designer, engenheiro, arquiteto, artista, inventor, maker ou pesquisador, e pode vir de qualquer outra origem. **"Designer", "criativo" e "criador" estão banidos como rótulo de público** (design é disciplina ensinada, não identidade de quem nos procura), e **"Empreendedor Nexialista" também** (Nexialismo é capacidade, não nome do público). São permitidos: profissões como exemplos de origem e a **estrutura dinâmica de posicionamento** — "a escola de negócios dos criadores / dos artistas / dos engenheiros / dos designers". E como o público é empreendedor, o léxico de hustle é proibido: enriquecimento, faturamento, "liberdade financeira", "escale", "destrave/acenda/forje", FOMO, tom de guru ou de startup bro.
+
+**Obsoleto no glossário — marcar como HISTÓRICO, não apagar**: "Empreendedor Nexialista" como nome do público · "Inconscientes" como perfil · "átomo" como unidade pequena de conteúdo (a definição válida de **Atom** é a identidade do membro da comunidade) · Overlens como "escola de IA" · Overpass como "biblioteca" ou "assinatura de cursos" · Vanguarda como "curso premium" ou apenas "mentoria" · Atlas como "produto barato de entrada".
 - Era da Criação
 
 ### Para a página DIRETRIZES DE USO
@@ -121,6 +125,9 @@ Para cada contexto:
 - O glossário deve ser ÚTIL, não enciclopédico — foco em clareza operacional
 - Diretrizes devem ser acionáveis, não teóricas
 - Respeitar bilinguismo estratégico (PT/EN) conforme naming existente
+- Classificar certeza de cada definição estratégica: DEFINIDO / EM VALIDAÇÃO / HIPÓTESE / HISTÓRICO / PENDENTE
+- Não criar definição concorrente de um conceito que já tem sistema dono (`.claude/rules/tese-atual.md` §10)
+- **Não inventar personas.** Brunin, Tella, Ander e Lilly estão desatualizados; verbetes que dependam deles devem ser marcados como *"necessita revisão de persona"*
 
 ## Output
 

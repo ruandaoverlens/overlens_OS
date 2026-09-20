@@ -1,23 +1,29 @@
 ---
 title: Convergentes
-summary: Aprofunda o perfil Convergente — quem já lança projetos mas não sustenta, recomeçando do zero a cada ciclo por se apoiar em metodologias em vez de um sistema próprio — com paradoxo central, subtipos, objeções, antídotos e gatilhos.
-topics: [maturidade, convergentes, sustentação, sistema próprio, atlas, overpass, empreendedores nexialistas]
-keywords: [convergentes, empreendedores nexialistas, lançam não sustentam, sistema próprio, recomeçar do zero, atlas, overpass, alquimista conceitual, metodologia, framework, diferenciação, IA, micro-vitórias]
+summary: Descreve o modo Convergente — a forma de agir que atravessa fronteiras entre conhecimentos, ferramentas e disciplinas, conectando partes antes separadas — com paradoxo central, variações, objeções, antídotos e gatilhos. Modo comportamental, não estágio de maturidade.
+topics: [quatro modos, convergente, conexão entre disciplinas, sistema próprio, atlas, overpass]
+keywords: [convergente, modo convergente, conecta partes separadas, sistema próprio, recomeçar do zero, atlas, overpass, repertório, metodologia, framework, micro-vitórias, em validação]
 priority: medium
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre o perfil Convergente, pessoas que já têm projetos ou produtos no ar mas recomeçam do zero a cada ciclo, ou ao desenhar narrativa de Atlas, Overpass e mensagens sobre sistema próprio e visão sistêmica.
+  Use quando o usuário perguntar sobre o modo Convergente — quem busca conhecimento fora da própria especialidade, combina ferramentas e conecta disciplinas — ou ao desenhar comunicação sobre sistema próprio e visão sistêmica. Convergente é uma forma de agir e pensar, não um estágio de maturidade nem um degrau de senioridade.
 related: []
 ---
 
 # Convergentes
 
-## Convergentes já lançam: têm projetos no ar, primeiros clientes ou produtos vendendo. O que não conseguem é sustentar. Cada entrega recomeça do zero porque se apoiam em metodologias emprestadas sem construir um sistema próprio que funcione sem eles. Na Overlens, Convergentes encontram a coragem para questionar suas próprias molduras e a estratégia para transformar esforço repetido em um sistema vivo. 
+## Convergente é o modo de quem atravessa fronteiras entre conhecimentos, ferramentas e disciplinas — e conecta partes que antes estavam separadas.
 
-**Soluções**: Atlas Overpass 
+> **Nota de enquadramento — EM VALIDAÇÃO.** Apesar do nome da pasta, **não se trata de maturidade sequencial.** Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, não degraus de uma escada nem níveis de senioridade. Ninguém precisa "sair" do Operante para "chegar" ao Convergente, e a mesma pessoa pode agir em modos diferentes conforme o problema. Formulação completa em `02 - Público/06 - Perfis de Clientes.md`.
+
+Quem age no modo Convergente percebe que uma única especialização já não resolve certos problemas. Busca conhecimento fora da especialidade de origem, conecta disciplinas, amplia repertório, combina ferramentas e tenta adaptar o que já sabe a contextos novos — enquanto começa a enxergar os limites dos paradigmas anteriores.
+
+O atrito característico desse modo: a conexão acontece, mas ainda apoiada em metodologias emprestadas. Cada entrega recomeça do zero porque não existe um sistema próprio que funcione sem a presença da pessoa. Na Overlens, o trabalho é transformar esforço repetido em estrutura que permanece.
+
+**Como a Overlens se relaciona com esse modo**: **Atlas** como experiência de entrada e ativação; **Overpass** como camada contínua de desenvolvimento de capacidades.
 
 ### **O Paradoxo Convergente**
 
-**Convergente (substantivo):** *aquele/a que já coloca coisas no mundo, mas depende inteiramente de si para cada nova entrega.*
+**Convergente (substantivo):** *aquele/a que conecta partes que antes estavam separadas, mas ainda depende inteiramente de si para cada nova entrega.*
 
 *Você está no limiar da transformação. Já provou que consegue lançar, e mesmo assim cada ciclo parece começar do zero. Suas tentativas de integrar novas tecnologias e metodologias são superficiais porque você tenta encaixá-las em estruturas mentais antigas. É como tentar rodar software quântico em hardware analógico.*
 
@@ -29,9 +35,9 @@ related: []
 
 | Campo | Descrição |
 | :---- | :---- |
-| **Resumo Essencial** | O Convergente já lança, mas não sustenta. Avançou além da simples execução, porém se apoia excessivamente em metodologias como muletas, e por isso cada entrega recomeça do zero. Falta-lhe a visão sistêmica capaz de transformar esforço repetido em estrutura que se mantém. Sua batalha não é mais sobre aprender, é sobre desaprender e reconstruir. |
-| **Arquétipo** | Alquimista Conceitual emergindo do Executor Metódico. |
-| **Momento de vida** | Pessoas com algo real no ar: uma oferta que vende de vez em quando, um produto lançado, um pequeno negócio que depende inteiramente delas. Origem irrelevante — vêm da engenharia, da arte, da arquitetura, do design ou de nenhuma formação específica. Já sentem a inadequação dos métodos emprestados, mas ainda não sabem como romper. |
+| **Resumo Essencial** | Conecta conhecimentos, ferramentas e disciplinas, e já coloca coisas no mundo — mas se apoia em metodologias emprestadas como muletas, e por isso cada entrega recomeça do zero. Falta a visão sistêmica capaz de transformar esforço repetido em estrutura que se mantém. A questão não é mais aprender: é desaprender e reconstruir. |
+| **Arquétipo** | Alquimista conceitual: combina o que estava separado. |
+| **Momento de vida** | Pessoas com algo real no ar: uma oferta que vende de vez em quando, um produto lançado, um pequeno negócio que depende inteiramente delas. Podem vir da engenharia, da arte, da arquitetura, do design ou de nenhuma formação específica — o que define é o estado, não a profissão. Já sentem a inadequação dos métodos emprestados, mas ainda não sabem como romper. |
 | **JTBD Funcional** | Construir um sistema próprio — processo, oferta e modelo — que sustente o que já foi lançado sem depender de reinvenção a cada ciclo. |
 | **JTBD Emocional** | Parar de sentir que está sempre recomeçando; ter a sensação de que algo se acumula e permanece. |
 | **Motivação Primária** | Desejo profundo de construir algo que se sustente — um negócio percebido como raro, relevante e difícil de replicar. Vontade de sair do ciclo de esforço reiniciado para ocupar um lugar estratégico e autoral. |
@@ -44,12 +50,12 @@ related: []
 | **Comportamento de consumo** | Plataformas: LinkedIn (tendências de inovação, cases estratégicos), YouTube (frameworks avançados e modelos de negócio), newsletters de tecnologia e comportamento de mercado. Buscam conteúdos que prometem evolução estrutural, mas ainda caem em armadilhas de soluções metodológicas simplistas. |
 | **Barreira Sistêmica** | Excesso de fórmulas prontas de crescimento que não ensinam pensamento adaptativo. Pressão silenciosa por resultados imediatos num ambiente onde construir estrutura exige coragem intelectual e paciência. |
 
-**Solução-gancho**: Overpass ou Atlas  
-**Métricas de sucesso**:  
+**Como a Overlens entra**: Atlas (entrada e ativação) e Overpass (camada contínua).  
+**Métricas de sucesso** *(HISTÓRICO — necessitam revalidação)*:  
 Depoimento sobre receita que se repete sem novo esforço heroico  
 NPS acima de 60 pontos (mínimo)
 
-### **Subtipos de Convergentes:**
+### **Variações dentro do modo Convergente:**
 
 **Técnico Estagnado**: Mestre na execução, mas sem visão estratégica própria. Entrega bem e sente que virou operário do próprio negócio.
 
@@ -79,9 +85,9 @@ Ter a sensação de que o negócio está inteiramente pendurado nele.
 
 ### **Objeções e Antídotos:**
 
-"Não tenho tempo para isso agora."	\> Bootcamps curtos (Atlas) (2 dias), com entregáveis aplicáveis imediatamente.
+"Não tenho tempo para isso agora."	\> Atlas, experiência de entrada e ativação, concentrada e com entregáveis aplicáveis imediatamente.
 
-"Já tentei antes e não funcionou." \> Overpass foca em construir sistema próprio \+ aplicação prática \+ entrega concreta.
+"Já tentei antes e não funcionou." \> Overpass, camada contínua, foca em construir sistema próprio \+ aplicação prática \+ entrega concreta.
 
 "Tenho medo de investir energia e não dar resultado." \> Resultados em menos de 30 dias \+ micro vitórias semanais perceptíveis.
 
@@ -213,4 +219,4 @@ Evitar: palavras que soem como "aprenda mais", "ganhe mais técnica".
 ➔ Eles já têm técnica, falta visão e integração autoral.
 
 **Preferir**:  
-➔ Expressões como "arquitetar", "construir sistemas", "gerar provas de valor singular", "mapear novos territórios". ➔ Isso os coloca em posição ativa e superior, exatamente o que seus egos emergentes querem e precisam ouvir.
+➔ Expressões como "arquitetar", "construir sistemas", "gerar provas de valor singular", "mapear novos territórios". ➔ Isso os coloca em posição ativa e autoral, que é onde de fato querem estar.

@@ -1,63 +1,117 @@
 # Vanguarda
 
-**Mentoria avançada para quem constrói o que ainda não existe**
+## A Vanguarda é a camada de aceleração da Overlens: onde algo que já existe recebe intensidade, proximidade e estrutura para avançar mais rápido.
+
+**Status: DEFINIDO como oferta ativa · EM REDEFINIÇÃO quanto ao enquadramento.** A definição da oferta pertence ao Business Document, em *Arquitetura de Produtos e Serviços*. Esta página trata do que pertence ao Growth System: quem chega até aqui, que argumento move a decisão, como é a compra e qual o timing.
 
 [**Manual da Vanguarda**](https://docs.google.com/document/d/10HPRcbj0Fa0aMWtLbKIn7naUk7MruSG6CgxOZAse9nM/edit?usp=sharing)
 
-## A Vanguarda é o programa de aceleração de resultados da Overlens. Um espaço reservado para quem já tem um negócio de pé e não apenas acompanha as transformações do presente, mas decide moldar o que vem depois. É uma mentoria avançada, um laboratório estratégico e um ponto de convergência entre visão, execução e influência.
+## O que a Vanguarda é
 
-Projetada para quem já superou o básico e deseja operar em um novo patamar de maturidade, a Vanguarda forma mentes capazes de pensar sistemicamente, agir com inteligência simbiótica e posicionar o próprio negócio com autoridade em territórios emergentes. (Habilidades) \> (Negócio)
+A Vanguarda é a oferta de maior intensidade, proximidade e transformação do ecossistema. A direção atual a aproxima de **aceleração, desenvolvimento, execução, acompanhamento, comunidade de alto envolvimento e transformação de projetos e negócios**.
 
-Não há fórmulas prontas. Há orientação, curadoria, desafio e clareza.
+Historicamente foi documentada como mentoria avançada. **Definições estreitas como "curso premium" ou "mentoria em grupo" devem ser evitadas** — não porque mentoria não aconteça dentro dela, mas porque descrever a oferta pela técnica empregada esconde o que ela faz.
 
-## O que é a Vanguarda?
+Isso **não obriga a comunicação comercial a usar literalmente a palavra "aceleradora"**. Aceleração é o enquadramento interno da camada; a expressão pública ainda é uma decisão em aberto.
 
-Um programa de aceleração de resultados para negócios emergentes.
+## Aceleração não é incubação
 
-* Um programa de mentoria para fundadores com visão autoral e desejo de protagonismo  
-* Um ecossistema de desenvolvimento avançado com trilhas personalizadas por perfil  
-* Um grupo seleto de mentes inquietas, conectadas por propósito  
-* Um ambiente onde estratégia, tecnologia, narrativa e execução se encontram
+Distinção importante e frequentemente confundida no mercado:
 
-A Vanguarda oferece mais do que conhecimento. Oferece estrutura para decisão, espaço para realização e fôlego para criar com consistência.
+| | O que faz | Sobre o quê atua |
+| :---- | :---- | :---- |
+| **Incubação** | Ajuda algo a **nascer** e encontrar forma | Um projeto específico em estágio inicial |
+| **Aceleração** | Ajuda algo **existente** a avançar mais rápido | Um projeto ou negócio que já saiu do papel |
 
-## Estrutura e diferenciais
+A Vanguarda está do lado da aceleração. A incubação é uma frente distinta — **EM VALIDAÇÃO**, ainda em construção — e sua relação com a Vanguarda não está decidida: podem ser camadas separadas ou continuação uma da outra. **PENDENTE.**
 
-A jornada da Vanguarda é organizada em 8 níveis de construção de um negócio, baseado na metodologia lean.
+Para o Growth System, a consequência é prática: **são conversas comerciais diferentes**. Quem procura incubação está perguntando "isso pode existir?". Quem procura aceleração está perguntando "como isso avança mais rápido?". Usar o mesmo argumento para os dois desqualifica a oferta.
 
-* **Entropia**  
-* **Direção**  
-* **Validação**  
-* **Caixa**  
-* **Previsibilidade**  
-* **Equipe**  
-* **Processos**  
-* **Expansão**
+## Estrutura do programa
 
-Cada membro inicia sua trajetória com base em seu vetor cognitivo predominante e avança em direção ao desenvolvimento completo. Ao longo do caminho, assume missões, realiza projetos próprios, participa de ciclos de desafio e pode receber reconhecimento público como Nexialista em ascensão.
+A jornada da Vanguarda é organizada em **8 níveis de construção de negócio**, inspirados em metodologia lean. Eles descrevem a estrutura do programa — os estágios que um negócio atravessa — e **não** são hierarquia de senioridade, sistema de gamificação nem classificação de pessoas.
 
-## Papel estratégico dentro da Overlens
+1. **Entropia** — desordem inicial: muitas frentes, pouca direção.
+2. **Direção** — escolha de eixo e recorte de escopo.
+3. **Validação** — evidência de que existe demanda real.
+4. **Caixa** — o negócio passa a se sustentar.
+5. **Previsibilidade** — a receita deixa de depender de sorte e de picos.
+6. **Equipe** — o negócio deixa de depender exclusivamente de uma pessoa.
+7. **Processos** — o que funciona vira sistema repetível.
+8. **Expansão** — crescimento a partir de base estável.
 
-A Vanguarda é o vértice mais alto do ecossistema atual. Serve como espaço de aprofundamento, incubação de lideranças e ativação de novos produtos. É onde se formam os futuros experts da Overlens, os mentores internos, os proxies narrativos e os guardiões culturais da marca. Mais do que um programa, a Vanguarda é um instrumento de multiplicação. O que construímos lá reverbera na plataforma.
+Ao longo do percurso, cada participante trabalha sobre o próprio negócio, assume compromissos de execução e participa de ciclos de acompanhamento. **EM VALIDAÇÃO:** a mecânica exata de diagnóstico de nível, de avanço e de acompanhamento ainda pode evoluir.
+
+## Papel no ecossistema
+
+A Vanguarda é a camada mais profunda da relação com a companhia. Além do que entrega a cada participante, ela cumpre três funções estruturais:
+
+- **Aprendizado de alta densidade** — o contato próximo com negócios reais alimenta método, conteúdo e as demais camadas.
+- **Formação de pessoas do ecossistema** — é daqui que tendem a surgir especialistas, mentores internos e referências da comunidade.
+- **Origem de evidências** — resultados concretos e verificáveis, insumo direto do mecanismo de crescimento.
+
+**HIPÓTESE:** que essa reverberação aconteça de forma consistente ainda não está demonstrado.
 
 ## Posicionamento da oferta
 
-A oferta da Vanguarda deve ser comunicada com sobriedade e ambição. Não é para quem busca soluções prontas ou passos genéricos. É para quem deseja clareza estratégica, impacto real e uma comunidade de construtores em atividade. A promessa não é sucesso imediato, mas maturidade contínua. Não é só o que você aprende, é quem você se torna no processo.
+A comunicação da Vanguarda pede sobriedade. Ticket alto, entrega com forte componente humano e escala limitada por desenho — o limite não é defeito, é parte do valor.
+
+Alguns princípios:
+
+- **A promessa não é resultado financeiro.** É intensidade, proximidade e estrutura de decisão. Nenhuma comunicação deve sugerir faturamento garantido.
+- **O argumento é a distância entre o que existe e o que poderia avançar**, não a distância entre a pessoa e um patamar de status.
+- **O critério de entrada é ter algo de pé.** Sem isso, a conversa correta é outra camada.
+- **Não é para quem busca fórmula pronta.** O que existe é orientação, curadoria, desafio e clareza.
+
+## Jornada de compra
+
+**EM VALIDAÇÃO.** A decisão pela Vanguarda tende a ser mais longa, mais racional e mais assistida do que as demais.
+
+| Etapa | O que acontece |
+| :---- | :---- |
+| **Descobre** | Geralmente já está dentro do ecossistema ou chega por indicação e reputação. |
+| **Considera** | Avalia custo de oportunidade, não apenas preço. A pergunta é sobre tempo e risco. |
+| **Conversa** | Etapa com contato humano — qualificação de contexto e estágio do negócio. |
+| **Entra** | Compromisso de ciclo longo. |
+| **Permanece** | Sustentada por avanço observável e por comunidade de alto envolvimento. |
+
+**PENDENTE:** o processo comercial da Vanguarda dentro da nova arquitetura contínua — qualificação, follow-up, critérios de entrada e cadência — ainda não está definido. Ver *Arquitetura Comercial*, na seção de Estratégia.
 
 ## Ficha técnica: Vanguarda
 
 | Nome | Vanguarda |
 | :---- | :---- |
-| **Status** | Ativo |
-| **Promessas** | \- Pare de abandonar ideias. Comece a construir o futuro.\- Construa agora o tipo de negócio que vai continuar existindo. \- Para quem leva a própria criação a sério.\- Você não precisa de mais ideias. Precisa de estrutura. |
+| **Status** | Ativo — em redefinição de enquadramento |
+| **Papel no ecossistema** | Camada de aceleração |
+| **Promessas já utilizadas** (HISTÓRICO) | - Pare de abandonar ideias. Comece a construir o futuro. - Construa agora o tipo de negócio que vai continuar existindo. - Para quem leva a própria criação a sério. - Você não precisa de mais ideias. Precisa de estrutura. |
 | **Website** | Página principal (Toque aqui para acessar) |
-| **Tipo de produto** | High-end / Mentoria |
-| **GTM** | Eficiência \- 2 stages (Toque para acessar) |
-| **Preço base** | R$12.000 ou 12x R$1.000 |
-|  | Dividido no Cartão ou até R$3.000 de desconto à vista no pix (R$9.000). |
-| **Preço especial** | R$9.000 ou 12x R$750 no cartão |
-| **Duração** | Anual: Até R$9.000 ou 12x R$750 |
-|  | Semestral: R$6.000 ou 6x R$1.000 (Ainda não testamos) |
-| **Persona principal** | Lilly ([Toque para acessar](https://docs.google.com/document/d/1lga8Zv4h0rPwVgOXBygkcUvDGkE6YmTjGBL6rh0Px2w/edit?tab=t.43k1ssk59ci0)) |
+| **Tipo de produto** | HISTÓRICO — classificado como "High-end / Mentoria". Descrição estreita: a camada é de aceleração. |
+| **GTM** | HISTÓRICO — Eficiência / 2 stages. Em revisão com a migração para operação contínua. |
+| **Preço praticado** (HISTÓRICO) | R$12.000 ou 12x R$1.000 |
+|  | R$9.000 à vista no pix (equivalente a R$3.000 de desconto) |
+|  | Preço especial — R$9.000 ou 12x R$750 no cartão |
+|  | Semestral — R$6.000 ou 6x R$1.000 (formato ainda não testado) |
+| **Duração** | Ciclo anual; formato semestral registrado, não testado |
+| **Estrutura** | 8 níveis (Entropia → Expansão) |
+| **Persona principal** | **Necessita revisão de persona.** As personas anteriores não devem ser usadas como verdade atual. |
 
-Leia o [Manual da Vanguarda](https://docs.google.com/document/d/10HPRcbj0Fa0aMWtLbKIn7naUk7MruSG6CgxOZAse9nM/edit?tab=t.0) para mais informações
+**Nota sobre preços.** Valores registrados como **praticados**, não como tabela vigente.
+
+## O que mudou em relação à documentação anterior
+
+| Antes (HISTÓRICO) | Agora |
+| :---- | :---- |
+| Mentoria avançada / curso premium / mastermind | Camada de aceleração |
+| "Vértice mais alto" e "grupo seleto" como argumento | Intensidade e proximidade como argumento; escala limitada por desenho |
+| 8 níveis como trilha de progressão pessoal | 8 níveis como estrutura do programa e estágios do negócio |
+| Relação com incubação não declarada | Distinção explícita: incubação faz nascer, aceleração faz avançar |
+| Persona Lilly como alvo declarado | Necessita revisão de persona |
+
+## O que precisa ser decidido
+
+1. Como incubação e Vanguarda se relacionam — camadas distintas ou continuação. **PENDENTE.**
+2. Qual expressão pública a camada de aceleração assume na comunicação comercial. **PENDENTE.**
+3. Critérios formais de entrada e de qualificação. **PENDENTE.**
+4. Se o formato semestral entra em teste e em quais condições. **PENDENTE.**
+
+Leia o [Manual da Vanguarda](https://docs.google.com/document/d/10HPRcbj0Fa0aMWtLbKIn7naUk7MruSG6CgxOZAse9nM/edit?tab=t.0) para mais informações.

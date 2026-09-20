@@ -62,7 +62,7 @@ Essas demandas incluem, por exemplo:
 * Criativos para campanhas  
 * Conteúdos para redes sociais  
 * Landing pages  
-* Materiais de lançamento  
+* Materiais de lançamento e de campanhas contínuas  
 * Apresentações estratégicas  
 * Vídeos e peças audiovisuais  
 * Materiais de produto  

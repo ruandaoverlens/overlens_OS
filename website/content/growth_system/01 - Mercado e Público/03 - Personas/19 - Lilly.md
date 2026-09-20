@@ -1,15 +1,24 @@
 ---
 title: Lilly - A Fundadora Emergente
-summary: Persona da fundadora de 34 anos em São Paulo que já tem um negócio de pé — uma marca própria com produtos e comunidade — e dispersa energia em frentes demais. Design e pós em branding, perfil ENTP-A emergente, oferta ideal Vanguarda.
-topics: [persona, lilly, emergente, fundadora, negócio próprio, dispersão de energia, vanguarda]
+summary: NECESSITA REVISÃO DE PERSONA. Persona da fundadora de 34 anos em São Paulo que já tem um negócio de pé e dispersa energia em frentes demais. Construída sob o recorte anterior de público (profissão, idade, renda, consumo) e sob a formulação de cinco estágios de maturidade — preservada como registro, não como verdade atual.
+topics: [persona, lilly, necessita revisão de persona, registro, fundadora, negócio próprio, dispersão de energia]
 keywords: [lilly, lilian, persona, emergente, empreendedora nexialista, fundadora, negócio de pé, marca própria, dispersão, ENTP-A, são paulo, vanguarda, sistemas vivos, frameworks próprios, antifrágil, mapa de empatia]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre Lilly, persona da fundadora emergente, quem já tem negócio próprio rodando mas dispersa energia em frentes demais e busca sistema e rede de pares, ou ao desenhar narrativa de Vanguarda e mentoria avançada.
+  ATENÇÃO — persona NECESSITA REVISÃO. Use apenas como registro do que foi documentado sobre Lilly. Foi construída sob o recorte anterior de público e sobre a leitura de "Emergente" como estágio de maturidade, que não vale mais. Não usar como base para campanha, produto ou qualificação; a redefinição de personas acontecerá no Growth System.
 related: []
 ---
 
 # Lilly - A Fundadora Emergente
+
+> ## ⚠️ NECESSITA REVISÃO DE PERSONA
+>
+> Esta persona foi construída sob o **recorte anterior de público** — definido por profissão, faixa etária, renda e comportamento de consumo — e sob a formulação de **cinco estágios sequenciais de maturidade** (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas), que não existe mais.
+>
+> **Não use esta página como verdade atual** sobre o público da Overlens. O público é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.** E Operante, Convergente, Emergente e Nexialista são hoje **formas de agir, aprender, pensar e criar** — não degraus de uma escada.
+>
+> **A redefinição de personas acontecerá no Growth System e ainda não foi feita.** Até lá, o conteúdo abaixo permanece preservado como registro do que foi documentado — não como base para campanha, produto ou qualificação.
+
 
 <div style="display:flex;gap:24px;align-items:flex-start">
 <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px;width:200px">

@@ -1,44 +1,77 @@
 ---
 title: Jobs to Be Done
-summary: Mapeia o JTBD principal de cada um dos 5 perfis de maturidade (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas) no formato "Quando ___, eu quero ___, para que ___", com complemento emocional. Os jobs medem a distância entre a ideia e a realidade, não progressão de carreira.
-topics: [jobs to be done, jtbd, perfis de cliente, maturidade, copy, motivação, empreendedores nexialistas]
-keywords: [jobs to be done, jtbd, christensen, empreendedores nexialistas, inconscientes, operantes, convergentes, emergentes, nexialistas, primeira oferta no ar, sistema próprio, ecossistema, motivação emocional, copy, alinhamento marketing produto]
+summary: EM VALIDAÇÃO e dependente da redefinição de personas. Organiza os Jobs to Be Done da Overlens por situação e objetivo, no formato "Quando ___, eu quero ___, para que ___", alinhando aos quatro modos quando faz sentido. Os jobs atuais foram derivados dos perfis antigos.
+topics: [jobs to be done, jtbd, situação, objetivo, quatro modos, em validação]
+keywords: [jobs to be done, jtbd, christensen, empreendedor, situação e objetivo, operante, convergente, emergente, nexialista, primeira oferta no ar, sistema próprio, copy, alinhamento marketing produto, necessita revisão de persona]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre Jobs to Be Done, JTBD da Overlens, motivações de cada perfil, o que cada perfil quer realizar, como escrever copy que fale ao desejo de cada cliente, ou alinhar marketing/produto/experiência ao job real do usuário.
-related: [growth_system/01 - Mercado e Público/02 - Público/01 - Maturidade/10 - Inconscientes, growth_system/01 - Mercado e Público/02 - Público/01 - Maturidade/11 - Operantes, growth_system/01 - Mercado e Público/02 - Público/01 - Maturidade/12 - Convergentes, growth_system/01 - Mercado e Público/02 - Público/01 - Maturidade/13 - Emergentes, growth_system/01 - Mercado e Público/02 - Público/01 - Maturidade/14 - Nexialistas]
+  Use quando o usuário perguntar sobre Jobs to Be Done da Overlens, o que cada pessoa quer realizar, ou como escrever copy que fale ao desejo real do cliente. ATENÇÃO — página EM VALIDAÇÃO e dependente da redefinição de personas: os jobs atuais foram derivados dos cinco perfis sequenciais de maturidade da formulação anterior e foram reorganizados por situação, não revalidados. O JTBD é organizado por situação e objetivo, nunca por degrau de maturidade.
+related: [growth_system/01 - Mercado e Público/02 - Público/06 - Perfis de Clientes, growth_system/01 - Mercado e Público/02 - Público/01 - Maturidade/11 - Operantes, growth_system/01 - Mercado e Público/02 - Público/01 - Maturidade/12 - Convergentes, growth_system/01 - Mercado e Público/02 - Público/01 - Maturidade/13 - Emergentes, growth_system/01 - Mercado e Público/02 - Público/01 - Maturidade/14 - Nexialistas]
 ---
 # Jobs to Be Done
 
-## Descobrir o que cada Perfil realmente quer da Overlens em suas vidas; não apenas aprender, mas realizar um progresso real e emocional.
+## Descobrir o que cada pessoa realmente quer da Overlens na própria vida: não apenas aprender, mas realizar um progresso concreto e emocional.
 
-Os jobs abaixo seguem o mesmo eixo dos perfis: medem **a distância entre a ideia e a realidade**, não senioridade nem progressão de carreira. O progresso que cada perfil busca é sempre sobre o que ele consegue construir e sustentar.
+> **Status desta página: EM VALIDAÇÃO — depende da redefinição de personas.**
+>
+> O instrumento continua válido: JTBD é uma das ferramentas mais úteis do Growth System, e a estrutura **"Quando \_\_\_, eu quero \_\_\_, para que \_\_\_"** permanece.
+>
+> **O que não está validado são os jobs em si.** Eles foram derivados dos **cinco perfis sequenciais de maturidade** da formulação anterior — incluindo "Inconscientes", que não existe mais. Aqui eles foram **reorganizados por situação e objetivo**, não revalidados com pesquisa. A redefinição de personas pertence ao Growth System e ainda não foi feita; quando acontecer, esta página precisa ser reescrita a partir dela.
+>
+> **Nenhum job novo foi inventado.** Os jobs abaixo são os que já existiam, reenquadrados.
 
-Estruturamos cada JTBD no formato clássico:  
-Quando \_\_\_, eu quero \_\_\_, para que \_\_\_.
+## Como o JTBD é organizado aqui
+
+O eixo do JTBD é a **situação** em que a pessoa está e o **objetivo** que ela quer alcançar — nunca um degrau de maturidade. Ninguém contrata a Overlens porque "está no estágio 2": contrata porque está diante de um problema concreto e quer avançar.
+
+Quando ajuda, indicamos qual dos **quatro modos** costuma predominar em cada situação:
+
+> **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**
+
+São formas de agir, aprender, pensar e criar — não etapas de uma escada. A mesma pessoa pode viver situações diferentes, e agir em modos diferentes, ao longo do tempo.
 
 **Isso nos permite**:
 
 \- Alinhar marketing, produto e experiências;  
-\- Criar copy que fala direto ao desejo e contexto de vida de cada perfil;  
+\- Criar copy que fala direto ao desejo e ao contexto de vida real;  
 \- Direcionar as métricas de sucesso.
 
-## JTBD por Perfil de Cliente
+## Jobs por situação e objetivo
 
-| Perfis | JTBD (Job principal) | Complemento emocional |
-| :---- | :---- | :---- |
-| Inconscientes | Quando percebo que carrego ideias há anos e nunca tirei nenhuma do papel, eu quero encontrar uma direção clara e um primeiro passo possível, para que a ideia que é minha deixe de ser só minha e passe a existir no mundo. | "Quero acreditar que ainda dá tempo de construir algo meu." |
-| Operantes | Quando já decidi construir algo próprio mas acumulo começos sem nunca lançar, eu quero fechar um ciclo e colocar uma primeira oferta no ar, para que eu descubra se aquilo se sustenta em vez de seguir adivinhando. | "Quero provar a mim mesmo que consigo terminar." |
-| Convergentes | Quando percebo que cada entrega recomeça do zero e nada do que fiz antes me ajuda, eu quero construir um sistema próprio de oferta, processo e modelo, para que o próximo ciclo custe menos que o anterior e algo finalmente se acumule. | "Quero parar de recomeçar e ver o que construí permanecer." |
-| Emergentes | Quando já tenho um negócio de pé mas espalho energia em frentes demais, eu quero conectar o que criei em um sistema coerente e escolher onde aprofundar, para que eu cresça com previsibilidade em vez de me dispersar. | "Quero sentir que meu trabalho constrói algo real para o futuro." |
-| Nexialistas | Quando percebo que construir sozinho limita o meu impacto, eu quero fazer parte de uma comunidade de alto nível que constrói legados, para que meu ecossistema gere mudança real em múltiplos mundos. | "Quero ser parte de algo maior que eu." |
+| Situação | JTBD (Job principal) | Complemento emocional | Modo que costuma predominar |
+| :---- | :---- | :---- | :---- |
+| **Carrega uma ideia e nunca começou** | Quando percebo que carrego ideias há anos e nunca tirei nenhuma do papel, eu quero encontrar uma direção clara e um primeiro passo possível, para que a ideia que é minha deixe de ser só minha e passe a existir no mundo. | "Quero acreditar que ainda dá tempo de construir algo meu." | — |
+| **Executa bem, mas não conclui** | Quando já decidi construir algo próprio mas acumulo começos sem nunca lançar, eu quero fechar um ciclo e colocar uma primeira oferta no ar, para que eu descubra se aquilo se sustenta em vez de seguir adivinhando. | "Quero provar a mim mesmo que consigo terminar." | Operante |
+| **Lança, mas recomeça do zero** | Quando percebo que cada entrega recomeça do zero e nada do que fiz antes me ajuda, eu quero construir um sistema próprio de oferta, processo e modelo, para que o próximo ciclo custe menos que o anterior e algo finalmente se acumule. | "Quero parar de recomeçar e ver o que construí permanecer." | Convergente |
+| **Cria demais e dispersa** | Quando já tenho um negócio de pé mas espalho energia em frentes demais, eu quero conectar o que criei em um sistema coerente e escolher onde aprofundar, para que eu cresça com previsibilidade em vez de me dispersar. | "Quero sentir que meu trabalho constrói algo real para o futuro." | Emergente |
+| **Esbarra no limite de construir sozinho** | Quando percebo que construir sozinho limita o meu impacto, eu quero fazer parte de uma comunidade de alto nível que constrói junto, para que o que eu construo gere mudança real em mais de um mundo. | "Quero ser parte de algo maior que eu." | Nexialista |
 
-**Inconscientes** → "Quero acreditar que ainda dá tempo de construir algo meu."
+### Síntese emocional
 
-**Operantes** → "Quero provar a mim mesmo que consigo terminar."
+**Carrega uma ideia e nunca começou** → "Quero acreditar que ainda dá tempo de construir algo meu."
 
-**Convergentes** → "Quero parar de recomeçar do zero."
+**Executa bem, mas não conclui** → "Quero provar a mim mesmo que consigo terminar."
 
-**Emergentes** → "Quero focar e ver o que construí amadurecer."
+**Lança, mas recomeça do zero** → "Quero parar de recomeçar do zero."
 
-**Nexialistas** → "Quero ser parte de algo maior que eu."
+**Cria demais e dispersa** → "Quero focar e ver o que construí amadurecer."
+
+**Esbarra no limite de construir sozinho** → "Quero ser parte de algo maior que eu."
+
+## O que mudou, e por quê
+
+**HISTÓRICO.** A versão anterior desta página organizava os jobs por **perfil de maturidade** — Inconscientes, Operantes, Convergentes, Emergentes e Nexialistas — e afirmava que os jobs mediam "a distância entre a ideia e a realidade".
+
+Duas correções:
+
+1. **O eixo mudou.** Os jobs são organizados por situação e objetivo. A leitura por escada de maturidade não vale mais.
+2. **"Inconscientes" saiu da formulação.** O job que estava sob esse nome descrevia uma situação real — carregar uma ideia e não saber como começar — e por isso foi preservado como situação, sem o rótulo.
+
+O job antes atribuído aos "Nexialistas" foi mantido, com um ajuste: a formulação anterior o descrevia a partir de um "ecossistema próprio" já operante, herança da leitura de estágio final. Aqui ele descreve a situação de quem esbarra no limite de construir sozinho.
+
+Registro completo da transição: `business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md`.
+
+## Pendências
+
+- **PENDENTE:** revalidar cada job com pesquisa, entrevistas e comportamento observado, depois da redefinição de personas.
+- **PENDENTE:** verificar se existem jobs relevantes que a formulação anterior não capturava — especialmente os ligados a empresas, times e B2B. **Não preencher com suposição.**

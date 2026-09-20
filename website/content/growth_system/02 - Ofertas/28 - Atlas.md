@@ -1,121 +1,132 @@
 ---
 title: Atlas
-summary: Atlas é a porta de entrada da Overlens — imersão de 2 dias (front-end / ingresso) que ensina a construir um Brand System com IA num fim de semana, para quem está erguendo um negócio próprio. Ingresso a partir de R$19, persona Tella e Ander.
-topics: [atlas, oferta front-end, brand system, imersão, porta de entrada]
-keywords: [atlas, brand system, imersão, ingresso, front-end, product led growth, empreendedores nexialistas, fundadores, tella, ander, agentes de ia, R$19, R$29,90, fim de semana]
+summary: Atlas é a experiência de entrada e ativação da Overlens — uma imersão prática curta em que alguém experimenta rapidamente a maneira Overlens de aprender e construir. Esta página trata do posicionamento da oferta, do argumento e da jornada de compra; a definição da oferta pertence ao Business Document.
+topics: [atlas, entrada, ativação, imersão, jornada de compra, posicionamento de oferta]
+keywords: [atlas, experiência de entrada, ativação, imersão, primeira experiência, brand system, empreendedor, jornada de compra, argumento comercial, ficha técnica]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre o Atlas, ingresso de entrada da Overlens, imersão de fim de semana, como construir um Brand System com IA, preço do Atlas, ficha técnica, persona alvo (Tella ou Ander), ou recomendar uma oferta inicial / front-end.
-related: [growth_system/02 - Ofertas/23 - Ofertas]
+  Use quando o usuário perguntar sobre o Atlas, como posicionar e vender a experiência de entrada da Overlens, qual o argumento do Atlas, como alguém descobre e decide entrar, histórico de preços e formatos praticados, ou como o Atlas se conecta às demais camadas do ecossistema.
+related: [growth_system/02 - Ofertas/23 - Ofertas, growth_system/02 - Ofertas/29 - Overpass, business_doc/03 - Arquitetura/01 - Arquitetura de Produtos e Serviços]
 ---
 # Atlas
 
-**O caminho mais rápido para começar**
+## O Atlas é a experiência de entrada e ativação da Overlens: o intervalo curto em que alguém deixa de ouvir falar da nossa maneira de aprender e construir e passa a experimentá-la.
 
-## O Atlas é a porta de entrada para o universo da Overlens. Foi pensado para quem está construindo algo próprio, sente que as ferramentas mudaram e quer aprender na prática como colocá-las a serviço do próprio negócio.
+**Status: DEFINIDO — oferta ativa.** A definição da oferta pertence ao Business Document, em *Arquitetura de Produtos e Serviços*. Esta página trata do que pertence ao Growth System: como as pessoas descobrem o Atlas, que argumento as move, como compram e o que acontece depois.
 
-Criar apps e sistemas ficou fácil. Em poucos meses, milhões de soluções vão entrar no mercado. Vencerá quem souber se diferenciar. Aprenda e avance para o próximo passo.
+O princípio do Atlas é permitir que alguém **experimente rapidamente a maneira Overlens de aprender e construir**. Tudo o mais — duração, formato, tema e preço — é decisão comercial que pode mudar sem alterar esse princípio.
 
-70%  
-mais receita para  
-quem adota IA primeiro  
-Fonte: BCG, 2025
+Por isso, uma correção importante em relação à documentação anterior: **preço de entrada não é a definição do Atlas.** Tratar a oferta como "produto barato de entrada" leva a decisões de marketing erradas — otimiza volume de ingresso em vez de qualidade da primeira experiência, que é o que realmente determina se a relação continua.
 
-44%  
-mais ganhos do que  
-quem não usa IA  
-Fonte: Upwork, 2024
+> **Necessita revisão de persona.** As personas da Overlens estão em redefinição. Nenhuma persona anterior deve ser usada como verdade para orientar copy, segmentação ou mídia do Atlas até que a nova definição exista.
 
-90%  
-dizem economizar  
-muito mais tempo  
-Fonte: Microsoft \+ LinkedIn, 2024
+## O que o Atlas faz pelo crescimento
 
-## Por que participar?
+**EM VALIDAÇÃO.** Dentro do ecossistema, o Atlas tende a cumprir simultaneamente cinco papéis:
 
-O mercado já está saturado de peças geradas por IA. Vencerá quem souber construir sistemas que conectam marca, inteligência e operação.
+| Papel | O que significa no Growth System |
+| :---- | :---- |
+| **Aquisição** | Traz pessoas novas para dentro do ecossistema, não apenas para uma lista. |
+| **Primeira experiência com a metodologia** | Substitui a promessa pela demonstração: a pessoa vive o método em vez de ler sobre ele. |
+| **Execução guiada** | A pessoa sai com algo construído, não com anotações. |
+| **Ativação de novos Atoms** | Transforma interesse em pertencimento inicial à comunidade. |
+| **Descoberta do ecossistema** | Revela que existe uma camada contínua e uma camada de aceleração depois. |
 
-**Antecipação**  
-Antecipe-se aos porquês  
-O COMO ficou fácil. Qualquer um gera imagens, vídeos e materiais com IA. Avancará quem aprender como construir sistemas.
+A consequência prática: o Atlas **não deve ser avaliado apenas pela receita que gera**. Uma edição que fatura bem e ativa mal é um mau resultado disfarçado de bom.
 
-**Diferenciação**  
-Saia da enxurrada de peças genéricas  
-O mercado já está saturado de ofertas genéricas, campanhas e identidades soltas. Seu brand system é o que te coloca em outra liga.
+## O argumento
 
-**Infraestrutura**  
-Construa sua base tecnológica  
-Não basta gerar ativos bonitos. Você precisa do sistema que os conecta, organiza e orquestra com IA, ligando humanos e máquinas.
+O argumento do Atlas parte de uma constatação simples: produzir ficou fácil, e isso desvalorizou a produção. Construir apps, imagens, textos e campanhas deixou de ser barreira. O que permanece difícil é **construir um sistema coerente** — algo que conecte o que você faz, o que você diz e como você opera.
 
-## Para quem é o Atlas Brand System?
+Aqui vale uma correção de enquadramento. O Atlas foi comunicado como "construa seu brand system com IA em um fim de semana", colocando a IA no centro da categoria. **IA é infraestrutura, não a categoria da Overlens.** A IA atravessa o Atlas — na execução, na velocidade, na personalização —, mas o que está sendo oferecido é a experiência de sair de uma ideia solta e chegar a um sistema que funciona. A IA é como se faz, não o que se compra.
 
-Fundador em início  
-Construindo uma marca do zero e quer evitar ficar refém de peças avulsas. Precisa de um sistema que sustente o crescimento desde o início.
+Três eixos sustentam o argumento:
 
-Quem vem do ofício técnico  
-Engenheiro, arquiteto, desenvolvedor ou artista que domina uma disciplina e agora precisa transformá-la em negócio próprio. Sabe construir a coisa; falta construir a marca que a sustenta.
+**Antecipação.** O "como" ficou acessível a todos. A vantagem migrou para os porquês: para quem entende que decisão está sendo tomada ao escolher uma forma, um tom, um preço, um posicionamento.
 
-Quem já tem negócio rodando  
-Responsável por manter consistência enquanto cresce. Precisa centralizar assets, diretrizes e agentes de IA em um só lugar para que cada peça saia dentro do padrão, sem depender de si para tudo.
+**Diferenciação.** Um mercado inundado de peças equivalentes torna a coerência um ativo escasso. Um sistema é mais difícil de copiar do que uma peça.
 
-Construtor independente  
-Sabe usar IA para gerar, mas quer dar o próximo passo: parar de competir no COMO e começar a se diferenciar pelos PORQUÊS.
+**Infraestrutura.** Ativos soltos não se sustentam. O que sustenta é a base que os conecta, organiza e mantém consistentes ao longo do tempo — inclusive quando outras pessoas passam a produzir em nome do mesmo negócio.
 
-## O que você leva do Atlas Brand System
+## Contexto de mercado citado na comunicação
 
-Tudo que compõe a infraestrutura da sua marca, pronto para operar ao final dos dois dias.
+Dados usados no material do Atlas, mantidos com fonte e ano:
 
-**Brand System completo e funcional**  
-Identidade, tom de voz, paleta, tipografia, templates e guidelines conectados. Sai do Atlas com o sistema da sua marca pronto para operar.
+- **70%** mais receita para quem adota IA primeiro — *Fonte: BCG, 2025*
+- **44%** mais ganhos do que quem não usa IA — *Fonte: Upwork, 2024*
+- **90%** relatam economia significativa de tempo — *Fonte: Microsoft + LinkedIn, 2024*
 
-**Agentes de IA dentro da marca**  
-IA treinada no contexto do seu brand system, produzindo dentro do tom, estilo e padrões que você definiu.
+Esses números descrevem o contexto do mercado. **Não são promessa de resultado para quem participa do Atlas** e não devem ser apresentados como tal.
 
-**Assets centralizados**  
-Logos, paletas, templates e componentes em uma única fonte. Todo mundo trabalha a partir da mesma verdade, sem duplicar ativos.
+## Para quem o Atlas tende a fazer sentido
 
-**Diretrizes vivas**  
-Guidelines que não ficam paradas em um PDF. Conectadas aos agentes e aos assets, aplicadas automaticamente em cada peça que sai.
+**EM VALIDAÇÃO — necessita revisão de persona.** Enquanto as personas oficiais não são redefinidas, registramos os **estados** observados em quem procurou a oferta. Estado, não profissão: o que aproxima essas pessoas é a distância entre o que querem construir e o que conseguem sustentar hoje.
 
-**Converse com sua marca**  
-Interface conversacional onde times e parceiros fazem perguntas, pedem peças e acessam diretrizes falando em linguagem natural.
+- **Quem está começando algo próprio** e não quer ficar refém de peças avulsas.
+- **Quem vem de um ofício técnico** — engenharia, arquitetura, desenvolvimento, arte, design ou nenhuma dessas origens — domina uma disciplina e precisa transformá-la em negócio.
+- **Quem já tem negócio rodando** e precisa de consistência sem ser o gargalo de cada entrega.
+- **Quem já produz com IA** e quer parar de competir no "como" para se diferenciar pelos porquês.
 
-**Diferenciação real no mercado**  
-Enquanto a concorrência ainda disputa quem gera a peça mais bonita, você opera com um sistema que envolve as pessoas e escala a marca.
+## O que a pessoa leva
 
-A era de gerar peças acabou. A era de construir sistemas começou. A maioria ainda está produzindo ativos soltos. Poucos estão construindo a infraestrutura que liga tudo. Uma imagem bonita é só um post. Um brand system é uma marca.
+Ao final da imersão, a entrega esperada é a infraestrutura da marca em operação, não material de apoio:
 
-## Garanta sua vaga
+- **Sistema de marca completo e funcional** — identidade, tom de voz, paleta, tipografia, templates e diretrizes conectados.
+- **IA operando dentro do sistema** — produzindo no tom, no estilo e nos padrões definidos pela própria pessoa.
+- **Assets centralizados** — uma única fonte de verdade para logos, paletas, templates e componentes.
+- **Diretrizes vivas** — conectadas aos assets e aplicadas na produção, não paradas em um PDF.
+- **Interface conversacional** — times e parceiros consultam diretrizes e pedem peças em linguagem natural.
 
-Quanto antes você entrar, menos pagará no ingresso.
+Essa lista descreve a entrega da edição documentada. A composição pode mudar entre edições; o que não muda é o critério: **a pessoa precisa sair com algo construído.**
 
-Construa seu brand system com IA em um fim de semana  
-Online no Zoom · 16/05 a 17/05 · Faltam 17 dias
+## Jornada de compra
 
-2 dias ao vivo \- Imersão no Zoom
+**EM VALIDAÇÃO.** O que se sabe hoje sobre o caminho até a inscrição:
 
-Prático \- Feito na sua frente
+| Etapa | O que acontece |
+| :---- | :---- |
+| **Descobre** | Conteúdo, redes, indicação, eventos e mídia paga. |
+| **Considera** | Compara com cursos e imersões; o ponto de decisão é "vou sair com algo pronto?". |
+| **Compra** | Inscrição direta, com barreira financeira baixa por desenho. |
+| **Participa** | A experiência é o argumento da próxima decisão. |
+| **Continua** | Descobre a camada contínua e a camada de aceleração. |
 
-Materiais Para download  
-Sem enrolação \- Direto ao ponto
-
-Garantia até 2 dias após o evento
-
-De R$79  
-por: R$29,90
+**PENDENTE:** a cadência de comunicação, o processo de follow-up e o desenho da passagem do Atlas para as demais camadas ainda não estão definidos. Ver *Arquitetura Comercial*, na seção de Estratégia.
 
 ## Ficha técnica: Atlas
 
 | Nome | Atlas |
 | :---- | :---- |
 | **Status** | Ativo |
-| **Promessa** | \- Construa Seu Time de Agentes de IA em Um Fim de Semana\- Construa seu Brand System com IA em um fim de semana \- Construa em um fim de semana |
+| **Papel no ecossistema** | Experiência de entrada e ativação |
+| **Promessas já utilizadas** (HISTÓRICO) | - Construa seu time de agentes de IA em um fim de semana - Construa seu Brand System com IA em um fim de semana - Construa em um fim de semana |
 | **Website** | Página principal ([Toque aqui para acessar](https://www.overlens.com.br/atlas-brand-system/inscricao-b)) |
-| **Tipo de produto** | Front-end /  Ingresso |
-| **GTM** | Product Led Growth / 1 Stage |
-| **Preço base** | Ingresso \- R$19 (Lote 01\) |
-|  | Gravação \- R$197 |
-| **Duração** | 2 dias inteiros \- Um fim de semana \- 16 horas |
-| **Persona principal** | Tella ([Toque para acessar](https://docs.google.com/document/d/1lga8Zv4h0rPwVgOXBygkcUvDGkE6YmTjGBL6rh0Px2w/edit?tab=t.z8h7yanm370l)) e Ander ([Toque para acessar](https://docs.google.com/document/d/1lga8Zv4h0rPwVgOXBygkcUvDGkE6YmTjGBL6rh0Px2w/edit?tab=t.ck2js1vctkbs)) |
+| **Tipo de produto** | HISTÓRICO — classificado como "Front-end / Ingresso". Classificação comercial, não definição estratégica. |
+| **GTM** | HISTÓRICO — Product Led Growth / 1 Stage. Em revisão com a migração para operação contínua. |
+| **Preço praticado** (HISTÓRICO) | Ingresso — R$19 (Lote 01) |
+|  | Ingresso — R$29,90 (lote posterior, de R$79) |
+|  | Gravação — R$197 |
+| **Duração** | 2 dias inteiros — um fim de semana — 16 horas |
+| **Formato** | Online, ao vivo, com execução acompanhada |
+| **Persona principal** | **Necessita revisão de persona.** As personas anteriores não devem ser usadas como verdade atual. |
 
-Leia o [Manual do Overpass](https://docs.google.com/document/d/1jguC-WLBlyvQf3jwQc-NQex90MmfzcryUMA9CokUUaQ/edit?tab=t.0) para mais informações
+**Nota sobre preços.** Os valores acima são **registro factual do que já foi praticado**, não tabela vigente. A estrutura de lotes e as datas de edições anteriores foram removidas desta página por terem envelhecido — e porque urgência datada não é o mecanismo de conversão que a Overlens quer sustentar.
+
+## O que mudou em relação à documentação anterior
+
+| Antes (HISTÓRICO) | Agora |
+| :---- | :---- |
+| "Porta de entrada" e "front-end / ingresso" como definição | Experiência de entrada e **ativação**; preço é característica comercial |
+| Produto barato de entrada | Primeira experiência concreta da metodologia |
+| IA como categoria da oferta | IA como infraestrutura da experiência |
+| Personas Tella e Ander como alvo declarado | Necessita revisão de persona |
+| Urgência datada (contagem de dias, lotes) na página | Registro de preços praticados, sem urgência datada |
+
+## O que precisa ser decidido
+
+1. Qual é o indicador de ativação do Atlas — o que caracteriza uma primeira experiência bem-sucedida. **PENDENTE.**
+2. Se o Atlas permanece com tema fixo (sistema de marca) ou passa a ter temas variáveis por edição. **PENDENTE.**
+3. Como o Atlas passa a operar dentro de uma lógica contínua, e não apenas por edições. **PENDENTE.**
+4. Qual é a transição desenhada entre Atlas e a camada contínua. **PENDENTE.**
+
+Leia o [Manual do Overpass](https://docs.google.com/document/d/1jguC-WLBlyvQf3jwQc-NQex90MmfzcryUMA9CokUUaQ/edit?tab=t.0) para mais informações.

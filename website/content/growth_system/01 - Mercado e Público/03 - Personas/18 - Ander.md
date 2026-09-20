@@ -1,15 +1,24 @@
 ---
 title: Ander - O Construtor Convergente
-summary: Persona do engenheiro de software de 27 anos em Curitiba, formado em Engenharia de Computação, que lançou um produto digital próprio e não consegue sustentá-lo. Perfil INTJ convergente, preso a metodologias, com oferta ideal Overpass ou Vanguarda.
-topics: [persona, ander, convergente, origem técnica, produto próprio, sistema de negócio]
+summary: NECESSITA REVISÃO DE PERSONA. Persona do engenheiro de 27 anos em Curitiba que lançou um produto próprio e não consegue sustentá-lo. Construída sob o recorte anterior de público (profissão, idade, renda, consumo) e sob a formulação de cinco estágios de maturidade — preservada como registro, não como verdade atual.
+topics: [persona, ander, necessita revisão de persona, registro, produto próprio, sistema de negócio]
 keywords: [ander, anderson, persona, convergente, empreendedor nexialista, engenheiro de software, engenharia de computação, micro-produto, SaaS, INTJ, curitiba, overpass, vanguarda, framework, sistema próprio, mapa de empatia]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre Ander, persona do construtor convergente de origem técnica, quem já lançou algo próprio mas não sustenta, ou ao desenhar comunicação para engenheiros e perfis técnicos que querem virar donos do próprio negócio, oferta Vanguarda e narrativa de sistema próprio.
+  ATENÇÃO — persona NECESSITA REVISÃO. Use apenas como registro do que foi documentado sobre Ander. Foi construída sob o recorte anterior de público e sobre a leitura de "Convergente" como estágio de maturidade, que não vale mais. Não usar como base para campanha, produto ou qualificação; a redefinição de personas acontecerá no Growth System.
 related: []
 ---
 
 # Ander - O Construtor Convergente
+
+> ## ⚠️ NECESSITA REVISÃO DE PERSONA
+>
+> Esta persona foi construída sob o **recorte anterior de público** — definido por profissão, faixa etária, renda e comportamento de consumo — e sob a formulação de **cinco estágios sequenciais de maturidade** (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas), que não existe mais.
+>
+> **Não use esta página como verdade atual** sobre o público da Overlens. O público é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.** E Operante, Convergente, Emergente e Nexialista são hoje **formas de agir, aprender, pensar e criar** — não degraus de uma escada.
+>
+> **A redefinição de personas acontecerá no Growth System e ainda não foi feita.** Até lá, o conteúdo abaixo permanece preservado como registro do que foi documentado — não como base para campanha, produto ou qualificação.
+
 
 <div style="display:flex;gap:24px;align-items:flex-start">
 <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px;width:200px">

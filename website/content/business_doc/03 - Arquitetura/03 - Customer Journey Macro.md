@@ -1,3 +1,13 @@
+---
+title: Customer Journey Macro
+summary: Descreve, em altitude executiva, os sete estados da relação com a Overlens — Descobre, Experimenta, Aprende, Constrói, Evolui, Acelera e Pertence —, onde cada um tende a acontecer hoje, as três ressalvas do modelo (não é linear, não termina em Pertence, não é funil), o que mudou em relação à jornada anterior e a exigência de produto que decorre disso.
+topics: [jornada do cliente, estados de relação, modelo conceitual, diferença entre funil e jornada, implicação para produto]
+keywords: [customer journey, jornada macro, Descobre, Experimenta, Aprende, Constrói, Evolui, Acelera, Pertence, Atlas, Overpass, Vanguarda, comunidade, PBL, Atom Praxis, hackathon, funil, aquisição ativação retenção, evidência, Product System]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar como é a jornada de alguém com a Overlens em nível executivo, quais estados existem na relação, por que a jornada não é um funil, ou o que mudou em relação ao modelo anterior. Persona, funil, canal, mensagem e mecânicas de progressão não estão aqui — pertencem ao Growth System e ao Community System.
+related: ["business_doc/03 - Arquitetura/01 - Arquitetura de Produtos e Serviços.md", "business_doc/03 - Arquitetura/04 - Flywheel.md", "growth_system/03 - Estratégia/33 - Growth Loop.md", "community_system/00 - Definição/01 - Definição.md"]
+---
 # Customer Journey Macro
 
 ## A jornada macro de relacionamento com a companhia. Apenas a altitude executiva — persona, funil, canal e mensagem pertencem ao Growth System.

@@ -26,3 +26,19 @@ Por isso, os criativos desse período não servem apenas para lembrar que as ins
 * Coragem
 
 Carrinho aberto é o momento em que: A razão já aprovou. A emoção precisa abraçar. Cada criativo existe para tornar essa escolha inevitável internamente.
+
+## Quando esta peça se aplica
+
+**DEFINIDO.** Esta página descreve o **momento de decisão**: aquele em que a pessoa já entendeu a oferta e só falta escolher entrar. Em um lançamento, esse momento coincide com o carrinho aberto e a página vale exatamente como está escrita.
+
+**HISTÓRICO.** A formulação original tratava o carrinho aberto como o clímax inevitável de todo ciclo comercial da Overlens — porque, à época, praticamente toda a receita vinha de lançamentos.
+
+**EM VALIDAÇÃO.** A empresa está migrando para **aquisição e vendas contínuas**. Lançamentos continuam existindo e continuam usando este material sem alteração. O que muda é que ele deixa de ser o único formato de venda.
+
+**O que muda em operação contínua:**
+
+* **O momento de decisão deixa de ser coletivo e passa a ser individual.** Não existe mais uma janela em que todo mundo decide junto. Cada pessoa chega ao seu momento em um dia diferente, e a peça precisa funcionar fora de contexto de campanha.
+* **As três forças continuam intactas.** Desejo ampliado, perda visível e clareza decisória são forças psicológicas, não artifícios de calendário. Em produto perpétuo, a "perda visível" é o custo de continuar adiando — outro mês com a ideia parada no mesmo lugar —, não o fim de um prazo.
+* **A escassez comunicada precisa ser verdadeira.** Turma tem tamanho. Mentoria tem capacidade humana. Encontro tem data. Esses limites existem e podem ser ditos. Onde não há limite real, não se inventa um: nada de "vagas limitadas", "última chance", contador falso, FOMO ou promessa de faturamento.
+* **A decisão de entrar vira decisão de continuar.** Em produto perpétuo e em camada contínua, a venda não termina na compra: segue em follow-up, acompanhamento e relacionamento de longo prazo. A copy que ativa a entrada não pode prometer nada que a experiência não sustente no mês seguinte.
+* **Sem prazo, a clareza decisória carrega mais peso.** Quando não há data empurrando, o que resolve a hesitação é reduzir ambiguidade: o que exatamente acontece depois de entrar, o que se espera da pessoa, qual é o custo real em tempo e energia.

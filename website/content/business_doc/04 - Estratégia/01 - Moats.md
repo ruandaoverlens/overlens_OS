@@ -1,3 +1,13 @@
+---
+title: Moats
+summary: Separa ativos de vantagens defensáveis usando o teste dos 18 meses e avalia oito candidatos — comunidade, cultura e worldbuilding, grafo de capacidades e evidências, reputação dos membros, propriedade intelectual, marca, distribuição e rede de especialistas —, cada um com o que precisaria ser verdade e o contra-argumento. A leitura honesta é que a companhia tem muitos ativos e nenhum moat comprovado.
+topics: [moats, vantagem competitiva, ativos versus defensabilidade, comunidade, grafo de capacidades, critério de validação]
+keywords: [moat, vantagem defensável, ativo, teste de 18 meses, comunidade, densidade, worldbuilding, Nexialismo, Atom, Praxis, Arcádia, Mônada, Tésera, Órbital, grafo de capacidades, evidências, reputação, propriedade intelectual, marca, distribuição, rede de especialistas]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar quais são as vantagens competitivas da Overlens, o que é defensável e o que é apenas ativo, ou por que comunidade e grafo de capacidades concentram o potencial real. Nenhuma vantagem desta página está comprovada — trate todas como hipóteses e não as apresente como proteção existente.
+related: ["business_doc/04 - Estratégia/02 - Strategic Bets.md", "business_doc/04 - Estratégia/04 - Riscos e Incertezas.md", "business_doc/01 - Overview/04 - Business Thesis.md", "product_system/02 - Sistema/01 - Grafo de Capacidades.md"]
+---
 # Moats
 
 ## Ter um ativo não é ter uma vantagem defensável. Esta página separa uma coisa da outra — e assume que, hoje, quase tudo está do lado dos ativos.

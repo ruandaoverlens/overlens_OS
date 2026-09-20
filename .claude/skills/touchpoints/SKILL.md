@@ -1,6 +1,6 @@
 ---
 name: touchpoints
-description: Constrói a página de Pontos de Contato mapeando todos os touchpoints da Overlens por jornada do Empreendedor Nexialista, com diretrizes por canal.
+description: Constrói a página de Pontos de Contato mapeando todos os touchpoints da Overlens por jornada do empreendedor, com diretrizes por canal.
 allowed-tools: Read, Write, Edit, Glob, Grep, WebSearch, Agent
 ---
 
@@ -8,7 +8,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, WebSearch, Agent
 
 Execute o pipeline para a página de Pontos de Contato:
 
-1. Lance o agente `especialista-midias` com o RAG + diretrizes de Instagram existentes
+1. Lance o agente `especialista-midias`, que deve ler `.claude/rules/tese-atual.md` (normativa, prevalece sobre a base) + a base canônica em `website/content/<sistema>/` e as diretrizes de Instagram existentes
 2. Produzir `[PAGINA] Pontos de Contato.md` com:
    - Mapa de touchpoints por jornada (Descoberta → Consideração → Entrada → Profundidade → Legado)
    - Diretrizes por canal (Instagram, YouTube, plataforma, e-mail, eventos, DM)
@@ -16,5 +16,5 @@ Execute o pipeline para a página de Pontos de Contato:
    - Métricas de sucesso por canal
 3. Rodar revisão com agente `revisor`
 
-**Lembrete**: o público é o Empreendedor Nexialista — nunca "designers" ou "criativos". As 5 jornadas seguem os 5 perfis eixados pela distância entre ideia e realidade (Inconsciente → Operante → Convergente → Emergente → Nexialista). Nenhum touchpoint pode usar FOMO, escassez falsa ou promessa de faturamento.
+**Lembrete**: o público é o **empreendedor** — define-se pelo estado, não pela profissão; nunca rotulado como "designers", "criativos" nem como "Empreendedor Nexialista". Na comunidade, o membro é um **Atom**. As jornadas são de relacionamento com a marca e NÃO correspondem aos quatro modos (Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra), que são formas de agir e pensar, não estágios. IA é infraestrutura, não categoria. Nenhum touchpoint pode usar FOMO, escassez falsa ou promessa de faturamento. Classificar certeza: DEFINIDO / EM VALIDAÇÃO / HIPÓTESE / HISTÓRICO / PENDENTE.
 4. Apresentar resultado ao usuário

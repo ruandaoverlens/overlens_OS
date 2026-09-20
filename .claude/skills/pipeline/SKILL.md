@@ -36,7 +36,7 @@ Execute as 4 fases em sequência:
 ### Fase 4: VALIDAÇÃO
 - Lance o agente `validador`
 - Produza `[VALIDACAO] $ARGUMENTS.md`
-- Se APROVADA: marque como concluída no TASKS
+- Se APROVADA: confirme a sincronia entre `website/content/<sistema>/` e `TRU/<sistema>/`
 - Se REPROVADA: volte à fase necessária
 - Apresente resultado final
 
@@ -49,10 +49,11 @@ Execute as 4 fases em sequência:
    - Página criada (extensão, estrutura)
    - Score P.R.I.S.M.A da revisão
    - Score de validação
-   - Status no TASKS
+   - Classificação de certeza das afirmações estratégicas
 
 ## Contexto
 
-Referência obrigatória: `RAG_OVERLENS_COMPLETO.md`
-Checklist: `TASKS_PAGINAS_FALTANTES.md`
-Documento central: `[B] O Livro de Branding da Overlens (1).md`
+Regra normativa (leitura obrigatória em todas as fases): `.claude/rules/tese-atual.md` — define público, categoria, vocabulário e produtos, e **prevalece sobre qualquer documento da base**.
+Base canônica: `website/content/<sistema>/` (com frontmatter). Espelho sem frontmatter: `TRU/<sistema>/`.
+Fontes de verdade por sistema: `.claude/rules/tese-atual.md` §10.
+Padrão de páginas: `.claude/rules/padrao-paginas.md`.

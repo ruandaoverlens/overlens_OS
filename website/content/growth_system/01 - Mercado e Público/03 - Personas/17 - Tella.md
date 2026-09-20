@@ -1,15 +1,24 @@
 ---
 title: Tella - A Artista Operante
-summary: Persona de 23 anos em Belo Horizonte, formanda em design gráfico e artista, que já decidiu construir algo próprio mas não lança — perfil ENFP operante que acumula cursos e começos sem fechar ciclos. Oferta ideal Overpass ou Protocolo 3-2-1.
-topics: [persona, tella, operante, empreendedora nexialista, primeira oferta, fechamento de ciclo]
+summary: NECESSITA REVISÃO DE PERSONA. Persona de 23 anos em Belo Horizonte que já decidiu construir algo próprio mas não lança. Construída sob o recorte anterior de público (profissão, idade, renda, consumo) e sob a formulação de cinco estágios de maturidade — preservada como registro, não como verdade atual.
+topics: [persona, tella, necessita revisão de persona, registro, primeira oferta, fechamento de ciclo]
 keywords: [tella, stella, persona, operante, empreendedora nexialista, executa não lança, primeira oferta no ar, designer gráfico, artista, ENFP, belo horizonte, overpass, protocolo 3-2-1, IA, mapa de empatia, loop técnico]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre Tella, persona da artista operante, pessoa que acumula cursos e começos sem lançar nada próprio, ou ao desenhar comunicação para quem está saindo da execução para a construção de uma primeira oferta, e ao posicionar Overpass.
+  ATENÇÃO — persona NECESSITA REVISÃO. Use apenas como registro do que foi documentado sobre Tella. Foi construída sob o recorte anterior de público e sobre a leitura de "Operante" como estágio de maturidade, que não vale mais. Não usar como base para campanha, produto ou qualificação; a redefinição de personas acontecerá no Growth System.
 related: []
 ---
 
 # Tella - A Artista Operante
+
+> ## ⚠️ NECESSITA REVISÃO DE PERSONA
+>
+> Esta persona foi construída sob o **recorte anterior de público** — definido por profissão, faixa etária, renda e comportamento de consumo — e sob a formulação de **cinco estágios sequenciais de maturidade** (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas), que não existe mais.
+>
+> **Não use esta página como verdade atual** sobre o público da Overlens. O público é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.** E Operante, Convergente, Emergente e Nexialista são hoje **formas de agir, aprender, pensar e criar** — não degraus de uma escada.
+>
+> **A redefinição de personas acontecerá no Growth System e ainda não foi feita.** Até lá, o conteúdo abaixo permanece preservado como registro do que foi documentado — não como base para campanha, produto ou qualificação.
+
 
 <div style="display:flex;gap:24px;align-items:flex-start">
 <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px;width:200px">

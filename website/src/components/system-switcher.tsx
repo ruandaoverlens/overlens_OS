@@ -19,6 +19,8 @@ import {
 import {
   MdDocSolidIcon,
   MdInvoiceSolidIcon,
+  MdAppsLineIcon,
+  MdAllInclusiveLineIcon,
   MdCognitionLineIcon,
   MdChartLineIcon,
   MdLibrarySolidIcon,
@@ -37,6 +39,8 @@ export const SYSTEMS = [
   { name: "Brand System", href: "/docs", icon: MdDocSolidIcon },
   { name: "Content System", href: "/estudio", icon: MdCognitionLineIcon },
   { name: "Growth System", href: "/growth", icon: MdChartLineIcon },
+  { name: "Product System", href: "/product", icon: MdAppsLineIcon },
+  { name: "Community System", href: "/community", icon: MdAllInclusiveLineIcon },
   { name: "Pacote Cultural", href: "/pacote", icon: MdLibrarySolidIcon },
 ] as const;
 

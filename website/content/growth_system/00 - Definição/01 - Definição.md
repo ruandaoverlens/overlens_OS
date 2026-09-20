@@ -1,45 +1,88 @@
 ---
 title: Definição
-summary: Apresenta o Livro de Growth da Overlens — propósito, público-alvo, momentos de uso e como navegar o sistema de princípios estratégicos que orienta posicionamento, comunicação e vendas.
-topics: [growth, livro de growth, definição, estratégia, fundamentos]
-keywords: [livro de growth, posicionamento, comunicação estratégica, vendas, marketing, expressão da overlens, sistema de pensamento, módulos]
+summary: Apresenta o Growth System da Overlens — a verdade sobre mercado, públicos, aquisição e conversão. Define o escopo (personas, ICP, segmentos, JTBD, Mapa de Empatia, Value Proposition Canvas, jornada de compra, canais, funis, CRM, growth loops e messaging), os momentos de uso e a relação com os outros systems.
+topics: [growth, growth system, definição, estratégia, fundamentos, mercado, aquisição, conversão]
+keywords: [growth system, livro de growth, mercado, personas, ICP, segmentos, JTBD, mapa de empatia, value proposition canvas, jornada de compra, canais, funis, CRM, growth loops, messaging, posicionamento, vendas, marketing]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar o que é o Livro de Growth da Overlens, qual seu propósito, a quem se destina, quando deve ser consultado, ou quando precisar de uma visão geral da arquitetura estratégica da Overlens antes de mergulhar em capítulos específicos.
+  Use quando o usuário perguntar o que é o Growth System da Overlens, qual seu escopo, sobre o que ele é fonte de verdade, a quem se destina, quando deve ser consultado, ou qual a fronteira entre Growth System, Business Document, Brand System, Product System e Community System.
 related: []
 ---
 # Definição
 
 Documento Interno
 
-## O Livro de Growth reúne princípios, práticas e padrões que regem a forma como a Overlens se posiciona, comunica e vende.
+## O Growth System reúne princípios, práticas e padrões que regem a forma como a Overlens entende seu mercado, encontra seus públicos e conduz pessoas da descoberta à decisão.
 
 Apresentamos o nosso pensamento estratégico em diretrizes concretas, combinando visão e execução em uma mesma arquitetura. Trata-se de um documento de referência. Não serve para inspirar campanhas passageiras, mas para formar fundamentos. Seu valor está na coerência que ele sustenta, na clareza que oferece e na potência que libera ao alinhar toda a operação com o propósito que nos move.
 
-## Por que este livro existe?
+## Sobre o que este sistema é verdade
 
-A existência deste livro responde a uma necessidade essencial: garantir que o crescimento da Overlens aconteça com intenção, consistência e significado. Cada projeto, cada conversa com o mercado, cada escolha de linguagem ou canal tem impacto direto na forma como somos percebidos. Este livro foi criado para assegurar que essas escolhas estejam à altura da ideia que representamos.
+**DEFINIDO.** O Growth System é a fonte de verdade sobre **mercado, públicos, aquisição e conversão**. Quando qualquer documento da base precisar responder quem é o público, como ele decide, por onde chega e o que o convence, a resposta pertence aqui.
+
+O escopo cobre:
+
+| Camada | O que este sistema define |
+| :---- | :---- |
+| **Mercado** | Setor, categoria, segmentos, dimensionamento, concorrência, substitutos, benchmarking e referências |
+| **Públicos** | Personas, ICP (perfil ideal de cliente), critérios de qualificação e desqualificação |
+| **Necessidade** | JTBD (jobs to be done), **Mapa de Empatia** e **Value Proposition Canvas** |
+| **Decisão** | Jornada de compra, objeções, gatilhos de escolha, critérios de comparação |
+| **Aquisição** | Canais, conteúdo, eventos, parcerias, funis, CRM e growth loops |
+| **Conversão** | Messaging por segmento, argumentos, provas, propostas e processo comercial |
+
+**Value Proposition Canvas e Mapa de Empatia pertencem a este sistema**, não ao Business Document. O Business Document explica por que o negócio existe e como ele captura valor; o Growth System explica para quem, contra o quê e por qual caminho.
+
+**Status de ambos: PENDENTE.** Nenhum dos dois será construído antes da redefinição de personas e segmentos — construí-los sobre as personas anteriores produziria um artefato que parece fundamentado e não é.
+
+## Por que este sistema existe?
+
+A existência deste sistema responde a uma necessidade essencial: garantir que o crescimento da Overlens aconteça com intenção, consistência e significado. Cada projeto, cada conversa com o mercado, cada escolha de linguagem ou canal tem impacto direto na forma como somos percebidos. Este material foi criado para assegurar que essas escolhas estejam à altura da ideia que representamos.
 
 Não se trata de uma coletânea de boas práticas. Trata-se de um sistema de pensamento aplicado ao campo da comunicação estratégica. Ele organiza não apenas o que fazemos, mas por que fazemos e como devemos fazer, com a sobriedade de quem compreende que vendas e marketing são **extensões do posicionamento**, e não departamentos isolados.
 
+## De lançamentos para operação contínua
+
+**EM VALIDAÇÃO.** A arquitetura comercial da Overlens está migrando da dependência de lançamentos para **aquisição e vendas contínuas**.
+
+Isso muda o que este sistema precisa documentar. Um modelo de lançamentos organiza tudo em torno de um evento: campanha, abertura, fechamento, silêncio. Um modelo contínuo organiza tudo em torno de um **relacionamento**: CRM, vendedores, follow-up, recuperação de leads, WhatsApp, conteúdo permanente, eventos recorrentes, produtos perpétuos, expansão de clientes e retenção de longo prazo.
+
+A consequência prática: documentos deste sistema que descrevem o funil como sequência de campanha estão desatualizados e precisam ser relidos sob a lógica de operação contínua. A migração é direção assumida, não obra concluída.
+
 ## A quem se destina?
 
-Este material é voltado a todas as pessoas envolvidas com a **expressão da Overlens no mundo**: equipes de marketing, vendas, branding, conteúdo, atendimento, estratégia e produto. Inclui também nossos experts, proxies, parceiros externos e demais colaboradores que atuam na construção e propagação da marca. Se você é responsável por comunicar, vender ou representar a Overlens de qualquer forma, este livro é parte do seu ofício. Sua leitura não é eventual.
+Este material é voltado a todas as pessoas envolvidas com a **expressão da Overlens no mundo**: equipes de marketing, vendas, branding, conteúdo, atendimento, estratégia e produto. Inclui também nossos experts, proxies, parceiros externos e demais colaboradores que atuam na construção e propagação da marca. Se você é responsável por comunicar, vender ou representar a Overlens de qualquer forma, este sistema é parte do seu ofício. Sua leitura não é eventual.
 
 ## Quando deve ser lido?
 
-Consulte este livro em todo início de ciclo. Use-o ao planejar campanhas, ao redigir páginas de vendas, ao definir propostas de valor, ao alinhar discursos, ao formar equipes. Retorne a ele sempre que precisar lembrar o que sustenta a marca por trás das metas. É especialmente valioso em momentos de decisão. Quando houver dúvida entre múltiplos caminhos, este documento funciona como um eixo: não aponta soluções prontas, mas oferece critérios para escolhas lúcidas.
+Consulte este sistema em todo início de ciclo. Use-o ao planejar campanhas, ao redigir páginas de vendas, ao definir propostas de valor, ao alinhar discursos, ao formar equipes. Retorne a ele sempre que precisar lembrar o que sustenta a marca por trás das metas. É especialmente valioso em momentos de decisão. Quando houver dúvida entre múltiplos caminhos, este documento funciona como um eixo: não aponta soluções prontas, mas oferece critérios para escolhas lúcidas.
 
 ## Como utilizá-lo?
 
-Este livro foi estruturado em módulos autônomos, organizados para leitura contínua ou consulta pontual. Cada seção parte de um fundamento e avança para orientações práticas, sempre ancoradas na realidade da Overlens. Recomendamos iniciar pela arquitetura estratégica, que apresenta a estrutura geral da comunicação e das ofertas. Em seguida, explore os capítulos sobre narrativa, diferenciais, canais, comportamento de compra e frameworks de vendas. Ao final, encontrará anexos com templates, exemplos e orientações operacionais. **Use este livro como uma fonte.** Extraia dele a água que precisa, mas preserve o curso. A interpretação criativa é bem-vinda, desde que respeite a integridade do sistema.
+Este sistema foi estruturado em módulos autônomos, organizados para leitura contínua ou consulta pontual. Cada seção parte de um fundamento e avança para orientações práticas, sempre ancoradas na realidade da Overlens. Recomendamos iniciar por **Mercado e Público**, que estabelece categoria, segmentos e a quem falamos. Em seguida, explore os capítulos sobre narrativa, diferenciais, canais, comportamento de compra e frameworks de vendas. Ao final, encontrará anexos com templates, exemplos e orientações operacionais. **Use este sistema como uma fonte.** Extraia dele a água que precisa, mas preserve o curso. A interpretação criativa é bem-vinda, desde que respeite a integridade do sistema.
+
+## Relação com os outros systems
+
+**DEFINIDO.** Cada assunto tem um documento responsável. Os demais **referenciam, não redefinem**.
+
+| Sistema | É verdade sobre | Fronteira com o Growth System |
+| :---- | :---- | :---- |
+| **Business Document** | Negócio: modelo, receita, arquitetura de ofertas, apostas, estratégia | O Business Document decide o que vendemos e como capturamos valor; o Growth System decide para quem e por qual caminho |
+| **Brand System** | Identidade e significado: posicionamento, narrativa, linguagem, worldbuilding, símbolos | A definição oficial de posicionamento é do Brand System; o Growth System a traduz em messaging por segmento |
+| **Growth System** | Mercado, públicos, aquisição e conversão | — |
+| **Product System** | Produto: PBL, IA, projetos, competências, evidências, progresso, roadmap | O Product System define a experiência; o Growth System define a promessa que a antecede |
+| **Community System** | Comunidade: membros, níveis, rituais, reputação, progressão, papéis, governança | A comunidade é infraestrutura de realização; aqui ela aparece como fator de decisão e de retenção, não como mecânica |
+
+Dois pontos de atenção recorrentes: a definição conceitual de **Atom** pertence ao Brand System, e o dimensionamento de mercado depende de **Research & Market Intelligence**, no Business Document — que segue **PENDENTE**.
 
 ## Como ele evolui?
 
 Este documento está em constante construção. À medida que aprendemos com os próprios resultados, aprimoramos nossos princípios e atualizamos nossas práticas. Para sugerir alterações ou complementos, siga o protocolo estabelecido nas diretrizes editoriais internas. A versão vigente estará sempre atualizada em nosso ambiente de documentação. Mudanças são registradas com data, autoria e justificativa.
 
-## O que este livro representa
+Como a companhia está em transição, toda afirmação estratégica deste sistema deve carregar sua classificação de certeza: **DEFINIDO · EM VALIDAÇÃO · HIPÓTESE · HISTÓRICO · PENDENTE**. Documentar exploração como decisão tomada é o erro mais caro que esta base pode cometer.
 
-### *“Formas de fazer com que ideias transformadoras encontrem as pessoas certas.”*
+## O que este sistema representa
 
-**Na Overlens, marketing não é manipulação. Vendas não são persuasão desonestas.** Mas sim, formas de fazer com que ideias transformadoras encontrem as pessoas certas. Este livro é a base.
+### *"Formas de fazer com que ideias transformadoras encontrem as pessoas certas."*
+
+**Na Overlens, marketing não é manipulação. Vendas não são persuasão desonesta.** Mas sim, formas de fazer com que ideias transformadoras encontrem as pessoas certas. Este sistema é a base.

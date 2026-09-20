@@ -1,3 +1,13 @@
+---
+title: Research & Market Intelligence
+summary: PENDENTE DE PESQUISA — a página não contém dados de mercado. Explica por que a mudança de categoria invalidou todo o dimensionamento anterior, lista os onze temas que a seção precisará cobrir, as doze perguntas que a pesquisa deve responder e as cinco regras para quem for preenchê-la.
+topics: [pesquisa de mercado, market intelligence, dimensionamento, concorrência, seção pendente, regras de preenchimento]
+keywords: [research, market intelligence, TAM, SAM, SOM, tendências, segmentos, categorias, concorrentes, categorias adjacentes, substitutos, benchmarking, disposição a pagar, fonte verificável, PENDENTE, mercado brasileiro, modelos de IA gerais]
+priority: medium
+ai_when_to_use: |
+  Use apenas para afirmar que a Overlens não tem pesquisa de mercado concluída sob o recorte atual e para listar o que a pesquisa precisará conter e responder. O conteúdo está PENDENTE DE PESQUISA — nunca cite esta página como se houvesse dimensionamento, concorrentes ou números, e não derive estimativas do recorte anterior de design e economia criativa.
+related: ["business_doc/04 - Estratégia/04 - Riscos e Incertezas.md", "business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md", "business_doc/01 - Overview/04 - Business Thesis.md", "growth_system/00 - Definição/01 - Definição.md"]
+---
 # Research & Market Intelligence
 
 ## PENDENTE DE PESQUISA.

@@ -1,3 +1,13 @@
+---
+title: Arquitetura de Receita
+summary: Separa receita existente (programas de entrada, assinatura, aceleração e assessoria) de receita experimental (consultoria, B2B, eventos, incubação e produtos físicos), explica a consequência econômica da redefinição do Overpass, registra a migração de lançamentos para vendas contínuas, os quatro riscos da arquitetura e os cinco pontos a resolver. Valores, tickets e margens permanecem pendentes.
+topics: [arquitetura de receita, captura de valor, receita recorrente, frentes experimentais, arquitetura comercial, riscos de dispersão]
+keywords: [receita, assinatura, Overpass, Atlas, Vanguarda, assessoria, consultoria, B2B, eventos, incubação, produtos físicos, receita recorrente, receita transacional, ticket, margem, CRM, vendas contínuas, lançamentos, dispersão, capacidade sênior, consolidação financeira]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar como a Overlens ganha dinheiro, quais frentes já geram receita e quais ainda são experimento, o que muda com a redefinição da assinatura, ou quais riscos a multiplicidade de frentes cria. Não existem números consolidados nesta base — nenhum valor, ticket ou margem deve ser inferido a partir de documentos anteriores.
+related: ["business_doc/03 - Arquitetura/01 - Arquitetura de Produtos e Serviços.md", "business_doc/01 - Overview/04 - Business Thesis.md", "business_doc/04 - Estratégia/04 - Riscos e Incertezas.md", "growth_system/03 - Estratégia/34 - Arquitetura Comercial.md"]
+---
 # Arquitetura de Receita
 
 ## As diferentes maneiras pelas quais a Overlens pode capturar valor — separando com clareza o que já é receita do que ainda é experimento.

@@ -1,11 +1,11 @@
 ---
 title: Território de Palavras
 summary: Cartografa as 7 constelações semânticas da Overlens (Criação, Conhecimento, Sistemas, Autonomia, Transformação, Filosofia, Realização e Negócio), lista palavras que usamos vs. evitamos, define metáforas estruturais (Lente, Sistema Vivo, Fogo, Camadas) e quatro registros de intensidade.
-topics: [território semântico, constelações de palavras, metáforas estruturais, registros de intensidade, palavras evitadas, vocabulário de empreendedorismo]
-keywords: [Flammarion Engraving, criar, construir, integrar, empreender, lançar, sustentar, autonomia, autoria, agência, emergir, consciência, propósito, Lente, Sistema Vivo, Fogo, Camadas, Prometheus, prisma, micélio, travessia, registro provocativo, registro acolhedor, registro técnico, registro inspirador, acenda, forje, destrave, empoderamento, sinergia, despertar, vagas limitadas, hustle, grind, mindset milionário, liberdade financeira]
+topics: [território semântico, constelações de palavras, metáforas estruturais, registros de intensidade, palavras evitadas, vocabulário de empreendedorismo, território de recusa]
+keywords: [Flammarion Engraving, criar, construir, integrar, empreender, lançar, sustentar, negócio, projeto, realização, evidência, construção, pertencimento, autonomia, autoria, agência, emergir, consciência, propósito, Lente, Sistema Vivo, Fogo, Camadas, Prometheus, prisma, micélio, travessia, Atom, nexialismo, registro provocativo, registro acolhedor, registro técnico, registro inspirador, acenda, forje, destrave, empoderamento, sinergia, despertar, vagas limitadas, hustle, grind, guru, mindset milionário, liberdade financeira, 6 em 7]
 priority: medium
 ai_when_to_use: |
-  Use quando o usuário perguntar quais palavras a Overlens usa ou evita, qual o campo semântico de uma palavra, como falar de negócio e empreendedorismo sem cair em hustle porn, qual metáfora aplicar, qual registro de intensidade adequado a um contexto, ou quando estiver revisando texto em busca de termos proibidos (acenda, destrave, empoderamento, vagas limitadas, mindset milionário etc.).
+  Use quando o usuário perguntar quais palavras a Overlens usa ou evita, qual o campo semântico de uma palavra, como falar de negócio, projeto, evidência e pertencimento sem cair em hustle porn ou tom de guru, qual metáfora aplicar, qual registro de intensidade adequado a um contexto, ou quando estiver revisando texto em busca de termos proibidos (acenda, destrave, empoderamento, vagas limitadas, mindset milionário, 6 em 7 etc.).
 related: ["brand_system/05 - Universo Verbal/03 Tom de Voz.md", "brand_system/05 - Universo Verbal/04 Vocabulário.md", "brand_system/05 - Universo Verbal/06 Glossário.md"]
 ---
 
@@ -95,7 +95,7 @@ O campo que expressa a dinâmica da marca e do aprendizado.
 
 **Palavras de apoio:** ultrapassar limites, mudar de estado, romper inércia, passar de um estágio a outro, amadurecer, expandir.
 
-**Orientação de uso:** Transformação na Overlens é processo, não mágica. Sempre que usar "transformar", implique método e tempo. "Emergir" é o verbo preferido para descrever a transição entre perfis de maturidade; carrega a ideia de algo que já estava latente e encontra superfície. "Mover" é o terceiro pilar (Inspirar, Ensinar, Mover); sempre associado a ação concreta no mundo.
+**Orientação de uso:** Transformação na Overlens é processo, não mágica. Sempre que usar "transformar", implique método e tempo. "Emergir" é o verbo preferido para descrever a passagem de um modo de operar a outro; carrega a ideia de algo que já estava latente e encontra superfície. "Mover" é o terceiro pilar (Inspirar, Ensinar, Mover); sempre associado a ação concreta no mundo.
 
 **Campo de tensão:** transformação não é promessa de resultado garantido. Não usamos "transformação" como gancho de vendas. A transformação que descrevemos é real, gradual e exige custo.
 
@@ -117,16 +117,17 @@ O campo que sustenta a dimensão do Sábio.
 
 ### 7. Realização e Negócio
 
-O campo que ancora o público da marca: o Empreendedor Nexialista.
+O campo que ancora o público da marca: o empreendedor; quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade.
 
-**Palavras centrais:** empreender, realizar, lançar, sustentar, fundar, operar, validar, decidir, entregar.
+**Palavras centrais:** empreender, realizar, lançar, sustentar, fundar, operar, validar, decidir, entregar, construir.
 
-**Palavras de apoio:** colocar de pé, atravessar o atrito, tirar do papel, dar continuidade, dimensionar com critério, viver do que constrói.
+**Palavras de apoio:** negócio, projeto, evidência, construção, pertencimento, colocar de pé, atravessar o atrito, tirar do papel, dar continuidade, dimensionar com critério, viver do que constrói.
 
 **Orientação de uso:** aqui a marca corre o maior risco de contaminação. Falar de negócio na Overlens nunca é falar de faturamento como prova de valor. "Empreender" significa assumir a própria ideia até o fim, com as consequências que isso traz; não é sinônimo de vender. Prefira "sustentar" a "escalar", "critério" a "performance", "o que constrói" a "o que fatura". Quando o resultado financeiro aparecer, ele aparece como condição de continuidade, nunca como troféu.
 
-**Campo de tensão:** empreendedorismo não é hustle. Não usamos a estética da pressa, do sacrifício heroico ou do enriquecimento como horizonte. O Empreendedor Nexialista é construtor e pensador, não vendedor.
+**Projeto** é a palavra que organiza o campo: é a unidade central da experiência, o ponto de partida do qual decorrem necessidade, conhecimento, aplicação e evidência. **Evidência** é o que permanece depois da execução; o registro concreto do que alguém conseguiu construir, nunca um número exibido como prova. **Construção** é preferível a "conteúdo" sempre que houver algo sendo feito. E **pertencimento** é o vocabulário com que descrevemos a comunidade: não se compra pertencimento, constrói-se; é a palavra que sustenta Atom e o convívio entre quem cria junto.
 
+**Campo de tensão:** empreendedorismo não é hustle. A palavra "empreendedor" arrasta atrás de si um léxico inteiro que recusamos: pressa, sacrifício heroico, enriquecimento como horizonte, escassez fabricada e mestre iluminado vendendo método infalível. Nenhum deles entra aqui. O empreendedor de que falamos é construtor e pensador, não vendedor; e o que oferecemos é método, companhia e critério, nunca promessa de resultado.
 ---
 
 ## Palavras que Usamos vs. Palavras que Evitamos
@@ -147,6 +148,9 @@ A identidade verbal de uma marca se define tanto pelo que diz quanto pelo que se
 | **Clareza, precisão, simplicidade** | Qualidades operacionais; comunicação como serviço ao leitor |
 | **E se...? / Imagine / Experimente** | Convites à ação e reflexão; sem imposição, com abertura |
 | **Empreender, lançar, sustentar** | Verbos de realização; a ideia atravessando o atrito do mundo real |
+| **Projeto, construção, realização** | Nomeiam o que se faz, não o que se consome; a unidade central da experiência |
+| **Evidência** | O que ficou de pé depois da execução; substitui o número exibido como prova |
+| **Pertencimento, comunidade, Atoms** | Relação de convívio e contribuição, no lugar da relação escolar empresa-aluno |
 
 ### Palavras que Evitamos
 
@@ -166,6 +170,9 @@ A identidade verbal de uma marca se define tanto pelo que diz quanto pelo que se
 | **Mindset milionário, liberdade financeira** | Empreendedorismo reduzido a promessa de enriquecimento | *Autonomia, sustentar o próprio trabalho, viver do que constrói* |
 | **Escalar, escala infinita** | Crescimento como valor em si, sem critério nem consequência | *Sustentar, dimensionar com critério, crescer com direção* |
 | **Faturamento como prova** | Número no lugar de argumento; espetáculo de resultado | *Evidência concreta: o que foi construído e o que mudou* |
+| **Guru, mestre, método infalível** | Transfere a autoria do resultado para quem ensina | *Professor, referência, método testável* |
+| **6 em 7, faça como eu fiz** | Promessa de resultado replicável que ignora contexto e risco | *O que foi construído, em quanto tempo e a que custo* |
+| **Aluno (como identidade)** | Reduz uma pessoa à condição transacional de quem compra um curso | *Atom, membro da comunidade, quem constrói aqui* |
 
 ---
 
@@ -203,7 +210,7 @@ As mesmas constelações semânticas ganham ênfases diferentes dependendo do co
 
 **Registro:** sério-acolhedor, orientado a pertencimento sem condescendência.
 
-**Palavras-chave:** autoria, compromisso, coerência, ritmo, respeito, responsabilidade, postura, contribuição.
+**Palavras-chave:** autoria, compromisso, coerência, ritmo, respeito, responsabilidade, postura, contribuição, pertencimento, Atoms.
 
 **Exemplo:** "Fazer parte é aceitar um custo. Aqui, ideias têm responsáveis e decisões têm consequências."
 
@@ -287,7 +294,7 @@ As metáforas da Overlens não são ornamento; são infraestrutura argumentativa
 |---|---|---|
 | **Prisma / constelação** | Dispersão e recomposição da luz. Múltiplas perspectivas que formam um conjunto. | Diversidade de disciplinas, visão nexialista, interdisciplinaridade |
 | **Micélio / teia** | Rede distribuída sem centro único. Inteligência emergente. | Comunidade, conexões invisíveis, aprendizado distribuído |
-| **Travessia / portal** | Passagem entre estados. O que ficou para trás e o que se encontra adiante. | Momentos de transformação, transições entre perfis de maturidade |
+| **Travessia / portal** | Passagem entre estados. O que ficou para trás e o que se encontra adiante. | Momentos de transformação, passagens entre modos de operar |
 | **Ficção científica** | O futuro como projeto, não como destino. Especulação como método. | Visão de futuro, tecnologia, IA, imaginação aplicada |
 
 ---

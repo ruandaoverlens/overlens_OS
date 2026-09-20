@@ -1,3 +1,13 @@
+---
+title: Registro do Modelo Anterior
+summary: HISTÓRICO — preserva o modelo de negócio tal como estava documentado antes da transição, reunindo categoria e público declarados, a segmentação de cinco perfis de maturidade, as quatro personas anteriores, ofertas e preços praticados, indicadores econômicos herdados, o growth loop com gamificação, o dimensionamento de mercado invalidado e o mapa de concorrentes desatualizado.
+topics: [histórico, modelo anterior, preços praticados, indicadores herdados, personas antigas, growth loop anterior]
+keywords: [modelo anterior, edtech, escola de negócios emergentes, foco em IA, Empreendedor Nexialista, Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas, Brunin, Tella, Ander, Lilly, Atlas, Overpass, Vanguarda, preços, ticket médio, LTV, NPS, gamificação, XP, badges, TAM SAM SOM, concorrentes, HISTÓRICO]
+priority: low
+ai_when_to_use: |
+  Use quando o usuário perguntar como o modelo de negócio da Overlens estava documentado antes da transição, quais preços e indicadores foram praticados, quem eram as personas anteriores, ou precisar reconhecer material desatualizado em outro documento. Nenhuma informação daqui serve como base para decisão atual — os números foram medidos sob um recorte de público que não descreve mais a companhia.
+related: ["business_doc/06 - Histórico/01 - Evolução da Overlens.md", "business_doc/05 - Pesquisa/01 - Research e Market Intelligence.md", "business_doc/02 - Modelos/01 - Business Model Canvas.md", "growth_system/01 - Mercado e Público/03 - Personas/15 - Buyer Personas.md"]
+---
 # Registro do Modelo Anterior
 
 ## O modelo de negócio da Overlens tal como estava documentado antes desta transição. Preservado como registro — não como definição vigente.

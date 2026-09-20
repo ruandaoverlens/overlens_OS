@@ -9,13 +9,15 @@ allowed-tools: Read, Write, Edit, Glob, Grep, WebSearch, Agent
 Execute o pipeline completo para a página Storybrand/Roteiro:
 
 1. Lance o agente `especialista-storybrand` para produzir a página
-2. O agente deve ler `RAG_OVERLENS_COMPLETO.md` e as seções narrativas do documento central (Manifesto, Tomorrowland, Linha do Tempo)
+2. O agente deve ler `.claude/rules/tese-atual.md` (normativa, prevalece sobre a base) e as seções narrativas da base canônica em `website/content/<sistema>/` (Manifesto, Tomorrowland, Linha do Tempo); o espelho sem frontmatter fica em `TRU/<sistema>/`
 3. Aplicar SB7 Framework + Jornada do Herói adaptados ao contexto Overlens
-4. Integrar os elementos já mencionados no documento central (linha 1168-1172): fissuras sociais, desgastes, cultura, emoções primitivas
+4. Integrar os elementos narrativos já mencionados na base: fissuras sociais, desgastes, cultura, emoções primitivas
 5. Salvar em `[PAGINA] Storybrand.md`
 6. Rodar revisão com agente `revisor` (P.R.I.S.M.A)
 7. Apresentar resultado ao usuário
 
-**Lembrete**: O herói é o EMPREENDEDOR NEXIALISTA, não a Overlens. A Overlens é o GUIA.
-O herói nunca é chamado de "designer" ou "criativo" — ele pode vir da engenharia, da arquitetura, da arte, do design ou de nenhuma dessas origens, e é definido pelo que faz com a própria ideia.
+**Lembrete**: O herói é o EMPREENDEDOR — quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. A Overlens é o GUIA.
+O herói **define-se pelo estado, não pela profissão**: pode ou não ser designer, engenheiro, arquiteto, artista, inventor, maker ou pesquisador, e pode vir de qualquer outra origem. Nunca é rotulado como "designer", "criativo" nem como "Empreendedor Nexialista" (Nexialismo é capacidade, não nome do público).
+Os quatro modos (Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra) NÃO são o arco da jornada — são formas de agir e pensar. Não existe perfil "Inconsciente".
+IA é infraestrutura, não categoria. Não inventar personas: as antigas estão desatualizadas; marcar material dependente delas como "necessita revisão de persona".
 Cuidado com hustle porn: o arco narrativo termina em autoria e sustentação, nunca em faturamento, enriquecimento ou "liberdade financeira".

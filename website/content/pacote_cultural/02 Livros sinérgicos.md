@@ -49,7 +49,7 @@ Uma das obras mais fascinantes já escritas sobre mente, consciência, matemáti
 
 Nassim Nicholas Taleb
 
-Taleb introduz um conceito que não existia antes deste livro: o antifrágil, aquilo que se fortalece com o estresse, a desordem e a volatilidade. Não se trata apenas de resistir ao caos, mas de se beneficiar dele. Sistemas antifrágeis prosperam justamente porque são expostos a choques. Essa ideia ressoa diretamente com a filosofia da Overlens: Empreendedores Nexialistas não são formados para sobreviver à incerteza, mas para usar a incerteza como combustível de criação. O aprendizado real não nasce do conforto, nasce da exposição intencional ao desconhecido.
+Taleb introduz um conceito que não existia antes deste livro: o antifrágil, aquilo que se fortalece com o estresse, a desordem e a volatilidade. Não se trata apenas de resistir ao caos, mas de se beneficiar dele. Sistemas antifrágeis prosperam justamente porque são expostos a choques. Essa ideia ressoa diretamente com a filosofia da Overlens: aqui ninguém é formado para apenas sobreviver à incerteza, e sim para usar a incerteza como combustível de criação. O aprendizado real não nasce do conforto, nasce da exposição intencional ao desconhecido.
 
 </div>
 </div>
@@ -114,7 +114,7 @@ Por trás da aparente fantasia infantil, Carroll construiu um tratado sobre lóg
 
 Yuval Noah Harari
 
-Harari traça a trajetória da espécie humana a partir de uma tese provocativa: o que nos separou dos demais animais não foi a força física nem a inteligência isolada, mas a capacidade de criar ficções compartilhadas; religiões, nações, dinheiro, corporações. Tudo o que sustenta a civilização é, em última instância, uma história em que escolhemos acreditar coletivamente. Para Empreendedores Nexialistas, essa perspectiva muda o jogo: quem compreende a mecânica das narrativas que organizam o mundo ganha a capacidade de questionar as que já existem e projetar as que ainda não foram escritas.
+Harari traça a trajetória da espécie humana a partir de uma tese provocativa: o que nos separou dos demais animais não foi a força física nem a inteligência isolada, mas a capacidade de criar ficções compartilhadas; religiões, nações, dinheiro, corporações. Tudo o que sustenta a civilização é, em última instância, uma história em que escolhemos acreditar coletivamente. Para quem constrói algo próprio, essa perspectiva muda o jogo: quem compreende a mecânica das narrativas que organizam o mundo ganha a capacidade de questionar as que já existem e projetar as que ainda não foram escritas.
 
 </div>
 </div>

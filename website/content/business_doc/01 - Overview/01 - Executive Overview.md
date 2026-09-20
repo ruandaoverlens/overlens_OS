@@ -1,3 +1,13 @@
+---
+title: Executive Overview
+summary: Resumo executivo da companhia — quem é a Overlens, o que faz, para quem existe, qual mudança pretende produzir, a tese do futuro como projeto, o modelo mental Aprender → Construir → Acelerar, as cinco camadas (marca, educação, produto, comunidade, negócio) e o quadro do que mudou em relação à versão anterior da empresa.
+topics: [visão executiva, identidade da companhia, público, tese, camadas da companhia, transição estratégica]
+keywords: [Overlens, escola de negócios, criação, realização, Ruan Braz, Rafael Braz, 2021, empreendedor, Atom, ecossistema, IA como infraestrutura, projeto como unidade central, Aprender Construir Acelerar, o futuro é um projeto, camadas da companhia, reposicionamento]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário pedir uma visão geral do negócio da Overlens, perguntar o que a companhia é hoje, quem ela atende, como o ecossistema se organiza, ou o que mudou em relação à versão anterior da empresa. É a porta de entrada do Business Document e o resumo a citar antes de descer para páginas específicas.
+related: ["business_doc/01 - Overview/04 - Business Thesis.md", "business_doc/01 - Overview/02 - Visão.md", "business_doc/01 - Overview/03 - Missão.md", "business_doc/06 - Histórico/01 - Evolução da Overlens.md"]
+---
 # Executive Overview
 
 ## A Overlens é um ecossistema de aprendizagem, negócios, criação e realização construído para pessoas que querem transformar ideias em realidade.

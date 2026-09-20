@@ -2,7 +2,7 @@
 title: Virtudes
 summary: Mapeia as virtudes da Overlens como continuum aristotélico (falta-virtude-excesso), detalhando as 5 virtudes do tom (Científica, Profunda, Provocativa, Inspiradora, Adaptável) e virtudes de comportamento, decisão e relação que governam o caráter da marca.
 topics: [virtudes, ética aristotélica, continuum, tom de voz, caráter de marca, guardrails, phronesis]
-keywords: [Aristóteles, Ética a Nicômaco, hexis, mesotes, phronesis, sabedoria prática, continuum, falta-virtude-excesso, científica, profunda, provocativa, inspiradora, adaptável, Mago, Criador, Sábio, Raphael, School of Athens, guardrails, julgamento, parcimônia, unidade, realização, hustle porn, Empreendedor Nexialista]
+keywords: [Aristóteles, Ética a Nicômaco, hexis, mesotes, phronesis, sabedoria prática, continuum, falta-virtude-excesso, científica, profunda, provocativa, inspiradora, adaptável, Mago, Criador, Sábio, Raphael, School of Athens, guardrails, julgamento, parcimônia, unidade, realização, hustle porn, empreendedor, caráter de marca]
 priority: high
 ai_when_to_use: |
   Use quando o usuário perguntar sobre as virtudes da Overlens, como calibrar tom em diferentes contextos, o continuum entre falta e excesso, phronesis, ou quando precisar diagnosticar se uma peça pendeu para um extremo (frieza, hermetismo, agressividade, messianismo, rigidez, hustle porn empreendedor).

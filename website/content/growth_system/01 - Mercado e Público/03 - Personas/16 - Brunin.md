@@ -1,15 +1,24 @@
 ---
 title: Brunin - O Jovem Inconsciente
-summary: Persona do jovem de 18 anos em São Paulo que carrega ideias sem nunca ter tirado nenhuma do papel — estuda Publicidade, faz bicos de social media para se sustentar e sonha com algo próprio. Inconsciente, perfil INFP, oferta ideal Protocolo 3-2-1 e Overpass.
-topics: [persona, brunin, inconsciente, empreendedor nexialista, ideia engavetada, primeiros passos]
+summary: NECESSITA REVISÃO DE PERSONA. Persona do jovem de 18 anos em São Paulo que carrega ideias sem nunca ter tirado nenhuma do papel. Construída sob o recorte anterior de público (profissão, idade, renda, consumo) e sob a formulação de cinco estágios de maturidade — preservada como registro, não como verdade atual.
+topics: [persona, brunin, necessita revisão de persona, registro, ideia engavetada]
 keywords: [brunin, bruno, persona, inconsciente, empreendedor nexialista, vontade sem direção, ideia engavetada, estudante, publicidade, social media, INFP, são paulo, protocolo 3-2-1, overpass, tiktok, mapa de empatia]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre Brunin, persona do jovem inconsciente, quem tem vontade de construir algo próprio mas nenhuma direção, ou ao desenhar campanha de topo de funil, comunicação para 18-24 anos, conteúdo educativo gratuito e primeiras portas de entrada.
+  ATENÇÃO — persona NECESSITA REVISÃO. Use apenas como registro do que foi documentado sobre Brunin. Foi construída sob o recorte anterior de público e sobre o perfil "Inconsciente", que não existe mais na formulação atual. Não usar como base para campanha, produto ou qualificação; a redefinição de personas acontecerá no Growth System.
 related: []
 ---
 
 # Brunin - O Jovem Inconsciente
+
+> ## ⚠️ NECESSITA REVISÃO DE PERSONA
+>
+> Esta persona foi construída sob o **recorte anterior de público** — definido por profissão, faixa etária, renda e comportamento de consumo — e sob a formulação de **cinco estágios sequenciais de maturidade** (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas), que não existe mais.
+>
+> **Não use esta página como verdade atual** sobre o público da Overlens. O público é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.** E Operante, Convergente, Emergente e Nexialista são hoje **formas de agir, aprender, pensar e criar** — não degraus de uma escada.
+>
+> **A redefinição de personas acontecerá no Growth System e ainda não foi feita.** Até lá, o conteúdo abaixo permanece preservado como registro do que foi documentado — não como base para campanha, produto ou qualificação.
+
 
 <div style="display:flex;gap:24px;align-items:flex-start">
 <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px;width:200px">

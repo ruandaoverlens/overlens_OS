@@ -1,11 +1,11 @@
 ---
 title: Posicionamento
-summary: Define como a Overlens quer ser percebida em camadas (Ethos-Pathos-Logos) e detalha as quatro virtudes do tom (Científica, Profunda, Provocativa, Inspiradora) que sustentam toda a comunicação da marca.
-topics: [posicionamento, percepção de marca, tom de voz, Ethos Pathos Logos, retórica, comunicação em camadas]
-keywords: [Ethos, Pathos, Logos, Aristóteles, retórica, científico, profundo, provocativo, inspirador, pós-verdade, evergreen, Kandinsky, Composition IX, inovadores visionários, abordagem científica, Empreendedor Nexialista, audiência]
+summary: Registra a declaração de posicionamento da Overlens — "a escola de negócios dos criadores", em estrutura dinâmica e EM VALIDAÇÃO —, define como a marca quer ser percebida em camadas (Ethos-Pathos-Logos) e detalha as quatro virtudes do tom (Científica, Profunda, Provocativa, Inspiradora).
+topics: [posicionamento, declaração de posicionamento, percepção de marca, tom de voz, Ethos Pathos Logos, retórica, comunicação em camadas]
+keywords: [escola de negócios dos criadores, declaração de posicionamento, estrutura dinâmica, em validação, Ethos, Pathos, Logos, Aristóteles, retórica, científico, profundo, provocativo, inspirador, pós-verdade, evergreen, Kandinsky, Composition IX, inovadores visionários, abordagem científica, audiência]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre como a Overlens se posiciona, como quer ser percebida pela audiência de Empreendedores Nexialistas, qual a estratégia retórica em camadas (Ethos-Pathos-Logos), ou quando precisar definir o tom de uma peça em relação aos quatro tons fundamentais (científico, profundo, provocativo, inspirador).
+  Use quando o usuário perguntar qual é a declaração de posicionamento da Overlens ("a escola de negócios dos criadores" e suas variações), como a marca se posiciona e quer ser percebida, qual a estratégia retórica em camadas (Ethos-Pathos-Logos), ou quando precisar definir o tom de uma peça em relação aos quatro tons fundamentais (científico, profundo, provocativo, inspirador).
 related: ["brand_system/04 - Núcleo da Marca/05 Virtudes.md", "brand_system/05 - Universo Verbal/03 Tom de Voz.md"]
 ---
 
@@ -16,6 +16,27 @@ related: ["brand_system/04 - Núcleo da Marca/05 Virtudes.md", "brand_system/05 
 ![Composition IX](/brand/images/Composition%20IX.jpg)
 
 <figcaption><a href="https://commons.wikimedia.org/wiki/File:Vassily_Kandinsky,_1936_-_Composition_IX.jpg">Composition IX</a>; Wassily Kandinsky, 1936</figcaption>
+
+## A escola de negócios dos criadores
+
+**EM VALIDAÇÃO.** Esta é a declaração de posicionamento da Overlens. Ela é curta de propósito: posicionamento precisa ser simples, mesmo quando o universo da marca é complexo. Ninguém deveria precisar compreender o worldbuilding da Overlens para entender o que ela faz.
+
+A expressão tem uma estrutura dinâmica, e a repetição das categorias é parte do conceito:
+
+> A escola de negócios dos artistas.
+> A escola de negócios dos engenheiros.
+> A escola de negócios dos inventores.
+> A escola de negócios dos designers.
+> A escola de negócios dos sonhadores.
+> A escola de negócios dos criadores.
+
+Não se trata de escolher uma única variação e descartar as outras. A repetição é o argumento: existe uma escola de negócios construída para quem tradicionalmente não se identifica com uma. Cada variação é uma porta diferente para a mesma casa.
+
+Isso exige dizer com clareza o que "escola de negócios" **não** significa aqui. Não é escola de administração tradicional, não é a estética do terno, do gráfico de crescimento e do vocabulário corporativo. É uma escola de negócios feita para pessoas que não se reconhecem na estética, na linguagem e na visão de mundo de uma escola de negócios convencional — e que, ainda assim, precisam de negócio, estratégia, método e sustentação para colocar as próprias ideias de pé.
+
+Uma observação necessária para quem escreve em nome da marca: os substantivos de profissão funcionam aqui como variações da expressão de posicionamento, não como definição de público. O público da Overlens é definido pelo estado, não pela profissão. *"A escola de negócios dos designers"* é posicionamento; *"nosso público são designers"* é erro.
+
+## Como queremos ser percebidos em camadas
 
 Queremos que as pessoas percebam a comunicação da Overlens em camadas. Primeiro, para chamar a atenção das pessoas nesse mar de informações competindo por atenção, precisamos ser provocativos, devemos despertar uma reação emocional nas pessoas, fazer elas pararem para prestar atenção no que estamos falando. Não queremos ser sensacionalistas e nem parecer fúteis. Queremos fazer isso de maneira inteligente, fazendo as pessoas visualizarem ângulos que não estão acostumadas, fazendo elas pensarem e refletirem, fazendo saírem do modo automático para prestar atenção no que estamos falando. Faremos isso com palavras, imagens, vídeos e quaisquer outros recursos que nos ajudem a comunicar ao mesmo tempo que chamamos a atenção.
 

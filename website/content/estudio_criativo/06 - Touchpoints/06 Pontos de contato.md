@@ -1,11 +1,11 @@
 ---
 title: Pontos de Contato
-summary: Mapeia os touchpoints da Overlens em 5 fases da jornada do Empreendedor Nexialista (Descoberta, Consideração, Entrada, Profundidade, Legado), definindo tom, persona ativa, perfil, objetivos e anti-padrões por canal.
-topics: [touchpoints, jornada do empreendedor nexialista, canais, fases, anti-padrões]
-keywords: [pontos de contato, jornada, descoberta, consideração, entrada, profundidade, legado, ethos, pathos, logos, instagram, youtube, site, gumroad, manychat, vanguarda, comunidade, plataforma, D.U.D, T.R.U, empreendedor nexialista, inconscientes, operantes, convergentes, emergentes, nexialistas]
+summary: "EM VALIDAÇÃO. Mapeia os touchpoints da Overlens em 5 fases de experiência (Descoberta, Consideração, Entrada, Profundidade, Legado), definindo tom, persona sintética, modo predominante, objetivos e anti-padrões por canal. O mapa de canais e as diretrizes seguem válidos; a leitura de jornada e de público depende da redefinição de personas, que está PENDENTE."
+topics: [touchpoints, jornada do empreendedor, canais, fases, quatro modos, anti-padrões]
+keywords: [pontos de contato, jornada, descoberta, consideração, entrada, profundidade, legado, ethos, pathos, logos, instagram, youtube, site, gumroad, manychat, vanguarda, comunidade, plataforma, atom, D.U.D, T.R.U, empreendedor, operante, convergente, emergente, nexialista, quatro modos, comunidade como infraestrutura]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre touchpoints da Overlens, jornada do Empreendedor Nexialista, canais por fase, anti-padrões de marca, ou como tom/persona/perfil se combinam em cada ponto de contato.
+  Use quando o usuário perguntar sobre touchpoints da Overlens, canais por fase da experiência, anti-padrões de marca, ou como tom/persona sintética/modo se combinam em cada ponto de contato. Avise que a página está EM VALIDAÇÃO e que a jornada e as personas serão redefinidas.
 related: [estudio_criativo/06 - Touchpoints/05 Instagram, estudio_criativo/06 - Touchpoints/02 Tutorial Manychat, estudio_criativo/06 - Touchpoints/03 Tutorial Gumroad, estudio_criativo/05 - Personas Sintéticas/02 D.U.D, estudio_criativo/05 - Personas Sintéticas/03 T.R.U]
 ---
 
@@ -15,25 +15,65 @@ related: [estudio_criativo/06 - Touchpoints/05 Instagram, estudio_criativo/06 - 
 
 A Overlens não é um logotipo que aparece em telas. É uma postura que se manifesta em cada interação; do primeiro Reel que provoca uma dúvida incômoda até a mentoria que reconfigura o rumo de quem constrói algo próprio. Cada canal, cada mensagem, cada silêncio carrega a responsabilidade de sustentar o mesmo compromisso: colocar o poder da criação nas mãos das pessoas.
 
-Este documento mapeia como a marca se comporta em cada ponto de contato. Não é uma lista de canais. É um sistema de experiências intencionais, onde tom, persona, perfil e objetivo se alinham para guiar o empreendedor em sua jornada; sem empurrá-lo, sem abandoná-lo.
+Este documento mapeia como a marca se comporta em cada ponto de contato. Não é uma lista de canais. É um sistema de experiências intencionais, onde tom, persona sintética, modo e objetivo se alinham para acompanhar o empreendedor; sem empurrá-lo, sem abandoná-lo.
+
+> **Status desta página: EM VALIDAÇÃO.** O mapa de canais, as diretrizes por canal, as métricas e os anti-padrões continuam válidos e em uso. A leitura de jornada e a atribuição de público por fase **dependem da redefinição de personas, segmentos e ICP**, que pertence ao Growth System e está **PENDENTE**. Enquanto isso não se conclui, trate as proporções de público indicadas nas tabelas como hipótese de trabalho, não como dado.
 
 ---
 
-## A Jornada do Empreendedor Nexialista em 5 Fases
+## Quem atravessa esses pontos de contato
 
-A jornada não é um funil. É uma espiral. O empreendedor pode entrar em qualquer ponto, retornar a fases anteriores e aprofundar-se em ciclos progressivos. Mas há uma lógica que organiza a experiência, e ela não mede senioridade nem tempo de carreira: mede a distância entre a ideia e a realidade.
+**DEFINIDO.** O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. O que o define é o estado, não a profissão — pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa ou de nenhuma dessas origens.
 
-Os cinco perfis citados adiante seguem esse eixo: **Inconscientes** têm vontade sem direção; **Operantes** executam, mas não lançam; **Convergentes** lançam, mas não sustentam; **Emergentes** têm negócio, mas dispersam energia; **Nexialistas** operam um ecossistema próprio. Uma pessoa pode vir da engenharia, da arquitetura, da arte, do design ou de nenhuma dessas origens; o que a posiciona é o que ela faz com a própria ideia.
+Quem entra no ecossistema passa a ser um **Atom**: a identidade de um membro da comunidade Overlens. Não é aluno, assinante nem usuário — essas são condições transacionais. Atom é identidade de pertencimento, e vale a partir do momento em que a pessoa faz parte, não apenas quando compra.
 
-| Fase | Descrição | Perfil predominante | Movimento |
+**Comunidade não é um canal entre outros; é infraestrutura.** É dentro dela que colaboração, descoberta de pessoas, formação de times, feedback e reputação acontecem. Vários dos touchpoints descritos adiante existem para levar a ela ou para sustentá-la.
+
+---
+
+## Os quatro modos
+
+**EM VALIDAÇÃO.** As tabelas adiante citam quatro modos. Eles descrevem **formas de agir, aprender, pensar e criar** — não senioridade, não estágios obrigatórios, não gamificação:
+
+> **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**
+
+Uma mesma pessoa pode operar em modos diferentes conforme o contexto, e não existe percurso obrigatório entre eles. "Nexialista" nomeia uma capacidade que a Overlens desenvolve, nunca o nome do nosso público.
+
+**HISTÓRICO.** A versão anterior desta página organizava a jornada sobre cinco perfis lidos como escada de maturidade — Inconscientes, Operantes, Convergentes, Emergentes e Nexialistas —, definidos como "a distância entre a ideia e a realidade". Essa leitura foi substituída: "Inconscientes" deixou de existir na formulação atual e os quatro modos restantes não formam hierarquia.
+
+---
+
+## As 5 fases de experiência
+
+**EM VALIDAÇÃO.** A experiência não é um funil. É uma espiral: o empreendedor pode entrar em qualquer ponto, voltar a fases anteriores e aprofundar-se em ciclos.
+
+| Fase | Descrição | Modo mais frequente | Movimento |
 |------|-----------|---------------------|-----------|
-| **Descoberta** | Primeiro contato com o universo Overlens | Inconscientes e Operantes | Provocar atenção |
-| **Consideração** | Aprofundamento e reconhecimento de valor | Operantes e Convergentes | Validar credibilidade |
-| **Entrada** | Decisão e conversão | Convergentes | Intensificar conexão |
-| **Profundidade** | Experiência imersiva na plataforma | Convergentes e Emergentes | Entregar transformação |
-| **Legado** | Contribuição, autoria e impacto | Emergentes e Nexialistas | Consolidar maestria |
+| **Descoberta** | Primeiro contato com o universo Overlens | Operante | Provocar atenção |
+| **Consideração** | Aprofundamento e reconhecimento de valor | Operante e Convergente | Validar credibilidade |
+| **Entrada** | Decisão e início da relação | Convergente | Intensificar conexão |
+| **Profundidade** | Experiência na plataforma e na comunidade | Convergente e Emergente | Entregar transformação |
+| **Legado** | Contribuição, autoria e impacto | Emergente e Nexialista | Consolidar maestria |
 
 Cada fase corresponde a uma camada retórica da comunicação da Overlens; Ethos, Pathos, Logos; distribuída com intenção, não por acaso.
+
+### Relação com a jornada macro do Business Document
+
+**HIPÓTESE.** O Business Document descreve a jornada do empreendedor no ecossistema em sete movimentos:
+
+> **Descobre → Experimenta → Aprende → Constrói → Evolui → Acelera → Pertence**
+
+As cinco fases desta página são a leitura de **comunicação e marca** dessa jornada. A correspondência abaixo é hipótese de trabalho e ainda não foi validada:
+
+| Fases de experiência (comunicação) | Jornada macro (Business Document) |
+|---|---|
+| Descoberta | Descobre |
+| Consideração | Experimenta |
+| Entrada | Aprende |
+| Profundidade | Constrói · Evolui |
+| Legado | Acelera · Pertence |
+
+Duas observações importam: **Pertence** não é o fim de uma escada, é uma condição que pode começar cedo — alguém se torna Atom antes de ter concluído qualquer coisa; e **Acelera** já não descreve só um produto, mas uma frente de negócio própria.
 
 ---
 
@@ -52,7 +92,7 @@ A pessoa ainda não sabe que precisa da Overlens. Talvez nem saiba que precisa d
 | **Canal e formato** | Instagram; Reels (5-60s), carrosséis (4-10 slides), stories com CTA |
 | **Tom predominante** | 35% Provocativa, 25% Científica, 25% Inspiradora, 15% Profunda |
 | **Persona sintética ativa** | Nenhuma diretamente. Voz institucional da Overlens. D.U.D pode aparecer em stories de reflexão |
-| **Perfil predominante** | Inconscientes (60%); vontade sem direção. Operantes (40%); executam, mas não lançam |
+| **Modo predominante** | Majoritariamente Operante; quem já executa dentro de estruturas dadas e ainda não conectou isso a uma ideia própria |
 | **Objetivo** | Romper a inércia. Fazer a pessoa parar de rolar o feed e questionar uma certeza |
 
 **Diretrizes de experiência:**
@@ -86,7 +126,7 @@ Para diretrizes detalhadas de produção no Instagram, consulte a página **Inst
 | **Canal e formato** | YouTube; vídeos longos (8-25 min), Shorts (até 60s) |
 | **Tom predominante** | 30% Profunda, 25% Científica, 25% Provocativa, 20% Inspiradora |
 | **Persona sintética ativa** | Nenhuma. Voz autoral de Ruan Braz (marca pessoal) ou voz institucional |
-| **Perfil predominante** | Operantes (50%); executam, mas não lançam. Convergentes (30%); lançam, mas não sustentam. Inconscientes (20%) |
+| **Modo predominante** | Operante e Convergente; quem executa bem e quem já começa a atravessar disciplinas |
 | **Objetivo** | Estabelecer autoridade e profundidade. Ser o lugar onde a reflexão tem espaço para se desenvolver |
 
 **Diretrizes de experiência:**
@@ -114,7 +154,7 @@ Para diretrizes detalhadas de produção no Instagram, consulte a página **Inst
 | **Canal e formato** | Boca a boca, referências em comunidades, busca no Google |
 | **Tom predominante** | Neutro; depende do ponto de chegada |
 | **Persona sintética ativa** | T.R.U (se a chegada for via site ou documentação) |
-| **Perfil predominante** | Todos; a indicação não filtra estágio |
+| **Modo predominante** | Todos; a indicação não filtra modo |
 | **Objetivo** | Garantir que a primeira impressão seja coerente com o resto da experiência |
 
 **Diretrizes de experiência:**
@@ -142,7 +182,7 @@ O empreendedor já percebeu que a Overlens tem algo diferente. Agora ele investi
 | **Canal e formato** | Site; páginas de conceito, manifesto, sobre, trilhas |
 | **Tom predominante** | 30% Profunda, 25% Científica, 25% Inspiradora, 20% Provocativa |
 | **Persona sintética ativa** | T.R.U em seções técnicas e de estrutura. D.U.D em áreas de boas-vindas |
-| **Perfil predominante** | Operantes (40%) e Convergentes (40%), Emergentes (20%); têm negócio, mas dispersam energia |
+| **Modo predominante** | Operante e Convergente, com presença de Emergente |
 | **Objetivo** | Converter curiosidade em confiança. Mostrar que a profundidade é real, não cosmética |
 
 **Diretrizes de experiência:**
@@ -170,7 +210,7 @@ O empreendedor já percebeu que a Overlens tem algo diferente. Agora ele investi
 | **Canal e formato** | PDFs via Gumroad, documentos, artigos no blog |
 | **Tom predominante** | 30% Científica, 30% Profunda, 20% Provocativa, 20% Inspiradora |
 | **Persona sintética ativa** | T.R.U em materiais técnicos. D.U.D em materiais de onboarding e reflexão |
-| **Perfil predominante** | Operantes e Convergentes |
+| **Modo predominante** | Operante e Convergente |
 | **Objetivo** | Demonstrar valor real antes de qualquer transação. Dar o melhor conteúdo gratuitamente |
 
 **Diretrizes de experiência:**
@@ -205,7 +245,7 @@ O empreendedor decidiu que quer fazer parte. Não por impulso, não por FOMO; po
 | **Canal e formato** | Landing pages específicas para produtos (Overpass, Vanguarda, Protocolo 3-2-1) |
 | **Tom predominante** | 25% Inspiradora, 25% Provocativa, 25% Científica, 25% Profunda |
 | **Persona sintética ativa** | Nenhuma. Voz institucional focada e clara |
-| **Perfil predominante** | Convergentes (principal); lançam, mas não sustentam. Operantes (secundário) |
+| **Modo predominante** | Convergente (principal), Operante (secundário) |
 | **Objetivo** | Transformar interesse em ação; com transparência sobre o que espera do outro lado |
 
 **Diretrizes de experiência:**
@@ -234,7 +274,7 @@ O empreendedor decidiu que quer fazer parte. Não por impulso, não por FOMO; po
 | **Canal e formato** | E-mail marketing, DMs automatizadas via Manychat |
 | **Tom predominante** | 30% Inspiradora, 25% Profunda, 25% Provocativa, 20% Científica |
 | **Persona sintética ativa** | D.U.D em e-mails de cuidado, boas-vindas e retomada. T.R.U em instruções operacionais |
-| **Perfil predominante** | Todos; segmentado por estágio |
+| **Modo predominante** | Todos; segmentado por contexto e histórico da pessoa |
 | **Objetivo** | Manter o fio da conexão sem ser invasivo. Guiar sem empurrar |
 
 **Diretrizes de experiência:**
@@ -272,8 +312,8 @@ O empreendedor entrou. Agora a experiência precisa cumprir; e exceder; a promes
 | **Canal e formato** | Plataforma própria; trilhas (NexGen, Spectrum, AI First, Chrome, Idea, Gestalt, Signals), missões, desafios |
 | **Tom predominante** | 30% Científica, 25% Profunda, 25% Provocativa, 20% Inspiradora |
 | **Persona sintética ativa** | D.U.D em onboarding e momentos de reflexão. T.R.U em orientações técnicas e de navegação |
-| **Perfil predominante** | Convergentes (40%), Emergentes (35%), Operantes (25%) |
-| **Objetivo** | Transformar conhecimento em capacidade aplicada. Construir o Empreendedor Nexialista, não apenas informá-lo |
+| **Modo predominante** | Convergente e Emergente, com presença de Operante |
+| **Objetivo** | Transformar conhecimento em capacidade aplicada e em projeto realizado; desenvolver capacidade, não apenas informar |
 
 **Diretrizes de experiência:**
 - **Trilhas são jornadas, não playlists.** Cada trilha tem progressão intencional: contexto → conceito → aplicação → reflexão.
@@ -286,7 +326,7 @@ O empreendedor entrou. Agora a experiência precisa cumprir; e exceder; a promes
 - Taxa de conclusão de trilhas (indica se a estrutura sustenta o engajamento)
 - Qualidade dos projetos entregues nas missões (avaliação qualitativa)
 - Tempo de permanência ativa na plataforma (não tempo ocioso; tempo de criação)
-- Evolução do perfil ao longo do tempo; a distância entre a ideia e a realidade diminuindo
+- Evidências acumuladas ao longo do tempo; projetos iniciados, entregues e evoluídos
 
 **Anti-padrões:**
 - Aulas gravadas sem contexto narrativo (videoaulas genéricas)
@@ -303,19 +343,20 @@ O empreendedor entrou. Agora a experiência precisa cumprir; e exceder; a promes
 | **Canal e formato** | Comunidade interna; fóruns, canais temáticos, encontros síncronos |
 | **Tom predominante** | 25% Provocativa, 25% Profunda, 25% Inspiradora, 25% Científica |
 | **Persona sintética ativa** | Ambas; D.U.D em acolhimento de novos membros, T.R.U em regras e orientações |
-| **Perfil predominante** | Todos os perfis coexistem |
-| **Objetivo** | Criar ambiente de troca real entre empreendedores em diferentes estágios da jornada |
+| **Modo predominante** | Todos os modos coexistem; é justamente essa mistura que dá valor à comunidade |
+| **Objetivo** | Sustentar a comunidade como infraestrutura: troca real entre Atoms com experiências, repertórios e modos diferentes |
 
 **Diretrizes de experiência:**
-- **A comunidade não é um canal de suporte.** É um espaço de troca entre pares com curadoria de qualidade.
-- **Membros mais adiantados (Emergentes, Nexialistas) são convidados a contribuir**, não apenas consumir. A comunidade cresce quando quem já colocou algo de pé abre caminho para quem chega.
+- **A comunidade não é um canal de suporte nem feature de engajamento. É infraestrutura de aprendizagem e realização.** É onde alguém encontra o conhecimento certo, a pessoa certa e o contexto certo para avançar um projeto — com curadoria de qualidade.
+- **Quem está dentro é um Atom.** O tratamento é de membro de uma comunidade, não de aluno de uma escola nem de assinante de um serviço.
+- **Quem já colocou algo de pé é convidado a contribuir**, não apenas a consumir. A comunidade cresce quando quem já atravessou um problema abre caminho para quem está chegando nele.
 - **Moderação firme, não autoritária.** As regras existem para proteger a qualidade da conversa, não para silenciar.
 - **Encontros síncronos são rituais**, não reuniões. Cada encontro tem intenção, estrutura e espaço para o inesperado.
 
 **Métricas de sucesso:**
 - Engajamento qualitativo (profundidade das conversas, não volume de mensagens)
 - Retenção de membros ativos ao longo do tempo
-- Contribuições voluntárias de membros mais adiantados na jornada
+- Contribuições voluntárias de Atoms que já atravessaram problemas semelhantes
 
 **Anti-padrões:**
 - Comunidade silenciosa onde ninguém interage
@@ -325,18 +366,19 @@ O empreendedor entrou. Agora a experiência precisa cumprir; e exceder; a promes
 
 ---
 
-#### Mentorias e Programas Intensivos (Vanguarda)
+#### Aceleração e Programas Intensivos (Vanguarda)
 
 | Dimensão | Diretriz |
 |----------|----------|
-| **Canal e formato** | Mentoria em grupo; Vanguarda. Encontros ao vivo, desafios práticos, feedback direto |
+| **Canal e formato** | Vanguarda; camada de aceleração. Encontros ao vivo, desafios práticos, feedback direto, acompanhamento de projeto real |
 | **Tom predominante** | 30% Provocativa, 25% Científica, 25% Profunda, 20% Inspiradora |
 | **Persona sintética ativa** | Nenhuma. Voz humana direta; Ruan Braz e equipe |
-| **Perfil predominante** | Emergentes (60%); têm negócio, mas dispersam energia. Convergentes (40%) |
-| **Objetivo** | Acelerar a transição para o pensamento nexialista. Confrontar limites com método |
+| **Modo predominante** | Emergente e Convergente |
+| **Objetivo** | Desenvolver a capacidade de orquestrar — pessoas, domínios e recursos — em torno de um projeto real. Confrontar limites com método |
 
 **Diretrizes de experiência:**
-- **A Vanguarda é o ponto de não-retorno.** Quem entra, sai diferente. A intensidade é proposital, mas sempre com segurança psicológica.
+- **A Vanguarda acelera o que já existe.** Não é curso premium nem mentoria genérica: é a camada que faz um projeto ou negócio em movimento avançar mais rápido. A intensidade é proposital, mas sempre com segurança psicológica.
+- **A escassez aqui é real e pode ser dita.** Acompanhamento próximo tem capacidade humana e turma tem tamanho. Fora disso, nenhuma urgência é fabricada.
 - **Feedback direto, honesto, nunca cruel.** A Overlens respeita o leitor o suficiente para ser franca; e isso se aplica dez vezes mais em mentoria.
 - **Projetos reais, não exercícios acadêmicos.** Cada participante trabalha em algo que importa para sua vida, não em briefs fictícios.
 - **O preço de fazer parte é explícito:** autoria, coerência, ritmo realista, luta pelo que acredita.
@@ -370,11 +412,11 @@ Quem chega aqui não precisa mais da Overlens para construir. Precisa de um ecos
 | **Canal e formato** | Showcases internos, exposição de projetos, publicações |
 | **Tom predominante** | 25% Inspiradora, 25% Profunda, 25% Científica, 25% Provocativa |
 | **Persona sintética ativa** | T.R.U em curadoria e apresentação formal |
-| **Perfil predominante** | Emergentes e Nexialistas; operam um ecossistema próprio |
+| **Modo predominante** | Emergente e Nexialista; quem cria formas próprias e quem orquestra domínios |
 | **Objetivo** | Dar visibilidade à criação autoral. Provar que o método funciona pelo resultado, não pelo discurso |
 
 **Diretrizes de experiência:**
-- **O que um empreendedor formado pela Overlens constrói é a melhor publicidade da marca.** Sem depoimento, sem case study; o trabalho fala.
+- **O que um Atom constrói é a melhor publicidade da marca.** Sem depoimento, sem case study; o trabalho fala.
 - **Curadoria com critério.** Não é qualquer projeto que merece showcase. A seleção reflete os valores da marca: autoria, profundidade, coerência.
 - **Créditos e atribuição sempre transparentes.** Se usou IA, diz que usou. Se colaborou, credita. Ética explícita.
 
@@ -392,16 +434,16 @@ Quem chega aqui não precisa mais da Overlens para construir. Precisa de um ecos
 | **Canal e formato** | Eventos, parcerias, contribuições à comunidade, mentoria entre pares |
 | **Tom predominante** | 25% Profunda, 25% Inspiradora, 25% Provocativa, 25% Científica |
 | **Persona sintética ativa** | Contextual |
-| **Perfil predominante** | Nexialistas |
+| **Modo predominante** | Nexialista; quem mobiliza pessoas e competências em torno de problemas complexos |
 | **Objetivo** | Fechar o ciclo: quem foi movido agora move. O ecossistema se retroalimenta |
 
 **Diretrizes de experiência:**
-- **Nexialistas formados podem se tornar mentores, colaboradores ou vozes ativas do ecossistema.** A Overlens não "perde" alunos; ganha aliados.
+- **Atoms experientes podem se tornar mentores, colaboradores ou vozes ativas do ecossistema.** A Overlens não "perde" membros; ganha aliados. Pertencer não tem data de término.
 - **Eventos e parcerias devem refletir os valores da marca.** Não associar a Overlens a eventos que contradizem seus princípios.
 - **A contribuição deve ser voluntária e reconhecida.** Nunca extrair trabalho gratuito disfarçado de "oportunidade".
 
 **Anti-padrões:**
-- Tratar ex-alunos como clientes perdidos
+- Tratar quem saiu de um programa como cliente perdido; pertencer não termina quando um produto termina
 - Parcerias com marcas ou eventos que contradizem os valores da Overlens
 - Explorar a contribuição de membros sem reconhecimento
 
@@ -409,20 +451,20 @@ Quem chega aqui não precisa mais da Overlens para construir. Precisa de um ecos
 
 ## Mapa de Touchpoints; Visão Consolidada
 
-| Fase | Touchpoint | Persona Ativa | Perfil Principal | Objetivo Central |
-|------|-----------|---------------|------------------|-----------------|
-| Descoberta | Instagram (Reels/Carrosséis) | Institucional | Inconscientes, Operantes | Provocar atenção |
-| Descoberta | YouTube (Vídeos/Shorts) | Ruan Braz / Institucional | Operantes, Convergentes | Estabelecer autoridade |
+| Fase | Touchpoint | Persona sintética | Modo mais frequente | Objetivo Central |
+|------|-----------|-------------------|---------------------|-----------------|
+| Descoberta | Instagram (Reels/Carrosséis) | Institucional | Operante | Provocar atenção |
+| Descoberta | YouTube (Vídeos/Shorts) | Ruan Braz / Institucional | Operante, Convergente | Estabelecer autoridade |
 | Descoberta | Indicação / Busca orgânica | T.R.U (site) | Todos | Primeira impressão coerente |
-| Consideração | Site institucional | T.R.U + D.U.D | Operantes, Convergentes | Converter curiosidade em confiança |
-| Consideração | Materiais gratuitos (Gumroad) | T.R.U / D.U.D | Operantes, Convergentes | Demonstrar valor real |
-| Entrada | Landing pages de produto | Institucional | Convergentes | Transformar interesse em ação |
+| Consideração | Site institucional | T.R.U + D.U.D | Operante, Convergente | Converter curiosidade em confiança |
+| Consideração | Materiais gratuitos (Gumroad) | T.R.U / D.U.D | Operante, Convergente | Demonstrar valor real |
+| Entrada | Landing pages de produto | Institucional | Convergente | Transformar interesse em ação |
 | Entrada | E-mail / DM (Manychat) | D.U.D (cuidado) / T.R.U (operacional) | Todos (segmentado) | Guiar sem empurrar |
-| Profundidade | Plataforma e trilhas | D.U.D + T.R.U | Convergentes, Emergentes | Transformar conhecimento em capacidade |
-| Profundidade | Comunidade | D.U.D + T.R.U | Todos | Troca real entre pares |
-| Profundidade | Vanguarda (mentoria) | Voz humana | Emergentes, Convergentes | Acelerar transformação |
-| Legado | Portfólio e projetos | T.R.U | Emergentes, Nexialistas | Dar visibilidade à autoria |
-| Legado | Networking e contribuição | Contextual | Nexialistas | Retroalimentar o ecossistema |
+| Profundidade | Plataforma e trilhas | D.U.D + T.R.U | Convergente, Emergente | Transformar conhecimento em capacidade |
+| Profundidade | Comunidade | D.U.D + T.R.U | Todos | Infraestrutura de troca entre Atoms |
+| Profundidade | Vanguarda (mentoria) | Voz humana | Emergente, Convergente | Acelerar o que já existe |
+| Legado | Portfólio e projetos | T.R.U | Emergente, Nexialista | Dar visibilidade à autoria |
+| Legado | Networking e contribuição | Contextual | Nexialista | Retroalimentar o ecossistema |
 
 ---
 
@@ -438,7 +480,7 @@ Sete princípios que atravessam todos os pontos de contato, independentemente de
 
 **4. Silêncio é comunicação.** A ausência de mensagem é tão intencional quanto a presença. Não enviar e-mail desnecessário, não publicar por obrigação, não preencher silêncio com ruído.
 
-**5. Cada touchpoint é uma promessa.** Se a Overlens diz que forma Empreendedores Nexialistas, cada interação; da DM ao encontro da Vanguarda; precisa sustentar essa promessa. Promessa quebrada em um ponto compromete todos os outros.
+**5. Cada touchpoint é uma promessa.** Se a Overlens diz que existe para transformar ideias em realidade, cada interação; da DM ao encontro da Vanguarda; precisa sustentar essa promessa. Promessa quebrada em um ponto compromete todos os outros.
 
 **6. A jornada pertence ao empreendedor, não à marca.** A Overlens guia, provoca, acompanha. Nunca empurra, nunca retém, nunca cria dependência. Autonomia é o destino; e também o caminho.
 

@@ -1,116 +1,117 @@
 # Growth Loop
 
-## Growth loops são sistemas cíclicos em que cada resultado gera os insumos do próximo ciclo, criando crescimento sustentável por meio da própria entrega de valor.
+## Um growth loop descreve um ciclo em que o resultado de uma volta é o insumo da próxima. Se ele funciona, crescer fica mais barato com o tempo. O da Overlens ainda é hipótese — e está registrado aqui como hipótese.
 
-Jornada baseada nos Growth Loops  
-**Mais detalhes aqui**: [Acessar documento no Figma](https://www.figma.com/board/bPV9gXuVdE3nFHxfg4gucv/Fluxos-de-Marketing?node-id=405-5914&t=HnfjzaY5iHNo4kvl-1)
+**Status: HIPÓTESE.** Não tratar como mecanismo em funcionamento. Esta página existe para orientar decisões, não para justificar metas.
 
-## **Aquisição** — Primeiro Contato com a Overlens
+A distinção que organiza tudo o que vem a seguir: **funil consome energia; loop acumula.** Um funil termina na venda e recomeça do zero no ciclo seguinte — investe-se de novo para obter o mesmo resultado. Um loop transforma o resultado de cada volta em insumo da próxima, e o custo marginal de crescer cai.
 
-**Objetivo:** Atrair novos integrantes para entrarem na plataforma.
+A Overlens está migrando da primeira lógica para a segunda, o que torna esta página importante e, ao mesmo tempo, prematura. Ver *Arquitetura Comercial* para o lado operacional dessa migração.
 
-**Como acontece:** O usuário encontra a Overlens através de canais externos:
+## O reenquadramento
 
-* **Youtube**: Vídeos de alto valor com seeds para o Atlas.  
-* **Lives**: Conteúdos ao vivo que apresentam a filosofia e as propostas da Overlens.  
-  * **Conteúdo**: Artigos, vídeos e postagens de redes sociais, que despertam curiosidade.  
-  * **Conteúdo Evergreen**: Materiais atemporais para captar usuários organicamente via SEO.  
-* **Atlas**: Imersão ao vivo de 2 dias com watchtime altíssimo (16 horas).  
-* **SEO e ADS**: Estratégias pagas e orgânicas para captação de novos interessados.  
-* **Quizz**: Quizzes que despertam curiosidade forte e identidade (geração de leads)
+A versão anterior desta página descrevia o ciclo como **aquisição → ativação → retenção → receita → indicação**, com a compra no centro e a gamificação como mecanismo de valor. Três correções de fundo:
 
-**Estado emocional do usuário:**
+**Projeto e evidência são estados próprios do ciclo.** Antes, construir era consequência eventual do aprendizado. Agora é um estado esperado: se a pessoa não constrói, o ciclo não gira — ainda que a assinatura continue ativa e o engajamento pareça saudável. E um projeto que acontece mas não deixa registro não alimenta a volta seguinte: **resultado sem evidência não vira história comunicável.**
 
-* Curiosidade e interesse por uma proposta diferente e simbólica de formação.  
-* Busca por significado, diferenciação e atualização frente ao futuro.
+**Comunidade é infraestrutura, não feature de retenção.** Não é um benefício que segura o cliente. É o meio onde colaboração, feedback, formação de times, descoberta de pessoas e reputação acontecem — e sem isso nem projeto nem evidência se sustentam em escala.
 
-## **Ativação** — Primeiro Momento de Sucesso
+**A compra não é o evento central.** É uma transição entre estados de relação, não o objetivo do ciclo. Um mecanismo que otimiza compra e não produz realização gera receita sem gerar o insumo da próxima volta.
 
-**Objetivo:** Fazer o novo usuário experimentar uma "pequena vitória" dentro da plataforma.
+## O ciclo de referência
 
-**Como acontece:** Após clicar em um conteúdo externo, o usuário cria uma conta gratuita ou compra o ingresso do Atlas. Assim que entra na plataforma, ele é impactado por elementos de ativação:
+**HIPÓTESE.** O flywheel registrado no Business Document, adotado aqui como referência:
 
-* **Emails de boas-vindas**: Orientam os primeiros passos.  
-  * **Notificações**: Chamam a atenção para a primeira missão.(Primeiro projeto)  
-  * **Banners, Botões e Faixas**: Guiam o usuário visualmente para comprar Atlas.  
-  * **Popups estratégicos**: Incentivam a tomar ações rápidas (Primeiro projeto).  
-  * **Paywall**: Limita o acesso premium, incentivando a avançar na jornada gratuita.
+> **Conteúdo → comunidade → aprendizagem → projetos → resultados → histórias → reputação → novos membros**
 
-**Primeiro Momento de Sucesso:**
+| Etapa | O que produz para a etapa seguinte |
+| :---- | :---- |
+| **Conteúdo** | Atenção e entendimento; atrai quem carrega uma ideia. |
+| **Comunidade** | Pertencimento e colaboração; transforma interesse em relação. |
+| **Aprendizagem** | Repertório e capacidade aplicáveis a algo concreto. |
+| **Projetos** | Aplicação real; é onde a capacidade vira ação. |
+| **Resultados** | Evidência de que o sistema funciona. |
+| **Histórias** | Tradução do resultado em algo comunicável. |
+| **Reputação** | Confiança que reduz o custo de convencer. |
+| **Novos membros** | Nova entrada no ciclo, a custo menor que o anterior. |
 
-* Consumo da **primeira aula** \+ **projeto setado** (entrega de uma pequena vitória como badge ou desbloqueio de item simbólico).
+**A definição deste flywheel pertence ao Business Document.** Esta página não o redefine — usa-o como referência e trata do que é responsabilidade do Growth System: o que precisa acontecer, em termos de descoberta, consideração, compra, permanência e expansão, para que cada etapa alimente a seguinte.
 
-**Estado emocional do usuário:**
+## Por que ainda é hipótese
 
-* Satisfação inicial, sentimento de progresso e pertencimento ao novo universo.  
-* Validação de que fez uma boa escolha em se inscrever.
+Três coisas precisariam ser verdade para o ciclo girar, e nenhuma está demonstrada:
 
-## **Retenção** — Engajamento Progressivo e Formação de Hábito
+**1. Projetos precisam efetivamente acontecer.** Se as pessoas aprendem e não constroem, o ciclo trava na quarta etapa. É a dependência mais crítica.
 
-**Objetivo:** Transformar o interesse inicial em hábito de uso e progressão contínua.
+**2. Resultados precisam ser observáveis.** Sem conseguir registrar o que cada pessoa construiu, existem depoimentos, não evidências. Depoimento sustenta campanha; evidência sustenta reputação.
 
-**Como acontece:** O usuário evolui dentro da plataforma através de sistemas de retenção inteligentes:
+**3. Reputação precisa converter em entrada.** É preciso que ela gere novos membros de forma observável, e não apenas admiração.
 
-* **Ofensiva**: Um modo de engajamento que parece criar "momentum" narrativo (ex: missões contínuas, histórias).  
-  * **XP**: Sistema de pontos para reforçar o esforço e o progresso.  
-  * **Missões**: Tarefas gamificadas que estimulam o usuário a aplicar o que aprendeu.  
-  * **Badges**: Reconhecimentos visíveis de conquistas dentro da comunidade.  
-  * **Conteúdo da Semana**: Atualizações regulares que mantêm a plataforma viva e dinâmica.  
-  * **Ranking**: Competição saudável entre usuários para incentivar o progresso.  
-  * **Fractais \+ Inventário**: Sistema de colecionáveis, ampliando o senso de conquista e raridade.  
-  * **Certificados**: Provas formais de conclusão que agregam valor percebido.
+## O que aceleraria o ciclo
 
-**Estado emocional do usuário:**
+**HIPÓTESE.**
 
-* Construção de identidade dentro da plataforma.  
-* Motivação crescente pela progressão visível e socialmente reconhecida.
+- **PBL bem implementado** — encurta a distância entre aprender e construir.
+- **Comunidade densa** — aumenta a chance de um projeto encontrar a pessoa, o feedback ou o time que faltava.
+- **Hackathons e Atom Praxis** — comprimem o ciclo inteiro em um intervalo curto de tempo.
+- **Evidências registradas** — transformam resultado em ativo reutilizável.
+- **Incubação** — leva os melhores projetos adiante, produzindo os resultados mais visíveis.
 
-## **Revenue** — Conversão Natural para Produtos Pagos
+## O que freia o ciclo
 
-**Objetivo:** Converter usuários engajados para planos pagos ou compras dentro da plataforma.
+- Consumo de conteúdo sem aplicação: a pessoa permanece, mas o ciclo não gira.
+- Projetos que não são registrados: o resultado existe, a evidência não.
+- Comunidade grande e rasa: aumenta volume e diminui colaboração real.
+- Dependência de poucas vozes no conteúdo: concentra o insumo inicial do ciclo.
+- Comercial que otimiza a compra isoladamente: enche a entrada sem alimentar as etapas seguintes.
 
-**Como acontece:** À medida que o usuário evolui e vê valor real, ele é convidado de forma natural (não forçada) para fazer upgrades:
+## Onde cada oferta entra
 
-* **Atlas** \> Imersão de 2 dias criando ao vivo  
-  * **Overpass** (plano de assinatura mensal/anual que desbloqueia recursos avançados).  
-  * **Vanguarda** (nível de elite, possivelmente um mastermind/mentoria high-ticket).  
-  * **Loja de Artefatos** (produtos digitais ou físicos, colecionáveis, NFTs, ou itens exclusivos).
+**EM VALIDAÇÃO.** Leitura possível, sem assumir percurso obrigatório:
 
-**Tipo de oferta:**
+| Etapa do ciclo | Onde tende a acontecer |
+| :---- | :---- |
+| **Conteúdo** | Canais próprios, conteúdo orgânico, mídia paga, eventos abertos |
+| **Comunidade** | Ambiente da Overlens, encontros, hackathons |
+| **Aprendizagem** | Atlas (primeira experiência) e Overpass (camada contínua) |
+| **Projetos** | Overpass, PBL, hackathons, Atom Praxis |
+| **Resultados e histórias** | Projetos concluídos, negócios acelerados, trabalho de assessoria |
+| **Reputação** | Comunidade, conteúdo, evidências públicas |
+| **Novos membros** | Indicação, reputação, conteúdo |
 
-* O cross-sell e up-sell são baseados no estágio de maturidade do usuário (não igual para todos).  
-* A comunicação é integrada à progressão narrativa: o upgrade parece uma "próxima etapa natural" da jornada.
+## Gamificação
 
-**Estado emocional do usuário:**
+**HIPÓTESE — possibilidade de implementação, não definição do mecanismo.**
 
-* Desejo de pertencimento mais profundo.  
-* Orgulho de fazer parte da construção da Overlens e acesso a novos níveis de significado, poder criativo e reconhecimento.
+XP, missões, badges, ofensiva, ranking, fractais e certificados permanecem registrados como elementos que **podem** ser implementados. O que muda é o estatuto: eles não são o mecanismo de valor do ecossistema.
 
-## **Referral** — Expansão Orgânica via Integrantes
+A razão é direta. Gamificação é boa para produzir frequência e visibilidade de progresso; é insuficiente para produzir realização. Se o ciclo depende de projeto e evidência, o que sustenta a permanência é **ter algo em andamento que importa**, e não uma sequência de dias ativos. Progresso simbólico pode reforçar um avanço real — mas não substitui o avanço.
 
-**Objetivo:** Transformar usuários em promotores ativos, gerando novo crescimento orgânico.
+**Não confundir sinal com causa:** uma pessoa engajada na mecânica e parada no projeto é um falso positivo.
 
-**Como acontece:** A plataforma oferece incentivos para quem compartilha:
+## Como saber se está funcionando
 
-* **Indique e Ganhe**: Usuários que convidam novos participantes ganham itens exclusivos.  
-  * **UGC (User Generated Content)**: Usuários que criam conteúdo sobre a Overlens também recebem itens ou desbloqueiam conteúdos especiais. Missões assim serão valiosas.  
-  * **Liberação de conteúdos**: Algumas áreas ou materiais especiais são desbloqueados apenas ao completar ações sociais.
+Antes de tratar este ciclo como modelo operacional, é preciso conseguir observar, no mínimo:
 
-**Estado emocional do usuário:**
+1. Quantas pessoas que entram efetivamente constroem algo.
+2. Quanto tempo leva entre entrar e produzir a primeira evidência.
+3. Quantas dessas evidências viram história comunicável.
+4. Que proporção dos novos membros chega por reputação e indicação.
 
-* Sentimento de protagonismo: “Eu ajudei a construir isso.”  
-* Orgulho de pertencer a uma comunidade visionária e exclusiva.
+**Nenhuma meta, taxa ou número está definido para esses pontos. PENDENTE.** Enquanto não forem observáveis, o loop é um bom modelo mental — e nada além disso.
 
-## Encadeamento
+## Histórico — o loop anterior
 
-1. **Aquisição:** Conhece a Overlens por um Atlas, youtube ou campanha.  
-2. **Ativação:** Cria conta → Faz primeira aula/missão → Recebe a primeira vitória.  
-3. **Retenção:** Engaja em trilhas, desafios, XP, badges → Evolui no ranking.  
-4. **Revenue:** Sente desejo de avançar → Assina Overpass, compra artefatos, entra na Vanguarda.  
-5. **Referral:** Compartilha a Overlens com amigos e cria conteúdo → Ganha itens → Atrai novos integrantes → Recomeça o ciclo.
+**HISTÓRICO.** O ciclo documentado anteriormente, preservado como registro do que foi desenhado:
 
-## Notas Importantes
+1. **Aquisição** — YouTube, lives, conteúdo evergreen, SEO e mídia paga, quizzes e o Atlas como imersão de alto tempo de permanência.
+2. **Ativação** — conta criada ou ingresso comprado; e-mails de boas-vindas, notificações, banners, popups e paywall conduzindo ao primeiro momento de sucesso (primeira aula consumida e projeto definido).
+3. **Retenção** — ofensiva, XP, missões, badges, conteúdo semanal, ranking, fractais, inventário e certificados.
+4. **Receita** — upgrade "natural" para Overpass, Vanguarda e loja de artefatos, com cross-sell e up-sell por estágio de maturidade.
+5. **Indicação** — indique e ganhe, conteúdo gerado por usuários e liberação de materiais por ações sociais.
 
-* O fluxo é **circular** e **auto alimentado**: cada ação de retenção e sucesso pessoal do usuário gera novos ciclos de aquisição orgânica.  
-* A **progressão simbólica** (badges, fractais, certificados) está altamente integrada à narrativa da plataforma, reforçando a retenção emocional.  
-* A monetização é **consequência natural** do sucesso do usuário, não ruptura, nem pressão.
+**O que esse modelo acertava:** a circularidade, a recusa à pressão comercial e a ideia de que monetização deve ser consequência de valor entregue.
+
+**O que não sustentava:** colocava a compra como evento central, tratava gamificação como mecanismo de valor, reduzia comunidade a suporte de retenção e não continha projeto nem evidência como estados próprios do ciclo.
+
+Material de referência do desenho anterior: [Fluxos de Marketing no Figma](https://www.figma.com/board/bPV9gXuVdE3nFHxfg4gucv/Fluxos-de-Marketing?node-id=405-5914&t=HnfjzaY5iHNo4kvl-1).

@@ -22,7 +22,7 @@ O propósito da Overlens é colocar o poder da criação nas mãos das pessoas. 
 
 Julian Treasure demonstrou que o som afeta o ser humano em quatro dimensões simultâneas: fisiológica (altera ritmo cardíaco e respiração), psicológica (modifica estados emocionais), cognitiva (interfere na capacidade de concentração e pensamento) e comportamental (direciona movimentos e decisões). Nenhum outro elemento sensorial opera em todas essas frentes ao mesmo tempo.
 
-Para uma marca que forma Empreendedores Nexialistas, isso não é detalhe. É infraestrutura.
+Para uma marca que ajuda pessoas a transformar ideias em realidade, isso não é detalhe. É infraestrutura.
 
 O ambiente sonoro de uma aula determina se o aluno entra em estado de foco ou dispersão. A trilha de um vídeo define se a mensagem é percebida como provocação inteligente ou entretenimento descartável. O som de um evento presencial comunica; antes de qualquer slide; se aquele espaço é de profundidade ou de espetáculo.
 

@@ -1,3 +1,13 @@
+---
+title: Visão
+summary: Registra a visão da companhia a partir da tese "o futuro não é um destino, o futuro é um projeto" — o futuro que a Overlens pretende ajudar a criar, as três condições que persegue (autonomia, capacidade real e diversidade de futuros), por que a queda do custo de criar desloca o gargalo para visão e julgamento, o que a visão explicitamente não promete e o horizonte de longo prazo.
+topics: [visão, tese de marca, autonomia, capacidade de realização, futuro como projeto, horizonte de longo prazo]
+keywords: [o futuro não é um destino, o futuro é um projeto, visão, autonomia, capacidade real, diversidade de futuros, custo de criar, barreira de execução, julgamento, repertório, realização, horizonte, promessa de resultado, inteligência artificial]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar qual é a visão da Overlens, o que significa tratar o futuro como projeto, que futuro a companhia quer ajudar a construir, ou quais promessas a visão explicitamente não faz. Também é a referência para checar se um texto está transformando a visão em promessa de resultado.
+related: ["business_doc/01 - Overview/01 - Executive Overview.md", "business_doc/01 - Overview/03 - Missão.md", "business_doc/04 - Estratégia/02 - Strategic Bets.md", "brand_system/04 - Núcleo da Marca/03 Visão e Propósito.md"]
+---
 # Visão
 
 ## O futuro não é um destino. O futuro é um projeto.

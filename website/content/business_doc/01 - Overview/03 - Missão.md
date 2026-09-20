@@ -1,3 +1,13 @@
+---
+title: Missão
+summary: Registra a missão de negócio "ajudar pessoas a realizarem suas ideias", destrinchando o peso de cada palavra, a relação com o propósito histórico de colocar o poder da criação nas mãos das pessoas, as oito perguntas que o ecossistema precisa responder para que a missão seja cumprida na prática e o que a missão não autoriza.
+topics: [missão, propósito, escopo da promessa, critérios práticos, guardrails de negócio]
+keywords: [ajudar pessoas a realizarem suas ideias, missão, propósito, colocar o poder da criação nas mãos das pessoas, protagonismo, autoria, realização, evidência, capacidades, B2B, assessoria, incubação, Product System, Brand System]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar qual é a missão da Overlens, como ela se diferencia do propósito de marca, como cada palavra da formulação delimita escopo, ou o que a missão não autoriza prometer. Cite esta página como fonte única da formulação da missão, em vez de reescrevê-la.
+related: ["business_doc/01 - Overview/02 - Visão.md", "business_doc/04 - Estratégia/03 - Business Principles.md", "brand_system/04 - Núcleo da Marca/03 Visão e Propósito.md", "product_system/00 - Definição/01 - Definição.md"]
+---
 # Missão
 
 ## Ajudar pessoas a realizarem suas ideias.

@@ -1,3 +1,13 @@
+---
+title: Business Principles
+summary: Doze princípios que orientam decisões econômicas e de produto quando a resposta não é óbvia — de "aprendizagem deve gerar capacidade" e "projeto precede conteúdo quando possível" até "a recusa é parte do modelo" e "vender o degrau certo" —, cada um com a aplicação prática e, quando existe, o limite honesto do princípio.
+topics: [princípios de negócio, critérios de decisão, produto, comunidade, ética comercial, governança documental]
+keywords: [princípios de negócio, capacidade, projeto precede conteúdo, IA amplifica humanos, comunidade como infraestrutura, execução gera evidência, visão, construir antes de polir, validar antes de investir, fonte única de verdade, aposta versus decisão, recusa, degrau certo, julgamento, realização, parcimônia, unidade]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário precisar de critério para tomar ou avaliar uma decisão de negócio ou de produto na Overlens, quiser saber como a companhia decide quando não há resposta óbvia, ou estiver checando se uma escolha contraria um princípio. Complementa os Princípios da Overlens do Brand System, que operam em nível cultural.
+related: ["brand_system/02 - Overview da Overlens/06 Princípios da Overlens.md", "business_doc/01 - Overview/03 - Missão.md", "business_doc/04 - Estratégia/02 - Strategic Bets.md", "product_system/01 - Fundamentos/01 - Princípios de Produto.md"]
+---
 # Business Principles
 
 ## Princípios de negócio não dizem o que fazer. Dizem como decidir quando a resposta não é óbvia e ninguém tem tempo de pedir autorização.

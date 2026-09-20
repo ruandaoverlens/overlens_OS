@@ -1,23 +1,31 @@
 ---
 title: Buyer Personas da Overlens
-summary: Apresenta as quatro buyer personas da Overlens (Brunin, Tella, Ander, Lilly) como representações dos estágios de maturidade que medem a distância entre a ideia e a realidade ao longo da jornada nexialista.
-topics: [personas, jornada nexialista, segmentação, comunicação, produto, empreendedores nexialistas]
-keywords: [personas, buyer personas, brunin, tella, ander, lilly, empreendedores nexialistas, jornada nexialista, inconsciente, operante, convergente, emergente, distância entre ideia e realidade]
+summary: NECESSITA REVISÃO DE PERSONA. Apresenta as quatro buyer personas da Overlens (Brunin, Tella, Ander, Lilly), construídas sob o recorte anterior de público e sob a formulação de cinco estágios sequenciais de maturidade. Preservada como registro; a redefinição acontecerá no Growth System.
+topics: [personas, necessita revisão de persona, registro, segmentação, comunicação, produto]
+keywords: [personas, buyer personas, brunin, tella, ander, lilly, necessita revisão de persona, registro histórico, quatro modos, operante, convergente, emergente, nexialista]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre as personas da Overlens, quem são Brunin, Tella, Ander e Lilly, qual a lógica por trás dos arquétipos, ou ao calibrar comunicação, produto e jornada de acordo com o perfil de maturidade. As quatro têm origens profissionais diferentes de propósito.
+  ATENÇÃO — estas personas NECESSITAM REVISÃO. Use apenas como registro do que foi documentado sobre Brunin, Tella, Ander e Lilly. Foram construídas sob o recorte anterior de público (definido por profissão, idade, renda e consumo) e sobre cinco estágios sequenciais de maturidade, formulação que não vale mais. Não usar como base para campanha, produto ou qualificação; a redefinição acontecerá no Growth System.
 related: []
 ---
 
 # Buyer Personas da Overlens
 
-Buyer Personas são representações semi-fictícias dos principais perfis de pessoas que a Overlens atende. Elas não representam um único indivíduo específico. São arquétipos construídos a partir de padrões reais de comportamento, necessidades, motivações e desafios observados em Empreendedores Nexialistas — pessoas que querem transformar as próprias ideias em negócios, venham elas da engenharia, da arquitetura, da arte, do design ou de lugar nenhum.
+> ## ⚠️ NECESSITA REVISÃO DE PERSONA
+>
+> As quatro personas desta página foram construídas sob o **recorte anterior de público** — definido por profissão, faixa etária, renda e comportamento de consumo — e sob a formulação de **cinco estágios sequenciais de maturidade** (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas), que não existe mais.
+>
+> **Não use esta página como verdade atual.** O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.** Operante, Convergente, Emergente e Nexialista são hoje **formas de agir, aprender, pensar e criar** — não degraus de uma escada. "Inconscientes" saiu da formulação.
+>
+> **A redefinição de personas acontecerá no Growth System e ainda não foi feita.** O conteúdo abaixo permanece preservado como registro do que foi documentado.
+
+Buyer Personas são representações semi-fictícias dos principais perfis de pessoas que a Overlens atende. Elas não representam um único indivíduo específico. São arquétipos construídos a partir de padrões de comportamento, necessidades, motivações e desafios observados em **empreendedores** — pessoas que querem transformar as próprias ideias em realidade, venham elas da engenharia, da arquitetura, da arte, do design ou de nenhuma dessas origens. O que define o público é o estado, não a profissão.
 
 Criar personas ajuda a responder perguntas fundamentais:
 
 * Para quem estamos construindo nossos produtos?  
 * Quais são as dores reais dessas pessoas?  
-* Em que estágio de maturidade elas estão?  
+* Em que situação elas estão e como agem diante dela?  
 * Como elas pensam, aprendem e tomam decisões?
 
 Quando uma empresa não define bem suas personas, ela corre o risco de tentar falar com todo mundo ao mesmo tempo e acabar não sendo realmente relevante para ninguém. Ao trabalhar com personas claras, conseguimos:
@@ -27,7 +35,9 @@ Quando uma empresa não define bem suas personas, ela corre o risco de tentar fa
 * Construir experiências mais alinhadas  
 * Ajudar as pessoas certas no momento certo da jornada
 
-Na Overlens, nossas personas representam diferentes estágios de maturidade dentro do caminho que chamamos de jornada nexialista. O que esses estágios medem não é senioridade profissional: é **a distância entre a ideia e a realidade**. As origens das quatro personas são deliberadamente diferentes entre si — uma vem da publicidade, uma da arte, uma da engenharia, uma já opera o próprio negócio — justamente porque o público não é uma profissão. A seguir estão os perfis que fazem parte do nosso ecossistema.
+As quatro personas a seguir foram escritas como representações de **estágios sequenciais de maturidade**, medindo "a distância entre a ideia e a realidade". **Essa leitura é HISTÓRICA.** Na formulação atual, Operante, Convergente, Emergente e Nexialista descrevem **formas de agir, aprender, pensar e criar** — *Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra* — sem escada obrigatória e sem hierarquia de senioridade. Ver `02 - Público/06 - Perfis de Clientes.md`.
+
+As origens das quatro personas são deliberadamente diferentes entre si — uma vem da publicidade, uma da arte, uma da engenharia, uma já opera o próprio negócio — justamente porque o público nunca foi uma profissão. A seguir, os perfis como foram documentados.
 
 ## [Brunin: O Jovem Inconsciente]()
 
@@ -47,4 +57,10 @@ Lilly já tem um negócio de pé: uma marca própria, com produtos, conteúdo e 
 
 ---
 
-Essas quatro personas representam diferentes momentos da jornada que muitas pessoas percorrem ao longo do tempo. Em alguns casos, alguém pode começar como Brunin, evoluir para Tella, depois se tornar Ander e, mais tarde, alcançar a maturidade de Lilly — vindo de qualquer origem profissional, porque o que muda de um estágio para o outro não é o ofício, é a distância entre a ideia e a realidade. A Overlens existe justamente para acompanhar e apoiar essa evolução, ajudando pessoas a transformar curiosidade em habilidade, habilidade em negócio e negócio em impacto real no mundo.
+Essas quatro personas descrevem situações diferentes, e não posições em uma escada. O texto original desta página afirmava que alguém "começa como Brunin, evolui para Tella, se torna Ander e alcança a maturidade de Lilly" — **essa leitura sequencial é HISTÓRICA e não vale mais**. Não existe percurso linear obrigatório: uma pessoa pode agir em modos diferentes conforme o problema que tem diante de si.
+
+O que permanece: a Overlens existe para apoiar quem quer transformar uma ideia em realidade, qualquer que seja sua origem.
+
+---
+
+**Status desta página: NECESSITA REVISÃO DE PERSONA.** A redefinição de personas pertence ao Growth System e ainda não foi feita. Registro da transição em `business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md`.

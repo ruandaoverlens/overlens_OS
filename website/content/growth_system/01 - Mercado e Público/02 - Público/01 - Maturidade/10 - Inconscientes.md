@@ -1,19 +1,39 @@
 ---
-title: Inconscientes
-summary: Detalha o estágio Inconsciente da jornada de maturidade Overlens — pessoas que têm vontade mas não têm direção, carregando ideias há anos sem tirar nenhuma do papel — com ficha rápida, problemas, soluções, micro-gatilhos e linguagem de primeiro contato.
-topics: [maturidade, inconscientes, jornada, atlas, overpass, gatilhos, empreendedores nexialistas]
-keywords: [inconscientes, empreendedores nexialistas, vontade sem direção, ideia engavetada, atlas, overpass, jornada nexialista, jtbd, arquétipo do inocente, paradigmas, micro-gatilhos, perda oculta, iluminação, identidade emergente]
-priority: medium
+title: Inconscientes (registro histórico)
+summary: REGISTRO HISTÓRICO. O perfil "Inconscientes" pertencia à formulação anterior de cinco estágios sequenciais de maturidade e não existe na formulação atual dos quatro modos. A página é preservada como registro do que foi documentado, não como definição vigente.
+topics: [histórico, registro do modelo anterior, perfis anteriores, quatro modos]
+keywords: [inconscientes, histórico, registro, formulação anterior, cinco estágios, distância entre ideia e realidade, quatro modos, operante, convergente, emergente, nexialista, obsoleto]
+priority: low
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre o perfil Inconsciente, quem carrega ideias sem nunca ter construído nada e ainda não despertou para a mudança de era, ou ao desenhar comunicação de topo de funil, conteúdos gratuitos e portas de entrada como Atlas e Overpass.
+  Use apenas como registro histórico. "Inconscientes" NÃO existe na formulação atual da Overlens — foi um dos cinco perfis sequenciais de maturidade da documentação anterior. Se alguém perguntar sobre o perfil, explique que ele saiu da formulação e aponte para os quatro modos em "06 - Perfis de Clientes". Nada nesta página deve ser usado como base para comunicação, produto ou qualificação.
 related: []
 ---
 
 # Inconscientes
 
-## Inconscientes são aquelas pessoas que carregam ideias há anos sem nunca ter tirado nenhuma do papel. Têm vontade, não têm direção. Ainda não despertaram verdadeiramente para a mudança que estamos vivendo e seguem suas vidas como se o mundo fosse o mesmo de algumas décadas atrás.
+## ⚠️ HISTÓRICO — este perfil não existe na formulação atual
 
-**Soluções**: Atlas Overpass
+**Status desta página: HISTÓRICO.** "Inconscientes" era um dos **cinco perfis** da formulação anterior, em que Inconscientes, Operantes, Convergentes, Emergentes e Nexialistas eram tratados como **estágios sequenciais de maturidade do cliente**, medindo "a distância entre a ideia e a realidade".
+
+**Essa leitura não vale mais.** Na formulação atual, Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar** — modos comportamentais e cognitivos, não degraus de uma escada:
+
+> **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**
+
+**"Inconscientes" não tem equivalente nessa formulação.** O conceito saiu: ele descrevia um estado de consciência prévio à escada, e a escada deixou de existir. A situação que ele tentava nomear — alguém que carrega uma ideia e ainda não encontrou como começar — continua real e continua fazendo parte do público, mas é tratada como **situação**, não como perfil ou estágio.
+
+**Onde está a formulação atual:** `02 - Público/06 - Perfis de Clientes.md`. Registro consolidado da transição: `business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md`.
+
+O conteúdo abaixo é preservado **como registro do que foi documentado**. Não deve ser usado como base para comunicação, produto, campanha ou qualificação.
+
+---
+
+## Registro do conteúdo original — HISTÓRICO
+
+> Texto original da página, preservado integralmente a partir daqui.
+
+**Descrição registrada à época:** *"Inconscientes são aquelas pessoas que carregam ideias há anos sem nunca ter tirado nenhuma do papel. Têm vontade, não têm direção. Ainda não despertaram verdadeiramente para a mudança que estamos vivendo e seguem suas vidas como se o mundo fosse o mesmo de algumas décadas atrás."*
+
+**Soluções indicadas à época**: Atlas, Overpass. *(Enquadramento anterior — Atlas é hoje definida como experiência de entrada e ativação e Overpass como camada contínua.)*
 
 ### **Ficha rápida:**
 

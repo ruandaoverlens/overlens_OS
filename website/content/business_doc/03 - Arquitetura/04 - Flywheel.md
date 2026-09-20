@@ -1,3 +1,13 @@
+---
+title: Flywheel
+summary: Registra como HIPÓTESE o ciclo conteúdo → comunidade → aprendizagem → projetos → resultados → histórias → reputação → novos membros, explica a diferença econômica entre funil e flywheel, as três condições que precisariam ser verdade para o ciclo girar, o que aceleraria e o que freia cada volta, e os quatro pontos que precisam ser observáveis antes de tratá-lo como modelo operacional.
+topics: [flywheel, ciclo de crescimento, hipótese estratégica, funil versus flywheel, condições de validação]
+keywords: [flywheel, funil, ciclo, conteúdo, comunidade, aprendizagem, projetos, resultados, histórias, reputação, novos membros, custo marginal, PBL, Atom Praxis, hackathon, evidência, incubação, densidade, HIPÓTESE]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar como o crescimento da Overlens se retroalimenta, o que é o flywheel da companhia ou por que ele ainda não pode ser tratado como mecanismo em funcionamento. O modelo é explicitamente uma hipótese — apresente-o como tal e cite as condições de validação junto.
+related: ["business_doc/03 - Arquitetura/03 - Customer Journey Macro.md", "business_doc/04 - Estratégia/01 - Moats.md", "business_doc/04 - Estratégia/02 - Strategic Bets.md", "growth_system/03 - Estratégia/33 - Growth Loop.md"]
+---
 # Flywheel
 
 ## Um flywheel descreve o ciclo em que cada volta torna a próxima mais barata. O da Overlens ainda é hipótese — e está registrado aqui como hipótese.

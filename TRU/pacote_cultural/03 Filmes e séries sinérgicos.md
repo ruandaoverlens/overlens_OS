@@ -49,7 +49,7 @@ Quando uma linguista é chamada para decifrar a comunicação de seres extraterr
 <img src="/brand/images/cover-dune.jpg" alt="Dune; Duna" style="width:200px; border-radius:8px" />
 <div>
 
-A saga de Frank Herbert, traduzida por Denis Villeneuve em escala épica, é um tratado sobre sistemas complexos disfarçado de ficção científica. Ecologia, política, religião, tecnologia e consciência se entrelaçam de forma inseparável; nenhuma dessas forças opera sozinha, e quem tenta dominar apenas uma delas fracassa. *Duna* recusa a figura do herói messiânico simples: Paul Atreides é ao mesmo tempo instrumento e prisioneiro das estruturas que o cercam. Esse olhar sistêmico, que enxerga o mundo como teia e não como peças isoladas, é o mesmo que a Overlens cultiva em seus nexialistas. O filme nos lembra que criar com consciência exige entender o terreno inteiro; não apenas a parte que nos interessa.
+A saga de Frank Herbert, traduzida por Denis Villeneuve em escala épica, é um tratado sobre sistemas complexos disfarçado de ficção científica. Ecologia, política, religião, tecnologia e consciência se entrelaçam de forma inseparável; nenhuma dessas forças opera sozinha, e quem tenta dominar apenas uma delas fracassa. *Duna* recusa a figura do herói messiânico simples: Paul Atreides é ao mesmo tempo instrumento e prisioneiro das estruturas que o cercam. Esse olhar sistêmico, que enxerga o mundo como teia e não como peças isoladas, é o mesmo que a Overlens cultiva como capacidade. O filme nos lembra que criar com consciência exige entender o terreno inteiro; não apenas a parte que nos interessa.
 
 [Disponível na Max](https://www.max.com/)
 

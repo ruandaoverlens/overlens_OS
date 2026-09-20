@@ -1,3 +1,13 @@
+---
+title: Riscos e Incertezas
+summary: Registra os quatro riscos da transição (base de conhecimento em estado misto, dispersão por excesso de frentes, reposicionamento sem público revalidado e perda de quem veio pela tese anterior), os sete riscos estruturais, as oito incertezas que bloqueiam decisões, os riscos de marca com consequência econômica e a ordem sugerida de resolução.
+topics: [riscos, incertezas, transição, riscos estruturais, decisões bloqueadas, priorização]
+keywords: [riscos, incertezas, base de conhecimento desatualizada, dispersão, personas, voz fundadora, capacidade sênior, PBL em escala, dependência de fornecedores de IA, custo variável de IA, densidade de comunidade, worldbuilding, TAM SAM SOM, estrutura de custos, CAC, retenção, disposição a pagar, churn, preço premium]
+priority: medium
+ai_when_to_use: |
+  Use quando o usuário perguntar o que pode dar errado na Overlens, quais riscos a transição criou, o que a companhia ainda não sabe, quais decisões estão bloqueadas por falta de dado, ou por qual ordem os problemas deveriam ser resolvidos. Nenhuma incerteza desta página deve ser preenchida com estimativa.
+related: ["business_doc/04 - Estratégia/02 - Strategic Bets.md", "business_doc/05 - Pesquisa/01 - Research e Market Intelligence.md", "business_doc/03 - Arquitetura/02 - Arquitetura de Receita.md", "brand_system/02 - Overview da Overlens/03 Cuidados e Riscos.md"]
+---
 # Riscos e Incertezas
 
 ## Riscos não desaparecem por não serem escritos. Ficam mais caros quando se manifestam, porque ninguém se preparou.

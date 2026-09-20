@@ -1,3 +1,13 @@
+---
+title: Arquitetura de Produtos e Serviços
+summary: Mapa das ofertas da Overlens com o status de cada uma — Atlas, Overpass e Vanguarda como ofertas ativas em redefinição, assessoria validada comercialmente, e consultoria, B2B, incubação, eventos e produtos físicos como frentes em construção ou hipótese. Explica o espectro Aprender → Construir → Acelerar, a relação entre as ofertas e as cinco decisões em aberto.
+topics: [arquitetura de ofertas, produtos, serviços, status de maturidade, espectro de entrega, decisões em aberto]
+keywords: [Atlas, Overpass, Vanguarda, assessoria, consultoria, B2B, incubação, aceleração, eventos, hackathon, Atom Praxis, produtos físicos, artefatos de pertencimento, Aprender Construir Acelerar, Atom, PBL, camada contínua, ativação]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar quais ofertas a Overlens tem, o que é Atlas, Overpass, Vanguarda, assessoria, consultoria, incubação ou B2B, como as ofertas se relacionam, ou qual o status de maturidade de cada frente. É a fonte de verdade sobre o enquadramento estratégico das ofertas — o funcionamento interno de cada produto pertence ao Product System.
+related: ["business_doc/03 - Arquitetura/02 - Arquitetura de Receita.md", "business_doc/03 - Arquitetura/03 - Customer Journey Macro.md", "business_doc/04 - Estratégia/02 - Strategic Bets.md", "business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md"]
+---
 # Arquitetura de Produtos e Serviços
 
 ## O mapa das ofertas da Overlens e a relação entre elas. Nem tudo o que está aqui é produto consolidado — parte é frente em construção, e a diferença está marcada.

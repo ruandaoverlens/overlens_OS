@@ -1,3 +1,13 @@
+---
+title: Evolução da Overlens
+summary: HISTÓRICO — linha do tempo de negócio de 2015 ao ciclo atual, registro dos posicionamentos anteriores (escola de criação para profissionais criativos e escola de negócios emergentes com foco em IA), a tabela de conceitos que mudaram de significado (Atom, Nexialista, Operante, Convergente, Emergente, Overpass, Vanguarda, Atlas) e o que atravessou a transição sem mudar.
+topics: [histórico, linha do tempo, posicionamentos anteriores, mudança de conceitos, continuidade]
+keywords: [evolução, 2021, fundação, Ruan Braz, Rafael Braz, IA generativa, Vanguarda, Nexialismo, posicionamento anterior, escola de criação, escola de negócios emergentes, Empreendedor Nexialista, átomo, Atom, Operante, Convergente, Emergente, Nexialista, Overpass, Atlas, HISTÓRICO]
+priority: low
+ai_when_to_use: |
+  Use quando o usuário perguntar como a Overlens chegou até aqui em termos de negócio, quais posicionamentos a companhia já teve, por que um conceito mudou de significado, ou por que a base de conhecimento contém material conflitante. Nada nesta página descreve o estado atual — sempre identifique o conteúdo como histórico.
+related: ["business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md", "business_doc/01 - Overview/01 - Executive Overview.md", "brand_system/02 - Overview da Overlens/07 Linha do Tempo.md", "brand_system/05 - Universo Verbal/06 Glossário.md"]
+---
 # Evolução da Overlens
 
 ## O que foi verdadeiro em cada momento da companhia. Nada aqui descreve o estado atual — esta página existe justamente para que o passado não seja confundido com o presente.

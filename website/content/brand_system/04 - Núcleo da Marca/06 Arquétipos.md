@@ -1,11 +1,11 @@
 ---
 title: Arquétipos
-summary: Define a tríade arquetípica da Overlens — Mago (primário, transformação com método), Criador (secundário, forma e realização) e Sábio (terciário, ética e explicabilidade) — aplicada à formação de Empreendedores Nexialistas, com guardrails para evitar charlatanismo e limites inegociáveis.
-topics: [arquétipos, Mago, Criador, Sábio, narrativa simbólica, guardrails éticos, empreendedores nexialistas]
-keywords: [Mago, Criador, Sábio, Prometheus, Empreendedor Nexialista, Ironman, cientista, sábio-trickster, anti-herói, assombro sem truque, microdoses de caos, replicabilidade, deepfake, Marcel Duchamp, Fountain, faísca, brasa, fogueira, prisma, micélio, Bauhaus, Media Lab, Gestalt]
+summary: Define a tríade arquetípica da Overlens — Mago (primário, transformação com método), Criador (secundário, forma e realização) e Sábio (terciário, ética e explicabilidade) — aplicada a quem quer transformar ideias em realidade, com guardrails para evitar charlatanismo e limites inegociáveis.
+topics: [arquétipos, Mago, Criador, Sábio, narrativa simbólica, guardrails éticos, nexialismo]
+keywords: [Mago, Criador, Sábio, Prometheus, nexialismo, capacidade nexialista, empreendedor, realização, Ironman, cientista, sábio-trickster, anti-herói, assombro sem truque, microdoses de caos, replicabilidade, deepfake, Marcel Duchamp, Fountain, faísca, brasa, fogueira, prisma, micélio, Bauhaus, Media Lab, Gestalt]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre os arquétipos da marca, sobre o papel de Mago/Criador/Sábio, quando precisar decidir o tom arquetípico de uma campanha ou de uma peça dirigida a Empreendedores Nexialistas, ou quando estiver verificando se uma peça respeita os guardrails (sem charlatanismo, sem deepfake, sem promessas irreais).
+  Use quando o usuário perguntar sobre os arquétipos da marca, sobre o papel de Mago/Criador/Sábio, quando precisar decidir o tom arquetípico de uma campanha ou de uma peça, ou quando estiver verificando se uma peça respeita os guardrails (sem charlatanismo, sem deepfake, sem promessas irreais).
 related: ["brand_system/04 - Núcleo da Marca/05 Virtudes.md", "brand_system/04 - Núcleo da Marca/04 Storybrand.md", "brand_system/04 - Núcleo da Marca/07 Proxies.md"]
 ---
 
@@ -19,7 +19,7 @@ Cientista, Sábio-Trickster, Ironman. Transformação como ofício: provocar vis
 
 ### Criador (Secundário)
 
-Orquestrador de Realização. Dar forma e publicar: realização e estética a serviço da clareza, o *como* que materializa a visão do Mago. Forma que pensa. Orquestramos a realização: grid claro, diagonais de avanço, estética a serviço da clareza. Templates, pipelines, créditos e ética à vista. Publique agora; itere em público; deixe que o seu fazer acenda a fogueira.
+Orquestrador de Realização. Dar forma e publicar: realização e estética a serviço da clareza, o *como* que materializa a visão do Mago. Forma que pensa. Orquestramos a realização: grid claro, diagonais de avanço, estética a serviço da clareza. Templates, pipelines, créditos e ética à vista. Publique agora; itere em público; deixe que o seu fazer fale por você.
 
 ### Sábio (Terciário)
 
@@ -54,9 +54,9 @@ Sprints de produto e vendas enterprise → **Criador ► Mago** (mesmo núcleo, 
 
 ## Como chegamos nessa resposta?
 
-A Overlens foi criada para **quem quer construir**: criadores, sonhadores, engenheiros, designers, artistas e arquitetos, diante das **mudanças tecnológicas**, o **futuro da criação** com IAs generativas e a mudança na relevância do trabalho. A origem não define ninguém aqui; o que define é o que a pessoa faz com a própria ideia. Nós prometemos transformá-los em **Empreendedores Nexialistas**, capazes de conectar diversas áreas para chegar em soluções inovadoras, PRINCIPALMENTE para REALIZAR suas IDEIAS. Tornamo-os mais autônomos e preparados para o que está por vir, para que juntos possamos criar futuros melhores para a humanidade.
+A Overlens foi criada para **quem quer construir**: pessoas com uma ideia, uma ambição ou uma visão de futuro que querem transformar em realidade, diante das **mudanças tecnológicas**, do **futuro da criação** com IAs generativas e da mudança na relevância do trabalho. Elas podem vir da engenharia, da arquitetura, da arte, do design, da pesquisa ou de nenhuma dessas origens: a origem não define ninguém aqui, o que define é o que a pessoa faz com a própria ideia. Desenvolvemos nelas o **nexialismo**, a capacidade de conectar diversas áreas para chegar em soluções inovadoras, PRINCIPALMENTE para REALIZAR suas IDEIAS. Tornamo-as mais autônomas e preparadas para o que está por vir, para que juntos possamos criar futuros melhores para a humanidade. Nexialismo é uma capacidade que se desenvolve, não um rótulo que se cola em alguém.
 
-A Overlens **prepara pessoas para se tornarem Empreendedores Nexialistas** (construtores que conectam múltiplas áreas) para **transformar ideias em negócios com autonomia** no novo contexto de IA generativa, reduzindo a ansiedade sobre relevância futura. 
+A Overlens **desenvolve a capacidade nexialista** (conectar múltiplas áreas e mobilizar conhecimentos diferentes para realizar ideias complexas) para **transformar ideias em negócios com autonomia** no novo contexto de IA generativa, reduzindo a ansiedade sobre relevância futura. 
 
 **O futuro não é um destino, é um projeto.** A melhor maneira de prever o futuro é construindo. **Quem constrói, profetiza**; não porque adivinha o que vem depois, mas porque decide o que vai existir. A profecia aqui não é dom nem cargo: é consequência de quem assume a própria ideia. A Overlens nasceu da ideia de que aquelas pessoas capazes de colocar diversas lentes e enxergar perspectivas diferentes, aliadas ao poder da criação, são capazes de moldar o destino. **Existimos para dar o poder da criação para as pessoas, como Prometeus**. Nos recusamos a deixar a passividade levar o mundo para uma direção ruim. Nos recusamos a ver ideias ruins se proliferarem enquanto ideias boas ficam guardadas na gaveta. Nos recusamos a enxergar o futuro trágico que podemos viver e ficar parados. Nossos valores inegociáveis são o JULGAMENTO (Ethos), a REALIZAÇÃO, LIBERDADE/AUTONOMIA, RESPONSABILIDADE, SIMPLICIDADE (Gestalt/Heurísticas), MAESTRIA, COMUNICAÇÃO, CURIOSIDADE, INOVAÇÃO, COLABORAÇÃO, HONESTIDADE e, para conseguirmos manter tudo isso, CORAGEM.
 

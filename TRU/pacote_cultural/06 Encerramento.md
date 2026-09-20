@@ -10,5 +10,5 @@ Todas essas referências compartilham um mesmo fio condutor: a ideia de que o fu
 
 Cada vez mais pessoas poderão se tornar inventores, artistas, engenheiros, arquitetos e fundadores de algo que ainda não existe. Pessoas que transformam ideias em realidade usando a tecnologia como ferramenta. Estamos entrando na era da criação. Uma era em que milhares de novas invenções, descobertas, obras de arte e negócios nascerão todos os dias através das pessoas que chamamos de nexialistas. Pessoas capazes de conectar conhecimentos diferentes e usar tecnologia para realizar boas ideias. Não importa de onde elas vieram; importa o que fazem com a própria ideia.
 
-É nesse momento único da história, quando a criatividade humana e a tecnologia convergem como nunca antes, que nasceu a Overlens, a escola para Empreendedores Nexialistas. Um lugar dedicado a preparar pessoas para um novo mundo, onde a criatividade não será apenas uma habilidade.
+É nesse momento único da história, quando a criatividade humana e a tecnologia convergem como nunca antes, que nasceu a Overlens, a escola de negócios, criação e realização. Um lugar dedicado a preparar pessoas para um novo mundo, onde a criatividade não será apenas uma habilidade.
 

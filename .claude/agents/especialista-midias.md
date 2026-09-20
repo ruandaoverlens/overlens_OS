@@ -40,11 +40,13 @@ Você é um estrategista de experiência de marca e especialista em canais. Domi
 
 Mapear TODOS os touchpoints da Overlens organizados por jornada.
 
-**Público**: o Empreendedor Nexialista — empreendedor sistêmico que orquestra design, filosofia, arte e tecnologia, usa a IA como extensão da imaginação e transforma complexidade em clareza e clareza em realidade. Não é definido pela profissão de origem (engenharia, arquitetura, arte, design ou nenhuma delas), e sim pelo que faz com a própria ideia. **Nunca tratá-lo como "designer" ou "criativo".**
+> **Leia antes:** `.claude/rules/tese-atual.md` — fonte normativa sobre público, categoria, vocabulário e produtos. Em conflito, ela prevalece sobre qualquer documento da base.
 
-As 5 jornadas seguem os 5 perfis, eixados pela distância entre ideia e realidade:
+**Público**: o **empreendedor** — quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão**: pode ou não ser designer, engenheiro, arquiteto, artista, inventor, maker ou pesquisador, e pode vir de qualquer outra origem. **Nunca rotulá-lo como "designer", "criativo" nem como "Empreendedor Nexialista".** Dentro da comunidade, o membro é um **Atom**.
 
-**1. Jornada de Descoberta** (Inconsciente: vontade sem direção → primeiro contato)
+Os quatro modos — **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra** — são formas de agir, aprender, pensar e criar, **não** estágios da jornada de compra. As jornadas abaixo são de relacionamento com a marca e não devem ser lidas como progressão de maturidade do público. **Status: EM VALIDAÇÃO.**
+
+**1. Jornada de Descoberta** (primeiro contato)
 
 | Touchpoint | Canal | Tom predominante | Objetivo |
 |-----------|-------|-------------------|----------|
@@ -56,7 +58,7 @@ As 5 jornadas seguem os 5 perfis, eixados pela distância entre ideia e realidad
 | SEO/Blog | Web | Científico + Profundo | Tráfego orgânico, evergreen |
 | Indicação/boca-a-boca | Interpessoal | — | O mais poderoso, gerado por experiência |
 
-**2. Jornada de Consideração** (Operante: executa, não lança o que é seu → avaliando)
+**2. Jornada de Consideração** (avaliando)
 
 | Touchpoint | Canal | Tom | Objetivo |
 |-----------|-------|-----|----------|
@@ -67,7 +69,7 @@ As 5 jornadas seguem os 5 perfis, eixados pela distância entre ideia e realidad
 | Depoimentos/cases | Social/Web | Inspirador | Prova social, identificação |
 | Comunidade aberta | Digital | Adaptável | Pertencimento antes da compra |
 
-**3. Jornada de Entrada** (Convergente: lança, não sustenta → comprando/entrando)
+**3. Jornada de Entrada** (entrando — Atlas como experiência de entrada e ativação)
 
 | Touchpoint | Canal | Tom | Objetivo |
 |-----------|-------|-----|----------|
@@ -78,25 +80,25 @@ As 5 jornadas seguem os 5 perfis, eixados pela distância entre ideia e realidad
 | Primeira aula/conteúdo | Produto | Científico + Inspirador | Confirmar a decisão |
 | D.U.D (persona sintética) | Produto | Sensível + Curioso | Acolhimento tecnológico |
 
-**4. Jornada de Profundidade** (Emergente: tem negócio, dispersa energia → aprofundando)
+**4. Jornada de Profundidade** (aprofundando — Overpass como camada contínua)
 
 | Touchpoint | Canal | Tom | Objetivo |
 |-----------|-------|-----|----------|
 | Trilhas de aprendizado | Produto | Científico + Profundo | Formação estruturada |
 | Missões práticas | Produto | Provocativo | Tirar da teoria para ação |
 | Comunidade interna | Digital | Adaptável | Troca entre pares |
-| Mentoria Vanguarda | Interpessoal | Profundo + Provocativo | Aceleração com responsabilidade |
+| Vanguarda (camada de aceleração) | Interpessoal | Profundo + Provocativo | Aceleração com responsabilidade |
 | Eventos presenciais | Presencial | Inspirador + Provocativo | Conexão, imersão |
 | T.R.U (persona sintética) | Produto | Direto + Preciso | Orientação operacional |
 
-**5. Jornada de Legado** (Nexialista: opera ecossistema próprio → contribuindo)
+**5. Jornada de Legado** (contribuindo)
 
 | Touchpoint | Canal | Tom | Objetivo |
 |-----------|-------|-----|----------|
 | Cases publicados | Web/Social | Inspirador | Prova de transformação |
 | Convites para palestras | Interpessoal | Provocativo | Amplificar a visão |
 | Co-criação de conteúdo | Produto | Profundo | Contribuição ao ecossistema |
-| Alumni/rede de empreendedores nexialistas | Interpessoal | Adaptável | Legado vivo |
+| Comunidade de Atoms / rede de egressos | Interpessoal | Adaptável | Legado vivo |
 
 ### Diretrizes por Canal
 
@@ -109,7 +111,7 @@ Para cada canal, definir:
 - **Referência visual** (qual parte da identidade visual se aplica)
 
 ### Instagram (detalhamento — já possui diretrizes parciais)
-Expandir as 5 diretrizes existentes (linhas 2707-2722 do documento central) com:
+Expandir as diretrizes de Instagram já existentes na base canônica com:
 - Frequência de postagem ideal
 - Mix de formatos (carrossel, reels, stories, feed)
 - Linha editorial (temas recorrentes)
@@ -136,7 +138,11 @@ Expandir as 5 diretrizes existentes (linhas 2707-2722 do documento central) com:
 - Consistência visual + verbal + sonora em todos os pontos
 - O tom se ADAPTA ao canal mas a identidade permanece
 - Priorizar qualidade sobre quantidade (parcimônia)
-- Mapear a jornada do EMPREENDEDOR NEXIALISTA, não do "consumidor" — e nunca chamá-lo de "designer" ou "criativo"
+- Mapear a jornada do EMPREENDEDOR, não do "consumidor" — e nunca rotulá-lo como "designer", "criativo" ou "Empreendedor Nexialista"
+- Comunidade é **infraestrutura de aprendizagem e realização**, não feature de engajamento ou retenção; a plataforma não é biblioteca ou catálogo de cursos
+- IA é infraestrutura, não categoria: nenhum touchpoint posiciona a Overlens como "escola de IA"
+- Classificar certeza das afirmações estratégicas: DEFINIDO / EM VALIDAÇÃO / HIPÓTESE / HISTÓRICO / PENDENTE
+- **Não inventar personas.** Brunin, Tella, Ander e Lilly estão desatualizados; material que dependa deles deve ser marcado como *"necessita revisão de persona"*
 - Página de vendas, e-mails e social falam com empreendedores: risco alto de hustle porn. PROIBIDO prometer faturamento, enriquecimento, "liberdade financeira", escassez falsa, FOMO ou tom de startup bro em qualquer touchpoint
 - Incluir touchpoints onde a marca NÃO está presente mas deveria estar
 - Incluir touchpoints onde a marca está presente e deveria SAIR

@@ -45,6 +45,8 @@ const BRAND_SYSTEM_DIR = resolveTRU("brand_system");
 const ESTUDIO_DIR = resolveTRU("estudio_criativo");
 const GROWTH_DIR = resolveTRU("growth_system");
 const BUSINESS_DIR = resolveTRU("business_doc");
+const PRODUCT_DIR = resolveTRU("product_system");
+const COMMUNITY_DIR = resolveTRU("community_system");
 const PACOTE_DIR = resolveTRU("pacote_cultural");
 const PLAYBOOK_CONTEUDO_DIR = resolveTRU("estudio_criativo", "03 - Playbook de Conteúdo");
 const PLAYBOOK_VIDEOS_DIR = resolveTRU("estudio_criativo", "04 - Playbook de Edição de Vídeos");
@@ -388,6 +390,54 @@ export function getFirstBusinessSegments(): string[] | null {
 
 export function getAllBusinessFlat(): DocFile[] {
   return flattenFiles(getBusinessSections());
+}
+
+// -- Product System API -----------------------------------
+
+let _productCache: DocSection[] | null = null;
+
+export function getProductSections(): DocSection[] {
+  if (_productCache) return _productCache;
+  _productCache = scanContentDir(PRODUCT_DIR);
+  return _productCache;
+}
+
+export function getProductDocBySegments(
+  segments: string[]
+): { file: DocFile; section: DocSection; breadcrumbs: DocSection[] } | null {
+  return resolveSegments(getProductSections(), segments);
+}
+
+export function getAllProductSegments(): string[][] {
+  return flattenSegments(getProductSections());
+}
+
+export function getAllProductFlat(): DocFile[] {
+  return flattenFiles(getProductSections());
+}
+
+// -- Community System API ---------------------------------
+
+let _communityCache: DocSection[] | null = null;
+
+export function getCommunitySections(): DocSection[] {
+  if (_communityCache) return _communityCache;
+  _communityCache = scanContentDir(COMMUNITY_DIR);
+  return _communityCache;
+}
+
+export function getCommunityDocBySegments(
+  segments: string[]
+): { file: DocFile; section: DocSection; breadcrumbs: DocSection[] } | null {
+  return resolveSegments(getCommunitySections(), segments);
+}
+
+export function getAllCommunitySegments(): string[][] {
+  return flattenSegments(getCommunitySections());
+}
+
+export function getAllCommunityFlat(): DocFile[] {
+  return flattenFiles(getCommunitySections());
 }
 
 // ─── Pacote Cultural API ─────────────────────────────────

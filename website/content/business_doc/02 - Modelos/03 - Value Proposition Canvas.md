@@ -1,3 +1,13 @@
+---
+title: Value Proposition Canvas
+summary: PENDENTE DE CONSTRUÇÃO e fora deste documento — a página registra a decisão de arquitetura documental de que o Value Proposition Canvas e o Mapa de Empatia pertencem ao Growth System, porque existem por segmento e dependem de persona e Jobs To Be Done. Lista os pré-requisitos de construção e define que aqui ficará apenas o resumo executivo e o ponteiro.
+topics: [value proposition canvas, mapa de empatia, arquitetura documental, fonte única de verdade, artefato pendente]
+keywords: [Value Proposition Canvas, VPC, Mapa de Empatia, Growth System, segmentos, personas, Jobs To Be Done, JTBD, proposta de valor, ponteiro, resumo executivo, PENDENTE, duplicidade de fonte]
+priority: medium
+ai_when_to_use: |
+  Use apenas para explicar onde vive o Value Proposition Canvas da Overlens (Growth System), por que ele não é um documento único da companhia e quais pré-requisitos precisam existir antes de construí-lo. O canvas está PENDENTE DE CONSTRUÇÃO — nunca cite esta página como se contivesse um canvas ou um mapa de empatia prontos.
+related: ["business_doc/02 - Modelos/01 - Business Model Canvas.md", "growth_system/00 - Definição/01 - Definição.md", "growth_system/03 - Estratégia/31 - Jobs To Be Done.md", "business_doc/00 - Definição/01 - Definição.md"]
+---
 # Value Proposition Canvas
 
 ## Este artefato não vive aqui. O Value Proposition Canvas da Overlens pertence ao Growth System.

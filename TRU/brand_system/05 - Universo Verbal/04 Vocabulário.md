@@ -1,6 +1,6 @@
 # Vocabulário
 
-## A linguagem é um dos alicerces que sustenta a identidade da Overlens. Cada termo que usamos carrega intenções, valores e símbolos que refletem nossa visão: formar Empreendedores Nexialistas capazes de pensar sistemicamente, ampliar a imaginação com inteligência artificial e transformar ideias em negócios, produtos e mundos com propósito real.
+## A linguagem é um dos alicerces que sustenta a identidade da Overlens. Cada termo que usamos carrega intenções, valores e símbolos que refletem nossa visão: apoiar empreendedores — pessoas que querem transformar uma ideia em realidade — a pensar sistemicamente, a usar a inteligência artificial como infraestrutura e a transformar ideias em projetos, produtos e negócios com propósito real.
 
 ![Rosetta Stone](/brand/images/Rosetta%20Stone.jpg)
 
@@ -24,19 +24,47 @@ O Vocabulário da Marca nasce para consolidar esse repertório, dando clareza e 
     
 * Em contextos visuais e simbólicos, a lente deve remeter ao nosso emblema central (o olho nexialista) e à ideia de atravessar limites perceptivos.
 
-## Nexialista
+## Nexialismo
 
-**Definição:** Empreendedor sistêmico que orquestra múltiplas disciplinas, design, filosofia, arte e tecnologia, e utiliza a inteligência artificial como extensão da imaginação. Não é definido pela profissão de origem: pode vir da engenharia, da arquitetura, da arte, do design ou de nenhuma delas. É definido pelo que faz com a própria ideia. Seu objetivo é transformar complexidade em clareza e clareza em realidade, gerando valor cultural, simbólico e de negócio.
+**Definição:** Capacidade cognitiva e prática que a Overlens desenvolve; não é o nome do nosso público. Nexialismo é a habilidade de transitar entre mundos, reconhecer relações entre campos distintos e mobilizar conhecimentos diferentes para realizar ideias complexas. Conhecimento enciclopédico sem aplicação não é nexialismo: o conceito permanece ligado à realização. **Nexialista** nomeia quem opera nesse modo, orquestrando domínios, pessoas e competências em torno de um problema. **[EM VALIDAÇÃO]**
 
-**Exemplo de uso:** “Na Overlens, formamos Empreendedores Nexialistas: pessoas preparadas para transformar as próprias ideias em marcas, produtos e negócios que importam.”
+**Exemplo de uso:** “A Overlens desenvolve nexialismo: a capacidade de mobilizar conhecimentos de campos diferentes para transformar uma ideia em realidade.”
 
-**Observações** 
+**Observações**  
 
-* Em comunicação externa, sempre contextualizar na primeira menção (ex.: “Empreendedor Nexialista; construtor sistêmico formado na Overlens”).  
+* O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. O que define o público é o estado, não a profissão. Esse empreendedor pode ou não ser designer, engenheiro, arquiteto, artista, inventor, maker ou pesquisador; e pode vir de qualquer outra origem, inclusive de nenhuma formação específica.  
     
-* Evitar reduzir a expressão a apenas “empreendedor”, “designer” ou “especialista em IA”: o termo carrega a identidade fundacional da Overlens e deve manter sua densidade simbólica.  
+* Nexialista é um modo de operar, nunca um cargo, um diploma ou um título concedido. Não chamamos ninguém publicamente de “Nexialista”.  
     
-* Não usar o termo como rótulo de profissão. Nexialista é um modo de operar, não um cargo: engenheiros, artistas, arquitetos, designers e fundadores sem formação criativa cabem igualmente no termo.
+* Manter o conceito ligado à ação. Se a frase descreve alguém que sabe muitas coisas e não realiza nada, não é nexialismo.  
+    
+* Nexialista é também um dos **quatro modos** de agir, aprender, pensar e criar: *Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra*. São modos comportamentais e cognitivos, não estágios de maturidade nem níveis de senioridade.
+
+## Atom
+
+**Definição:** Identidade básica de um membro da comunidade Overlens. Atom não é aluno, assinante, comprador, lead nem usuário; essas são condições transacionais ou funcionais. Atom é identidade de pertencimento: quem pertence ao ecossistema Overlens é um Atom. A definição conceitual completa está na página Atom, no Núcleo da Marca; a implementação operacional pertence ao Community System. **[EM VALIDAÇÃO]**
+
+**Exemplo de uso:** “Hey, Atoms: os projetos construídos no último encontro já estão publicados.”
+
+**Observações**  
+
+* Escrever **Atom** com inicial maiúscula e plural “Atoms”. Não traduzir para “átomo” quando o sentido for membro da comunidade.  
+    
+* Usar para nomear pertencimento (comunidade de Atoms, encontro de Atoms, projetos criados por Atoms, colaboração entre Atoms), nunca para nomear um plano, um preço ou um estágio de funil.  
+    
+* A palavra existe para substituir gradualmente a relação escolar “empresa → aluno” por pertencimento a uma comunidade de pessoas que aprendem, criam, experimentam e constroem.
+
+## Atom Praxis
+
+**Definição:** Nome das iniciativas orientadas à prática, à criação, à experimentação e à construção dentro do ecossistema Overlens. *Praxis* é aprendizagem transformada em ação: conhecimento que encontra prática e se converte em evidência de capacidade. **[EM VALIDAÇÃO]**
+
+**Exemplo de uso:** “O Atom Praxis reuniu times para construir protótipos a partir de problemas reais.”
+
+**Observações**  
+
+* Não reduzir Atom Praxis a “evento” nem a “hackathon”. O hackathon da comunidade foi um uso concreto do nome, não a sua definição.  
+    
+* Usar quando houver construção, experimentação ou entrega real; não usar para nomear uma aula, um webinar ou um conteúdo assistido passivamente.
 
 ## Sistema Vivo
 
@@ -64,4 +92,50 @@ O Vocabulário da Marca nasce para consolidar esse repertório, dando clareza e 
     
 * Sempre que possível, associe o conceito a evidências concretas (cases, parcerias, impacto cultural).  
   
+## Projeto
+
+**Definição:** Unidade central da experiência Overlens. Projeto é algo que alguém quer realizar e que organiza tudo o que vem depois: *projeto → necessidade → conhecimento → aplicação → evidência*. Isso não elimina aulas, livros, artigos ou trilhas; altera a relação entre eles. **[EM VALIDAÇÃO]**
+
+**Exemplo de uso:** “Comece pelo projeto. O que você precisa aprender aparece depois, puxado pelo que ele exige.”
+
+**Observações**  
+
+* A pergunta que organiza a experiência deixou de ser “o que você quer aprender?” e passou a ser “o que você quer construir, realizar ou se tornar?”.  
+    
+* Não usar “projeto” como sinônimo genérico de tarefa, peça ou entrega isolada.
+
+## Evidência
+
+**Definição:** Registro concreto do que alguém conseguiu fazer. Evidência é o que permanece depois da execução: o que foi construído, o que funcionou, o que mudou. É o contrário do certificado de presença e do número apresentado como troféu. **[EM VALIDAÇÃO]**
+
+**Exemplo de uso:** “Ao final do ciclo, o que fica não é uma nota: é evidência do que você é capaz de construir.”
+
+**Observações**  
+
+* Associar evidência a capacidade demonstrada, nunca a resultado financeiro.  
+    
+* Evidência descreve o que já aconteceu. Não usar como promessa.
+
+## Realização
+
+**Definição:** O ato de atravessar a distância entre uma ideia e algo que existe no mundo. Realização é o horizonte da Overlens: aprender é meio; criar, construir, experimentar, validar, executar e realizar são o objetivo.
+
+**Exemplo de uso:** “O futuro não é um destino. O futuro é um projeto; e realização é o que acontece quando alguém assume esse projeto até o fim.”
+
+**Observações**  
+
+* Realização não é promessa de resultado garantido nem de enriquecimento. É trabalho com método, tempo e custo.  
+    
+* Prefira “realizar” a “escalar” e “sustentar” a “crescer sem critério”.
+
+## Termos aposentados
+
+Palavras que a marca já usou e que **não** representam a formulação atual. Ficam registradas para que ninguém as reintroduza por engano ao encontrar material antigo.
+
+| Termo | Status | O que vale hoje |
+|---|---|---|
+| **Empreendedor Nexialista** como nome do público | **HISTÓRICO** | O público é o **empreendedor**, definido pelo estado (quer transformar uma ideia em realidade) e não pela profissão. Nexialismo é capacidade que a Overlens desenvolve. |
+| **Inconscientes** como perfil | **HISTÓRICO** | Não existe na formulação atual. Os modos são Operante, Convergente, Emergente e Nexialista. |
+| **átomo** como unidade pequena de conteúdo ou curso especializado | **HISTÓRICO** | **Atom** é o membro da comunidade. Em caso de conflito, vale a definição atual. |
+
 Cada termo do vocabulário institucional deverá refletir esses pilares, missão, valor cultural, estética rigorosa, colaboração, impacto real, para que nossa comunicação seja coesa, autêntica e capaz de ressoar com quem acredita em design como ponte entre o que é e o que pode ser.

@@ -4,9 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the **Overlens Brand System** — a living document repository containing the complete branding, strategy, identity, and communication guidelines for Overlens, a school that trains "Nexialist Entrepreneurs" (Empreendedores Nexialistas — creators, dreamers, engineers, designers, artists and architects who integrate design, philosophy, technology and art to turn their own ideas into emerging businesses).
+This repo hosts the **Overlens knowledge base** — a living set of documents covering the business, brand, growth, product and community of Overlens — **and** the Overlens platform code under `website/`.
 
-The repo is **dual-purpose**: it hosts the Brand System (Markdown documents — the original and primary focus) **and** the Overlens platform code under `website/`. When the user asks for "a new page", clarify which side they mean — Brand System markdown (e.g., `[PAGINA] Nome.md`) or a Next.js route under `website/src/app/`.
+**Overlens is an ecosystem of learning, business, creation and realization for people who want to turn ideas into reality.** Learning is a means; the goal is to create, build, experiment, validate, execute and realize. Education is one mechanism, AI is one infrastructure, projects are a core unit of learning, and community is part of the ecosystem.
+
+> ⚠️ **The company is in transition.** Much of the knowledge base was written in late 2025 / early 2026 and describes an earlier version of Overlens. **Before writing or editing any knowledge-base document, read `.claude/rules/tese-atual.md`** — it is the normative source on audience, category, the role of AI and current vocabulary, and it overrides any conflicting document in the base. The per-document audit lives in `TRU/[AUDITORIA] Base de Conhecimento.md`.
+
+When the user asks for "a new page", clarify which side they mean — a knowledge-base markdown document or a Next.js route under `website/src/app/`.
 
 ## Technical Infrastructure (platform side)
 
@@ -43,12 +47,31 @@ Decisões arquiteturais (plataforma, infraestrutura, processos) são registradas
 - Dev, preview, and production share the **same** Supabase project. Destructive queries in dev hit prod data.
 - A few `process.env.X` references exist for unused features (`PERPLEXITY_API_KEY`, `FEEDLY_API_KEY`, `CRON_SECRET`, `NEXT_PUBLIC_SITE_URL`, `IMAGEN_MODEL`). They are **not** in Infisical — these code paths are dead. Don't add them to Infisical without confirming the feature is actually needed.
 
-## Repository Structure (Brand System side)
+## Repository Structure (knowledge-base side)
 
-### Core Documents
-- `[B] O Livro de Branding da Overlens (1).md` — The **central document** (~3079 lines). Single source of truth.
-- `RAG_OVERLENS_COMPLETO.md` — Comprehensive context extraction. **Read this first** before any work.
-- `TASKS_PAGINAS_FALTANTES.md` — Checklist of 13 pages to complete, organized by priority.
+### Canonical content location
+- `website/content/<sistema>/...` — **canonical**, includes frontmatter (title, summary, topics, keywords, priority, ai_when_to_use, related). The site and the AI index read from here.
+- `TRU/<sistema>/...` — same body, **no frontmatter**. Local fallback. **Always update both when editing.**
+
+### Systems and their source of truth
+| System | Is the truth about |
+|--------|--------------------|
+| `business_doc` | The business: model, revenue, offer architecture, bets, strategy |
+| `brand_system` | Identity and meaning: positioning, narrative, language, worldbuilding, naming, symbols |
+| `growth_system` | Market, audiences, acquisition and conversion: personas, ICP, segments, JTBD, Empathy Map, Value Proposition Canvas, funnels, channels, CRM, growth loops |
+| `product_system` | Product: PBL, AI, projects, competencies, evidence, progress, roadmap |
+| `community_system` | Community: members, levels, rituals, reputation, progression, roles, governance |
+| `estudio_criativo` | Content System: creative studio, content method, playbooks, touchpoints |
+| `pacote_cultural` | Cultural curation |
+
+One topic, one owning document. Other documents reference — they never redefine.
+
+### Governing rules
+- `.claude/rules/tese-atual.md` — **normative**: current thesis, audience rule, vocabulary, certainty classification
+- `.claude/rules/padrao-paginas.md` — page writing standard
+- `.claude/rules/revisao-validacao.md` — review and validation frameworks
+- `TRU/changes.md` — the directive behind the current repositioning
+- `TRU/[AUDITORIA] Base de Conhecimento.md` — per-document audit status
 
 ### Pipeline Output Files
 - `[PESQUISA] *.md` — Research briefings (output of /pesquisar)
@@ -111,19 +134,30 @@ Domain skills (`/storybrand`, `/posicionamento`, etc.) include built-in research
 
 ## Critical Rules for Writing New Pages
 
-1. **Always read `RAG_OVERLENS_COMPLETO.md` before writing**
+1. **Always read `.claude/rules/tese-atual.md` before writing.** It overrides any conflicting document in the base.
 2. **Language**: Brazilian Portuguese. Accessible, no jargon, no slang, no excessive formality
 3. **Tone** (4 virtues): Científica, Profunda, Provocativa, Inspiradora. Plus transversal: Adaptável
 4. **Archetypes**: Mago (Prometheus, method) + Criador (form) + Sábio (ethics). Never guru, never dogmatic
 5. **Structure**: H1 → H2 evocative opening → Paragraphs → Subtitles → Lists → Examples
 6. **Guardrails**: No empty promises, no FOMO, no hustle porn, no messianism, no "acenda/forje/destrave"
-7. **Vocabulary**: Respect official terms (Nexialista, Empreendedor Nexialista, Lente, Sistema Vivo, Capital Simbólico). Never call the audience "designers" — design is a discipline we teach, not who our public is.
-8. **File naming**: `[PAGINA] Nome da Página.md`
+7. **Audience rule (eliminatory)**: the audience is the **empreendedor** — whoever has an idea, ambition or vision and wants to turn it into reality. **State, not profession.** They may or may not be a designer, engineer, architect, artist, maker or researcher, and may come from any other origin. Never label the audience "designers", "criativos" or "profissionais criativos". Professions may appear as *examples of origin*, or inside the dynamic positioning construction ("a escola de negócios dos criadores / dos artistas / dos engenheiros / dos designers").
+8. **Certainty classification**: mark strategic claims as DEFINIDO / EM VALIDAÇÃO / HIPÓTESE / HISTÓRICO / PENDENTE. Never document exploration as a settled decision.
+9. **Never delete useful history**: move superseded positioning into a Histórico section, marked HISTÓRICO.
+10. **Edit both** `website/content/...` (with frontmatter) and `TRU/...` (body only)
 
 ## Key Brand Concepts
 
-- **Purpose**: "Colocar o poder da criação nas mãos das pessoas"
+- **Brand thesis**: *O futuro não é um destino. O futuro é um projeto.*
+- **Mission (em validação)**: ajudar pessoas a realizarem suas ideias
+- **Purpose (histórico, still coherent)**: "colocar o poder da criação nas mãos das pessoas"
+- **Positioning (em validação)**: "a escola de negócios dos criadores" — dynamic structure; repeating the categories is part of the concept
+- **Atom**: the identity of a community member. Not student/subscriber/lead. The old meaning ("átomo" as a content unit) is obsolete.
+- **Four modes** (behavioral and cognitive — **not** sequential maturity stages, **not** seniority): **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**. "Inconscientes" is no longer used.
+- **Nexialismo**: a capability Overlens develops — never a label for the audience
+- **AI**: infrastructure, not category. Overlens does not compete with general models at answering, summarizing or generating.
+- **Projects over content**: Projeto → necessidade → conhecimento → aplicação → evidência. PBL is a core structure.
+- **Community**: infrastructure for learning and realization, not a retention feature
+- **Delivery spectrum** (internal mental model): Aprender → Construir → Acelerar
 - **3 Pillars**: Inspirar, Ensinar, Mover (a criar)
-- **5 Maturity Profiles** (distância entre ideia e realidade, não senioridade): Inconscientes (vontade sem direção) → Operantes (executam, não lançam) → Convergentes (lançam, não sustentam) → Emergentes (têm negócio, dispersam) → Nexialistas (operam ecossistema próprio)
 - **Visual identity**: Black base, micro-dose accents (ice blue, amber, moss green, burgundy), Inter + Outfit
 - **Communication layers**: Provocar atenção (Ethos) → Validar credibilidade → Conexão emocional (Pathos) → Profundidade (Logos)

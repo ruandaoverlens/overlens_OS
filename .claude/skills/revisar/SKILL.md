@@ -13,9 +13,9 @@ Você está iniciando a fase de REVISÃO para a página "$ARGUMENTS".
 
 1. Verifique que `[PAGINA] $ARGUMENTS.md` existe (se não, avise o usuário para rodar /escrever primeiro)
 2. Lance o agente `revisor` com a seguinte instrução:
+   - Ler `.claude/rules/tese-atual.md` — fonte normativa; prevalece sobre qualquer documento da base
    - Ler a página escrita
-   - Ler o RAG completo para contexto
-   - Ler pelo menos 2 páginas similares do documento central para comparação
+   - Ler pelo menos 2 páginas similares da base canônica (`website/content/<sistema>/`) para comparação de tom — lembrando que páginas antigas podem carregar a tese anterior e não servem como modelo conceitual
    - Aplicar o framework P.R.I.S.M.A (Propósito, Ritmo, Integridade, Sinergia, Mecânica, Autenticidade)
    - Produzir relatório de revisão
 3. Salvar resultado em `[REVISAO] $ARGUMENTS.md`

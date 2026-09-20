@@ -1,12 +1,20 @@
 # Visão Geral
 
-## Uma escola para quem decide criar com consciência. A Overlens forma pessoas capazes de pensar com profundidade, agir com método e construir realidades que o mundo ainda não viu; sem receitas prontas, sem atalhos e sem ilusões sobre o que isso exige.
+## Uma escola de negócios, criação e realização para quem decide construir com consciência. A Overlens forma pessoas capazes de pensar com profundidade, agir com método e transformar as próprias ideias em algo que existe no mundo; sem receitas prontas, sem atalhos e sem ilusões sobre o que isso exige.
 
 ![The Ten Largest No. 7, Adulthood](/brand/images/The%20Ten%20Largest%20No%207%20Adulthood.jpg)
 
 <figcaption><a href="https://commons.wikimedia.org/wiki/File:Hilma_af_Klint_%E2%80%94_The_Ten_Largest_%E2%80%94_Number_7_Adulthood.jpg">The Ten Largest, No. 7, Adulthood</a>; Hilma af Klint, 1907</figcaption>
 
 A Overlens é uma escola para pessoas que querem construir. Aqui elas aprendem a pensar melhor sobre suas ideias, cuidar delas e transformá-las em realidade através de projetos, produtos, negócios, histórias e invenções. Não é um lugar de receitas prontas, mas de aprendizado para usar a cabeça, o coração e a imaginação na hora de escolher o que criar e como criar. A Overlens existe para formar pessoas mais curiosas, corajosas e responsáveis, capazes de criar coisas que façam sentido em um mundo que está sempre mudando.
+
+**DEFINIDO.** Aprender, aqui, é meio. O fim é criar, construir, experimentar, validar, executar e realizar. Por isso a pergunta que organiza o ecossistema deixou de ser *"o que você quer aprender?"* e passou a ser *"o que você quer construir, realizar ou se tornar?"*.
+
+É também por isso que a Overlens se chama uma escola de negócios — e vale dizer o que isso não significa. Não é uma escola de administração tradicional. É uma escola de negócios construída para quem não se identifica com a estética, a linguagem e a visão de mundo de uma escola de negócios convencional.
+
+> **O futuro não é um destino. O futuro é um projeto.**
+
+Não é uma frase de efeito. É a tese que sustenta o resto: futuros não acontecem por inevitabilidade, são construídos por pessoas que decidem construí-los. A Overlens existe para aumentar o número de pessoas capazes de fazer isso e a qualidade com que fazem.
 
 Leia a [Linha do Tempo]() para conhecer mais sobre a Overlens
 
@@ -18,7 +26,11 @@ Leia: [Por que a Overlens existe?]() para compreender melhor
 
 ## Para quem é a Overlens?
 
-A Overlens é para pessoas que desejam assumir responsabilidade pelo que constroem. Criadores, sonhadores, engenheiros, designers, artistas, arquitetos e pensadores que não se satisfazem em apenas executar tarefas ou seguir fórmulas prontas. A origem profissional não importa: o que importa é o que cada um faz com a própria ideia. É para quem aceita lidar com ambiguidade, sustentar decisões difíceis, aprender continuamente e agir no mundo real. Pessoas que buscam sentido, autoria e coerência entre discurso e prática, e que entendem que construir um negócio implica consequências, esforço e maturidade.
+**EM VALIDAÇÃO.** A Overlens é para o empreendedor: quem tem uma ideia, uma ambição ou uma visão de futuro e quer transformá-la em realidade, assumindo responsabilidade pelo que constrói.
+
+O que define esse público é o estado, não a profissão. A pessoa pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa, da programação, do comércio — ou de nenhuma dessas origens. A formação é circunstância; o que importa é o que cada um faz com a própria ideia. É para quem não se satisfaz em apenas executar tarefas ou seguir fórmulas prontas, aceita lidar com ambiguidade, sustenta decisões difíceis, aprende continuamente e age no mundo real. Pessoas que buscam sentido, autoria e coerência entre discurso e prática, e que entendem que construir um negócio implica consequências, esforço e maturidade.
+
+> A definição formal de personas, segmentos e ICP pertence ao Growth System e ainda será feita. **PENDENTE.**
 
 ## E para quem NÃO É?
 
@@ -26,6 +38,6 @@ A Overlens não é para quem busca validação constante, segurança emocional o
 
 ## Qual é a abordagem da Overlens?
 
-A abordagem da Overlens se apoia em três pilares: inspirar, ensinar e mover. Inspirar, para romper crenças limitantes e lembrar que criar é possível. Ensinar, para desenvolver pensamento crítico, visão sistêmica, criatividade aplicada e uso consciente da tecnologia. E mover, para transformar conhecimento em ação no mundo real. Tudo isso sustentado por uma ética da autonomia que reconhece limites, contexto e fragilidade humana, evitando dogmas, messianismo e culpa moral, e priorizando clareza, responsabilidade e coerência.
+A abordagem da Overlens se apoia em três pilares: inspirar, ensinar e mover. Inspirar, para romper crenças limitantes e lembrar que criar é possível. Ensinar, para desenvolver pensamento crítico, visão sistêmica, criatividade aplicada e uso consciente da tecnologia. E mover, para transformar conhecimento em ação no mundo real — e é aqui que o projeto ocupa o centro: em vez de consumir conhecimento e depois procurar onde aplicá-lo, a pessoa parte de algo que quer realizar, e o conhecimento entra quando o projeto pede (**EM VALIDAÇÃO**). Tudo isso sustentado por uma ética da autonomia que reconhece limites, contexto e fragilidade humana, evitando dogmas, messianismo e culpa moral, e priorizando clareza, responsabilidade e coerência.
 
 Leia [Cuidados e riscos]() para compreender melhor

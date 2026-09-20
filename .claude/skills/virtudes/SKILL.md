@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, WebSearch, Agent
 Execute o pipeline completo para a página de Virtudes:
 
 1. Lance o agente `especialista-virtudes` para produzir a página
-2. O agente deve ler `RAG_OVERLENS_COMPLETO.md`, seções de Tom de Voz, Princípios e Cuidados/Riscos
+2. O agente deve ler `.claude/rules/tese-atual.md` (normativa, prevalece sobre a base) e, na base canônica (`website/content/<sistema>/`; espelho em `TRU/<sistema>/`), as seções de Tom de Voz, Princípios e Cuidados/Riscos
 3. Aplicar continuum aristotélico (falta ← virtude → excesso) para cada virtude
 4. Expandir além do tom de voz: virtudes de comportamento e decisão
 5. Conectar guardrails éticos como manifestação do continuum

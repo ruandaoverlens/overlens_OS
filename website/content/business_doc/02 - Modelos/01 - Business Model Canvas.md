@@ -1,3 +1,13 @@
+---
+title: Business Model Canvas
+summary: PENDENTE DE CONSTRUÇÃO — a página existe para receber o Business Model Canvas atualizado e não contém canvas preenchido. Registra por que o canvas de Osterwalder precisa ser refeito inteiro após a mudança de categoria, o status de cada um dos nove blocos, os cinco pré-requisitos para preenchê-lo e a regra de marcação de certeza por bloco.
+topics: [business model canvas, modelos de negócio, artefato pendente, pré-requisitos, governança de preenchimento]
+keywords: [Business Model Canvas, BMC, Alexander Osterwalder, nove blocos, segmentos de clientes, proposta de valor, canais, relacionamento com clientes, fontes de receita, recursos-chave, atividades-chave, parcerias-chave, estrutura de custos, PENDENTE, Growth System, personas]
+priority: medium
+ai_when_to_use: |
+  Use apenas para explicar que o Business Model Canvas da Overlens está PENDENTE DE CONSTRUÇÃO, quais blocos dependem de quais insumos e o que precisa existir antes de preenchê-lo. Nunca cite esta página como se houvesse um canvas pronto, nem derive blocos a partir da documentação anterior — o canvas antigo foi construído sob a tese de escola de IA e está preservado apenas como registro histórico.
+related: ["business_doc/02 - Modelos/02 - Lean Canvas.md", "business_doc/03 - Arquitetura/02 - Arquitetura de Receita.md", "business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md", "business_doc/04 - Estratégia/01 - Moats.md"]
+---
 # Business Model Canvas
 
 ## Estrutura criada, conteúdo pendente. O Business Model Canvas oficial da Overlens será construído separadamente e incorporado aqui.

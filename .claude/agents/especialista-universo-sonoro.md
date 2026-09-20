@@ -48,7 +48,7 @@ Visão geral da dimensão sonora como sistema:
 
 **1. Por que o som importa para a Overlens**
 - A Overlens já trata a comunicação em camadas (visual, verbal, conceitual) — o som é a camada que completa
-- O documento central menciona (linha 2358): "Tratamos a música e os sons como parte da mensagem. Precisamos de uma abordagem semiótica."
+- A base canônica menciona: "Tratamos a música e os sons como parte da mensagem. Precisamos de uma abordagem semiótica."
 - Som cria atmosfera que nenhum texto ou imagem consegue sozinho
 - Playlists já são parte da cultura (mencionadas no Pacote Cultural)
 

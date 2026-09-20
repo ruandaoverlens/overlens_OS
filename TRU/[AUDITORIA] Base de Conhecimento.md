@@ -1,8 +1,32 @@
 # [AUDITORIA] Base de Conhecimento — Nova Tese da Overlens
 
-**Data:** 19 de setembro de 2026
+**Data da auditoria:** 19 de setembro de 2026
+**Data da execução:** 20 de setembro de 2026
 **Escopo:** 108 documentos em `TRU/` (Brand System, Growth System, Content System, Pacote Cultural) + 14 arquivos de governança de agentes em `.claude/` e `CLAUDE.md`
 **Base de referência:** prompt de reposicionamento + `TRU/changes.md`
+
+---
+
+## ✅ Estado de execução
+
+A auditoria abaixo **foi executada**. Este documento passa a ter duas funções: registrar o diagnóstico original e registrar o que foi feito a partir dele.
+
+| Frente | Situação |
+| :---- | :---- |
+| **Governança de agentes** (14 arquivos) | ✅ Feito. Nova regra normativa em `.claude/rules/tese-atual.md`; `padrao-paginas.md` e `CLAUDE.md` reescritos; 12 agentes e 11 skills atualizados. |
+| **23 documentos para atualizar** | ✅ Feito. |
+| **24 documentos em conflito** | ✅ Feito. Nada apagado — o que representava a tese anterior virou seção de **HISTÓRICO** ou recebeu aviso de status. |
+| **9 frentes a criar** | ✅ 7 feitas: Business Document, definição de **Atom**, **Community System**, **Product System**, posicionamento atualizado, arquitetura comercial contínua, documentação de PBL. ⏳ 2 pendentes por decisão: **redefinição de personas** e **Value Proposition Canvas + Mapa de Empatia** (dependem da primeira). |
+| **Personas antigas** | ⏳ Preservadas e marcadas **"necessita revisão de persona"** nas 10 páginas afetadas. Nenhuma persona nova foi inventada. |
+| **Pesquisa de mercado** | ⏳ Segue **PENDENTE**. Nenhum número foi estimado. |
+
+**O que mudou na estrutura da base:** dois sistemas novos (`product_system`, `community_system`) e o `business_doc`, todos ligados à plataforma em `/product`, `/community` e `/business`. A fonte canônica passou a ser `website/content/` (com frontmatter); `TRU/` é o espelho sem frontmatter, regenerado por `website/scripts/sync-tru.py`.
+
+**Correções encontradas na execução que a auditoria não tinha previsto:**
+
+- `.claude/agents/escritor.md` estava com o frontmatter corrompido e o agente não carregava.
+- Resíduos do rótulo antigo de público sobreviviam no **frontmatter** de páginas classificadas como "continua válido" — Virtudes, Manifesto, Símbolos e Logotipos, Universo Sonoro e quatro páginas do Pacote Cultural. A auditoria original só inspecionou o corpo dos documentos.
+- O swipe file **Ensaio Manifesto** divide a humanidade em "Nexialistas, Operantes e Obsoletos" — taxonomia que contradiz a regra atual (Operante não carrega julgamento de valor). Foi marcado como HISTÓRICO, preservado como referência de forma.
 
 ---
 

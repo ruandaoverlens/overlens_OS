@@ -50,6 +50,12 @@ import {
   Briefcase,
   Compass,
   History,
+  Layers,
+  Blocks,
+  Boxes,
+  HeartHandshake,
+  CalendarDays,
+  Shield,
   type LucideIcon,
 } from "lucide-react";
 import { PromptArea } from "@/components/prompt-area";
@@ -255,6 +261,35 @@ const businessSections: Record<string, SectionMeta> = {
   },
 };
 
+/* ─── Product System ─── */
+const productSections: Record<string, SectionMeta> = {
+  sistema: {
+    icon: Blocks,
+  },
+  plataforma: {
+    icon: Layers,
+  },
+  roadmap: {
+    icon: Route,
+  },
+};
+
+/* ─── Community System ─── */
+const communitySections: Record<string, SectionMeta> = {
+  funcionamento: {
+    icon: Boxes,
+  },
+  rituais: {
+    icon: CalendarDays,
+  },
+  "governança": {
+    icon: Shield,
+  },
+  comunidade: {
+    icon: HeartHandshake,
+  },
+};
+
 /* ─── Unified lookup ─── */
 const allSections: Record<string, SectionMeta> = {
   ...brandSections,
@@ -266,6 +301,8 @@ const allSections: Record<string, SectionMeta> = {
   ...playbookOperacaoSections,
   ...playbookGestaoSections,
   ...businessSections,
+  ...productSections,
+  ...communitySections,
 };
 
 const fallbackIcons: LucideIcon[] = [

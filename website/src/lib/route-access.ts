@@ -11,7 +11,7 @@ const ROUTE_ACCESS: Record<UserRole, string[]> = {
   // navegação, e sim duas ações: apagar membros e editar textos (ver
   // `isAdmin` / `canDeleteMembers` / `canEditDocs`).
   staff: ["/docs", "/business", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/tru", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium", "/admin"],
-  admin: ["/docs", "/business", "/estudio", "/growth", "/pacote", "/assets", "/plataforma", "/website", "/tru", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium", "/admin"],
+  admin: ["/docs", "/business", "/estudio", "/growth", "/product", "/community", "/pacote", "/assets", "/plataforma", "/website", "/tru", "/playbook-conteudo", "/playbook-videos", "/ferramentas", "/mycelium", "/admin"],
 };
 
 /** Equipe interna com poderes de gestão (tudo, exceto o que é só de admin). */

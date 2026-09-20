@@ -2,7 +2,7 @@
 title: Produção de Criativos
 summary: Define o criativo Overlens como módulo de uma narrativa maior (autonomia, estrutura, responsabilidade) e estabelece a ordem inegociável de produção — diagnóstico, copy, depois design.
 topics: [criativos, copy, design, missão do ciclo, narrativa]
-keywords: [criativo, copy, design, captação, lembrete, remarketing, carrinho aberto, nível de consciência, comportamento, narrativa, ciclo, empreendedor nexialista]
+keywords: [criativo, copy, design, captação, lembrete, remarketing, carrinho aberto, nível de consciência, comportamento, narrativa, ciclo, empreendedor, autoria]
 priority: medium
 ai_when_to_use: |
   Use quando o usuário for produzir criativos de tráfego ou orgânico, perguntar a ordem de trabalho (copy ou design primeiro?), ou precisar do diagnóstico inicial (missão, consciência, comportamento) antes de gerar a peça.

@@ -1,3 +1,13 @@
+---
+title: Business Thesis
+summary: Explica a tese econômica da companhia — quando o custo de criar despenca, o valor migra para visão, julgamento, repertório, estratégia, interdisciplinaridade, comunidade e distribuição. Detalha as três consequências econômicas do deslocamento, o papel da IA como infraestrutura, o papel do projeto e da comunidade na tese, como a tese vira receita e os cinco pontos ainda não provados.
+topics: [tese de negócio, deslocamento de valor, IA como infraestrutura, projeto como unidade central, comunidade, captura de valor]
+keywords: [business thesis, custo de criação, execução como commodity, visão, julgamento, repertório, estratégia, interdisciplinaridade, distribuição, IA como infraestrutura, ChatGPT, Claude, Gemini, PBL, projeto, evidência, comunidade, capacidade verificável, disposição a pagar]
+priority: high
+ai_when_to_use: |
+  Use quando o usuário perguntar por que a Overlens deve existir agora, qual o raciocínio econômico por trás do reposicionamento, por que a companhia não compete com modelos gerais de IA, por que projeto substitui conteúdo como unidade central, ou o que na tese ainda é raciocínio e não evidência. Os números de mercado não estão aqui — permanecem pendentes.
+related: ["business_doc/01 - Overview/01 - Executive Overview.md", "business_doc/03 - Arquitetura/02 - Arquitetura de Receita.md", "business_doc/04 - Estratégia/02 - Strategic Bets.md", "business_doc/05 - Pesquisa/01 - Research e Market Intelligence.md"]
+---
 # Business Thesis
 
 ## Quando criar fica barato, o valor migra para quem sabe o que criar. É nesse deslocamento que a Overlens decide operar.
