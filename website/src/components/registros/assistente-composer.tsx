@@ -101,8 +101,7 @@ export function AssistenteComposer({
         "border-2 border-transparent",
         "transition-[background-color,border-color]",
         "hover:bg-input/50",
-        "focus-within:border-input focus-within:bg-transparent",
-        "focus-within:ring-2 focus-within:ring-foreground/70",
+        "focus-within:border-foreground/70 focus-within:bg-transparent",
       )}
     >
       <div className="flex items-start gap-2 pl-3 pr-2">
@@ -122,7 +121,7 @@ export function AssistenteComposer({
             void handleSubmit();
           }}
           className={cn(
-            "min-h-[24px] max-h-[160px] w-full resize-none overflow-y-auto bg-transparent font-body text-base leading-relaxed tracking-normal outline-none",
+            "min-h-[24px] max-h-[160px] w-full resize-none overflow-y-auto bg-transparent font-body text-base leading-relaxed tracking-normal outline-none focus-visible:ring-transparent",
             "placeholder:text-muted-foreground",
             "text-foreground",
             "field-sizing-content",

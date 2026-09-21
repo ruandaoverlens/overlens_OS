@@ -226,7 +226,7 @@ const CommandInput = React.forwardRef<
         placeholder={placeholder}
         aria-label={placeholder ?? "Buscar"}
         className={cn(
-          "placeholder:text-muted-foreground flex h-10 w-full rounded-field-sm bg-transparent py-3 text-base font-body outline-hidden focus-visible:ring-2 focus-visible:ring-foreground disabled:cursor-not-allowed disabled:opacity-50",
+          "placeholder:text-muted-foreground flex h-10 w-full rounded-field-sm bg-transparent py-3 text-base font-body outline-hidden focus-visible:ring-transparent disabled:cursor-not-allowed disabled:opacity-50",
           className
         )}
         {...props}
@@ -318,7 +318,7 @@ function CommandItem({
     <CommandPrimitive.Item
       data-slot="command-item"
       className={cn(
-        "data-[selected=true]:bg-surface-900 data-[selected=true]:text-accent-foreground data-[selected=true]:ring-2 data-[selected=true]:ring-inset data-[selected=true]:ring-ring min-h-10 [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-hidden select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-6",
+        "data-[selected=true]:bg-surface-900 data-[selected=true]:text-accent-foreground min-h-10 [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-hidden select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-6",
         className
       )}
       {...props}

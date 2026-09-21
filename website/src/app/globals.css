@@ -312,6 +312,16 @@
     @apply bg-background text-foreground;
   }
 
+  /* O Tailwind v4 deixa `cursor: default` em <button>. Todo elemento acionavel
+     do sistema usa a mãozinha, exceto quando desabilitado. */
+  button:not(:disabled):not([aria-disabled="true"]),
+  [role="button"]:not([aria-disabled="true"]),
+  summary,
+  label[for],
+  select:not(:disabled) {
+    cursor: pointer;
+  }
+
   ::selection {
     background: oklch(0.779 0.08 212.201 / 0.4);
     color: var(--foreground);
@@ -437,6 +447,17 @@
     -webkit-text-fill-color: var(--foreground) !important;
     box-shadow: inset 0 0 0 1000px var(--input-autofill) !important;
     caret-color: var(--foreground);
+    /* O inset box-shadow so cobre o padding-box: nos 2px da borda transparente
+       o azul do autofill continuaria aparecendo. Pintamos a borda com o proprio
+       fundo do campo em repouso e com branco solido no foco. */
+    border-color: var(--input-autofill) !important;
+  }
+
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:focus-visible,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill:focus {
+    border-color: var(--foreground) !important;
   }
 }
 
@@ -454,7 +475,7 @@
   select,
   [tabindex]:not([tabindex="-1"]),
   [contenteditable="true"]
-):focus-visible:not([class*="focus-visible:ring-"]:not([class*="focus-visible:ring-0"])) {
+):focus-visible:not([class*="focus-visible:ring-"]:not([class*="focus-visible:ring-0"])):not([class*="focus-visible:border-"]):not([class*="focus-within:border-"]):not(.doc-editor) {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
 }
@@ -496,103 +517,93 @@
 }
 
 /* ─── Editor de páginas (Tiptap) ───────────────────────────
-   Espelha a tipografia do MarkdownRenderer para que o admin edite vendo
-   algo próximo do resultado final. Largura segue o container da página. */
+   Espelha o MarkdownRenderer classe a classe, via `@apply`, para que a edição
+   mostre exatamente o resultado publicado: mesmas fontes, tamanhos, pesos,
+   entrelinha, tracking, cores e espaçamentos. Ao mexer no renderer, mexa aqui.
+   Os casos que lá são condicionais (parágrafo só em itálico, parágrafo que
+   começa em negrito, item de lista com título em negrito) são reproduzidos
+   por seletores `:has()`. */
 .doc-editor {
+  @apply max-w-none text-body text-pretty text-muted-foreground;
   min-height: 60vh;
-  color: var(--muted-foreground);
-  font-size: var(--text-body);
-  line-height: var(--text-body--line-height);
-  text-wrap: pretty;
 }
-.doc-editor > * + * { margin-top: 1rem; }
+/* O ProseMirror usa `white-space: break-spaces`, que preserva espaços e muda
+   onde cada linha quebra. O documento publicado colapsa espaços como qualquer
+   markdown, então o editor precisa quebrar as linhas igual. A classe repetida
+   supera o CSS que o ProseMirror injeta. */
+.doc-editor.doc-editor {
+  white-space: normal;
+}
+/* `space-y-6` do <article> publicado — margem no elemento anterior e dentro de
+   `:where()`, com especificidade zero, para que as margens próprias de cada
+   bloco (mt-12 do h2, mb-4, …) vençam exatamente como vencem lá. */
+:where(.doc-editor > *:not(:last-child)) {
+  margin-block-end: calc(var(--spacing) * 6);
+}
+
 .doc-editor h1 {
-  font-family: var(--font-heading, inherit);
-  font-size: var(--text-display);
-  line-height: var(--text-display--line-height);
-  font-weight: 400;
-  text-transform: uppercase;
-  color: var(--foreground);
-  text-wrap: balance;
+  @apply font-heading text-display font-normal uppercase tracking-normal leading-none text-balance text-foreground;
 }
 .doc-editor h2 {
-  margin-top: 3rem;
-  font-size: var(--text-h2);
-  line-height: var(--text-h2--line-height);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  color: var(--foreground);
-  text-wrap: balance;
+  @apply mt-12 mb-4 font-body text-h2 font-medium tracking-tight text-balance text-foreground;
 }
-.doc-editor h2:first-child { margin-top: 0; }
 .doc-editor h3 {
-  margin-top: 2rem;
-  font-size: var(--text-h3);
-  line-height: var(--text-h3--line-height);
-  font-weight: 500;
-  color: var(--foreground);
+  @apply mt-8 mb-3 font-body text-h3 font-medium text-balance text-foreground;
 }
 .doc-editor h4 {
-  margin-top: 1.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--muted-foreground);
+  @apply mt-6 mb-2 font-body text-sm font-medium text-balance text-muted-foreground;
 }
-.doc-editor strong { font-weight: 600; color: var(--foreground); }
-.doc-editor a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+/* O primeiro H2 do documento é publicado como a abertura evocativa, não como
+   título de seção (`parseLeadingContent`). */
+.doc-editor > h2:first-child {
+  @apply mt-0 mb-6 font-body text-lead font-normal tracking-normal italic text-balance text-surface-200;
+}
+
+.doc-editor p { @apply text-body text-pretty; }
+/* Parágrafo só em itálico = subtítulo. */
+.doc-editor > p:has(> em:only-child) {
+  @apply text-lead italic text-balance text-surface-200;
+}
+.doc-editor strong { @apply font-semibold text-foreground; }
+.doc-editor a { @apply text-primary no-underline; }
+.doc-editor a:hover { @apply underline; }
+
+.doc-editor ul { @apply pl-0 list-none; }
+.doc-editor ol { @apply pl-5 list-decimal; }
+.doc-editor ol { @apply marker:text-muted-foreground; }
+.doc-editor li + li { @apply mt-2; }
+.doc-editor li {
+  @apply rounded-lg border border-border/40 bg-accent/20 px-4 py-3 text-sm leading-relaxed text-pretty text-foreground/90;
+}
+.doc-editor li > p { @apply m-0 text-sm leading-relaxed text-pretty; }
+
 .doc-editor blockquote {
-  border-left: 2px solid color-mix(in oklab, var(--primary) 50%, transparent);
-  padding-left: 1.5rem;
-  font-size: var(--text-lead);
-  line-height: var(--text-lead--line-height);
-  font-style: italic;
-  color: color-mix(in oklab, var(--foreground) 80%, transparent);
+  @apply border-l-2 border-primary/50 pl-6 text-lead italic text-pretty text-foreground/80;
 }
-.doc-editor ul, .doc-editor ol { padding-left: 1.5rem; }
-.doc-editor ul { list-style: disc; }
-.doc-editor ol { list-style: decimal; }
-.doc-editor li + li { margin-top: 0.5rem; }
-.doc-editor li > p { margin: 0; }
-.doc-editor code {
-  border-radius: 0.25rem;
-  background: var(--muted);
-  padding: 0.125rem 0.375rem;
-  font-size: 0.875rem;
-  color: var(--foreground);
-}
+.doc-editor code { @apply rounded bg-muted px-1.5 py-0.5 text-sm text-foreground; }
 .doc-editor pre {
-  overflow-x: auto;
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  background: var(--muted);
-  padding: 1rem;
-  font-size: 0.875rem;
+  @apply overflow-x-auto rounded-lg border border-border bg-muted p-4 text-sm;
 }
-.doc-editor pre code { background: transparent; padding: 0; }
-.doc-editor hr { margin: 2rem 0; border: 0; border-top: 1px solid color-mix(in oklab, var(--border) 50%, transparent); }
-.doc-editor img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
+.doc-editor pre code { @apply bg-transparent p-0; }
+.doc-editor hr { @apply my-8 border-t border-border/50; border-bottom: 0; }
+.doc-editor img { @apply h-auto max-w-full rounded-lg; }
+/* `figure` do MarkdownRenderer: `space-y-2` entre imagem e legenda. */
+.doc-editor figure > * + * { @apply mt-2; }
+.doc-editor figcaption {
+  @apply text-center text-xs italic text-muted-foreground;
 }
 .doc-editor img.ProseMirror-selectednode { outline: 2px solid var(--ring); outline-offset: 2px; }
-.doc-editor table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.875rem;
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  overflow: hidden;
+
+.doc-editor table { @apply w-full text-sm; border-collapse: collapse; }
+.doc-editor table { @apply rounded-lg border border-border; overflow: hidden; }
+.doc-editor th {
+  @apply bg-accent/50 px-4 py-3 text-left align-top font-semibold text-foreground;
 }
-.doc-editor th, .doc-editor td {
-  border: 1px solid color-mix(in oklab, var(--border) 50%, transparent);
-  padding: 0.75rem 1rem;
-  text-align: left;
-  vertical-align: top;
-  min-width: 4rem;
+.doc-editor td {
+  @apply border-t border-border/50 px-4 py-3 align-top leading-relaxed text-pretty;
 }
-.doc-editor th { background: color-mix(in oklab, var(--accent) 50%, transparent); font-weight: 600; color: var(--foreground); }
-.doc-editor th > p, .doc-editor td > p { margin: 0; }
+.doc-editor th, .doc-editor td { min-width: 4rem; }
+.doc-editor th > p, .doc-editor td > p { @apply m-0; }
 .doc-editor .selectedCell::after {
   content: "";
   position: absolute;

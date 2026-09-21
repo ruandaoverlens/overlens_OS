@@ -148,10 +148,13 @@ export function openCommandPalette(): void {
 export function CommandPaletteButton({
   onOpen,
   className,
+  iconOnly = false,
 }: {
   /** Opcional quando há `CommandPaletteProvider` acima. */
   onOpen?: () => void;
   className?: string;
+  /** Só a lupa, para a barra de ícones da sidebar. */
+  iconOnly?: boolean;
 }) {
   const { state, isMobile, setOpenMobile } = useSidebar();
   const modifier = useModifierLabel();
@@ -164,6 +167,31 @@ export function CommandPaletteButton({
     else if (ctx) ctx.setOpen(true);
     else openCommandPalette();
   };
+
+  if (iconOnly) {
+    return (
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon-sm"
+            data-slot="command-palette-button"
+            aria-label={`Buscar (${modifier}+K)`}
+            aria-keyshortcuts="Control+K Meta+K"
+            onClick={handleOpen}
+            className={cn(
+              "cursor-pointer text-muted-foreground hover:text-foreground",
+              className,
+            )}
+          >
+            <SmSearchLineIcon className="size-6" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Buscar ({modifier}K)</TooltipContent>
+      </Tooltip>
+    );
+  }
 
   const button = (
     <button

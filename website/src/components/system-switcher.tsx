@@ -88,11 +88,11 @@ export function SystemSwitcher({ basePath }: { basePath: string }) {
       data-slot="system-switcher"
       aria-label={`Sistema atual: ${current.name}. Trocar de sistema`}
       className={cn(
-        "bg-accent/50 dark:bg-input/30 hover:bg-accent dark:hover:bg-input/50 flex h-12 w-full items-center gap-2 rounded-field-sm px-2 text-sm text-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-foreground [&>svg]:size-6 [&>svg]:shrink-0",
+        "bg-accent/50 dark:bg-input/30 hover:bg-accent dark:hover:bg-input/50 flex h-12 w-full items-center gap-2 rounded-field-sm pl-2.5 pr-2 text-sm text-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-foreground [&>svg]:size-6 [&>svg]:shrink-0",
         "group-data-[collapsible=icon]:size-10! group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:rounded-md group-data-[collapsible=icon]:bg-transparent group-data-[collapsible=icon]:px-0! group-data-[collapsible=icon]:hover:bg-sidebar-accent",
       )}
     >
-      <CurrentIcon className="hidden group-data-[collapsible=icon]:block" />
+      <CurrentIcon className="text-muted-foreground" />
       <span className="flex-1 text-left group-data-[collapsible=icon]:hidden">
         {current.name}
       </span>
@@ -116,19 +116,20 @@ export function SystemSwitcher({ basePath }: { basePath: string }) {
       )}
       <DropdownMenuContent
         align="start"
-        className="w-(--radix-dropdown-menu-trigger-width) min-w-[220px] bg-surface-950"
+        className="w-(--radix-dropdown-menu-trigger-width) min-w-[220px] bg-surface-950 shadow-[0_16px_32px_-8px_rgba(0,0,0,0.75)]"
       >
         {ordered.map((system) => {
           const allowed = hasAccess(system.href);
           const isCurrent = system.href === current.href;
+          const SystemIcon = system.icon;
           return (
             <DropdownMenuItem
               key={system.href}
               disabled={!allowed}
               aria-current={isCurrent ? "page" : undefined}
               className={cn(
-                "h-10 cursor-pointer",
-                isCurrent && "bg-accent/50 text-foreground",
+                "h-10 cursor-pointer pl-1.5 text-muted-foreground",
+                isCurrent && "bg-accent/50 font-medium text-foreground",
               )}
               onSelect={() => {
                 if (!allowed) return;
@@ -136,6 +137,10 @@ export function SystemSwitcher({ basePath }: { basePath: string }) {
                 router.push(system.href);
               }}
             >
+              <SystemIcon
+                className={cn("size-5 shrink-0", isCurrent && "text-foreground")}
+                aria-hidden="true"
+              />
               <span className="flex-1">{system.name}</span>
               {/* O fundo sozinho não diferencia do item sob o cursor. */}
               {isCurrent && (

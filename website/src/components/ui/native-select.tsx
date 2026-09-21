@@ -5,7 +5,7 @@ import { SmArrowDownIosLineIcon } from "@/components/icons"
 import { cn } from "@/lib/utils"
 
 const nativeSelectVariants = cva(
-  "placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground bg-input/30 border-2 border-transparent w-full appearance-none py-0 font-normal font-body shadow-none transition-all outline-none hover:bg-input/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 focus-visible:border-foreground/60 focus-visible:ring-2 focus-visible:ring-foreground/70 focus-visible:bg-transparent aria-invalid:ring-2 aria-invalid:ring-destructive aria-invalid:focus-visible:ring-destructive/60",
+  "placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground bg-input/30 border-2 border-transparent w-full appearance-none py-0 font-normal font-body shadow-none transition-all outline-none hover:bg-input/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 focus-visible:border-foreground/70 focus-visible:bg-transparent aria-invalid:border-destructive aria-invalid:focus-visible:border-destructive",
   {
     variants: {
       size: {

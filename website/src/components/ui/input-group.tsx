@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
 const inputGroupVariants = cva(
-  "group/input-group bg-input/30 border-2 border-transparent hover:bg-input/50 relative flex w-full items-center shadow-none transition-all outline-none min-w-0 has-[>textarea]:h-auto has-[[data-slot=input-group-control]:focus-visible]:border-foreground/60 has-[[data-slot=input-group-control]:focus-visible]:ring-2 has-[[data-slot=input-group-control]:focus-visible]:ring-foreground/70 has-[[data-slot=input-group-control]:focus-visible]:bg-transparent has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[[data-slot][aria-invalid=true]]:border-destructive",
+  "group/input-group bg-input/30 border-2 border-transparent hover:bg-input/50 relative flex w-full items-center shadow-none transition-all outline-none min-w-0 has-[>textarea]:h-auto has-[[data-slot=input-group-control]:focus-visible]:border-foreground/70 has-[[data-slot=input-group-control]:focus-visible]:bg-transparent has-[[data-slot][aria-invalid=true]]:border-destructive",
   {
     variants: {
       size: {
@@ -168,8 +168,9 @@ function InputGroupInput({
     <Input
       data-slot="input-group-control"
       className={cn(
-        // O ring de foco fica no container (has-[...]:ring-2); o controle usa ring
-        // transparente para não duplicar (e não cair no outline global de `ring-0`).
+        // A borda de foco fica no container (has-[...]:border-foreground/70); o
+        // controle usa ring transparente para não duplicar o indicador (e para
+        // não cair no outline global de foco).
         "flex-1 rounded-none border-0 bg-transparent shadow-none focus-visible:ring-transparent focus-visible:ring-offset-0 hover:bg-transparent",
         className
       )}

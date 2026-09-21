@@ -311,6 +311,7 @@ export function MyceliumLightbox({
         <div className="flex flex-wrap items-center gap-2 pt-1 pl-1">
           <FavoriteButton
             isFavorite={isFavorite(reference.id)}
+            iconClassName="size-5"
             onClick={() =>
               toggleFavorite({
                 id: reference.id,

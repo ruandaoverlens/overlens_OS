@@ -644,7 +644,7 @@ export function MyceliumPostForm({
           {/* Tags */}
           <div className="flex flex-col gap-2.5">
             <Label htmlFor="mycelium-tag-input">Tags</Label>
-            <div className="flex flex-wrap items-center gap-2.5 rounded-field border-2 border-transparent bg-input/30 px-2 py-2 min-h-12 focus-within:border-input focus-within:bg-transparent transition-colors">
+            <div className="flex flex-wrap items-center gap-2.5 rounded-field border-2 border-transparent bg-input/30 px-2 py-2 min-h-12 focus-within:border-foreground/70 focus-within:bg-transparent transition-colors">
               {tags.map((tag) => (
                 <span
                   key={tag}
@@ -674,7 +674,7 @@ export function MyceliumPostForm({
                 onChange={(e) => setTagInput(e.target.value)}
                 onKeyDown={handleTagKeyDown}
                 disabled={submitting}
-                className="flex-1 min-w-[100px] bg-transparent border-0 rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-foreground text-sm placeholder:text-muted-foreground py-1 px-2"
+                className="flex-1 min-w-[100px] bg-transparent border-0 rounded-sm outline-none focus-visible:ring-transparent text-sm placeholder:text-muted-foreground py-1 px-2"
               />
             </div>
           </div>

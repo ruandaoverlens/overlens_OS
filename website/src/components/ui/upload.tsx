@@ -69,8 +69,8 @@ function UploadTrigger({
         className={cn(
           inputGroupVariants(),
           "cursor-pointer justify-center gap-2 text-sm font-medium text-muted-foreground",
-          "focus-visible:border-foreground/60 focus-visible:ring-2 focus-visible:ring-foreground/70",
-          "data-[invalid=true]:border-destructive data-[invalid=true]:ring-2 data-[invalid=true]:ring-destructive/40",
+          "focus-visible:border-foreground/70",
+          "data-[invalid=true]:border-destructive",
           "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
         )}
       >

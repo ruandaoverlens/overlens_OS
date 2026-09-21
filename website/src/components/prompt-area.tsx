@@ -388,7 +388,7 @@ export function PromptArea({
           "border-2 border-transparent",
           "transition-[background-color,border-color,box-shadow]",
           "hover:bg-input/50",
-          "focus-within:ring-2 focus-within:ring-foreground/70 focus-within:bg-transparent",
+          "focus-within:border-foreground/70 focus-within:bg-transparent",
           isDragOver && "border-brand-sahara bg-brand-sahara/5",
           className
         )}
@@ -457,7 +457,7 @@ export function PromptArea({
               void handleSubmit()
             }}
             className={cn(
-              "min-h-[24px] max-h-[160px] w-full resize-none overflow-y-auto bg-transparent font-body text-base leading-relaxed tracking-normal outline-none",
+              "min-h-[24px] max-h-[160px] w-full resize-none overflow-y-auto bg-transparent font-body text-base leading-relaxed tracking-normal outline-none focus-visible:ring-transparent",
               "placeholder:text-muted-foreground",
               "text-foreground",
               "field-sizing-content",

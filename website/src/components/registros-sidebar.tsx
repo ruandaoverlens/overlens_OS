@@ -119,13 +119,15 @@ export function RegistrosSidebar({
           {/* "Voltar ao system" abre o bloco de navegação do drawer no mobile
               e da sidebar no desktop. */}
           <SidebarMenu className="p-2 pt-4">
-            <SidebarMenuItem>
+            <SidebarMenuItem className="flex items-center gap-1">
               <SidebarMenuButton asChild size="sm">
                 <Link href={backHref}>
                   <SmArrowBackLineIcon aria-hidden="true" />
                   <span>{backLabel}</span>
                 </Link>
               </SidebarMenuButton>
+              {/* "Nova conversa" fica nesta linha, não junto da busca. */}
+              <NewConversationButton className="group-data-[collapsible=icon]:hidden" />
             </SidebarMenuItem>
           </SidebarMenu>
           <SidebarSeparator />
@@ -133,10 +135,7 @@ export function RegistrosSidebar({
             <SidebarGroupContent>
               <SidebarMenu>
                 <SidebarMenuItem className="mb-1.5">
-                  <div className="flex items-center gap-1">
-                    <CommandPaletteButton className="flex-1" />
-                    <NewConversationButton />
-                  </div>
+                  <CommandPaletteButton />
                 </SidebarMenuItem>
                 {REGISTROS_NAV_ITEMS.map((item) => (
                   <SidebarMenuItem key={item.href}>

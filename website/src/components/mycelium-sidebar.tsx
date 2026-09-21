@@ -38,7 +38,6 @@ import {
   CommandPalette,
   CommandPaletteButton,
   CommandPaletteProvider,
-  NewConversationButton,
   type PaletteSource,
 } from "@/components/command-palette";
 
@@ -126,10 +125,7 @@ export function MyceliumSidebar({
             <SidebarGroupContent>
               <SidebarMenu>
                 <SidebarMenuItem className="mb-1.5">
-                  <div className="flex items-center gap-1">
-                    <CommandPaletteButton className="flex-1" />
-                    <NewConversationButton />
-                  </div>
+                  <CommandPaletteButton />
                 </SidebarMenuItem>
                 {navItems.map((item) => (
                   <SidebarMenuItem key={item.slug}>

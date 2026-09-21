@@ -169,7 +169,7 @@ function PhosphorGalleryView({ weight, setWeight, search, setSearch }: GallerySt
             aria-keyshortcuts="/"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="h-9 w-full rounded-field border border-foreground/15 bg-transparent pl-3 pr-9 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/70"
+            className="h-9 w-full rounded-field border-2 border-foreground/15 bg-transparent pl-3 pr-9 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:border-foreground/70"
           />
           <kbd
             aria-hidden="true"

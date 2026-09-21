@@ -11,7 +11,8 @@ import { Button } from "@/components/ui/button";
 import { useConfirm } from "@/components/ui/confirm-dialog";
 import { DocSkeleton } from "@/components/skeletons";
 import { notify } from "@/lib/notifications/toast";
-import { SmEditSolidIcon, SmHistoryLineIcon } from "@/components/icons";
+import { SmHistoryLineIcon } from "@/components/icons";
+import { TopbarPageActions } from "@/components/topbar-slots";
 
 // O editor (Tiptap + ProseMirror) só entra no bundle de quem clica em Editar.
 const DocEditor = dynamic(
@@ -31,14 +32,17 @@ export function DocPageView({
   system,
   path,
   title,
+  fileTitle,
   markdown,
   hasOverride,
   children,
 }: {
   system: string;
   path: string;
-  /** Título do doc, usado no favorito. */
+  /** Título efetivo do doc (sobrescrito ou do arquivo), usado no favorito. */
   title?: string;
+  /** Título derivado do arquivo: renomear só grava quando difere dele. */
+  fileTitle?: string;
   markdown: string;
   hasOverride: boolean;
   children: ReactNode;
@@ -57,13 +61,20 @@ export function DocPageView({
 
   const allowed = hasMounted && !!user && canEditDocs(user.role);
 
-  const save = async (content: string) => {
+  const save = async (content: string, nextTitle?: string) => {
     setSaving(true);
     try {
       const res = await fetch("/api/docs/save", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ system, path, content }),
+        body: JSON.stringify({
+          system,
+          path,
+          content,
+          // Igual ao nome do arquivo não é renomeação: grava null e a página
+          // continua seguindo o arquivo.
+          title: nextTitle && nextTitle !== fileTitle ? nextTitle : null,
+        }),
       });
       const json = (await res.json().catch(() => ({}))) as { error?: string };
       if (!res.ok) throw new Error(json.error ?? "Erro ao salvar a página");
@@ -111,6 +122,7 @@ export function DocPageView({
     return (
       <DocEditor
         initialMarkdown={markdown}
+        title={favoriteTitle}
         saving={saving}
         onSave={save}
         onCancel={() => setEditing(false)}
@@ -120,10 +132,13 @@ export function DocPageView({
 
   return (
     <>
-      <div className="mb-4 flex items-center justify-end gap-2">
+      {/* As ações vivem na topbar (portal): a página começa direto no título. */}
+      <TopbarPageActions>
         {hasMounted && (
           <FavoriteButton
             isFavorite={isFavorite(favoriteId)}
+            className="size-9 bg-transparent text-muted-foreground hover:bg-accent/50 hover:text-foreground"
+            iconClassName="size-5.5"
             onClick={() =>
               toggleFavorite({
                 id: favoriteId,
@@ -136,25 +151,31 @@ export function DocPageView({
           />
         )}
         {allowed && hasOverride && (
-            <Button
-              type="button"
-              size="sm"
-              variant="ghost"
-              onClick={restore}
-              loading={restoring}
-              loadingText="Restaurando…"
-            >
-              <SmHistoryLineIcon className="size-4" />
-              Restaurar original
-            </Button>
-          )}
+          <Button
+            type="button"
+            size="sm"
+            variant="ghost"
+            className="h-8"
+            onClick={restore}
+            loading={restoring}
+            loadingText="Restaurando…"
+          >
+            <SmHistoryLineIcon className="size-4" />
+            Restaurar original
+          </Button>
+        )}
         {allowed && (
-          <Button type="button" size="sm" variant="secondary" onClick={() => setEditing(true)}>
-            <SmEditSolidIcon className="size-4" />
+          <Button
+            type="button"
+            size="sm"
+            variant="secondary"
+            className="h-8"
+            onClick={() => setEditing(true)}
+          >
             Editar página
           </Button>
         )}
-      </div>
+      </TopbarPageActions>
       {children}
     </>
   );

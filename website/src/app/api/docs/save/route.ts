@@ -6,6 +6,7 @@ import { isAdmin } from "@/lib/route-access";
 import { isSystemSlug, getSystemConfig } from "@/lib/system-configs";
 
 const MAX_CONTENT_BYTES = 2 * 1024 * 1024;
+const MAX_TITLE_LENGTH = 120;
 
 /**
  * Salva (POST) ou restaura (DELETE) o texto de uma página.
@@ -47,6 +48,7 @@ export async function POST(request: NextRequest) {
   const body = await request.json().catch(() => null);
   const target = parseTarget(body);
   const content = (body as { content?: unknown } | null)?.content;
+  const rawTitle = (body as { title?: unknown } | null)?.title;
 
   if (!target) {
     return NextResponse.json({ error: "system e path são obrigatórios" }, { status: 400 });
@@ -57,6 +59,14 @@ export async function POST(request: NextRequest) {
   if (Buffer.byteLength(content, "utf-8") > MAX_CONTENT_BYTES) {
     return NextResponse.json({ error: "Conteúdo grande demais" }, { status: 413 });
   }
+  // `title` é opcional: ausente ou vazio devolve a página ao título do arquivo.
+  if (rawTitle !== undefined && rawTitle !== null && typeof rawTitle !== "string") {
+    return NextResponse.json({ error: "title inválido" }, { status: 400 });
+  }
+  const title = typeof rawTitle === "string" ? rawTitle.trim() : null;
+  if (title && title.length > MAX_TITLE_LENGTH) {
+    return NextResponse.json({ error: `Título maior que ${MAX_TITLE_LENGTH} caracteres` }, { status: 400 });
+  }
 
   const admin = createAdminClient();
   const { error } = await admin.from("doc_pages").upsert(
@@ -64,6 +74,7 @@ export async function POST(request: NextRequest) {
       system: target.system,
       path: target.path,
       content,
+      title: title || null,
       updated_by: auth.user.id,
       updated_at: new Date().toISOString(),
     },
@@ -81,7 +92,10 @@ export async function POST(request: NextRequest) {
     .insert({ system: target.system, path: target.path, content, created_by: auth.user.id })
     .then(() => undefined, () => undefined);
 
+  // "layout" porque o título renomeado também aparece na sidebar, que é
+  // montada no layout do system.
   revalidatePath(pagePath(target.system, target.path));
+  revalidatePath(getSystemConfig(target.system).basePath, "layout");
   return NextResponse.json({ success: true });
 }
 
@@ -108,5 +122,6 @@ export async function DELETE(request: NextRequest) {
   }
 
   revalidatePath(pagePath(target.system, target.path));
+  revalidatePath(getSystemConfig(target.system).basePath, "layout");
   return NextResponse.json({ success: true });
 }

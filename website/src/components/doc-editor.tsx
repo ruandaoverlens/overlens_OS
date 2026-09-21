@@ -53,6 +53,9 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { SecondaryTopbar, TopbarPageActions } from "@/components/topbar-slots";
+import { resolveBrandImageSrc, toBrandImagePath } from "@/lib/brand-images";
+import { Figure, Figcaption, collapseFigures } from "@/components/doc-editor-figure";
 
 /*
  * Componentes customizados do markdown (`<color-palette />`, `<icon-gallery />`)
@@ -69,6 +72,41 @@ function protectComponents(md: string): string {
 
 function restoreComponents(md: string): string {
   return md.replace(COMPONENT_MARK_RE, (_m, name) => `<${name} />`);
+}
+
+/*
+ * As imagens antigas são gravadas como `/brand/images/<arquivo>` e resolvidas
+ * para o storage só na renderização. Dentro do Tiptap esse caminho não existe
+ * (nada é servido de `public/brand/images`), então a imagem aparecia quebrada:
+ * resolvemos na carga e desfazemos no salvamento, para o markdown continuar
+ * guardando o caminho curto.
+ */
+/*
+ * A página publicada descarta o H1 do markdown e usa o título do documento
+ * (`parseLeadingContent` + a prop `title` do MarkdownRenderer). O editor faz o
+ * mesmo: o H1 sai da área editável, o título real aparece no topo e a linha
+ * original volta ao markdown no salvamento.
+ */
+function splitLeadingH1(md: string): { heading: string | null; body: string } {
+  const lines = md.split("\n");
+  let i = 0;
+  while (i < lines.length && lines[i].trim() === "") i++;
+  if (i >= lines.length || !/^#\s+/.test(lines[i].trim())) {
+    return { heading: null, body: md };
+  }
+  return {
+    heading: lines[i].trim(),
+    body: lines.slice(i + 1).join("\n").replace(/^\n+/, ""),
+  };
+}
+
+const MARKDOWN_IMAGE_RE = /(!\[[^\]]*\]\()([^)\s]+)/g;
+const HTML_IMAGE_RE = /(<img[^>]*?src=")([^"]+)/g;
+
+function mapImageSources(md: string, map: (src: string) => string): string {
+  return md
+    .replace(MARKDOWN_IMAGE_RE, (_m, prefix: string, src: string) => `${prefix}${map(src)}`)
+    .replace(HTML_IMAGE_RE, (_m, prefix: string, src: string) => `${prefix}${map(src)}`);
 }
 
 // ─── Toolbar ─────────────────────────────────────────────
@@ -598,17 +636,27 @@ function Toolbar({ editor }: { editor: Editor }) {
 
 export function DocEditor({
   initialMarkdown,
+  title,
   saving,
   onSave,
   onCancel,
 }: {
   initialMarkdown: string;
+  /** Título exibido na página publicada — o H1 do markdown não vai para a tela. */
+  title?: string;
   saving: boolean;
-  onSave: (markdown: string) => Promise<void>;
+  onSave: (markdown: string, title?: string) => Promise<void>;
   onCancel: () => void;
 }) {
   const [dirty, setDirty] = useState(false);
   const confirm = useConfirm();
+  // `useState(fn)` guarda o H1 original: o markdown inicial não muda de
+  // identidade durante a edição, e o heading precisa sobreviver ao salvamento.
+  const [{ heading: leadingH1, body: editableMarkdown }] = useState(() =>
+    splitLeadingH1(initialMarkdown),
+  );
+  // O título é editável junto do texto; vazio devolve a página ao nome do arquivo.
+  const [draftTitle, setDraftTitle] = useState(title ?? "");
 
   const editor = useEditor({
     immediatelyRender: false,
@@ -629,13 +677,17 @@ export function DocEditor({
       }),
       Image.configure({ inline: false, allowBase64: false }),
       Placeholder.configure({ placeholder: "Comece a escrever…" }),
+      Figure,
+      Figcaption,
       Table.configure({ resizable: false }),
       TableRow,
       TableHeader,
       TableCell,
       Markdown,
     ],
-    content: protectComponents(initialMarkdown),
+    // As imagens são resolvidas ainda na sintaxe markdown, antes de o bloco
+    // `<figure>` virar HTML de uma linha.
+    content: collapseFigures(mapImageSources(protectComponents(editableMarkdown), resolveBrandImageSrc)),
     contentType: "markdown",
     editorProps: {
       attributes: {
@@ -662,16 +714,17 @@ export function DocEditor({
     // Mesma guarda do botão: sem isso o Ctrl+S salva mesmo com o botão inativo
     // (e um segundo atalho dispararia um save duplicado).
     if (!editor || saving || !dirty) return;
-    const markdown = restoreComponents(editor.getMarkdown());
+    const body = mapImageSources(restoreComponents(editor.getMarkdown()), toBrandImagePath);
+    const markdown = leadingH1 ? `${leadingH1}\n\n${body}` : body;
     try {
-      await onSave(markdown);
+      await onSave(markdown, draftTitle.trim() || undefined);
       // Só limpa o estado "sujo" quando o save realmente deu certo.
       setDirty(false);
     } catch {
       // A falha já foi notificada por quem salva; manter `dirty` preserva o
       // botão Salvar, o aviso de saída e a confirmação do Cancelar.
     }
-  }, [editor, onSave, saving, dirty]);
+  }, [editor, onSave, saving, dirty, leadingH1, draftTitle]);
 
   // Ctrl/Cmd+S salva.
   useEffect(() => {
@@ -713,33 +766,57 @@ export function DocEditor({
   }
 
   return (
-    <div className="space-y-6">
-      {/* Barra fixa no topo da área de conteúdo, respeitando a largura do texto. */}
-      <div className="sticky top-0 z-20 -mx-6 border-b border-border bg-background/95 px-6 backdrop-blur md:-mx-8 md:px-8">
-        <div className="flex items-center gap-2 py-2">
-          <div className="min-w-0 flex-1">
+    <div>
+      {/* Cancelar/Salvar ficam na topbar principal, junto das demais ações de
+          página; a segunda barra carrega só a toolbar de formatação. */}
+      <TopbarPageActions>
+        <Button type="button" size="sm" variant="ghost" className="h-8" onClick={() => void handleCancel()} disabled={saving}>
+          Cancelar
+        </Button>
+        <Button
+          type="button"
+          size="sm"
+          variant="default"
+          className="h-8"
+          onClick={() => void handleSave()}
+          disabled={!dirty}
+          loading={saving}
+          loadingText="Salvando…"
+        >
+          Salvar
+        </Button>
+      </TopbarPageActions>
+
+      {/* A barra ocupa toda a largura, como uma segunda topbar sob a principal.
+          O `-ml-2` desconta o padding do primeiro botão para o ícone nascer na
+          mesma coluna do breadcrumb logo acima. */}
+      <SecondaryTopbar>
+        <div className="flex h-11 w-full items-center px-4 md:px-5">
+          <div className="-ml-3 min-w-0 flex-1">
             <Toolbar editor={editor} />
           </div>
-          <div className="flex shrink-0 items-center gap-2 pl-2">
-            <Button type="button" size="sm" variant="ghost" onClick={() => void handleCancel()} disabled={saving}>
-              Cancelar
-            </Button>
-            <Button
-              type="button"
-              size="sm"
-              variant="default"
-              onClick={() => void handleSave()}
-              disabled={!dirty}
-              loading={saving}
-              loadingText="Salvando…"
-            >
-              Salvar
-            </Button>
-          </div>
         </div>
-      </div>
+      </SecondaryTopbar>
 
-      <div className="rounded-md transition-shadow focus-within:ring-2 focus-within:ring-foreground/40 focus-within:ring-offset-4 focus-within:ring-offset-background">
+      {/* Mesmas classes do H1 do MarkdownRenderer, e o `space-y-6` que o
+          <article> publicado aplica entre os blocos. */}
+      <div className="space-y-6">
+        {/* O título é um campo, com as classes do H1 publicado: o `uppercase`
+            é só apresentação, o valor salvo preserva o que foi digitado. */}
+        <textarea
+          value={draftTitle}
+          onChange={(e) => {
+            setDraftTitle(e.target.value.replace(/\n/g, ""));
+            setDirty(true);
+          }}
+          rows={1}
+          maxLength={120}
+          spellCheck
+          lang="pt-BR"
+          aria-label="Título da página"
+          placeholder="Título da página"
+          className="block w-full resize-none overflow-hidden bg-transparent p-0 field-sizing-content font-heading text-display font-normal uppercase tracking-normal leading-none text-balance text-foreground outline-none placeholder:text-muted-foreground/40 focus-visible:ring-transparent"
+        />
         <EditorContent editor={editor} />
       </div>
     </div>

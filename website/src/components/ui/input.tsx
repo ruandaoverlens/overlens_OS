@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const inputVariants = cva(
-  "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground bg-input/30 border-2 border-transparent w-full min-w-0 py-0 font-normal font-body shadow-none transition-all outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium hover:bg-input/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 focus-visible:border-foreground/60 focus-visible:ring-2 focus-visible:ring-foreground/70 focus-visible:bg-transparent aria-invalid:ring-destructive/40 aria-invalid:ring-2 aria-invalid:ring-destructive aria-invalid:focus-visible:ring-destructive/60 autofill:shadow-[inset_0_0_0_1000px_var(--input-autofill)] autofill:[-webkit-text-fill-color:var(--color-foreground)]",
+  "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground bg-input/30 border-2 border-transparent w-full min-w-0 py-0 font-normal font-body shadow-none transition-all outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium hover:bg-input/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 focus-visible:border-foreground/70 focus-visible:bg-transparent aria-invalid:border-destructive aria-invalid:focus-visible:border-destructive autofill:shadow-[inset_0_0_0_1000px_var(--input-autofill)] autofill:[-webkit-text-fill-color:var(--color-foreground)]",
   {
     variants: {
       size: {

@@ -6,6 +6,7 @@ import {
   SidebarInset,
 } from "@/components/ui/sidebar";
 import { Topbar, TopbarBreadcrumb, TopbarActions } from "@/components/ui/topbar";
+import { TopbarPageActionsSlot, SecondaryTopbarSlot, TopbarStack } from "@/components/topbar-slots";
 import { SystemSidebar } from "@/components/doc-sidebar";
 import { DocTopbarLabel, DocTopbarUpLink } from "@/components/doc-breadcrumb";
 import { getChatConversations } from "@/lib/chat-conversations";
@@ -14,6 +15,7 @@ import { AppNotifications } from "@/components/app-notifications";
 import { CommandPaletteIconButton } from "@/components/command-palette";
 import { SystemTracker } from "@/components/system-tracker";
 import { getSystemConfig } from "@/lib/system-configs";
+import { applyNavTitleOverrides, getDocTitleOverrides } from "@/lib/doc-overrides";
 import { getSystemsPagesIndex, getSectionFirstDocHrefs } from "@/lib/palette-index";
 
 export const metadata: Metadata = {
@@ -26,7 +28,11 @@ export default async function PacoteLayout({
   children: React.ReactNode;
 }) {
   const config = getSystemConfig("pacote");
-  const nav = config.getNav();
+  // Títulos renomeados pela interface vencem os do arquivo, aqui e na página.
+  const nav = applyNavTitleOverrides(
+    config.getNav(),
+    await getDocTitleOverrides(config.slug),
+  );
   // Promise não awaitada: o shell renderiza já; a lista de conversas
   // resolve dentro de um Suspense na sidebar.
   // Garante renderização dinâmica (conversas são por usuário) sem bloquear o shell.
@@ -54,27 +60,31 @@ export default async function PacoteLayout({
         allSections={getSystemsPagesIndex()}
       />
       <SidebarInset id="main-content">
-        <Topbar>
-          <DocTopbarUpLink
-            label={config.title}
-            basePath={config.basePath}
-            sectionHrefs={getSectionFirstDocHrefs(nav, config.basePath)}
-          />
-          <TopbarBreadcrumb>
-            <DocTopbarLabel
+        <TopbarStack>
+          <Topbar>
+            <DocTopbarUpLink
               label={config.title}
               basePath={config.basePath}
               sectionHrefs={getSectionFirstDocHrefs(nav, config.basePath)}
             />
-          </TopbarBreadcrumb>
-          <TopbarActions>
-            {/* Só aparece quando a sidebar não mostra a própria busca:
-                drawer no mobile, recolhida abaixo de 1180px. */}
-            <CommandPaletteIconButton />
-            <AppNotifications />
-            <AppSwitcher />
-          </TopbarActions>
-        </Topbar>
+            <TopbarBreadcrumb>
+              <DocTopbarLabel
+                label={config.title}
+                basePath={config.basePath}
+                sectionHrefs={getSectionFirstDocHrefs(nav, config.basePath)}
+              />
+            </TopbarBreadcrumb>
+            <TopbarActions>
+              <TopbarPageActionsSlot />
+              {/* Só aparece quando a sidebar não mostra a própria busca:
+                  drawer no mobile, recolhida abaixo de 1180px. */}
+              <CommandPaletteIconButton />
+              <AppNotifications />
+              <AppSwitcher />
+            </TopbarActions>
+          </Topbar>
+          <SecondaryTopbarSlot />
+        </TopbarStack>
         <div className="flex-1 overflow-auto">
           {children}
         </div>

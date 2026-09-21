@@ -4,6 +4,7 @@ import rehypeRaw from "rehype-raw";
 import rehypeSlug from "rehype-slug";
 import { ColorPalette } from "@/components/color-palette";
 import { IconGallery } from "@/components/icons/icon-gallery";
+import { resolveBrandImageSrc } from "@/lib/brand-images";
 
 // ─── Content parsing (exported for use in page files) ──────────────
 
@@ -308,11 +309,7 @@ export function MarkdownRenderer({ content, title }: { content: string; title?: 
           ),
           hr: () => <hr className="my-8 border-border/50" />,
           img: ({ src, alt, style, width, height, ...rest }) => {
-            let resolvedSrc = src;
-            if (typeof src === "string" && src.startsWith("/brand/images/")) {
-              const filename = src.replace("/brand/images/", "");
-              resolvedSrc = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/asset-previews/Imagens/${filename}`;
-            }
+            const resolvedSrc = typeof src === "string" ? resolveBrandImageSrc(src) : src;
             // `data-aspect` (ex.: "16/9") reserva o espaço da imagem antes do
             // carregamento quando o markdown não informa width/height.
             const dataAspect = (rest as Record<string, unknown>)["data-aspect"];

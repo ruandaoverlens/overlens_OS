@@ -94,7 +94,7 @@ function CommentArea({
         "border-2 border-transparent",
         "transition-[background-color,border-color]",
         "hover:bg-input/50",
-        "focus-within:border-input focus-within:bg-transparent",
+        "focus-within:border-foreground/70 focus-within:bg-transparent",
         "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         className
       )}
@@ -112,7 +112,7 @@ function CommentArea({
           onKeyDown={handleKeyDown}
           aria-label={placeholder}
           className={cn(
-            "min-h-10 max-h-40 w-full resize-none overflow-y-auto bg-transparent font-body text-base leading-relaxed tracking-normal outline-none focus-visible:ring-2 focus-visible:ring-foreground/70 rounded-sm",
+            "min-h-10 max-h-40 w-full resize-none overflow-y-auto bg-transparent font-body text-base leading-relaxed tracking-normal outline-none focus-visible:ring-transparent rounded-sm",
             "placeholder:text-muted-foreground",
             "text-foreground",
             "field-sizing-content",

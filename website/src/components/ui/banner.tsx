@@ -125,7 +125,9 @@ function Banner({
     <div
       data-slot="banner"
       data-variant={size}
-      className="w-full max-w-(--container-max-width) mx-auto p-3"
+      // A calha lateral acompanha `.container-content`, para o banner alinhar
+      // com a busca, os filtros e a grade logo abaixo dele.
+      className="w-full max-w-(--container-max-width) mx-auto px-(--container-padding) py-3"
     >
       <BannerContext value={{ hasMedia, isLight, size: size ?? "md" }}>
         <div

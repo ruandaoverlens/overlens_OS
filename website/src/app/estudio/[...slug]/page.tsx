@@ -7,7 +7,7 @@ import {
 } from "@/lib/docs";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { DocPageView } from "@/components/doc-page-view";
-import { resolveDocContent, docPathKey } from "@/lib/doc-overrides";
+import { resolveDocContent, docPathKey, resolveDocTitle } from "@/lib/doc-overrides";
 import { DocPagination } from "@/components/doc-pagination";
 
 export function generateStaticParams() {
@@ -36,6 +36,7 @@ export default async function EstudioDocPage({
 
   const { file } = result;
   const { content, override } = await resolveDocContent("estudio", file);
+  const pageTitle = resolveDocTitle(file, override);
 
   const flat = getAllEstudioFlat();
   const idx = flat.findIndex(
@@ -49,10 +50,12 @@ export default async function EstudioDocPage({
       <DocPageView
         system="estudio"
         path={docPathKey(file.segments)}
+        title={pageTitle}
+        fileTitle={file.title}
         markdown={content}
         hasOverride={!!override}
       >
-        <MarkdownRenderer content={content} title={file.title} />
+        <MarkdownRenderer content={content} title={pageTitle} />
       </DocPageView>
       <DocPagination prev={prev} next={next} basePath="/estudio" />
     </div>

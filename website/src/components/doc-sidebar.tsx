@@ -610,11 +610,10 @@ export function SystemSidebar({
                 <SystemSwitcher basePath={basePath} />
               </SidebarMenuItem>
               <SidebarMenuItem className="mt-1.5">
-                <CommandPaletteButton />
-              </SidebarMenuItem>
-              <SidebarMenuItem className="mt-1.5">
+                {/* Barra de ícones: o realce do hover é só a troca de linha
+                    para sólido e a cor — cada botão zera o fundo do ghost. */}
                 <div className="flex w-full items-center justify-between">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-0.5">
                     {/* Assets some por completo para quem não tem acesso —
                         um ícone bloqueado só ocupa espaço na barra. */}
                     {canAccessAssets && (
@@ -624,7 +623,7 @@ export function SystemSidebar({
                             variant="ghost"
                             size="icon-sm"
                             asChild
-                            className="group/asset text-muted-foreground hover:text-foreground"
+                            className="group/asset cursor-pointer text-muted-foreground hover:bg-transparent hover:text-foreground"
                           >
                             <Link href="/assets" aria-label="Assets da Marca">
                               <SmFolderLineIcon className="size-6 transition-opacity group-hover/asset:opacity-0" />
@@ -646,7 +645,7 @@ export function SystemSidebar({
                             aria-label="Diretrizes"
                             aria-pressed={view === "directives"}
                             className={cn(
-                              "group/dir text-muted-foreground hover:text-foreground",
+                              "group/dir cursor-pointer text-muted-foreground hover:bg-transparent hover:text-foreground",
                               view === "directives" && "text-foreground",
                             )}
                           >
@@ -681,7 +680,7 @@ export function SystemSidebar({
                             aria-label="Conversas"
                             aria-pressed={view === "conversations"}
                             className={cn(
-                              "group/conv text-muted-foreground hover:text-foreground",
+                              "group/conv cursor-pointer text-muted-foreground hover:bg-transparent hover:text-foreground",
                               view === "conversations" && "text-foreground",
                             )}
                           >
@@ -705,7 +704,7 @@ export function SystemSidebar({
                             variant="ghost"
                             size="icon-sm"
                             asChild
-                            className="text-muted-foreground hover:text-foreground"
+                            className="cursor-pointer text-muted-foreground hover:bg-transparent hover:text-foreground"
                           >
                             <Link href="/registros" aria-label="Registros">
                               <SmRegisteredLineIcon className="size-6" />
@@ -715,7 +714,15 @@ export function SystemSidebar({
                         <TooltipContent>Registros</TooltipContent>
                       </Tooltip>
                     )}
+                    {/* A lupa fecha o grupo da esquerda; só o "+" fica à direita.
+                        Ela vem um passo menor: o glifo da lupa tem mais massa
+                        visual que os demais no mesmo tamanho nominal. */}
+                    <CommandPaletteButton
+                      iconOnly
+                      className="hover:bg-transparent [&>svg]:size-5.5"
+                    />
                   </div>
+                  <div className="flex shrink-0 items-center">
                   {showTabs && (
                     <Tooltip>
                       <TooltipTrigger asChild>
@@ -723,7 +730,7 @@ export function SystemSidebar({
                           variant="ghost"
                           size="icon"
                           asChild
-                          className="shrink-0 text-muted-foreground hover:text-foreground"
+                          className="shrink-0 cursor-pointer text-muted-foreground hover:bg-transparent hover:text-foreground"
                         >
                           <Link
                             href="/chat/new"
@@ -737,6 +744,7 @@ export function SystemSidebar({
                       <TooltipContent>Nova conversa (Ctrl+Shift+O)</TooltipContent>
                     </Tooltip>
                   )}
+                  </div>
                 </div>
               </SidebarMenuItem>
 
