@@ -1,6 +1,10 @@
 ---
 title: TAM, SAM, SOM
-summary: Define o recorte de dimensionamento de mercado da Overlens sob o público atual — empreendedores definidos pelo estado, não pela profissão. Os números seguem PENDENTES: o recorte já ficou inválido duas vezes e nenhuma estimativa deve ser preenchida por suposição.
+summary: >-
+  Define o recorte de dimensionamento de mercado da Overlens sob o público atual —
+  empreendedores definidos pelo estado, não pela profissão. Os números seguem
+  PENDENTES: o recorte já ficou inválido duas vezes e nenhuma estimativa deve ser
+  preenchida por suposição.
 topics: [tam sam som, tamanho de mercado, dimensionamento, oportunidade, pendente de dados]
 keywords: [TAM, SAM, SOM, total addressable market, serviceable available market, serviceable obtainable market, dimensionamento de mercado, recorte, empreendedor, escola de negócios, pesquisa pendente, research e market intelligence]
 priority: high
