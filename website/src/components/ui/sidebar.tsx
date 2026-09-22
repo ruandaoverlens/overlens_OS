@@ -34,8 +34,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 
-const SIDEBAR_COOKIE_NAME = "sidebar_state"
-const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
 const SIDEBAR_WIDTH = "16rem"
 const SIDEBAR_WIDTH_ICON = "3rem"
 const SIDEBAR_KEYBOARD_SHORTCUT = "b"
@@ -91,21 +89,15 @@ function SidebarProvider({
   // We use openProp and setOpenProp for control from outside the component.
   const [_open, _setOpen] = React.useState(defaultOpen)
   const open = openProp ?? _open
+  // O estado não é persistido: cada carregamento começa com a sidebar aberta
+  // (o recolhimento vale só para a navegação em curso).
   const setOpen = React.useCallback(
-    (value: boolean | ((value: boolean) => boolean), persist = true) => {
+    (value: boolean | ((value: boolean) => boolean)) => {
       const openState = typeof value === "function" ? value(open) : value
       if (setOpenProp) {
         setOpenProp(openState)
       } else {
         _setOpen(openState)
-      }
-
-      // Só persiste quando a mudança partiu do usuário. O recolhimento
-      // automático por viewport (abaixo) não deve marcar "recolhida" no cookie,
-      // senão uma visita num monitor estreito deixaria a sidebar fechada para
-      // sempre, inclusive em telas largas e em outras sessões.
-      if (persist) {
-        document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`
       }
     },
     [setOpenProp, open]
@@ -116,8 +108,7 @@ function SidebarProvider({
   React.useEffect(() => { setOpenRef.current = setOpen }, [setOpen])
 
   // Layout effect na montagem: roda antes da pintura, então a faixa
-  // 768–1179px (que começa expandida quando o cookie não diz o contrário) não
-  // pisca a sidebar aberta antes de recolher.
+  // 768–1179px não pisca a sidebar aberta antes de recolher.
   useIsomorphicLayoutEffect(() => {
     const mql = window.matchMedia(`(max-width: ${SIDEBAR_COLLAPSE_BREAKPOINT - 1}px)`)
     // `useIsMobile` só resolve num efeito passivo, que roda depois deste layout
@@ -125,12 +116,12 @@ function SidebarProvider({
     const isMobileWidth = () => window.innerWidth < MOBILE_BREAKPOINT
     const onChange = (e: MediaQueryListEvent) => {
       if (e.matches && !isMobileWidth()) {
-        setOpenRef.current(false, false)
+        setOpenRef.current(false)
       }
     }
     // Collapse on mount if already below breakpoint
     if (mql.matches && !isMobileWidth()) {
-      setOpenRef.current(false, false)
+      setOpenRef.current(false)
     }
     mql.addEventListener("change", onChange)
     return () => mql.removeEventListener("change", onChange)

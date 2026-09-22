@@ -3,6 +3,7 @@ import Image from "next/image"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
+import { isLightBrandBase, isLightBrandGradient } from "@/lib/brand-gradients"
 
 // --- Luminance utilities ---
 
@@ -42,6 +43,9 @@ function extractColors(value: string): string[] {
 
 /** Check if a color/gradient is "light" (luminance > 0.5). */
 function isLightBackground(value: string): boolean {
+  // Gradiente de marca: as paradas são `var()` + `color-mix()`, sem hex nenhum
+  // para medir — a luminância vem dos tokens (`isLightBrandGradient`).
+  if (isLightBrandGradient(value)) return true
   const colors = extractColors(value)
   if (colors.length === 0) return false
   const avgLuminance =
@@ -54,7 +58,7 @@ function isLightBackground(value: string): boolean {
 
 // --- Context ---
 
-const BannerContext = React.createContext({ hasMedia: false, isLight: false, size: "md" as "sm" | "md" | "lg" })
+const BannerContext = React.createContext({ hasMedia: false, isLight: false, needsScrim: false, size: "md" as "sm" | "md" | "lg" })
 
 // --- Component variants ---
 
@@ -93,6 +97,9 @@ function Banner({
   const contentChildren: React.ReactNode[] = []
   let isLight = false
   let hasMedia = false
+  // Marca de cor cheia escura: a animação do gradiente leva esse tom para baixo
+  // do texto e derruba o contraste do texto escuro.
+  let needsScrim = false
 
   React.Children.forEach(children, (child) => {
     if (React.isValidElement(child)) {
@@ -108,6 +115,7 @@ function Banner({
           (childProps.color as string) ?? (childProps.gradient as string)
         if (colorValue && isLightBackground(colorValue)) {
           isLight = true
+          if (!isLightBrandBase(colorValue)) needsScrim = true
         }
         imageChildren.push(child)
         return
@@ -118,6 +126,9 @@ function Banner({
 
   // Light backgrounds only affect the desktop overlay: on mobile the content sits
   // below the image, on the dark page background, so the variables are md-only.
+  // `oklch(0.15 0 0)` é um quase-preto LITERAL de propósito: este texto fica
+  // sobre a arte clara do banner, não sobre o fundo do app, então não pode
+  // inverter junto com o tema.
   const lightFgClasses =
     "md:[--banner-fg:oklch(0.15_0_0)] md:[--banner-title-fw:400] md:[--banner-desc-fw:500]"
 
@@ -125,11 +136,12 @@ function Banner({
     <div
       data-slot="banner"
       data-variant={size}
-      // A calha lateral acompanha `.container-content`, para o banner alinhar
-      // com a busca, os filtros e a grade logo abaixo dele.
-      className="w-full max-w-(--container-max-width) mx-auto px-(--container-padding) py-3"
+      // Calha de 12px — bem menor que a de `.container-content`, que o resto da
+      // página respeita. Quem alinha o texto com a busca e a grade abaixo é a
+      // calha interna do `BannerContent`.
+      className="w-full px-3"
     >
-      <BannerContext value={{ hasMedia, isLight, size: size ?? "md" }}>
+      <BannerContext value={{ hasMedia, isLight, needsScrim, size: size ?? "md" }}>
         <div
           className={cn(
             "@container relative flex w-full flex-col md:block md:overflow-hidden md:rounded-card md:bg-surface-950",
@@ -298,18 +310,28 @@ function BannerContent({
   children,
   ...props
 }: React.ComponentProps<"header">) {
-  const { hasMedia, size } = React.useContext(BannerContext)
+  const { hasMedia, needsScrim, size } = React.useContext(BannerContext)
 
   return (
     <header
       data-slot="banner-content"
       className={cn(
+        // Recuo interno do texto: a caixa do banner é que alinha com a busca e a
+        // grade abaixo (mesma calha), e o título respira dentro dela.
         "relative flex flex-col justify-center px-0 py-5 md:absolute md:inset-y-0 md:w-full md:px-6 md:py-6",
         size === "sm" && "md:pb-7",
         className
       )}
       {...props}
     >
+      {/* Marca de cor cheia escura: este véu branco mantém clara a área onde o
+          texto fica, em qualquer quadro da animação do gradiente. */}
+      {!hasMedia && needsScrim && (
+        <div
+          aria-hidden="true"
+          className="hidden md:block absolute inset-0 z-0 select-none pointer-events-none bg-[radial-gradient(circle_at_0%_50%,color-mix(in_oklab,white_55%,transparent)_0%,transparent_70%)]"
+        />
+      )}
       {hasMedia && (
         <>
           <div
@@ -338,7 +360,7 @@ function BannerTitle({
     <h1
       data-slot="banner-title"
       className={cn(
-        "z-1 px-1 md:px-0 md:pl-1 max-w-full sm:max-w-108 text-balance font-heading uppercase text-h2 md:text-display text-(--banner-fg,var(--foreground)) font-(weight:--banner-title-fw,300)",
+        "z-1 px-1 md:px-0 max-w-full sm:max-w-108 text-balance font-heading uppercase text-h2 md:text-display text-(--banner-fg,var(--foreground)) font-(weight:--banner-title-fw,300)",
         className
       )}
       {...props}
@@ -498,7 +520,7 @@ function BannerDescription({
       ref={descRef}
       data-slot="banner-description"
       className={cn(
-        "z-1 px-1 md:px-0 md:pl-1 max-w-full sm:max-w-102 md:max-w-92 text-pretty text-base leading-relaxed text-(--banner-fg,var(--foreground)) font-(weight:--banner-desc-fw,300) opacity-80",
+        "z-1 px-1 md:px-0 max-w-full sm:max-w-102 md:max-w-92 text-pretty text-base leading-relaxed text-(--banner-fg,var(--foreground)) font-(weight:--banner-desc-fw,300) opacity-80",
         className
       )}
       {...props}

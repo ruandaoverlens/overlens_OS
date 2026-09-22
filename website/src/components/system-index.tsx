@@ -4,12 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { notify } from "@/lib/notifications/toast";
-import { HeadingTitle } from "@/components/ui/heading";
+import { cn } from "@/lib/utils";
 import { EmptyState } from "@/components/empty-state";
 import { SmDocLineIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import type { DocSection } from "@/lib/docs";
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import {
   BookMarked,
   Scan,
@@ -59,8 +58,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { PromptArea } from "@/components/prompt-area";
+import { TypewriterHeading } from "@/components/typewriter-heading";
 import { flattenForCitation } from "@/lib/citable-sections";
-import { getGradient } from "@/lib/brand-gradients";
 
 export type { CitableSection } from "@/lib/citable-sections";
 
@@ -309,22 +308,16 @@ const fallbackIcons: LucideIcon[] = [
   Globe, BookOpen, Sparkles, Package, ChartLine, Users, Wrench, Radio,
 ];
 
-/**
- * Ícone + gradiente de marca por seção. O gradiente é determinístico pela
- * chave da seção (`getGradient`), então a mesma seção tem sempre a mesma cor.
- */
-function getSectionMeta(title: string, index: number): SectionMeta & { gradient: string } {
+/** Ícone da seção, pelo título; cai nos genéricos quando não há mapeamento. */
+function getSectionMeta(title: string, index: number): SectionMeta {
   const key = title.toLowerCase();
   for (const [match, meta] of Object.entries(allSections)) {
-    if (key.includes(match)) return { ...meta, gradient: getGradient(match) };
+    if (key.includes(match)) return meta;
   }
-  return {
-    icon: fallbackIcons[index % fallbackIcons.length],
-    gradient: getGradient(key || index),
-  };
+  return { icon: fallbackIcons[index % fallbackIcons.length] };
 }
 
-function SectionCard({
+function SectionRow({
   section,
   basePath,
   index,
@@ -351,66 +344,67 @@ function SectionCard({
       : 0;
   const usePacoteCount = basePath === "/pacote" && entryCount > 0;
 
-  const { icon: Icon, gradient } = getSectionMeta(section.title, index);
+  const { icon: Icon } = getSectionMeta(section.title, index);
+
+  const count = usePacoteCount
+    ? `${entryCount} ${entryCount === 1 ? "indicação" : "indicações"}`
+    : `${fileCount} ${fileCount === 1 ? "página" : "páginas"}`;
 
   const content = (
-    <CardHeader>
-      <div className="flex items-center gap-3">
-        <div
-          className="flex size-12 shrink-0 items-center justify-center rounded-xl text-black"
-          style={{
-            background: gradient,
-            backgroundSize: "300% 300%",
-            animation: "icon-gradient 6s ease infinite",
-          }}
-        >
-          <Icon className="size-5" strokeWidth={1.8} />
-        </div>
-        <div className="min-w-0 flex-1">
-          <CardTitle size="sm" className="truncate text-balance">
-            {section.title}
-          </CardTitle>
-          <CardDescription className="mt-0.5 text-xs text-pretty">
-            {usePacoteCount
-              ? `${entryCount} ${entryCount === 1 ? "indicação" : "indicações"}`
-              : `${fileCount} ${fileCount === 1 ? "página" : "páginas"}`}
-            {section.children.length > 0 && (
-              <span>
-                {" · "}
-                {section.children.length}{" "}
-                {section.children.length === 1 ? "subseção" : "subseções"}
-              </span>
-            )}
-          </CardDescription>
-        </div>
-      </div>
-    </CardHeader>
+    <>
+      <Icon className="size-4 shrink-0 opacity-60" strokeWidth={1.8} />
+      <span className="min-w-0 flex-1 truncate text-sm text-foreground">
+        {section.title}
+      </span>
+      <span className="shrink-0 text-xs text-muted-foreground">
+        {count}
+        {section.children.length > 0 && (
+          <>
+            {" · "}
+            {section.children.length}{" "}
+            {section.children.length === 1 ? "subseção" : "subseções"}
+          </>
+        )}
+      </span>
+    </>
   );
 
+  const rowClasses = "flex items-center gap-3 py-3";
+
   return (
-    <Card className="group transition-all duration-200 hover:border-muted-foreground/30 hover:bg-accent/50 hover:-translate-y-0.5 hover:shadow-md">
+    <li className="border-b border-border/60">
       {href ? (
         <Link
           href={href}
           aria-label={`Abrir seção ${section.title}`}
-          className="block rounded-[inherit] outline-none focus-visible:ring-2 focus-visible:ring-foreground"
+          className={cn(
+            rowClasses,
+            "rounded-sm outline-none transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-foreground",
+            "[&>svg]:transition-opacity hover:[&>svg]:opacity-100",
+          )}
         >
           {content}
         </Link>
       ) : (
-        content
+        <div className={rowClasses}>{content}</div>
       )}
-    </Card>
+    </li>
   );
 }
 
 export function SystemIndex({
   title,
+  heading,
+  questions,
   description,
   sections,
   basePath,
 }: {
   title: string;
+  /** Título da página para leitores de tela. Sem ele, o nome do system. */
+  heading?: string;
+  /** Frases que o h1 digita em ciclo, em ordem sorteada. */
+  questions?: string[];
   description: string;
   sections: DocSection[];
   basePath: string;
@@ -454,17 +448,21 @@ export function SystemIndex({
   }
 
   return (
-    <div className="mx-auto max-w-4xl px-4 pt-4 pb-8 md:px-8 md:pt-5 md:pb-10">
-      <div className="mb-8 px-2">
-        <HeadingTitle as="h1" size="xl" className="font-normal tracking-normal leading-none text-balance">
-          {title}
-        </HeadingTitle>
-        <p className="mt-5 text-sm leading-7 text-pretty text-muted-foreground">
+    <div className="mx-auto w-full max-w-3xl px-4 pt-16 pb-16 md:pt-24">
+      {/* Mesma abertura da nova conversa (`ChatWelcome`): título e apoio
+          centrados, composer logo abaixo. Só o conteúdo muda por sistema. */}
+      <div className="flex flex-col items-center gap-6 text-center">
+        <TypewriterHeading
+          anchor={heading ?? title}
+          phrases={questions ?? []}
+          className="flex min-h-[1.15em] items-center justify-center text-h2 md:text-display font-light text-balance text-foreground"
+        />
+        <p className="text-base text-pretty text-muted-foreground">
           {description}
         </p>
       </div>
 
-      <div className="mb-8 px-2">
+      <div className="mt-9">
         <PromptArea
           citableSections={flattenForCitation(sections)}
           basePath={basePath}
@@ -474,11 +472,11 @@ export function SystemIndex({
         />
       </div>
 
-      <div className="grid gap-3 px-2 sm:grid-cols-2">
+      <ul className="mt-10 border-t border-border/60">
         {sections.map((section, i) => (
-          <SectionCard key={section.slug} section={section} basePath={basePath} index={i} />
+          <SectionRow key={section.slug} section={section} basePath={basePath} index={i} />
         ))}
-      </div>
+      </ul>
 
       {sections.length === 0 && (
         <EmptyState
