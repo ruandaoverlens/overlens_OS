@@ -185,7 +185,7 @@ export function SettingsModal({ open, onOpenChange }: SettingsModalProps) {
           {/* Sidebar: horizontal (rolável) no mobile, coluna a partir de md */}
           <nav
             aria-label="Seções de configurações"
-            className="flex flex-col gap-1 border-b md:border-b-0 md:border-r border-white/[0.06] bg-white/[0.02] px-3 pt-4 pb-3 pr-14 md:pr-3 md:py-6 md:w-[180px] shrink-0"
+            className="flex flex-col gap-1 border-b md:border-b-0 md:border-r border-border bg-surface-raised-2 px-3 pt-4 pb-3 pr-14 md:pr-3 md:py-6 md:w-[180px] shrink-0"
           >
             <HeadingTitle as="h2" size="eyebrow" className="px-2 pb-2">
               Configurações
@@ -220,8 +220,8 @@ export function SettingsModal({ open, onOpenChange }: SettingsModalProps) {
                     className={cn(
                       "flex shrink-0 items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm transition-colors text-left cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-foreground",
                       active
-                        ? "bg-white/[0.08] text-foreground"
-                        : "text-muted-foreground hover:bg-white/[0.04] hover:text-foreground",
+                        ? "bg-accent text-accent-foreground"
+                        : "text-muted-foreground hover:bg-accent/60 hover:text-foreground",
                     )}
                   >
                     <Icon className="size-4 shrink-0" aria-hidden />
@@ -515,7 +515,6 @@ const APPS = [
   { name: "Content System", route: "/estudio", description: "Produção de conteúdo" },
   { name: "Assets", route: "/assets", description: "Biblioteca de assets digitais" },
   { name: "Mycelium", route: "/mycelium", description: "Feed interno da equipe" },
-  { name: "Botões Mágicos", route: "/ferramentas", description: "Utilitários rápidos do dia a dia" },
 ];
 
 function AplicativosPanel({ role }: { role: UserRole }) {
@@ -532,7 +531,7 @@ function AplicativosPanel({ role }: { role: UserRole }) {
           return (
             <li
               key={app.name}
-              className="flex items-center justify-between rounded-lg border border-white/[0.06] px-4 py-2.5"
+              className="flex items-center justify-between rounded-lg border border-border px-4 py-2.5"
             >
               <div>
                 <p className={cn("text-sm font-medium", !hasAccess && "text-muted-foreground")}>{app.name}</p>
@@ -543,7 +542,7 @@ function AplicativosPanel({ role }: { role: UserRole }) {
                   "text-xs font-medium px-2 py-0.5 rounded-full shrink-0 ml-3",
                   hasAccess
                     ? "bg-success/10 text-success"
-                    : "bg-white/[0.06] text-muted-foreground",
+                    : "bg-accent text-muted-foreground",
                 )}
               >
                 {hasAccess ? "Conectado" : "Sem acesso"}
@@ -818,7 +817,7 @@ function MembrosPanel({
         <table className="w-full text-sm">
           <caption className="sr-only">Membros da equipe</caption>
           <thead>
-            <tr className="border-b border-white/[0.06] text-xs text-muted-foreground">
+            <tr className="border-b border-border text-xs text-muted-foreground">
               <th scope="col" className="text-left font-medium pb-2 pl-1">Nome</th>
               <th scope="col" className="text-left font-medium pb-2">Email</th>
               <th scope="col" className="text-left font-medium pb-2">Perfil</th>
@@ -856,7 +855,7 @@ function MembrosPanel({
             ) : paginated.map((member) => (
               <tr
                 key={member.id}
-                className="border-b border-white/[0.04] last:border-0 hover:bg-white/[0.02]"
+                className="border-b border-border/60 last:border-0 hover:bg-accent/40"
               >
                 <td className="py-2.5 pl-1">
                   <span className="font-medium truncate block max-w-[140px]">
@@ -929,7 +928,7 @@ function MembrosPanel({
               onClick={() => setPage((p) => Math.max(1, p - 1))}
               disabled={safePage <= 1}
               aria-label="Página anterior"
-              className="p-1 rounded-md hover:bg-white/[0.06] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-foreground"
+              className="p-1.5 rounded-md hover:bg-accent disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-foreground"
             >
               <SmArrowBackIosNewLineIcon className="size-3.5" aria-hidden />
             </button>
@@ -938,7 +937,7 @@ function MembrosPanel({
               onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
               disabled={safePage >= totalPages}
               aria-label="Próxima página"
-              className="p-1 rounded-md hover:bg-white/[0.06] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-foreground"
+              className="p-1.5 rounded-md hover:bg-accent disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-foreground"
             >
               <SmArrowForwardIosLineIcon className="size-3.5" aria-hidden />
             </button>
@@ -1018,10 +1017,10 @@ function MemberEditView({
       </div>
 
       {/* User info */}
-      <div className="flex items-center gap-3 mt-5 pb-5 border-b border-white/[0.06]">
+      <div className="flex items-center gap-3 mt-5 pb-5 border-b border-border">
         <div
           aria-hidden
-          className="size-12 rounded-full bg-white/[0.08] flex items-center justify-center text-lg font-semibold shrink-0"
+          className="size-12 rounded-full bg-accent flex items-center justify-center text-lg font-semibold shrink-0"
         >
           {member.name.charAt(0)}
         </div>

@@ -1230,7 +1230,7 @@ export function AssetUploadModal({
             </div>
             <div className="h-1 w-full rounded-full bg-surface-900 overflow-hidden">
               <div
-                className="h-full rounded-full bg-white transition-all duration-500"
+                className="h-full rounded-full bg-foreground transition-all duration-500"
                 style={{
                   width: `${overallPercent(uploadProgress)}%`,
                   opacity: uploadProgress.phase === "done" ? 1 : 0.7,

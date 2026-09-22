@@ -118,7 +118,7 @@ function Calendar({
         range_middle: cn("bg-surface-950", defaultClassNames.range_middle),
         range_end: cn("bg-surface-950 rounded-r-full", defaultClassNames.range_end),
         today: cn(
-          "[&_button]:rounded-md [&_button]:bg-white/10 [&_button]:text-foreground [&_button]:hover:bg-white [&_button]:hover:text-background [&_button[data-selected-single=true]]:bg-primary [&_button[data-selected-single=true]]:text-primary-foreground [&_button[data-range-start=true]]:rounded-full [&_button[data-range-start=true]]:bg-transparent [&_button[data-range-start=true]]:border-2 [&_button[data-range-start=true]]:border-surface-300 [&_button[data-range-end=true]]:rounded-full [&_button[data-range-end=true]]:bg-transparent [&_button[data-range-end=true]]:border-2 [&_button[data-range-end=true]]:border-surface-300",
+          "[&_button]:rounded-md [&_button]:bg-surface-raised-2 [&_button]:text-foreground [&_button]:hover:bg-surface-white [&_button]:hover:text-background [&_button[data-selected-single=true]]:bg-primary [&_button[data-selected-single=true]]:text-primary-foreground [&_button[data-range-start=true]]:rounded-full [&_button[data-range-start=true]]:bg-transparent [&_button[data-range-start=true]]:border-2 [&_button[data-range-start=true]]:border-surface-300 [&_button[data-range-end=true]]:rounded-full [&_button[data-range-end=true]]:bg-transparent [&_button[data-range-end=true]]:border-2 [&_button[data-range-end=true]]:border-surface-300",
           defaultClassNames.today
         ),
         outside: cn(

@@ -30,7 +30,7 @@ function Tag({
       className={cn(
         // `overflow-visible`: o botão de remover amplia o alvo de toque com um
         // pseudo-elemento que ultrapassa a caixa do chip — `overflow-clip` o cortaria.
-        "inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-sm font-mono uppercase overflow-visible transition-all leading-4 outline-none bg-surface-200/10 text-surface-300 hover:bg-white/20 active:bg-white/30 focus-visible:ring-2 focus-visible:ring-surface-200 cursor-default [&:hover]:cursor-pointer data-[disabled]:pointer-events-none data-[disabled]:opacity-20",
+        "inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-sm font-mono uppercase overflow-visible transition-all leading-4 outline-none bg-surface-200/10 text-surface-300 hover:bg-surface-200/20 active:bg-surface-200/30 focus-visible:ring-2 focus-visible:ring-surface-200 cursor-default [&:hover]:cursor-pointer data-[disabled]:pointer-events-none data-[disabled]:opacity-20",
         small ? "px-2 py-0.5 text-xs font-normal" : "px-2 py-1 text-sm font-normal",
         className
       )}
@@ -53,7 +53,7 @@ function Tag({
           // aumentar o `gap` do container, não a sangria.
           className="inline-flex items-center justify-center size-4 shrink-0 rounded-sm opacity-70 hover:opacity-100 transition-opacity disabled:pointer-events-none outline-none focus-visible:ring-2 focus-visible:ring-foreground relative z-0 hover:z-10 focus-visible:z-10 after:absolute after:-inset-1.5 after:content-['']"
         >
-          <SmCloseLineIcon className="size-4 stroke-current stroke-1" />
+          <SmCloseLineIcon className="size-4 stroke-current stroke-1" aria-hidden="true" />
         </button>
       )}
     </span>

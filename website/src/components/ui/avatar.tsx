@@ -40,13 +40,16 @@ function AvatarImage({
   )
 }
 
+// A paleta `brand/*` é invariante (não muda com o tema) e todas estas cores são
+// claras, então o texto sobre elas é preto LITERAL nos dois temas — por isso
+// `text-absolute-black` e não `text-background`.
 const brandColors = [
-  "bg-brand-antar text-black",
-  "bg-brand-arena text-black",
-  "bg-brand-atmos text-black",
-  "bg-brand-calla text-black",
-  "bg-brand-cloro text-black",
-  "bg-brand-nubia text-black",
+  "bg-brand-antar text-absolute-black",
+  "bg-brand-arena text-absolute-black",
+  "bg-brand-atmos text-absolute-black",
+  "bg-brand-calla text-absolute-black",
+  "bg-brand-cloro text-absolute-black",
+  "bg-brand-nubia text-absolute-black",
 ] as const
 
 function hashString(str: string): number {

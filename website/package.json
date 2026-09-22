@@ -8,6 +8,7 @@
     "build:local": "infisical run --env=dev -- next build",
     "start": "infisical run --env=dev -- next start",
     "lint": "eslint",
+    "check:contrast": "node scripts/check-theme-contrast.mjs",
     "storybook": "infisical run --env=dev -- storybook dev -p 6006",
     "build-storybook": "infisical run --env=dev -- storybook build"
   },

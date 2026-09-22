@@ -22,7 +22,7 @@ function PopoverItemList({
   showCurrentPage?: boolean
 }) {
   return (
-    <nav aria-label="Full breadcrumb trail">
+    <nav aria-label="Trilha completa de navegação">
       <ol className="flex flex-col gap-4 text-sm">
         {items.map((child, index) => {
           const inner = getInner(child)
@@ -84,7 +84,7 @@ function EllipsisPopover({
 
 /** Navigation breadcrumb trail showing the current page hierarchy. */
 function Breadcrumb({ ...props }: React.ComponentProps<"nav">) {
-  return <nav aria-label="breadcrumb" data-slot="breadcrumb" {...props} />
+  return <nav aria-label="Trilha de navegação" data-slot="breadcrumb" {...props} />
 }
 
 /** Ordered list of breadcrumb items with separator spacing. */
@@ -130,7 +130,7 @@ function BreadcrumbList({
         <EllipsisPopover
           items={allItems}
           showCurrentPage
-          label="Show full breadcrumb trail"
+          label="Mostrar a trilha completa"
         />
       </li>
       <li
@@ -162,7 +162,7 @@ function BreadcrumbList({
           <li className="hidden md:inline-flex items-center gap-1.5">
             <EllipsisPopover
               items={middleItems}
-              label="Show collapsed breadcrumb items"
+              label="Mostrar os itens ocultos da trilha"
             />
           </li>
           <li
@@ -260,7 +260,7 @@ function BreadcrumbEllipsis({
       {...props}
     >
       <SmMoreSolidIcon className="size-6" />
-      <span className="sr-only">More</span>
+      <span className="sr-only">Mais</span>
     </span>
   )
 }

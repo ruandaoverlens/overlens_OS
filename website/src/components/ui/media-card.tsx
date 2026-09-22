@@ -397,6 +397,9 @@ function MediaCardCheck({
       role="checkbox"
       tabIndex={0}
       aria-checked={checked}
+      // Nome acessível padrão — sobrescrevível pelo consumidor via `aria-label`,
+      // que chega depois em `{...props}`.
+      aria-label="Selecionar"
       data-slot="media-card-check"
       className={cn(
         "absolute left-2 top-2 z-20 shrink-0 size-5 rounded-full border-2 grid place-content-center transition-all outline-none cursor-pointer",

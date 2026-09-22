@@ -84,7 +84,8 @@ function matchesFilters(asset: LogoAsset, needle: string, activeTags?: Set<strin
 // visível e clicável; com hover só ganha pointer-events quando aparece.
 const OVERLAY_CLASS =
   "absolute top-2 right-2 z-10 flex items-center gap-1.5 opacity-0 pointer-events-none transition-opacity group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto focus-visible:opacity-100 pointer-coarse:opacity-100 pointer-coarse:pointer-events-auto";
-const ICON_BTN_CLASS = "rounded-full bg-black/50 text-white/70 hover:bg-black/70 hover:text-white";
+// Sobre a miniatura do logo: pílula escura literal, legível nos dois temas.
+const ICON_BTN_CLASS = "rounded-full bg-absolute-black/50 text-absolute-white/70 hover:bg-absolute-black/70 hover:text-absolute-white";
 
 function LogoCard({
   asset,
@@ -112,18 +113,30 @@ function LogoCard({
         className="block w-full text-left outline-none focus-visible:ring-2 focus-visible:ring-foreground rounded-xl"
       >
         <div className="flex items-center justify-center bg-surface-950 p-8 aspect-4/3 relative">
+          {/* As duas versões existem no disco: a troca é por CSS (nada de
+              `useTheme()` aqui). `lightSrc` é o logo BRANCO — vai no tema
+              escuro; `darkSrc` é o PRETO — vai no tema claro. */}
           <Image
-            src={asset.lightSrc}
+            src={asset.darkSrc}
             alt={asset.name}
             width={200}
             height={100}
             unoptimized
-            className="object-contain w-auto h-auto max-w-[40%] max-h-[40%]"
+            className="object-contain w-auto h-auto max-w-[40%] max-h-[40%] dark:hidden"
+          />
+          <Image
+            src={asset.lightSrc}
+            alt=""
+            aria-hidden="true"
+            width={200}
+            height={100}
+            unoptimized
+            className="object-contain w-auto h-auto max-w-[40%] max-h-[40%] hidden dark:block"
           />
         </div>
         <div className="px-3 py-2.5">
-          <p className="text-sm font-medium text-white truncate">{asset.name}</p>
-          <p className="text-xs text-white/60 mt-0.5">{asset.type}</p>
+          <p className="text-sm font-medium text-foreground truncate">{asset.name}</p>
+          <p className="text-xs text-surface-500 mt-0.5">{asset.type}</p>
         </div>
       </button>
       {/* Ações: irmão absoluto do botão principal. */}
@@ -240,7 +253,7 @@ export function LogoModal({
     <Dialog open onOpenChange={(open) => { if (!open) onClose(); }}>
       <DialogContent
         showCloseButton={false}
-        className="max-w-none sm:max-w-none max-h-none w-screen h-svh rounded-none p-0 bg-black border-0 flex flex-col gap-0 overflow-hidden"
+        className="max-w-none sm:max-w-none max-h-none w-screen h-svh rounded-none p-0 bg-background border-0 flex flex-col gap-0 overflow-hidden"
       >
         <DialogTitle className="sr-only">{asset.name}</DialogTitle>
         <DialogDescription className="sr-only">
@@ -250,7 +263,7 @@ export function LogoModal({
         {/* Top bar */}
         <div className="flex items-center justify-between px-4 py-3 shrink-0">
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-white/80 truncate">
+            <p className="text-sm font-medium text-surface-200 truncate">
               {asset.name}
             </p>
             <p className="text-xs text-muted-foreground mt-0.5">{asset.type}</p>
@@ -261,7 +274,7 @@ export function LogoModal({
                 type="button"
                 variant="outline"
                 size="sm"
-                className="border-white/20 text-white/60 hover:bg-white/10 hover:border-white/40 hover:text-white"
+                className="border-border text-surface-500 hover:bg-accent hover:border-foreground/40 hover:text-foreground"
                 onClick={async () => {
                   setHiding(true);
                   try {
@@ -298,7 +311,7 @@ export function LogoModal({
                   variant="ghost"
                   size="icon"
                   aria-label="Fechar"
-                  className="text-white/60 hover:text-white hover:bg-white/10"
+                  className="text-surface-500 hover:text-foreground hover:bg-accent"
                   onClick={onClose}
                 >
                   <SmCloseLineIcon />
@@ -315,7 +328,8 @@ export function LogoModal({
             {/* Dark variant */}
             <div className="flex flex-col items-center gap-3">
               <HeadingTitle as="h3" size="eyebrow">Dark</HeadingTitle>
-              <div className="w-full aspect-4/3 bg-black border border-white/10 rounded-lg flex items-center justify-center p-8">
+              {/* Moldura LITERAL: a variante clara do logo só se lê sobre preto, nos dois temas. */}
+              <div className="w-full aspect-4/3 bg-absolute-black border border-border rounded-lg flex items-center justify-center p-8">
                 <Image
                   src={asset.lightSrc}
                   alt={`${asset.name} sobre fundo escuro`}
@@ -333,7 +347,8 @@ export function LogoModal({
             {/* Light variant */}
             <div className="flex flex-col items-center gap-3">
               <HeadingTitle as="h3" size="eyebrow">Light</HeadingTitle>
-              <div className="w-full aspect-4/3 bg-white border border-white/10 rounded-lg flex items-center justify-center p-8">
+              {/* Moldura LITERAL: a variante escura do logo só se lê sobre branco, nos dois temas. */}
+              <div className="w-full aspect-4/3 bg-absolute-white border border-border rounded-lg flex items-center justify-center p-8">
                 <Image
                   src={asset.darkSrc}
                   alt={`${asset.name} sobre fundo claro`}
@@ -350,29 +365,29 @@ export function LogoModal({
           </div>
 
           {/* Info & Downloads */}
-          <div className="mt-10 max-w-4xl w-full border-t border-white/10 pt-6">
+          <div className="mt-10 max-w-4xl w-full border-t border-border pt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Info */}
               <div className="space-y-2">
                 <HeadingTitle as="h3" size="eyebrow">Informações</HeadingTitle>
                 <dl className="space-y-1.5 text-sm">
                   <div className="flex gap-2">
-                    <dt className="text-white/60">Nome:</dt>
-                    <dd className="text-white">{asset.name}</dd>
+                    <dt className="text-surface-500">Nome:</dt>
+                    <dd className="text-foreground">{asset.name}</dd>
                   </div>
                   <div className="flex gap-2">
-                    <dt className="text-white/60">Tipo:</dt>
-                    <dd className="text-white">{asset.type}</dd>
+                    <dt className="text-surface-500">Tipo:</dt>
+                    <dd className="text-foreground">{asset.type}</dd>
                   </div>
                   <div className="flex gap-2">
-                    <dt className="text-white/60">Dark:</dt>
-                    <dd className="text-white font-mono text-xs">
+                    <dt className="text-surface-500">Dark:</dt>
+                    <dd className="text-foreground font-mono text-xs">
                       {asset.darkSrc}
                     </dd>
                   </div>
                   <div className="flex gap-2">
-                    <dt className="text-white/60">Light:</dt>
-                    <dd className="text-white font-mono text-xs">
+                    <dt className="text-surface-500">Light:</dt>
+                    <dd className="text-foreground font-mono text-xs">
                       {asset.lightSrc}
                     </dd>
                   </div>

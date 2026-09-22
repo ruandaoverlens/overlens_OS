@@ -279,7 +279,7 @@ function CarouselPrevious({
       <span className="flex items-center justify-center size-10 rounded-full bg-foreground/10 backdrop-blur-sm text-foreground hover:bg-foreground/20 hover:text-foreground transition-colors">
         <MdArrowBackIosNewLineIcon className={cn("size-6", orientation === "vertical" && "rotate-90")} />
       </span>
-      <span className="sr-only">Previous slide</span>
+      <span className="sr-only">Slide anterior</span>
     </button>,
     viewportWrapper
   )
@@ -318,7 +318,7 @@ function CarouselNext({
       <span className="flex items-center justify-center size-10 rounded-full bg-foreground/10 backdrop-blur-sm text-foreground hover:bg-foreground/20 hover:text-foreground transition-colors">
         <MdArrowForwardIosLineIcon className={cn("size-6", orientation === "vertical" && "rotate-90")} />
       </span>
-      <span className="sr-only">Next slide</span>
+      <span className="sr-only">Próximo slide</span>
     </button>,
     viewportWrapper
   )

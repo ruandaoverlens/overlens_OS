@@ -119,17 +119,17 @@ export default async function MarcaDetalhePage({
         <CardContent className="flex flex-col gap-3">
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="flex flex-col gap-0.5">
-              <HeadingTitle as="h3" size="eyebrow">Titular</HeadingTitle>
+              <HeadingTitle as="h2" size="eyebrow">Titular</HeadingTitle>
               <span className="text-sm">{marca.titular}</span>
             </div>
             <div className="flex flex-col gap-0.5">
-              <HeadingTitle as="h3" size="eyebrow">Apresentação</HeadingTitle>
+              <HeadingTitle as="h2" size="eyebrow">Apresentação</HeadingTitle>
               <span className="text-sm">{marca.apresentacao}</span>
             </div>
           </div>
           {marca.observacoes && (
             <div className="flex flex-col gap-0.5">
-              <HeadingTitle as="h3" size="eyebrow">Observações</HeadingTitle>
+              <HeadingTitle as="h2" size="eyebrow">Observações</HeadingTitle>
               <span className="text-sm whitespace-pre-wrap">{marca.observacoes}</span>
             </div>
           )}

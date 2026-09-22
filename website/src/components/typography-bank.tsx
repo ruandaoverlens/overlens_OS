@@ -149,18 +149,18 @@ function FontCard({
         className="block w-full rounded-xl p-6 cursor-pointer text-left outline-none focus-visible:ring-2 focus-visible:ring-foreground"
       >
         <p
-          className="text-5xl leading-none text-white"
+          className="text-5xl leading-none text-foreground"
           style={{ fontFamily: asset.fontFamily }}
           aria-hidden="true"
         >
           Aa
         </p>
-        <p className="mt-4 text-sm text-white/60 leading-relaxed line-clamp-2">
+        <p className="mt-4 text-sm text-surface-500 leading-relaxed line-clamp-2">
           {asset.history.slice(0, 120)}…
         </p>
-        <div className="mt-4 border-t border-white/10 pt-3">
-          <p className="text-sm font-medium text-white">{asset.name}</p>
-          <p className="text-xs text-white/60 mt-0.5">{asset.role}</p>
+        <div className="mt-4 border-t border-border pt-3">
+          <p className="text-sm font-medium text-foreground">{asset.name}</p>
+          <p className="text-xs text-surface-500 mt-0.5">{asset.role}</p>
         </div>
       </button>
       {/* Ação: irmã do botão principal (nunca botão dentro de botão). */}
@@ -172,7 +172,7 @@ function FontCard({
           size="sm"
           aria-label={`Copiar CSS de ${asset.name}`}
           onClick={() => void copyCss(asset)}
-          className="rounded-full bg-black/50 text-white/70 hover:bg-black/70 hover:text-white"
+          className="rounded-full bg-surface-900 text-surface-300 hover:bg-surface-800 hover:text-foreground"
         >
           <SmClipsLineIcon className="size-4" />
           <span>Copiar CSS</span>
@@ -197,7 +197,7 @@ function FontModal({
     <Dialog open onOpenChange={(open) => { if (!open) onClose(); }}>
       <DialogContent
         showCloseButton={false}
-        className="max-w-none sm:max-w-none max-h-none w-screen h-svh rounded-none p-0 bg-black border-0 flex flex-col gap-0 overflow-hidden"
+        className="max-w-none sm:max-w-none max-h-none w-screen h-svh rounded-none p-0 bg-background border-0 flex flex-col gap-0 overflow-hidden"
       >
         <DialogTitle className="sr-only">{asset.name}</DialogTitle>
         <DialogDescription className="sr-only">
@@ -205,9 +205,9 @@ function FontModal({
         </DialogDescription>
 
         {/* Top bar */}
-        <div className="flex items-center justify-between px-4 py-3 shrink-0 bg-black/90 backdrop-blur-sm">
+        <div className="flex items-center justify-between px-4 py-3 shrink-0 bg-background/90 backdrop-blur-sm">
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-white/80 truncate">
+            <p className="text-sm font-medium text-surface-200 truncate">
               {asset.name}
             </p>
             <p className="text-xs text-muted-foreground mt-0.5">{asset.role}</p>
@@ -220,7 +220,7 @@ function FontModal({
                   variant="ghost"
                   size="icon"
                   aria-label="Fechar"
-                  className="text-white/60 hover:text-white hover:bg-white/10"
+                  className="text-surface-500 hover:text-foreground hover:bg-accent"
                   onClick={onClose}
                 >
                   <SmCloseLineIcon />
@@ -237,7 +237,7 @@ function FontModal({
             {/* Large specimen */}
             <div>
               <p
-                className="text-5xl leading-none text-white"
+                className="text-5xl leading-none text-foreground"
                 style={{ fontFamily: asset.fontFamily }}
               >
                 {asset.name}
@@ -247,7 +247,7 @@ function FontModal({
             {/* History */}
             <section className="space-y-3">
               <HeadingTitle as="h2" size="eyebrow">História</HeadingTitle>
-              <p className="text-sm text-white/70 leading-relaxed">
+              <p className="text-sm text-surface-300 leading-relaxed">
                 {asset.history}
               </p>
             </section>
@@ -259,13 +259,13 @@ function FontModal({
                 {asset.weights.map((w) => (
                   <div
                     key={w.value}
-                    className="flex items-baseline gap-4 border-b border-white/5 pb-3"
+                    className="flex items-baseline gap-4 border-b border-border pb-3"
                   >
                     <span className="text-xs text-muted-foreground w-24 shrink-0 font-mono">
                       {w.value} {w.name}
                     </span>
                     <p
-                      className="text-base text-white truncate"
+                      className="text-base text-foreground truncate"
                       style={{
                         fontFamily: asset.fontFamily,
                         fontWeight: w.value,
@@ -281,7 +281,7 @@ function FontModal({
             {/* Description */}
             <section className="space-y-3">
               <HeadingTitle as="h2" size="eyebrow">Papel no sistema</HeadingTitle>
-              <p className="text-sm text-white/70 leading-relaxed text-balance">
+              <p className="text-sm text-surface-300 leading-relaxed text-balance">
                 {asset.description}
               </p>
             </section>
@@ -290,7 +290,7 @@ function FontModal({
             <section className="space-y-3">
               <HeadingTitle as="h2" size="eyebrow">Variável CSS</HeadingTitle>
               <div className="flex items-center gap-2">
-                <code className="flex-1 block text-sm text-white bg-white/5 rounded-lg px-4 py-3 font-mono">
+                <code className="flex-1 block text-sm text-foreground bg-surface-950 rounded-lg px-4 py-3 font-mono">
                   {cssSnippet(asset)}
                 </code>
                 <Button
@@ -312,7 +312,7 @@ function FontModal({
                 {asset.usage.map((item) => (
                   <li
                     key={item}
-                    className="text-sm text-white/70 flex items-start gap-2"
+                    className="text-sm text-surface-300 flex items-start gap-2"
                   >
                     <span className="text-muted-foreground mt-1 shrink-0" aria-hidden="true">--</span>
                     {item}

@@ -13,8 +13,11 @@ const badgeVariants = cva(
           "bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/80",
         primary:
           "bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
+        // `text-primary-foreground` é o único par que passa AA sobre o vermelho
+        // nos dois temas (5,36:1 no claro · 5,39:1 no escuro); branco literal
+        // sobre o vermelho do tema escuro daria apenas 3,53:1.
         destructive:
-          "bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/40",
+          "bg-destructive text-primary-foreground [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/40",
         success:
           "bg-success text-success-foreground [a&]:hover:bg-success/90",
         warning:

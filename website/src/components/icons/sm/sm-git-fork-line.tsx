@@ -14,6 +14,7 @@ const SmGitForkLineIcon = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
       strokeLinecap="round"
       strokeLinejoin="round"
       xmlns="http://www.w3.org/2000/svg"
+      aria-hidden={props["aria-label"] === undefined && props.role === undefined ? true : undefined}
       {...props}
     >
       <circle data-slot="front" cx="12" cy="18" r="3" />

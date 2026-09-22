@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
 import { connection } from "next/server";
 import {
   SidebarProvider,
@@ -11,6 +10,7 @@ import { SystemSidebar } from "@/components/doc-sidebar";
 import { DocTopbarLabel, DocTopbarUpLink } from "@/components/doc-breadcrumb";
 import { getChatConversations } from "@/lib/chat-conversations";
 import { AppSwitcher } from "@/components/app-switcher";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { AppNotifications } from "@/components/app-notifications";
 import { CommandPaletteIconButton } from "@/components/command-palette";
 import { SystemTracker } from "@/components/system-tracker";
@@ -37,14 +37,10 @@ export default async function EstudioLayout({
   // resolve dentro de um Suspense na sidebar.
   // Garante renderização dinâmica (conversas são por usuário) sem bloquear o shell.
   await connection();
-  // `sidebar_state`: quem recolhe a sidebar continua com ela recolhida no
-  // próximo carregamento (o cookie é escrito pelo `SidebarProvider`).
-  const cookieStore = await cookies();
-  const sidebarOpen = cookieStore.get("sidebar_state")?.value !== "false";
   const conversations = getChatConversations();
 
   return (
-    <SidebarProvider defaultOpen={sidebarOpen}>
+    <SidebarProvider defaultOpen>
       <SystemTracker slug={config.slug} />
       <SystemSidebar
         sections={nav}
@@ -80,6 +76,7 @@ export default async function EstudioLayout({
                   drawer no mobile, recolhida abaixo de 1180px. */}
               <CommandPaletteIconButton />
               <AppNotifications />
+              <ThemeToggle />
               <AppSwitcher />
             </TopbarActions>
           </Topbar>

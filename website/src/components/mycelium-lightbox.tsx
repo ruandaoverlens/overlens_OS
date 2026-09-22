@@ -198,7 +198,7 @@ export function MyceliumLightbox({
       case "audio":
         return (
           <div className="flex flex-col items-center gap-5 w-full max-w-md">
-            <div className="size-24 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground">
+            <div className="size-24 rounded-full bg-surface-raised-2 flex items-center justify-center text-muted-foreground">
               <SmPlaySolidIcon className="size-10" />
             </div>
             <p className="text-sm text-muted-foreground truncate max-w-full">
@@ -258,7 +258,7 @@ export function MyceliumLightbox({
         </DialogHeader>
 
         {/* Media stage */}
-        <div className="relative flex items-center justify-center min-h-[280px] max-h-[60vh] rounded-lg bg-black/30 px-2 py-3 overflow-hidden">
+        <div className="relative flex items-center justify-center min-h-[280px] max-h-[60vh] rounded-lg bg-surface-950 px-2 py-3 overflow-hidden">
           {hasMultiple && (
             <Button
               type="button"
@@ -266,7 +266,7 @@ export function MyceliumLightbox({
               variant="secondary"
               onClick={goPrev}
               aria-label="Mídia anterior"
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/60 text-white hover:bg-black/80"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-absolute-black/60 text-absolute-white hover:bg-absolute-black/80"
             >
               <SmArrowBackIosNewLineIcon className="size-4" />
             </Button>
@@ -279,7 +279,7 @@ export function MyceliumLightbox({
               variant="secondary"
               onClick={goNext}
               aria-label="Próxima mídia"
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/60 text-white hover:bg-black/80"
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-absolute-black/60 text-absolute-white hover:bg-absolute-black/80"
             >
               <SmArrowForwardIosLineIcon className="size-4" />
             </Button>

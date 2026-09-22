@@ -484,8 +484,8 @@ export function AdUploadModal({ open, onOpenChange, onCreated }: AdUploadModalPr
                     onKeyDown={(e) => handleTypeKeyDown(e, i)}
                     className={`rounded-field-sm border px-3 py-2 text-sm transition-colors outline-none focus-visible:ring-2 focus-visible:ring-foreground disabled:opacity-60 disabled:cursor-not-allowed ${
                       type === opt.value
-                        ? "border-white/40 bg-white/10 text-white"
-                        : "border-white/10 text-muted-foreground hover:text-white hover:border-white/20"
+                        ? "border-foreground/40 bg-accent text-foreground"
+                        : "border-border text-muted-foreground hover:text-foreground hover:border-foreground/25"
                     }`}
                   >
                     {opt.label}

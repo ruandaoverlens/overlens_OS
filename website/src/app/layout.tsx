@@ -7,6 +7,7 @@ import { MusicPlayerProvider } from "@/lib/music-player";
 import { FavoritesProvider } from "@/lib/favorites";
 import { NotificationsProvider } from "@/lib/notifications";
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/components/theme-provider";
 import { NowPlayingBar } from "@/components/now-playing-bar";
 import { CurioserScreen } from "@/components/curioser-screen";
 import "./globals.css";
@@ -36,8 +37,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
-  colorScheme: "dark",
+  // A barra do navegador acompanha o tema em vigor.
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+  colorScheme: "dark light",
   width: "device-width",
   initialScale: 1,
 };
@@ -48,29 +53,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="dark">
+    // `suppressHydrationWarning`: o script do next-themes escreve a classe do
+    // tema no <html> antes da hidratação, então o atributo do servidor e o do
+    // cliente divergem por construção.
+    <html lang="pt-BR" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable} font-body antialiased`}
       >
         <a href="#main-content" className="skip-link">
           Pular para o conteúdo
         </a>
-        <AuthProvider>
-          <NotificationsProvider>
-            <FavoritesProvider>
-              <MusicPlayerProvider>
-                <TooltipProvider>
-                  <ConfirmProvider>
-                    {children}
-                    <NowPlayingBar />
-                    <CurioserScreen />
-                    <Toaster position="bottom-right" />
-                  </ConfirmProvider>
-                </TooltipProvider>
-              </MusicPlayerProvider>
-            </FavoritesProvider>
-          </NotificationsProvider>
-        </AuthProvider>
+        <ThemeProvider>
+          <AuthProvider>
+            <NotificationsProvider>
+              <FavoritesProvider>
+                <MusicPlayerProvider>
+                  <TooltipProvider>
+                    <ConfirmProvider>
+                      {children}
+                      <NowPlayingBar />
+                      <CurioserScreen />
+                      <Toaster position="bottom-right" />
+                    </ConfirmProvider>
+                  </TooltipProvider>
+                </MusicPlayerProvider>
+              </FavoritesProvider>
+            </NotificationsProvider>
+          </AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

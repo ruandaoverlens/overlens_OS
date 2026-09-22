@@ -273,7 +273,7 @@ function ComboboxChips({
     <ComboboxPrimitive.Chips
       data-slot="combobox-chips"
       className={cn(
-        "bg-input/30 border-2 border-transparent focus-within:border-foreground/70 has-aria-invalid:border-destructive flex min-h-10 w-full flex-wrap items-center gap-3 rounded-lg bg-clip-padding px-2.5 py-1.5 text-sm shadow-none transition-all has-data-[slot=combobox-chip]:px-1.5",
+        "bg-input/30 border-2 border-field-border focus-within:border-foreground/70 has-aria-invalid:border-destructive flex min-h-10 w-full flex-wrap items-center gap-3 rounded-lg bg-clip-padding px-2.5 py-1.5 text-sm shadow-none transition-all has-data-[slot=combobox-chip]:px-1.5",
         className
       )}
       {...props}
@@ -294,7 +294,7 @@ function ComboboxChip({
     <ComboboxPrimitive.Chip
       data-slot="combobox-chip"
       className={cn(
-        "inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-sm font-mono uppercase overflow-visible transition-all leading-4 outline-none focus-visible:ring-2 focus-visible:ring-foreground bg-surface-200/10 text-surface-300 hover:bg-white/20 active:bg-white/30 px-2 py-0.5 text-xs font-normal has-disabled:pointer-events-none has-disabled:cursor-not-allowed has-disabled:opacity-50",
+        "inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-sm font-mono uppercase overflow-visible transition-all leading-4 outline-none focus-visible:ring-2 focus-visible:ring-foreground bg-surface-200/10 text-surface-300 hover:bg-surface-200/20 active:bg-surface-200/30 px-2 py-0.5 text-xs font-normal has-disabled:pointer-events-none has-disabled:cursor-not-allowed has-disabled:opacity-50",
         className
       )}
       {...props}
@@ -304,8 +304,9 @@ function ComboboxChip({
         <ComboboxPrimitive.ChipRemove
           className="inline-flex items-center justify-center size-4 shrink-0 rounded-sm opacity-70 hover:opacity-100 transition-opacity outline-none focus-visible:ring-2 focus-visible:ring-foreground relative z-0 hover:z-10 focus-visible:z-10 after:absolute after:-inset-1.5 after:content-['']"
           data-slot="combobox-chip-remove"
+          aria-label="Remover"
         >
-          <SmCloseLineIcon className="size-4 pointer-events-none" />
+          <SmCloseLineIcon className="size-4 pointer-events-none" aria-hidden="true" />
         </ComboboxPrimitive.ChipRemove>
       )}
     </ComboboxPrimitive.Chip>

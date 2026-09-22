@@ -243,19 +243,20 @@ function CategoryEmpty({ category }: { category: AssetCategory }) {
 function OverviewPage() {
   return (
     <div className="flex flex-col h-full">
-      <div className="max-w-2xl mx-auto px-6 py-10 space-y-8">
+      {/* Mesma medida de leitura das páginas de documento (`max-w-4xl` + calha). */}
+      <div className="mx-auto max-w-4xl px-6 py-10 md:px-8 space-y-8">
         <div className="space-y-8">
           <HeadingTitle as="h1" size="xl" className="leading-none text-balance">
             Assets da Marca
           </HeadingTitle>
-          <p className="text-sm text-white/60 leading-relaxed">
+          <p className="text-sm text-surface-500 leading-relaxed">
             Este é o repositório central de todos os ativos visuais, sonoros e documentais da Overlens. Aqui você encontra tudo o que precisa para criar, comunicar e representar a marca com consistência.
           </p>
         </div>
 
         <div className="space-y-4">
           <HeadingTitle as="h2" size="eyebrow">Como funciona</HeadingTitle>
-          <div className="space-y-3 text-sm text-white/60 leading-relaxed">
+          <div className="space-y-3 text-sm text-surface-500 leading-relaxed">
             <p>
               Os assets estão organizados por categoria no menu lateral. Cada seção contém os arquivos originais prontos para uso; logotipos em SVG, paletas de cor com códigos hexadecimais, fontes tipográficas, ícones do design system, grafismos, templates, sons e imagens.
             </p>
@@ -284,16 +285,16 @@ function OverviewPage() {
               <Link
                 key={item.slug}
                 href={`/assets/${item.slug}`}
-                className="rounded-lg border border-white/5 bg-white/[0.02] px-4 py-3 transition-all duration-200 hover:border-white/15 hover:bg-white/[0.05] outline-none focus-visible:ring-2 focus-visible:ring-foreground"
+                className="rounded-lg border border-border bg-surface-950 px-4 py-3 transition-all duration-200 hover:border-foreground/25 hover:bg-surface-900 outline-none focus-visible:ring-2 focus-visible:ring-foreground"
               >
-                <p className="text-sm font-medium text-white/80">{item.title}</p>
+                <p className="text-sm font-medium text-surface-200">{item.title}</p>
                 <p className="text-xs text-muted-foreground mt-0.5">{item.desc}</p>
               </Link>
             ))}
           </div>
         </div>
 
-        <div className="border-t border-white/5 pt-6">
+        <div className="border-t border-border pt-6">
           <p className="text-xs text-muted-foreground leading-relaxed">
             O acesso aos assets é restrito a membros com permissão de Staff ou Administrador. Para solicitar acesso ou reportar um ativo ausente, entre em contato com a equipe de marca.
           </p>

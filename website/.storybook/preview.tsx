@@ -56,14 +56,35 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => {
+    (Story, context) => {
+      // O tema vem da barra de ferramentas (globalTypes.theme). Escrevemos a
+      // classe e o `color-scheme` no <html> exatamente como o `ThemeProvider`
+      // faz na aplicação — é essa classe que liga `:root` (claro) ou `.dark`.
+      const theme = context.globals.theme === "light" ? "light" : "dark";
       if (typeof document !== "undefined") {
-        document.documentElement.classList.add("dark");
-        document.documentElement.style.colorScheme = "dark";
+        const root = document.documentElement;
+        root.classList.toggle("dark", theme === "dark");
+        root.classList.toggle("light", theme === "light");
+        root.style.colorScheme = theme;
       }
       return React.createElement(TooltipProvider, null, Story());
     },
   ],
+  globalTypes: {
+    theme: {
+      description: "Tema da plataforma",
+      toolbar: {
+        title: "Tema",
+        icon: "circlehollow",
+        items: [
+          { value: "dark", title: "Escuro", icon: "moon" },
+          { value: "light", title: "Claro", icon: "sun" },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
+  initialGlobals: { theme: "dark" },
 };
 
 export default preview;

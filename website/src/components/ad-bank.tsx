@@ -126,9 +126,11 @@ function useAds() {
 
 function MetricChip({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-center gap-1 rounded-full bg-black/65 px-2 py-0.5 backdrop-blur-sm text-xs">
-      <span className={headingTitleVariants({ size: "eyebrow" })}>{label}</span>
-      <span className="font-medium text-white tabular-nums">{value}</span>
+    // Chip sobre a mídia do anúncio: véu e texto são LITERAIS nos dois temas,
+    // porque o fundo é a imagem, não a superfície do app.
+    <div className="flex items-center gap-1 rounded-full bg-absolute-black/65 px-2 py-0.5 backdrop-blur-sm text-xs">
+      <span className={cn(headingTitleVariants({ size: "eyebrow" }), "text-absolute-white/80")}>{label}</span>
+      <span className="font-medium text-absolute-white tabular-nums">{value}</span>
     </div>
   );
 }
@@ -205,23 +207,23 @@ function AdCard({ ad, onClick }: { ad: Ad; onClick: (trigger: HTMLButtonElement)
           className="object-cover"
         />
       ) : (
-        <div className="w-full h-full bg-white/5" />
+        <div className="w-full h-full bg-surface-raised-2" />
       )}
 
-      {/* Type/count badge */}
+      {/* Type/count badge — sobre a mídia: preto/branco literais nos dois temas. */}
       <div className="absolute top-2 left-2 flex items-center gap-1.5 text-xs">
         {ad.type === "carousel" && (
-          <span className="rounded-full bg-black/65 px-2 py-0.5 font-medium text-white backdrop-blur-sm tabular-nums">
+          <span className="rounded-full bg-absolute-black/65 px-2 py-0.5 font-medium text-absolute-white backdrop-blur-sm tabular-nums">
             {carouselIndex + 1}/{ad.media.length}
           </span>
         )}
         {ad.type === "video" && (
-          <span className="rounded-full bg-black/65 px-1.5 py-0.5 text-white backdrop-blur-sm" aria-label="Vídeo">
+          <span className="rounded-full bg-absolute-black/65 px-1.5 py-0.5 text-absolute-white backdrop-blur-sm" aria-label="Vídeo">
             <SmPlaySolidIcon className="size-3" />
           </span>
         )}
         {ad.platform && (
-          <span className="rounded-full bg-black/65 px-2 py-0.5 font-medium text-white/80 backdrop-blur-sm">
+          <span className="rounded-full bg-absolute-black/65 px-2 py-0.5 font-medium text-absolute-white/80 backdrop-blur-sm">
             {platformLabel(ad.platform)}
           </span>
         )}
@@ -242,10 +244,11 @@ function AdCard({ ad, onClick }: { ad: Ad; onClick: (trigger: HTMLButtonElement)
       )}
 
       {/* Bottom info on hover */}
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-2.5 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
-        <p className="text-xs font-medium text-white truncate">{ad.title}</p>
+      {/* Véu literal sobre a mídia: garante o branco do título nos dois temas. */}
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-absolute-black/85 via-absolute-black/40 to-transparent p-2.5 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
+        <p className="text-xs font-medium text-absolute-white truncate">{ad.title}</p>
         {ad.platform && (
-          <p className="text-xs text-white/60 mt-0.5">{platformLabel(ad.platform)}</p>
+          <p className="text-xs text-absolute-white/70 mt-0.5">{platformLabel(ad.platform)}</p>
         )}
       </div>
     </button>
@@ -314,7 +317,9 @@ function CarouselViewer({ media, title }: { media: AdMedia[]; title: string }) {
                 variant="ghost"
                 size="icon"
                 onClick={() => go(-1)}
-                className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/55 text-white/85 hover:bg-black/80 hover:text-white"
+                // Pílula literal: a seta pode cair sobre a mídia, que não muda
+                // com o tema — escuro com ícone branco funciona nos dois.
+                className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-absolute-black/55 text-absolute-white/85 hover:bg-absolute-black/80 hover:text-absolute-white"
                 aria-label="Anterior"
               >
                 <SmArrowBackIosNewLineIcon />
@@ -329,7 +334,7 @@ function CarouselViewer({ media, title }: { media: AdMedia[]; title: string }) {
                 variant="ghost"
                 size="icon"
                 onClick={() => go(1)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/55 text-white/85 hover:bg-black/80 hover:text-white"
+                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-absolute-black/55 text-absolute-white/85 hover:bg-absolute-black/80 hover:text-absolute-white"
                 aria-label="Próximo"
               >
                 <SmArrowForwardIosLineIcon />
@@ -349,7 +354,7 @@ function CarouselViewer({ media, title }: { media: AdMedia[]; title: string }) {
               >
                 <span
                   aria-hidden="true"
-                  className={`block h-1.5 rounded-full transition-all ${i === index ? "w-6 bg-white" : "w-1.5 bg-white/40 group-hover/dot:bg-white/70"}`}
+                  className={`block h-1.5 rounded-full transition-all ${i === index ? "w-6 bg-foreground" : "w-1.5 bg-foreground/40 group-hover/dot:bg-foreground/70"}`}
                 />
               </button>
             ))}
@@ -567,9 +572,9 @@ function PerformanceForm({
           <ReadRow label="Plataforma" value={platformLabel(ad.platform)} />
         </dl>
         {ad.notes && (
-          <div className="pt-3 border-t border-white/10">
+          <div className="pt-3 border-t border-border">
             <HeadingTitle as="h3" size="eyebrow" className="mb-2">Notas</HeadingTitle>
-            <p className="text-sm text-white/80 leading-relaxed whitespace-pre-wrap">{ad.notes}</p>
+            <p className="text-sm text-surface-200 leading-relaxed whitespace-pre-wrap">{ad.notes}</p>
           </div>
         )}
       </div>
@@ -690,7 +695,7 @@ function ReadRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-center justify-between gap-3 py-1">
       <dt className={headingTitleVariants({ size: "eyebrow" })}>{label}</dt>
-      <dd className="text-sm text-white/80 tabular-nums">{value}</dd>
+      <dd className="text-sm text-surface-200 tabular-nums">{value}</dd>
     </div>
   );
 }
@@ -769,7 +774,7 @@ function AdLightbox({
       <DialogContent
         ref={contentRef}
         showCloseButton={false}
-        className="max-w-none sm:max-w-none max-h-none w-screen h-svh rounded-none p-0 bg-black border-0 flex flex-col gap-0 overflow-hidden"
+        className="max-w-none sm:max-w-none max-h-none w-screen h-svh rounded-none p-0 bg-background border-0 flex flex-col gap-0 overflow-hidden"
         aria-busy={busy || undefined}
         onEscapeKeyDown={(e) => { if (busy) e.preventDefault(); }}
         onPointerDownOutside={(e) => { if (busy) e.preventDefault(); }}
@@ -791,7 +796,7 @@ function AdLightbox({
         {/* Top bar */}
         <div className="flex items-start justify-between px-4 py-3 shrink-0 gap-4">
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-white truncate">{ad.title}</p>
+            <p className="text-sm font-medium text-foreground truncate">{ad.title}</p>
             <div className="flex items-center gap-2 mt-0.5 flex-wrap text-xs text-muted-foreground">
               <span>{typeLabel}</span>
               {ad.platform && (
@@ -823,7 +828,7 @@ function AdLightbox({
                   size="icon"
                   aria-label="Fechar"
                   disabled={busy}
-                  className="text-muted-foreground hover:text-white hover:bg-white/10"
+                  className="text-muted-foreground hover:text-foreground hover:bg-accent"
                   onClick={() => void requestClose()}
                 >
                   <SmCloseLineIcon />
@@ -840,7 +845,7 @@ function AdLightbox({
 
           <aside
             aria-label="Performance do anúncio"
-            className="w-full md:w-[340px] shrink-0 md:overflow-y-auto scrollbar-thin rounded-lg bg-white/[0.03] border border-white/5 p-5"
+            className="w-full md:w-[340px] shrink-0 md:overflow-y-auto scrollbar-thin rounded-lg bg-surface-950 border border-border p-5"
           >
             <PerformanceForm
               ad={ad}
@@ -859,7 +864,7 @@ function AdLightbox({
 // ─── Main Component ─────────────────────────────────────────
 
 const TAG_BASE = "px-3 py-1 rounded-full text-xs font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-foreground";
-const TAG_ACTIVE = "bg-white text-black";
+const TAG_ACTIVE = "bg-primary text-primary-foreground";
 const TAG_INACTIVE = "bg-surface-900 text-surface-400 hover:text-surface-200";
 
 export function AdBank() {

@@ -142,9 +142,9 @@ function ContentCard({
       type="button"
       onClick={handleClick}
       aria-label={isLink ? `Abrir link: ${title}` : `Baixar ${title}`}
-      className="group flex flex-col rounded-md overflow-hidden bg-surface-900 border border-white/5 hover:border-white/15 transition-colors text-left outline-none focus-visible:ring-2 focus-visible:ring-foreground"
+      className="group flex flex-col rounded-md overflow-hidden bg-surface-900 border border-border hover:border-foreground/25 transition-colors text-left outline-none focus-visible:ring-2 focus-visible:ring-foreground"
     >
-      <div className="relative aspect-4/3 w-full bg-black/40 flex items-center justify-center overflow-hidden">
+      <div className="relative aspect-4/3 w-full bg-surface-950 flex items-center justify-center overflow-hidden">
         {thumbnailUrl ? (
           <Image
             src={thumbnailUrl}
@@ -159,7 +159,8 @@ function ContentCard({
         )}
 
         {/* Action badge — top-right */}
-        <div className="absolute top-2 right-2 size-7 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white/80 group-hover:text-white transition-colors">
+        {/* Selos sobre a miniatura: pílula escura literal, legível nos dois temas. */}
+        <div className="absolute top-2 right-2 size-7 rounded-full bg-absolute-black/60 backdrop-blur-sm flex items-center justify-center text-absolute-white/80 group-hover:text-absolute-white transition-colors">
           {isLink ? (
             <SmArrowOutwardLineIcon className="size-4" />
           ) : (
@@ -169,7 +170,7 @@ function ContentCard({
 
         {/* Link badge — bottom-left */}
         {isLink && (
-          <p className={cn(headingTitleVariants({ size: "eyebrow" }), "absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-sm flex items-center gap-1")}>
+          <p className={cn(headingTitleVariants({ size: "eyebrow" }), "absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-absolute-black/60 text-absolute-white/85 backdrop-blur-sm flex items-center gap-1")}>
             <SmLink2LineIcon className="size-3" />
             <span>Link</span>
           </p>
@@ -177,7 +178,7 @@ function ContentCard({
       </div>
 
       <div className="flex flex-col gap-0.5 px-3 py-3">
-        <p className="text-sm font-medium text-white/90 truncate">{title}</p>
+        <p className="text-sm font-medium text-foreground truncate">{title}</p>
         <p className="text-xs text-muted-foreground truncate">
           {[typeLabel, tool].filter(Boolean).join(" · ") || "—"}
         </p>

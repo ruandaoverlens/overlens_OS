@@ -11,15 +11,22 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-surface-200 text-background font-heading uppercase tracking-wide hover:bg-white",
+          "bg-surface-200 text-background font-heading uppercase tracking-wide hover:bg-surface-white",
+        // `text-primary-foreground` (branco no claro, quase-preto no escuro) é o
+        // único par que passa AA sobre o vermelho nos dois temas: branco sobre
+        // #B94241 = 5,36:1 (claro) e #101010 sobre #DC625E = 5,39:1 (escuro).
+        // Branco literal sobre o vermelho do tema escuro daria só 3,53:1.
         destructive:
-          "bg-destructive text-white font-heading uppercase tracking-wide hover:bg-destructive/90 focus-visible:ring-destructive/40",
+          "bg-destructive text-primary-foreground font-heading uppercase tracking-wide hover:bg-destructive/90 focus-visible:ring-destructive/40",
+        // As variantes `inverted*` existem para botões sobre imagem/arte clara
+        // (ver `BannerActions`), não para o fundo do app: aqui o preto é a
+        // própria cor e não pode inverter com o tema.
         inverted:
-          "bg-black text-white font-heading uppercase tracking-wide hover:bg-black/80",
+          "bg-absolute-black text-absolute-white font-heading uppercase tracking-wide hover:bg-absolute-black/80 focus-visible:ring-absolute-black",
         outline:
           "border-2 border-foreground/25 bg-transparent text-foreground font-heading uppercase tracking-wide hover:border-foreground/50",
         "inverted-outline":
-          "border-2 border-black/25 bg-transparent text-black font-heading uppercase tracking-wide hover:border-black/50",
+          "border-2 border-absolute-black/25 bg-transparent text-absolute-black font-heading uppercase tracking-wide hover:border-absolute-black/50 focus-visible:ring-absolute-black",
         secondary:
           "bg-accent/50 text-secondary-foreground font-body hover:bg-accent",
         ghost:

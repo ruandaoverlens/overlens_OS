@@ -54,7 +54,10 @@ function InputOTPSlot({
       data-slot="input-otp-slot"
       data-active={isActive}
       className={cn(
-        "data-[active=true]:border-foreground aria-invalid:border-destructive data-[active=true]:aria-invalid:border-destructive bg-input/30 border-border relative flex h-12 w-12 items-center justify-center border text-lg shadow-none transition-all outline-none -ml-px first:ml-0 first:rounded-l-lg last:rounded-r-lg data-[active=true]:z-10",
+        // A borda é o único limite visível do slot, então usa `border-field-border`
+        // (3:1 contra o fundo nos dois temas) e não `border-border`, que a 10-12%
+        // some no claro e no escuro (WCAG 1.4.11).
+        "data-[active=true]:border-foreground aria-invalid:border-destructive data-[active=true]:aria-invalid:border-destructive bg-input/30 border-field-border relative flex h-12 w-12 items-center justify-center border text-lg shadow-none transition-all outline-none -ml-px first:ml-0 first:rounded-l-lg last:rounded-r-lg data-[active=true]:z-10",
         className
       )}
       {...props}

@@ -10,6 +10,7 @@ const MdMinusLineIcon = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      aria-hidden={props["aria-label"] === undefined && props.role === undefined ? true : undefined}
       {...props}
     >
 <rect x="5.5" y="14.8" width="21" height="2.4" fill="white"/>

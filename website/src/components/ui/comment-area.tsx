@@ -91,7 +91,7 @@ function CommentArea({
       className={cn(
         "group/comment relative flex w-full flex-col gap-1 overflow-hidden rounded-2xl px-3 pb-3.5 pt-5 sm:w-105",
         "bg-input/30",
-        "border-2 border-transparent",
+        "border-2 border-field-border",
         "transition-[background-color,border-color]",
         "hover:bg-input/50",
         "focus-within:border-foreground/70 focus-within:bg-transparent",

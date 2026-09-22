@@ -9,7 +9,7 @@ const textareaVariants = cva(
   [
     "placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground",
     "bg-input/30",
-    "w-full field-sizing-content font-normal font-body shadow-none border-2 border-transparent",
+    "w-full field-sizing-content font-normal font-body shadow-none border-2 border-field-border",
     "transition-[color,border-color,background-color] outline-none resize-none",
     "hover:bg-input/50",
     "focus-visible:border-foreground/70 focus-visible:bg-transparent",

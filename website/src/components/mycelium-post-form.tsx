@@ -597,7 +597,9 @@ export function MyceliumPostForm({
                   variant="secondary"
                   onClick={() => handleCoverChange(null)}
                   disabled={submitting}
-                  className="absolute top-2 right-2 border border-foreground/20 bg-background/90 shadow-sm hover:bg-destructive hover:text-white"
+                  // O vermelho de `--destructive` é cor de marca nos dois temas,
+                  // então o ícone sobre ele é branco literal.
+                  className="absolute top-2 right-2 border border-foreground/20 bg-background/90 shadow-sm hover:bg-destructive hover:text-absolute-white"
                   aria-label="Remover capa"
                 >
                   <SmCloseLineIcon className="size-4" />

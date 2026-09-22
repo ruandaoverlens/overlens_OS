@@ -27,7 +27,7 @@ const radioItemVariants = cva(
     "relative after:absolute after:content-['']",
     /* Default border */
     "border-foreground",
-    /* Hover - border goes to primary (white in dark) */
+    /* Hover: a borda vai para `primary`, o polo de contraste do tema */
     "hover:border-primary",
     /* Focus ring */
     "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",

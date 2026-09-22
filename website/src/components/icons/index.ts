@@ -1,3 +1,25 @@
+/**
+ * Barril dos ícones do design system (`sm/`, `md/`, `micro/`, `phosphor/`).
+ *
+ * ACESSIBILIDADE — todo ícone destes conjuntos nasce `aria-hidden="true"`.
+ * Quase sempre é o certo: o ícone acompanha um rótulo visível ou um
+ * `<span className="sr-only">`, e anunciá-lo de novo só gera ruído.
+ *
+ * Quando o ícone FOR o rótulo (botão só de ícone, sem texto), passe
+ * `aria-label` — o `aria-hidden` some sozinho e o nome é anunciado:
+ *
+ *   <SmCloseLineIcon aria-label="Fechar" />   // anunciado
+ *   <SmCloseLineIcon />                       // decorativo
+ *
+ * `role` tem o mesmo efeito. Repetir `aria-hidden="true"` no call site é
+ * inofensivo, só redundante.
+ *
+ * COR — o glifo usa `fill="currentColor"`: ele herda a cor do texto e por isso
+ * acompanha o tema sem nenhum ajuste.
+ *
+ * Arquivos gerados. Ao regerar (`/generate-icons`), preserve o `aria-hidden`.
+ */
+
 export { MdAdd2LineIcon } from "./md/md-add2-line";
 export { MdAlertLineIcon } from "./md/md-alert-line";
 export { MdAlertSolid1Icon } from "./md/md-alert-solid1";

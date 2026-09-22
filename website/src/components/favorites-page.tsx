@@ -128,7 +128,9 @@ function FavoriteThumb({ item }: { item: FavoriteItem }) {
 
   if (item.type === "logo") {
     return (
-      <div className="h-full w-full flex items-center justify-center bg-surface-950 p-6">
+      // Moldura LITERAL: o favorito guarda a variante CLARA do logo (branca),
+      // que só se lê sobre preto — nos dois temas.
+      <div className="h-full w-full flex items-center justify-center bg-absolute-black p-6">
         <Image
           src={item.thumbnail}
           alt={item.title}
@@ -175,7 +177,7 @@ function FavoriteCard({
 
       {/* Info */}
       <div className="px-3 py-2.5">
-        <p className="text-sm font-medium text-white/80 truncate">
+        <p className="text-sm font-medium text-surface-200 truncate">
           {item.title}
         </p>
         <p className="text-xs text-muted-foreground mt-0.5 truncate">
@@ -186,7 +188,7 @@ function FavoriteCard({
   );
 
   return (
-    <div className="group relative rounded-xl border border-white/5 bg-white/[0.02] overflow-hidden hover:border-white/10 hover:bg-white/[0.04] transition-all">
+    <div className="group relative rounded-xl border border-border bg-surface-950 overflow-hidden hover:border-foreground/20 hover:bg-surface-900 transition-all">
       {isDoc ? (
         <Link href={item.href!} className={mainClass} aria-label={`Abrir ${item.title}`}>
           {body}
@@ -197,8 +199,10 @@ function FavoriteCard({
         </button>
       )}
 
+      {/* Selo e botão flutuam sobre a miniatura (imagem ou amostra de cor):
+          pílula escura literal, que não inverte com o tema. */}
       {/* Type badge */}
-      <p className={cn(headingTitleVariants({ size: "eyebrow" }), "absolute top-2 left-2 px-2 py-0.5 rounded-full bg-black/60 pointer-events-none")}>
+      <p className={cn(headingTitleVariants({ size: "eyebrow" }), "absolute top-2 left-2 px-2 py-0.5 rounded-full bg-absolute-black/60 text-absolute-white/85 pointer-events-none")}>
         {typeLabels[item.type]}
       </p>
 
@@ -208,7 +212,7 @@ function FavoriteCard({
         variant="ghost"
         size="icon-sm"
         aria-label={`Remover ${item.title} dos favoritos`}
-        className="absolute top-2 right-2 rounded-full opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto focus-visible:opacity-100 pointer-coarse:opacity-100 pointer-coarse:pointer-events-auto transition-opacity bg-black/60 hover:bg-black/80 text-white/70 hover:text-white"
+        className="absolute top-2 right-2 rounded-full opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto focus-visible:opacity-100 pointer-coarse:opacity-100 pointer-coarse:pointer-events-auto transition-opacity bg-absolute-black/60 hover:bg-absolute-black/80 text-absolute-white/70 hover:text-absolute-white"
         onClick={onRemove}
       >
         <SmCloseLineIcon className="size-4" />

@@ -238,7 +238,7 @@ const CommandInput = React.forwardRef<
         disabled={!hasQuery}
         onClick={submitSelected}
         className={cn(
-          hasQuery && "hover:bg-white hover:text-background"
+          hasQuery && "hover:bg-surface-white hover:text-background"
         )}
       >
         <MdArrowForwardLineIcon />

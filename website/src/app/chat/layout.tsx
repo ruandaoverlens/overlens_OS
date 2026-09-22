@@ -14,6 +14,7 @@ import {
   TopbarActions,
 } from "@/components/ui/topbar";
 import { AppSwitcher } from "@/components/app-switcher";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { AppNotifications } from "@/components/app-notifications";
 import { CommandPaletteIconButton } from "@/components/command-palette";
 import { SystemSidebar } from "@/components/doc-sidebar";
@@ -46,9 +47,6 @@ export default async function ChatLayout({
   // A auth precisa preceder (redirect); cookie e conversas seguem em paralelo.
   const [, cookieStore] = await Promise.all([requireAuth(), cookies()]);
   const lastSystem = cookieStore.get("overlens_last_system")?.value;
-  // `sidebar_state`: quem recolhe a sidebar continua com ela recolhida no
-  // próximo carregamento (o cookie é escrito pelo `SidebarProvider`).
-  const sidebarOpen = cookieStore.get("sidebar_state")?.value !== "false";
   const config = getSystemConfig(lastSystem);
 
   // Promise não awaitada: a sidebar e o breadcrumb resolvem em Suspense.
@@ -59,7 +57,7 @@ export default async function ChatLayout({
   const citableSections = flattenForCitation(nav);
 
   return (
-    <SidebarProvider defaultOpen={sidebarOpen} className="h-[calc(100svh-var(--now-playing-h,0px))] overflow-hidden">
+    <SidebarProvider defaultOpen className="h-[calc(100svh-var(--now-playing-h,0px))] overflow-hidden">
       <SystemSidebar
         sections={nav}
         basePath={config.basePath}
@@ -92,6 +90,7 @@ export default async function ChatLayout({
                 drawer no mobile, recolhida abaixo de 1180px. */}
             <CommandPaletteIconButton />
             <AppNotifications />
+            <ThemeToggle />
             <AppSwitcher />
           </TopbarActions>
         </Topbar>

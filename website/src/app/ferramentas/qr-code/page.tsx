@@ -236,7 +236,9 @@ export default function QrCodePage() {
         </div>
 
         <div className="flex items-start justify-center" role="status" aria-live="polite">
-          <div className="rounded-xl border bg-white p-4">
+          {/* Branco absoluto nos dois temas: é a "folha" em volta do QR. A margem
+              clara faz parte da zona de silêncio que os leitores precisam. */}
+          <div className="rounded-xl border bg-absolute-white p-4">
             <canvas
               ref={canvasRef}
               role="img"

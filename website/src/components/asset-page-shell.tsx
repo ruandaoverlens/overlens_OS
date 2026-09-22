@@ -152,7 +152,7 @@ export function useAssetFilters() {
 // ─── Tag Filter ─────────────────────────────────────────────────
 
 const TAG_BASE = "px-3 py-1 rounded-full text-xs font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-foreground";
-const TAG_ACTIVE = "bg-white text-black";
+const TAG_ACTIVE = "bg-primary text-primary-foreground";
 const TAG_INACTIVE = "bg-surface-900 text-surface-400 hover:text-surface-200";
 
 function TagFilter({
@@ -208,7 +208,7 @@ function TagFilter({
         <button
           type="button"
           onClick={() => setExpanded(true)}
-          className={`${TAG_BASE} text-surface-300 hover:text-white`}
+          className={`${TAG_BASE} text-surface-300 hover:text-foreground`}
         >
           Ver todos
         </button>

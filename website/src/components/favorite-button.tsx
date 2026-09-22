@@ -26,9 +26,12 @@ export function FavoriteButton({
       }}
       className={cn(
         "size-8 cursor-pointer rounded-full flex items-center justify-center transition-all outline-none focus-visible:ring-2 focus-visible:ring-foreground",
+        // Preto/branco LITERAIS: o padrão deste botão é flutuar sobre mídia
+        // (thumbnail, amostra de cor, logo), que não muda com o tema. Em
+        // superfície do app, quem usa passa um `className` temático.
         isFavorite
-          ? "bg-white text-black hover:bg-white/80"
-          : "bg-black/50 text-white/70 hover:text-white hover:bg-black/70",
+          ? "bg-absolute-white text-absolute-black hover:bg-absolute-white/80"
+          : "bg-absolute-black/50 text-absolute-white/70 hover:text-absolute-white hover:bg-absolute-black/70",
         className
       )}
     >

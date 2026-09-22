@@ -280,7 +280,7 @@ function NotificationCardDescription({
     <p
       data-slot="notification-card-description"
       className={cn(
-        "pl-1 text-sm leading-relaxed text-foreground/60 line-clamp-2 hover:line-clamp-none",
+        "pl-1 text-sm leading-relaxed text-muted-foreground line-clamp-2 hover:line-clamp-none",
         className
       )}
       {...props}

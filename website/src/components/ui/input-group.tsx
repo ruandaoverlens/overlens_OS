@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
 const inputGroupVariants = cva(
-  "group/input-group bg-input/30 border-2 border-transparent hover:bg-input/50 relative flex w-full items-center shadow-none transition-all outline-none min-w-0 has-[>textarea]:h-auto has-[[data-slot=input-group-control]:focus-visible]:border-foreground/70 has-[[data-slot=input-group-control]:focus-visible]:bg-transparent has-[[data-slot][aria-invalid=true]]:border-destructive",
+  "group/input-group bg-input/30 border-2 border-field-border hover:bg-input/50 relative flex w-full items-center shadow-none transition-all outline-none min-w-0 has-[>textarea]:h-auto has-[[data-slot=input-group-control]:focus-visible]:border-foreground/70 has-[[data-slot=input-group-control]:focus-visible]:bg-transparent has-[[data-slot][aria-invalid=true]]:border-destructive",
   {
     variants: {
       size: {

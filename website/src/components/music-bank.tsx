@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect, useMemo } from "react";
+import { useTheme } from "next-themes";
 import { tracks, getAllMusicTags, type Track } from "@/lib/musicas";
 import { useMusicPlayer } from "@/lib/music-player";
 import { useFavorites } from "@/lib/favorites";
@@ -73,6 +74,9 @@ function Waveform({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const barsRef = useRef<number[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
+  // A onda é pintada no canvas com a cor do tema: ao trocar de tema é preciso
+  // redesenhar, senão as barras ficam na cor antiga (invisíveis no claro).
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     const count = 200;
@@ -118,7 +122,7 @@ function Waveform({
       ctx.roundRect(x, y, barWidth, barH, 1);
       ctx.fill();
     }
-  }, [progress, isActive]);
+  }, [progress, isActive, resolvedTheme]);
 
   const handleClick = (e: React.MouseEvent) => {
     const rect = containerRef.current?.getBoundingClientRect();
@@ -255,7 +259,7 @@ function TrackRow({
     <div
       className="group relative flex items-center gap-3 px-4 py-2.5 transition-colors"
     >
-      <div className={`pointer-events-none absolute inset-0 bg-gradient-to-l from-white/[0.04] to-transparent transition-opacity ${
+      <div className={`pointer-events-none absolute inset-0 bg-gradient-to-l from-surface-raised-2 to-transparent transition-opacity ${
         isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"
       }`} />
 
@@ -270,11 +274,11 @@ function TrackRow({
           className="hover:scale-110 transition-transform hover:bg-transparent"
         >
           {playing ? (
-            <Pause className="size-5 text-white fill-white" />
+            <Pause className="size-5 text-foreground fill-current" />
           ) : (
             <SmPlaySolidIcon
               className={`size-6 ${
-                isActive ? "text-white" : "text-surface-500 group-hover:text-white"
+                isActive ? "text-foreground" : "text-surface-500 group-hover:text-foreground"
               }`}
             />
           )}
@@ -284,7 +288,7 @@ function TrackRow({
       <div className="relative z-10 w-32 md:w-48 shrink-0 min-w-0">
         <p
           className={`text-sm font-medium truncate ${
-            isActive ? "text-white" : "text-surface-200"
+            isActive ? "text-foreground" : "text-surface-200"
           }`}
         >
           {track.title}
@@ -301,7 +305,7 @@ function TrackRow({
             className={`px-2 py-0.5 rounded-full text-xs font-medium whitespace-nowrap ${
               tag === "sfx"
                 ? "bg-warning/15 text-warning"
-                : "bg-white/[0.06] text-surface-400"
+                : "bg-surface-raised-2 text-surface-400"
             }`}
           >
             {tag}
@@ -332,8 +336,8 @@ function TrackRow({
               size="icon"
               aria-label={isFavorite ? "Remover dos favoritos" : "Salvar nos favoritos"}
               aria-pressed={isFavorite}
-              className={`text-surface-500 hover:text-white hover:bg-white/10 ${
-                isFavorite ? "!opacity-100 text-white" : ""
+              className={`text-surface-500 hover:text-foreground hover:bg-accent ${
+                isFavorite ? "!opacity-100 text-foreground" : ""
               }`}
               onClick={onFavorite}
             >
@@ -349,7 +353,7 @@ function TrackRow({
               variant="ghost"
               size="icon"
               aria-label={`Baixar ${track.title}`}
-              className="text-surface-500 hover:text-white hover:bg-white/10"
+              className="text-surface-500 hover:text-foreground hover:bg-accent"
               onClick={handleDownload}
             >
               <SmDownloadSolidIcon />
@@ -362,7 +366,7 @@ function TrackRow({
             type="button"
             variant="outline"
             size="sm"
-            className="border-white/20 text-muted-foreground hover:bg-white/10 hover:border-white/40 hover:text-white text-xs"
+            className="border-border text-muted-foreground hover:bg-accent hover:border-foreground/40 hover:text-foreground text-xs"
             onClick={onEdit}
           >
             <span>Editar</span>
@@ -373,7 +377,7 @@ function TrackRow({
             type="button"
             variant="outline"
             size="sm"
-            className="border-white/20 text-muted-foreground hover:bg-white/10 hover:border-white/40 hover:text-white text-xs"
+            className="border-border text-muted-foreground hover:bg-accent hover:border-foreground/40 hover:text-foreground text-xs"
             onClick={async () => {
               setHiding(true);
               await onToggleHide();
@@ -533,7 +537,7 @@ export function MusicBank() {
           type="button"
           aria-pressed={activeTags.size === 0}
           onClick={() => toggleTag("__all__")}
-          className={`${TAG_BASE} ${activeTags.size === 0 ? "bg-white text-black" : TAG_INACTIVE}`}
+          className={`${TAG_BASE} ${activeTags.size === 0 ? "bg-primary text-primary-foreground" : TAG_INACTIVE}`}
         >
           Todos
         </button>
@@ -546,8 +550,8 @@ export function MusicBank() {
             className={`${TAG_BASE} ${
               activeTags.has(tag)
                 ? tag === "sfx"
-                  ? "bg-warning text-black"
-                  : "bg-white text-black"
+                  ? "bg-warning text-warning-foreground"
+                  : "bg-primary text-primary-foreground"
                 : TAG_INACTIVE
             }`}
           >

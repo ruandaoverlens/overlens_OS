@@ -7,6 +7,7 @@ import {
 import { Topbar, TopbarBreadcrumb, TopbarActions } from "@/components/ui/topbar";
 import { DocTopbarLabel, DocTopbarUpLink } from "@/components/doc-breadcrumb";
 import { AppSwitcher } from "@/components/app-switcher";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { AppNotifications } from "@/components/app-notifications";
 import { CommandPaletteIconButton } from "@/components/command-palette";
 import { MyceliumSidebar } from "@/components/mycelium-sidebar";
@@ -32,13 +33,10 @@ export default async function MyceliumLayout({
   // "Voltar" contextual: o último system visitado (cookie do SystemTracker).
   const cookieStore = await cookies();
   const lastSystem = cookieStore.get("overlens_last_system")?.value;
-  // `sidebar_state`: quem recolhe a sidebar continua com ela recolhida no
-  // próximo carregamento (o cookie é escrito pelo `SidebarProvider`).
-  const sidebarOpen = cookieStore.get("sidebar_state")?.value !== "false";
   const config = getSystemConfig(lastSystem);
 
   return (
-    <SidebarProvider defaultOpen={sidebarOpen}>
+    <SidebarProvider defaultOpen>
       <MyceliumSidebar
         backHref={config.basePath}
         backLabel={config.title}
@@ -61,6 +59,7 @@ export default async function MyceliumLayout({
                 mantém o próprio botão de busca visível no desktop. */}
             <CommandPaletteIconButton sidebarCollapsesToIcon />
             <AppNotifications />
+            <ThemeToggle />
             <AppSwitcher />
           </TopbarActions>
         </Topbar>

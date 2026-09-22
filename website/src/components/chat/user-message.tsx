@@ -58,7 +58,7 @@ export function UserMessage({
               key={`file-${i}-${att.name}`}
               className={cn(
                 "inline-flex h-7 shrink-0 items-center gap-1.5 rounded-full pl-2.5 pr-3 text-xs font-medium",
-                "bg-brand-sahara/10 text-brand-sahara",
+                "bg-brand-sahara/10 text-brand-sahara-text",
               )}
             >
               <SmFolderLineIcon className="size-3.5" aria-hidden="true" />

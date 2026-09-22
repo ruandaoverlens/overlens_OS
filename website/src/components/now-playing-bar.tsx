@@ -223,7 +223,7 @@ export function NowPlayingBar() {
           size="icon-sm"
           aria-label="Faixa anterior"
           onClick={prevTrack}
-          className="text-surface-400 hover:text-white shrink-0"
+          className="text-surface-400 hover:text-foreground shrink-0"
         >
           <SkipBack className="size-4 fill-current" />
         </Button>
@@ -236,7 +236,8 @@ export function NowPlayingBar() {
           aria-label={isPlaying ? "Pausar" : "Reproduzir"}
           aria-pressed={isPlaying}
           onClick={togglePlayPause}
-          className="rounded-full bg-white text-black hover:bg-white/90 hover:scale-105 transition-transform shrink-0 dark:bg-white dark:text-black dark:hover:bg-white/90"
+          // Botão principal do player: é o inverso do fundo (branco no escuro, preto no claro).
+          className="rounded-full bg-foreground text-background hover:bg-foreground/90 motion-safe:hover:scale-105 transition-transform shrink-0"
         >
           {isPlaying ? (
             <Pause className="size-4 fill-current" />
@@ -252,14 +253,14 @@ export function NowPlayingBar() {
           size="icon-sm"
           aria-label="Próxima faixa"
           onClick={nextTrack}
-          className="text-surface-400 hover:text-white shrink-0"
+          className="text-surface-400 hover:text-foreground shrink-0"
         >
           <SkipForward className="size-4 fill-current" />
         </Button>
 
         {/* Track info */}
         <div className="min-w-0 flex-1" aria-live="polite">
-          <p className="text-sm text-white font-medium truncate">
+          <p className="text-sm text-foreground font-medium truncate">
             {activeTrack.title}
           </p>
           <p className="text-xs text-surface-500 truncate">
@@ -281,7 +282,7 @@ export function NowPlayingBar() {
                 type="button"
                 variant="ghost"
                 size="icon"
-                className="text-surface-500 hover:text-white hover:bg-white/10"
+                className="text-surface-500 hover:text-foreground hover:bg-accent"
                 onMouseEnter={openVolume}
                 onMouseLeave={scheduleCloseVolume}
                 onClick={() => setVolume(volume === 0 ? 1 : 0)}
@@ -318,8 +319,8 @@ export function NowPlayingBar() {
                 size="icon"
                 aria-label={favorited ? "Remover dos favoritos" : "Salvar nos favoritos"}
                 aria-pressed={favorited}
-                className={`text-surface-500 hover:text-white hover:bg-white/10 ${
-                  favorited ? "text-white" : ""
+                className={`text-surface-500 hover:text-foreground hover:bg-accent ${
+                  favorited ? "text-foreground" : ""
                 }`}
                 onClick={() => globalToggleFavorite({ id: activeTrack.id, type: "audio", title: activeTrack.title, subtitle: activeTrack.artist })}
               >
@@ -335,7 +336,7 @@ export function NowPlayingBar() {
                 variant="ghost"
                 size="icon"
                 aria-label={`Baixar ${activeTrack.title}`}
-                className="text-surface-500 hover:text-white hover:bg-white/10"
+                className="text-surface-500 hover:text-foreground hover:bg-accent"
                 onClick={() => {
                   const a = document.createElement("a");
                   a.href = activeTrack.downloadUrl;
@@ -354,7 +355,7 @@ export function NowPlayingBar() {
                 type="button"
                 variant="ghost"
                 size="icon"
-                className="text-surface-500 hover:text-white hover:bg-white/10"
+                className="text-surface-500 hover:text-foreground hover:bg-accent"
                 onClick={closePlayer}
                 aria-label="Fechar player"
               >

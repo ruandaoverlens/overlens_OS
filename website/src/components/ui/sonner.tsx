@@ -14,7 +14,11 @@ import { cn } from "@/lib/utils"
 
 /** Toast notification provider with themed styling and semantic icon variants. */
 const Toaster = ({ className, ...props }: ToasterProps) => {
-  const { theme = "system" } = useTheme()
+  // Fallback alinhado ao `defaultTheme` do `ThemeProvider`: antes da montagem o
+  // `next-themes` devolve `undefined`, e cair em "system" faria o Sonner seguir
+  // a preferência do sistema operacional, não a da plataforma. Os valores
+  // possíveis ("light" | "dark" | "system") são todos válidos para o Sonner.
+  const { theme = "dark" } = useTheme()
 
   return (
     <Sonner

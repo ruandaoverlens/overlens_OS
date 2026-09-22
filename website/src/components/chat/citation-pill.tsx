@@ -29,7 +29,7 @@ export function CitationPill({
     <div
       data-slot="citation-pill"
       className={cn(
-        "inline-flex shrink-0 items-center gap-1.5 rounded-full font-medium text-brand-sahara bg-brand-sahara/10 transition-colors",
+        "inline-flex shrink-0 items-center gap-1.5 rounded-full font-medium text-brand-sahara-text bg-brand-sahara/10 transition-colors",
         isCompact
           ? "h-7 pl-2.5 pr-3 text-xs"
           : "h-9 pl-3 pr-2 text-sm",
@@ -45,7 +45,7 @@ export function CitationPill({
           size="icon-xs"
           onClick={onRemove}
           aria-label={`Remover seção citada: ${title}`}
-          className="shrink-0 text-brand-sahara hover:bg-brand-sahara/15 hover:text-brand-sahara"
+          className="shrink-0 text-brand-sahara-text hover:bg-brand-sahara/15 hover:text-brand-sahara-text"
         >
           <SmCloseLineIcon className="size-4" />
         </Button>

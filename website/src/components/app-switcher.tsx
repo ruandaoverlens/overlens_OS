@@ -8,22 +8,36 @@ import { useAuth, canAccessRoute, type UserRole } from "@/lib/auth";
 import {
   MdFolderSolidIcon,
   MdLanguageLineIcon,
-  MdBoltSolidIcon,
   MdGitForkLineIcon,
 } from "@/components/icons";
 import { SYSTEMS, canAccessSystem } from "@/components/system-switcher";
 
-/** Símbolo da Overlens — tema é dark fixo, então só a versão clara é servida. */
+/**
+ * Símbolo da Overlens. O arquivo é um SVG de cor chapada, então cada tema pede
+ * o seu: `symbol-light` é branco (fundo escuro) e `symbol-dark` é preto (fundo
+ * claro). A troca é por CSS — `useTheme()` só resolve depois da hidratação e
+ * faria o símbolo piscar na cor errada.
+ */
 function OverlensSymbol({ className = "size-6" }: { className?: string }) {
   return (
-    <Image
-      src="/brand/symbol-light.svg"
-      alt=""
-      width={24}
-      height={24}
-      className={className}
-      aria-hidden="true"
-    />
+    <>
+      <Image
+        src="/brand/symbol-dark.svg"
+        alt=""
+        width={24}
+        height={24}
+        className={`${className} dark:hidden`}
+        aria-hidden="true"
+      />
+      <Image
+        src="/brand/symbol-light.svg"
+        alt=""
+        width={24}
+        height={24}
+        className={`${className} hidden dark:block`}
+        aria-hidden="true"
+      />
+    </>
   );
 }
 
@@ -40,7 +54,6 @@ export type AppEntry = {
  */
 export const APPS: AppEntry[] = [
   { name: "Área de Estudos", href: "https://plataforma.overlens.com.br", icon: <OverlensSymbol />, external: true },
-  { name: "Botões Mágicos", href: "/ferramentas", icon: <MdBoltSolidIcon /> },
   { name: "Assets", href: "/assets", icon: <MdFolderSolidIcon /> },
   { name: "Mycelium", href: "/mycelium", icon: <MdGitForkLineIcon /> },
   { name: "Website", href: "https://overlens.com.br", icon: <MdLanguageLineIcon />, external: true },

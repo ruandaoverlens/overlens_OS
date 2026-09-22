@@ -40,6 +40,19 @@ Setup details (CLI install, login) are in `website/README.md`.
 ### Editing secrets
 App web do Infisical → `overlens-os` → escolher o ambiente (`dev` / `preview` / `production`). Mudanças sincronizam para Vercel automaticamente em ~10s.
 
+### Temas (claro e escuro)
+
+A plataforma tem dois temas. `:root` em `website/src/app/globals.css` carrega o **claro**, `.dark` carrega o **escuro** (padrão do produto). O `next-themes` escreve a classe no `<html>`; o seletor fica na topbar de toda rota e na tela de login (`src/components/theme-toggle.tsx`).
+
+Regras ao escrever qualquer cor:
+- A escala `surface/*` é **relativa ao tema**: `surface-black` = o fundo, `surface-white` = contraste máximo, `surface-950/900/800` = superfícies, `surface-500/400/300/200` = texto. Funciona nos dois temas sem `dark:`.
+- Preto e branco **literais** (amostra de paleta, véu sobre foto, fundo de preview de logo, "papel" de QR code) só via `--absolute-white` / `--absolute-black`, com comentário dizendo por quê. Nunca `bg-black` / `text-white`.
+- `--brand-*` não inverte. Quando a cor de marca for **texto**, use `--brand-*-text`.
+- Campo de formulário: `--input` é o **fundo** (`bg-input/30`), `--field-border` é o **limite** (3:1). Não use um no lugar do outro.
+- Imagem de marca de cor chapada precisa do par `-light`/`-dark` trocado por CSS (`dark:hidden` / `hidden dark:block`), nunca por `useTheme()`.
+- Ícones de `src/components/icons/` nascem `aria-hidden`; passe `aria-label` quando o ícone **for** o rótulo.
+- `npm run check:contrast` precisa passar antes de mexer em token de cor. Decisão registrada em `docs/adr/0005-tema-claro-e-escala-de-superficie-relativa.md`.
+
 ### Architecture Decision Records (ADRs)
 Decisões arquiteturais (plataforma, infraestrutura, processos) são registradas em `docs/adr/` — um arquivo por decisão, `NNNN-titulo-kebab.md`, em português, seguindo `docs/adr/template.md`. Regras: status `Proposto → Aceito → Substituído/Obsoleto`; ADRs aceitos não são editados no mérito (nova decisão = novo ADR que substitui o anterior); todo ADR novo entra no índice do `docs/adr/README.md`. Antes de implementar uma feature estrutural nova, verifique se existe ADR cobrindo a decisão — se não existir, proponha um.
 

@@ -11,6 +11,7 @@ const MdRegisteredLineIcon = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
         viewBox="0 0 32 32"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        aria-hidden={props["aria-label"] === undefined && props.role === undefined ? true : undefined}
         {...props}
       >
         <circle cx="16" cy="16" r="12" stroke="currentColor" strokeWidth="2" />

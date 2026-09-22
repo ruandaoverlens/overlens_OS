@@ -88,7 +88,7 @@ const tools: Tool[] = [
 ];
 
 const cardClassName =
-  "group relative flex flex-col overflow-hidden rounded-2xl border border-border/50 bg-card transition-all hover:border-border hover:shadow-lg hover:shadow-black/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+  "group relative flex flex-col overflow-hidden rounded-2xl border border-border/50 bg-card transition-all hover:border-border hover:shadow-lg hover:shadow-absolute-black/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
 export default function FerramentasPage() {
   return (
@@ -118,18 +118,19 @@ export default function FerramentasPage() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
 
-                {/* Dark overlay for readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                {/* Véu escuro para leitura. Preto/branco aqui são absolutos nos dois
+                    temas: o que está embaixo é uma foto, não a superfície do app. */}
+                <div className="absolute inset-0 bg-gradient-to-t from-absolute-black/60 via-absolute-black/20 to-transparent" />
 
                 {/* Icon centered */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex size-16 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md ring-1 ring-white/20 transition-transform duration-300 motion-safe:group-hover:scale-110">
-                    <Icon className="size-8 text-white drop-shadow-md" aria-hidden="true" />
+                  <div className="flex size-16 items-center justify-center rounded-2xl bg-absolute-white/10 backdrop-blur-md ring-1 ring-absolute-white/20 transition-transform duration-300 motion-safe:group-hover:scale-110">
+                    <Icon className="size-8 text-absolute-white drop-shadow-md" aria-hidden="true" />
                   </div>
                 </div>
 
                 {!available && (
-                  <span className="absolute top-3 right-3 rounded-full bg-black/40 px-3 py-1 text-xs font-medium text-white/90 backdrop-blur-sm">
+                  <span className="absolute top-3 right-3 rounded-full bg-absolute-black/60 px-3 py-1 text-xs font-medium text-absolute-white backdrop-blur-sm">
                     Em breve
                   </span>
                 )}

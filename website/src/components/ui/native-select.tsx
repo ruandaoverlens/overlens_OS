@@ -5,7 +5,7 @@ import { SmArrowDownIosLineIcon } from "@/components/icons"
 import { cn } from "@/lib/utils"
 
 const nativeSelectVariants = cva(
-  "placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground bg-input/30 border-2 border-transparent w-full appearance-none py-0 font-normal font-body shadow-none transition-all outline-none hover:bg-input/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 focus-visible:border-foreground/70 focus-visible:bg-transparent aria-invalid:border-destructive aria-invalid:focus-visible:border-destructive",
+  "placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground bg-input/30 border-2 border-field-border w-full appearance-none py-0 font-normal font-body shadow-none transition-all outline-none hover:bg-input/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 focus-visible:border-foreground/70 focus-visible:bg-transparent aria-invalid:border-destructive aria-invalid:focus-visible:border-destructive",
   {
     variants: {
       size: {
@@ -79,7 +79,9 @@ function NativeSelectOption({ ...props }: React.ComponentProps<"option">) {
   return (
     <option
       data-slot="native-select-option"
-      className={cn("text-black bg-white", props.className)}
+      // A lista nativa do <select> é desenhada pelo navegador e não herda as
+      // cores do campo: sem estas classes ela sai no tema do sistema.
+      className={cn("text-foreground bg-background", props.className)}
       {...props}
     />
   )
@@ -93,7 +95,7 @@ function NativeSelectOptGroup({
   return (
     <optgroup
       data-slot="native-select-optgroup"
-      className={cn("text-black bg-white font-medium", className)}
+      className={cn("text-foreground bg-background font-medium", className)}
       {...props}
     />
   )

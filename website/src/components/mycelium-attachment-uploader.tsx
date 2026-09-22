@@ -329,8 +329,9 @@ export function MyceliumAttachmentUploader({
                       preload="metadata"
                       className="w-full h-full object-cover"
                     />
-                    <span className="absolute inset-0 flex items-center justify-center bg-black/30 pointer-events-none">
-                      <SmPlaySolidIcon className="size-6 text-white" />
+                    {/* Véu e ícone sobre o frame do vídeo: literais nos dois temas. */}
+                    <span className="absolute inset-0 flex items-center justify-center bg-absolute-black/30 pointer-events-none">
+                      <SmPlaySolidIcon className="size-6 text-absolute-white" />
                     </span>
                   </>
                 )}
@@ -358,7 +359,7 @@ export function MyceliumAttachmentUploader({
                 variant="secondary"
                 onClick={() => handleRemove(draft.id)}
                 disabled={disabled}
-                className="absolute -top-1.5 -right-1.5 z-10 border border-foreground/20 bg-background shadow-sm hover:bg-destructive hover:text-white"
+                className="absolute -top-1.5 -right-1.5 z-10 border border-foreground/20 bg-background shadow-sm hover:bg-destructive hover:text-primary-foreground"
                 aria-label={`Remover ${draft.file.name}`}
               >
                 <SmCloseLineIcon className="size-3" />

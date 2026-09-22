@@ -130,7 +130,9 @@ function ImagePreview({ file, onRemove }: ImagePreviewProps) {
         size="icon-xs"
         onClick={onRemove}
         aria-label={`Remover ${file.name}`}
-        className="absolute right-1 top-1 bg-black/70 text-white hover:bg-black/85 hover:text-white"
+        // Véu escuro sobre a miniatura: a imagem por baixo é arbitrária, então o
+        // ícone permanece branco literal nos dois temas.
+        className="absolute right-1 top-1 bg-scrim-strong text-absolute-white hover:bg-scrim-strong hover:text-absolute-white"
       >
         <SmCloseLineIcon className="size-3.5" />
       </Button>
@@ -149,7 +151,7 @@ function FileChip({ file, onRemove }: FileChipProps) {
       data-slot="prompt-area-file-chip"
       className={cn(
         "inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full pl-3 pr-1 text-sm font-medium transition-colors",
-        "bg-brand-sahara/10 text-brand-sahara",
+        "bg-brand-sahara/10 text-brand-sahara-text",
       )}
     >
       <SmFolderLineIcon className="size-4" aria-hidden="true" />
@@ -161,7 +163,7 @@ function FileChip({ file, onRemove }: FileChipProps) {
         size="icon-xs"
         onClick={onRemove}
         aria-label={`Remover ${file.name}`}
-        className="ml-0.5 shrink-0 text-brand-sahara hover:bg-brand-sahara/15 hover:text-brand-sahara"
+        className="ml-0.5 shrink-0 text-brand-sahara-text hover:bg-brand-sahara/15 hover:text-brand-sahara-text"
       >
         <SmCloseLineIcon className="size-4" />
       </Button>
@@ -506,7 +508,7 @@ export function PromptArea({
               <div
                 className={cn(
                   "flex h-9 shrink-0 items-center gap-1.5 rounded-full pl-3 pr-2 text-sm font-medium transition-colors",
-                  "bg-brand-atmos/10 text-brand-atmos",
+                  "bg-brand-atmos/10 text-brand-atmos-text",
                 )}
               >
                 <SmCognitionLineIcon className="size-4" aria-hidden="true" />
@@ -517,7 +519,7 @@ export function PromptArea({
                   size="icon-xs"
                   onClick={() => setPlanMode(false)}
                   aria-label="Desativar Modo Plano"
-                  className="shrink-0 text-brand-atmos hover:bg-brand-atmos/15 hover:text-brand-atmos"
+                  className="shrink-0 text-brand-atmos-text hover:bg-brand-atmos/15 hover:text-brand-atmos-text"
                 >
                   <SmCloseLineIcon className="size-4" />
                 </Button>
@@ -543,10 +545,11 @@ export function PromptArea({
                 onClick={handleSubmit}
                 aria-label={loading ? "Enviando" : "Enviar"}
                 aria-busy={loading || undefined}
-                className="shrink-0 bg-white text-black hover:bg-white/90 disabled:opacity-30"
+                // Botão de envio: o inverso do fundo (branco no escuro, preto no claro).
+                className="shrink-0 bg-foreground text-background hover:bg-foreground/90 disabled:opacity-30"
               >
                 {loading ? (
-                  <Spinner aria-hidden="true" role="presentation" className="size-4 text-black" />
+                  <Spinner aria-hidden="true" role="presentation" className="size-4 text-background" />
                 ) : (
                   <SmArrowUpwardLineIcon className="size-5" />
                 )}

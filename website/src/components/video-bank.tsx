@@ -51,7 +51,7 @@ import { normalizeText, matchesNormalized } from "@/lib/normalize-text";
 // ─── Tag Filter Bar ───────────────────────────────────────────
 
 const TAG_BASE = "px-3 py-1 rounded-full text-xs font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-foreground";
-const TAG_ACTIVE = "bg-white text-black";
+const TAG_ACTIVE = "bg-primary text-primary-foreground";
 const TAG_INACTIVE = "bg-surface-900 text-surface-400 hover:text-surface-200";
 
 function TagFilter({
@@ -105,7 +105,7 @@ function TagFilter({
         <button
           type="button"
           onClick={() => setExpanded(true)}
-          className={`${TAG_BASE} text-surface-300 hover:text-white`}
+          className={`${TAG_BASE} text-surface-300 hover:text-foreground`}
         >
           Ver todos
         </button>
@@ -175,23 +175,24 @@ function VideoThumb({
 
         {/* Hover overlay with info */}
         <div
-          className={`absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent transition-opacity duration-200 pointer-events-none ${
+          // Véu e texto literais: o fundo aqui é o frame do vídeo, não o tema.
+          className={`absolute inset-0 bg-gradient-to-t from-absolute-black/80 via-transparent to-transparent transition-opacity duration-200 pointer-events-none ${
             isHovering ? "opacity-100" : "opacity-0"
           }`}
         >
           {/* Bottom info */}
           <div className="absolute bottom-0 left-0 right-0 p-2.5">
-            <p className="text-xs text-white/90 font-medium truncate">
+            <p className="text-xs text-absolute-white font-medium truncate">
               {footage.title}
             </p>
             <div className="flex items-center gap-1.5 mt-0.5">
-              <span className="text-xs text-white/60">{footage.resolution}</span>
-              <span className="text-xs text-white/60" aria-hidden="true">·</span>
-              <span className="text-xs text-white/60">{footage.fps}</span>
+              <span className="text-xs text-absolute-white/80">{footage.resolution}</span>
+              <span className="text-xs text-absolute-white/80" aria-hidden="true">·</span>
+              <span className="text-xs text-absolute-white/80">{footage.fps}</span>
               {footage.hasAudio && (
                 <>
-                  <span className="text-xs text-white/60" aria-hidden="true">·</span>
-                  <span className="text-xs text-white/60">audio</span>
+                  <span className="text-xs text-absolute-white/80" aria-hidden="true">·</span>
+                  <span className="text-xs text-absolute-white/80">audio</span>
                 </>
               )}
             </div>
@@ -209,7 +210,7 @@ function VideoThumb({
             aria-label={isHidden ? "Desocultar vídeo" : "Ocultar vídeo"}
             aria-pressed={!!isHidden}
             onClick={onToggleHide}
-            className="rounded-full bg-black/50 text-white/70 hover:bg-black/70 hover:text-white"
+            className="rounded-full bg-absolute-black/50 text-absolute-white/70 hover:bg-absolute-black/70 hover:text-absolute-white"
           >
             {isHidden ? <SmVisibilityOffSolidIcon className="size-4" /> : <SmVisibilitySolidIcon className="size-4" />}
           </Button>
@@ -298,7 +299,7 @@ export function VideoLightbox({
     <Dialog open onOpenChange={(open) => { if (!open) onClose(); }}>
       <DialogContent
         showCloseButton={false}
-        className="max-w-none sm:max-w-none max-h-none w-screen h-svh rounded-none p-0 bg-black border-0 flex flex-col gap-0 overflow-hidden"
+        className="max-w-none sm:max-w-none max-h-none w-screen h-svh rounded-none p-0 bg-background border-0 flex flex-col gap-0 overflow-hidden"
       >
         <DialogTitle className="sr-only">{footage.title}</DialogTitle>
         <DialogDescription className="sr-only">
@@ -308,7 +309,7 @@ export function VideoLightbox({
         {/* Top bar */}
         <div className="flex items-center justify-between px-4 py-3 shrink-0">
           <div className="flex-1 min-w-0">
-            <p className="text-sm text-white font-medium truncate">
+            <p className="text-sm text-foreground font-medium truncate">
               {footage.title}
             </p>
             <div className="flex items-center gap-2 mt-0.5 text-xs text-muted-foreground">
@@ -327,7 +328,7 @@ export function VideoLightbox({
                 type="button"
                 variant="outline"
                 size="sm"
-                className="border-white/20 text-muted-foreground hover:bg-white/10 hover:border-white/40 hover:text-white"
+                className="border-border text-muted-foreground hover:bg-accent hover:border-foreground/40 hover:text-foreground"
                 onClick={onEdit}
               >
                 <span>Editar</span>
@@ -338,7 +339,7 @@ export function VideoLightbox({
                 type="button"
                 variant="outline"
                 size="sm"
-                className="border-white/20 text-muted-foreground hover:bg-white/10 hover:border-white/40 hover:text-white"
+                className="border-border text-muted-foreground hover:bg-accent hover:border-foreground/40 hover:text-foreground"
                 onClick={async () => {
                   setHiding(true);
                   try {
@@ -389,7 +390,7 @@ export function VideoLightbox({
                   size="icon"
                   aria-label={isFavorited ? "Remover dos favoritos" : "Salvar nos favoritos"}
                   aria-pressed={!!isFavorited}
-                  className="border-white/20 text-white hover:bg-white/10 hover:border-white/40"
+                  className="border-border text-foreground hover:bg-accent hover:border-foreground/40"
                   onClick={() => onFavorite(footage.id)}
                 >
                   {isFavorited ? <SmStarSolidIcon /> : <SmStarLineIcon />}
@@ -402,7 +403,7 @@ export function VideoLightbox({
               variant="ghost"
               size="icon"
               aria-label="Fechar"
-              className="text-muted-foreground hover:text-white hover:bg-white/10"
+              className="text-muted-foreground hover:text-foreground hover:bg-accent"
               onClick={onClose}
             >
               <SmCloseLineIcon />

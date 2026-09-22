@@ -54,7 +54,10 @@ function Slider({
         <SliderPrimitive.Thumb
           data-slot="slider-thumb"
           key={index}
-          className="ring-foreground/50 block size-4 shrink-0 rounded-full border border-foreground bg-white shadow-none transition-all hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-20"
+          // `bg-primary` = o polo de contraste do tema (branco no escuro,
+          // quase-preto no claro): o thumb continua sendo a peça mais forte do
+          // controle nos dois temas, com a borda `foreground` a delimitando.
+          className="ring-foreground/50 block size-4 shrink-0 rounded-full border border-foreground bg-primary shadow-none transition-all hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-20"
         />
       ))}
     </SliderPrimitive.Root>

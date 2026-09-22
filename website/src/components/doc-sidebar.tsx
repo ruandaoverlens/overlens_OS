@@ -572,14 +572,26 @@ export function SystemSidebar({
             aria-label={`${title} — início`}
             className="rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-foreground group-data-[collapsible=icon]:hidden"
           >
-            {/* Tema é dark fixo: só a versão clara do logo é servida. */}
+            {/* O logo é um SVG de cor chapada: `logo-light` é branco (fundo
+                escuro) e `logo-dark` é preto (fundo claro). A troca é por CSS
+                — com `useTheme()` o logo apareceria na cor errada até hidratar.
+                O `display:none` também tira da árvore de acessibilidade, então
+                o leitor de tela anuncia o `alt` uma única vez. */}
+            <Image
+              src="/brand/logo-dark.svg"
+              alt={title}
+              width={264}
+              height={34}
+              priority
+              className="h-5 w-auto dark:hidden"
+            />
             <Image
               src="/brand/logo-light.svg"
               alt={title}
               width={264}
               height={34}
               priority
-              className="h-5 w-auto"
+              className="hidden h-5 w-auto dark:block"
             />
           </Link>
           <SidebarTrigger />

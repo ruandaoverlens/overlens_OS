@@ -161,7 +161,8 @@ function ImageCard({
           unoptimized={isUnoptimized(asset)}
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-200" />
+        {/* Véu de hover sobre a imagem: escurece a foto, não a superfície do app. */}
+        <div className="absolute inset-0 bg-transparent group-hover:bg-scrim-soft transition-all duration-200" />
       </button>
       {/* Ações: irmão do botão principal (nunca botão dentro de botão). */}
       <div className={OVERLAY_CLASS}>
@@ -175,7 +176,7 @@ function ImageCard({
                 aria-label={isHidden ? "Desocultar imagem" : "Ocultar imagem"}
                 aria-pressed={!!isHidden}
                 onClick={onToggleHide}
-                className="rounded-full bg-black/50 text-white/70 hover:bg-black/70 hover:text-white"
+                className="rounded-full bg-absolute-black/50 text-absolute-white/70 hover:bg-absolute-black/70 hover:text-absolute-white"
               >
                 {isHidden ? <SmVisibilityOffSolidIcon className="size-4" /> : <SmVisibilitySolidIcon className="size-4" />}
               </Button>
@@ -254,7 +255,7 @@ export function ImageLightbox({
     <Dialog open onOpenChange={(open) => { if (!open) onClose(); }}>
       <DialogContent
         showCloseButton={false}
-        className="max-w-none sm:max-w-none max-h-none w-screen h-svh rounded-none p-0 bg-black border-0 flex flex-col gap-0 overflow-hidden"
+        className="max-w-none sm:max-w-none max-h-none w-screen h-svh rounded-none p-0 bg-background border-0 flex flex-col gap-0 overflow-hidden"
       >
         <DialogTitle className="sr-only">{asset.title}</DialogTitle>
         <DialogDescription className="sr-only">
@@ -264,7 +265,7 @@ export function ImageLightbox({
         {/* Top bar */}
         <div className="flex items-start justify-between px-4 py-3 shrink-0 gap-4">
           <div className="flex-1 min-w-0 max-w-xs">
-            <p className="text-sm font-medium text-white/80 truncate">
+            <p className="text-sm font-medium text-surface-200 truncate">
               {asset.title}
             </p>
             {asset.author && (
@@ -279,7 +280,7 @@ export function ImageLightbox({
                 type="button"
                 variant="outline"
                 size="sm"
-                className="border-white/20 text-white/60 hover:bg-white/10 hover:border-white/40 hover:text-white"
+                className="border-border text-surface-500 hover:bg-accent hover:border-foreground/40 hover:text-foreground"
                 onClick={onEdit}
               >
                 <span>Editar</span>
@@ -290,7 +291,7 @@ export function ImageLightbox({
                 type="button"
                 variant="outline"
                 size="sm"
-                className="border-white/20 text-white/60 hover:bg-white/10 hover:border-white/40 hover:text-white"
+                className="border-border text-surface-500 hover:bg-accent hover:border-foreground/40 hover:text-foreground"
                 onClick={async () => {
                   setHiding(true);
                   try {
@@ -330,7 +331,7 @@ export function ImageLightbox({
                   variant="ghost"
                   size="icon"
                   aria-label="Fechar"
-                  className="text-white/60 hover:text-white hover:bg-white/10"
+                  className="text-surface-500 hover:text-foreground hover:bg-accent"
                   onClick={onClose}
                 >
                   <SmCloseLineIcon />
@@ -361,7 +362,7 @@ export function ImageLightbox({
           {asset.caption && (
             <div className="mt-3 flex items-start justify-between gap-4 w-full max-w-3xl">
               <div>
-                <p className="text-xs text-white/60 leading-relaxed text-left">
+                <p className="text-xs text-surface-500 leading-relaxed text-left">
                   {asset.caption}
                 </p>
                 {asset.author && (
@@ -371,7 +372,7 @@ export function ImageLightbox({
                 )}
               </div>
               {asset.sourceUrl && (
-                <Button variant="ghost" size="sm" asChild className="shrink-0 text-white/60 hover:text-white">
+                <Button variant="ghost" size="sm" asChild className="shrink-0 text-surface-500 hover:text-foreground">
                   <a href={asset.sourceUrl} target="_blank" rel="noopener noreferrer">
                     <span>Ver original</span>
                   </a>

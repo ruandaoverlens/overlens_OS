@@ -116,7 +116,10 @@ export function SystemSwitcher({ basePath }: { basePath: string }) {
       )}
       <DropdownMenuContent
         align="start"
-        className="w-(--radix-dropdown-menu-trigger-width) min-w-[220px] bg-surface-950 shadow-[0_16px_32px_-8px_rgba(0,0,0,0.75)]"
+        // A sombra descola o menu da sidebar. No tema escuro ela precisa ser
+        // quase opaca para aparecer sobre o preto; no claro, a mesma opacidade
+        // viraria uma mancha — por isso o valor sobe só no escuro.
+        className="w-(--radix-dropdown-menu-trigger-width) min-w-[220px] bg-surface-950 shadow-[0_16px_32px_-8px_rgba(0,0,0,0.18)] dark:shadow-[0_16px_32px_-8px_rgba(0,0,0,0.75)]"
       >
         {ordered.map((system) => {
           const allowed = hasAccess(system.href);

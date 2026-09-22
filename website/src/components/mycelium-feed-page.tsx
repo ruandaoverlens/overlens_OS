@@ -64,7 +64,8 @@ function isMyceliumType(value: string | null): value is MyceliumType {
 
 const CHIP_BASE =
   "px-3 py-1 rounded-full text-xs font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background";
-const CHIP_ACTIVE = "bg-white text-black";
+// Chip selecionado: o inverso do fundo (branco no escuro, preto no claro).
+const CHIP_ACTIVE = "bg-foreground text-background";
 const CHIP_INACTIVE = "bg-surface-900 text-surface-400 hover:text-surface-200";
 
 // ─── Page ────────────────────────────────────────────────────

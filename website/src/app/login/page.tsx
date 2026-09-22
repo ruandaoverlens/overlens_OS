@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { HeadingTitle } from "@/components/ui/heading";
 import { FieldError } from "@/components/ui/field";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 type Mode = "login" | "signup";
 
@@ -101,8 +102,11 @@ export default function LoginPage() {
     <main
       id="main-content"
       tabIndex={-1}
-      className="min-h-screen flex items-center justify-center bg-background px-4 outline-none"
+      className="relative min-h-screen flex items-center justify-center bg-background px-4 outline-none"
     >
+      {/* Mesmo lugar dos ícones fixos da topbar. Quem prefere o tema claro não
+          deveria precisar atravessar uma tela preta para chegar até ele. */}
+      <ThemeToggle className="absolute top-3 right-3" />
       <div className="max-w-sm w-full space-y-8">
         {/* Header */}
         <div className="text-center space-y-1">
@@ -186,7 +190,7 @@ export default function LoginPage() {
                   onClick={() => setShowPassword((v) => !v)}
                   aria-pressed={showPassword}
                   aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-sm px-1 text-muted-foreground hover:text-foreground transition-colors text-xs cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-foreground"
+                  className="absolute right-2 top-1/2 flex min-h-6 -translate-y-1/2 items-center rounded-sm px-1 text-muted-foreground hover:text-foreground transition-colors text-xs cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-foreground"
                 >
                   {showPassword ? "Ocultar" : "Mostrar"}
                 </button>

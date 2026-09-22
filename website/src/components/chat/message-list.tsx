@@ -117,7 +117,7 @@ export function MessageList({
           <div
             aria-hidden="true"
             data-slot="chat-thinking"
-            className="mb-6 flex justify-start text-base text-muted-foreground animate-pulse"
+            className="mb-6 flex justify-start text-base text-muted-foreground motion-safe:animate-pulse"
           >
             Pensando…
           </div>

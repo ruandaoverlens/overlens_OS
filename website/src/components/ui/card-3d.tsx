@@ -184,6 +184,8 @@ function Card3D({
     contentChildren.push(child)
   })
 
+  // Quase-preto LITERAL de propósito: este texto fica sobre a arte clara do
+  // card, não sobre o fundo do app, então não inverte junto com o tema.
   const fgStyle = isLight
     ? ({
         "--card-3d-fg": "oklch(0.15 0 0)",
@@ -417,7 +419,9 @@ function Card3DDescription({
   )
 }
 
-/** Badge - always white background with black text for consistent readability over any card background. */
+/** Badge - always white background with black text for consistent readability over any card background.
+ *  Branco e preto LITERAIS (`absolute-*`): o selo fica sobre a arte do card,
+ *  que pode ser de qualquer cor, então não pode inverter com o tema. */
 function Card3DBadge({
   className,
   style,
@@ -426,8 +430,8 @@ function Card3DBadge({
   return (
     <Badge
       variant="default"
-      className={cn("border-0", className)}
-      style={{ background: "white", color: "black", ...style }}
+      className={cn("border-0 bg-absolute-white text-absolute-black", className)}
+      style={style}
       {...props}
     />
   )

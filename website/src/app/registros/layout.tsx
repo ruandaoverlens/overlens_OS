@@ -5,6 +5,7 @@ import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import { Topbar, TopbarBreadcrumb, TopbarActions } from "@/components/ui/topbar";
 import { DocTopbarLabel, DocTopbarUpLink } from "@/components/doc-breadcrumb";
 import { AppSwitcher } from "@/components/app-switcher";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { AppNotifications } from "@/components/app-notifications";
 import { CommandPaletteIconButton } from "@/components/command-palette";
 import { RegistrosSidebar } from "@/components/registros-sidebar";
@@ -35,9 +36,6 @@ export default async function RegistrosLayout({
   if (!isOverlensEmail(user.email)) return <AccessRestricted label="Registros" />;
 
   const lastSystem = cookieStore.get("overlens_last_system")?.value;
-  // `sidebar_state`: quem recolhe a sidebar continua com ela recolhida no
-  // próximo carregamento (o cookie é escrito pelo `SidebarProvider`).
-  const sidebarOpen = cookieStore.get("sidebar_state")?.value !== "false";
   const config = getSystemConfig(lastSystem);
 
   // Conversas do assistente (do próprio usuário) para a sidebar.
@@ -53,7 +51,7 @@ export default async function RegistrosLayout({
   }));
 
   return (
-    <SidebarProvider defaultOpen={sidebarOpen}>
+    <SidebarProvider defaultOpen>
       <RegistrosSidebar
         conversas={conversas}
         backHref={config.basePath}
@@ -77,6 +75,7 @@ export default async function RegistrosLayout({
                 mantém o próprio botão de busca visível no desktop. */}
             <CommandPaletteIconButton sidebarCollapsesToIcon />
             <AppNotifications />
+            <ThemeToggle />
             <AppSwitcher />
           </TopbarActions>
         </Topbar>

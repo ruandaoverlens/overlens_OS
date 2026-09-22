@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { connection } from "next/server";
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import {
   SidebarProvider,
@@ -11,6 +10,7 @@ import { SystemSidebar } from "@/components/doc-sidebar";
 import { DocTopbarLabel, DocTopbarUpLink } from "@/components/doc-breadcrumb";
 import { getChatConversations } from "@/lib/chat-conversations";
 import { AppSwitcher } from "@/components/app-switcher";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { AppNotifications } from "@/components/app-notifications";
 import { CommandPaletteIconButton } from "@/components/command-palette";
 import { AccessRestricted } from "@/app/_shared/access-restricted";
@@ -53,14 +53,10 @@ export default async function AdminLayout({
   // Promise não awaitada — resolve no Suspense da sidebar.
   // Garante renderização dinâmica (conversas são por usuário) sem bloquear o shell.
   await connection();
-  // `sidebar_state`: quem recolhe a sidebar continua com ela recolhida no
-  // próximo carregamento (o cookie é escrito pelo `SidebarProvider`).
-  const cookieStore = await cookies();
-  const sidebarOpen = cookieStore.get("sidebar_state")?.value !== "false";
   const conversations = getChatConversations();
 
   return (
-    <SidebarProvider defaultOpen={sidebarOpen}>
+    <SidebarProvider defaultOpen>
       <SystemSidebar
         sections={nav}
         basePath={config.basePath}
@@ -83,6 +79,7 @@ export default async function AdminLayout({
                 drawer no mobile, recolhida abaixo de 1180px. */}
             <CommandPaletteIconButton />
             <AppNotifications />
+            <ThemeToggle />
             <AppSwitcher />
           </TopbarActions>
         </Topbar>

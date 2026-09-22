@@ -67,7 +67,11 @@ function TooltipShortcut({
     <kbd
       data-slot="tooltip-shortcut"
       className={cn(
-        "bg-black text-white inline-flex items-center justify-center rounded-sm px-1.5 py-0.5 -my-0.5 font-mono text-xs font-medium",
+        // O balão do tooltip é `bg-foreground` (invertido em relação à página),
+        // então o chip precisa voltar à polaridade da página para aparecer:
+        // chip preto no tooltip claro do tema escuro, chip branco no tooltip
+        // escuro do tema claro.
+        "bg-background text-foreground inline-flex items-center justify-center rounded-sm px-1.5 py-0.5 -my-0.5 font-mono text-xs font-medium",
         className
       )}
       {...props}

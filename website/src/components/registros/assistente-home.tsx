@@ -8,7 +8,7 @@ import { PageHeader } from "@/components/page-header";
 import { SmQuestionLineIcon, SmGraphicEqLineIcon } from "@/components/icons";
 import { AssistenteComposer } from "@/components/registros/assistente-composer";
 import { notify } from "@/lib/notifications/toast";
-import { getGradient } from "@/lib/brand-gradients";
+import { getGradient, isLightBrandBase } from "@/lib/brand-gradients";
 import type { DocumentoRow, MarcaRow } from "@/lib/registros/types";
 
 interface Sugestao {
@@ -119,6 +119,10 @@ export function AssistenteHome({ marcas, documentos }: AssistenteHomeProps) {
       <ul className="grid gap-3 px-2 sm:grid-cols-2" aria-label="Sugestões de perguntas">
         {SUGESTOES.map((s) => {
           const Icon = s.icon;
+          const gradiente = getGradient(s.titulo);
+          // Marcas de cor cheia escura (kobold, boreal) derrubam o contraste do
+          // glifo preto quando a animação traz a parada de 0% para baixo dele.
+          const baseEscura = !isLightBrandBase(gradiente);
           return (
             <li key={s.titulo}>
               <Card className="group relative h-full transition-all duration-200 hover:border-muted-foreground/30 hover:bg-accent/50 hover:-translate-y-0.5 hover:shadow-md focus-within:ring-2 focus-within:ring-foreground">
@@ -129,15 +133,26 @@ export function AssistenteHome({ marcas, documentos }: AssistenteHomeProps) {
                     onClick={() => void iniciarConversa(s.pergunta)}
                     className="flex w-full items-center gap-3 text-left outline-none after:absolute after:inset-0 after:content-[''] disabled:cursor-not-allowed"
                   >
+                    {/* Os gradientes de marca são claros nos dois temas (são
+                        cores de marca, não seguem o tema), então o glifo é
+                        preto literal — não o preto que inverteria no escuro. */}
                     <span
-                      className="flex size-12 shrink-0 items-center justify-center rounded-xl text-black"
+                      className="relative flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-xl text-absolute-black"
                       style={{
-                        background: getGradient(s.titulo),
+                        background: gradiente,
                         backgroundSize: "300% 300%",
                         animation: "icon-gradient 6s ease infinite",
                       }}
                     >
-                      <Icon className="size-5" aria-hidden="true" />
+                      {baseEscura && (
+                        // Véu branco literal sobre a marca escura: mantém o
+                        // ladrilho claro em qualquer quadro da animação.
+                        <span
+                          aria-hidden="true"
+                          className="pointer-events-none absolute inset-0 bg-absolute-white/55"
+                        />
+                      )}
+                      <Icon className="relative size-5" aria-hidden="true" />
                     </span>
                     <span className="min-w-0 flex-1">
                       <CardTitle size="sm" className="truncate text-balance">

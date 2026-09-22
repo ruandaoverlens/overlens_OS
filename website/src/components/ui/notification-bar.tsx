@@ -315,8 +315,11 @@ function NotificationBarTabs({
         <TabsTrigger value="inbox" className="gap-1.5">
           Amigos
           {unreadCount > 0 && (
-            <span className="inline-flex items-center justify-center rounded-full bg-brand-atmos px-1.5 text-caption font-semibold leading-4 text-black">
+            // `brand-atmos` é invariante (azul claro de marca nos dois temas),
+            // então o texto sobre ela é preto LITERAL — não inverte com o tema.
+            <span className="inline-flex items-center justify-center rounded-full bg-brand-atmos px-1.5 text-caption font-semibold leading-4 text-absolute-black">
               {unreadCount}
+              <span className="sr-only"> não lidas</span>
             </span>
           )}
         </TabsTrigger>

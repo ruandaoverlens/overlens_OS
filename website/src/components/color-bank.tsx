@@ -99,12 +99,12 @@ function CopyRow({ label, value }: { label: string; value: string }) {
       type="button"
       onClick={handleCopy}
       aria-label={`Copiar ${label}: ${value}`}
-      className="flex items-center justify-between w-full px-4 py-3 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] transition-colors text-left outline-none focus-visible:ring-2 focus-visible:ring-foreground"
+      className="flex items-center justify-between w-full px-4 py-3 rounded-lg bg-surface-950 hover:bg-surface-900 transition-colors text-left outline-none focus-visible:ring-2 focus-visible:ring-foreground"
     >
       <span className={headingTitleVariants({ size: "eyebrow" })}>
         {label}
       </span>
-      <span className="text-sm text-white font-mono" aria-live="polite">
+      <span className="text-sm text-foreground font-mono" aria-live="polite">
         {copied ? "Copiado!" : value}
       </span>
     </button>
@@ -126,7 +126,7 @@ export function ColorDetail({
     <Dialog open onOpenChange={(open) => { if (!open) onClose(); }}>
       <DialogContent
         showCloseButton={false}
-        className="max-w-none sm:max-w-none max-h-none w-screen h-svh rounded-none p-0 bg-black border-0 flex flex-col gap-0 overflow-hidden"
+        className="max-w-none sm:max-w-none max-h-none w-screen h-svh rounded-none p-0 bg-background border-0 flex flex-col gap-0 overflow-hidden"
       >
         <DialogTitle className="sr-only">{color.name}</DialogTitle>
         <DialogDescription className="sr-only">
@@ -136,7 +136,7 @@ export function ColorDetail({
         {/* Top bar */}
         <div className="flex items-center justify-between px-4 py-3 shrink-0">
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-white/80 truncate">{color.name}</p>
+            <p className="text-sm font-medium text-surface-200 truncate">{color.name}</p>
             <p className="text-xs text-muted-foreground mt-0.5">{color.family}</p>
           </div>
           <div className="flex items-center gap-2 ml-4">
@@ -148,7 +148,7 @@ export function ColorDetail({
                   size="icon"
                   aria-label="Fechar"
                   onClick={onClose}
-                  className="text-white/60 hover:text-white hover:bg-white/10"
+                  className="text-surface-500 hover:text-foreground hover:bg-accent"
                 >
                   <SmCloseLineIcon />
                 </Button>
@@ -172,11 +172,11 @@ export function ColorDetail({
           <div className="max-w-md mx-auto flex flex-col gap-2">
             <CopyRow label="Nome" value={color.name} />
             <CopyRow label="Família" value={color.family} />
-            <div className="px-4 py-3 rounded-lg bg-white/[0.04]">
+            <div className="px-4 py-3 rounded-lg bg-surface-950">
               <HeadingTitle as="h3" size="eyebrow" className="block text-surface-400">
                 Descrição
               </HeadingTitle>
-              <p className="text-sm text-white mt-3 leading-relaxed">
+              <p className="text-sm text-foreground mt-3 leading-relaxed">
                 {color.description}
               </p>
             </div>
@@ -194,6 +194,8 @@ export function ColorDetail({
 
 // ─── Luminance helper ────────────────────────────────────────
 
+/** Preto/branco LITERAIS: o texto fica sobre a própria amostra de cor, que é
+ *  invariante. A escolha depende da luminosidade da cor, não do tema. */
 function getTextColor(oklch: string): string {
   // Extract lightness from oklch(L C H) — first number is 0-1
   const match = oklch.match(/oklch\(([\d.]+)/);
@@ -252,10 +254,12 @@ function ColorCard({
           size="icon-sm"
           aria-label={`Detalhes de ${color.name}`}
           onClick={onOpenDetail}
+          // Literais: o botão flutua sobre a amostra de cor, que não muda com
+          // o tema — quem define o contraste aqui é a cor, não o fundo do app.
           className={
             onDark
-              ? "rounded-full bg-black/50 text-white/70 hover:bg-black/70 hover:text-white"
-              : "rounded-full bg-white/60 text-black/70 hover:bg-white/80 hover:text-black"
+              ? "rounded-full bg-absolute-black/50 text-absolute-white/70 hover:bg-absolute-black/70 hover:text-absolute-white"
+              : "rounded-full bg-absolute-white/60 text-absolute-black/70 hover:bg-absolute-white/80 hover:text-absolute-black"
           }
         >
           <SmInfoLineIcon className="size-4" />

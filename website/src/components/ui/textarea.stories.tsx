@@ -72,7 +72,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: { placeholder: "Escreva seu texto aqui" },
+  // `aria-label` porque a story não tem `Label` visível: um campo sem nome
+  // acessível é anunciado só como "campo de texto" (WCAG 4.1.2). Em uso real
+  // o Textarea vem dentro de `Field`, que já provê o rótulo.
+  args: { placeholder: "Escreva seu texto aqui", "aria-label": "Seu texto" },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const textarea = await canvas.findByPlaceholderText("Escreva seu texto aqui");
@@ -130,7 +133,7 @@ export const Disabled: Story = {
 };
 
 export const WithMaxLength: Story = {
-  args: { placeholder: "Máximo 20 caracteres", maxLength: 20 },
+  args: { placeholder: "Máximo 20 caracteres", maxLength: 20, "aria-label": "Seu texto" },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const textarea = canvas.getByPlaceholderText("Máximo 20 caracteres");

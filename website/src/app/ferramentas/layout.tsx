@@ -9,6 +9,7 @@ import { Topbar, TopbarBreadcrumb, TopbarActions } from "@/components/ui/topbar"
 import { DocTopbarLabel, DocTopbarUpLink } from "@/components/doc-breadcrumb";
 import { SystemSidebar } from "@/components/doc-sidebar";
 import { AppSwitcher } from "@/components/app-switcher";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { AppNotifications } from "@/components/app-notifications";
 import { CommandPaletteIconButton } from "@/components/command-palette";
 import { getSystemConfig } from "@/lib/system-configs";
@@ -39,16 +40,13 @@ export default async function FerramentasLayout({
   // "voltar" ao system e "+" nova conversa também dentro das ferramentas.
   const cookieStore = await cookies();
   const lastSystem = cookieStore.get("overlens_last_system")?.value;
-  // Mesma leitura dos demais layouts: o cookie é um só (path=/), então inverter a
-  // semântica aqui faria a preferência de uma rota contradizer a das outras.
-  const sidebarOpen = cookieStore.get("sidebar_state")?.value !== "false";
   const config = getSystemConfig(lastSystem);
   // Garante renderização dinâmica (conversas são por usuário) sem bloquear o shell.
   await connection();
   const conversations = getChatConversations();
 
   return (
-    <SidebarProvider defaultOpen={sidebarOpen}>
+    <SidebarProvider defaultOpen>
       {/* Modo "icon" em vez de offcanvas: recolhida, a sidebar sumia inteira e
           levava junto a busca (Ctrl+K) e o "+" de nova conversa. */}
       <SystemSidebar
@@ -84,6 +82,7 @@ export default async function FerramentasLayout({
                 mantém o próprio botão de busca visível no desktop. */}
             <CommandPaletteIconButton sidebarCollapsesToIcon />
             <AppNotifications />
+            <ThemeToggle />
             <AppSwitcher />
           </TopbarActions>
         </Topbar>

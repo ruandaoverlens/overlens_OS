@@ -1,8 +1,27 @@
 "use client";
 
 // Boundary global: substitui o root layout inteiro, por isso precisa do seu
-// próprio <html>/<body>. globals.css não é carregado aqui, então os estilos
-// são inline.
+// próprio <html>/<body>. globals.css não é carregado aqui e o next-themes não
+// roda, então os dois temas são resolvidos por `prefers-color-scheme` num
+// <style> inline, com variáveis próprias.
+const themeCss = `
+  :root {
+    color-scheme: dark light;
+    --ge-bg: #000;
+    --ge-fg: #fff;
+    --ge-dim: #9a9a9a;   /* 7,46:1 sobre #000 */
+    --ge-faint: #8c8c8c; /* 6,25:1 sobre #000 */
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --ge-bg: #fff;
+      --ge-fg: #101010;
+      --ge-dim: #6b6b6b;   /* 5,33:1 sobre #fff */
+      --ge-faint: #767676; /* 4,54:1 sobre #fff */
+    }
+  }
+`;
+
 export default function GlobalError({
   error,
   reset,
@@ -11,9 +30,10 @@ export default function GlobalError({
   reset: () => void;
 }) {
   return (
-    <html lang="pt-BR" className="dark">
+    <html lang="pt-BR">
       <head>
         <title>Algo deu errado · Overlens OS</title>
+        <style dangerouslySetInnerHTML={{ __html: themeCss }} />
       </head>
       <body
         style={{
@@ -23,8 +43,8 @@ export default function GlobalError({
           alignItems: "center",
           justifyContent: "center",
           padding: "0 16px",
-          background: "#000",
-          color: "#fff",
+          background: "var(--ge-bg)",
+          color: "var(--ge-fg)",
           fontFamily:
             'Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
         }}
@@ -41,7 +61,7 @@ export default function GlobalError({
           >
             Algo deu errado
           </h1>
-          <p style={{ fontSize: 14, opacity: 0.6, margin: "0 0 24px" }}>
+          <p style={{ fontSize: 14, color: "var(--ge-dim)", margin: "0 0 24px" }}>
             Ocorreu um erro inesperado ao carregar a aplicação. Você pode tentar
             novamente.
           </p>
@@ -54,8 +74,9 @@ export default function GlobalError({
               padding: "0 24px",
               borderRadius: 9999,
               border: "none",
-              background: "#fff",
-              color: "#000",
+              // Botão é o inverso do fundo nos dois temas.
+              background: "var(--ge-fg)",
+              color: "var(--ge-bg)",
               fontSize: 14,
               fontWeight: 500,
               textTransform: "uppercase",
@@ -69,7 +90,7 @@ export default function GlobalError({
               style={{
                 marginTop: 24,
                 fontSize: 11,
-                opacity: 0.4,
+                color: "var(--ge-faint)",
                 fontFamily: "ui-monospace, monospace",
               }}
             >

@@ -815,7 +815,7 @@ export function DocEditor({
           lang="pt-BR"
           aria-label="Título da página"
           placeholder="Título da página"
-          className="block w-full resize-none overflow-hidden bg-transparent p-0 field-sizing-content font-heading text-display font-normal uppercase tracking-normal leading-none text-balance text-foreground outline-none placeholder:text-muted-foreground/40 focus-visible:ring-transparent"
+          className="block w-full resize-none overflow-hidden bg-transparent p-0 field-sizing-content font-heading text-display font-normal uppercase tracking-normal leading-none text-balance text-foreground outline-none placeholder:text-surface-600 focus-visible:ring-transparent"
         />
         <EditorContent editor={editor} />
       </div>

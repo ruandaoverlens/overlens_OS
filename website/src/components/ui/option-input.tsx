@@ -13,7 +13,7 @@ const optionInputVariants = cva(
   [
     "group/option relative flex w-full items-center overflow-clip cursor-pointer select-none",
     "bg-input/30",
-    "border-2 border-transparent",
+    "border-2 border-field-border",
     "transition-[background-color,border-color]",
     "hover:bg-input/50",
     "focus-visible:border-foreground/70 focus-visible:bg-transparent outline-none",
