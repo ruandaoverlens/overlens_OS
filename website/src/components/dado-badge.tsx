@@ -35,7 +35,7 @@ export function DadoBadge({
           <button
             type="button"
             aria-label={`Qualidade do dado: ${grade}, ${info.label}. ${info.meaning}`}
-            className={`inline-flex size-[2.1em] shrink-0 cursor-help items-center justify-center rounded-full font-body text-[0.9em] font-semibold leading-none transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ${info.dotClass}`}
+            className={`inline-flex size-[1.85em] shrink-0 cursor-help items-center justify-center rounded-full font-body text-[0.85em] font-semibold leading-none transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ${info.dotClass}`}
           >
             {grade}
           </button>
@@ -60,7 +60,7 @@ export function DadoBadge({
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`Fonte: ${fonte}`}
-                className="inline-flex size-[2.1em] shrink-0 items-center justify-center rounded-full bg-muted font-body text-[0.9em] font-semibold leading-none text-muted-foreground no-underline transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                className="inline-flex size-[1.85em] shrink-0 items-center justify-center rounded-full bg-muted font-body text-[0.85em] font-semibold leading-none text-muted-foreground no-underline transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
               >
                 F
               </a>
@@ -68,7 +68,7 @@ export function DadoBadge({
               <button
                 type="button"
                 aria-label={`Fonte: ${fonte}`}
-                className="inline-flex size-[2.1em] shrink-0 cursor-help items-center justify-center rounded-full bg-muted font-body text-[0.9em] font-semibold leading-none text-muted-foreground transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                className="inline-flex size-[1.85em] shrink-0 cursor-help items-center justify-center rounded-full bg-muted font-body text-[0.85em] font-semibold leading-none text-muted-foreground transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
               >
                 F
               </button>
