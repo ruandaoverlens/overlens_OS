@@ -56,9 +56,9 @@ Executar um checklist binário (passa/falha) em cada página, garantindo que TOD
 - [ ] Presença de permeabilidade à fragilidade (direito de não conseguir, tempo de não saber)
 - [ ] Sem dogmatismo: apresenta visão, não verdade absoluta
 - [ ] Responsabilidade apontando para futuro, não culpa no passado
-- [ ] Toda afirmação estratégica está classificada com a tag inline `dado`, por exemplo `<dado q="A" />`, usando `A` para definido, `B` para em validação, `C` para hipótese, `D` para histórico e `E` para pendente (na dúvida entre `A` e `B`, vale `B`). Item eliminatório
+- [ ] Toda afirmação estratégica está classificada com a tag `dado` ao fim do bloco, como uma nota, por exemplo `... em realidade. <dado q="A" />`, usando `A` para definido, `B` para em validação, `C` para hipótese, `D` para histórico e `E` para pendente (na dúvida entre `A` e `B`, vale `B`). Item eliminatório
 - [ ] Nenhuma persona inventada; material dependente das personas antigas (Brunin, Tella, Ander, Lilly) está marcado como *"necessita revisão de persona"*
-- [ ] Informação historicamente verdadeira não foi apagada: está em seção de Histórico / Posicionamentos anteriores / Evolução, marcada com `<dado q="D" />`
+- [ ] Informação historicamente verdadeira não foi apagada: está em seção de Histórico / Posicionamentos anteriores / Evolução, com o bloco fechado por `<dado q="D" />`
 
 ### 5. CONFORMIDADE TÉCNICA
 - [ ] Nome do arquivo segue padrão: `[PAGINA] Nome da Página.md`

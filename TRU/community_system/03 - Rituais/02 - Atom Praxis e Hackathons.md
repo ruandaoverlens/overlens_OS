@@ -4,7 +4,7 @@
 
 ## Atom Praxis
 
-<dado q="B" /> **Atom Praxis** é o nome usado para iniciativas orientadas à prática, criação, experimentação e construção dentro do ecossistema Overlens.
+**Atom Praxis** é o nome usado para iniciativas orientadas à prática, criação, experimentação e construção dentro do ecossistema Overlens. <dado q="B" />
 
 O princípio por trás do nome é o que importa:
 
@@ -39,7 +39,7 @@ Três mecanismos operam simultaneamente, e nenhum deles é acidental:
 
 ## Hackathons
 
-<dado q="B" /> **Hackathons não devem ser documentados apenas como eventos de comunidade.** Eles funcionam como mecanismo estratégico, com função em mais de uma frente ao mesmo tempo.
+**Hackathons não devem ser documentados apenas como eventos de comunidade.** Eles funcionam como mecanismo estratégico, com função em mais de uma frente ao mesmo tempo. <dado q="B" />
 
 | Função | O que o hackathon produz |
 | :---- | :---- |
@@ -66,7 +66,7 @@ O último elo é o mais frágil e o mais importante. Hackathons têm uma falha e
 
 ## Caminho para incubação
 
-<dado q="C" /> Projetos relevantes podem eventualmente avançar para **incubação**.
+Projetos relevantes podem eventualmente avançar para **incubação**. <dado q="C" />
 
 Incubação é frente de negócio definida no **Business Document**: acompanha um projeto específico em estágio inicial para que ganhe estrutura e evidência de viabilidade. Não é curso, não é consultoria tradicional, não é mentoria genérica. É uma frente em construção, classificada como hipótese nas apostas estratégicas da companhia.
 

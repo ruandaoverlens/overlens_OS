@@ -2,7 +2,7 @@
 
 ## Quase toda empresa de educação tem comunidade. Quase nenhuma depende dela para entregar o que promete. Essa é a diferença que esta página tenta sustentar.
 
-<dado q="B" /> A comunidade é tratada aqui como uma das infraestruturas do ecossistema, no mesmo nível conceitual em que a tecnologia é infraestrutura. Não como espaço de convivência que acompanha o produto, mas como parte do mecanismo pelo qual o produto funciona.
+A comunidade é tratada aqui como uma das infraestruturas do ecossistema, no mesmo nível conceitual em que a tecnologia é infraestrutura. Não como espaço de convivência que acompanha o produto, mas como parte do mecanismo pelo qual o produto funciona. <dado q="B" />
 
 ## O que comunidade não é
 
@@ -25,21 +25,21 @@ O objetivo de longo prazo pode ser enunciado de forma precisa:
 
 Essa formulação tem uma qualidade rara para uma ambição cultural: ela é observável. Probabilidade sobe ou não sobe. Encontro acontece ou não acontece. Projeto avança ou não avança.
 
-Ela também explica por que comunidade não é acessório. Se a unidade central da experiência é o projeto (e é, conforme o Product System <dado fonte="Product System" />), então tudo aquilo de que um projeto depende e que a empresa não consegue fornecer sozinha precisa vir de algum lugar. A comunidade é esse lugar.
+Ela também explica por que comunidade não é acessório. Se a unidade central da experiência é o projeto (e é, conforme o Product System), então tudo aquilo de que um projeto depende e que a empresa não consegue fornecer sozinha precisa vir de algum lugar. A comunidade é esse lugar. <dado fonte="Product System" />
 
 ## A consequência econômica
 
-<dado q="B" /> Se a leitura acima estiver correta, uma consequência se impõe: **parte do valor que a Overlens entrega não é produzida pela Overlens, e sim pelos membros entre si.**
+Se a leitura acima estiver correta, uma consequência se impõe: **parte do valor que a Overlens entrega não é produzida pela Overlens, e sim pelos membros entre si.** <dado q="B" />
 
 Feedback qualificado, colaboração real, descoberta de um sócio, um conselho no momento certo, a referência que economiza três meses: nada disso passa pela produção da empresa. A empresa cria a condição; o valor nasce entre as pessoas.
 
 Isso torna a comunidade **o único ativo do ecossistema que tende a aumentar de valor com escala**. Conteúdo não melhora quando mais gente assiste. Metodologia não melhora quando mais gente aplica. Uma rede de pessoas que constroem coisas, sim: cada participante qualificado aumenta o que os demais podem encontrar.
 
-O Business Document trata dessa propriedade como candidata a vantagem defensável (ver **Moats** e **Strategic Bets**). A qualificação registrada lá vale aqui <dado fonte="Business Document › Moats e Strategic Bets" />: é a hipótese mais forte da companhia e continua sendo uma hipótese.
+O Business Document trata dessa propriedade como candidata a vantagem defensável (ver **Moats** e **Strategic Bets**). A qualificação registrada lá vale aqui: é a hipótese mais forte da companhia e continua sendo uma hipótese. <dado fonte="Business Document › Moats e Strategic Bets" />
 
 ## Densidade: a variável que decide
 
-<dado q="B" /> A propriedade anterior tem uma condição: *desde que a densidade se mantenha*.
+A propriedade anterior tem uma condição: *desde que a densidade se mantenha*. <dado q="B" />
 
 Densidade é a proporção de pessoas presentes que efetivamente contribuem, constroem, respondem e aparecem, em relação ao total. É diferente de tamanho e frequentemente inversa a ele.
 
@@ -53,7 +53,7 @@ Esse é o motivo pelo qual curadoria, comportamento esperado e critérios de ent
 
 ## O que ainda não sabemos
 
-<dado q="E" /> Três lacunas impedem que esta página vá além do princípio:
+Três lacunas impedem que esta página vá além do princípio: <dado q="E" />
 
 1. **Como densidade é medida.** Não existe definição operacional nem instrumento. Sem isso, o risco acima não é observável, apenas argumentável.
 2. **Qual o limite de escala por ambiente.** Não há decisão sobre tamanho máximo, segmentação por interesse, por projeto ou por modo de participação.

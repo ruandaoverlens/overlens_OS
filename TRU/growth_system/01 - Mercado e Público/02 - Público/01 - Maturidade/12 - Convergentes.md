@@ -2,7 +2,7 @@
 
 ## Convergente é o modo de quem atravessa fronteiras entre conhecimentos, ferramentas e disciplinas, e conecta partes que antes estavam separadas.
 
-> **Nota de enquadramento.** <dado q="B" fonte="02 - Público/06 - Perfis de Clientes.md" /> Apesar do nome da pasta, **não se trata de maturidade sequencial.** Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, não degraus de uma escada nem níveis de senioridade. Ninguém precisa "sair" do Operante para "chegar" ao Convergente, e a mesma pessoa pode agir em modos diferentes conforme o problema. Formulação completa em `02 - Público/06 - Perfis de Clientes.md`.
+> **Nota de enquadramento.** Apesar do nome da pasta, **não se trata de maturidade sequencial.** Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, não degraus de uma escada nem níveis de senioridade. Ninguém precisa "sair" do Operante para "chegar" ao Convergente, e a mesma pessoa pode agir em modos diferentes conforme o problema. Formulação completa em `02 - Público/06 - Perfis de Clientes.md`. <dado q="B" fonte="02 - Público/06 - Perfis de Clientes.md" />
 
 Quem age no modo Convergente percebe que uma única especialização já não resolve certos problemas. Busca conhecimento fora da especialidade de origem, conecta disciplinas, amplia repertório, combina ferramentas e tenta adaptar o que já sabe a contextos novos, enquanto começa a enxergar os limites dos paradigmas anteriores.
 
@@ -40,7 +40,7 @@ O atrito característico desse modo: a conexão acontece, mas ainda apoiada em m
 | **Barreira Sistêmica** | Excesso de fórmulas prontas de crescimento que não ensinam pensamento adaptativo. Pressão silenciosa por resultados imediatos num ambiente onde construir estrutura exige coragem intelectual e paciência. |
 
 **Como a Overlens entra**: Atlas (entrada e ativação) e Overpass (camada contínua).  
-**Métricas de sucesso** <dado q="D" nota="Necessitam revalidação." />:  
+**Métricas de sucesso**: <dado q="D" nota="Necessitam revalidação." />  
 Depoimento sobre receita que se repete sem novo esforço heroico  
 NPS acima de 60 pontos (mínimo)
 

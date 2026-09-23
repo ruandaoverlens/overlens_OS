@@ -8,7 +8,7 @@ O ponto de partida herdado é curto: **Atom é a identidade básica de um membro
 
 ## O que Atom não é
 
-<dado q="A" /> Um Atom não deve ser entendido como aluno, assinante, comprador, lead ou usuário.
+Um Atom não deve ser entendido como aluno, assinante, comprador, lead ou usuário. <dado q="A" />
 
 Essas são **condições transacionais ou funcionais**: descrevem a relação de alguém com um contrato, com um produto ou com um funil. São reais, continuam existindo e têm utilidade administrativa. O que elas não fazem é descrever pertencimento.
 
@@ -18,7 +18,7 @@ A palavra existe justamente para deslocar a relação escolar "empresa → aluno
 
 ## O que se espera de um Atom
 
-<dado q="C" /> Não existe hoje um código de participação oficial. O que segue é a formulação de princípios coerentes com a tese, não uma regra decidida.
+Não existe hoje um código de participação oficial. O que segue é a formulação de princípios coerentes com a tese, não uma regra decidida. <dado q="C" />
 
 - **Presença que produz algo.** Participar é contribuir de alguma forma: uma pergunta bem feita, um feedback, uma referência, um projeto mostrado antes de estar pronto. Observar em silêncio é legítimo e não é o que sustenta a densidade.
 - **Mostrar trabalho, não apenas opinião.** A comunidade se organiza em torno de projetos. O que circula com mais valor é evidência do que se está construindo.
@@ -29,7 +29,7 @@ Nada disso é exigência de intensidade. A Overlens não trata dedicação extre
 
 ## O que um Atom recebe
 
-<dado q="B" /> O que a comunidade oferece decorre do que ela é, infraestrutura e não programação:
+O que a comunidade oferece decorre do que ela é, infraestrutura e não programação: <dado q="B" />
 
 - acesso a pessoas que estão construindo coisas próximas o bastante para serem úteis e distantes o bastante para ampliarem a visão;
 - feedback qualificado sobre projeto em andamento, não apenas sobre resultado;
@@ -42,7 +42,7 @@ A formulação honesta é que a comunidade aumenta a probabilidade desses encont
 
 ## Como alguém entra
 
-<dado q="E" /> Não existe decisão oficial sobre critério de entrada.
+Não existe decisão oficial sobre critério de entrada. <dado q="E" />
 
 As perguntas abertas são específicas e importam: alguém se torna Atom ao comprar qualquer oferta? Ao participar de um evento? Existe entrada independente de compra? Há curadoria, candidatura ou convite? A identidade permanece quando a relação comercial termina?
 
@@ -50,13 +50,13 @@ Cada resposta possível constrói uma comunidade diferente. Entrada aberta ampli
 
 ## Como um Atom é reconhecido
 
-<dado q="E" /> Não há sistema definido de identificação, marcação, perfil público ou sinal de participação.
+Não há sistema definido de identificação, marcação, perfil público ou sinal de participação. <dado q="E" />
 
 O que existe são direções coerentes já registradas em outros documentos: artefatos físicos podem funcionar como marca de participação (ver **Artefatos de Pertencimento**) e a plataforma poderia tornar visível o que uma pessoa construiu, hipótese que pertence ao **Product System** e depende dele para existir.
 
 ## Atom e os quatro modos
 
-<dado q="B" /> Os quatro modos descrevem formas de agir, aprender, pensar e criar:
+Os quatro modos descrevem formas de agir, aprender, pensar e criar: <dado q="B" />
 
 > **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**
 
@@ -70,4 +70,4 @@ Três leituras estão explicitamente proibidas:
 
 O que a Overlens deseja é ampliar o repertório de modos disponíveis para uma pessoa: que ela consiga executar, conectar, criar e orquestrar conforme o problema exigir. Isso é aumento de capacidade, não subida de nível.
 
-**Status do modelo:** <dado q="B" /> A implementação ainda pode evoluir.
+A implementação ainda pode evoluir. <dado q="B" />

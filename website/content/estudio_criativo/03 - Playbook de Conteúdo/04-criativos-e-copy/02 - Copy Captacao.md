@@ -42,9 +42,9 @@ Ele deixa claro para quem é e, principalmente, para quem não é.
 
 ## Quando esta peça se aplica
 
-<dado q="A" /> Captação é o único dos três tipos de criativo que não depende de ciclo. Ela se aplica sempre: em campanha de lançamento, em evento pontual e, principalmente, na operação contínua.
+Captação é o único dos três tipos de criativo que não depende de ciclo. Ela se aplica sempre: em campanha de lançamento, em evento pontual e, principalmente, na operação contínua. <dado q="A" />
 
-A Overlens está migrando de uma operação dependente de lançamentos para **aquisição e vendas contínuas** <dado q="B" />. Isso muda menos a copy de captação do que qualquer outra, porque a função dela, iniciar relação, é a mesma nos dois regimes. O que muda é o horizonte.
+A Overlens está migrando de uma operação dependente de lançamentos para **aquisição e vendas contínuas**. Isso muda menos a copy de captação do que qualquer outra, porque a função dela, iniciar relação, é a mesma nos dois regimes. O que muda é o horizonte. <dado q="B" />
 
 **O que muda em operação contínua:**
 

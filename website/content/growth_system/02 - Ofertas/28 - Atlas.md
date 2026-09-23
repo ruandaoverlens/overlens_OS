@@ -12,7 +12,7 @@ related: [growth_system/02 - Ofertas/23 - Ofertas, growth_system/02 - Ofertas/29
 
 ## O Atlas é a experiência de entrada e ativação da Overlens: o intervalo curto em que alguém deixa de ouvir falar da nossa maneira de aprender e construir e passa a experimentá-la.
 
-Status: <dado q="A" nota="Oferta ativa." /> A definição da oferta pertence ao Business Document, em *Arquitetura de Produtos e Serviços*. Esta página trata do que pertence ao Growth System: como as pessoas descobrem o Atlas, que argumento as move, como compram e o que acontece depois.
+A definição da oferta pertence ao Business Document, em *Arquitetura de Produtos e Serviços*. Esta página trata do que pertence ao Growth System: como as pessoas descobrem o Atlas, que argumento as move, como compram e o que acontece depois. <dado q="A" nota="Oferta ativa." />
 
 O princípio do Atlas é permitir que alguém **experimente rapidamente a maneira Overlens de aprender e construir**. Tudo o mais (duração, formato, tema e preço) é decisão comercial que pode mudar sem alterar esse princípio.
 
@@ -22,7 +22,7 @@ Por isso, uma correção importante em relação à documentação anterior: **p
 
 ## O que o Atlas faz pelo crescimento
 
-<dado q="B" /> Dentro do ecossistema, o Atlas tende a cumprir simultaneamente cinco papéis:
+Dentro do ecossistema, o Atlas tende a cumprir simultaneamente cinco papéis: <dado q="B" />
 
 | Papel | O que significa no Growth System |
 | :---- | :---- |
@@ -60,7 +60,7 @@ Esses números descrevem o contexto do mercado. **Não são promessa de resultad
 
 ## Para quem o Atlas tende a fazer sentido
 
-<dado q="B" nota="Necessita revisão de persona." /> Enquanto as personas oficiais não são redefinidas, registramos os **estados** observados em quem procurou a oferta. Estado, não profissão: o que aproxima essas pessoas é a distância entre o que querem construir e o que conseguem sustentar hoje.
+Enquanto as personas oficiais não são redefinidas, registramos os **estados** observados em quem procurou a oferta. Estado, não profissão: o que aproxima essas pessoas é a distância entre o que querem construir e o que conseguem sustentar hoje. <dado q="B" nota="Necessita revisão de persona." />
 
 - **Quem está começando algo próprio** e não quer ficar refém de peças avulsas.
 - **Quem vem de um ofício técnico** (engenharia, arquitetura, desenvolvimento, arte, design ou nenhuma dessas origens) domina uma disciplina e precisa transformá-la em negócio.
@@ -81,7 +81,7 @@ Essa lista descreve a entrega da edição documentada. A composição pode mudar
 
 ## Jornada de compra
 
-<dado q="B" /> O que se sabe hoje sobre o caminho até a inscrição:
+O que se sabe hoje sobre o caminho até a inscrição: <dado q="B" />
 
 | Etapa | O que acontece |
 | :---- | :---- |
@@ -91,7 +91,7 @@ Essa lista descreve a entrega da edição documentada. A composição pode mudar
 | **Participa** | A experiência é o argumento da próxima decisão. |
 | **Continua** | Descobre a camada contínua e a camada de aceleração. |
 
-<dado q="E" /> A cadência de comunicação, o processo de follow-up e o desenho da passagem do Atlas para as demais camadas ainda não estão definidos. Ver *Arquitetura Comercial*, na seção de Estratégia.
+A cadência de comunicação, o processo de follow-up e o desenho da passagem do Atlas para as demais camadas ainda não estão definidos. Ver *Arquitetura Comercial*, na seção de Estratégia. <dado q="E" />
 
 ## Ficha técnica: Atlas
 
@@ -101,8 +101,8 @@ Essa lista descreve a entrega da edição documentada. A composição pode mudar
 | **Papel no ecossistema** | Experiência de entrada e ativação |
 | **Promessas já utilizadas** <dado q="D" /> | - Construa seu time de agentes de IA em um fim de semana - Construa seu Brand System com IA em um fim de semana - Construa em um fim de semana |
 | **Website** | Página principal ([Toque aqui para acessar](https://www.overlens.com.br/atlas-brand-system/inscricao-b)) |
-| **Tipo de produto** | <dado q="D" /> Classificado como "Front-end / Ingresso". Classificação comercial, não definição estratégica. |
-| **GTM** | <dado q="D" /> Product Led Growth / 1 Stage. Em revisão com a migração para operação contínua. |
+| **Tipo de produto** | Classificado como "Front-end / Ingresso". Classificação comercial, não definição estratégica. <dado q="D" /> |
+| **GTM** | Product Led Growth / 1 Stage. Em revisão com a migração para operação contínua. <dado q="D" /> |
 | **Preço praticado** <dado q="D" /> | Ingresso: R$19 (Lote 01) |
 |  | Ingresso: R$29,90 (lote posterior, de R$79) |
 |  | Gravação: R$197 |
@@ -124,9 +124,9 @@ Essa lista descreve a entrega da edição documentada. A composição pode mudar
 
 ## O que precisa ser decidido
 
-1. <dado q="E" /> Qual é o indicador de ativação do Atlas: o que caracteriza uma primeira experiência bem-sucedida.
-2. <dado q="E" /> Se o Atlas permanece com tema fixo (sistema de marca) ou passa a ter temas variáveis por edição.
-3. <dado q="E" /> Como o Atlas passa a operar dentro de uma lógica contínua, e não apenas por edições.
-4. <dado q="E" /> Qual é a transição desenhada entre Atlas e a camada contínua.
+1. Qual é o indicador de ativação do Atlas: o que caracteriza uma primeira experiência bem-sucedida. <dado q="E" />
+2. Se o Atlas permanece com tema fixo (sistema de marca) ou passa a ter temas variáveis por edição. <dado q="E" />
+3. Como o Atlas passa a operar dentro de uma lógica contínua, e não apenas por edições. <dado q="E" />
+4. Qual é a transição desenhada entre Atlas e a camada contínua. <dado q="E" />
 
 Leia o [Manual do Overpass](https://docs.google.com/document/d/1jguC-WLBlyvQf3jwQc-NQex90MmfzcryUMA9CokUUaQ/edit?tab=t.0) para mais informações.

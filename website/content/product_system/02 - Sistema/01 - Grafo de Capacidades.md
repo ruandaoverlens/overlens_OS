@@ -13,7 +13,7 @@ related: []
 
 ## A ambição é simples de enunciar e difícil de qualquer outra forma: que a Overlens consiga dizer o que cada pessoa consegue fazer, e não apenas o que ela consumiu.
 
-**Status:** <dado q="C" nota="Não existe." /> Esta página descreve um conceito e o que ele exigiria, não um sistema em construção. Nenhuma decisão de modelo de dados, schema ou arquitetura técnica foi tomada, e nenhuma deve ser inferida daqui.
+Esta página descreve um conceito e o que ele exigiria, não um sistema em construção. Nenhuma decisão de modelo de dados, schema ou arquitetura técnica foi tomada, e nenhuma deve ser inferida daqui. <dado q="C" nota="Não existe." />
 
 A pergunta que quase toda plataforma de educação sabe responder é "o que essa pessoa estudou". É uma pergunta de consumo, e ela é fácil porque o dado aparece sozinho: basta registrar cliques, conclusões e tempo de sessão.
 
@@ -54,7 +54,7 @@ O que se pretende aqui é o oposto em três aspectos:
 
 ## O que isto exigiria
 
-<dado q="C" /> O que teria que existir antes, na ordem em que a dependência se impõe:
+O que teria que existir antes, na ordem em que a dependência se impõe: <dado q="C" />
 
 1. **Projetos reais acontecendo dentro do ecossistema.** Sem projeto, não há o que observar.
 2. **Registro de execução com fricção baixa.** Se registrar custar caro, ninguém registra, e o sistema morre de fome. Ver `Sistema › Evidências e Progresso`.
@@ -74,10 +74,10 @@ O que se pretende aqui é o oposto em três aspectos:
 
 ## O que está em aberto
 
-- <dado q="E" /> O que é uma capacidade dentro da Overlens e como ela é nomeada.
-- <dado q="E" /> Como capacidade é verificada, e por quem.
-- <dado q="E" /> O que a pessoa vê do próprio grafo, e o que é visível para os outros.
-- <dado q="E" /> Como o dado se relaciona com reputação e papéis na comunidade, decisão que pertence ao **Community System**, não a este documento.
-- <dado q="E" /> Tudo o que for modelo de dados, arquitetura ou implementação. Nada disso foi decidido, e preencher com suposição seria o erro que este sistema existe para evitar.
+- O que é uma capacidade dentro da Overlens e como ela é nomeada. <dado q="E" />
+- Como capacidade é verificada, e por quem. <dado q="E" />
+- O que a pessoa vê do próprio grafo, e o que é visível para os outros. <dado q="E" />
+- Como o dado se relaciona com reputação e papéis na comunidade, decisão que pertence ao **Community System**, não a este documento. <dado q="E" />
+- Tudo o que for modelo de dados, arquitetura ou implementação. Nada disso foi decidido, e preencher com suposição seria o erro que este sistema existe para evitar. <dado q="E" />
 
 A aposta correspondente é `Business Document › Strategic Bets › Aposta 8 · Sistema operacional de aprendizagem e realização`.

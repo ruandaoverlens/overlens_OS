@@ -18,7 +18,7 @@ A auditoria abaixo **foi executada**. Este documento passa a ter duas funções:
 | **24 documentos em conflito** | ✅ Feito. Nada apagado: o que representava a tese anterior virou seção de histórico, marcada com `<dado q="D" />`, ou recebeu aviso de status. |
 | **9 frentes a criar** | ✅ 7 feitas: Business Document, definição de **Atom**, **Community System**, **Product System**, posicionamento atualizado, arquitetura comercial contínua, documentação de PBL. ⏳ 2 pendentes por decisão: **redefinição de personas** e **Value Proposition Canvas + Mapa de Empatia** (dependem da primeira). |
 | **Personas antigas** | ⏳ Preservadas e marcadas **"necessita revisão de persona"** nas 10 páginas afetadas. Nenhuma persona nova foi inventada. |
-| **Pesquisa de mercado** | ⏳ <dado q="E" /> Nenhum número foi estimado. |
+| **Pesquisa de mercado** | ⏳ Nenhum número foi estimado. <dado q="E" /> |
 
 **O que mudou na estrutura da base:** dois sistemas novos (`product_system`, `community_system`) e o `business_doc`, todos ligados à plataforma em `/product`, `/community` e `/business`. A fonte canônica passou a ser `website/content/` (com frontmatter); `TRU/` é o espelho sem frontmatter, regenerado por `website/scripts/sync-tru.py`.
 

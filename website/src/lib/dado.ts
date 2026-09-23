@@ -16,7 +16,12 @@ export interface DadoGradeInfo {
   label: string;
   /** O que a letra significa, em uma frase. */
   meaning: string;
-  /** Classes do ponto: tinta de fundo e borda na cor de marca. */
+  /**
+   * Classes do ponto: cor de marca chapada no fundo e a letra na polaridade
+   * que passa em cima dela. Preto e branco aqui sao literais porque a cor de
+   * marca nao inverte com o tema: a letra tem que acompanhar a propria cor,
+   * nao a pagina. Cada par esta medido em `scripts/check-theme-contrast.mjs`.
+   */
   dotClass: string;
 }
 
@@ -24,27 +29,27 @@ export const DADO_GRADES: Record<DadoGrade, DadoGradeInfo> = {
   A: {
     label: "DEFINIDO",
     meaning: "Decisão tomada e atualmente válida.",
-    dotClass: "border-brand-midori/70 bg-brand-midori/20",
+    dotClass: "bg-brand-midori text-absolute-black",
   },
   B: {
     label: "EM VALIDAÇÃO",
     meaning: "Direção em teste, com evidência parcial.",
-    dotClass: "border-brand-sahara/70 bg-brand-sahara/20",
+    dotClass: "bg-brand-sahara text-absolute-black",
   },
   C: {
     label: "HIPÓTESE",
     meaning: "Possibilidade ainda não validada.",
-    dotClass: "border-brand-atmos/70 bg-brand-atmos/20",
+    dotClass: "bg-brand-atmos text-absolute-black",
   },
   D: {
     label: "HISTÓRICO",
     meaning: "Já foi verdadeiro; não representa a direção atual.",
-    dotClass: "border-surface-400/70 bg-surface-400/20",
+    dotClass: "bg-surface-400 text-absolute-white dark:text-absolute-black",
   },
   E: {
     label: "PENDENTE",
     meaning: "Precisa existir e ainda não existe.",
-    dotClass: "border-brand-cotta/70 bg-brand-cotta/25",
+    dotClass: "bg-brand-cotta text-absolute-white",
   },
 };
 

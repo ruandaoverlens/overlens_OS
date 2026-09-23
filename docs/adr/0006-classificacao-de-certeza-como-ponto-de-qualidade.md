@@ -1,6 +1,6 @@
 # ADR-0006: Classificação de certeza como ponto de qualidade e fim dos travessões
 
-- **Status**: Aceito
+- **Status**: Aceito, com revisão de 2026-09-22 sobre a posição da tag (ver "Revisão")
 - **Data**: 2026-09-22
 - **Decisores**: Ruan Braz
 
@@ -37,7 +37,7 @@ A marcação passa a ser uma tag no markdown:
 
 `q` é obrigatório e vai de `A` a `E`. `nota` é opcional e leva uma frase curta de qualificação. `fonte` é opcional e só aparece quando o documento **declara** de onde a informação veio: um link, um arquivo da própria base, uma pesquisa nomeada, um relatório ou uma métrica identificada. Nunca se inventa fonte: a ausência de fonte é informação verdadeira sobre a base.
 
-A tag é inline. Ela abre o parágrafo, abre o item de lista ou ocupa a célula da tabela, e nunca fica sozinha numa linha separada do texto que classifica.
+A tag é inline. Ela abre o parágrafo, abre o item de lista ou ocupa a célula da tabela, e nunca fica sozinha numa linha separada do texto que classifica. *(Esta frase foi revista: ver "Revisão".)*
 
 ### 2. Cinco letras, de A a E
 
@@ -62,6 +62,21 @@ Quando a afirmação tem `fonte`, um segundo ponto marcado **F** aparece ao lado
 ### 5. Fim dos travessões
 
 O travessão (em dash, U+2014) e a meia-risca (en dash, U+2013) saem da base de conhecimento e da interface. A substituição não é mecânica por hífen: o travessão some e a frase se reorganiza com vírgula, parênteses, dois-pontos, ponto final ou o separador ` · ` já usado em enumerações curtas, conforme a função que ele exercia. O sentido não muda, e nenhuma informação nova é inventada para costurar a frase. Continuam válidos o hífen comum e o caractere de box drawing U+2500, usado em separadores e diagramas.
+
+## Revisão
+
+**2026-09-22, posição da tag.** A decisão original (§1) colocava a tag na abertura do bloco. Com a notação em uso na base inteira, a abertura mostrou dois efeitos que a decisão queria justamente evitar:
+
+- **Ruído na posição mais visível.** A bolinha ocupava o lugar que a marcação por extenso ocupava antes, logo no começo do parágrafo, e continuava competindo com a primeira palavra do conteúdo. O problema de leitura foi transferido de formato, não resolvido.
+- **Leitura invertida.** A classificação qualifica uma afirmação que o leitor ainda não leu. Abrindo o bloco, ela pede um julgamento antes do enunciado; fechando, ela funciona como nota: primeiro a afirmação, depois o grau de confiança nela.
+
+A posição muda: **a tag fecha o bloco que classifica**, depois da pontuação final, separada por um espaço. Fim do parágrafo, fim do item de lista, fim da última linha do blockquote, fim do texto da célula da tabela. Continua valendo que ela nunca fica sozinha numa linha separada do texto que classifica.
+
+```
+A Overpass é a camada contínua em que o Atom desenvolve capacidades. <dado q="B" />
+```
+
+Nada mais da decisão muda: as cinco letras, o tooltip, o ponto **F** de fonte e a proibição de inventar fonte continuam como estão. A renderização não distingue a posição, então a mudança é editorial e não exige alteração em `website/src/lib/dado.ts` nem nos componentes. Quando houver rótulo que apresentava a tag no começo do bloco (`**Status:** <dado q="B" />`), o rótulo é apagado: ele só existia para anunciar a marcação.
 
 ## Alternativas consideradas
 

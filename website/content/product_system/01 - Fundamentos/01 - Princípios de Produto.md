@@ -15,7 +15,7 @@ related: []
 
 Estes princípios **não são novos**. São os `Business Principles` do Business Document traduzidos para a altitude da decisão de produto. Nenhum princípio foi inventado aqui, e nenhum deveria ser: princípio que existe só no produto é princípio que vai divergir do negócio na primeira decisão difícil.
 
-**Status:** <dado q="A" nota="Quanto à origem." /> <dado q="B" nota="Quanto à aplicação." /> Os princípios são estáveis; a forma de aplicá-los a decisões concretas de produto ainda tem pouca história para mostrar.
+Os princípios são estáveis; a forma de aplicá-los a decisões concretas de produto ainda tem pouca história para mostrar. <dado q="A" nota="Quanto à origem." /> <dado q="B" nota="Quanto à aplicação." />
 
 ---
 

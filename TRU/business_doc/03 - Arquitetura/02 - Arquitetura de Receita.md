@@ -18,7 +18,7 @@ A distinção mais importante desta página não é entre tipos de receita. É e
 | **Incubação** | A definir | A definir | Experimental |
 | **Produtos físicos e artefatos** | Venda de produto | Pontual | Experimental |
 
-Valores, tickets, margens e participação de cada frente na receita total: <dado q="E" /> Não existe consolidação financeira nesta base de conhecimento, e nenhum número deve ser inferido a partir de documentos anteriores sem revalidação.
+Valores, tickets, margens e participação de cada frente na receita total: Não existe consolidação financeira nesta base de conhecimento, e nenhum número deve ser inferido a partir de documentos anteriores sem revalidação. <dado q="E" />
 
 ## Receita existente
 
@@ -62,7 +62,7 @@ Frentes abertas, ainda sem forma comercial definida. Documentadas como possibili
 
 ## Como as frentes se relacionam
 
-<dado q="C" /> Um princípio de coerência para a arquitetura:
+Um princípio de coerência para a arquitetura: <dado q="C" />
 
 > Nenhuma frente deveria existir apenas porque gera receita. Cada uma deveria aumentar a capacidade de realização de alguém e, ao fazer isso, alimentar outra frente.
 
@@ -72,7 +72,7 @@ Uma frente de receita que não se conecta a nenhuma outra é um negócio paralel
 
 ## Migração da arquitetura comercial
 
-<dado q="B" /> A companhia está migrando de dependência predominante de lançamentos para **operação com vendas e distribuição contínuas**.
+A companhia está migrando de dependência predominante de lançamentos para **operação com vendas e distribuição contínuas**. <dado q="B" />
 
 A nova documentação comercial precisa comportar: aquisição contínua, vendas diárias, CRM, vendedores, follow-up, recuperação de leads, WhatsApp, conteúdo, eventos recorrentes, campanhas, produtos perpétuos, expansão de clientes, retenção e relacionamento de longo prazo.
 

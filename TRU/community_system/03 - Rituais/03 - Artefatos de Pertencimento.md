@@ -2,7 +2,7 @@
 
 ## Um objeto com logo é propaganda que o cliente paga para carregar. Um artefato é outra coisa: é prova de que alguém esteve em algum lugar.
 
-**Status geral:** <dado q="C" /> A direção descrita aqui está em exploração. A implementação comercial ainda está sendo desenvolvida, e nenhuma decisão sobre catálogo, preço, tiragem ou distribuição foi tomada.
+A direção descrita aqui está em exploração. A implementação comercial ainda está sendo desenvolvida, e nenhuma decisão sobre catálogo, preço, tiragem ou distribuição foi tomada. <dado q="C" />
 
 ## A distinção
 
@@ -24,7 +24,7 @@ O **livro** merece nota à parte. É o único item da lista que carrega conteúd
 
 ## O que um artefato pode representar
 
-<dado q="C" /> Seis funções simbólicas estão registradas como direção:
+Seis funções simbólicas estão registradas como direção: <dado q="C" />
 
 | Função | O que o objeto registra |
 | :---- | :---- |

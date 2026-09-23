@@ -38,9 +38,9 @@ Dividimos nossos concorrentes em níveis. Cada grupo representa um tipo distinto
 
 ## Concorrentes Diretos
 
-<dado q="D" nota="Registro do mapa anterior." /> *Disputavam o mesmo público com propostas formativas semelhantes.*
+*Disputavam o mesmo público com propostas formativas semelhantes.* <dado q="D" nota="Registro do mapa anterior." />
 
-Os nomes abaixo atendem profissionais criativos que buscam desenvolvimento em branding, estratégia, criação e inteligência artificial. Sob a categoria atual, escola de negócios, criação e realização, **eles deixaram de ser o eixo da concorrência direta**: seguem relevantes porque parte do nosso público passa por eles em algum momento, mas quem disputa de fato a mesma decisão de compra hoje são escolas de negócio, comunidades de fundadores, aceleradoras, programas de empreendedorismo e mentorias de produto, ainda não mapeados <dado q="E" />. Ver aviso no topo.
+Os nomes abaixo atendem profissionais criativos que buscam desenvolvimento em branding, estratégia, criação e inteligência artificial. Sob a categoria atual, escola de negócios, criação e realização, **eles deixaram de ser o eixo da concorrência direta**: seguem relevantes porque parte do nosso público passa por eles em algum momento, mas quem disputa de fato a mesma decisão de compra hoje são escolas de negócio, comunidades de fundadores, aceleradoras, programas de empreendedorismo e mentorias de produto, ainda não mapeados. Ver aviso no topo. <dado q="E" />
 
 **Somos Tera** [https://somostera.com/](https://somostera.com/)
 
@@ -64,7 +64,7 @@ Escola que une design, propósito e fé. Trabalha com posicionamento simbólico 
 
 ## Concorrentes Indiretos
 
-<dado q="D" nota="Registro do mapa anterior." /> *Oferecem soluções formativas com maior escala e alcance, mas menor densidade simbólica.* Atuam no mesmo campo da criatividade, estratégia e tecnologia, mas operam com modelos de distribuição massiva. Concorrência por abrangência, não por filosofia.
+*Oferecem soluções formativas com maior escala e alcance, mas menor densidade simbólica.* Atuam no mesmo campo da criatividade, estratégia e tecnologia, mas operam com modelos de distribuição massiva. Concorrência por abrangência, não por filosofia. <dado q="D" nota="Registro do mapa anterior." />
 
 **Domestika** [domestika.org/pt](https://www.domestika.org/pt)  
 Plataforma internacional de cursos criativos. Visualmente rica, acessível e com forte apelo estético. Entrega rápida, porém rasa.
@@ -88,11 +88,11 @@ Escola de criatividade com forte linguagem autoral. Narrativa disruptiva e tom p
 
 **Disputam atenção, tempo e intenção de aprendizado, mesmo com outras propostas.** Substitutos não concorrem em modelo ou profundidade: ocupam o espaço cognitivo do mesmo público e reduzem a necessidade percebida de formação estruturada. São o que as pessoas usam quando não compram nada.
 
-**Esta é a camada que mais mudou de peso.** Os nomes listados abaixo são registro do mapa anterior, mas a categoria de substituto passou a ser estruturalmente mais importante do que era, e nenhum dimensionamento foi feito <dado q="E" />.
+**Esta é a camada que mais mudou de peso.** Os nomes listados abaixo são registro do mapa anterior, mas a categoria de substituto passou a ser estruturalmente mais importante do que era, e nenhum dimensionamento foi feito. <dado q="E" />
 
 ### Modelos de IA gerais: ChatGPT, Claude, Gemini
 
-<dado q="B" /> Hoje absorvem boa parte da demanda por explicação, resumo, tutorial e resposta rápida. A Overlens **não compete** com eles nesse terreno: essa disputa está perdida por desenho, e ganhá-la não geraria valor duradouro.
+Hoje absorvem boa parte da demanda por explicação, resumo, tutorial e resposta rápida. A Overlens **não compete** com eles nesse terreno: essa disputa está perdida por desenho, e ganhá-la não geraria valor duradouro. <dado q="B" />
 
 A consequência competitiva é dupla. Por um lado, uma escola que vende explicação passa a concorrer com algo gratuito e melhor. Por outro, o mesmo movimento aumenta o valor do que esses modelos não entregam: acompanhamento de projeto real, evidência verificável, comunidade e distribuição.
 
@@ -100,11 +100,11 @@ O que ainda não sabemos: **em que proporção e em que tipo de necessidade** es
 
 ### Autoformação
 
-<dado q="B" /> Pessoas aprendendo por experimentação direta com ferramentas, conteúdo gratuito e documentação, sem passar por nenhum programa estruturado. Combinada com IA, tornou-se um caminho viável para uma faixa maior do público do que era antes.
+Pessoas aprendendo por experimentação direta com ferramentas, conteúdo gratuito e documentação, sem passar por nenhum programa estruturado. Combinada com IA, tornou-se um caminho viável para uma faixa maior do público do que era antes. <dado q="B" />
 
 ### Registro do mapa anterior
 
-<dado q="D" /> Os substitutos abaixo foram mapeados sob o público de designers e criadores.
+Os substitutos abaixo foram mapeados sob o público de designers e criadores. <dado q="D" />
 
 **Hotmart / Kiwify / Monetizze**  
 Ambientes de infoprodutos com baixo custo de entrada. Criadores vendem cursos técnicos, rápidos e voltados para demanda imediata. Concorrência por impulso.

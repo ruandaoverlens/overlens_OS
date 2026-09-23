@@ -38,7 +38,7 @@ Cada revisão avalia 6 dimensões:
 - Os guardrails éticos estão presentes (sem guru, sem dogma, sem culpa)?
 - A filosofia de autonomia + responsabilidade aparece?
 - NÃO há contradição com `.claude/rules/tese-atual.md` nem com outra seção da base canônica? (em conflito, a regra vence)
-- Afirmações estratégicas estão classificadas com a tag inline `dado`, por exemplo `<dado q="A" />`, usando `A` para definido, `B` para em validação, `C` para hipótese, `D` para histórico e `E` para pendente? Na dúvida entre `A` e `B`, vale `B`
+- Afirmações estratégicas estão classificadas com a tag `dado` ao fim do bloco, como uma nota, por exemplo `... em realidade. <dado q="A" />`, usando `A` para definido, `B` para em validação, `C` para hipótese, `D` para histórico e `E` para pendente? Na dúvida entre `A` e `B`, vale `B`
 - Material que depende das personas antigas (Brunin, Tella, Ander, Lilly) está marcado como *"necessita revisão de persona"*, em vez de tratado como verdade ou substituído por personas inventadas?
 
 ### S de Sinergia com o Ecossistema

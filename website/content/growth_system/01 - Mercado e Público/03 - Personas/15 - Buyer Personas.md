@@ -35,7 +35,7 @@ Quando uma empresa não define bem suas personas, ela corre o risco de tentar fa
 * Construir experiências mais alinhadas  
 * Ajudar as pessoas certas no momento certo da jornada
 
-As quatro personas a seguir foram escritas como representações de **estágios sequenciais de maturidade**, medindo "a distância entre a ideia e a realidade" <dado q="D" />. Na formulação atual, Operante, Convergente, Emergente e Nexialista descrevem **formas de agir, aprender, pensar e criar**: *Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra*, sem escada obrigatória e sem hierarquia de senioridade. Ver `02 - Público/06 - Perfis de Clientes.md`.
+As quatro personas a seguir foram escritas como representações de **estágios sequenciais de maturidade**, medindo "a distância entre a ideia e a realidade". Na formulação atual, Operante, Convergente, Emergente e Nexialista descrevem **formas de agir, aprender, pensar e criar**: *Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra*, sem escada obrigatória e sem hierarquia de senioridade. Ver `02 - Público/06 - Perfis de Clientes.md`. <dado q="D" />
 
 As origens das quatro personas são deliberadamente diferentes entre si (uma vem da publicidade, uma da arte, uma da engenharia, uma já opera o próprio negócio), justamente porque o público nunca foi uma profissão. A seguir, os perfis como foram documentados.
 
@@ -57,10 +57,10 @@ Lilly já tem um negócio de pé: uma marca própria, com produtos, conteúdo e 
 
 ---
 
-Essas quatro personas descrevem situações diferentes, e não posições em uma escada. O texto original desta página afirmava que alguém "começa como Brunin, evolui para Tella, se torna Ander e alcança a maturidade de Lilly". Essa leitura sequencial não vale mais <dado q="D" />. Não existe percurso linear obrigatório: uma pessoa pode agir em modos diferentes conforme o problema que tem diante de si.
+Essas quatro personas descrevem situações diferentes, e não posições em uma escada. O texto original desta página afirmava que alguém "começa como Brunin, evolui para Tella, se torna Ander e alcança a maturidade de Lilly". Essa leitura sequencial não vale mais. Não existe percurso linear obrigatório: uma pessoa pode agir em modos diferentes conforme o problema que tem diante de si. <dado q="D" />
 
 O que permanece: a Overlens existe para apoiar quem quer transformar uma ideia em realidade, qualquer que seja sua origem.
 
 ---
 
-**Status desta página: NECESSITA REVISÃO DE PERSONA.** A redefinição de personas pertence ao Growth System e ainda não foi feita. Registro da transição em `business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md` <dado fonte="business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md" />.
+**Status desta página: NECESSITA REVISÃO DE PERSONA.** A redefinição de personas pertence ao Growth System e ainda não foi feita. Registro da transição em `business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md`. <dado fonte="business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md" />

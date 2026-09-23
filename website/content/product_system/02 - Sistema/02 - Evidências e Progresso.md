@@ -13,7 +13,7 @@ related: []
 
 ## Depoimento sustenta campanha. Evidência sustenta reputação. A diferença entre as duas é quem precisa acreditar em quem.
 
-**Status:** <dado q="B" nota="Quanto ao princípio." fonte="Business Document › Business Principles" /> <dado q="C" nota="Quanto à implementação." /> O princípio "execução gera evidência" está registrado nos Business Principles. O mecanismo de registro não existe.
+O princípio "execução gera evidência" está registrado nos Business Principles. O mecanismo de registro não existe. <dado q="B" nota="Quanto ao princípio." fonte="Business Document › Business Principles" /> <dado q="C" nota="Quanto à implementação." />
 
 Um depoimento é alguém dizendo que algo funcionou. Uma evidência é o algo. O primeiro depende da credibilidade de quem fala e da confiança de quem ouve; o segundo pode ser examinado por qualquer pessoa, inclusive por quem não conhece nem a Overlens nem o autor.
 
@@ -21,7 +21,7 @@ Para uma companhia que recusa promessa de resultado, essa distinção não é es
 
 ## O que conta como evidência
 
-<dado q="C" /> Uma leitura de trabalho, ainda sem critério oficial:
+Uma leitura de trabalho, ainda sem critério oficial: <dado q="C" />
 
 | Tipo | Exemplo | O que prova |
 | :---- | :---- | :---- |
@@ -61,7 +61,7 @@ Vale escrever isto como consequência encadeada, porque o risco não é abstrato
 
 ## O problema real: fricção
 
-<dado q="C" nota="Provavelmente a mais importante desta página." /> Registrar trabalho é uma tarefa que compete com fazer o trabalho. Quem está construindo algo tem pouco incentivo para parar e documentar, e o custo de documentar cai inteiramente sobre a pessoa enquanto boa parte do benefício vai para o sistema.
+Registrar trabalho é uma tarefa que compete com fazer o trabalho. Quem está construindo algo tem pouco incentivo para parar e documentar, e o custo de documentar cai inteiramente sobre a pessoa enquanto boa parte do benefício vai para o sistema. <dado q="C" nota="Provavelmente a mais importante desta página." />
 
 Isso significa que o registro precisa ser subproduto da execução, e não uma etapa adicional cobrada depois. Um produto que exige documentação como obrigação separada recebe documentação de quem gosta de documentar, o que é um recorte enviesado e pequeno.
 
@@ -69,8 +69,8 @@ Ainda não existe decisão sobre como resolver isso.
 
 ## O que está em aberto
 
-- <dado q="E" /> O critério oficial do que conta como evidência.
-- <dado q="E" /> Como o registro acontece na prática, com qual fricção e em que momento do ciclo.
-- <dado q="E" /> O que é público, o que é da comunidade e o que é privado. Decisão com implicação de confiança, não apenas de interface.
-- <dado q="E" /> Como evidência se relaciona com reputação e papéis: pertence ao **Community System**.
-- <dado q="E" /> O que acontece com trabalho interrompido. Projeto abandonado também ensina, e descartá-lo cria um registro que só mostra vitórias.
+- O critério oficial do que conta como evidência. <dado q="E" />
+- Como o registro acontece na prática, com qual fricção e em que momento do ciclo. <dado q="E" />
+- O que é público, o que é da comunidade e o que é privado. Decisão com implicação de confiança, não apenas de interface. <dado q="E" />
+- Como evidência se relaciona com reputação e papéis: pertence ao **Community System**. <dado q="E" />
+- O que acontece com trabalho interrompido. Projeto abandonado também ensina, e descartá-lo cria um registro que só mostra vitórias. <dado q="E" />

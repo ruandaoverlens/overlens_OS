@@ -204,13 +204,13 @@ Definição conceitual de **Atom** → Brand System. Implementação operacional
 
 A Overlens está em transição. **Documentar exploração estratégica como decisão tomada é o erro mais caro que esta base pode cometer.**
 
-A classificação não é mais escrita por extenso. Ela é uma **tag inline** que o site renderiza como uma bolinha de qualidade:
+A classificação não é mais escrita por extenso. Ela é uma **nota que fecha o bloco** e que o site renderiza como uma bolinha de qualidade:
 
 ```
-<dado q="A" />
-<dado q="B" nota="Direção testada em duas turmas." />
-<dado q="A" fonte="TRU/changes.md" />
-<dado q="C" nota="Candidato mais forte." fonte="https://exemplo.com/pesquisa" />
+O público da Overlens é o empreendedor. <dado q="A" />
+Duas turmas já rodaram no formato novo. <dado q="B" nota="Direção testada em duas turmas." />
+A categoria é escola de negócios, criação e realização. <dado q="A" fonte="TRU/changes.md" />
+"A escola de negócios dos criadores" é a expressão em exploração. <dado q="C" nota="Candidato mais forte." fonte="https://exemplo.com/pesquisa" />
 ```
 
 Atributos: `q` é obrigatório e vai de `A` a `E`; `nota` é opcional e leva uma frase curta de qualificação; `fonte` é opcional e só aparece quando o documento **declara** de onde a informação veio.
@@ -227,7 +227,7 @@ No site, cada letra aparece como um ponto colorido com tooltip: a bolinha mostra
 
 Regras de uso:
 
-- A tag é **inline**. Ela abre o parágrafo, abre o item de lista ou ocupa a célula da tabela. Nunca fica sozinha numa linha separada do texto que classifica.
+- A tag **fecha o bloco que classifica**, como uma nota: vem depois da pontuação final, separada por um espaço. Fim do parágrafo, fim do item de lista, fim da última linha do blockquote, fim do texto da célula da tabela. Nunca fica sozinha numa linha separada do texto que classifica.
 - `E` significa que a informação precisa existir e ainda não existe: **não preencher com suposição**.
 - **Nunca invente fonte.** A ausência de fonte é informação verdadeira sobre a base.
 - Na dúvida entre `A` e `B`, escolher **`B`**.
@@ -256,7 +256,7 @@ Alguém entende a Overlens rapidamente como *uma escola de negócios para pessoa
 
 Interpretação simbólica registrada: **Arcádia** = criação/possibilidade · **Mônada** = expressão/singularidade · **Tésera** = estratégia/movimento · **Órbital** = processos/continuidade. Pares: Arcádia ↔ Mônada (criação e expressão), Tésera ↔ Órbital (estratégia e sistemas). Não transformar em departamentos.
 
-**Decisões de nomenclatura em aberto** <dado q="E" />. Não resolver por conta própria; registrar e perguntar:
+**Decisões de nomenclatura em aberto**. Não resolver por conta própria; registrar e perguntar: <dado q="E" />
 
 - **Grafia divergente:** a base usa *Téssera* e *Orbital*; `TRU/changes.md` usa *Tésera* e *Órbital*. Até haver decisão, não padronize à força: mantenha a grafia de cada documento e sinalize.
 - **Lugares sem leitura simbólica registrada:** Parallax, Noumenom e Limbo aparecem na Arquitetura de Marca sem definição. Não inventar significado.

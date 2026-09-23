@@ -20,9 +20,7 @@ Cada aposta abaixo registra: o que se está apostando, por que, o que precisaria
 
 ## Aposta 1 · Aprendizagem baseada em projetos
 
-Nível: <dado q="B" nota="A aposta mais estruturante da companhia." />
-
-**O que apostamos:** que a unidade central da experiência deve ser o projeto, não o conteúdo. A lógica **Objetivo → Projeto → Capacidades necessárias → Aprendizagem → Execução → Evidências → Feedback → Evolução** entrega mais valor do que uma biblioteca organizada por temas.
+**O que apostamos:** que a unidade central da experiência deve ser o projeto, não o conteúdo. A lógica **Objetivo → Projeto → Capacidades necessárias → Aprendizagem → Execução → Evidências → Feedback → Evolução** entrega mais valor do que uma biblioteca organizada por temas. <dado q="B" nota="A aposta mais estruturante da companhia." />
 
 **Por quê:** conhecimento aplicado gera capacidade verificável; conhecimento consumido gera sensação de progresso. Com IA tornando explicação abundante e gratuita, o valor migra para aplicação acompanhada.
 
@@ -34,9 +32,7 @@ Nível: <dado q="B" nota="A aposta mais estruturante da companhia." />
 
 ## Aposta 2 · IA como infraestrutura, não como categoria
 
-Nível: <dado q="A" nota="Quanto à direção." /> <dado q="B" nota="Quanto à execução." />
-
-**O que apostamos:** que a Overlens não deve competir com modelos gerais na capacidade de responder, explicar, resumir ou gerar conteúdo, e que IA gera mais valor amplificando aprendizagem, planejamento, execução, personalização e conexão entre pessoas e conhecimentos.
+**O que apostamos:** que a Overlens não deve competir com modelos gerais na capacidade de responder, explicar, resumir ou gerar conteúdo, e que IA gera mais valor amplificando aprendizagem, planejamento, execução, personalização e conexão entre pessoas e conhecimentos. <dado q="A" nota="Quanto à direção." /> <dado q="B" nota="Quanto à execução." />
 
 **Por quê:** competir com ChatGPT, Claude ou Gemini no terreno deles é uma disputa perdida por desenho, e vencê-la não produziria valor duradouro.
 
@@ -48,9 +44,7 @@ Nível: <dado q="A" nota="Quanto à direção." /> <dado q="B" nota="Quanto à e
 
 ## Aposta 3 · Negócios para criadores
 
-Nível: <dado q="B" />
-
-**O que apostamos:** que existe demanda real por uma escola de negócios construída para pessoas que não se identificam com a estética, a linguagem e a visão de mundo de uma escola de negócios convencional.
+**O que apostamos:** que existe demanda real por uma escola de negócios construída para pessoas que não se identificam com a estética, a linguagem e a visão de mundo de uma escola de negócios convencional. <dado q="B" />
 
 **Por quê:** a queda do custo de criar aumentou o número de pessoas construindo algo próprio a partir de origens não empresariais, e a formação disponível fala com quem já se vê como empresário.
 
@@ -62,9 +56,7 @@ Nível: <dado q="B" />
 
 ## Aposta 4 · Comunidade como infraestrutura
 
-Nível: <dado q="B" />
-
-**O que apostamos:** que a comunidade é um dos principais ativos estratégicos da companhia, e não uma feature de engajamento ou suporte.
+**O que apostamos:** que a comunidade é um dos principais ativos estratégicos da companhia, e não uma feature de engajamento ou suporte. <dado q="B" />
 
 **Por quê:** parte do valor entregue não é produzida pela Overlens, e sim pelos membros entre si. É também o único ativo que tende a aumentar de valor com escala.
 
@@ -76,9 +68,7 @@ Nível: <dado q="B" />
 
 ## Aposta 5 · Aceleração e incubação
 
-Nível: <dado q="B" nota="Aceleração." /> <dado q="C" nota="Incubação." />
-
-**O que apostamos:** que a companhia pode capturar valor não apenas formando, mas participando diretamente do avanço de projetos e negócios que nascem ou passam pelo ecossistema.
+**O que apostamos:** que a companhia pode capturar valor não apenas formando, mas participando diretamente do avanço de projetos e negócios que nascem ou passam pelo ecossistema. <dado q="B" nota="Aceleração." /> <dado q="C" nota="Incubação." />
 
 **Por quê:** os melhores projetos gerados internamente são simultaneamente resultado, prova e oportunidade econômica.
 
@@ -90,9 +80,7 @@ Nível: <dado q="B" nota="Aceleração." /> <dado q="C" nota="Incubação." />
 
 ## Aposta 6 · Serviços e expansão B2B
 
-Nível: <dado q="B" nota="Assessoria, já validada comercialmente." /> <dado q="C" nota="Consultoria e B2B." />
-
-**O que apostamos:** que a Overlens pode atuar diretamente sobre negócios e empresas, e não apenas sobre pessoas.
+**O que apostamos:** que a Overlens pode atuar diretamente sobre negócios e empresas, e não apenas sobre pessoas. <dado q="B" nota="Assessoria, já validada comercialmente." /> <dado q="C" nota="Consultoria e B2B." />
 
 **Por quê:** ticket maior, relação mais longa e aprendizado real que retroalimenta método e conteúdo.
 
@@ -104,9 +92,7 @@ Nível: <dado q="B" nota="Assessoria, já validada comercialmente." /> <dado q="
 
 ## Aposta 7 · Produtos físicos como artefatos
 
-Nível: <dado q="C" />
-
-**O que apostamos:** que objetos físicos podem funcionar como artefatos de pertencimento (identidade, participação, memória, acesso, edição limitada) e não como merchandising.
+**O que apostamos:** que objetos físicos podem funcionar como artefatos de pertencimento (identidade, participação, memória, acesso, edição limitada) e não como merchandising. <dado q="C" />
 
 **Por quê:** objetos culturais sustentam pertencimento de forma que conteúdo digital não alcança.
 
@@ -118,9 +104,7 @@ Nível: <dado q="C" />
 
 ## Aposta 8 · Sistema operacional de aprendizagem e realização
 
-Nível: <dado q="C" nota="A aposta de maior horizonte." />
-
-**O que apostamos:** que a Overlens pode construir um sistema que conecte **pessoa + objetivo + conhecimento + competências + projetos + evidências + comunidade**, e que isso, não funcionalidades de geração de conteúdo, é o diferencial sustentável do produto.
+**O que apostamos:** que a Overlens pode construir um sistema que conecte **pessoa + objetivo + conhecimento + competências + projetos + evidências + comunidade**, e que isso, não funcionalidades de geração de conteúdo, é o diferencial sustentável do produto. <dado q="C" nota="A aposta de maior horizonte." />
 
 **Por quê:** chat, resumos, mapas mentais, podcasts, flashcards, testes e recomendações continuam úteis, mas não constituem sozinhos diferencial defensável. Qualquer concorrente adiciona essas funções em meses.
 
@@ -132,9 +116,7 @@ Nível: <dado q="C" nota="A aposta de maior horizonte." />
 
 ## Aposta 9 · Operação por sistemas, não por campanhas
 
-Nível: <dado q="B" />
-
-**O que apostamos:** que migrar de dependência de lançamentos para aquisição e vendas contínuas torna a companhia mais estável e mais previsível.
+**O que apostamos:** que migrar de dependência de lançamentos para aquisição e vendas contínuas torna a companhia mais estável e mais previsível. <dado q="B" />
 
 **Por quê:** campanhas concentram risco, exigem pico de esforço e perdem o acumulado quando falham. Sistemas acumulam.
 

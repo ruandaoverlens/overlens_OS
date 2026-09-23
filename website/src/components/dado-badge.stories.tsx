@@ -18,11 +18,11 @@ const meta = {
         component: [
           "Ponto de qualidade do dado. Cada afirmação estratégica da base carrega uma letra que diz o quanto ela é verdade hoje; o tooltip explica a qualidade e a origem.",
           "",
-          "No markdown a marcação é inline:",
+          "A tag **fecha** o bloco que classifica, como uma nota de rodapé, e sobe em relação à linha:",
           "",
           "```markdown",
-          '<dado q="A" />',
-          '<dado q="C" nota="Candidato mais forte." fonte="TRU/changes.md" />',
+          'O público da Overlens é o empreendedor. <dado q="A" />',
+          'A expressão ainda está em teste. <dado q="C" nota="Candidato mais forte." fonte="TRU/changes.md" />',
           "```",
           "",
           "| Letra | Significa | Quando usar |",
@@ -52,8 +52,8 @@ export const AEscala: Story = {
     <div className="space-y-3 text-body text-muted-foreground">
       {DADO_GRADE_ORDER.map((grade) => (
         <p key={grade}>
-          <DadoBadge q={grade} />
           {DADO_GRADES[grade].meaning}
+          <DadoBadge q={grade} />
         </p>
       ))}
     </div>
@@ -83,11 +83,17 @@ export const NoTexto: Story = {
   name: "Dentro de um parágrafo",
   args: { q: "A" },
   render: () => (
-    <p className="max-w-prose text-body text-muted-foreground">
-      <DadoBadge q="A" />O público da Overlens é o empreendedor: quem tem uma ideia,
-      ambição ou visão de futuro e quer transformá-la em realidade. A estrutura
-      dinâmica de posicionamento <DadoBadge q="B" nota="Expressão em exploração." />
-      ainda está em teste.
-    </p>
+    <div className="max-w-prose space-y-4 text-body text-muted-foreground">
+      <p>
+        O público da Overlens é o empreendedor: quem tem uma ideia, ambição ou
+        visão de futuro e quer transformá-la em realidade.
+        <DadoBadge q="A" />
+      </p>
+      <p>
+        A estrutura dinâmica de posicionamento ainda está em teste, e a
+        definição oficial pertence ao Brand System.
+        <DadoBadge q="B" nota="Expressão em exploração." fonte="TRU/changes.md" />
+      </p>
+    </div>
   ),
 };

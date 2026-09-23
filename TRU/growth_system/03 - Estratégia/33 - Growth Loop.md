@@ -2,7 +2,7 @@
 
 ## Um growth loop descreve um ciclo em que o resultado de uma volta é o insumo da próxima. Se ele funciona, crescer fica mais barato com o tempo. O da Overlens ainda é hipótese, e está registrado aqui como hipótese.
 
-Status: <dado q="C" /> Não tratar como mecanismo em funcionamento. Esta página existe para orientar decisões, não para justificar metas.
+Não tratar como mecanismo em funcionamento. Esta página existe para orientar decisões, não para justificar metas. <dado q="C" />
 
 A distinção que organiza tudo o que vem a seguir: **funil consome energia; loop acumula.** Um funil termina na venda e recomeça do zero no ciclo seguinte: investe-se de novo para obter o mesmo resultado. Um loop transforma o resultado de cada volta em insumo da próxima, e o custo marginal de crescer cai.
 
@@ -20,7 +20,7 @@ A versão anterior desta página descrevia o ciclo como **aquisição → ativa�
 
 ## O ciclo de referência
 
-<dado q="C" fonte="business_doc" /> O flywheel registrado no Business Document, adotado aqui como referência:
+O flywheel registrado no Business Document, adotado aqui como referência: <dado q="C" fonte="business_doc" />
 
 > **Conteúdo → comunidade → aprendizagem → projetos → resultados → histórias → reputação → novos membros**
 
@@ -49,13 +49,13 @@ Três coisas precisariam ser verdade para o ciclo girar, e nenhuma está demonst
 
 ## O que aceleraria o ciclo
 
-<dado q="C" />
-
 - **PBL bem implementado**: encurta a distância entre aprender e construir.
 - **Comunidade densa**: aumenta a chance de um projeto encontrar a pessoa, o feedback ou o time que faltava.
 - **Hackathons e Atom Praxis**: comprimem o ciclo inteiro em um intervalo curto de tempo.
 - **Evidências registradas**: transformam resultado em ativo reutilizável.
 - **Incubação**: leva os melhores projetos adiante, produzindo os resultados mais visíveis.
+
+<dado q="C" />
 
 ## O que freia o ciclo
 
@@ -67,7 +67,7 @@ Três coisas precisariam ser verdade para o ciclo girar, e nenhuma está demonst
 
 ## Onde cada oferta entra
 
-<dado q="B" /> Leitura possível, sem assumir percurso obrigatório:
+Leitura possível, sem assumir percurso obrigatório: <dado q="B" />
 
 | Etapa do ciclo | Onde tende a acontecer |
 | :---- | :---- |
@@ -81,9 +81,7 @@ Três coisas precisariam ser verdade para o ciclo girar, e nenhuma está demonst
 
 ## Gamificação
 
-<dado q="C" nota="Possibilidade de implementação, não definição do mecanismo." />
-
-XP, missões, badges, ofensiva, ranking, fractais e certificados permanecem registrados como elementos que **podem** ser implementados. O que muda é o estatuto: eles não são o mecanismo de valor do ecossistema.
+XP, missões, badges, ofensiva, ranking, fractais e certificados permanecem registrados como elementos que **podem** ser implementados. O que muda é o estatuto: eles não são o mecanismo de valor do ecossistema. <dado q="C" nota="Possibilidade de implementação, não definição do mecanismo." />
 
 A razão é direta. Gamificação é boa para produzir frequência e visibilidade de progresso; é insuficiente para produzir realização. Se o ciclo depende de projeto e evidência, o que sustenta a permanência é **ter algo em andamento que importa**, e não uma sequência de dias ativos. Progresso simbólico pode reforçar um avanço real, mas não substitui o avanço.
 
@@ -98,11 +96,11 @@ Antes de tratar este ciclo como modelo operacional, é preciso conseguir observa
 3. Quantas dessas evidências viram história comunicável.
 4. Que proporção dos novos membros chega por reputação e indicação.
 
-<dado q="E" /> Nenhuma meta, taxa ou número está definido para esses pontos. Enquanto não forem observáveis, o loop é um bom modelo mental, e nada além disso.
+Nenhuma meta, taxa ou número está definido para esses pontos. Enquanto não forem observáveis, o loop é um bom modelo mental, e nada além disso. <dado q="E" />
 
 ## Histórico: o loop anterior
 
-<dado q="D" fonte="https://www.figma.com/board/bPV9gXuVdE3nFHxfg4gucv/Fluxos-de-Marketing?node-id=405-5914" /> O ciclo documentado anteriormente, preservado como registro do que foi desenhado:
+O ciclo documentado anteriormente, preservado como registro do que foi desenhado: <dado q="D" fonte="https://www.figma.com/board/bPV9gXuVdE3nFHxfg4gucv/Fluxos-de-Marketing?node-id=405-5914" />
 
 1. **Aquisição**: YouTube, lives, conteúdo evergreen, SEO e mídia paga, quizzes e o Atlas como imersão de alto tempo de permanência.
 2. **Ativação**: conta criada ou ingresso comprado; e-mails de boas-vindas, notificações, banners, popups e paywall conduzindo ao primeiro momento de sucesso (primeira aula consumida e projeto definido).

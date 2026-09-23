@@ -98,14 +98,19 @@ export function DocPagination({
       className="mt-12 flex items-center justify-between gap-4 border-t border-border pt-6"
     >
       {prev && prevHref ? (
-        // A seta encosta na borda (`ps-2` e sem a margem externa do ícone) e o
-        // atalho ganha folga do lado de dentro: o chip do Kbd tem fundo
-        // próprio e precisa de mais respiro que o traço fino da seta.
+        // Ajuste óptico. O chevron tem 7px de vazio do lado que aponta e 8px
+        // do outro dentro do próprio viewBox, então recuo igual no CSS sai
+        // desigual na tela. As margens negativas cancelam esse vazio e fazem a
+        // *tinta* do ícone se comportar como a borda da caixa; daí o
+        // espaçamento passa a ser medido pelo que se vê:
+        //   borda 14 · seta 8 · rótulo 8 · atalho 12 · borda
+        // A seta fica 2px mais longe da borda que o atalho de propósito: traço
+        // fino pede mais ar que um chip com fundo para parecerem iguais.
         <Button
           variant="secondary"
           size="sm"
           asChild
-          className="has-[svg]:ps-2 has-[svg]:pe-4 [&>svg:first-child]:ms-0"
+          className="gap-2 has-[svg]:ps-[14px] has-[svg]:pe-3 [&>*:not(svg)]:px-0 [&>svg+*:not(svg)]:pr-0 [&>*:not(svg):has(+svg)]:pl-0 [&_svg]:-ms-[7px] [&_svg]:-me-[8px]"
         >
           <Link
             href={prevHref}
@@ -126,12 +131,14 @@ export function DocPagination({
         <div />
       )}
       {next && nextHref ? (
-        // Espelho do botão anterior: aqui a seta é o último filho.
+        // Espelho do botão anterior. O chevron que aponta para a direita tem o
+        // vazio invertido (8px à esquerda, 7px à direita), então as margens
+        // negativas também trocam de lado.
         <Button
           variant="secondary"
           size="sm"
           asChild
-          className="has-[svg]:ps-4 has-[svg]:pe-2 [&>svg:last-child]:me-0"
+          className="gap-2 has-[svg]:ps-3 has-[svg]:pe-[14px] [&>*:not(svg)]:px-0 [&>svg+*:not(svg)]:pr-0 [&>*:not(svg):has(+svg)]:pl-0 [&_svg]:-ms-[8px] [&_svg]:-me-[7px]"
         >
           <Link
             href={nextHref}

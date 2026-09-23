@@ -2,7 +2,7 @@
 
 ## O recorte existe. Os números, não. Esta página serve para impedir que a diferença entre as duas coisas seja esquecida.
 
-Status: <dado q="E" /> Nenhum número foi levantado sob o recorte atual da Overlens. Esta página define o enquadramento correto e as perguntas que a pesquisa precisa responder, e não deve ser preenchida com estimativas.
+Nenhum número foi levantado sob o recorte atual da Overlens. Esta página define o enquadramento correto e as perguntas que a pesquisa precisa responder, e não deve ser preenchida com estimativas. <dado q="E" />
 
 ## O recorte atual
 
@@ -22,7 +22,7 @@ Isso determina o que pode e o que não pode entrar no dimensionamento:
 
 ## Por que este recorte já ficou inválido duas vezes
 
-<dado q="D" /> A pendência não é atraso operacional: é consequência de duas mudanças de eixo.
+A pendência não é atraso operacional: é consequência de duas mudanças de eixo. <dado q="D" />
 
 **Primeira invalidação.** O dimensionamento original foi levantado sobre o mercado de **design e economia criativa**, quando o público era descrito como designers e criadores. Quando o eixo mudou para empreendedorismo, esses números passaram a descrever outro universo. A própria documentação anterior já os marcava como inválidos.
 

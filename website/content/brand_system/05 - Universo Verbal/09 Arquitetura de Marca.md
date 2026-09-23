@@ -165,7 +165,7 @@ Os documentos são a base estruturante do conhecimento interno da Overlens. Eles
 | **Community System** | Comunidade: membros, rituais, reputação, progressão, papéis, governança |
 | **Content System** | Conteúdo e suas frentes |
 
-<dado q="D" /> Os antigos **Livros** (O Livro de Branding, O Livro de Growth, O Livro de Produto da Overlens) foram a formulação anterior desta camada e permanecem como registro. Hoje a biblioteca de sistemas é composta pelos Systems e pelo Business Document.
+Os antigos **Livros** (O Livro de Branding, O Livro de Growth, O Livro de Produto da Overlens) foram a formulação anterior desta camada e permanecem como registro. Hoje a biblioteca de sistemas é composta pelos Systems e pelo Business Document. <dado q="D" />
 
 Esses documentos formam uma biblioteca de sistemas, garantindo consistência e evolução.
 

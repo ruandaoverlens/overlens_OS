@@ -15,7 +15,7 @@ related: []
 
 ## Critério de referência
 
-<dado q="B" /> O critério original permanece: olhamos para quem rompeu o formato tradicional da educação e construiu algo com linguagem, experiência e comunidade próprias. Isso continua valendo.
+O critério original permanece: olhamos para quem rompeu o formato tradicional da educação e construiu algo com linguagem, experiência e comunidade próprias. Isso continua valendo. <dado q="B" />
 
 O que muda é a amplitude. Sob a categoria atual, escola de **negócios, criação e realização**, não basta observar quem ensina bem. Interessa igualmente quem consegue **sustentar realização**:
 

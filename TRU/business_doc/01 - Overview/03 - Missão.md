@@ -2,7 +2,7 @@
 
 ## Ajudar pessoas a realizarem suas ideias.
 
-<dado q="B" /> Esta é a formulação atualmente explorada para a missão da Overlens. Caso a formulação oficial seja alterada, é aqui que ela deve ser atualizada, e não em cada documento que a cita.
+Esta é a formulação atualmente explorada para a missão da Overlens. Caso a formulação oficial seja alterada, é aqui que ela deve ser atualizada, e não em cada documento que a cita. <dado q="B" />
 
 ## Como ler essa frase
 
@@ -18,7 +18,7 @@ Cada palavra carrega peso e delimita escopo.
 
 ## Relação com o propósito histórico
 
-<dado q="D" nota="Ainda coerente." /> A formulação anterior do propósito da Overlens é *"colocar o poder da criação nas mãos das pessoas"*.
+A formulação anterior do propósito da Overlens é *"colocar o poder da criação nas mãos das pessoas"*. <dado q="D" nota="Ainda coerente." />
 
 Ela não entra em conflito com a missão atual: descreve a mesma intenção em linguagem mais simbólica. A diferença é de ênfase: a formulação anterior enfatiza o **poder de criar**; a atual enfatiza a **realização da ideia**.
 
@@ -33,7 +33,7 @@ A definição oficial de propósito, manifesto e linguagem de marca é responsab
 
 ## Como a missão se traduz em operação
 
-<dado q="B" /> Se a missão é realização, então a companhia precisa ser capaz de responder mais do que "o que essa pessoa aprendeu". Precisa progressivamente responder também:
+Se a missão é realização, então a companhia precisa ser capaz de responder mais do que "o que essa pessoa aprendeu". Precisa progressivamente responder também: <dado q="B" />
 
 - O que essa pessoa consegue fazer.
 - Quais capacidades desenvolveu.

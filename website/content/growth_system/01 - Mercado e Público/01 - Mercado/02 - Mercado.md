@@ -26,7 +26,7 @@ A companhia mudou de categoria, e parte desta seção ainda não alcançou a mud
 | Página | Estado |
 | :---- | :---- |
 | **Segmento** | Atualizado sob a categoria atual. Categoria anterior preservada como histórico na própria página |
-| **TAM, SAM, SOM** | <dado q="E" /> Nenhum número levantado sob o recorte atual |
+| **TAM, SAM, SOM** | Nenhum número levantado sob o recorte atual <dado q="E" /> |
 | **Público-Alvo** | **Necessita revisão.** Escrito sob a definição anterior de público |
 | **Perfil Ideal (ICP)** | **Necessita revisão.** Depende da redefinição de personas |
 | **Benchmarking e Referências** | Metodologia válida; enquadramento de categoria atualizado |

@@ -60,13 +60,13 @@ Os verbetes abaixo mudaram de sentido ou entraram no vocabulário durante a revi
 
 Registrados para que ninguém os reintroduza ao encontrar material antigo.
 
-**átomo** (unidade pequena de conteúdo ou curso especializado): <dado q="D" /> a palavra já foi usada assim em versões anteriores da documentação. Em caso de conflito, vale a definição atual: Atom é o indivíduo da comunidade.
+**átomo** (unidade pequena de conteúdo ou curso especializado): a palavra já foi usada assim em versões anteriores da documentação. Em caso de conflito, vale a definição atual: Atom é o indivíduo da comunidade. <dado q="D" />
 
-**Inconsciente** (como perfil): <dado q="D" /> não existe na formulação atual; os modos são Operante, Convergente, Emergente e Nexialista.
+**Inconsciente** (como perfil): não existe na formulação atual; os modos são Operante, Convergente, Emergente e Nexialista. <dado q="D" />
 
-**Empreendedor Nexialista** (como nome do público): <dado q="D" /> o público é o empreendedor, definido pelo que quer realizar. Nexialismo passou a ser capacidade desenvolvida, não rótulo.
+**Empreendedor Nexialista** (como nome do público): o público é o empreendedor, definido pelo que quer realizar. Nexialismo passou a ser capacidade desenvolvida, não rótulo. <dado q="D" />
 
-**Perfis de maturidade** (como escada entre a ideia e a realidade): <dado q="D" /> os quatro modos não são estágios sequenciais.
+**Perfis de maturidade** (como escada entre a ideia e a realidade): os quatro modos não são estágios sequenciais. <dado q="D" />
 
 ---
 

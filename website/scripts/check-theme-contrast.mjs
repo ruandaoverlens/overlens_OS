@@ -113,7 +113,14 @@ function resolve_(tokens, name, seen = new Set()) {
 
 /* ── pares a medir ───────────────────────────────────────────────────── */
 
-/** [texto, fundo, alvo, descrição]. O fundo precisa ser opaco. */
+/**
+ * [texto, fundo, alvo, descrição, tema?]. O fundo precisa ser opaco.
+ *
+ * `tema` ("CLARO" ou "ESCURO") restringe o par a um tema. Serve para os casos
+ * em que a cor do texto inverte junto com o fundo: o ponto de qualidade D usa
+ * `bg-surface-400`, que é escuro no tema claro e claro no escuro, então a
+ * letra troca de polaridade com `dark:`.
+ */
 const PAIRS = [
   ["foreground", "background", 4.5, "texto principal na página"],
   ["muted-foreground", "background", 4.5, "texto secundário na página"],
@@ -159,6 +166,15 @@ const PAIRS = [
   ["chart-3", "background", 3, "série 3 do gráfico"],
   ["chart-4", "background", 3, "série 4 do gráfico"],
   ["chart-5", "background", 3, "série 5 do gráfico"],
+  // Ponto de qualidade do dado (DadoBadge): letra literal sobre cor de marca
+  // chapada. A cor de marca não inverte com o tema, então a letra também não.
+  ["absolute-black", "brand-midori", 4.5, "letra A sobre Midori"],
+  ["absolute-black", "brand-sahara", 4.5, "letra B sobre Sahara"],
+  ["absolute-black", "brand-atmos", 4.5, "letra C sobre Atmos"],
+  ["absolute-white", "brand-cotta", 4.5, "letra E sobre Cotta"],
+  ["absolute-white", "surface-400", 4.5, "letra D sobre surface-400", "CLARO"],
+  ["absolute-black", "surface-400", 4.5, "letra D sobre surface-400", "ESCURO"],
+  ["muted-foreground", "muted", 4.5, "letra F sobre o fundo muted"],
 ];
 
 /* ── execução ────────────────────────────────────────────────────────── */
@@ -168,18 +184,21 @@ const light = readBlock(css, ":root");
 const dark = { ...light, ...readBlock(css, ".dark") };
 
 let failures = 0;
+let measured = 0;
 
 for (const [label, tokens] of [
   ["CLARO", light],
   ["ESCURO", dark],
 ]) {
   console.log(`\n── tema ${label} ${"─".repeat(52 - label.length)}`);
-  for (const [fgName, bgName, target, description] of PAIRS) {
+  for (const [fgName, bgName, target, description, theme] of PAIRS) {
+    if (theme && theme !== label) continue;
     const bg = resolve_(tokens, bgName);
     if (bg.alpha < 1) throw new Error(`--${bgName} é translúcido: não serve de fundo`);
     const fg = resolve_(tokens, fgName);
     const ratio = contrast(over(fg, bg), bg.rgb);
     const ok = ratio >= target;
+    measured++;
     if (!ok) failures++;
     console.log(
       `${ok ? "  ok " : "FALHA"} ${ratio.toFixed(2).padStart(5)}:1 ` +
@@ -190,7 +209,7 @@ for (const [label, tokens] of [
 
 console.log(
   failures === 0
-    ? `\nTodos os ${PAIRS.length * 2} pares passam nos dois temas.`
+    ? `\nTodos os ${measured} pares medidos passam nos dois temas.`
     : `\n${failures} par(es) abaixo do alvo.`,
 );
 process.exit(failures === 0 ? 0 : 1);

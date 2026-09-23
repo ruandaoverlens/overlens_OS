@@ -18,7 +18,7 @@ Apresentamos o nosso pensamento estratégico em diretrizes concretas, combinando
 
 ## Sobre o que este sistema é verdade
 
-<dado q="A" /> O Growth System é a fonte de verdade sobre **mercado, públicos, aquisição e conversão**. Quando qualquer documento da base precisar responder quem é o público, como ele decide, por onde chega e o que o convence, a resposta pertence aqui.
+O Growth System é a fonte de verdade sobre **mercado, públicos, aquisição e conversão**. Quando qualquer documento da base precisar responder quem é o público, como ele decide, por onde chega e o que o convence, a resposta pertence aqui. <dado q="A" />
 
 O escopo cobre:
 
@@ -33,7 +33,7 @@ O escopo cobre:
 
 **Value Proposition Canvas e Mapa de Empatia pertencem a este sistema**, não ao Business Document. O Business Document explica por que o negócio existe e como ele captura valor; o Growth System explica para quem, contra o quê e por qual caminho.
 
-Status de ambos: <dado q="E" /> Nenhum dos dois será construído antes da redefinição de personas e segmentos. Construí-los sobre as personas anteriores produziria um artefato que parece fundamentado e não é.
+Nenhum dos dois será construído antes da redefinição de personas e segmentos. Construí-los sobre as personas anteriores produziria um artefato que parece fundamentado e não é. <dado q="E" />
 
 ## Por que este sistema existe?
 
@@ -43,7 +43,7 @@ Não se trata de uma coletânea de boas práticas. Trata-se de um sistema de pen
 
 ## De lançamentos para operação contínua
 
-<dado q="B" /> A arquitetura comercial da Overlens está migrando da dependência de lançamentos para **aquisição e vendas contínuas**.
+A arquitetura comercial da Overlens está migrando da dependência de lançamentos para **aquisição e vendas contínuas**. <dado q="B" />
 
 Isso muda o que este sistema precisa documentar. Um modelo de lançamentos organiza tudo em torno de um evento: campanha, abertura, fechamento, silêncio. Um modelo contínuo organiza tudo em torno de um **relacionamento**: CRM, vendedores, follow-up, recuperação de leads, WhatsApp, conteúdo permanente, eventos recorrentes, produtos perpétuos, expansão de clientes e retenção de longo prazo.
 
@@ -63,7 +63,7 @@ Este sistema foi estruturado em módulos autônomos, organizados para leitura co
 
 ## Relação com os outros systems
 
-<dado q="A" /> Cada assunto tem um documento responsável. Os demais **referenciam, não redefinem**.
+Cada assunto tem um documento responsável. Os demais **referenciam, não redefinem**. <dado q="A" />
 
 | Sistema | É verdade sobre | Fronteira com o Growth System |
 | :---- | :---- | :---- |
@@ -73,7 +73,7 @@ Este sistema foi estruturado em módulos autônomos, organizados para leitura co
 | **Product System** | Produto: PBL, IA, projetos, competências, evidências, progresso, roadmap | O Product System define a experiência; o Growth System define a promessa que a antecede |
 | **Community System** | Comunidade: membros, níveis, rituais, reputação, progressão, papéis, governança | A comunidade é infraestrutura de realização; aqui ela aparece como fator de decisão e de retenção, não como mecânica |
 
-Dois pontos de atenção recorrentes: a definição conceitual de **Atom** pertence ao Brand System, e o dimensionamento de mercado depende de **Research & Market Intelligence**, no Business Document, que segue pendente <dado q="E" />.
+Dois pontos de atenção recorrentes: a definição conceitual de **Atom** pertence ao Brand System, e o dimensionamento de mercado depende de **Research & Market Intelligence**, no Business Document, que segue pendente. <dado q="E" />
 
 ## Como ele evolui?
 

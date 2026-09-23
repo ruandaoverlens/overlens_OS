@@ -12,9 +12,7 @@ related: ["business_doc/02 - Modelos/01 - Business Model Canvas.md", "business_d
 
 ## Estrutura criada, conteúdo pendente. O Lean Canvas oficial da Overlens será construído separadamente e incorporado aqui.
 
-Status: <dado q="E" />
-
-O Lean Canvas, de Ash Maurya, é uma adaptação do Business Model Canvas voltada a negócios em estágio de incerteza. Onde o BMC descreve como um modelo funciona, o Lean Canvas explicita **o que ainda é suposição e precisa ser testado**.
+O Lean Canvas, de Ash Maurya, é uma adaptação do Business Model Canvas voltada a negócios em estágio de incerteza. Onde o BMC descreve como um modelo funciona, o Lean Canvas explicita **o que ainda é suposição e precisa ser testado**. <dado q="E" />
 
 Para a Overlens neste momento, esse é o artefato mais útil dos dois. A companhia está em transição de posicionamento, público, produto e modelo de negócio simultaneamente, o que significa que boa parte do modelo é hipótese, e hipótese pede um instrumento desenhado para hipóteses.
 

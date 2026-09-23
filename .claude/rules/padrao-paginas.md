@@ -18,7 +18,7 @@ Toda página criada para a base de conhecimento da Overlens DEVE:
 4. Incluir os guardrails éticos: sem guru, sem dogma, sem culpabilização
 5. Seguir a **regra de público** e o **vocabulário atual** (abaixo)
 6. Seguir metáforas do universo Overlens: fogo controlado, prisma, portal, micélio
-7. **Classificar certeza** quando a afirmação for estratégica, com a tag inline `dado`, por exemplo `<dado q="A" />` (ver "Classificação de Certeza", abaixo)
+7. **Classificar certeza** quando a afirmação for estratégica, com a tag `dado` fechando o bloco, como uma nota, por exemplo `... e quer transformá-la em realidade. <dado q="A" />` (ver "Classificação de Certeza", abaixo)
 8. EVITAR: lâmpada clichê, varinha mágica, forja, FOMO, hustle porn, promessas vazias
 
 ## Regra de Público, ELIMINATÓRIA
@@ -69,13 +69,13 @@ O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou v
 
 ## Classificação de Certeza
 
-Toda afirmação estratégica nasce marcada. A marcação não é escrita por extenso: é uma **tag inline** que o site renderiza como uma bolinha de qualidade.
+Toda afirmação estratégica nasce marcada. A marcação não é escrita por extenso: é uma **nota que fecha o bloco** e que o site renderiza como uma bolinha de qualidade.
 
 ```
-<dado q="A" />
-<dado q="B" nota="Direção testada em duas turmas." />
-<dado q="A" fonte="TRU/changes.md" />
-<dado q="C" nota="Candidato mais forte." fonte="https://exemplo.com/pesquisa" />
+O público da Overlens é o empreendedor. <dado q="A" />
+Duas turmas já rodaram no formato novo. <dado q="B" nota="Direção testada em duas turmas." />
+A categoria é escola de negócios, criação e realização. <dado q="A" fonte="TRU/changes.md" />
+"A escola de negócios dos criadores" é a expressão em exploração. <dado q="C" nota="Candidato mais forte." fonte="https://exemplo.com/pesquisa" />
 ```
 
 Atributos: `q` é obrigatório e vai de `A` a `E`; `nota` é opcional e leva uma frase curta de qualificação; `fonte` é opcional e só aparece quando o documento **declara** de onde a informação veio.
@@ -92,13 +92,13 @@ No site, cada letra aparece como um ponto colorido com tooltip: a bolinha mostra
 
 Regras de uso:
 
-- A tag é **inline**. Ela abre o parágrafo, abre o item de lista ou ocupa a célula da tabela. Nunca fica sozinha numa linha separada do texto que classifica.
+- A tag **fecha o bloco que classifica**, como uma nota: vem depois da pontuação final, separada por um espaço. Fim do parágrafo, fim do item de lista, fim da última linha do blockquote, fim do texto da célula da tabela. Nunca fica sozinha numa linha separada do texto que classifica.
 - **Nunca invente fonte.** A ausência de fonte é informação verdadeira sobre a base.
 - Na dúvida entre `A` e `B`, escolher **`B`**.
 
 ## Regra de Histórico
 
-Informação historicamente verdadeira **não é apagada**. Quando um posicionamento, produto ou conceito for substituído, mova o registro para uma seção de **Histórico / Posicionamentos anteriores / Evolução** e marque com `<dado q="D" />`.
+Informação historicamente verdadeira **não é apagada**. Quando um posicionamento, produto ou conceito for substituído, mova o registro para uma seção de **Histórico / Posicionamentos anteriores / Evolução** e feche o bloco com `<dado q="D" />`.
 
 O erro a evitar não é preservar o passado: é permitir que ele seja lido como a definição atual da companhia.
 

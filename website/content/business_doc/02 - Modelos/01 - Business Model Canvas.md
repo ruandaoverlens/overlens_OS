@@ -12,9 +12,7 @@ related: ["business_doc/02 - Modelos/02 - Lean Canvas.md", "business_doc/03 - Ar
 
 ## Estrutura criada, conteúdo pendente. O Business Model Canvas oficial da Overlens será construído separadamente e incorporado aqui.
 
-Status: <dado q="E" />
-
-Esta página existe para receber o BMC atualizado, não para antecipá-lo. O canvas anterior da companhia foi construído sob a tese de escola de IA, design e criatividade, com receita concentrada em cursos, assinatura e lançamentos. Ele está preservado como registro em **Histórico › Registro do Modelo Anterior** e **não deve ser lido como o modelo atual**.
+Esta página existe para receber o BMC atualizado, não para antecipá-lo. O canvas anterior da companhia foi construído sob a tese de escola de IA, design e criatividade, com receita concentrada em cursos, assinatura e lançamentos. Ele está preservado como registro em **Histórico › Registro do Modelo Anterior** e **não deve ser lido como o modelo atual**. <dado q="E" />
 
 Preencher os nove blocos agora, a partir da documentação existente, reproduziria a empresa anterior com vocabulário novo. Por isso a página permanece estruturada e vazia.
 

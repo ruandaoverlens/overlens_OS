@@ -2,9 +2,7 @@
 
 ## Este artefato não vive aqui. O Value Proposition Canvas da Overlens pertence ao Growth System.
 
-Status: <dado q="E" nota="A construção acontece no Growth System." />
-
-Esta página existe para registrar a decisão de arquitetura documental e, futuramente, guardar apenas o resumo executivo e o ponteiro. Ela não deve conter uma versão própria do canvas.
+Esta página existe para registrar a decisão de arquitetura documental e, futuramente, guardar apenas o resumo executivo e o ponteiro. Ela não deve conter uma versão própria do canvas. <dado q="E" nota="A construção acontece no Growth System." />
 
 ## Por que fica no Growth System
 

@@ -14,7 +14,7 @@ Nesta seção você encontra:
 
 ## A mudança de fundo: de campanhas para sistemas
 
-<dado q="B" /> A operação da Overlens foi construída em torno de campanhas e lançamentos: concentração de esforço em janelas, pico de receita, recomeço no ciclo seguinte. A companhia está migrando dessa lógica para **aquisição e vendas contínuas**.
+A operação da Overlens foi construída em torno de campanhas e lançamentos: concentração de esforço em janelas, pico de receita, recomeço no ciclo seguinte. A companhia está migrando dessa lógica para **aquisição e vendas contínuas**. <dado q="B" />
 
 Isso muda a natureza dos fluxos documentados aqui.
 
@@ -43,10 +43,10 @@ O detalhamento dessa migração (aquisição contínua, vendas diárias, CRM, fo
 
 Esta página descreve a lógica dos fluxos. **O desenho operacional de cada um deles ainda não está definido.**
 
-- <dado q="E" /> Quais fluxos existem, nomeados e com dono.
-- <dado q="E" /> Cadência, gatilhos e critérios de entrada e saída de cada fluxo.
-- <dado q="E" /> Ferramentas que sustentam a automação.
-- <dado q="E" /> Como campanhas e operação contínua convivem no calendário.
+- Quais fluxos existem, nomeados e com dono. <dado q="E" />
+- Cadência, gatilhos e critérios de entrada e saída de cada fluxo. <dado q="E" />
+- Ferramentas que sustentam a automação. <dado q="E" />
+- Como campanhas e operação contínua convivem no calendário. <dado q="E" />
 
 Nada disso deve ser preenchido por suposição. Até que as decisões existam, esta seção funciona como critério, não como manual.
 

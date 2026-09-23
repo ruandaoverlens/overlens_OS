@@ -8,7 +8,7 @@
 
 A Overlens é uma escola para pessoas que querem construir. Aqui elas aprendem a pensar melhor sobre suas ideias, cuidar delas e transformá-las em realidade através de projetos, produtos, negócios, histórias e invenções. Não é um lugar de receitas prontas, mas de aprendizado para usar a cabeça, o coração e a imaginação na hora de escolher o que criar e como criar. A Overlens existe para formar pessoas mais curiosas, corajosas e responsáveis, capazes de criar coisas que façam sentido em um mundo que está sempre mudando.
 
-<dado q="A" /> Aprender, aqui, é meio. O fim é criar, construir, experimentar, validar, executar e realizar. Por isso a pergunta que organiza o ecossistema deixou de ser *"o que você quer aprender?"* e passou a ser *"o que você quer construir, realizar ou se tornar?"*.
+Aprender, aqui, é meio. O fim é criar, construir, experimentar, validar, executar e realizar. Por isso a pergunta que organiza o ecossistema deixou de ser *"o que você quer aprender?"* e passou a ser *"o que você quer construir, realizar ou se tornar?"*. <dado q="A" />
 
 É também por isso que a Overlens se chama uma escola de negócios, e vale dizer o que isso não significa. Não é uma escola de administração tradicional. É uma escola de negócios construída para quem não se identifica com a estética, a linguagem e a visão de mundo de uma escola de negócios convencional.
 
@@ -26,11 +26,11 @@ Leia: [Por que a Overlens existe?]() para compreender melhor
 
 ## Para quem é a Overlens?
 
-<dado q="B" /> A Overlens é para o empreendedor: quem tem uma ideia, uma ambição ou uma visão de futuro e quer transformá-la em realidade, assumindo responsabilidade pelo que constrói.
+A Overlens é para o empreendedor: quem tem uma ideia, uma ambição ou uma visão de futuro e quer transformá-la em realidade, assumindo responsabilidade pelo que constrói. <dado q="B" />
 
 O que define esse público é o estado, não a profissão. A pessoa pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa, da programação, do comércio ou de nenhuma dessas origens. A formação é circunstância; o que importa é o que cada um faz com a própria ideia. É para quem não se satisfaz em apenas executar tarefas ou seguir fórmulas prontas, aceita lidar com ambiguidade, sustenta decisões difíceis, aprende continuamente e age no mundo real. Pessoas que buscam sentido, autoria e coerência entre discurso e prática, e que entendem que construir um negócio implica consequências, esforço e maturidade.
 
-> <dado q="E" /> A definição formal de personas, segmentos e ICP pertence ao Growth System e ainda será feita.
+> A definição formal de personas, segmentos e ICP pertence ao Growth System e ainda será feita. <dado q="E" />
 
 ## E para quem NÃO É?
 
@@ -38,6 +38,6 @@ A Overlens não é para quem busca validação constante, segurança emocional o
 
 ## Qual é a abordagem da Overlens?
 
-A abordagem da Overlens se apoia em três pilares: inspirar, ensinar e mover. Inspirar, para romper crenças limitantes e lembrar que criar é possível. Ensinar, para desenvolver pensamento crítico, visão sistêmica, criatividade aplicada e uso consciente da tecnologia. E mover, para transformar conhecimento em ação no mundo real. É aqui que o projeto ocupa o centro: em vez de consumir conhecimento e depois procurar onde aplicá-lo, a pessoa parte de algo que quer realizar, e o conhecimento entra quando o projeto pede <dado q="B" />. Tudo isso sustentado por uma ética da autonomia que reconhece limites, contexto e fragilidade humana, evitando dogmas, messianismo e culpa moral, e priorizando clareza, responsabilidade e coerência.
+A abordagem da Overlens se apoia em três pilares: inspirar, ensinar e mover. Inspirar, para romper crenças limitantes e lembrar que criar é possível. Ensinar, para desenvolver pensamento crítico, visão sistêmica, criatividade aplicada e uso consciente da tecnologia. E mover, para transformar conhecimento em ação no mundo real. É aqui que o projeto ocupa o centro: em vez de consumir conhecimento e depois procurar onde aplicá-lo, a pessoa parte de algo que quer realizar, e o conhecimento entra quando o projeto pede. Tudo isso sustentado por uma ética da autonomia que reconhece limites, contexto e fragilidade humana, evitando dogmas, messianismo e culpa moral, e priorizando clareza, responsabilidade e coerência. <dado q="B" />
 
 Leia [Cuidados e riscos]() para compreender melhor

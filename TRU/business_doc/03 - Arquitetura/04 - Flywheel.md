@@ -2,9 +2,7 @@
 
 ## Um flywheel descreve o ciclo em que cada volta torna a próxima mais barata. O da Overlens ainda é hipótese, e está registrado aqui como hipótese.
 
-Status: <dado q="C" nota="Não assumir como definitivo sem validação." />
-
-A diferença entre funil e flywheel não é estética. Um funil consome energia a cada ciclo: entra investimento, sai receita, e no ciclo seguinte é preciso investir de novo. Um flywheel acumula: o resultado de um ciclo é o insumo do próximo, e o custo marginal de crescer cai com o tempo.
+A diferença entre funil e flywheel não é estética. Um funil consome energia a cada ciclo: entra investimento, sai receita, e no ciclo seguinte é preciso investir de novo. Um flywheel acumula: o resultado de um ciclo é o insumo do próximo, e o custo marginal de crescer cai com o tempo. <dado q="C" nota="Não assumir como definitivo sem validação." />
 
 Uma empresa de campanhas opera funil. Uma empresa de sistemas opera flywheel. A Overlens está migrando da primeira lógica para a segunda, o que torna esta página importante e, ao mesmo tempo, prematura.
 
@@ -35,7 +33,7 @@ Três coisas precisariam ser verdade para que este flywheel girasse, e nenhuma d
 
 ## O que aceleraria o ciclo
 
-<dado q="C" /> Elementos que aumentariam a velocidade de cada volta:
+Elementos que aumentariam a velocidade de cada volta: <dado q="C" />
 
 - **PBL bem implementado**: encurta a distância entre aprender e construir.
 - **Comunidade densa**: aumenta a chance de um projeto encontrar a pessoa, o feedback ou o time que faltava.

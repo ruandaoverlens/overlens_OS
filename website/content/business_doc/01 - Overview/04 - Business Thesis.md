@@ -18,9 +18,7 @@ A tese de negócio explica **por que esta empresa deveria existir agora** e por 
 
 ## O deslocamento
 
-<dado q="B" />
-
-O mundo está reduzindo drasticamente o custo de criação por meio de IA e de novas tecnologias. Produzir um texto, uma imagem, um vídeo, um protótipo, um site, um aplicativo: tudo isso ficou ordens de magnitude mais barato e mais rápido em um intervalo curto de tempo.
+O mundo está reduzindo drasticamente o custo de criação por meio de IA e de novas tecnologias. Produzir um texto, uma imagem, um vídeo, um protótipo, um site, um aplicativo: tudo isso ficou ordens de magnitude mais barato e mais rápido em um intervalo curto de tempo. <dado q="B" />
 
 A consequência econômica é direta: **capacidade de execução deixa de ser fator de diferenciação.** Aquilo que qualquer um consegue fazer rapidamente tende a valer menos.
 
@@ -41,7 +39,7 @@ Quando a execução barateia, o valor se desloca para o que não barateou junto:
 
 ## Por que isso sustenta um negócio
 
-<dado q="B" /> Três consequências econômicas decorrem do deslocamento acima.
+Três consequências econômicas decorrem do deslocamento acima. <dado q="B" />
 
 **1. Aumenta o número de pessoas que tentam construir algo próprio.** A barreira de entrada caiu. Mais gente consegue começar. Isso amplia a base de pessoas para quem a proposta da Overlens faz sentido.
 
@@ -53,7 +51,7 @@ A terceira consequência é a mais importante para a decisão de produto: **a Ov
 
 ## O papel da IA na tese
 
-<dado q="A" /> IA deixa de ser a categoria da Overlens e passa a ser infraestrutura.
+IA deixa de ser a categoria da Overlens e passa a ser infraestrutura. <dado q="A" />
 
 IA continua sendo tecnologia essencial para a empresa, para seus produtos e para o que ensinamos. O que muda é a posição: ela não é o produto nem o diferencial declarado. Dentro da Overlens, IA existe para potencializar aprendizagem, planejamento, execução, criação, desenvolvimento de projetos e de competências, personalização, conexão entre conhecimentos, acompanhamento de progresso, descoberta de pessoas e recursos, e transformação de ideias em projetos reais.
 
@@ -61,7 +59,7 @@ A consequência para a documentação é explícita: **qualquer material que col
 
 ## O papel do projeto na tese
 
-<dado q="B" /> A unidade central migra de conteúdo para projeto.
+A unidade central migra de conteúdo para projeto. <dado q="B" />
 
 A lógica desejada é:
 
@@ -73,7 +71,7 @@ Economicamente, isso importa por dois motivos. Primeiro, porque conhecimento apl
 
 ## O papel da comunidade na tese
 
-<dado q="B" /> Comunidade não é feature de retenção. É infraestrutura de realização.
+Comunidade não é feature de retenção. É infraestrutura de realização. <dado q="B" />
 
 A tese é que, à medida que criar fica barato e o gargalo migra para julgamento e distribuição, o valor de estar cercado das pessoas certas aumenta. Colaboração, feedback qualificado, formação de times, descoberta de talento, reputação e oportunidade são coisas que um produto sozinho não entrega.
 
@@ -81,7 +79,7 @@ Isso tem implicação econômica concreta: parte do valor que a Overlens entrega
 
 ## Como a tese vira receita
 
-<dado q="B" /> Se a tese estiver correta, a companhia não deveria capturar valor apenas ensinando.
+Se a tese estiver correta, a companhia não deveria capturar valor apenas ensinando. <dado q="B" />
 
 Uma empresa que desenvolve capacidade de realização pode capturar valor em mais de um ponto do mesmo percurso: quando alguém aprende, quando constrói, quando pertence, quando acelera, e quando precisa que alguém participe diretamente da transformação do seu negócio.
 

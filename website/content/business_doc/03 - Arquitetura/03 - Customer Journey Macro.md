@@ -16,7 +16,7 @@ Esta página descreve **os estados pelos quais alguém passa na relação com a 
 
 ## A jornada
 
-<dado q="C" /> Modelo conceitual a ser validado contra os produtos reais:
+Modelo conceitual a ser validado contra os produtos reais: <dado q="C" />
 
 > **Descobre → Experimenta → Aprende → Constrói → Evolui → Acelera → Pertence**
 

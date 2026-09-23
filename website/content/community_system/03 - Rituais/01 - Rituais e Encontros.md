@@ -12,7 +12,7 @@ related: ["community_system/03 - Rituais/02 - Atom Praxis e Hackathons.md", "com
 
 ## Uma comunidade não é feita do que acontece nela. É feita do que volta a acontecer.
 
-**Estado desta página:** <dado q="E" nota="Pendente em quase tudo o que é operacional." /> Não existe calendário oficial, cadência definida, nomenclatura estabelecida ou formato padronizado de ritual na Overlens. Nada disso foi preenchido por suposição: inventar um ritual que não existe é criar expectativa interna sobre algo que ninguém decidiu entregar.
+Não existe calendário oficial, cadência definida, nomenclatura estabelecida ou formato padronizado de ritual na Overlens. Nada disso foi preenchido por suposição: inventar um ritual que não existe é criar expectativa interna sobre algo que ninguém decidiu entregar. <dado q="E" nota="Pendente em quase tudo o que é operacional." />
 
 O que esta página descreve é a **função** de cada tipo de ritual. Função é o que permite decidir depois; nome e data sem função são apenas agenda.
 
@@ -30,7 +30,7 @@ Os três, somados, sustentam densidade. É por isso que ritual é tema de estrat
 
 ## Tipos de ritual por função
 
-<dado q="C" /> A tipologia abaixo organiza possibilidades por aquilo que cada uma resolve. Não descreve o que existe hoje nem propõe nomes.
+A tipologia abaixo organiza possibilidades por aquilo que cada uma resolve. Não descreve o que existe hoje nem propõe nomes. <dado q="C" />
 
 ### Encontros de construção
 
@@ -66,15 +66,15 @@ A forma mais desenvolvida desse tipo já tem nome e história na Overlens: ver *
 
 **Função:** sustentar a comunidade entre os rituais. Nem toda comunidade precisa de evento para existir, mas toda comunidade precisa de algum lugar onde a conversa continue.
 
-<dado q="E" /> A arquitetura de ambientes (onde a comunidade acontece, se dentro da plataforma, fora dela ou em combinação) não está decidida e depende do **Product System**.
+A arquitetura de ambientes (onde a comunidade acontece, se dentro da plataforma, fora dela ou em combinação) não está decidida e depende do **Product System**. <dado q="E" />
 
 ## Ambientes exclusivos
 
-<dado q="C" /> A ideia de ambientes ou experiências de acesso restrito aparece na base ligada a artefatos e a participação (ver **Artefatos de Pertencimento**).
+A ideia de ambientes ou experiências de acesso restrito aparece na base ligada a artefatos e a participação (ver **Artefatos de Pertencimento**). <dado q="C" />
 
 A direção é coerente com pertencimento, e carrega um risco que precisa ser dito: exclusividade produz pertencimento para quem está dentro e distância para quem está fora. Usada como recompensa por contribuição, ela reforça a comunidade. Usada como isca comercial, ela a corrói.
 
-<dado q="E" /> Se existem, a que se dá acesso e por qual critério.
+Se existem, a que se dá acesso e por qual critério. <dado q="E" />
 
 ## O que falta decidir
 

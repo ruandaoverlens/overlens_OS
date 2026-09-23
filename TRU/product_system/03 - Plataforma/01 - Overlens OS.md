@@ -2,13 +2,11 @@
 
 ## A plataforma própria da Overlens existe e funciona. O que ela faz hoje, porém, não é o produto descrito neste sistema: é a operação interna da companhia.
 
-**Status:** <dado q="A" nota="Quanto ao que existe." /> <dado q="B" nota="Quanto à decisão de construir." /> <dado q="E" nota="Quanto à medição." />
-
-Esta página levanta fatos, não intenções. Cada módulo listado abaixo existe no código. Nada que não exista foi incluído, e nada que exista foi omitido por não caber na narrativa.
+Esta página levanta fatos, não intenções. Cada módulo listado abaixo existe no código. Nada que não exista foi incluído, e nada que exista foi omitido por não caber na narrativa. <dado q="A" nota="Quanto ao que existe." /> <dado q="B" nota="Quanto à decisão de construir." /> <dado q="E" nota="Quanto à medição." />
 
 ## O que existe hoje
 
-<dado q="A" nota="Verificado no código." /> O Overlens OS é uma aplicação web única que reúne:
+O Overlens OS é uma aplicação web única que reúne: <dado q="A" nota="Verificado no código." />
 
 | Módulo | O que faz |
 | :---- | :---- |
@@ -26,8 +24,6 @@ Esta página levanta fatos, não intenções. Cada módulo listado abaixo existe
 
 ## Stack
 
-<dado q="A" />
-
 | Camada | Tecnologia |
 | :---- | :---- |
 | **Aplicação** | Next.js 16 e React 19 |
@@ -37,9 +33,11 @@ Esta página levanta fatos, não intenções. Cada módulo listado abaixo existe
 | **IA** | OpenRouter, com modelos abertos como padrão e modelos pagos disponíveis por seleção |
 | **Rotinas automáticas** | Duas tarefas agendadas, ambas do módulo Registros: varredura de alertas diária e ingestão do radar semanal |
 
+<dado q="A" />
+
 ## Modelo de acesso
 
-<dado q="A" fonte="docs/adr/0002-autorizacao-e-controle-de-acesso.md" /> Quatro papéis: `gratuito`, `assinante`, `staff` e `admin`.
+Quatro papéis: `gratuito`, `assinante`, `staff` e `admin`. <dado q="A" fonte="docs/adr/0002-autorizacao-e-controle-de-acesso.md" />
 
 Gratuito e assinante alcançam um conjunto restrito de rotas. Staff e admin alcançam praticamente o mesmo conjunto. A diferença entre eles não é navegação, e sim duas ações: apagar membros e editar textos das páginas, ambas exclusivas de admin. O módulo Registros não é controlado por papel, e sim por domínio de e-mail: apenas a equipe interna acessa.
 
@@ -47,13 +45,13 @@ As decisões de acesso estão registradas em `docs/adr/0002-autorizacao-e-contro
 
 ## Decisões já registradas
 
-<dado q="A" /> Os ADRs existentes cobrem quatro assuntos: o módulo de ativos registrados, a autorização e o controle de acesso, a consulta de disponibilidade de marcas e a jornada guiada de registro de marca, esta última ainda como proposta.
+Os ADRs existentes cobrem quatro assuntos: o módulo de ativos registrados, a autorização e o controle de acesso, a consulta de disponibilidade de marcas e a jornada guiada de registro de marca, esta última ainda como proposta. <dado q="A" />
 
 Três dos quatro tratam do módulo Registros. **Nenhuma decisão arquitetural sobre aprendizagem, projeto, capacidade, evidência ou IA contextual está registrada.** Isso é informação por si só: a área com mais decisões documentadas é a que menos pesa na tese.
 
 ## Por que plataforma própria é estratégico
 
-<dado q="B" /> Quatro razões, na ordem em que sustentam a tese:
+Quatro razões, na ordem em que sustentam a tese: <dado q="B" />
 
 **Retenção real, e não contratual.** Uma plataforma que acompanha projeto, capacidade e evidência dá motivo recorrente para voltar. Conteúdo hospedado em ferramenta de terceiros entrega acesso; não entrega continuidade.
 
@@ -65,11 +63,11 @@ Três dos quatro tratam do módulo Registros. **Nenhuma decisão arquitetural so
 
 ## O que essa escolha custa
 
-<dado q="A" /> **Custos reais, não hipotéticos:**
+**Custos reais, não hipotéticos:** <dado q="A" />
 
 **Capacidade desviada.** Cada hora de construção de plataforma é uma hora que não foi para conteúdo, comunidade, vendas ou entrega de serviço. Em uma companhia com nove apostas estratégicas simultâneas, esse é o custo mais pesado.
 
-**Custo variável de IA.** Cresce com a adoção e hoje não é medido. Registrado em `Business Document › Riscos e Incertezas › E5` <dado fonte="Business Document › Riscos e Incertezas › E5" />.
+**Custo variável de IA.** Cresce com a adoção e hoje não é medido. Registrado em `Business Document › Riscos e Incertezas › E5`. <dado fonte="Business Document › Riscos e Incertezas › E5" />
 
 **Manutenção permanente.** Software não fica pronto. Dependências, segurança, quebras de fornecedor e dívida técnica passam a ser obrigação contínua, independentemente de haver roadmap.
 
@@ -79,9 +77,7 @@ Três dos quatro tratam do módulo Registros. **Nenhuma decisão arquitetural so
 
 ## Os indicadores que provariam a decisão
 
-<dado q="E" nota="Nenhum deles está medido hoje." />
-
-A decisão de construir plataforma própria seria confirmada ou refutada por indicadores como:
+A decisão de construir plataforma própria seria confirmada ou refutada por indicadores como: <dado q="E" nota="Nenhum deles está medido hoje." />
 
 1. Proporção de pessoas que retornam por causa de um projeto em andamento, e não por conteúdo novo.
 2. Volume de evidência efetivamente registrada por quem constrói.
@@ -94,7 +90,7 @@ Nenhum desses seis números existe. A companhia tem produto em uso e instrumenta
 
 ## O que está em aberto
 
-- <dado q="E" /> Se o Overlens OS deve se tornar a plataforma do Atom ou permanecer como sistema interno, com a experiência do público em outro lugar.
-- <dado q="E" /> Instrumentação de produto: não existe hoje.
-- <dado q="E" /> Separação de ambientes de dados entre desenvolvimento e produção.
-- <dado q="E" /> ADRs sobre aprendizagem, projeto, capacidade e evidência. Antes de implementar qualquer uma dessas frentes, a decisão precisa ser registrada.
+- Se o Overlens OS deve se tornar a plataforma do Atom ou permanecer como sistema interno, com a experiência do público em outro lugar. <dado q="E" />
+- Instrumentação de produto: não existe hoje. <dado q="E" />
+- Separação de ambientes de dados entre desenvolvimento e produção. <dado q="E" />
+- ADRs sobre aprendizagem, projeto, capacidade e evidência. Antes de implementar qualquer uma dessas frentes, a decisão precisa ser registrada. <dado q="E" />

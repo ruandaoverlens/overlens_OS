@@ -12,9 +12,7 @@ related: ["business_doc/04 - Estratégia/02 - Strategic Bets.md", "business_doc/
 
 ## Ter um ativo não é ter uma vantagem defensável. Esta página separa uma coisa da outra, e assume que, hoje, quase tudo está do lado dos ativos.
 
-Status: <dado q="C" nota="Nenhuma vantagem listada aqui foi comprovada como defensável." />
-
-Um moat é aquilo que torna difícil competir com a companhia mesmo quando o concorrente conhece exatamente o que ela faz. A maior parte do que uma empresa chama de diferencial não passa nesse teste: é apenas algo que ela tem e que outro poderia ter.
+Um moat é aquilo que torna difícil competir com a companhia mesmo quando o concorrente conhece exatamente o que ela faz. A maior parte do que uma empresa chama de diferencial não passa nesse teste: é apenas algo que ela tem e que outro poderia ter. <dado q="C" nota="Nenhuma vantagem listada aqui foi comprovada como defensável." />
 
 ## Critério de classificação
 
@@ -27,9 +25,7 @@ Um moat é aquilo que torna difícil competir com a companhia mesmo quando o con
 
 ### Comunidade
 
-<dado q="C" nota="O candidato mais forte." />
-
-Uma comunidade densa não é copiável por dinheiro nem por velocidade: ela depende de tempo, de confiança acumulada e das pessoas específicas que estão dentro. É também o único ativo desta lista que **aumenta de valor com escala**, desde que a densidade se mantenha.
+Uma comunidade densa não é copiável por dinheiro nem por velocidade: ela depende de tempo, de confiança acumulada e das pessoas específicas que estão dentro. É também o único ativo desta lista que **aumenta de valor com escala**, desde que a densidade se mantenha. <dado q="C" nota="O candidato mais forte." />
 
 **O que precisaria ser verdade:** que a colaboração real aconteça, que a densidade sobreviva ao crescimento e que as pessoas permaneçam por causa de quem está dentro, não do conteúdo.
 
@@ -37,9 +33,7 @@ Uma comunidade densa não é copiável por dinheiro nem por velocidade: ela depe
 
 ### Cultura e worldbuilding
 
-<dado q="C" />
-
-Nexialismo, Atom, Praxis, Arcádia, Mônada, Tésera, Órbital e o universo simbólico construído ao longo dos anos formam um repertório cultural próprio. Isso é difícil de copiar porque copiar símbolos sem história produz algo visivelmente artificial.
+Nexialismo, Atom, Praxis, Arcádia, Mônada, Tésera, Órbital e o universo simbólico construído ao longo dos anos formam um repertório cultural próprio. Isso é difícil de copiar porque copiar símbolos sem história produz algo visivelmente artificial. <dado q="C" />
 
 **O que precisaria ser verdade:** que o universo aprofunde a relação de quem está dentro sem dificultar a compreensão de quem está fora. Posicionamento precisa ser simples; universo pode ser complexo.
 
@@ -47,9 +41,7 @@ Nexialismo, Atom, Praxis, Arcádia, Mônada, Tésera, Órbital e o universo simb
 
 ### Grafo de capacidades, projetos e evidências
 
-<dado q="C" nota="O de maior potencial e o menos existente." />
-
-Se a Overlens conseguir registrar, ao longo do tempo, o que cada pessoa consegue fazer, o que construiu e que evidência existe disso, ela acumula um tipo de dado que nenhum concorrente novo tem: não dados de consumo, mas dados de **capacidade demonstrada**.
+Se a Overlens conseguir registrar, ao longo do tempo, o que cada pessoa consegue fazer, o que construiu e que evidência existe disso, ela acumula um tipo de dado que nenhum concorrente novo tem: não dados de consumo, mas dados de **capacidade demonstrada**. <dado q="C" nota="O de maior potencial e o menos existente." />
 
 Isso permitiria conectar pessoa, projeto, conhecimento e colaborador com precisão que cresce com o uso.
 
@@ -59,9 +51,7 @@ Isso permitiria conectar pessoa, projeto, conhecimento e colaborador com precis�
 
 ### Reputação dos membros
 
-<dado q="C" />
-
-Se pessoas formadas no ecossistema construírem coisas relevantes e visíveis, a reputação da companhia deixa de depender do próprio marketing. É prova externa, que não se compra.
+Se pessoas formadas no ecossistema construírem coisas relevantes e visíveis, a reputação da companhia deixa de depender do próprio marketing. É prova externa, que não se compra. <dado q="C" />
 
 **O que precisaria ser verdade:** projetos reais, visíveis e atribuíveis, com registro de que passaram pelo ecossistema.
 
@@ -91,7 +81,7 @@ Só viraria moat se a distribuição passasse a ser gerada pelo próprio ecossis
 
 ### Rede de especialistas
 
-<dado q="C" /> Experts formados dentro do ecossistema ampliam capacidade de entrega sem diluir método. Quanto maior e mais qualificada a rede, mais difícil de replicar.
+Experts formados dentro do ecossistema ampliam capacidade de entrega sem diluir método. Quanto maior e mais qualificada a rede, mais difícil de replicar. <dado q="C" />
 
 Ainda não há evidência de escala nem de que a formação de experts aconteça de forma sistemática.
 

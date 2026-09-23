@@ -1,6 +1,6 @@
 # Perfis de Clientes
 
-Status desta página: <dado q="B" /> A leitura por quatro modos comportamentais é a formulação atual e ainda está em teste. A formulação anterior, de cinco perfis sequenciais, está preservada na seção **Histórico**, ao final.
+A leitura por quatro modos comportamentais é a formulação atual e ainda está em teste. A formulação anterior, de cinco perfis sequenciais, está preservada na seção **Histórico**, ao final. <dado q="B" />
 
 ## Perfis de Clientes Ideais
 
@@ -29,7 +29,7 @@ Sempre que houver interação, entrega ou desenvolvimento de novos pontos de con
 
 O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.**
 
-<dado q="B" /> Dentro desse público, Operante, Convergente, Emergente e Nexialista descrevem **formas de agir, aprender, pensar e criar**. São modos comportamentais e cognitivos:
+Dentro desse público, Operante, Convergente, Emergente e Nexialista descrevem **formas de agir, aprender, pensar e criar**. São modos comportamentais e cognitivos: <dado q="B" />
 
 > **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**
 
@@ -161,7 +161,7 @@ Além disso, sugira imagens ou símbolos visuais relacionados. Crie metáforas t
 
 ## Histórico: a formulação anterior de cinco perfis
 
-Status desta seção: <dado q="D" /> O que está abaixo foi verdadeiro na documentação anterior e é preservado como registro. **Não representa a leitura atual** e não deve ser usado como base para comunicação, produto ou qualificação.
+O que está abaixo foi verdadeiro na documentação anterior e é preservado como registro. **Não representa a leitura atual** e não deve ser usado como base para comunicação, produto ou qualificação. <dado q="D" />
 
 A formulação anterior descrevia **cinco perfis tratados como estágios sequenciais de maturidade do cliente**. O eixo declarado não era senioridade profissional, e sim **a distância entre a ideia e a realidade**: o quanto a pessoa já conseguia transformar o que imaginava em algo que existe, sustenta e cresce.
 

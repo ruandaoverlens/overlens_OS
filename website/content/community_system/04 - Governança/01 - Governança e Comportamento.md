@@ -12,7 +12,7 @@ related: ["community_system/01 - Fundamentos/01 - Comunidade como Infraestrutura
 
 ## Nenhuma comunidade é neutra. A que não decide o que protege acaba protegendo quem fala mais alto.
 
-**Estado desta página:** <dado q="E" nota="Pendente em todas as decisões." /> Não existe hoje, na Overlens, política de comportamento, processo de moderação, sistema de sanções, critério formal de curadoria ou procedimento de conflito.
+Não existe hoje, na Overlens, política de comportamento, processo de moderação, sistema de sanções, critério formal de curadoria ou procedimento de conflito. <dado q="E" nota="Pendente em todas as decisões." />
 
 Esta página **não inventa nenhum deles.** Ela registra os princípios que deveriam orientar essas decisões e formula com precisão as perguntas que precisam ser respondidas. Uma regra inventada aqui seria lida como política em seis meses, e políticas fantasma são piores do que ausência de política: criam a expectativa de proteção que ninguém vai entregar.
 
@@ -26,7 +26,7 @@ O risco já está registrado: **crescer perdendo densidade converte o principal 
 
 ## Princípios que deveriam orientar
 
-<dado q="C" /> Formulações coerentes com a tese e com os valores da Overlens, apresentadas como critério para a decisão futura, não como regra vigente.
+Formulações coerentes com a tese e com os valores da Overlens, apresentadas como critério para a decisão futura, não como regra vigente. <dado q="C" />
 
 ### O que protege a densidade
 
@@ -70,7 +70,7 @@ Nenhum dos três prescreve o que fazer. Eles descrevem como a decisão deveria s
 
 ## O que não existe e precisa existir
 
-<dado q="E" /> **Lista completa das decisões ausentes:**
+**Lista completa das decisões ausentes:** <dado q="E" />
 
 1. **Código de conduta.** Não existe documento que declare o comportamento esperado e o inaceitável.
 2. **Quem modera.** Não há papel, alçada nem responsável definidos.

@@ -2,9 +2,7 @@
 
 ## Não existe roadmap de produto na Overlens. Esta página é a estrutura onde ele vai morar, e o registro honesto de que ela está vazia.
 
-**Status:** <dado q="E" />
-
-Nenhuma data, prioridade, entrega ou meta aparece aqui. Não por descuido, e sim porque inventá-las seria exatamente o erro que este sistema existe para impedir: transformar exploração estratégica em compromisso documentado, fazendo a companhia parar de testar o que ainda não sabe.
+Nenhuma data, prioridade, entrega ou meta aparece aqui. Não por descuido, e sim porque inventá-las seria exatamente o erro que este sistema existe para impedir: transformar exploração estratégica em compromisso documentado, fazendo a companhia parar de testar o que ainda não sabe. <dado q="E" />
 
 Roadmap sem decisão anterior é lista de desejos com aparência de plano. E métrica sem instrumentação é número com aparência de evidência.
 
@@ -20,7 +18,7 @@ Três motivos, todos verificáveis nas outras páginas deste sistema:
 
 ## O que precisa ser respondido antes
 
-<dado q="E" /> As perguntas cuja resposta destrava a construção de um roadmap:
+As perguntas cuja resposta destrava a construção de um roadmap: <dado q="E" />
 
 **Sobre escopo**
 1. O Overlens OS se torna a plataforma do Atom, ou a experiência do público vive em outro lugar?
@@ -45,7 +43,7 @@ Enquanto a pergunta 11 não tiver resposta, o roadmap não deveria existir, porq
 
 ## Métricas que fariam sentido quando houver como medir
 
-<dado q="E" nota="Nenhuma está instrumentada, e nenhuma tem meta." /> A lista abaixo indica o que mereceria ser observado, não o que a companhia acompanha.
+A lista abaixo indica o que mereceria ser observado, não o que a companhia acompanha. <dado q="E" nota="Nenhuma está instrumentada, e nenhuma tem meta." />
 
 | Dimensão | O que observar | Por que |
 | :---- | :---- | :---- |
@@ -60,7 +58,7 @@ Enquanto a pergunta 11 não tiver resposta, o roadmap não deveria existir, porq
 
 ## Métricas que devem ser recusadas como prova de valor
 
-<dado q="A" nota="Por princípio." /> Podem ser úteis como diagnóstico operacional; não servem como evidência de que o produto cumpre seu propósito:
+Podem ser úteis como diagnóstico operacional; não servem como evidência de que o produto cumpre seu propósito: <dado q="A" nota="Por princípio." />
 
 - Aulas assistidas, módulos concluídos, percentual de trilha.
 - Tempo de sessão e frequência de acesso isolados de qualquer projeto.

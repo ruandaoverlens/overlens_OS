@@ -25,7 +25,7 @@ O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou v
 
 ## Os quatro modos
 
-<dado q="B" /> Além do nível de consciência, observamos o **modo** como a pessoa age, aprende, pensa e cria. São quatro, e eles não formam escada de senioridade, percurso obrigatório nem sistema de gamificação:
+Além do nível de consciência, observamos o **modo** como a pessoa age, aprende, pensa e cria. São quatro, e eles não formam escada de senioridade, percurso obrigatório nem sistema de gamificação: <dado q="B" />
 
 > **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**
 
@@ -38,9 +38,9 @@ Para a copy, isso significa duas perguntas independentes: **o quanto essa pessoa
 
 ## Personas (necessita revisão de persona)
 
-<dado q="D" /> As quatro personas abaixo foram construídas sob a leitura anterior da empresa, que descrevia os perfis como uma escada de maturidade medindo "a distância entre a ideia e a realidade" e incluía um estágio chamado "Inconsciente". Essa leitura não representa a direção atual.
+As quatro personas abaixo foram construídas sob a leitura anterior da empresa, que descrevia os perfis como uma escada de maturidade medindo "a distância entre a ideia e a realidade" e incluía um estágio chamado "Inconsciente". Essa leitura não representa a direção atual. <dado q="D" />
 
-Elas permanecem registradas porque descrevem travas comportamentais observadas de verdade e ainda são úteis como referência de linguagem. **Não devem ser usadas como definição atual do público.** A redefinição formal de personas, segmentos e ICP pertence ao Growth System e está pendente <dado q="E" />.
+Elas permanecem registradas porque descrevem travas comportamentais observadas de verdade e ainda são úteis como referência de linguagem. **Não devem ser usadas como definição atual do público.** A redefinição formal de personas, segmentos e ICP pertence ao Growth System e está pendente. <dado q="E" />
 
 ## Brunin \- O Jovem Inconsciente *(necessita revisão de persona)*
 
@@ -66,7 +66,7 @@ Lilly já tem um negócio de pé, com repertório alto, visão de futuro e capac
 
 [Conheça melhor a Lily](https://docs.google.com/document/d/1lga8Zv4h0rPwVgOXBygkcUvDGkE6YmTjGBL6rh0Px2w/edit?tab=t.43k1ssk59ci0#heading=h.3tz722uk7bd3)
 
-<dado q="D" /> O parágrafo a seguir registra a leitura anterior, em que os perfis eram lidos como "mapas de distância entre a ideia e a realidade":
+O parágrafo a seguir registra a leitura anterior, em que os perfis eram lidos como "mapas de distância entre a ideia e a realidade": <dado q="D" />
 
 > Os níveis da Overlens são mapas de consciência e de distância entre a ideia e a realidade. Eles existem para garantir precisão estratégica. Comunicação, produto e abordagem são definidos a partir desse diagnóstico.
 
@@ -77,4 +77,4 @@ Tella precisa de estrutura para transformar energia criativa em algo concluído 
 Ander precisa de exposição orientada para romper o perfeccionismo e sustentar o que lança.  
 Lilly precisa de ambiente e cadência para converter visão sistêmica em um ecossistema que opera sem ela.
 
-As quatro descrições acima permanecem como registro histórico <dado q="D" /> e **necessitam revisão de persona**. A regra prática continua a mesma: encontrar a pessoa no ponto exato em que ela está, com o nível adequado de responsabilidade e profundidade, sem falar acima (confusão) nem abaixo (tédio).
+As quatro descrições acima permanecem como registro histórico e **necessitam revisão de persona**. A regra prática continua a mesma: encontrar a pessoa no ponto exato em que ela está, com o nível adequado de responsabilidade e profundidade, sem falar acima (confusão) nem abaixo (tédio). <dado q="D" />

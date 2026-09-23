@@ -12,7 +12,7 @@ related: [growth_system/03 - Estratégia/32 - Fluxos, growth_system/03 - Estrat�
 
 ## A Overlens está deixando de depender de lançamentos para operar com aquisição e vendas contínuas. Esta página documenta os conceitos que essa nova operação precisa comportar, e marca com clareza o que ainda não foi decidido.
 
-Status do conjunto: <dado q="B" /> A direção está tomada; o desenho operacional, não. Esta página existe para que ninguém confunda intenção com processo implantado.
+A direção está tomada; o desenho operacional, não. Esta página existe para que ninguém confunda intenção com processo implantado. <dado q="B" />
 
 O princípio que organiza tudo:
 
@@ -49,7 +49,7 @@ Entrada permanente de pessoas novas no ecossistema, independentemente de haver e
 
 Encaixe: alimenta todas as demais peças. Sem entrada contínua, CRM e follow-up trabalham sobre uma base que só se renova em lançamentos.
 
-<dado q="E" /> Quais canais sustentam aquisição contínua, com que orçamento e sob qual responsabilidade?
+Quais canais sustentam aquisição contínua, com que orçamento e sob qual responsabilidade? <dado q="E" />
 
 ### Vendas diárias
 
@@ -57,7 +57,7 @@ A venda deixa de ser evento e passa a ser rotina. Existe uma quantidade de conve
 
 Encaixe: transforma o fluxo de aquisição em receita de forma distribuída, reduzindo a dependência de picos.
 
-<dado q="E" /> Quais ofertas estão disponíveis para venda diária e quais permanecem em ciclos fechados?
+Quais ofertas estão disponíveis para venda diária e quais permanecem em ciclos fechados? <dado q="E" />
 
 ### CRM
 
@@ -65,7 +65,7 @@ O sistema de registro e condução do relacionamento comercial: quem é cada pes
 
 Encaixe: é a memória da operação. Sem ele, a continuidade depende de quem lembra, e uma operação contínua não pode depender de memória individual.
 
-<dado q="E" /> Qual ferramenta, que estágios são registrados, quem mantém e quais dados são obrigatórios?
+Qual ferramenta, que estágios são registrados, quem mantém e quais dados são obrigatórios? <dado q="E" />
 
 ### Vendedores
 
@@ -73,7 +73,7 @@ Pessoas responsáveis por conduzir conversas comerciais, entender contexto, qual
 
 Encaixe: é a camada humana entre o interesse e o compromisso. Sua qualidade define a experiência de compra tanto quanto o produto.
 
-<dado q="E" /> Quantas pessoas, com qual escopo, remuneração, critério de qualificação e para quais ofertas?
+Quantas pessoas, com qual escopo, remuneração, critério de qualificação e para quais ofertas? <dado q="E" />
 
 ### Follow-up
 
@@ -81,7 +81,7 @@ O acompanhamento de uma conversa iniciada e não concluída. A maior parte das d
 
 Encaixe: é o que converte o trabalho de aquisição já pago em resultado. É também a peça mais sensível ao tom: acompanhar é diferente de pressionar.
 
-<dado q="E" /> Em que momento, por quem, por qual canal e até quando se acompanha uma conversa?
+Em que momento, por quem, por qual canal e até quando se acompanha uma conversa? <dado q="E" />
 
 ### Recuperação de leads
 
@@ -89,7 +89,7 @@ Retomada de contatos que demonstraram interesse em algum momento e não avançar
 
 Encaixe: aproveita o investimento de aquisição já realizado em ciclos anteriores: exatamente o tipo de acúmulo que a lógica de campanha desperdiça.
 
-<dado q="E" /> Que critérios definem um contato recuperável, com que frequência se retoma e com qual mensagem?
+Que critérios definem um contato recuperável, com que frequência se retoma e com qual mensagem? <dado q="E" />
 
 ### WhatsApp
 
@@ -97,7 +97,7 @@ Canal de relacionamento direto e de alta proximidade. Concentra tanto conversas 
 
 Encaixe: é onde boa parte do follow-up, da recuperação e do atendimento acontece. Por ser íntimo, é onde o tom da Overlens fica mais exposto.
 
-<dado q="E" /> Que usos são legítimos, quem opera, que registro é feito no CRM e quais os limites de frequência e abordagem?
+Que usos são legítimos, quem opera, que registro é feito no CRM e quais os limites de frequência e abordagem? <dado q="E" />
 
 ### Conteúdo
 
@@ -105,7 +105,7 @@ Produção permanente que atrai, educa e sustenta reputação. Em uma operação
 
 Encaixe: é a primeira etapa do ciclo de crescimento e o principal alimentador da aquisição contínua. Ver *Growth Loop*.
 
-<dado q="E" /> Que volume, formatos, canais e responsáveis sustentam essa operação?
+Que volume, formatos, canais e responsáveis sustentam essa operação? <dado q="E" />
 
 ### Eventos recorrentes
 
@@ -113,7 +113,7 @@ Encontros, imersões, hackathons e experiências que acontecem com regularidade.
 
 Encaixe: comprimem várias etapas do ciclo em um intervalo curto e criam pontos de contato previsíveis ao longo do ano, sem depender de um único evento comercial.
 
-<dado q="E" /> Quais eventos são recorrentes, em que periodicidade e com qual papel comercial?
+Quais eventos são recorrentes, em que periodicidade e com qual papel comercial? <dado q="E" />
 
 ### Campanhas
 
@@ -121,7 +121,7 @@ Intensificações deliberadas dentro de um sistema que já opera, não a operaç
 
 Encaixe: uma campanha sobre base, relacionamento e reputação acumulados é um pico; sem isso, é a única fonte de receita do período. A diferença é o que existe antes e depois dela.
 
-<dado q="E" /> Quantas campanhas por ano, com que ofertas e como convivem com a venda contínua?
+Quantas campanhas por ano, com que ofertas e como convivem com a venda contínua? <dado q="E" />
 
 ### Produtos perpétuos
 
@@ -129,7 +129,7 @@ Ofertas disponíveis o ano inteiro, sem janela de abertura e fechamento. São a 
 
 Encaixe: sustentam a receita entre campanhas e permitem que a decisão aconteça no tempo da pessoa, não no tempo do calendário comercial.
 
-<dado q="E" /> Quais ofertas se tornam perpétuas, em que formato e com que estrutura de preço?
+Quais ofertas se tornam perpétuas, em que formato e com que estrutura de preço? <dado q="E" />
 
 ### Expansão de clientes
 
@@ -137,7 +137,7 @@ Crescimento da relação com quem já é cliente: avanço para outra camada, nov
 
 Encaixe: é a fonte de receita mais barata da operação, porque dispensa aquisição. Depende de saber em que estado cada pessoa está, o que hoje ainda não é observável.
 
-<dado q="E" /> Que movimentos de expansão existem, quem os conduz e a partir de que sinal?
+Que movimentos de expansão existem, quem os conduz e a partir de que sinal? <dado q="E" />
 
 ### Retenção
 
@@ -145,7 +145,7 @@ Permanência de quem já está dentro. Na camada contínua, permanência é rece
 
 Encaixe: uma operação contínua com retenção fraca é um funil disfarçado: enche na frente e vaza atrás, e o custo de aquisição nunca amortiza.
 
-<dado q="E" /> O que é acompanhado como sinal de permanência e o que é feito quando esse sinal cai?
+O que é acompanhado como sinal de permanência e o que é feito quando esse sinal cai? <dado q="E" />
 
 ### Relacionamento de longo prazo
 
@@ -153,11 +153,11 @@ A camada que atravessa todas as outras: tratar cada pessoa como alguém que cont
 
 Encaixe: é o que diferencia um sistema comercial de uma máquina de conversão. Também é o que torna reputação e indicação possíveis: as entradas mais baratas do ciclo.
 
-<dado q="E" /> Quem é responsável pelo relacionamento depois da venda e como isso se articula com comunidade e produto?
+Quem é responsável pelo relacionamento depois da venda e como isso se articula com comunidade e produto? <dado q="E" />
 
 ## Como as peças se encaixam
 
-<dado q="B" /> Uma leitura possível do encadeamento, sem assumir processo definido:
+Uma leitura possível do encadeamento, sem assumir processo definido: <dado q="B" />
 
 > **Conteúdo e eventos alimentam aquisição contínua · CRM registra e organiza · vendedores e follow-up conduzem · recuperação reaproveita o que não avançou · produtos perpétuos permitem que a compra aconteça a qualquer momento · retenção e expansão transformam cliente em relação · relacionamento de longo prazo devolve reputação e indicação para o começo do ciclo · campanhas intensificam pontualmente o que já está em operação.**
 
@@ -178,7 +178,7 @@ O teste de coerência: **se uma peça depende de uma janela específica para exi
 
 ## Histórico: a operação por lançamento
 
-<dado q="D" /> O modelo anterior, preservado como registro do que foi construído e praticado.
+O modelo anterior, preservado como registro do que foi construído e praticado. <dado q="D" />
 
 A Overlens operou com GTM estruturado por estágios e concentrado em eventos comerciais: **Atlas** com Product Led Growth em 1 estágio; **Overpass** com Product Led Growth em 2 estágios; **Vanguarda** com modelo de eficiência em 2 estágios. Lotes, datas de abertura e janelas de inscrição faziam parte da mecânica, e o esforço de aquisição se concentrava nas semanas anteriores a cada abertura.
 

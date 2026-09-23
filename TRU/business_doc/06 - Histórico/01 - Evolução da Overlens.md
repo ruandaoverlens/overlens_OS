@@ -2,9 +2,7 @@
 
 ## O que foi verdadeiro em cada momento da companhia. Nada aqui descreve o estado atual: esta página existe justamente para que o passado não seja confundido com o presente.
 
-Status de tudo nesta página: <dado q="D" />
-
-A narrativa completa da trajetória (com contexto, motivações e escolhas) pertence ao Brand System, na Linha do Tempo. Esta página registra apenas o que interessa à leitura de negócio: como categoria, público, produto e modelo econômico mudaram ao longo do tempo.
+A narrativa completa da trajetória (com contexto, motivações e escolhas) pertence ao Brand System, na Linha do Tempo. Esta página registra apenas o que interessa à leitura de negócio: como categoria, público, produto e modelo econômico mudaram ao longo do tempo. <dado q="D" />
 
 ## Linha do tempo de negócio
 

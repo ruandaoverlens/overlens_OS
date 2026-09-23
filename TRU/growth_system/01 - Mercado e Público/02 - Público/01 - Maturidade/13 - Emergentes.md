@@ -2,7 +2,7 @@
 
 ## Emergente é o modo de quem cria novas formas de agir a partir das conexões que faz, e não apenas combina o que existe.
 
-> **Nota de enquadramento.** <dado q="B" fonte="02 - Público/06 - Perfis de Clientes.md" /> Apesar do nome da pasta, **não se trata de maturidade sequencial.** Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, não degraus de uma escada nem níveis de senioridade. Não existe "ponto crítico" a ser ultrapassado nem fase anterior a ser superada. Formulação completa em `02 - Público/06 - Perfis de Clientes.md`.
+> **Nota de enquadramento.** Apesar do nome da pasta, **não se trata de maturidade sequencial.** Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, não degraus de uma escada nem níveis de senioridade. Não existe "ponto crítico" a ser ultrapassado nem fase anterior a ser superada. Formulação completa em `02 - Público/06 - Perfis de Clientes.md`. <dado q="B" fonte="02 - Público/06 - Perfis de Clientes.md" />
 
 Quem age no modo Emergente experimenta, constrói métodos próprios, adapta-se com rapidez, lê ativamente mudanças tecnológicas e culturais, tem menos apego a processos estabelecidos e aprende orientado a problemas e objetivos.
 
@@ -41,7 +41,7 @@ O atrito característico desse modo: criar muito e dispersar. A energia se espal
 | **Barreira Sistêmica** | Ambiente repleto de "inovações vazias" que iludem com brilho superficial, mas não entregam bases estruturais. Pressão acelerada para se posicionar na vanguarda sem comprometer a profundidade, exigência de agir rápido em terrenos ainda em formação. Dificuldade de encontrar comunidades maduras o suficiente para acolher inovação genuína sem pasteurizar ou diluir a originalidade. |
 
 **Como a Overlens entra**: Atlas (entrada e ativação), Overpass (camada contínua), Vanguarda (camada de aceleração).  
-**Métricas de sucesso** <dado q="D" nota="Necessitam revalidação." />:  
+**Métricas de sucesso**: <dado q="D" nota="Necessitam revalidação." />  
 Modelo de negócio validado e resistente ao tempo  
 Ferramentas de utilidade construída  
 Churn anual \< 10%

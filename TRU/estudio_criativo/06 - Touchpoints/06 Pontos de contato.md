@@ -6,13 +6,13 @@ A Overlens não é um logotipo que aparece em telas. É uma postura que se manif
 
 Este documento mapeia como a marca se comporta em cada ponto de contato. Não é uma lista de canais. É um sistema de experiências intencionais, onde tom, persona sintética, modo e objetivo se alinham para acompanhar o empreendedor; sem empurrá-lo, sem abandoná-lo.
 
-> Status desta página: <dado q="B" /> O mapa de canais, as diretrizes por canal, as métricas e os anti-padrões continuam válidos e em uso. A leitura de jornada e a atribuição de público por fase **dependem da redefinição de personas, segmentos e ICP**, que pertence ao Growth System e está pendente <dado q="E" />. Enquanto isso não se conclui, trate as proporções de público indicadas nas tabelas como hipótese de trabalho, não como dado.
+> O mapa de canais, as diretrizes por canal, as métricas e os anti-padrões continuam válidos e em uso. A leitura de jornada e a atribuição de público por fase **dependem da redefinição de personas, segmentos e ICP**, que pertence ao Growth System e está pendente. Enquanto isso não se conclui, trate as proporções de público indicadas nas tabelas como hipótese de trabalho, não como dado. <dado q="B" /> <dado q="E" />
 
 ---
 
 ## Quem atravessa esses pontos de contato
 
-<dado q="A" /> O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. O que o define é o estado, não a profissão: pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa ou de nenhuma dessas origens.
+O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. O que o define é o estado, não a profissão: pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa ou de nenhuma dessas origens. <dado q="A" />
 
 Quem entra no ecossistema passa a ser um **Atom**: a identidade de um membro da comunidade Overlens. Não é aluno, assinante nem usuário: essas são condições transacionais. Atom é identidade de pertencimento, e vale a partir do momento em que a pessoa faz parte, não apenas quando compra.
 
@@ -22,19 +22,19 @@ Quem entra no ecossistema passa a ser um **Atom**: a identidade de um membro da 
 
 ## Os quatro modos
 
-<dado q="B" /> As tabelas adiante citam quatro modos. Eles descrevem **formas de agir, aprender, pensar e criar**, não senioridade, não estágios obrigatórios, não gamificação:
+As tabelas adiante citam quatro modos. Eles descrevem **formas de agir, aprender, pensar e criar**, não senioridade, não estágios obrigatórios, não gamificação: <dado q="B" />
 
 > **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**
 
 Uma mesma pessoa pode operar em modos diferentes conforme o contexto, e não existe percurso obrigatório entre eles. "Nexialista" nomeia uma capacidade que a Overlens desenvolve, nunca o nome do nosso público.
 
-<dado q="D" /> A versão anterior desta página organizava a jornada sobre cinco perfis lidos como escada de maturidade (Inconscientes, Operantes, Convergentes, Emergentes e Nexialistas), definidos como "a distância entre a ideia e a realidade". Essa leitura foi substituída: "Inconscientes" deixou de existir na formulação atual e os quatro modos restantes não formam hierarquia.
+A versão anterior desta página organizava a jornada sobre cinco perfis lidos como escada de maturidade (Inconscientes, Operantes, Convergentes, Emergentes e Nexialistas), definidos como "a distância entre a ideia e a realidade". Essa leitura foi substituída: "Inconscientes" deixou de existir na formulação atual e os quatro modos restantes não formam hierarquia. <dado q="D" />
 
 ---
 
 ## As 5 fases de experiência
 
-<dado q="B" /> A experiência não é um funil. É uma espiral: o empreendedor pode entrar em qualquer ponto, voltar a fases anteriores e aprofundar-se em ciclos.
+A experiência não é um funil. É uma espiral: o empreendedor pode entrar em qualquer ponto, voltar a fases anteriores e aprofundar-se em ciclos. <dado q="B" />
 
 | Fase | Descrição | Modo mais frequente | Movimento |
 |------|-----------|---------------------|-----------|
@@ -48,7 +48,7 @@ Cada fase corresponde a uma camada retórica da comunicação da Overlens; Ethos
 
 ### Relação com a jornada macro do Business Document
 
-<dado q="C" fonte="Business Document" /> O Business Document descreve a jornada do empreendedor no ecossistema em sete movimentos:
+O Business Document descreve a jornada do empreendedor no ecossistema em sete movimentos: <dado q="C" fonte="Business Document" />
 
 > **Descobre → Experimenta → Aprende → Constrói → Evolui → Acelera → Pertence**
 

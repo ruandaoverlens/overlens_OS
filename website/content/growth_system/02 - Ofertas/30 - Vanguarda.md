@@ -12,7 +12,7 @@ related: [growth_system/02 - Ofertas/23 - Ofertas, growth_system/02 - Ofertas/29
 
 ## A Vanguarda é a camada de aceleração da Overlens: onde algo que já existe recebe intensidade, proximidade e estrutura para avançar mais rápido.
 
-Status: <dado q="A" nota="Oferta ativa, em redefinição quanto ao enquadramento." /> A definição da oferta pertence ao Business Document, em *Arquitetura de Produtos e Serviços*. Esta página trata do que pertence ao Growth System: quem chega até aqui, que argumento move a decisão, como é a compra e qual o timing.
+A definição da oferta pertence ao Business Document, em *Arquitetura de Produtos e Serviços*. Esta página trata do que pertence ao Growth System: quem chega até aqui, que argumento move a decisão, como é a compra e qual o timing. <dado q="A" nota="Oferta ativa, em redefinição quanto ao enquadramento." />
 
 [**Manual da Vanguarda**](https://docs.google.com/document/d/10HPRcbj0Fa0aMWtLbKIn7naUk7MruSG6CgxOZAse9nM/edit?usp=sharing)
 
@@ -33,7 +33,7 @@ Distinção importante e frequentemente confundida no mercado:
 | **Incubação** | Ajuda algo a **nascer** e encontrar forma | Um projeto específico em estágio inicial |
 | **Aceleração** | Ajuda algo **existente** a avançar mais rápido | Um projeto ou negócio que já saiu do papel |
 
-A Vanguarda está do lado da aceleração. A incubação é uma frente distinta e ainda em construção <dado q="B" />. Sua relação com a Vanguarda não está decidida <dado q="E" />: podem ser camadas separadas ou continuação uma da outra.
+A Vanguarda está do lado da aceleração. A incubação é uma frente distinta e ainda em construção. Sua relação com a Vanguarda não está decidida: podem ser camadas separadas ou continuação uma da outra. <dado q="B" /> <dado q="E" />
 
 Para o Growth System, a consequência é prática: **são conversas comerciais diferentes**. Quem procura incubação está perguntando "isso pode existir?". Quem procura aceleração está perguntando "como isso avança mais rápido?". Usar o mesmo argumento para os dois desqualifica a oferta.
 
@@ -50,7 +50,7 @@ A jornada da Vanguarda é organizada em **8 níveis de construção de negócio*
 7. **Processos**: o que funciona vira sistema repetível.
 8. **Expansão**: crescimento a partir de base estável.
 
-Ao longo do percurso, cada participante trabalha sobre o próprio negócio, assume compromissos de execução e participa de ciclos de acompanhamento. <dado q="B" /> A mecânica exata de diagnóstico de nível, de avanço e de acompanhamento ainda pode evoluir.
+Ao longo do percurso, cada participante trabalha sobre o próprio negócio, assume compromissos de execução e participa de ciclos de acompanhamento. A mecânica exata de diagnóstico de nível, de avanço e de acompanhamento ainda pode evoluir. <dado q="B" />
 
 ## Papel no ecossistema
 
@@ -60,7 +60,7 @@ A Vanguarda é a camada mais profunda da relação com a companhia. Além do que
 - **Formação de pessoas do ecossistema**: é daqui que tendem a surgir especialistas, mentores internos e referências da comunidade.
 - **Origem de evidências**: resultados concretos e verificáveis, insumo direto do mecanismo de crescimento.
 
-<dado q="C" /> Que essa reverberação aconteça de forma consistente ainda não está demonstrado.
+Que essa reverberação aconteça de forma consistente ainda não está demonstrado. <dado q="C" />
 
 ## Posicionamento da oferta
 
@@ -75,7 +75,7 @@ Alguns princípios:
 
 ## Jornada de compra
 
-<dado q="B" /> A decisão pela Vanguarda tende a ser mais longa, mais racional e mais assistida do que as demais.
+A decisão pela Vanguarda tende a ser mais longa, mais racional e mais assistida do que as demais. <dado q="B" />
 
 | Etapa | O que acontece |
 | :---- | :---- |
@@ -85,7 +85,7 @@ Alguns princípios:
 | **Entra** | Compromisso de ciclo longo. |
 | **Permanece** | Sustentada por avanço observável e por comunidade de alto envolvimento. |
 
-<dado q="E" /> O processo comercial da Vanguarda dentro da nova arquitetura contínua (qualificação, follow-up, critérios de entrada e cadência) ainda não está definido. Ver *Arquitetura Comercial*, na seção de Estratégia.
+O processo comercial da Vanguarda dentro da nova arquitetura contínua (qualificação, follow-up, critérios de entrada e cadência) ainda não está definido. Ver *Arquitetura Comercial*, na seção de Estratégia. <dado q="E" />
 
 ## Ficha técnica: Vanguarda
 
@@ -95,8 +95,8 @@ Alguns princípios:
 | **Papel no ecossistema** | Camada de aceleração |
 | **Promessas já utilizadas** <dado q="D" /> | - Pare de abandonar ideias. Comece a construir o futuro. - Construa agora o tipo de negócio que vai continuar existindo. - Para quem leva a própria criação a sério. - Você não precisa de mais ideias. Precisa de estrutura. |
 | **Website** | Página principal (Toque aqui para acessar) |
-| **Tipo de produto** | <dado q="D" /> Classificado como "High-end / Mentoria". Descrição estreita: a camada é de aceleração. |
-| **GTM** | <dado q="D" /> Eficiência / 2 stages. Em revisão com a migração para operação contínua. |
+| **Tipo de produto** | Classificado como "High-end / Mentoria". Descrição estreita: a camada é de aceleração. <dado q="D" /> |
+| **GTM** | Eficiência / 2 stages. Em revisão com a migração para operação contínua. <dado q="D" /> |
 | **Preço praticado** <dado q="D" /> | R$12.000 ou 12x R$1.000 |
 |  | R$9.000 à vista no pix (equivalente a R$3.000 de desconto) |
 |  | Preço especial: R$9.000 ou 12x R$750 no cartão |
@@ -119,9 +119,9 @@ Alguns princípios:
 
 ## O que precisa ser decidido
 
-1. <dado q="E" /> Como incubação e Vanguarda se relacionam: camadas distintas ou continuação.
-2. <dado q="E" /> Qual expressão pública a camada de aceleração assume na comunicação comercial.
-3. <dado q="E" /> Critérios formais de entrada e de qualificação.
-4. <dado q="E" /> Se o formato semestral entra em teste e em quais condições.
+1. Como incubação e Vanguarda se relacionam: camadas distintas ou continuação. <dado q="E" />
+2. Qual expressão pública a camada de aceleração assume na comunicação comercial. <dado q="E" />
+3. Critérios formais de entrada e de qualificação. <dado q="E" />
+4. Se o formato semestral entra em teste e em quais condições. <dado q="E" />
 
 Leia o [Manual da Vanguarda](https://docs.google.com/document/d/10HPRcbj0Fa0aMWtLbKIn7naUk7MruSG6CgxOZAse9nM/edit?tab=t.0) para mais informações.

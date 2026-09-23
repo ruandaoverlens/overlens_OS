@@ -19,7 +19,7 @@ related: ["brand_system/04 - Núcleo da Marca/05 Virtudes.md", "brand_system/05 
 
 ## A escola de negócios dos criadores
 
-<dado q="B" /> Esta é a declaração de posicionamento da Overlens. Ela é curta de propósito: posicionamento precisa ser simples, mesmo quando o universo da marca é complexo. Ninguém deveria precisar compreender o worldbuilding da Overlens para entender o que ela faz.
+Esta é a declaração de posicionamento da Overlens. Ela é curta de propósito: posicionamento precisa ser simples, mesmo quando o universo da marca é complexo. Ninguém deveria precisar compreender o worldbuilding da Overlens para entender o que ela faz. <dado q="B" />
 
 A expressão tem uma estrutura dinâmica, e a repetição das categorias é parte do conceito:
 

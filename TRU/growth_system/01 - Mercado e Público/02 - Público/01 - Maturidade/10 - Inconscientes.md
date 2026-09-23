@@ -2,7 +2,7 @@
 
 ## ⚠️ HISTÓRICO: este perfil não existe na formulação atual
 
-Status desta página: <dado q="D" /> "Inconscientes" era um dos **cinco perfis** da formulação anterior, em que Inconscientes, Operantes, Convergentes, Emergentes e Nexialistas eram tratados como **estágios sequenciais de maturidade do cliente**, medindo "a distância entre a ideia e a realidade".
+"Inconscientes" era um dos **cinco perfis** da formulação anterior, em que Inconscientes, Operantes, Convergentes, Emergentes e Nexialistas eram tratados como **estágios sequenciais de maturidade do cliente**, medindo "a distância entre a ideia e a realidade". <dado q="D" />
 
 **Essa leitura não vale mais.** Na formulação atual, Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, modos comportamentais e cognitivos, não degraus de uma escada:
 
@@ -10,7 +10,7 @@ Status desta página: <dado q="D" /> "Inconscientes" era um dos **cinco perfis**
 
 **"Inconscientes" não tem equivalente nessa formulação.** O conceito saiu: ele descrevia um estado de consciência prévio à escada, e a escada deixou de existir. A situação que ele tentava nomear (alguém que carrega uma ideia e ainda não encontrou como começar) continua real e continua fazendo parte do público, mas é tratada como **situação**, não como perfil ou estágio.
 
-**Onde está a formulação atual:** `02 - Público/06 - Perfis de Clientes.md`. Registro consolidado da transição: `business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md` <dado fonte="business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md" />.
+**Onde está a formulação atual:** `02 - Público/06 - Perfis de Clientes.md`. Registro consolidado da transição: `business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md`. <dado fonte="business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md" />
 
 O conteúdo abaixo é preservado **como registro do que foi documentado**. Não deve ser usado como base para comunicação, produto, campanha ou qualificação.
 
@@ -18,7 +18,7 @@ O conteúdo abaixo é preservado **como registro do que foi documentado**. Não 
 
 ## Registro do conteúdo original
 
-> <dado q="D" /> Texto original da página, preservado integralmente a partir daqui.
+> Texto original da página, preservado integralmente a partir daqui. <dado q="D" />
 
 **Descrição registrada à época:** *"Inconscientes são aquelas pessoas que carregam ideias há anos sem nunca ter tirado nenhuma do papel. Têm vontade, não têm direção. Ainda não despertaram verdadeiramente para a mudança que estamos vivendo e seguem suas vidas como se o mundo fosse o mesmo de algumas décadas atrás."*
 

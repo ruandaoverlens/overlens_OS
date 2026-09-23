@@ -2,7 +2,7 @@
 
 ## Todo sistema de reconhecimento ensina alguma coisa. A pergunta não é se vamos medir, é o que as pessoas vão aprender a perseguir quando descobrirem o que estamos medindo.
 
-**Estado desta página:** <dado q="C" nota="Hipótese em todas as afirmações sobre mecanismo." /> **Não existe sistema de reputação decidido, implementado ou validado na Overlens.**
+**Não existe sistema de reputação decidido, implementado ou validado na Overlens.** <dado q="C" nota="Hipótese em todas as afirmações sobre mecanismo." />
 
 O que existe é um problema real e duas armadilhas conhecidas. Esta página trata dos três.
 
@@ -29,9 +29,7 @@ A gamificação não é ilegítima: ela resolve bem um problema específico, que
 
 ## A gamificação herdada
 
-<dado q="D" nota="Quanto ao papel." /> <dado q="C" nota="Quanto à implementação futura." />
-
-O modelo anterior da companhia usava gamificação (**XP, missões, badges, ofensiva, ranking, fractais, certificados**) como principal mecanismo de permanência, dentro de um growth loop organizado em aquisição → ativação → retenção → receita → indicação. O registro está no **Business Document**, em Histórico <dado fonte="Business Document › Histórico" />.
+O modelo anterior da companhia usava gamificação (**XP, missões, badges, ofensiva, ranking, fractais, certificados**) como principal mecanismo de permanência, dentro de um growth loop organizado em aquisição → ativação → retenção → receita → indicação. O registro está no **Business Document**, em Histórico. <dado q="D" nota="Quanto ao papel." /> <dado q="C" nota="Quanto à implementação futura." /> <dado fonte="Business Document › Histórico" />
 
 Duas consequências para este sistema:
 
@@ -42,7 +40,7 @@ Também vale a proibição explícita: **não assumir que os quatro modos (Opera
 
 ## Sobre o que a reputação poderia se construir
 
-<dado q="C" /> Três fontes parecem coerentes com a tese, e todas têm em comum o fato de serem consequência de trabalho, não de atividade:
+Três fontes parecem coerentes com a tese, e todas têm em comum o fato de serem consequência de trabalho, não de atividade: <dado q="C" />
 
 **Por contribuição.** O que a pessoa colocou na comunidade que outros usaram: respostas, referências, feedback, conexões feitas. Mede utilidade para terceiros.
 
@@ -50,11 +48,11 @@ Também vale a proibição explícita: **não assumir que os quatro modos (Opera
 
 **Por ajuda prestada.** Acompanhamento que fez diferença no projeto de outra pessoa. É a fonte mais difícil de observar e provavelmente a mais valiosa, porque é a que menos se finge.
 
-O Business Document trata o registro de **capacidade demonstrada** como candidata a vantagem defensável <dado fonte="Business Document" />, dados de capacidade e não de consumo. Reputação comunitária é uma das formas possíveis de alimentar esse registro, e depende inteiramente de infraestrutura que ainda não existe: essa parte pertence ao **Product System**.
+O Business Document trata o registro de **capacidade demonstrada** como candidata a vantagem defensável, dados de capacidade e não de consumo. Reputação comunitária é uma das formas possíveis de alimentar esse registro, e depende inteiramente de infraestrutura que ainda não existe: essa parte pertence ao **Product System**. <dado fonte="Business Document" />
 
 ## Progressão
 
-<dado q="E" /> Não existem níveis formais, faixas, categorias de membro ou critérios de avanço definidos na comunidade da Overlens. Nada disso deve ser inferido a partir dos quatro modos, das ofertas ou do modelo anterior.
+Não existem níveis formais, faixas, categorias de membro ou critérios de avanço definidos na comunidade da Overlens. Nada disso deve ser inferido a partir dos quatro modos, das ofertas ou do modelo anterior. <dado q="E" />
 
 O que pode ser registrado como princípio, e não como sistema: progressão na Overlens é **aumento de capacidade**, verificável por evidência. Se um dia existir representação formal disso, ela deveria descrever o que a pessoa consegue fazer, não há quanto tempo ela está por aqui.
 

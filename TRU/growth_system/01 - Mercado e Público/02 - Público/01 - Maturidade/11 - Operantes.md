@@ -2,7 +2,7 @@
 
 ## Operante é o modo de quem funciona dentro de sistemas, métodos e estruturas já estabelecidas, e executa bem o que já existe.
 
-> **Nota de enquadramento.** <dado q="B" fonte="02 - Público/06 - Perfis de Clientes.md" /> Apesar do nome da pasta, **não se trata de maturidade sequencial.** Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, não degraus de uma escada nem níveis de senioridade. Ninguém precisa "passar" pelo Operante para chegar a outro lugar, e a mesma pessoa pode agir em modos diferentes conforme o problema que tem diante de si. Formulação completa em `02 - Público/06 - Perfis de Clientes.md`.
+> **Nota de enquadramento.** Apesar do nome da pasta, **não se trata de maturidade sequencial.** Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, não degraus de uma escada nem níveis de senioridade. Ninguém precisa "passar" pelo Operante para chegar a outro lugar, e a mesma pessoa pode agir em modos diferentes conforme o problema que tem diante de si. Formulação completa em `02 - Público/06 - Perfis de Clientes.md`. <dado q="B" fonte="02 - Público/06 - Perfis de Clientes.md" />
 
 **Operante não é insulto nem julgamento de valor. Operantes são necessários em qualquer sistema.** A diferença entre os modos está no grau de autonomia intelectual e na capacidade de construir novas conexões, não no valor da pessoa.
 

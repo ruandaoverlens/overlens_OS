@@ -14,7 +14,7 @@ Por isso cada frente carrega uma marcação de certeza, e essa marcação deve s
 
 ## Espectro de entrega
 
-<dado q="B" /> Modelo mental interno para ler a arquitetura:
+Modelo mental interno para ler a arquitetura: <dado q="B" />
 
 > **Aprender → Construir → Acelerar**
 
@@ -50,7 +50,7 @@ A definição de cada frente está em *Arquitetura de Produtos e Serviços* e *A
 
 **Cada frente tem um estado de entrada diferente.** Quem procura educação está perguntando "como eu aprendo a fazer isso?". Quem procura incubação pergunta "isso pode existir?". Quem procura aceleração pergunta "como isso avança mais rápido?". Quem procura assessoria pergunta "vocês fazem isso comigo?". **Usar o mesmo argumento para todas desqualifica a oferta.**
 
-**Nenhuma frente deveria existir apenas porque gera receita.** O princípio de coerência registrado na Arquitetura de Receita <dado fonte="Business Document › Arquitetura de Receita" /> vale também aqui: cada frente deveria aumentar a capacidade de realização de alguém e, ao fazer isso, alimentar outra frente.
+**Nenhuma frente deveria existir apenas porque gera receita.** O princípio de coerência registrado na Arquitetura de Receita vale também aqui: cada frente deveria aumentar a capacidade de realização de alguém e, ao fazer isso, alimentar outra frente. <dado fonte="Business Document › Arquitetura de Receita" />
 
 **Não assumir que os produtos permanecerão iguais.** A arquitetura está em transição. Overpass e Vanguarda estão em redefinição conceitual e frentes novas ainda não têm forma comercial definida.
 
@@ -71,12 +71,12 @@ A definição de cada frente está em *Arquitetura de Produtos e Serviços* e *A
 
 ## Histórico
 
-<dado q="D" /> Esta página enquadrava as ofertas exclusivamente como produtos educacionais organizados por função na jornada de compra: front-end, back-end e high-end, ancorados em Jobs to Be Done. Esse enquadramento descrevia corretamente uma arquitetura de três produtos, mas não comporta a arquitetura atual, que inclui serviços, B2B, incubação, eventos e artefatos.
+Esta página enquadrava as ofertas exclusivamente como produtos educacionais organizados por função na jornada de compra: front-end, back-end e high-end, ancorados em Jobs to Be Done. Esse enquadramento descrevia corretamente uma arquitetura de três produtos, mas não comporta a arquitetura atual, que inclui serviços, B2B, incubação, eventos e artefatos. <dado q="D" />
 
 A classificação por função comercial (front-end / back-end / high-end) permanece registrada nas fichas técnicas de cada oferta como **registro do que foi praticado**, não como definição estratégica.
 
 ## O que precisa ser decidido
 
-1. <dado q="E" /> Quais frentes recebem esforço comercial dedicado neste ciclo e quais seguem como experimento.
-2. <dado q="E" /> Como cada frente é apresentada publicamente: se aparece no site, em que ordem e com qual linguagem.
-3. <dado q="E" /> Qual a transição desenhada entre as camadas.
+1. Quais frentes recebem esforço comercial dedicado neste ciclo e quais seguem como experimento. <dado q="E" />
+2. Como cada frente é apresentada publicamente: se aparece no site, em que ordem e com qual linguagem. <dado q="E" />
+3. Qual a transição desenhada entre as camadas. <dado q="E" />

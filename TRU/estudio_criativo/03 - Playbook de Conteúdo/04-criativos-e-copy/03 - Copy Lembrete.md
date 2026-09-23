@@ -34,11 +34,11 @@ Lembrete não é insistência emocional. É uma organização de prioridade. Ele
 
 ## Quando esta peça se aplica
 
-<dado q="A" /> Lembrete se aplica sempre que existe uma **data real** à frente: um encontro ao vivo, o início de uma turma, o fim de uma inscrição que realmente fecha, uma sessão com hora marcada.
+Lembrete se aplica sempre que existe uma **data real** à frente: um encontro ao vivo, o início de uma turma, o fim de uma inscrição que realmente fecha, uma sessão com hora marcada. <dado q="A" />
 
-<dado q="D" /> A formulação original desta página assumia que lembrete era uma etapa fixa do ciclo de lançamento, entre captação e carrinho aberto. Isso descrevia a operação anterior da empresa.
+A formulação original desta página assumia que lembrete era uma etapa fixa do ciclo de lançamento, entre captação e carrinho aberto. Isso descrevia a operação anterior da empresa. <dado q="D" />
 
-<dado q="B" /> Com a migração para aquisição e vendas contínuas, lembrete deixa de ser uma etapa do calendário e passa a ser um **tipo de peça acionado por evento**. Lançamentos continuam acontecendo, e nesses casos a página vale integralmente como está.
+Com a migração para aquisição e vendas contínuas, lembrete deixa de ser uma etapa do calendário e passa a ser um **tipo de peça acionado por evento**. Lançamentos continuam acontecendo, e nesses casos a página vale integralmente como está. <dado q="B" />
 
 **O que muda em operação contínua:**
 

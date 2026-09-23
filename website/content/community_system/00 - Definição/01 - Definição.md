@@ -20,7 +20,7 @@ A comunidade da Overlens existe. A documentação dela não existia até agora. 
 
 ## Sobre o que este sistema é verdade
 
-<dado q="A" /> O Community System é a fonte de verdade sobre **o funcionamento da comunidade**. Quando qualquer documento da base precisar responder como alguém participa, o que se espera de um membro, como reputação se constrói, que rituais existem ou como conflitos são tratados, a resposta pertence aqui.
+O Community System é a fonte de verdade sobre **o funcionamento da comunidade**. Quando qualquer documento da base precisar responder como alguém participa, o que se espera de um membro, como reputação se constrói, que rituais existem ou como conflitos são tratados, a resposta pertence aqui. <dado q="A" />
 
 O escopo cobre:
 
@@ -36,9 +36,7 @@ O escopo cobre:
 
 ## O estado real deste sistema
 
-<dado q="E" nota="Essa é a informação mais importante desta página." />
-
-Este sistema é novo. Quase tudo o que ele deveria documentar ainda não foi decidido. Não existem, hoje, definições oficiais de: níveis formais, critérios de progressão, política de moderação, cadência de rituais, processo de curadoria, regras de conflito ou mecanismo de reputação.
+Este sistema é novo. Quase tudo o que ele deveria documentar ainda não foi decidido. Não existem, hoje, definições oficiais de: níveis formais, critérios de progressão, política de moderação, cadência de rituais, processo de curadoria, regras de conflito ou mecanismo de reputação. <dado q="E" nota="Essa é a informação mais importante desta página." />
 
 Nada disso foi preenchido por suposição. Onde falta decisão, esta base registra a pendência e segue adiante. O custo de uma lacuna assumida é baixo; o custo de uma invenção que passa a ser lida como política é alto e demora a ser descoberto.
 
@@ -62,7 +60,7 @@ Na dúvida entre dois níveis, este sistema escolhe sempre o mais conservador.
 
 ## Relação com os outros systems
 
-<dado q="A" /> Cada assunto tem um documento responsável. Os demais **referenciam, não redefinem**.
+Cada assunto tem um documento responsável. Os demais **referenciam, não redefinem**. <dado q="A" />
 
 | Sistema | É verdade sobre | Fronteira com o Community System |
 | :---- | :---- | :---- |

@@ -2,7 +2,7 @@
 
 ## O Overpass é a camada contínua do ecossistema: o ambiente em que o Atom desenvolve capacidades ao longo do tempo, com projeto no centro e evidência como resultado.
 
-Status: <dado q="A" nota="Oferta ativa, em redefinição quanto ao que é." /> A definição da oferta pertence ao Business Document, em *Arquitetura de Produtos e Serviços*. Esta página trata do que pertence ao Growth System: como alguém chega ao Overpass, que argumento sustenta a decisão de assinar e, mais importante, que argumento sustenta a decisão de continuar.
+A definição da oferta pertence ao Business Document, em *Arquitetura de Produtos e Serviços*. Esta página trata do que pertence ao Growth System: como alguém chega ao Overpass, que argumento sustenta a decisão de assinar e, mais importante, que argumento sustenta a decisão de continuar. <dado q="A" nota="Oferta ativa, em redefinição quanto ao que é." />
 
 [**Manual do Overpass**](https://docs.google.com/document/d/1jguC-WLBlyvQf3jwQc-NQex90MmfzcryUMA9CokUUaQ/edit?usp=sharing)
 
@@ -28,7 +28,7 @@ Essa correção tem consequência direta sobre a venda e sobre a permanência.
 | **Por que continuar** | Ainda há conteúdo para consumir | Há projeto em andamento, progresso acumulado e pertencimento |
 | **O que sinaliza sucesso** | Aulas assistidas | Projeto avançado e evidência produzida |
 
-Catálogo é consumido e abandonado. **Projeto em andamento é motivo recorrente para permanecer.** É por isso que a redefinição do Overpass não é cosmética: ela muda a natureza econômica da assinatura, como registra a *Arquitetura de Receita* no Business Document <dado fonte="Business Document › Arquitetura de Receita" />.
+Catálogo é consumido e abandonado. **Projeto em andamento é motivo recorrente para permanecer.** É por isso que a redefinição do Overpass não é cosmética: ela muda a natureza econômica da assinatura, como registra a *Arquitetura de Receita* no Business Document. <dado fonte="Business Document › Arquitetura de Receita" />
 
 ## Papel no ecossistema
 
@@ -50,8 +50,6 @@ Três cuidados de linguagem:
 
 ## Jornada de compra
 
-<dado q="B" />
-
 | Etapa | O que acontece |
 | :---- | :---- |
 | **Descobre** | Conteúdo, redes, indicação, eventos, Atlas. |
@@ -60,7 +58,9 @@ Três cuidados de linguagem:
 | **Permanece** | Sustentada por projeto em andamento, progresso e pertencimento. |
 | **Expande** | Pode avançar para a camada de aceleração, eventos, serviços ou incubação. |
 
-<dado q="E" /> O processo comercial que sustenta assinatura contínua (recuperação, follow-up, reativação e expansão) ainda não está definido. Ver *Arquitetura Comercial*, na seção de Estratégia.
+<dado q="B" />
+
+O processo comercial que sustenta assinatura contínua (recuperação, follow-up, reativação e expansão) ainda não está definido. Ver *Arquitetura Comercial*, na seção de Estratégia. <dado q="E" />
 
 ## Ficha técnica: Overpass
 
@@ -70,8 +70,8 @@ Três cuidados de linguagem:
 | **Papel no ecossistema** | Camada contínua: ambiente de desenvolvimento de capacidades |
 | **Promessas já utilizadas** <dado q="D" /> | - Pare de reagir. Comece a construir. - Clareza em um mundo barulhento - Menos ruído. Mais direção. - Clareza é a nossa vantagem competitiva. - A casa de quem constrói |
 | **Website** | Página principal (Toque aqui para acessar) |
-| **Tipo de produto** | Assinatura. <dado q="D" /> Classificado como "Back-end / Assinatura" e descrito como biblioteca educacional. |
-| **GTM** | <dado q="D" /> Product Led Growth / 2 Stage. Em revisão com a migração para operação contínua. |
+| **Tipo de produto** | Assinatura. Classificado como "Back-end / Assinatura" e descrito como biblioteca educacional. <dado q="D" /> |
+| **GTM** | Product Led Growth / 2 Stage. Em revisão com a migração para operação contínua. <dado q="D" /> |
 | **Preço praticado** <dado q="D" /> | R$180/mês (R$2.160 em 12 meses) |
 |  | 12x R$149 no cartão (R$1.788/ano) |
 |  | R$1.500 à vista no pix |
@@ -92,9 +92,9 @@ Três cuidados de linguagem:
 
 ## O que precisa ser decidido
 
-1. <dado q="E" /> Como a permanência passa a ser observada (projeto ativo, progresso, evidência) e o que a comunicação promete a partir disso.
-2. <dado q="E" /> Qual é a passagem desenhada entre Atlas e Overpass.
-3. <dado q="E" /> Se existem níveis ou modalidades de assinatura.
-4. <dado q="E" /> Como se comunica a redefinição para quem assinou sob o argumento anterior.
+1. Como a permanência passa a ser observada (projeto ativo, progresso, evidência) e o que a comunicação promete a partir disso. <dado q="E" />
+2. Qual é a passagem desenhada entre Atlas e Overpass. <dado q="E" />
+3. Se existem níveis ou modalidades de assinatura. <dado q="E" />
+4. Como se comunica a redefinição para quem assinou sob o argumento anterior. <dado q="E" />
 
 Leia o [Manual do Overpass](https://docs.google.com/document/d/1jguC-WLBlyvQf3jwQc-NQex90MmfzcryUMA9CokUUaQ/edit?tab=t.0) para mais informações.

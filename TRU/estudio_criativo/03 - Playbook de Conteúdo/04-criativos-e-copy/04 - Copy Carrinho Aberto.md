@@ -29,11 +29,11 @@ Carrinho aberto é o momento em que: A razão já aprovou. A emoção precisa ab
 
 ## Quando esta peça se aplica
 
-<dado q="A" /> Esta página descreve o **momento de decisão**: aquele em que a pessoa já entendeu a oferta e só falta escolher entrar. Em um lançamento, esse momento coincide com o carrinho aberto e a página vale exatamente como está escrita.
+Esta página descreve o **momento de decisão**: aquele em que a pessoa já entendeu a oferta e só falta escolher entrar. Em um lançamento, esse momento coincide com o carrinho aberto e a página vale exatamente como está escrita. <dado q="A" />
 
-<dado q="D" /> A formulação original tratava o carrinho aberto como o clímax inevitável de todo ciclo comercial da Overlens, porque, à época, praticamente toda a receita vinha de lançamentos.
+A formulação original tratava o carrinho aberto como o clímax inevitável de todo ciclo comercial da Overlens, porque, à época, praticamente toda a receita vinha de lançamentos. <dado q="D" />
 
-<dado q="B" /> A empresa está migrando para **aquisição e vendas contínuas**. Lançamentos continuam existindo e continuam usando este material sem alteração. O que muda é que ele deixa de ser o único formato de venda.
+A empresa está migrando para **aquisição e vendas contínuas**. Lançamentos continuam existindo e continuam usando este material sem alteração. O que muda é que ele deixa de ser o único formato de venda. <dado q="B" />
 
 **O que muda em operação contínua:**
 

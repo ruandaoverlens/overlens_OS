@@ -32,7 +32,7 @@ A comunidade existe, operacionalmente, para tornar esses quatro recursos prováv
 
 ## Formas de colaboração
 
-<dado q="C" /> Nenhuma das formas abaixo tem processo, critério ou estrutura definidos. São padrões observáveis e direções coerentes, não mecânicas decididas.
+Nenhuma das formas abaixo tem processo, critério ou estrutura definidos. São padrões observáveis e direções coerentes, não mecânicas decididas. <dado q="C" />
 
 ### Formação de times
 
@@ -42,7 +42,7 @@ As duas últimas dependem da comunidade. A primeira depende de quem propõe.
 
 **Onde já acontece:** hackathons e iniciativas Atom Praxis são o contexto em que a formação de times foi observada de forma concreta. Ver **Atom Praxis e Hackathons**.
 
-<dado q="E" /> Se existe estrutura para formação de times fora desses eventos.
+Se existe estrutura para formação de times fora desses eventos. <dado q="E" />
 
 ### Feedback entre pares
 
@@ -50,13 +50,13 @@ Trabalho em andamento exposto a outros olhos antes de estar pronto. O valor est�
 
 Isso exige duas coisas difíceis simultaneamente: disposição para mostrar o inacabado e competência para responder de forma útil. Nenhuma das duas é automática, e ambas podem ser cultivadas.
 
-<dado q="E" /> Se haverá formato estruturado de revisão entre pares, ou se permanece espontâneo.
+Se haverá formato estruturado de revisão entre pares, ou se permanece espontâneo. <dado q="E" />
 
 ### Descoberta de colaboradores
 
 Encontrar quem tem a capacidade que falta. Hoje isso depende de visibilidade: encontra-se quem aparece.
 
-Um sistema que registrasse capacidade demonstrada (o que cada pessoa consegue fazer, o que construiu, que evidência existe) mudaria esse jogo por completo. É a hipótese de maior potencial e a menos existente da companhia, conforme registrado em **Moats** <dado fonte="Business Document › Moats" />, e sua construção pertence ao **Product System**.
+Um sistema que registrasse capacidade demonstrada (o que cada pessoa consegue fazer, o que construiu, que evidência existe) mudaria esse jogo por completo. É a hipótese de maior potencial e a menos existente da companhia, conforme registrado em **Moats**, e sua construção pertence ao **Product System**. <dado fonte="Business Document › Moats" />
 
 ### Parceria e sociedade
 

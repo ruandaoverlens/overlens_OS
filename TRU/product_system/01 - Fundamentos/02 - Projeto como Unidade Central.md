@@ -2,7 +2,7 @@
 
 ## A pergunta que organiza o produto mudou de "o que você quer aprender?" para "o que você quer construir, realizar ou se tornar?". Tudo o que vem depois é consequência disso.
 
-**Status:** <dado q="B" fonte=".claude/rules/tese-atual.md" /> A direção está definida na tese da companhia; o que ainda não foi validado é a entrega.
+A direção está definida na tese da companhia; o que ainda não foi validado é a entrega. <dado q="B" fonte=".claude/rules/tese-atual.md" />
 
 A Overlens está migrando de **conteúdo como unidade central** para **projeto como unidade central**. É uma frase curta com consequência larga, e ela é frequentemente mal lida das duas formas opostas: como se significasse abandonar conteúdo, ou como se fosse apenas uma nova forma de falar do mesmo catálogo.
 
@@ -34,7 +34,7 @@ Se o projeto é a unidade, o produto precisa ajudar a descobrir:
 | **Como validar?** | Impede que esforço seja confundido com resultado. |
 | **Como melhorar?** | Fecha o ciclo e devolve a pessoa ao início com mais capacidade. |
 
-<dado q="C" /> Nenhuma dessas sete perguntas é respondida hoje de forma sistemática pelo produto. Elas descrevem a ambição, não o estado.
+Nenhuma dessas sete perguntas é respondida hoje de forma sistemática pelo produto. Elas descrevem a ambição, não o estado. <dado q="C" />
 
 ## O que isso não significa
 
@@ -56,7 +56,7 @@ Dois motivos, ambos verificáveis em princípio:
 
 ## O que precisa ser verdade
 
-<dado q="C" /> Para que a inversão funcione:
+Para que a inversão funcione: <dado q="C" />
 
 1. Que seja possível transformar um objetivo vago em projeto delimitado sem atendimento individual.
 2. Que o percurso continue útil para quem ainda não sabe o que quer construir.
@@ -65,8 +65,8 @@ Dois motivos, ambos verificáveis em princípio:
 
 ## O que está em aberto
 
-- <dado q="E" /> O que qualifica algo como projeto dentro da Overlens: escopo mínimo, duração, critério de conclusão.
-- <dado q="E" /> Como um projeto se relaciona com as ofertas existentes na prática, e não apenas no conceito.
-- <dado q="E" /> O que acontece com projetos abandonados: se somem, se viram histórico ou se continuam contando como evidência parcial.
+- O que qualifica algo como projeto dentro da Overlens: escopo mínimo, duração, critério de conclusão. <dado q="E" />
+- Como um projeto se relaciona com as ofertas existentes na prática, e não apenas no conceito. <dado q="E" />
+- O que acontece com projetos abandonados: se somem, se viram histórico ou se continuam contando como evidência parcial. <dado q="E" />
 
 A estrutura que liga aprendizagem, projeto e execução está descrita em `Fundamentos › PBL`.

@@ -957,9 +957,7 @@ Exemplos:
 
 ## 14. Research & Market Intelligence
 
-Criar a seção, mas marcar:
-
-<dado q="E" nota="Pesquisa de mercado." />
+Criar a seção, mas marcar: <dado q="E" nota="Pesquisa de mercado." />
 
 Futuramente deverá conter:
 
@@ -1217,13 +1215,13 @@ Não criar uma nova definição concorrente.
 
 Durante a revisão da documentação, classificar conceitos importantes quando necessário.
 
-A classificação não é escrita por extenso. Ela é uma **tag inline** que o site renderiza como uma bolinha de qualidade:
+A classificação não é escrita por extenso. Ela é uma **nota que fecha o bloco** e que o site renderiza como uma bolinha de qualidade:
 
 ```
-<dado q="A" />
-<dado q="B" nota="Direção testada em duas turmas." />
-<dado q="A" fonte="TRU/changes.md" />
-<dado q="C" nota="Candidato mais forte." fonte="https://exemplo.com/pesquisa" />
+O público da Overlens é o empreendedor. <dado q="A" />
+Duas turmas já rodaram no formato novo. <dado q="B" nota="Direção testada em duas turmas." />
+A categoria é escola de negócios, criação e realização. <dado q="A" fonte="TRU/changes.md" />
+"A escola de negócios dos criadores" é a expressão em exploração. <dado q="C" nota="Candidato mais forte." fonte="https://exemplo.com/pesquisa" />
 ```
 
 Atributos: `q` é obrigatório e vai de `A` a `E`; `nota` é opcional e leva uma frase curta de qualificação; `fonte` é opcional e só aparece quando o documento declara de onde a informação veio.

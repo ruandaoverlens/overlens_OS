@@ -18,26 +18,24 @@ Nosso papel é preparar essas mentes para atravessar o caos com discernimento e 
 
 ### Nosso propósito
 
-<dado q="A" /> Colocar o poder da criação nas mãos das pessoas.
+Colocar o poder da criação nas mãos das pessoas. <dado q="A" />
 
 Esse é o propósito simbólico da Overlens desde a fundação, e ele permanece coerente com tudo o que a empresa se tornou. Ele não descreve o que vendemos; descreve por que existimos. Poder da criação, aqui, não é inspiração: é repertório, julgamento, método, ferramentas, companhia e capacidade real de colocar algo no mundo.
 
 ### Nossa tese
 
-<dado q="A" />
-
-> O futuro não é um destino. O futuro é um projeto.
+> O futuro não é um destino. O futuro é um projeto. <dado q="A" />
 
 Não é slogan. É uma tese estratégica e filosófica: futuros não acontecem por inevitabilidade, são construídos por pessoas que decidem construí-los. A consequência prática é direta: aprender é meio, e o fim é criar, construir, experimentar, validar, executar e realizar. A pergunta que organiza o ecossistema mudou de *"o que você quer aprender?"* para *"o que você quer construir, realizar ou se tornar?"*.
 
 ### Nossa missão
 
-<dado q="B" /> Ajudar pessoas a realizarem suas ideias.
+Ajudar pessoas a realizarem suas ideias. <dado q="B" />
 
 A formulação ainda está em teste e pode mudar de palavras, mas a direção é clara: a Overlens é avaliada pelo que as pessoas conseguem construir depois de passarem por ela, não pelo que consumiram enquanto estavam aqui.
 
 ### Nossa visão
 
-<dado q="E" /> A declaração formal de visão ainda não foi escrita. Enquanto isso, o que orienta a companhia está registrado acima, no propósito e na tese. Este espaço não deve ser preenchido por suposição.
+A declaração formal de visão ainda não foi escrita. Enquanto isso, o que orienta a companhia está registrado acima, no propósito e na tese. Este espaço não deve ser preenchido por suposição. <dado q="E" />
 
 > Time to Build.

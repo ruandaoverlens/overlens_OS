@@ -18,7 +18,7 @@ A tese que sustenta toda a narrativa é uma só: **o futuro não é um destino. 
 
 ## O Herói <span style="color: #888; font-weight: normal;">; o empreendedor</span>
 
-<dado q="A" /> O herói da narrativa Overlens é o **empreendedor**: quem tem uma ideia, uma ambição ou uma visão de futuro e quer transformá-la em realidade.
+O herói da narrativa Overlens é o **empreendedor**: quem tem uma ideia, uma ambição ou uma visão de futuro e quer transformá-la em realidade. <dado q="A" />
 
 Ele pode ou não ser designer, engenheiro, arquiteto, artista, inventor, maker, pesquisador ou desenvolvedor. Pode vir de qualquer outra origem, inclusive de nenhuma formação específica. **O que o define é o estado, não a profissão.** A origem profissional é circunstância; o que interessa narrativamente é a distância entre o que ele imagina e o que ele consegue colocar de pé.
 
@@ -56,7 +56,7 @@ O herói não é fraco. É alguém com potência real que ainda não encontrou a
 
 ### Os quatro modos do herói
 
-<dado q="B" /> Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, comportamentais e cognitivas.
+Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, comportamentais e cognitivas. <dado q="B" />
 
 > **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**
 
@@ -81,7 +81,7 @@ O framework SB7 distingue três dimensões do problema do herói. Na narrativa O
 
 ### Problema externo (o que ele vê)
 
-<dado q="B" /> O custo de criar despencou. Produzir um texto, uma imagem, um vídeo, um protótipo, um site, um aplicativo ficou ordens de magnitude mais barato e mais rápido em um intervalo curto de tempo. A consequência é direta: **executar deixou de ser diferencial.** Aquilo que qualquer um consegue fazer rapidamente tende a valer menos.
+O custo de criar despencou. Produzir um texto, uma imagem, um vídeo, um protótipo, um site, um aplicativo ficou ordens de magnitude mais barato e mais rápido em um intervalo curto de tempo. A consequência é direta: **executar deixou de ser diferencial.** Aquilo que qualquer um consegue fazer rapidamente tende a valer menos. <dado q="B" />
 
 O gargalo migrou. Não está mais na capacidade de produzir; está em **visão** (decidir o que deve existir), **julgamento** (escolher bem entre opções demais), **repertório** (conectar campos distintos), **estratégia** (fazer a coisa certa na ordem certa) e **capacidade de realização** (colocar no mundo, sustentar e iterar). Nada disso barateou junto.
 
@@ -181,25 +181,25 @@ O guia eficaz não diz "confie em mim". Diz "aqui está o caminho". O plano da O
 
 ### Movimento 1: Inspirar (a criar)
 
-<dado q="A" /> Romper crenças limitantes. Mostrar que criar é possível, necessário e transformador. Confrontar a narrativa da renúncia com evidências, exemplos e provocações que tiram o empreendedor do modo automático.
+Romper crenças limitantes. Mostrar que criar é possível, necessário e transformador. Confrontar a narrativa da renúncia com evidências, exemplos e provocações que tiram o empreendedor do modo automático. <dado q="A" />
 
 **Como acontece:** conteúdos em redes sociais, manifestos, eventos, exemplo vivido. É a porta de entrada; o momento em que alguém percebe que o desconforto tem nome e que existe gente enfrentando o mesmo conflito.
 
 ### Movimento 2: Ensinar (a criar)
 
-<dado q="A" /> Construir pensamento crítico, visão sistêmica, julgamento, repertório e uso consciente de tecnologia. Não é transmissão de técnica; é formação de lente. O empreendedor não aprende a usar uma ferramenta; aprende a pensar sobre o que constrói.
+Construir pensamento crítico, visão sistêmica, julgamento, repertório e uso consciente de tecnologia. Não é transmissão de técnica; é formação de lente. O empreendedor não aprende a usar uma ferramenta; aprende a pensar sobre o que constrói. <dado q="A" />
 
 **Como acontece:** aprendizagem organizada em torno de projetos reais, com conteúdos, ferramentas, desafios, feedback e checkpoints convocados pela necessidade do projeto, e não consumidos antes de se saber para quê. Aulas, livros, artigos e trilhas continuam existindo; o que muda é a relação entre eles.
 
 ### Movimento 3: Mover (a criar)
 
-<dado q="A" /> Transformar conhecimento em ação no mundo real. Publicar. Materializar. Enfrentar o atrito entre a ideia e a realidade. Aqui, o empreendedor deixa de ser aluno e passa a ser autor.
+Transformar conhecimento em ação no mundo real. Publicar. Materializar. Enfrentar o atrito entre a ideia e a realidade. Aqui, o empreendedor deixa de ser aluno e passa a ser autor. <dado q="A" />
 
 **Como acontece:** projetos aplicados, construção em público, acompanhamento de quem já atravessou o mesmo atrito e iniciativas de prática e construção sob o nome **Atom Praxis**: praxis é aprendizagem transformada em ação.
 
 ### A lógica que atravessa os três movimentos
 
-<dado q="B" /> A unidade central do plano não é o conteúdo. É o projeto.
+A unidade central do plano não é o conteúdo. É o projeto. <dado q="B" />
 
 > **Projeto → necessidade → conhecimento → aplicação → evidência**
 
@@ -209,7 +209,7 @@ Narrativamente, isso muda a pergunta que a marca faz na primeira frase de qualqu
 
 ### O espectro de entrega
 
-<dado q="B" nota="Modelo mental interno." /> Um mapa útil para entender como o plano se estende no tempo:
+Um mapa útil para entender como o plano se estende no tempo: <dado q="B" nota="Modelo mental interno." />
 
 > **Aprender → Construir → Acelerar**
 
@@ -217,7 +217,7 @@ A pessoa pode entrar no ecossistema para aprender. Pode usar a Overlens para con
 
 ### A comunidade como parte do plano
 
-<dado q="B" /> Comunidade não é enfeite do plano nem feature de engajamento. É **infraestrutura de aprendizagem e realização**.
+Comunidade não é enfeite do plano nem feature de engajamento. É **infraestrutura de aprendizagem e realização**. <dado q="B" />
 
 Quem entra no ecossistema é um **Atom**, uma identidade de pertencimento, não de consumo. Entre Atoms acontece o que nenhum produto sozinho entrega: colaboração, feedback qualificado, formação de times, descoberta de talento, reputação e oportunidade. À medida que criar fica barato e o gargalo migra para julgamento e distribuição, estar cercado das pessoas certas passa a valer mais, não menos.
 
@@ -278,7 +278,7 @@ Isso não é ameaça. É descrição. A Overlens não culpa quem ainda não agiu
 
 ## O Sucesso <span style="color: #888; font-weight: normal;">; algo que existe e se sustenta</span>
 
-<dado q="A" /> O sucesso na narrativa Overlens não é financeiro, não é métrica, não é seguidores, e também não é "ter aprendido muito". É **realização**: algo construído, colocado no mundo, que se sustenta.
+O sucesso na narrativa Overlens não é financeiro, não é métrica, não é seguidores, e também não é "ter aprendido muito". É **realização**: algo construído, colocado no mundo, que se sustenta. <dado q="A" />
 
 O empreendedor que atravessa a jornada:
 
@@ -363,7 +363,7 @@ A one-liner é a frase de posicionamento narrativo que sintetiza toda a históri
 
 > **A escola de negócios dos criadores: para quem tem uma ideia e quer transformá-la em realidade.**
 
-<dado q="B" /> A estrutura curta é dinâmica e a repetição das categorias é parte do conceito: *a escola de negócios dos artistas · dos engenheiros · dos inventores · dos designers · dos sonhadores · dos criadores.* A definição oficial de posicionamento pertence à página de Posicionamento.
+A estrutura curta é dinâmica e a repetição das categorias é parte do conceito: *a escola de negócios dos artistas · dos engenheiros · dos inventores · dos designers · dos sonhadores · dos criadores.* A definição oficial de posicionamento pertence à página de Posicionamento. <dado q="B" />
 
 ---
 
@@ -479,7 +479,7 @@ Oito princípios que governam toda comunicação narrativa da Overlens:
 
 ## Histórico narrativo
 
-<dado q="D" /> Registro da leitura anterior, preservado porque explica peças, campanhas e documentos ainda em circulação, e porque não deve ser lido como a definição atual.
+Registro da leitura anterior, preservado porque explica peças, campanhas e documentos ainda em circulação, e porque não deve ser lido como a definição atual. <dado q="D" />
 
 Até esta revisão, a narrativa da Overlens era organizada por **cinco perfis de maturidade** (Inconsciente, Operante, Convergente, Emergente e Nexialista) apresentados como estágios sequenciais que mediam "a distância entre a ideia e a realidade". O herói era descrito como "quem ainda não se reconhece como empreendedor", com forte carga de mercado criativo, e o público era chamado de **Empreendedor Nexialista**. O problema externo era enquadrado como a fragmentação do mercado criativo. O plano citava trilhas nomeadas para cada estágio de maturidade.
 

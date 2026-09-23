@@ -12,9 +12,7 @@ related: ["business_doc/06 - Histórico/01 - Evolução da Overlens.md", "busine
 
 ## O modelo de negócio da Overlens tal como estava documentado antes desta transição. Preservado como registro, não como definição vigente.
 
-Status de tudo nesta página: <dado q="D" />
-
-Esta página existe por dois motivos: porque parte destas informações continua sendo historicamente verdadeira e útil, e porque saber o que a base afirmava antes ajuda a reconhecer material desatualizado quando ele aparecer em outros documentos.
+Esta página existe por dois motivos: porque parte destas informações continua sendo historicamente verdadeira e útil, e porque saber o que a base afirmava antes ajuda a reconhecer material desatualizado quando ele aparecer em outros documentos. <dado q="D" />
 
 **Nenhuma informação desta página deve ser usada como base para decisão atual.** Os números foram medidos sob um recorte de público que não descreve mais a companhia, e o enquadramento das ofertas foi redefinido.
 

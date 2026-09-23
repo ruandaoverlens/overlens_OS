@@ -13,9 +13,7 @@ related: []
 
 ## Aprendizagem baseada em projetos é a estrutura que liga o que alguém quer realizar ao que precisa desenvolver. É também a aposta mais estruturante da Overlens, e a menos validada.
 
-**Status:** <dado q="B" nota="Quanto à direção." /> <dado q="C" nota="Quanto à entrega em escala." />
-
-PBL significa *project-based learning*, aprendizagem baseada em projetos. Na Overlens, PBL não é uma metodologia pedagógica adicional, colocada ao lado de outras. Ela tende a se tornar uma das principais estruturas que conectam três coisas que costumam viver separadas: **aprendizagem, projeto e execução**.
+PBL significa *project-based learning*, aprendizagem baseada em projetos. Na Overlens, PBL não é uma metodologia pedagógica adicional, colocada ao lado de outras. Ela tende a se tornar uma das principais estruturas que conectam três coisas que costumam viver separadas: **aprendizagem, projeto e execução**. <dado q="B" nota="Quanto à direção." /> <dado q="C" nota="Quanto à entrega em escala." />
 
 A distinção importa. Metodologia adicional é algo que se aplica a um curso. Estrutura de ligação é algo que determina como o produto inteiro se organiza.
 
@@ -47,7 +45,7 @@ Essa jornada pode envolver conteúdos, exercícios, ferramentas, pessoas, desafi
 | **Feedback** | Alguém ou algo devolve leitura sobre o que foi produzido. |
 | **Evolução** | A pessoa recomeça o ciclo com repertório maior e projeto mais ambicioso. |
 
-<dado q="C" /> Nenhuma etapa dessa sequência está implementada como sistema hoje. Ela descreve a experiência pretendida.
+Nenhuma etapa dessa sequência está implementada como sistema hoje. Ela descreve a experiência pretendida. <dado q="C" />
 
 O ciclo tem uma propriedade que vale notar: ele não termina. "Evolução" devolve a pessoa a "Objetivo" com condições diferentes das iniciais. Se o ciclo só roda uma vez, o que foi entregue foi um curso com projeto no fim, que é exatamente o modelo anterior com nome novo.
 
@@ -83,9 +81,9 @@ Dois sinais secundários de falha:
 
 ## O que está em aberto
 
-- <dado q="E" /> O formato concreto da jornada adaptada: o que é gerado, o que é curado e o que é humano.
-- <dado q="E" /> O modelo de feedback e avaliação: quem avalia, com qual critério, em que frequência.
-- <dado q="E" fonte="Business Document › Arquitetura de Produtos e Serviços" /> Como PBL se relaciona com as ofertas atuais. Isso depende de decisões de negócio ainda não tomadas, registradas em `Business Document › Arquitetura de Produtos e Serviços`.
-- <dado q="E" /> O ponto a partir do qual acompanhamento humano deixa de ser viável, e o que acontece depois dele.
+- O formato concreto da jornada adaptada: o que é gerado, o que é curado e o que é humano. <dado q="E" />
+- O modelo de feedback e avaliação: quem avalia, com qual critério, em que frequência. <dado q="E" />
+- Como PBL se relaciona com as ofertas atuais. Isso depende de decisões de negócio ainda não tomadas, registradas em `Business Document › Arquitetura de Produtos e Serviços`. <dado q="E" fonte="Business Document › Arquitetura de Produtos e Serviços" />
+- O ponto a partir do qual acompanhamento humano deixa de ser viável, e o que acontece depois dele. <dado q="E" />
 
 A aposta correspondente no Business Document é `Strategic Bets › Aposta 1 · Aprendizagem baseada em projetos`. O risco correspondente é `Riscos e Incertezas › E3`.

@@ -17,7 +17,7 @@ Esta seção reúne as principais referências que dialogam com o território da
 
 ## Que categoria estamos observando
 
-<dado q="B" /> A categoria mudou, e o campo de observação mudou com ela.
+A categoria mudou, e o campo de observação mudou com ela. <dado q="B" />
 
 A Overlens é hoje uma **escola de negócios, criação e realização**, para pessoas que querem transformar ideias em realidade, definidas pelo estado, não pela profissão. O que observamos, portanto, não é mais o campo de escolas de design e branding, nem o de formação em IA.
 

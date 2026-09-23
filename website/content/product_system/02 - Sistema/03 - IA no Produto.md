@@ -13,9 +13,7 @@ related: []
 
 ## IA é infraestrutura, não categoria. Ela está em toda parte no produto e não é o produto em lugar nenhum.
 
-**Status:** <dado q="A" nota="Quanto à direção." /> <dado q="B" nota="Quanto à execução." />
-
-Essa frase tem uma consequência imediata e frequentemente indesejada: **ela define primeiro o que a Overlens não vai disputar.**
+Essa frase tem uma consequência imediata e frequentemente indesejada: **ela define primeiro o que a Overlens não vai disputar.** <dado q="A" nota="Quanto à direção." /> <dado q="B" nota="Quanto à execução." />
 
 A Overlens **não compete** com ChatGPT, Claude, Gemini ou outros modelos gerais na capacidade de responder perguntas, explicar assuntos, resumir informações ou gerar conteúdo. Essa disputa está perdida por desenho (eles fazem isso melhor, mais barato e com investimento que nenhuma escola acompanha), e **vencê-la não produziria valor duradouro**.
 
@@ -23,7 +21,7 @@ Recusar essa disputa não é modéstia. É a decisão que libera capacidade para
 
 ## Para que a IA serve aqui
 
-<dado q="A" /> Dentro da Overlens, IA existe para potencializar:
+Dentro da Overlens, IA existe para potencializar: <dado q="A" />
 
 | Frente | O que a IA amplifica |
 | :---- | :---- |
@@ -38,7 +36,7 @@ Recusar essa disputa não é modéstia. É a decisão que libera capacidade para
 | **Descoberta de pessoas e recursos** | Encontrar quem pode ajudar e o que pode ser usado. |
 | **Transformação de ideias em projetos reais** | Converter intenção em algo com escopo, prazo e critério de conclusão. |
 
-A leitura que atravessa a tabela inteira: **a IA deve aumentar a capacidade da pessoa, não produzir no lugar dela.** Esse é o teste registrado nos Business Principles <dado fonte="Business Document › Business Principles" />, e é o mesmo teste que separa o que a Overlens pode defender do que ela não pode.
+A leitura que atravessa a tabela inteira: **a IA deve aumentar a capacidade da pessoa, não produzir no lugar dela.** Esse é o teste registrado nos Business Principles, e é o mesmo teste que separa o que a Overlens pode defender do que ela não pode. <dado fonte="Business Document › Business Principles" />
 
 ## O que continua útil e não é diferencial
 
@@ -52,7 +50,7 @@ A consequência prática é sobre alocação, não sobre existência: **essas fu
 
 ## Onde a Overlens pode ter vantagem
 
-<dado q="C" fonte="Business Document › Strategic Bets › Aposta 2" /> Se a IA genérica é abundante, a única vantagem possível está no **contexto** que só a Overlens tem, e que hoje ainda não tem.
+Se a IA genérica é abundante, a única vantagem possível está no **contexto** que só a Overlens tem, e que hoje ainda não tem. <dado q="C" fonte="Business Document › Strategic Bets › Aposta 2" />
 
 Um modelo geral sabe muito sobre o mundo e nada sobre a pessoa: não sabe o que ela já construiu, o que já tentou, em que projeto está, que capacidades desenvolveu, quem no ecossistema resolveu um problema parecido, nem qual conhecimento proprietário se aplica ao caso dela.
 
@@ -62,7 +60,7 @@ Enquanto o contexto não existir, a IA da Overlens é um modelo geral com interf
 
 ## Como saberíamos que está errada
 
-<dado fonte="Business Document › Strategic Bets › Aposta 2" /> Se os recursos de IA contextual não forem usados, ou se as pessoas os substituírem por ferramentas gerais **sem perda percebida**, a aposta está errada.
+Se os recursos de IA contextual não forem usados, ou se as pessoas os substituírem por ferramentas gerais **sem perda percebida**, a aposta está errada. <dado fonte="Business Document › Strategic Bets › Aposta 2" />
 
 A segunda metade dessa frase é a que importa. Não basta que as pessoas usem: é preciso que sentir falta seja possível.
 
@@ -74,11 +72,11 @@ A segunda metade dessa frase é a que importa. Não basta que as pessoas usem: �
 
 **Não confundir personalização com adivinhação.** Adaptar com base no que a pessoa declarou e fez é personalização. Adaptar com base em inferência não verificada é palpite com aparência de precisão.
 
-**Não esconder o custo.** IA tem custo variável que cresce com a adoção, e hoje ele não é medido. O risco está registrado em `Business Document › Riscos e Incertezas › E5` <dado fonte="Business Document › Riscos e Incertezas › E5" />.
+**Não esconder o custo.** IA tem custo variável que cresce com a adoção, e hoje ele não é medido. O risco está registrado em `Business Document › Riscos e Incertezas › E5`. <dado fonte="Business Document › Riscos e Incertezas › E5" />
 
 ## O que está em aberto
 
-- <dado q="E" /> Onde a IA aparece na experiência e onde ela deliberadamente não aparece.
-- <dado q="E" /> Como o contexto da pessoa é montado e o que ela controla disso.
-- <dado q="E" /> Política de uso de IA em trabalho que vira evidência: o que é permitido, o que é declarado.
-- <dado q="E" /> Medição de custo por uso e por pessoa.
+- Onde a IA aparece na experiência e onde ela deliberadamente não aparece. <dado q="E" />
+- Como o contexto da pessoa é montado e o que ela controla disso. <dado q="E" />
+- Política de uso de IA em trabalho que vira evidência: o que é permitido, o que é declarado. <dado q="E" />
+- Medição de custo por uso e por pessoa. <dado q="E" />
