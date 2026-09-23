@@ -1,6 +1,6 @@
 ---
 title: Arquétipos
-summary: Define a tríade arquetípica da Overlens — Mago (primário, transformação com método), Criador (secundário, forma e realização) e Sábio (terciário, ética e explicabilidade) — aplicada a quem quer transformar ideias em realidade, com guardrails para evitar charlatanismo e limites inegociáveis.
+summary: Define a tríade arquetípica da Overlens, composta por Mago (primário, transformação com método), Criador (secundário, forma e realização) e Sábio (terciário, ética e explicabilidade), aplicada a quem quer transformar ideias em realidade, com guardrails para evitar charlatanismo e limites inegociáveis.
 topics: [arquétipos, Mago, Criador, Sábio, narrativa simbólica, guardrails éticos, nexialismo]
 keywords: [Mago, Criador, Sábio, Prometheus, nexialismo, capacidade nexialista, empreendedor, realização, Ironman, cientista, sábio-trickster, anti-herói, assombro sem truque, microdoses de caos, replicabilidade, deepfake, Marcel Duchamp, Fountain, faísca, brasa, fogueira, prisma, micélio, Bauhaus, Media Lab, Gestalt]
 priority: high

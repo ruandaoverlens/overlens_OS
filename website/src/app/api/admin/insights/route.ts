@@ -124,9 +124,9 @@ export async function GET(request: NextRequest) {
         const p = profileById.get(userId);
         m = {
           userId,
-          name: p?.name ?? "—",
+          name: p?.name ?? "-",
           email: p?.email ?? "",
-          role: p?.role ?? "—",
+          role: p?.role ?? "-",
           conversations: 0,
           messages: 0,
           questions: 0,
@@ -203,7 +203,7 @@ export async function GET(request: NextRequest) {
       return {
         id: m.id,
         content: m.content,
-        name: p?.name ?? "—",
+        name: p?.name ?? "-",
         email: p?.email ?? "",
         conversationId: m.conversation_id,
         createdAt: m.created_at,

@@ -1,6 +1,6 @@
 ---
 title: Tomorrowland
-summary: Trecho narrativo inspirado em Tomorrowland sobre o paradoxo do alerta ignorado — quem viu o iceberg, alertou, e foi tratado como entretenimento enquanto o colapso seguia.
+summary: "Trecho narrativo inspirado em Tomorrowland sobre o paradoxo do alerta ignorado: quem viu o iceberg, alertou, e foi tratado como entretenimento enquanto o colapso seguia."
 topics: [referência cultural, tomorrowland, narrativa, alerta, futuro]
 keywords: [tomorrowland, narrativa, futuro, colapso, apocalipse, alerta, swipe file, referência cultural]
 priority: low

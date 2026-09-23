@@ -1,6 +1,6 @@
 ---
 title: Colaboração e Projetos
-summary: Descreve como a comunidade se conecta a projetos — formação de times, feedback qualificado, descoberta de colaboradores e parceria. Estabelece o ponto de encontro com o Product System, que é fonte de verdade sobre projetos, PBL, evidências e a plataforma que os sustenta.
+summary: Descreve como a comunidade se conecta a projetos (formação de times, feedback qualificado, descoberta de colaboradores e parceria). Estabelece o ponto de encontro com o Product System, que é fonte de verdade sobre projetos, PBL, evidências e a plataforma que os sustenta.
 topics: [colaboração, projetos, times, feedback, funcionamento, PBL]
 keywords: [colaboração, projetos, formação de times, feedback qualificado, descoberta de colaboradores, parceria, sócios, PBL, evidência, Product System, encontro útil]
 priority: high
@@ -20,7 +20,7 @@ Se a lógica pedagógica da Overlens é **projeto → necessidade → conhecimen
 
 Um projeto em andamento consome quatro recursos que nenhuma biblioteca de conteúdo entrega:
 
-**Feedback qualificado.** Não elogio, não opinião genérica — retorno de alguém que entende o problema e já errou nele. É escasso, caro e raramente comprável.
+**Feedback qualificado.** Não elogio, não opinião genérica: retorno de alguém que entende o problema e já errou nele. É escasso, caro e raramente comprável.
 
 **Pessoas.** Um projeto quase sempre exige capacidades que quem o iniciou não tem. Encontrar quem as tenha é, na prática, o gargalo mais comum entre uma ideia e sua realização.
 
@@ -32,7 +32,7 @@ A comunidade existe, operacionalmente, para tornar esses quatro recursos prováv
 
 ## Formas de colaboração
 
-**HIPÓTESE.** Nenhuma das formas abaixo tem processo, critério ou estrutura definidos. São padrões observáveis e direções coerentes, não mecânicas decididas.
+<dado q="C" /> Nenhuma das formas abaixo tem processo, critério ou estrutura definidos. São padrões observáveis e direções coerentes, não mecânicas decididas.
 
 ### Formação de times
 
@@ -42,27 +42,27 @@ As duas últimas dependem da comunidade. A primeira depende de quem propõe.
 
 **Onde já acontece:** hackathons e iniciativas Atom Praxis são o contexto em que a formação de times foi observada de forma concreta. Ver **Atom Praxis e Hackathons**.
 
-**PENDENTE:** se existe estrutura para formação de times fora desses eventos.
+<dado q="E" /> Se existe estrutura para formação de times fora desses eventos.
 
 ### Feedback entre pares
 
 Trabalho em andamento exposto a outros olhos antes de estar pronto. O valor está justamente no "antes de pronto": feedback sobre resultado final é avaliação; feedback sobre processo é ajuda.
 
-Isso exige duas coisas difíceis simultaneamente — disposição para mostrar o inacabado e competência para responder de forma útil. Nenhuma das duas é automática, e ambas podem ser cultivadas.
+Isso exige duas coisas difíceis simultaneamente: disposição para mostrar o inacabado e competência para responder de forma útil. Nenhuma das duas é automática, e ambas podem ser cultivadas.
 
-**PENDENTE:** se haverá formato estruturado de revisão entre pares, ou se permanece espontâneo.
+<dado q="E" /> Se haverá formato estruturado de revisão entre pares, ou se permanece espontâneo.
 
 ### Descoberta de colaboradores
 
 Encontrar quem tem a capacidade que falta. Hoje isso depende de visibilidade: encontra-se quem aparece.
 
-Um sistema que registrasse capacidade demonstrada — o que cada pessoa consegue fazer, o que construiu, que evidência existe — mudaria esse jogo por completo. É a hipótese de maior potencial e a menos existente da companhia, conforme registrado em **Moats**, e sua construção pertence ao **Product System**.
+Um sistema que registrasse capacidade demonstrada (o que cada pessoa consegue fazer, o que construiu, que evidência existe) mudaria esse jogo por completo. É a hipótese de maior potencial e a menos existente da companhia, conforme registrado em **Moats** <dado fonte="Business Document › Moats" />, e sua construção pertence ao **Product System**.
 
 ### Parceria e sociedade
 
 A forma mais profunda de colaboração: pessoas que se encontram na comunidade e passam a construir um negócio juntas.
 
-Isso não é organizável por processo — é consequência de densidade e de tempo. O que a Overlens pode fazer é aumentar a probabilidade e, se for o caso, acompanhar o que nasce: projetos relevantes podem eventualmente avançar para **incubação**, frente definida no **Business Document**.
+Isso não é organizável por processo: é consequência de densidade e de tempo. O que a Overlens pode fazer é aumentar a probabilidade e, se for o caso, acompanhar o que nasce: projetos relevantes podem eventualmente avançar para **incubação**, frente definida no **Business Document**.
 
 ## O princípio que organiza tudo
 
@@ -83,11 +83,11 @@ Se sim, é infraestrutura. Se não, é atividade. A diferença é que infraestru
 | Como a contribuição é reconhecida | **Community System** |
 | Se um projeto avança para incubação ou aceleração | **Business Document** |
 
-A dependência é assimétrica e vale registrar: **boa parte do que esta página descreve só escala com produto**. Sem infraestrutura de descoberta, colaboração acontece por coincidência — e coincidência não é sistema.
+A dependência é assimétrica e vale registrar: **boa parte do que esta página descreve só escala com produto**. Sem infraestrutura de descoberta, colaboração acontece por coincidência, e coincidência não é sistema.
 
 ## O que falta decidir
 
 1. Se projetos ficam **visíveis** para a comunidade por padrão, por escolha ou não ficam.
 2. Se existe formato estruturado de feedback entre pares.
 3. Se a Overlens intermedeia a formação de times ou apenas cria as condições.
-4. Como parcerias nascidas na comunidade se relacionam com incubação — e se há qualquer envolvimento da companhia.
+4. Como parcerias nascidas na comunidade se relacionam com incubação, e se há qualquer envolvimento da companhia.

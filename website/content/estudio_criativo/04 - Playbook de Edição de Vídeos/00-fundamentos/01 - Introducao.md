@@ -1,6 +1,6 @@
 ---
 title: Introdução
-summary: "Apresenta o propósito do Playbook de Edição de Vídeos — garantir clareza, ritmo e coerência com a visão da Overlens — e descreve o que o leitor encontra: fluxo de edição, critérios de seleção de trechos, padrões visuais e decisões de processo."
+summary: "Apresenta o propósito do Playbook de Edição de Vídeos, que é garantir clareza, ritmo e coerência com a visão da Overlens, e descreve o que o leitor encontra: fluxo de edição, critérios de seleção de trechos, padrões visuais e decisões de processo."
 topics: [introdução, propósito, edição de vídeo, identidade visual, onboarding criativo]
 keywords: [introdução, playbook, edição de vídeo, fluxo de edição, material bruto, entrega final, padrões, departamento criativo, overlens]
 priority: high

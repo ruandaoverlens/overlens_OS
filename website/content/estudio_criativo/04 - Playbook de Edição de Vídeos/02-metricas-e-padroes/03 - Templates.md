@@ -1,6 +1,6 @@
 ---
 title: Templates
-summary: Catálogo dos templates-base que padronizam a identidade visual em vídeo — Aulas, YouTube e Cortes — para que a edição se concentre no conteúdo sem reconstruir a estrutura visual a cada projeto.
+summary: Catálogo dos templates-base que padronizam a identidade visual em vídeo (Aulas, YouTube e Cortes) para que a edição se concentre no conteúdo sem reconstruir a estrutura visual a cada projeto.
 topics: [templates, identidade visual, padronização, edição de vídeo]
 keywords: [template de aulas, template de youtube, template de cortes, identidade visual, padronização, modelos-base, edição]
 priority: medium

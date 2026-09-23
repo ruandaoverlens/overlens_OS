@@ -100,7 +100,7 @@ export default function ConversorFormatoPage() {
       };
       const timer = setTimeout(() => {
         cleanup();
-        reject(new Error("Demorou demais — o arquivo pode estar corrompido."));
+        reject(new Error("Demorou demais: o arquivo pode estar corrompido."));
       }, FILE_TIMEOUT_MS);
       cancelListeners.current.add(onCancel);
       promise.then(
@@ -213,7 +213,7 @@ export default function ConversorFormatoPage() {
         if (cancelRef.current) {
           notify.info(
             ok.length > 0
-              ? `Conversão interrompida — ${ok.length} de ${files.length} concluídas`
+              ? `Conversão interrompida: ${ok.length} de ${files.length} concluídas`
               : "Conversão cancelada"
           );
         } else if (ok.length > 0) {

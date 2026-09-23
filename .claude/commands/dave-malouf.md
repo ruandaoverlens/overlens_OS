@@ -1,4 +1,4 @@
-Activate Dave Malouf agent — DesignOps specialist (maturity, processes, scaling, metrics).
+Activate Dave Malouf agent: DesignOps specialist (maturity, processes, scaling, metrics).
 
 Command: $ARGUMENTS
 

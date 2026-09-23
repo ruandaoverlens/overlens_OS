@@ -1,11 +1,11 @@
 ---
 title: Perfil Ideal
-summary: Define o ICP da Overlens — empreendedores que já colocaram algo no mundo e esbarram no limite de sustentá-lo — com perguntas-âncora de qualificação e estratégia de prospecção. NECESSITA REVISÃO DE PERSONA, e todos os indicadores econômicos são HISTÓRICOS.
+summary: "Define o ICP da Overlens: empreendedores que já colocaram algo no mundo e esbarram no limite de sustentá-lo, com perguntas-âncora de qualificação e estratégia de prospecção. NECESSITA REVISÃO DE PERSONA, e todos os indicadores econômicos são HISTÓRICOS."
 topics: [ICP, perfil ideal, qualificação, vendas, quatro modos, histórico]
 keywords: [ICP, perfil ideal de cliente, empreendedor, oferta no ar, receita recorrente, perguntas-âncora, discovery call, health score, prospecção, vanguarda, atlas, overpass, necessita revisão de persona, indicadores históricos]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre o perfil ideal de cliente da Overlens, ICP, ou ao desenhar discovery call e prospecção. ATENÇÃO — esta página necessita revisão de persona: foi construída sobre as personas antigas e sobre o recorte anterior de público. Todos os indicadores (ticket, LTV, ciclo, volume, faixas de receita) são históricos e não devem ser usados como critério de qualificação, precificação ou projeção.
+  Use quando o usuário perguntar sobre o perfil ideal de cliente da Overlens, ICP, ou ao desenhar discovery call e prospecção. ATENÇÃO: esta página necessita revisão de persona: foi construída sobre as personas antigas e sobre o recorte anterior de público. Todos os indicadores (ticket, LTV, ciclo, volume, faixas de receita) são históricos e não devem ser usados como critério de qualificação, precificação ou projeção.
 related: []
 ---
 
@@ -15,7 +15,7 @@ related: []
 
 Esta página inteira foi construída sobre as personas antigas (Brunin, Tella, Ander, Lilly) e sobre a formulação anterior de cinco estágios sequenciais de maturidade. **Não deve ser usada como verdade atual.** A redefinição de personas pertence ao Growth System e ainda não foi feita; quando acontecer, este documento precisa ser reescrito a partir dela.
 
-**Os indicadores econômicos desta página são HISTÓRICOS** — medidos sob o recorte anterior de público — e necessitam revalidação. Não são critério de qualificação, precificação ou projeção.
+Os indicadores econômicos desta página são históricos <dado q="D" nota="Necessitam revalidação." />, medidos sob o recorte anterior de público. Não são critério de qualificação, precificação ou projeção.
 
 O que permanece útil aqui: a descrição comportamental do cliente que chega pronto para aprofundar e o conjunto de perguntas-âncora de qualificação.
 
@@ -23,9 +23,9 @@ O que permanece útil aqui: a descrição comportamental do cliente que chega pr
 
 **Como descrevemos os clientes que se enquadram no quadrante de alta receita potencial e alta probabilidade de fechamento?**
 
-São empreendedores em transição estratégica: pessoas que já tiraram alguma ideia do papel — um produto, uma oferta, um negócio pequeno — e agora esbarram no limite de sustentar o que criaram. Podem vir da engenharia, da arquitetura, da arte, do design, da tecnologia ou de nenhuma formação específica. O que as define não é a profissão de partida, mas o fato de já terem colocado algo no mundo e quererem que aquilo cresça sem consumi-las.
+São empreendedores em transição estratégica: pessoas que já tiraram alguma ideia do papel (um produto, uma oferta, um negócio pequeno) e agora esbarram no limite de sustentar o que criaram. Podem vir da engenharia, da arquitetura, da arte, do design, da tecnologia ou de nenhuma formação específica. O que as define não é a profissão de partida, mas o fato de já terem colocado algo no mundo e quererem que aquilo cresça sem consumi-las.
 
-Na leitura por modos, é alguém que já **conecta** com desenvoltura e começa a **criar** formas próprias de agir — buscando um sistema autoral, não mais uma técnica isolada. Isso descreve comportamento, não senioridade nem posição em uma escada.
+Na leitura por modos, é alguém que já **conecta** com desenvoltura e começa a **criar** formas próprias de agir, buscando um sistema autoral, não mais uma técnica isolada. Isso descreve comportamento, não senioridade nem posição em uma escada.
 
 ### **Características principais:**
 
@@ -37,13 +37,13 @@ Na leitura por modos, é alguém que já **conecta** com desenvoltura e começa 
 * Têm tempo, recursos e urgência real (não estão apenas curiosos)
 * Enxergam a Overlens como ponte para o próximo estágio do que estão construindo
 
-### **Indicadores de análise — HISTÓRICO, necessita revalidação**
+### **Indicadores de análise**
 
-> Tudo nesta subseção foi medido sob o recorte anterior de público e permanece como registro factual do que foi observado. **Não usar como critério de qualificação, precificação ou projeção.** Registro consolidado em `business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md`.
+> <dado q="D" nota="Necessita revalidação." fonte="business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md" /> Tudo nesta subseção foi medido sob o recorte anterior de público e permanece como registro factual do que foi observado. **Não usar como critério de qualificação, precificação ou projeção.** Registro consolidado em `business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md`.
 
 **Ticket médio** *(HISTÓRICO)*: R$1.000 a R$4.000 por transação, dependendo da porta de entrada. Quando havia sinergia com a **Vanguarda**, o LTV registrado podia superar R$10.000 com recorrência anual.
 
-**Capacidade financeira do cliente** *(HISTÓRICO)*: fundadores em estágio inicial, com receita entre R$5 mil e R$25 mil/mês vinda de um negócio, produto ou operação própria — não de prestação de serviço por hora ou por projeto. Parte da base já havia validado uma oferta, mas com receita irregular. **Faixa herdada; não usar como corte de qualificação.**
+**Capacidade financeira do cliente** *(HISTÓRICO)*: fundadores em estágio inicial, com receita entre R$5 mil e R$25 mil/mês vinda de um negócio, produto ou operação própria, não de prestação de serviço por hora ou por projeto. Parte da base já havia validado uma oferta, mas com receita irregular. **Faixa herdada; não usar como corte de qualificação.**
 
 **LTV (Lifetime Value) médio** *(HISTÓRICO)*: estimado de **R$9.000 a R$18.000**, com relacionamento de 2 a 3 anos quando bem nutrido.
 
@@ -57,32 +57,32 @@ Na leitura por modos, é alguém que já **conecta** com desenvoltura e começa 
 
 ### **Análise de volume e padrão de comportamento**
 
-**Volume (quantidade de clientes com essa característica)** *(HISTÓRICO — necessita revalidação)*: este perfil representava entre **8% e 12%** da base total e concentrava **mais de 60% da receita recorrente e dos upgrades**. Medida sob o recorte anterior; não projetar a partir dela.
+**Volume (quantidade de clientes com essa característica)** <dado q="D" nota="Necessita revalidação." /> Este perfil representava entre **8% e 12%** da base total e concentrava **mais de 60% da receita recorrente e dos upgrades**. Medida sob o recorte anterior; não projetar a partir dela.
 
 **Esse comportamento é reproduzível?** Reproduzível desde que a mensagem chegue no momento certo da situação da pessoa, haja clareza sobre a promessa (não é um curso avulso, é um ecossistema) e os canais adequados sejam usados (YouTube, Instagram, comunidades e eventos presenciais). Oferecer a camada de aceleração a quem ainda está buscando a primeira estrutura é descompasso de situação, não julgamento sobre a pessoa.
 
-**Tamanho do mercado**: **PENDENTE.** Não há números verificados. O universo relevante é o de pessoas construindo algo próprio a partir de qualquer origem — ou de nenhuma formação específica. Ver `04 - TAM SAM SOM.md`. **Não preencher com suposição.**
+**Tamanho do mercado**: <dado q="E" /> Não há números verificados. O universo relevante é o de pessoas construindo algo próprio a partir de qualquer origem, ou de nenhuma formação específica. Ver `04 - TAM SAM SOM.md`. **Não preencher com suposição.**
 
-**Tendência do mercado**: Expansão simultânea de três forças — inteligência artificial como infraestrutura acessível, queda do custo de lançar um negócio e rejeição crescente a fórmulas genéricas de crescimento. Pessoas que antes precisariam de um time inteiro para colocar uma ideia de pé hoje conseguem fazê-lo sozinhas, e descobrem que o gargalo mudou de lugar: não é mais capacidade de execução, é arquitetura de valor. A Overlens se posiciona exatamente nesse deslocamento.
+**Tendência do mercado**: Expansão simultânea de três forças: inteligência artificial como infraestrutura acessível, queda do custo de lançar um negócio e rejeição crescente a fórmulas genéricas de crescimento. Pessoas que antes precisariam de um time inteiro para colocar uma ideia de pé hoje conseguem fazê-lo sozinhas, e descobrem que o gargalo mudou de lugar: não é mais capacidade de execução, é arquitetura de valor. A Overlens se posiciona exatamente nesse deslocamento.
 
-## **Síntese — Perfil Ideal de Cliente (ICP)**
+## **Síntese: Perfil Ideal de Cliente (ICP)**
 
 | Dimensão | Descrição essencial |
 | :---- | :---- |
-| Who | Empreendedor que já tem algo no ar — uma oferta, um produto, um negócio pequeno — e é dono da própria operação. Age conectando disciplinas e começa a criar formas próprias de trabalhar. Origem profissional irrelevante; o que define é o estado. |
+| Who | Empreendedor que já tem algo no ar (uma oferta, um produto, um negócio pequeno) e é dono da própria operação. Age conectando disciplinas e começa a criar formas próprias de trabalhar. Origem profissional irrelevante; o que define é o estado. |
 | Pain | Já provou que consegue lançar; agora não consegue sustentar. O negócio depende inteiramente dele, a receita é irregular e cada ciclo recomeça do zero. Falta sistema, não esforço. |
 | Goal | Construir um negócio próprio, antifrágil e reconhecível, que sustente receita previsível e não dependa da sua presença constante, em até 12 meses. |
-| Money | *HISTÓRICO.* Receita própria de R$5k – 25k/mês; investimento de R$1k – 4k na entrada e > R$10k ao longo do relacionamento. Faixa herdada — não usar como corte. |
+| Money | <dado q="D" /> Receita própria de R$5k a 25k/mês; investimento de R$1k a 4k na entrada e > R$10k ao longo do relacionamento. Faixa herdada, não usar como corte. |
 | Success metric | Receita recorrente do próprio negócio + redução da dependência do fundador na operação. |
-| Best door | Atlas como experiência de entrada e ativação; Overpass como camada contínua; Vanguarda como camada de aceleração. *O prazo de ≤ 90 dias registrado antes é HISTÓRICO.* |
+| Best door | Atlas como experiência de entrada e ativação; Overpass como camada contínua; Vanguarda como camada de aceleração. O prazo de ≤ 90 dias registrado antes é histórico <dado q="D" />. |
 
-## **Indicadores-chave do ICP — HISTÓRICO, necessita revalidação**
+## **Indicadores-chave do ICP**
 
-> Faixas medidas sob o recorte anterior. Registro, não meta vigente.
+> <dado q="D" nota="Necessita revalidação." /> Faixas medidas sob o recorte anterior. Registro, não meta vigente.
 
 | Métrica | Faixa registrada | Porquê importava |
 | :---- | :---- | :---- |
-| Ticket médio inicial | R$1–4 k | Filtra comprometimento financeiro real. |
+| Ticket médio inicial | R$1 a 4 k | Filtra comprometimento financeiro real. |
 | Ciclo de decisão | ≤ 30 dias | Demonstra urgência e autonomia. |
 | Engajamento (90d) | ≥ 70 % aulas vistas + 1 oferta própria no ar ou reformulada | Forte sinal de aderência cultural à Overlens. |
 | Upgrade rate | ≥ 35 % para Vanguarda em 6 m | Valida jornada completa e maximiza LTV. |
@@ -116,6 +116,6 @@ Na leitura por modos, é alguém que já **conecta** com desenvoltura e começa 
 
 ---
 
-**Nota de calibração — HISTÓRICO.** Todos os indicadores deste documento (ticket, LTV, volume, ciclo, upgrade rate, NPS, faixas de receita do cliente) foram medidos sob o recorte anterior de público, quando este era descrito como "Empreendedores Nexialistas" e os perfis eram lidos como estágios sequenciais de maturidade. Permanecem como registro do que foi observado. **Não devem ser usados como critério de qualificação, precificação ou projeção** até serem revalidados com a base atual.
+**Nota de calibração.** <dado q="D" /> Todos os indicadores deste documento (ticket, LTV, volume, ciclo, upgrade rate, NPS, faixas de receita do cliente) foram medidos sob o recorte anterior de público, quando este era descrito como "Empreendedores Nexialistas" e os perfis eram lidos como estágios sequenciais de maturidade. Permanecem como registro do que foi observado. **Não devem ser usados como critério de qualificação, precificação ou projeção** até serem revalidados com a base atual.
 
 **Dependência declarada:** esta página **necessita revisão de persona**. Sua reescrita depende da redefinição de personas, que pertence ao Growth System e ainda não foi feita.

@@ -6,7 +6,7 @@ paths:
 
 # Padrão para Páginas da Base de Conhecimento
 
-> **Leia antes:** `.claude/rules/tese-atual.md` — fonte normativa sobre quem é o público, o que a Overlens é, o papel da IA e o vocabulário atual. Em conflito, aquela regra prevalece sobre qualquer documento da base.
+> **Leia antes:** `.claude/rules/tese-atual.md`, fonte normativa sobre quem é o público, o que a Overlens é, o papel da IA e o vocabulário atual. Em conflito, aquela regra prevalece sobre qualquer documento da base.
 
 ## Regras de Escrita
 
@@ -18,17 +18,17 @@ Toda página criada para a base de conhecimento da Overlens DEVE:
 4. Incluir os guardrails éticos: sem guru, sem dogma, sem culpabilização
 5. Seguir a **regra de público** e o **vocabulário atual** (abaixo)
 6. Seguir metáforas do universo Overlens: fogo controlado, prisma, portal, micélio
-7. **Classificar certeza** quando a afirmação for estratégica: DEFINIDO / EM VALIDAÇÃO / HIPÓTESE / HISTÓRICO / PENDENTE
+7. **Classificar certeza** quando a afirmação for estratégica, com a tag inline `dado`, por exemplo `<dado q="A" />` (ver "Classificação de Certeza", abaixo)
 8. EVITAR: lâmpada clichê, varinha mágica, forja, FOMO, hustle porn, promessas vazias
 
-## Regra de Público — ELIMINATÓRIA
+## Regra de Público, ELIMINATÓRIA
 
 O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade.
 
-**O que define o público é o estado, não a profissão.** Esse empreendedor **pode ou não** ser designer, engenheiro, arquiteto, artista, inventor, maker ou pesquisador — e pode ser também um empreendedor de qualquer outra origem, inclusive sem formação específica.
+**O que define o público é o estado, não a profissão.** Esse empreendedor **pode ou não** ser designer, engenheiro, arquiteto, artista, inventor, maker ou pesquisador, e pode ser também um empreendedor de qualquer outra origem, inclusive sem formação específica.
 
 **Proibido:**
-- Chamar o público de "designers", "criativos" ou "profissionais criativos" como rótulo — design é uma das disciplinas que a Overlens ensina, não quem nos procura
+- Chamar o público de "designers", "criativos" ou "profissionais criativos" como rótulo, porque design é uma das disciplinas que a Overlens ensina, não quem nos procura
 - Definir o público por profissão, formação, cargo ou senioridade
 - Usar "Empreendedor Nexialista" como nome do público
 
@@ -43,11 +43,11 @@ O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou v
 
 **Termos oficiais:** Overlens · **Atom** (membro da comunidade) · Nexialismo (capacidade, não rótulo de público) · Atom Praxis · Lente · Sistema Vivo · Capital Simbólico · projeto · evidência · realização
 
-**Os quatro modos** são formas de agir, aprender, pensar e criar — **não** estágios sequenciais de maturidade, **não** hierarquia de senioridade:
+**Os quatro modos** são formas de agir, aprender, pensar e criar. **Não** são estágios sequenciais de maturidade, **não** hierarquia de senioridade:
 
 > **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**
 
-**Obsoleto — não usar:**
+**Obsoleto, não usar:**
 - "Inconscientes" como perfil
 - Os quatro modos descritos como "distância entre a ideia e a realidade"
 - "Empreendedor Nexialista" como nome do público
@@ -67,11 +67,40 @@ O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou v
 - "escale seu negócio", "6 em 7", glamourização de rotina extrema, tom de startup bro
 - qualquer promessa de resultado garantido
 
+## Classificação de Certeza
+
+Toda afirmação estratégica nasce marcada. A marcação não é escrita por extenso: é uma **tag inline** que o site renderiza como uma bolinha de qualidade.
+
+```
+<dado q="A" />
+<dado q="B" nota="Direção testada em duas turmas." />
+<dado q="A" fonte="TRU/changes.md" />
+<dado q="C" nota="Candidato mais forte." fonte="https://exemplo.com/pesquisa" />
+```
+
+Atributos: `q` é obrigatório e vai de `A` a `E`; `nota` é opcional e leva uma frase curta de qualificação; `fonte` é opcional e só aparece quando o documento **declara** de onde a informação veio.
+
+| Bolinha | Significa | Quando usar |
+| :---- | :---- | :---- |
+| **A** | DEFINIDO | Decisão tomada e atualmente válida |
+| **B** | EM VALIDAÇÃO | Direção em teste, com evidência parcial |
+| **C** | HIPÓTESE | Possibilidade ainda não validada |
+| **D** | HISTÓRICO | Já foi verdadeiro; não representa a direção atual |
+| **E** | PENDENTE | Precisa existir e ainda não existe |
+
+No site, cada letra aparece como um ponto colorido com tooltip: a bolinha mostra a letra, o tooltip abre o significado e a nota. Quando a afirmação tem fonte declarada, um segundo ponto marcado **F** aparece ao lado e leva à origem.
+
+Regras de uso:
+
+- A tag é **inline**. Ela abre o parágrafo, abre o item de lista ou ocupa a célula da tabela. Nunca fica sozinha numa linha separada do texto que classifica.
+- **Nunca invente fonte.** A ausência de fonte é informação verdadeira sobre a base.
+- Na dúvida entre `A` e `B`, escolher **`B`**.
+
 ## Regra de Histórico
 
-Informação historicamente verdadeira **não é apagada**. Quando um posicionamento, produto ou conceito for substituído, mova o registro para uma seção de **Histórico / Posicionamentos anteriores / Evolução** e marque como **HISTÓRICO**.
+Informação historicamente verdadeira **não é apagada**. Quando um posicionamento, produto ou conceito for substituído, mova o registro para uma seção de **Histórico / Posicionamentos anteriores / Evolução** e marque com `<dado q="D" />`.
 
-O erro a evitar não é preservar o passado — é permitir que ele seja lido como a definição atual da companhia.
+O erro a evitar não é preservar o passado: é permitir que ele seja lido como a definição atual da companhia.
 
 ## Regra de Imagens
 
@@ -81,9 +110,9 @@ O erro a evitar não é preservar o passado — é permitir que ele seja lido co
 
 ## Regra de Arquivos
 
-- A fonte canônica é `website/content/<sistema>/...` — inclui **frontmatter** (title, summary, topics, keywords, priority, ai_when_to_use, related)
+- A fonte canônica é `website/content/<sistema>/...`, que inclui **frontmatter** (title, summary, topics, keywords, priority, ai_when_to_use, related)
 - `TRU/<sistema>/...` é o mesmo corpo **sem frontmatter**
-- Ao editar uma página, atualize os dois — e revise o frontmatter se termos do vocabulário mudaram
+- Ao editar uma página, atualize os dois e revise o frontmatter se termos do vocabulário mudaram
 - Páginas novas: `NN - Nome da Página.md` dentro da seção numerada
 
 ## Estrutura Mínima

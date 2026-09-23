@@ -4,7 +4,7 @@
 
 Estes princípios **não são novos**. São os `Business Principles` do Business Document traduzidos para a altitude da decisão de produto. Nenhum princípio foi inventado aqui, e nenhum deveria ser: princípio que existe só no produto é princípio que vai divergir do negócio na primeira decisão difícil.
 
-**Status: DEFINIDO quanto à origem · EM VALIDAÇÃO quanto à aplicação.** Os princípios são estáveis; a forma de aplicá-los a decisões concretas de produto ainda tem pouca história para mostrar.
+**Status:** <dado q="A" nota="Quanto à origem." /> <dado q="B" nota="Quanto à aplicação." /> Os princípios são estáveis; a forma de aplicá-los a decisões concretas de produto ainda tem pouca história para mostrar.
 
 ---
 
@@ -14,7 +14,7 @@ Conteúdo consumido não é resultado. O critério de sucesso de uma funcionalid
 
 **Na prática:** ao avaliar uma funcionalidade de aprendizagem, perguntar o que a pessoa consegue fazer depois que não conseguia antes. Se a resposta for "sabe mais sobre o assunto", a funcionalidade produz sensação de progresso, não progresso.
 
-**Teste de recusa:** métricas de consumo — aulas assistidas, tempo de sessão, itens concluídos — são diagnóstico operacional, nunca prova de valor entregue.
+**Teste de recusa:** métricas de consumo (aulas assistidas, tempo de sessão, itens concluídos) são diagnóstico operacional, nunca prova de valor entregue.
 
 ---
 
@@ -32,7 +32,7 @@ O conhecimento deve ser puxado por uma necessidade real, não empurrado por um c
 
 IA é infraestrutura, não categoria nem substituto. Serve para aumentar a capacidade de aprender, decidir, executar e conectar.
 
-**Na prática:** ao avaliar um recurso de IA, perguntar se ele aumenta a capacidade da pessoa ou apenas produz algo no lugar dela. O segundo caso compete com modelos gerais — e perde, porque eles fazem isso melhor e de graça.
+**Na prática:** ao avaliar um recurso de IA, perguntar se ele aumenta a capacidade da pessoa ou apenas produz algo no lugar dela. O segundo caso compete com modelos gerais, e perde, porque eles fazem isso melhor e de graça.
 
 O desdobramento completo está em `Sistema › IA no Produto`.
 
@@ -40,7 +40,7 @@ O desdobramento completo está em `Sistema › IA no Produto`.
 
 ## 4. Comunidade é infraestrutura
 
-Comunidade não é feature de retenção nem canal de suporte. É parte de como o valor é produzido — parte dele não vem da Overlens, vem dos membros entre si.
+Comunidade não é feature de retenção nem canal de suporte. É parte de como o valor é produzido: parte dele não vem da Overlens, vem dos membros entre si.
 
 **Na prática:** decisões de produto que aumentam volume às custas de densidade são decisões estratégicas, não operacionais. O funcionamento da comunidade pertence ao **Community System**; o que pertence aqui é a consequência para o produto: as superfícies precisam tornar pessoas encontráveis, não apenas conteúdo.
 
@@ -50,7 +50,7 @@ Comunidade não é feature de retenção nem canal de suporte. É parte de como 
 
 Aquilo que foi construído é a prova. Depoimento sustenta campanha; evidência sustenta reputação.
 
-**Na prática:** priorizar mecanismos que registrem o que as pessoas constroem. Sem registro, o resultado existe e a companhia não consegue provar nem aprender com ele — e o sistema que dependeria desse dado nunca recebe insumo.
+**Na prática:** priorizar mecanismos que registrem o que as pessoas constroem. Sem registro, o resultado existe e a companhia não consegue provar nem aprender com ele, e o sistema que dependeria desse dado nunca recebe insumo.
 
 Desenvolvido em `Sistema › Evidências e Progresso`.
 
@@ -66,7 +66,7 @@ Colocar algo em funcionamento ensina mais do que refinar algo que ainda não exi
 
 ## 7. Validar antes de investir energia excessiva
 
-Comprometer estrutura antes de saber se a direção se sustenta é como a companhia se dispersa — e dispersão é exatamente o que a Overlens diagnostica em quem já tem algo de pé.
+Comprometer estrutura antes de saber se a direção se sustenta é como a companhia se dispersa, e dispersão é exatamente o que a Overlens diagnostica em quem já tem algo de pé.
 
 **Na prática:** antes de dedicar tempo de construção a uma frente nova de produto, definir o que precisaria ser verdade e como saberíamos que não é. Frente sem hipótese refutável é frente que nunca será encerrada.
 

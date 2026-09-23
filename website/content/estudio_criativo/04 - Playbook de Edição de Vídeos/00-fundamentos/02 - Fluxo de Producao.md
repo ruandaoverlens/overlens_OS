@@ -1,6 +1,6 @@
 ---
 title: Fluxo de Edição
-summary: Descreve o fluxo de produção massiva da Overlens — 13 horas semanais de live, checkpoint e workshop viram dezenas de cortes — passando por planejamento, preparação, gravação, upload no Drive, decupagem, edição e distribuição multicanal.
+summary: Descreve o fluxo de produção massiva da Overlens, em que 13 horas semanais de live, checkpoint e workshop viram dezenas de cortes, passando por planejamento, preparação, gravação, upload no Drive, decupagem, edição e distribuição multicanal.
 topics: [fluxo de edição, produção massiva, decupagem, reaproveitamento, planejamento de conteúdo, lives, workshops]
 keywords: [fluxo de produção, planejamento, preparação, gravação, upload, drive, decupagem, cortes, lives, checkpoint, workshop, youtube, redes sociais, 13 horas]
 priority: high

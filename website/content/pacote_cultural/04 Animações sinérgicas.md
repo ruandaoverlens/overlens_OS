@@ -1,6 +1,6 @@
 ---
 title: Animações sinérgicas
-summary: Lista curada de 10 animações sinérgicas com a filosofia da Overlens — obras que usam a liberdade da animação para investigar consciência, tecnologia, identidade e world building. Inclui Pantheon, Animatrix, Arcane, Ghost in the Shell, Akira, Paprika, Edgerunners, Love Death & Robots, Serial Experiments Lain e Cowboy Bebop.
+summary: "Lista curada de 10 animações sinérgicas com a filosofia da Overlens: obras que usam a liberdade da animação para investigar consciência, tecnologia, identidade e world building. Inclui Pantheon, Animatrix, Arcane, Ghost in the Shell, Akira, Paprika, Edgerunners, Love Death & Robots, Serial Experiments Lain e Cowboy Bebop."
 topics: [animação, anime, world building, ficção especulativa, repertório animado]
 keywords: [pantheon, animatrix, arcane, ghost in the shell, akira, paprika, satoshi kon, cyberpunk edgerunners, love death and robots, serial experiments lain, cowboy bebop, mamoru oshii, katsuhiro otomo, watanabe, studio trigger, world building, anime]
 priority: low

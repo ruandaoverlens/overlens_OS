@@ -4,13 +4,13 @@
 
 ## Atom Praxis
 
-**EM VALIDAÇÃO.** **Atom Praxis** é o nome usado para iniciativas orientadas à prática, criação, experimentação e construção dentro do ecossistema Overlens.
+<dado q="B" /> **Atom Praxis** é o nome usado para iniciativas orientadas à prática, criação, experimentação e construção dentro do ecossistema Overlens.
 
 O princípio por trás do nome é o que importa:
 
 > **Praxis = aprendizagem transformada em ação.**
 
-Houve uso concreto: Atom Praxis nomeou o hackathon da comunidade. Isso é registro histórico, não definição de escopo — **não assumir que Atom Praxis seja apenas um evento anual ou apenas um hackathon.** A implementação futura pode evoluir, e o nome cobre a categoria inteira de iniciativas práticas.
+Houve uso concreto: Atom Praxis nomeou o hackathon da comunidade. Isso é registro histórico, não definição de escopo: **não assumir que Atom Praxis seja apenas um evento anual ou apenas um hackathon.** A implementação futura pode evoluir, e o nome cobre a categoria inteira de iniciativas práticas.
 
 ### O que acontece em uma iniciativa Praxis
 
@@ -25,7 +25,7 @@ Em Praxis, Atoms:
 - recebem feedback;
 - transformam conhecimento em **evidência de capacidade**.
 
-O último item é o que diferencia Praxis de um evento de aprendizagem comum. Uma aula produz entendimento; entendimento é difícil de verificar, inclusive por quem o tem. Praxis produz algo que existe no mundo — e uma coisa que existe pode ser mostrada, avaliada e continuada.
+O último item é o que diferencia Praxis de um evento de aprendizagem comum. Uma aula produz entendimento; entendimento é difícil de verificar, inclusive por quem o tem. Praxis produz algo que existe no mundo, e uma coisa que existe pode ser mostrada, avaliada e continuada.
 
 ### Por que o formato funciona
 
@@ -39,7 +39,7 @@ Três mecanismos operam simultaneamente, e nenhum deles é acidental:
 
 ## Hackathons
 
-**EM VALIDAÇÃO.** **Hackathons não devem ser documentados apenas como eventos de comunidade.** Eles funcionam como mecanismo estratégico, com função em mais de uma frente ao mesmo tempo.
+<dado q="B" /> **Hackathons não devem ser documentados apenas como eventos de comunidade.** Eles funcionam como mecanismo estratégico, com função em mais de uma frente ao mesmo tempo.
 
 | Função | O que o hackathon produz |
 | :---- | :---- |
@@ -52,7 +52,7 @@ Três mecanismos operam simultaneamente, e nenhum deles é acidental:
 | **Incubação** | Ponto de origem de projetos que podem merecer acompanhamento |
 | **Formação de times** | Parcerias que continuam depois do evento |
 
-A leitura estratégica é que um hackathon é uma das poucas atividades que servem simultaneamente ao membro, à comunidade e à companhia — sem que essas finalidades entrem em conflito. Quem participa aprende e ganha portfólio; a comunidade ganha densidade e projetos visíveis; a companhia ganha talentos identificados e projetos candidatos.
+A leitura estratégica é que um hackathon é uma das poucas atividades que servem simultaneamente ao membro, à comunidade e à companhia, sem que essas finalidades entrem em conflito. Quem participa aprende e ganha portfólio; a comunidade ganha densidade e projetos visíveis; a companhia ganha talentos identificados e projetos candidatos.
 
 ### A ponte
 
@@ -62,11 +62,11 @@ A formulação central:
 
 O último elo é o mais frágil e o mais importante. Hackathons têm uma falha estrutural conhecida: produzem energia concentrada que se dissipa na semana seguinte. Projetos nascem, impressionam e morrem.
 
-**Continuar** é, portanto, o problema de desenho a resolver — e não está resolvido. O que existe hoje é a constatação de que o elo existe e precisa de estrutura.
+**Continuar** é, portanto, o problema de desenho a resolver, e não está resolvido. O que existe hoje é a constatação de que o elo existe e precisa de estrutura.
 
 ## Caminho para incubação
 
-**HIPÓTESE.** Projetos relevantes podem eventualmente avançar para **incubação**.
+<dado q="C" /> Projetos relevantes podem eventualmente avançar para **incubação**.
 
 Incubação é frente de negócio definida no **Business Document**: acompanha um projeto específico em estágio inicial para que ganhe estrutura e evidência de viabilidade. Não é curso, não é consultoria tradicional, não é mentoria genérica. É uma frente em construção, classificada como hipótese nas apostas estratégicas da companhia.
 
@@ -76,7 +76,7 @@ Incubação é frente de negócio definida no **Business Document**: acompanha u
 
 1. **Escopo de Atom Praxis.** Que tipos de iniciativa o nome cobre, além de hackathon.
 2. **Recorrência.** Se hackathons são recorrentes e com que intervalo. Não existe cadência definida.
-3. **Continuidade.** O que acontece com um projeto na semana seguinte ao evento — este é o elo mais frágil da ponte.
+3. **Continuidade.** O que acontece com um projeto na semana seguinte ao evento. Este é o elo mais frágil da ponte.
 4. **Seleção e critério.** Como se decide quais projetos recebem atenção depois.
 5. **Participação.** Se é aberto, restrito a Atoms ou por candidatura.
 6. **Propriedade.** A quem pertence o que é construído durante uma iniciativa Praxis. Esta pergunta não tem resposta registrada em lugar nenhum da base e precisa ter.

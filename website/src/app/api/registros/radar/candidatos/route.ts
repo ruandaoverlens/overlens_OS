@@ -77,8 +77,8 @@ export async function PATCH(request: NextRequest) {
       .insert({
         processo_id: null,
         tipo: "radar",
-        titulo: `Possível colidência — ${nossaMarca} × ${candidato.marca_texto}`,
-        descricao: `Publicação ${candidato.processo_numero} (${candidato.titular || "titular não informado"}), classe(s) ${candidato.classe || "—"}. Match ${candidato.tipo_match} (score ${candidato.score}).`,
+        titulo: `Possível colidência: ${nossaMarca} × ${candidato.marca_texto}`,
+        descricao: `Publicação ${candidato.processo_numero} (${candidato.titular || "titular não informado"}), classe(s) ${candidato.classe || "-"}. Match ${candidato.tipo_match} (score ${candidato.score}).`,
         data_limite: null,
         status: "pendente",
         origem: "radar",

@@ -5,7 +5,7 @@ export const myceliumReferenceConfig: AssetUploadConfig = {
   slug: "mycelium-reference",
   title: "Nova referência",
   description:
-    "Adicione um post de referência ao Mycelium — link primário, mídias opcionais e metadados.",
+    "Adicione um post de referência ao Mycelium: link primário, mídias opcionais e metadados.",
   accept: "*",
   maxSizeMB: 0,
   multiple: true,

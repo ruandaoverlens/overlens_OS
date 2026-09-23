@@ -4,7 +4,7 @@ description: Constrói a página de Pontos de Contato mapeando todos os touchpoi
 allowed-tools: Read, Write, Edit, Glob, Grep, WebSearch, Agent
 ---
 
-# /touchpoints — Construir Pontos de Contato
+# /touchpoints: Construir Pontos de Contato
 
 Execute o pipeline para a página de Pontos de Contato:
 
@@ -16,5 +16,5 @@ Execute o pipeline para a página de Pontos de Contato:
    - Métricas de sucesso por canal
 3. Rodar revisão com agente `revisor`
 
-**Lembrete**: o público é o **empreendedor** — define-se pelo estado, não pela profissão; nunca rotulado como "designers", "criativos" nem como "Empreendedor Nexialista". Na comunidade, o membro é um **Atom**. As jornadas são de relacionamento com a marca e NÃO correspondem aos quatro modos (Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra), que são formas de agir e pensar, não estágios. IA é infraestrutura, não categoria. Nenhum touchpoint pode usar FOMO, escassez falsa ou promessa de faturamento. Classificar certeza: DEFINIDO / EM VALIDAÇÃO / HIPÓTESE / HISTÓRICO / PENDENTE.
+**Lembrete**: o público é o **empreendedor**, que se define pelo estado, não pela profissão; nunca rotulado como "designers", "criativos" nem como "Empreendedor Nexialista". Na comunidade, o membro é um **Atom**. As jornadas são de relacionamento com a marca e NÃO correspondem aos quatro modos (Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra), que são formas de agir e pensar, não estágios. IA é infraestrutura, não categoria. Nenhum touchpoint pode usar FOMO, escassez falsa ou promessa de faturamento. Classificar certeza com a tag inline `dado`, por exemplo `<dado q="A" />`: `A` definido · `B` em validação · `C` hipótese · `D` histórico · `E` pendente.
 4. Apresentar resultado ao usuário

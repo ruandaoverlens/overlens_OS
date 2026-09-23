@@ -313,7 +313,7 @@ async function triarComIA(
   candidato: CandidatoInsert,
   nossaMarca: string,
 ): Promise<string | null> {
-  const prompt = `Você é um analista de propriedade industrial. Compare a marca publicada na RPI com a nossa marca e avalie o risco de colidência em 2-3 frases, em português. Não invente fatos; baseie-se apenas nos dados abaixo. Não conclua sozinho — a decisão é humana.
+  const prompt = `Você é um analista de propriedade industrial. Compare a marca publicada na RPI com a nossa marca e avalie o risco de colidência em 2-3 frases, em português. Não invente fatos; baseie-se apenas nos dados abaixo. Não conclua sozinho: a decisão é humana.
 
 Nossa marca: "${nossaMarca}"
 Marca publicada: "${candidato.marca_texto}"
@@ -341,8 +341,8 @@ async function gerarAlertasDeCandidatos(
   const rows = candidatos.map((c) => ({
     processo_id: null,
     tipo: "radar",
-    titulo: `Possível colidência — ${c.nomeNossaMarca} × ${c.candidato.marca_texto}`,
-    descricao: `Publicação ${c.candidato.processo_numero} (${c.candidato.titular || "titular não informado"}), classe(s) ${c.candidato.classe || "—"}. Match ${c.candidato.tipo_match} (score ${c.candidato.score}).`,
+    titulo: `Possível colidência: ${c.nomeNossaMarca} × ${c.candidato.marca_texto}`,
+    descricao: `Publicação ${c.candidato.processo_numero} (${c.candidato.titular || "titular não informado"}), classe(s) ${c.candidato.classe || "-"}. Match ${c.candidato.tipo_match} (score ${c.candidato.score}).`,
     data_limite: null,
     status: "pendente",
     origem: "radar",

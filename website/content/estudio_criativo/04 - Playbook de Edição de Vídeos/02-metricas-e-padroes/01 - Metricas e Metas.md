@@ -1,6 +1,6 @@
 ---
 title: Métricas e Metas
-summary: Define os três níveis semanais de eficiência da operação de vídeo da Overlens — metinha (2 vídeos/5%), meta (3 vídeos/7%) e metona (5 vídeos/16%) — medindo aproveitamento como percentual do bruto que vira ativo publicado.
+summary: "Define os três níveis semanais de eficiência da operação de vídeo da Overlens: metinha (2 vídeos/5%), meta (3 vídeos/7%) e metona (5 vídeos/16%), medindo aproveitamento como percentual do bruto que vira ativo publicado."
 topics: [métricas, metas, eficiência, aproveitamento, produção semanal, kpi de vídeo]
 keywords: [metinha, meta, metona, taxa de aproveitamento, vídeos youtube, cortes, 90 segundos, eficiência, benchmarks, produção semanal]
 priority: medium
@@ -20,7 +20,7 @@ O sistema trabalha com três níveis de eficiência.
 Produção mínima semanal.
 
 * **2 vídeos para YouTube**  
-* duração: **10–20 minutos**
+* duração: **de 10 a 20 minutos**
 
 Tempo total: cerca de **40 minutos de conteúdo longo**
 
@@ -34,7 +34,7 @@ Taxa de aproveitamento: **≈ 5%**
 Produção ideal.
 
 * **3 vídeos para YouTube**  
-* duração: **10–20 minutos**
+* duração: **de 10 a 20 minutos**
 
 Tempo total: **≈ 60 minutos**  
 Cortes derivados: **7 cortes |** duração média: **90 segundos**  
@@ -45,7 +45,7 @@ Taxa de aproveitamento: **≈ 7%**
 Produção máxima.
 
 * **5 vídeos para YouTube**  
-* duração: **10–20 minutos**
+* duração: **de 10 a 20 minutos**
 
 Tempo total: **≈ 140 minutos**
 

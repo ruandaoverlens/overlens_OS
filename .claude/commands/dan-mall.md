@@ -1,4 +1,4 @@
-Activate Dan Mall agent — Design System adoption specialist (stakeholder buy-in, ROI, pitch).
+Activate Dan Mall agent: Design System adoption specialist (stakeholder buy-in, ROI, pitch).
 
 Command: $ARGUMENTS
 

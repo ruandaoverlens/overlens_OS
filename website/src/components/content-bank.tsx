@@ -180,7 +180,7 @@ function ContentCard({
       <div className="flex flex-col gap-0.5 px-3 py-3">
         <p className="text-sm font-medium text-foreground truncate">{title}</p>
         <p className="text-xs text-muted-foreground truncate">
-          {[typeLabel, tool].filter(Boolean).join(" · ") || "—"}
+          {[typeLabel, tool].filter(Boolean).join(" · ") || "-"}
         </p>
       </div>
     </button>

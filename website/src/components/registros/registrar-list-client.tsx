@@ -112,7 +112,7 @@ export function RegistrarListClient({ jornadas }: { jornadas: JornadaRow[] }) {
                       <div className="flex items-center justify-between gap-2">
                         <span className="text-xs text-muted-foreground">
                           {jornada.status === "em_andamento" && passoAtual
-                            ? `Passo ${jornada.passo_atual} de ${TOTAL_PASSOS} — ${passoAtual.titulo}`
+                            ? `Passo ${jornada.passo_atual} de ${TOTAL_PASSOS}: ${passoAtual.titulo}`
                             : `${concluidos} de ${TOTAL_PASSOS} passos concluídos`}
                         </span>
                         <Badge variant={JORNADA_STATUS_VARIANT[jornada.status]}>

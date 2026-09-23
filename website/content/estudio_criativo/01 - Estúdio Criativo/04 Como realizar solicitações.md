@@ -1,6 +1,6 @@
 ---
 title: Como realizar solicitações
-summary: Descreve o fluxo operacional de solicitação ao Estúdio Criativo — do formulário no ClickUp até a entrega no Drive — passando por briefing, desenvolvimento, aprovação e prazos.
+summary: Descreve o fluxo operacional de solicitação ao Estúdio Criativo, do formulário no ClickUp até a entrega no Drive, passando por briefing, desenvolvimento, aprovação e prazos.
 topics: [processo, solicitações, fluxo de trabalho, briefing, prazos]
 keywords: [formulário, ClickUp, briefing, desenvolvimento, aprovação, Drive, prazos, solicitação, pedido sob demanda]
 priority: medium

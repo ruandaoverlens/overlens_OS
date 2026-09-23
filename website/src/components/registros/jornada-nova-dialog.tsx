@@ -147,7 +147,7 @@ export function JornadaNovaDialog({
           <DialogTitle>Iniciar registro de marca</DialogTitle>
           <DialogDescription>
             Inicia o acompanhamento guiado do registro junto ao INPI, um passo
-            de cada vez — cada avanço pede uma evidência.
+            de cada vez: cada avanço pede uma evidência.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4" noValidate>

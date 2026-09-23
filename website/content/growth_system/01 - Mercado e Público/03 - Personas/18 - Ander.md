@@ -1,11 +1,11 @@
 ---
 title: Ander - O Construtor Convergente
-summary: NECESSITA REVISÃO DE PERSONA. Persona do engenheiro de 27 anos em Curitiba que lançou um produto próprio e não consegue sustentá-lo. Construída sob o recorte anterior de público (profissão, idade, renda, consumo) e sob a formulação de cinco estágios de maturidade — preservada como registro, não como verdade atual.
+summary: NECESSITA REVISÃO DE PERSONA. Persona do engenheiro de 27 anos em Curitiba que lançou um produto próprio e não consegue sustentá-lo. Construída sob o recorte anterior de público (profissão, idade, renda, consumo) e sob a formulação de cinco estágios de maturidade, preservada como registro, não como verdade atual.
 topics: [persona, ander, necessita revisão de persona, registro, produto próprio, sistema de negócio]
 keywords: [ander, anderson, persona, convergente, empreendedor nexialista, engenheiro de software, engenharia de computação, micro-produto, SaaS, INTJ, curitiba, overpass, vanguarda, framework, sistema próprio, mapa de empatia]
 priority: high
 ai_when_to_use: |
-  ATENÇÃO — persona NECESSITA REVISÃO. Use apenas como registro do que foi documentado sobre Ander. Foi construída sob o recorte anterior de público e sobre a leitura de "Convergente" como estágio de maturidade, que não vale mais. Não usar como base para campanha, produto ou qualificação; a redefinição de personas acontecerá no Growth System.
+  ATENÇÃO: persona NECESSITA REVISÃO. Use apenas como registro do que foi documentado sobre Ander. Foi construída sob o recorte anterior de público e sobre a leitura de "Convergente" como estágio de maturidade, que não vale mais. Não usar como base para campanha, produto ou qualificação; a redefinição de personas acontecerá no Growth System.
 related: []
 ---
 
@@ -13,11 +13,11 @@ related: []
 
 > ## ⚠️ NECESSITA REVISÃO DE PERSONA
 >
-> Esta persona foi construída sob o **recorte anterior de público** — definido por profissão, faixa etária, renda e comportamento de consumo — e sob a formulação de **cinco estágios sequenciais de maturidade** (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas), que não existe mais.
+> Esta persona foi construída sob o **recorte anterior de público** (definido por profissão, faixa etária, renda e comportamento de consumo) e sob a formulação de **cinco estágios sequenciais de maturidade** (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas), que não existe mais.
 >
-> **Não use esta página como verdade atual** sobre o público da Overlens. O público é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.** E Operante, Convergente, Emergente e Nexialista são hoje **formas de agir, aprender, pensar e criar** — não degraus de uma escada.
+> **Não use esta página como verdade atual** sobre o público da Overlens. O público é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.** E Operante, Convergente, Emergente e Nexialista são hoje **formas de agir, aprender, pensar e criar**, não degraus de uma escada.
 >
-> **A redefinição de personas acontecerá no Growth System e ainda não foi feita.** Até lá, o conteúdo abaixo permanece preservado como registro do que foi documentado — não como base para campanha, produto ou qualificação.
+> **A redefinição de personas acontecerá no Growth System e ainda não foi feita.** Até lá, o conteúdo abaixo permanece preservado como registro do que foi documentado, não como base para campanha, produto ou qualificação.
 
 
 <div style="display:flex;gap:24px;align-items:flex-start">
@@ -46,7 +46,7 @@ related: []
 | **Frase típica** | ***“Preciso estruturar isso direito antes de colocar no ar.”*** Namorada: fala “Você nunca acha que tá pronto, né? Sempre falta um detalhe”. Ela percebe a autocrítica exagerada e tenta incentivá-lo a lançar mesmo sem estar “perfeito”. A família, com menos paciência, diz frases como “Você complica demais as coisas” e “por que largar um emprego bom?”. Amigos soltam um “Mano, só lança logo, tá ótimo\!”. Colegas de trabalho reconhecem a qualidade técnica, mas dizem que ele “pensa demais antes de agir”. |
 | **Estilo Musical** | Curte muito **hip hop alternativo e R\&B moderno** (Kendrick Lamar, Frank Ocean, The Weeknd). Também mergulha em **eletrônica sofisticada** (Disclosure, Kaytranada, James Blake). Gosta de **trilhas sonoras e lo-fi beats** para trabalhar. Vai a festivais como **Coolritiba** e shows médios em Curitiba. |
 | **Mídias Sociais** | Usa o LinkedIn para acompanhar tendências e ocasionalmente falar do que está construindo. Passa um tempo no **YouTube** com vídeos longos sobre engenharia, produto e inovação. Acompanha comunidades de fundadores independentes (indie hackers, fóruns de produto) e lê **newsletters de tecnologia e negócios**. Evita TikTok por considerar dispersivo, mas consome cortes que chegam via Instagram. |
-| **Games** | Prefere jogos que exigem **estratégia e construção**, como *Civilization VI*, *Cities: Skylines* e *FIFA* para relaxar. Jogou bastante *The Last of Us* e *Cyberpunk 2077* — gosta de universos narrativos densos. Vê jogos como forma de **analisar sistemas** e referências visuais, não apenas diversão. |
+| **Games** | Prefere jogos que exigem **estratégia e construção**, como *Civilization VI*, *Cities: Skylines* e *FIFA* para relaxar. Jogou bastante *The Last of Us* e *Cyberpunk 2077*. Gosta de universos narrativos densos. Vê jogos como forma de **analisar sistemas** e referências visuais, não apenas diversão. |
 | **Séries e Filmes** | Séries favoritas: ***Mr. Robot***, ***Black Mirror*** (reflexões sobre tecnologia), ***Halt and Catch Fire***. Também acompanha dramas contemporâneos como *Succession*. Filmes: gosta de obras que misturam **estética e crítica social**, tipo ***Blade Runner 2049***, ***A Rede Social*** e ***Whiplash***. Consome documentários de inovação, tecnologia e música. |
 | **Livros** | Já leu ***Sapiens*** (Yuval Noah Harari), ***A Estratégia do Oceano Azul*** e ***A Arte da Guerra***. Tem interesse em livros sobre **sistemas complexos e antifragilidade** (*Antifragile*, Nassim Taleb). Costuma comprar, mas lê em ritmo lento, fazendo anotações e marcações. Segue referências de produto, arquitetura de software e estratégia, mas está buscando leituras mais filosóficas para sair da bolha metodológica. |
 | **Moda e Estilo** | Estilo clean, urbano e minimalista. Prefere roupas neutras (tons de preto, cinza, branco, azul marinho). Lojas: Reserva, Renner, básicas da Zara. Usa relógio como peça-chave. Tem apreço por tênis modernos (Nike Air Max, Adidas Originals). Quer transmitir **profissionalismo criativo** sem parecer extravagante. |
@@ -56,7 +56,7 @@ related: []
 
 Ander tem 27 anos, nasceu e cresceu em Curitiba e desde cedo desmontava coisas para entender como funcionavam. Escolheu Engenharia de Computação e logo percebeu que o que realmente o movia não era resolver o problema dos outros, e sim **construir algo que existisse por conta própria**. Durante a faculdade, foi reconhecido por sua **organização e domínio técnico**, sempre aquele que entregava os projetos mais estruturados e bem acabados. Isso lhe rendeu estágio, efetivação e uma boa reputação entre colegas.
 
-Há dois anos ele lançou um produto digital próprio — uma ferramenta pequena, feita para resolver um problema que ele mesmo tinha. Deu certo mais do que esperava: tem assinantes, recebe e-mails de gente que usa todo dia e já pagou o próprio custo várias vezes. Mas cada mês parece o primeiro mês. Quando ele trabalha, vende; quando ele para, para tudo. Não existe estrutura, só ele. E o emprego CLT, que era rede de segurança, virou teto.
+Há dois anos ele lançou um produto digital próprio: uma ferramenta pequena, feita para resolver um problema que ele mesmo tinha. Deu certo mais do que esperava: tem assinantes, recebe e-mails de gente que usa todo dia e já pagou o próprio custo várias vezes. Mas cada mês parece o primeiro mês. Quando ele trabalha, vende; quando ele para, para tudo. Não existe estrutura, só ele. E o emprego CLT, que era rede de segurança, virou teto.
 
 Ander já rompeu com parte das crenças limitantes que o prendiam ao básico, mas ainda se agarra demais a metodologias. Comprou e finalizou vários cursos avançados, domina frameworks de produto e processo, mas sente que está girando em círculos. Ele sabe que não é mais “só um executor”, e ainda assim não conseguiu construir o sistema que faria o que ele criou se sustentar sem ele empurrando.
 
@@ -168,4 +168,4 @@ O maior sonho do Ander não é apenas ganhar mais, mas ser dono de algo que func
 
 ---
 
-Ander não só é um exemplo plausível de Convergente, mas um símbolo perfeito para explicar esse arquétipo dentro da Overlens. Ele traduz tanto as dores racionais (metodologia demais, ausência de sistema próprio, negócio pendurado no fundador) quanto as emocionais (medo de ter construído apenas um emprego mais difícil). A origem dele é deliberadamente técnica: serve para mostrar que o Empreendedor Nexialista não vem do campo estético — vem de qualquer lugar, e é definido pelo que faz com a própria ideia.
+Ander não só é um exemplo plausível de Convergente, mas um símbolo perfeito para explicar esse arquétipo dentro da Overlens. Ele traduz tanto as dores racionais (metodologia demais, ausência de sistema próprio, negócio pendurado no fundador) quanto as emocionais (medo de ter construído apenas um emprego mais difícil). A origem dele é deliberadamente técnica: serve para mostrar que o Empreendedor Nexialista não vem do campo estético: vem de qualquer lugar, e é definido pelo que faz com a própria ideia.

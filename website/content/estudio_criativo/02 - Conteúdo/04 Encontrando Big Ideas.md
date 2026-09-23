@@ -1,6 +1,6 @@
 ---
 title: Encontrando Big Ideas
-summary: Apresenta o método para identificar, validar e traduzir Big Ideas em headlines — combinando subversão da lógica, desejo latente, 14 princípios de validação e fórmula de gatilho-objeção-quebra.
+summary: Apresenta o método para identificar, validar e traduzir Big Ideas em headlines, combinando subversão da lógica, desejo latente, 14 princípios de validação e fórmula de gatilho-objeção-quebra.
 topics: [big idea, copywriting, headlines, validação, criatividade]
 keywords: [big idea, headline, gatilho, objeção, quebra de objeção, subversão, desejo latente, copy, persona, novidade, urgência, 14 princípios]
 priority: high

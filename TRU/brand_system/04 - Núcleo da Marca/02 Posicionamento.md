@@ -8,7 +8,7 @@
 
 ## A escola de negócios dos criadores
 
-**EM VALIDAÇÃO.** Esta é a declaração de posicionamento da Overlens. Ela é curta de propósito: posicionamento precisa ser simples, mesmo quando o universo da marca é complexo. Ninguém deveria precisar compreender o worldbuilding da Overlens para entender o que ela faz.
+<dado q="B" /> Esta é a declaração de posicionamento da Overlens. Ela é curta de propósito: posicionamento precisa ser simples, mesmo quando o universo da marca é complexo. Ninguém deveria precisar compreender o worldbuilding da Overlens para entender o que ela faz.
 
 A expressão tem uma estrutura dinâmica, e a repetição das categorias é parte do conceito:
 
@@ -21,7 +21,7 @@ A expressão tem uma estrutura dinâmica, e a repetição das categorias é part
 
 Não se trata de escolher uma única variação e descartar as outras. A repetição é o argumento: existe uma escola de negócios construída para quem tradicionalmente não se identifica com uma. Cada variação é uma porta diferente para a mesma casa.
 
-Isso exige dizer com clareza o que "escola de negócios" **não** significa aqui. Não é escola de administração tradicional, não é a estética do terno, do gráfico de crescimento e do vocabulário corporativo. É uma escola de negócios feita para pessoas que não se reconhecem na estética, na linguagem e na visão de mundo de uma escola de negócios convencional — e que, ainda assim, precisam de negócio, estratégia, método e sustentação para colocar as próprias ideias de pé.
+Isso exige dizer com clareza o que "escola de negócios" **não** significa aqui. Não é escola de administração tradicional, não é a estética do terno, do gráfico de crescimento e do vocabulário corporativo. É uma escola de negócios feita para pessoas que não se reconhecem na estética, na linguagem e na visão de mundo de uma escola de negócios convencional e que, ainda assim, precisam de negócio, estratégia, método e sustentação para colocar as próprias ideias de pé.
 
 Uma observação necessária para quem escreve em nome da marca: os substantivos de profissão funcionam aqui como variações da expressão de posicionamento, não como definição de público. O público da Overlens é definido pelo estado, não pela profissão. *"A escola de negócios dos designers"* é posicionamento; *"nosso público são designers"* é erro.
 

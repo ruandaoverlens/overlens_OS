@@ -18,19 +18,19 @@ A pergunta que organiza tudo mudou:
 
 > De **"o que você quer aprender?"** para **"o que você quer construir, realizar ou se tornar?"**
 
-**Princípio de marca:** *O futuro não é um destino. O futuro é um projeto.* — tese estratégica e filosófica, não slogan.
+**Princípio de marca:** *O futuro não é um destino. O futuro é um projeto.* Tese estratégica e filosófica, não slogan.
 
 **"Escola de negócios" não significa escola de administração tradicional.** Significa uma escola construída para pessoas que não se identificam com a estética, a linguagem e a visão de mundo de uma escola de negócios convencional.
 
 ---
 
-## 2. Regra de público — ELIMINATÓRIA
+## 2. Regra de público, ELIMINATÓRIA
 
 O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade.
 
 **O que define o público é o estado, não a profissão.**
 
-Esse empreendedor **pode ou não** ser designer, engenheiro, arquiteto, artista, inventor, maker, pesquisador ou desenvolvedor — e pode também ser um empreendedor de qualquer outra origem, inclusive de nenhuma formação específica. A origem profissional é **circunstância**, nunca identidade.
+Esse empreendedor **pode ou não** ser designer, engenheiro, arquiteto, artista, inventor, maker, pesquisador ou desenvolvedor, e pode também ser um empreendedor de qualquer outra origem, inclusive de nenhuma formação específica. A origem profissional é **circunstância**, nunca identidade.
 
 ### Proibido
 
@@ -52,7 +52,7 @@ A diferença é simples: *"nosso público são designers"* é proibido; *"a esco
 
 ### Nexialismo
 
-Nexialismo é uma **capacidade cognitiva e prática que a Overlens desenvolve** — não o rótulo do público.
+Nexialismo é uma **capacidade cognitiva e prática que a Overlens desenvolve**, não o rótulo do público.
 
 O Nexialista transita entre mundos e mobiliza conhecimentos diferentes para realizar ideias complexas. Conhecimento enciclopédico sem aplicação não é nexialismo; o conceito permanece ligado à **realização**.
 
@@ -62,22 +62,22 @@ O conceito permanece como propriedade intelectual cultural e pedagógica da marc
 
 ### Operante · Convergente · Emergente · Nexialista
 
-São **formas de agir, aprender, pensar e criar** — comportamentais e cognitivas.
+São **formas de agir, aprender, pensar e criar**, comportamentais e cognitivas.
 
 > **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**
 
-- **Operante** — funciona dentro de sistemas, métodos e estruturas já estabelecidas. Executa bem o que já existe. **Não é insulto nem julgamento de valor**; operantes são necessários em qualquer sistema.
-- **Convergente** — atravessa fronteiras entre conhecimentos, ferramentas e disciplinas. Conecta partes antes separadas.
-- **Emergente** — cria novas formas de agir a partir dessas combinações. Métodos próprios, experimentação.
-- **Nexialista** — orquestra: mobiliza domínios, pessoas e competências em torno de problemas complexos.
+- **Operante**: funciona dentro de sistemas, métodos e estruturas já estabelecidas. Executa bem o que já existe. **Não é insulto nem julgamento de valor**; operantes são necessários em qualquer sistema.
+- **Convergente**: atravessa fronteiras entre conhecimentos, ferramentas e disciplinas. Conecta partes antes separadas.
+- **Emergente**: cria novas formas de agir a partir dessas combinações. Métodos próprios, experimentação.
+- **Nexialista**: orquestra e mobiliza domínios, pessoas e competências em torno de problemas complexos.
 
 ### Proibido
 
 - Tratá-los como hierarquia de senioridade (iniciante → avançado).
 - Tratá-los como estágios sequenciais obrigatórios de maturidade do cliente.
 - Assumir que constituem um sistema formal de gamificação.
-- Usar **"Inconscientes"** — não existe na formulação atual.
-- Descrevê-los como "a distância entre a ideia e a realidade" — essa era a leitura anterior.
+- Usar **"Inconscientes"**, que não existe na formulação atual.
+- Descrevê-los como "a distância entre a ideia e a realidade". Essa era a leitura anterior.
 
 **Status:** modelo mental em validação. A implementação ainda pode evoluir.
 
@@ -117,7 +117,7 @@ IA dentro da Overlens serve para potencializar: aprendizagem, planejamento, exec
 
 **Atom é a identidade básica de um membro da comunidade Overlens.**
 
-Não é aluno, assinante, comprador, lead nem usuário — essas são condições transacionais ou funcionais. Atom é uma identidade de **pertencimento**.
+Não é aluno, assinante, comprador, lead nem usuário: essas são condições transacionais ou funcionais. Atom é uma identidade de **pertencimento**.
 
 Usos: comunidade de Atoms · encontro de Atoms · projetos criados por Atoms · "Hey, Atoms" · colaboração entre Atoms.
 
@@ -131,7 +131,7 @@ A palavra substitui gradualmente a relação escolar "empresa → aluno" por per
 
 ## 7. Filosofia educacional
 
-**Projeto substitui conteúdo como unidade central.** Isso não elimina aulas, livros, artigos ou trilhas — altera a relação entre eles.
+**Projeto substitui conteúdo como unidade central.** Isso não elimina aulas, livros, artigos ou trilhas: altera a relação entre eles.
 
 > **Projeto → necessidade → conhecimento → aplicação → evidência**
 
@@ -167,14 +167,14 @@ Objetivo de longo prazo: aumentar a probabilidade de alguém encontrar no ecossi
 
 **Frentes de negócio** (ainda podem mudar; não tratar como unidades definitivas): Educação · Comunidade · Aceleração · Incubação · Serviços (assessoria e consultoria) · B2B · Eventos · Produtos físicos e artefatos.
 
-- **Assessoria** — acompanhamento contínuo e proximidade na resolução de problemas reais de uma empresa. **Não é agência.** Já validada comercialmente.
-- **Consultoria** — diagnostica, recomenda e estrutura caminhos. Fronteira com assessoria ainda não definida oficialmente.
-- **Incubação** — acompanha um **projeto específico** em estágio inicial. Não é curso, consultoria tradicional nem mentoria genérica. Frente em construção.
-- **Aceleração** — ajuda algo existente a avançar mais rápido. Incubação ajuda algo a nascer.
-- **Produtos físicos** — **artefatos de pertencimento**, não merchandising. Podem representar identidade, participação, memória, acesso, edição limitada.
-- **Hackathons** — mecanismo estratégico (aprendizagem, talentos, projetos, portfólio, incubação, times), não só evento de comunidade.
+- **Assessoria**: acompanhamento contínuo e proximidade na resolução de problemas reais de uma empresa. **Não é agência.** Já validada comercialmente.
+- **Consultoria**: diagnostica, recomenda e estrutura caminhos. Fronteira com assessoria ainda não definida oficialmente.
+- **Incubação**: acompanha um **projeto específico** em estágio inicial. Não é curso, consultoria tradicional nem mentoria genérica. Frente em construção.
+- **Aceleração**: ajuda algo existente a avançar mais rápido. Incubação ajuda algo a nascer.
+- **Produtos físicos**: **artefatos de pertencimento**, não merchandising. Podem representar identidade, participação, memória, acesso, edição limitada.
+- **Hackathons**: mecanismo estratégico (aprendizagem, talentos, projetos, portfólio, incubação, times), não só evento de comunidade.
 
-**Arquitetura comercial:** migração de dependência de lançamentos para **aquisição e vendas contínuas** — CRM, vendedores, follow-up, recuperação de leads, WhatsApp, conteúdo, eventos recorrentes, campanhas, produtos perpétuos, expansão de clientes, retenção, relacionamento de longo prazo.
+**Arquitetura comercial:** migração de dependência de lançamentos para **aquisição e vendas contínuas**: CRM, vendedores, follow-up, recuperação de leads, WhatsApp, conteúdo, eventos recorrentes, campanhas, produtos perpétuos, expansão de clientes, retenção, relacionamento de longo prazo.
 
 **Proibido:** assumir cursos online, assinatura ou lançamentos como única ou principal forma de monetização.
 
@@ -200,19 +200,37 @@ Definição conceitual de **Atom** → Brand System. Implementação operacional
 
 ---
 
-## 11. Classificação de certeza — OBRIGATÓRIA
+## 11. Classificação de certeza, OBRIGATÓRIA
 
 A Overlens está em transição. **Documentar exploração estratégica como decisão tomada é o erro mais caro que esta base pode cometer.**
 
-| Marcação | Significado |
-| :---- | :---- |
-| **DEFINIDO** | Decisão tomada e atualmente válida |
-| **EM VALIDAÇÃO** | Direção em teste, com evidência parcial |
-| **HIPÓTESE** | Possibilidade ainda não validada |
-| **HISTÓRICO** | Já foi verdadeiro; não representa a direção atual |
-| **PENDENTE** | Precisa existir e ainda não existe — **não preencher com suposição** |
+A classificação não é mais escrita por extenso. Ela é uma **tag inline** que o site renderiza como uma bolinha de qualidade:
 
-Na dúvida entre DEFINIDO e EM VALIDAÇÃO, escolher **EM VALIDAÇÃO**.
+```
+<dado q="A" />
+<dado q="B" nota="Direção testada em duas turmas." />
+<dado q="A" fonte="TRU/changes.md" />
+<dado q="C" nota="Candidato mais forte." fonte="https://exemplo.com/pesquisa" />
+```
+
+Atributos: `q` é obrigatório e vai de `A` a `E`; `nota` é opcional e leva uma frase curta de qualificação; `fonte` é opcional e só aparece quando o documento **declara** de onde a informação veio.
+
+| Bolinha | Significa | Quando usar |
+| :---- | :---- | :---- |
+| **A** | DEFINIDO | Decisão tomada e atualmente válida |
+| **B** | EM VALIDAÇÃO | Direção em teste, com evidência parcial |
+| **C** | HIPÓTESE | Possibilidade ainda não validada |
+| **D** | HISTÓRICO | Já foi verdadeiro; não representa a direção atual |
+| **E** | PENDENTE | Precisa existir e ainda não existe |
+
+No site, cada letra aparece como um ponto colorido com tooltip: a bolinha mostra a letra, o tooltip abre o significado e a nota. Quando a afirmação tem fonte declarada, um segundo ponto marcado **F** aparece ao lado e leva à origem.
+
+Regras de uso:
+
+- A tag é **inline**. Ela abre o parágrafo, abre o item de lista ou ocupa a célula da tabela. Nunca fica sozinha numa linha separada do texto que classifica.
+- `E` significa que a informação precisa existir e ainda não existe: **não preencher com suposição**.
+- **Nunca invente fonte.** A ausência de fonte é informação verdadeira sobre a base.
+- Na dúvida entre `A` e `B`, escolher **`B`**.
 
 ---
 
@@ -221,7 +239,7 @@ Na dúvida entre DEFINIDO e EM VALIDAÇÃO, escolher **EM VALIDAÇÃO**.
 1. **Não inventar personas.** A redefinição será feita depois. Material que dependa das personas antigas (Brunin, Tella, Ander, Lilly) deve ser marcado como *"necessita revisão de persona"*.
 2. **Não inventar pesquisa de mercado.** TAM/SAM/SOM e concorrentes seguem PENDENTES.
 3. **Não criar métricas sem evidência.**
-4. **Não apagar histórico útil.** Informação historicamente verdadeira vai para seções de **Histórico / Posicionamentos anteriores / Evolução**, com marcação — nunca é simplesmente deletada.
+4. **Não apagar histórico útil.** Informação historicamente verdadeira vai para seções de **Histórico / Posicionamentos anteriores / Evolução**, com marcação. Nunca é simplesmente deletada.
 5. **Não transformar a tese em manifesto.** Documentação estratégica não vira linguagem publicitária.
 6. **Não assumir que os produtos atuais permanecerão iguais.**
 7. **Não criar definição concorrente** de um conceito que já tem dono (§10).
@@ -238,10 +256,10 @@ Alguém entende a Overlens rapidamente como *uma escola de negócios para pessoa
 
 Interpretação simbólica registrada: **Arcádia** = criação/possibilidade · **Mônada** = expressão/singularidade · **Tésera** = estratégia/movimento · **Órbital** = processos/continuidade. Pares: Arcádia ↔ Mônada (criação e expressão), Tésera ↔ Órbital (estratégia e sistemas). Não transformar em departamentos.
 
-**PENDENTE — decisões de nomenclatura em aberto.** Não resolver por conta própria; registrar e perguntar:
+**Decisões de nomenclatura em aberto** <dado q="E" />. Não resolver por conta própria; registrar e perguntar:
 
-- **Grafia divergente:** a base usa *Téssera* e *Orbital*; `TRU/changes.md` usa *Tésera* e *Órbital*. Até haver decisão, não padronize à força — mantenha a grafia de cada documento e sinalize.
+- **Grafia divergente:** a base usa *Téssera* e *Orbital*; `TRU/changes.md` usa *Tésera* e *Órbital*. Até haver decisão, não padronize à força: mantenha a grafia de cada documento e sinalize.
 - **Lugares sem leitura simbólica registrada:** Parallax, Noumenom e Limbo aparecem na Arquitetura de Marca sem definição. Não inventar significado.
 - **Trilhas sem status:** NexGen, Spectrum, AI First, Chrome, Idea, Gestalt e Signals aparecem na base sem confirmação de que existem como oferta. Não afirmar que existem.
 - **Produtos sem definição comercial:** Protocolo 3-2-1 e Blackpass.
-- **Métodos e artefatos herdados:** Códices, Tratado de Interfaces OVL 2530, Metodologia A.C.R.O, "os 4 graus de influência da percepção", "os 4 fundamentos do design visual" — citáveis como existentes, mas sem inventar conteúdo sobre eles.
+- **Métodos e artefatos herdados:** Códices, Tratado de Interfaces OVL 2530, Metodologia A.C.R.O, "os 4 graus de influência da percepção", "os 4 fundamentos do design visual". São citáveis como existentes, mas sem inventar conteúdo sobre eles.

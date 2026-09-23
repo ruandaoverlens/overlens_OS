@@ -165,7 +165,7 @@ export function JornadaSugestaoClasses({ jornada }: { jornada: JornadaRow }) {
         <span className="text-sm font-medium">Apoio à escolha de classes</span>
         <p className="text-xs text-muted-foreground">
           Descreva o objetivo do registro e receba sugestões de classes de Nice
-          geradas com IA (Gemma). Sugestões são indicativas — confirme na
+          geradas com IA (Gemma). Sugestões são indicativas: confirme na
           classificação oficial.
         </p>
       </div>
@@ -238,7 +238,7 @@ export function JornadaSugestaoClasses({ jornada }: { jornada: JornadaRow }) {
                     <span>
                       {c.titulo}
                       {c.motivo && (
-                        <span className="text-muted-foreground"> — {c.motivo}</span>
+                        <span className="text-muted-foreground">: {c.motivo}</span>
                       )}
                     </span>
                   </div>

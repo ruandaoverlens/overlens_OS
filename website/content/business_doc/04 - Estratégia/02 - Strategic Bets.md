@@ -1,16 +1,16 @@
 ---
 title: Strategic Bets
-summary: Registra as nove apostas estratégicas da companhia — aprendizagem baseada em projetos, IA como infraestrutura, negócios para criadores, comunidade como infraestrutura, aceleração e incubação, serviços e B2B, produtos físicos como artefatos, sistema operacional de aprendizagem e realização, e operação por sistemas —, cada uma com nível de certeza, justificativa, o que precisaria ser verdade e como saberíamos que está errada.
+summary: Registra as nove apostas estratégicas da companhia (aprendizagem baseada em projetos, IA como infraestrutura, negócios para criadores, comunidade como infraestrutura, aceleração e incubação, serviços e B2B, produtos físicos como artefatos, sistema operacional de aprendizagem e realização, e operação por sistemas), cada uma com nível de certeza, justificativa, o que precisaria ser verdade e como saberíamos que está errada.
 topics: [apostas estratégicas, nível de certeza, hipóteses refutáveis, priorização, direção da companhia]
 keywords: [strategic bets, apostas, PBL, aprendizagem baseada em projetos, IA como infraestrutura, escola de negócios dos criadores, comunidade como infraestrutura, aceleração, incubação, assessoria, B2B, artefatos de pertencimento, grafo de capacidades, evidências, operação por sistemas, lançamentos, CRM, EM VALIDAÇÃO, HIPÓTESE]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar quais são as apostas estratégicas da Overlens, em que a companhia está apostando e com que grau de certeza, o que precisaria ser verdade para cada aposta se confirmar, ou como saberíamos que uma delas está errada. Aposta não é decisão — sempre transmita o nível de certeza junto com o conteúdo.
+  Use quando o usuário perguntar quais são as apostas estratégicas da Overlens, em que a companhia está apostando e com que grau de certeza, o que precisaria ser verdade para cada aposta se confirmar, ou como saberíamos que uma delas está errada. Aposta não é decisão: sempre transmita o nível de certeza junto com o conteúdo.
 related: ["business_doc/04 - Estratégia/01 - Moats.md", "business_doc/04 - Estratégia/04 - Riscos e Incertezas.md", "business_doc/01 - Overview/04 - Business Thesis.md", "business_doc/03 - Arquitetura/01 - Arquitetura de Produtos e Serviços.md"]
 ---
 # Strategic Bets
 
-## As apostas estratégicas atuais da Overlens. Aposta não é decisão consolidada — e esta página existe para que essa diferença não se perca.
+## As apostas estratégicas atuais da Overlens. Aposta não é decisão consolidada, e esta página existe para que essa diferença não se perca.
 
 Uma aposta é uma direção assumida sem certeza, com consequência real de recurso e tempo. Documentar apostas como se fossem decisões faz a companhia parar de testá-las.
 
@@ -20,7 +20,7 @@ Cada aposta abaixo registra: o que se está apostando, por que, o que precisaria
 
 ## Aposta 1 · Aprendizagem baseada em projetos
 
-**Nível: EM VALIDAÇÃO. A aposta mais estruturante da companhia.**
+Nível: <dado q="B" nota="A aposta mais estruturante da companhia." />
 
 **O que apostamos:** que a unidade central da experiência deve ser o projeto, não o conteúdo. A lógica **Objetivo → Projeto → Capacidades necessárias → Aprendizagem → Execução → Evidências → Feedback → Evolução** entrega mais valor do que uma biblioteca organizada por temas.
 
@@ -34,9 +34,9 @@ Cada aposta abaixo registra: o que se está apostando, por que, o que precisaria
 
 ## Aposta 2 · IA como infraestrutura, não como categoria
 
-**Nível: DEFINIDO quanto à direção · EM VALIDAÇÃO quanto à execução.**
+Nível: <dado q="A" nota="Quanto à direção." /> <dado q="B" nota="Quanto à execução." />
 
-**O que apostamos:** que a Overlens não deve competir com modelos gerais na capacidade de responder, explicar, resumir ou gerar conteúdo — e que IA gera mais valor amplificando aprendizagem, planejamento, execução, personalização e conexão entre pessoas e conhecimentos.
+**O que apostamos:** que a Overlens não deve competir com modelos gerais na capacidade de responder, explicar, resumir ou gerar conteúdo, e que IA gera mais valor amplificando aprendizagem, planejamento, execução, personalização e conexão entre pessoas e conhecimentos.
 
 **Por quê:** competir com ChatGPT, Claude ou Gemini no terreno deles é uma disputa perdida por desenho, e vencê-la não produziria valor duradouro.
 
@@ -48,21 +48,21 @@ Cada aposta abaixo registra: o que se está apostando, por que, o que precisaria
 
 ## Aposta 3 · Negócios para criadores
 
-**Nível: EM VALIDAÇÃO.**
+Nível: <dado q="B" />
 
 **O que apostamos:** que existe demanda real por uma escola de negócios construída para pessoas que não se identificam com a estética, a linguagem e a visão de mundo de uma escola de negócios convencional.
 
-**Por quê:** a queda do custo de criar aumentou o número de pessoas construindo algo próprio a partir de origens não empresariais — e a formação disponível fala com quem já se vê como empresário.
+**Por quê:** a queda do custo de criar aumentou o número de pessoas construindo algo próprio a partir de origens não empresariais, e a formação disponível fala com quem já se vê como empresário.
 
 **O que precisaria ser verdade:** que essas pessoas reconheçam a necessidade de capacidade de negócio e estejam dispostas a investir nela.
 
-**Como saberíamos que está errada:** se o público continuar comprando formação por disciplina — design, IA, marketing — e resistir ao enquadramento de negócio.
+**Como saberíamos que está errada:** se o público continuar comprando formação por disciplina (design, IA, marketing) e resistir ao enquadramento de negócio.
 
 ---
 
 ## Aposta 4 · Comunidade como infraestrutura
 
-**Nível: EM VALIDAÇÃO.**
+Nível: <dado q="B" />
 
 **O que apostamos:** que a comunidade é um dos principais ativos estratégicos da companhia, e não uma feature de engajamento ou suporte.
 
@@ -76,7 +76,7 @@ Cada aposta abaixo registra: o que se está apostando, por que, o que precisaria
 
 ## Aposta 5 · Aceleração e incubação
 
-**Nível: EM VALIDAÇÃO (aceleração) · HIPÓTESE (incubação).**
+Nível: <dado q="B" nota="Aceleração." /> <dado q="C" nota="Incubação." />
 
 **O que apostamos:** que a companhia pode capturar valor não apenas formando, mas participando diretamente do avanço de projetos e negócios que nascem ou passam pelo ecossistema.
 
@@ -90,7 +90,7 @@ Cada aposta abaixo registra: o que se está apostando, por que, o que precisaria
 
 ## Aposta 6 · Serviços e expansão B2B
 
-**Nível: EM VALIDAÇÃO (assessoria, já validada comercialmente) · HIPÓTESE (consultoria e B2B).**
+Nível: <dado q="B" nota="Assessoria, já validada comercialmente." /> <dado q="C" nota="Consultoria e B2B." />
 
 **O que apostamos:** que a Overlens pode atuar diretamente sobre negócios e empresas, e não apenas sobre pessoas.
 
@@ -104,9 +104,9 @@ Cada aposta abaixo registra: o que se está apostando, por que, o que precisaria
 
 ## Aposta 7 · Produtos físicos como artefatos
 
-**Nível: HIPÓTESE.**
+Nível: <dado q="C" />
 
-**O que apostamos:** que objetos físicos podem funcionar como artefatos de pertencimento — identidade, participação, memória, acesso, edição limitada — e não como merchandising.
+**O que apostamos:** que objetos físicos podem funcionar como artefatos de pertencimento (identidade, participação, memória, acesso, edição limitada) e não como merchandising.
 
 **Por quê:** objetos culturais sustentam pertencimento de forma que conteúdo digital não alcança.
 
@@ -118,9 +118,9 @@ Cada aposta abaixo registra: o que se está apostando, por que, o que precisaria
 
 ## Aposta 8 · Sistema operacional de aprendizagem e realização
 
-**Nível: HIPÓTESE — a aposta de maior horizonte.**
+Nível: <dado q="C" nota="A aposta de maior horizonte." />
 
-**O que apostamos:** que a Overlens pode construir um sistema que conecte **pessoa + objetivo + conhecimento + competências + projetos + evidências + comunidade** — e que isso, não funcionalidades de geração de conteúdo, é o diferencial sustentável do produto.
+**O que apostamos:** que a Overlens pode construir um sistema que conecte **pessoa + objetivo + conhecimento + competências + projetos + evidências + comunidade**, e que isso, não funcionalidades de geração de conteúdo, é o diferencial sustentável do produto.
 
 **Por quê:** chat, resumos, mapas mentais, podcasts, flashcards, testes e recomendações continuam úteis, mas não constituem sozinhos diferencial defensável. Qualquer concorrente adiciona essas funções em meses.
 
@@ -132,13 +132,13 @@ Cada aposta abaixo registra: o que se está apostando, por que, o que precisaria
 
 ## Aposta 9 · Operação por sistemas, não por campanhas
 
-**Nível: EM VALIDAÇÃO.**
+Nível: <dado q="B" />
 
 **O que apostamos:** que migrar de dependência de lançamentos para aquisição e vendas contínuas torna a companhia mais estável e mais previsível.
 
 **Por quê:** campanhas concentram risco, exigem pico de esforço e perdem o acumulado quando falham. Sistemas acumulam.
 
-**O que precisaria ser verdade:** que exista estrutura comercial contínua — CRM, follow-up, relacionamento — e produtos perpétuos que sustentem venda fora de janela.
+**O que precisaria ser verdade:** que exista estrutura comercial contínua (CRM, follow-up, relacionamento) e produtos perpétuos que sustentem venda fora de janela.
 
 **Como saberíamos que está errada:** se a receita contínua não compensar a perda dos picos de lançamento dentro de um horizonte razoável.
 
@@ -149,4 +149,4 @@ Cada aposta abaixo registra: o que se está apostando, por que, o que precisaria
 1. **Aposta não vira decisão por repetição.** Vira decisão quando a evidência de validação for registrada aqui, com data.
 2. **Nenhuma aposta deveria ser perseguida sem dono.** Aposta sem responsável é intenção.
 3. **Nem todas ao mesmo tempo.** Nove apostas simultâneas é precisamente a dispersão que a Overlens ensina a evitar. A priorização entre elas é uma decisão em aberto.
-4. **Uma aposta abandonada também é informação.** Deve ser movida para **Histórico**, com o motivo — não apagada.
+4. **Uma aposta abandonada também é informação.** Deve ser movida para **Histórico**, com o motivo, não apagada.

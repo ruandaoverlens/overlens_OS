@@ -1,5 +1,5 @@
 ---
-description: "Audit the design system codebase — patterns, redundancy, tokens, components"
+description: "Audit the design system codebase: patterns, redundancy, tokens, components"
 user_invocable: true
 ---
 
@@ -9,7 +9,7 @@ Run a codebase audit on the ds-overlens design system.
 
 ## Arguments
 
-- `$ARGUMENTS`: Optional focus area — "patterns", "tokens", "bundle", "dead-code", or a specific path
+- `$ARGUMENTS`: Optional focus area. "patterns", "tokens", "bundle", "dead-code", or a specific path
 
 ## Instructions
 

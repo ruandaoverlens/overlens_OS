@@ -16,7 +16,7 @@ A copy, nesse caso, precisa ser ainda mais direta. É momento de foco.
 
 **Estrutura típica:**
 
-* Prazo claro — e verdadeiro.  
+* Prazo claro e verdadeiro.  
 * Consequência real (o encontro acontece naquele dia; a turma começa; o acompanhamento tem capacidade).  
 * Ação imediata.
 
@@ -34,15 +34,15 @@ Lembrete não é insistência emocional. É uma organização de prioridade. Ele
 
 ## Quando esta peça se aplica
 
-**DEFINIDO.** Lembrete se aplica sempre que existe uma **data real** à frente: um encontro ao vivo, o início de uma turma, o fim de uma inscrição que realmente fecha, uma sessão com hora marcada.
+<dado q="A" /> Lembrete se aplica sempre que existe uma **data real** à frente: um encontro ao vivo, o início de uma turma, o fim de uma inscrição que realmente fecha, uma sessão com hora marcada.
 
-**HISTÓRICO.** A formulação original desta página assumia que lembrete era uma etapa fixa do ciclo de lançamento, entre captação e carrinho aberto. Isso descrevia a operação anterior da empresa.
+<dado q="D" /> A formulação original desta página assumia que lembrete era uma etapa fixa do ciclo de lançamento, entre captação e carrinho aberto. Isso descrevia a operação anterior da empresa.
 
-**EM VALIDAÇÃO.** Com a migração para aquisição e vendas contínuas, lembrete deixa de ser uma etapa do calendário e passa a ser um **tipo de peça acionado por evento**. Lançamentos continuam acontecendo, e nesses casos a página vale integralmente como está.
+<dado q="B" /> Com a migração para aquisição e vendas contínuas, lembrete deixa de ser uma etapa do calendário e passa a ser um **tipo de peça acionado por evento**. Lançamentos continuam acontecendo, e nesses casos a página vale integralmente como está.
 
 **O que muda em operação contínua:**
 
-* **Produtos perpétuos não têm prazo — e por isso não pedem lembrete de prazo.** Para eles, a peça equivalente é o **follow-up**: retomar a conversa onde ela parou, responder a objeção que ficou pendente, mostrar o que mudou desde o último contato. A função continua sendo reduzir fricção, não criar pressão.
+* **Produtos perpétuos não têm prazo e, por isso, não pedem lembrete de prazo.** Para eles, a peça equivalente é o **follow-up**: retomar a conversa onde ela parou, responder a objeção que ficou pendente, mostrar o que mudou desde o último contato. A função continua sendo reduzir fricção, não criar pressão.
 * **Recuperação de leads substitui a contagem regressiva.** Quem demonstrou interesse e não avançou merece uma retomada honesta (“você olhou isso em março; desde então mudou X”), não um alarme.
-* **A consequência precisa ser verificável.** Em ciclo, a consequência era o fechamento. Em operação contínua, é a capacidade real: turma com tamanho definido, agenda de mentoria com limite humano, encontro com data fixa. Se não existe consequência real, não existe lembrete — existe outro tipo de peça.
+* **A consequência precisa ser verificável.** Em ciclo, a consequência era o fechamento. Em operação contínua, é a capacidade real: turma com tamanho definido, agenda de mentoria com limite humano, encontro com data fixa. Se não existe consequência real, não existe lembrete: existe outro tipo de peça.
 * **Frequência é uma decisão de relacionamento.** Sem o fim do carrinho como freio natural, o excesso de lembretes passa a ser o risco principal. Mais silêncio do que ruído.

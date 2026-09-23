@@ -2,13 +2,13 @@
 
 ## Uma escola de negócios para quem não se identifica com uma escola de negócios.
 
-Esta página define **em que categoria a Overlens é comparada** — por clientes, por concorrentes e por quem precisa entender rapidamente o que a empresa faz. Categoria não é a mesma coisa que identidade: identidade é assunto do Brand System. Aqui interessa o enquadramento de mercado, porque é ele que determina com quem disputamos a mesma decisão de compra.
+Esta página define **em que categoria a Overlens é comparada**: por clientes, por concorrentes e por quem precisa entender rapidamente o que a empresa faz. Categoria não é a mesma coisa que identidade: identidade é assunto do Brand System. Aqui interessa o enquadramento de mercado, porque é ele que determina com quem disputamos a mesma decisão de compra.
 
 A categoria mudou. A versão anterior desta página declarava a Overlens como escola de negócios emergentes **com foco em IA**, e listava o público por profissão. Nenhuma das duas coisas descreve a companhia hoje. O registro anterior está preservado ao final, marcado como histórico.
 
 ## Categoria atual
 
-**EM VALIDAÇÃO.**
+<dado q="B" />
 
 | Dimensão | Segmento |
 | :---- | :---- |
@@ -16,7 +16,7 @@ A categoria mudou. A versão anterior desta página declarava a Overlens como es
 | **Subsetor** | Edtech, Empreendedorismo, Comunidade |
 | **Categoria** | Escola de negócios, criação e realização |
 | **Promessa de categoria** | Ajudar pessoas a transformar ideias em realidade |
-| **Público** | Empreendedores: quem tem uma ideia, ambição ou visão de futuro e quer torná-la real — definidos pelo estado, não pela profissão |
+| **Público** | Empreendedores: quem tem uma ideia, ambição ou visão de futuro e quer torná-la real, definidos pelo estado, não pela profissão |
 | **Papel da IA** | Infraestrutura da empresa, dos produtos e do que ensinamos. Não é a categoria |
 
 **"Escola de negócios" aqui não significa escola de administração tradicional.** Significa uma escola de negócios construída para pessoas que não se identificam com a estética, a linguagem e a visão de mundo de uma escola de negócios convencional. A categoria é reconhecível; a execução é que não é.
@@ -33,37 +33,37 @@ A pergunta que organiza a oferta mudou de **"o que você quer aprender?"** para 
 
 ## O papel da IA
 
-**DEFINIDO.** IA deixou de ser a categoria da Overlens e passou a ser infraestrutura.
+<dado q="A" /> IA deixou de ser a categoria da Overlens e passou a ser infraestrutura.
 
 IA continua essencial para a empresa, para os produtos e para o que ensinamos. O que muda é a posição: não é o produto nem o diferencial declarado. Dentro da Overlens, IA serve para potencializar aprendizagem, planejamento, execução, criação, desenvolvimento de projetos e de competências, personalização, conexão entre conhecimentos, acompanhamento de progresso, descoberta de pessoas e recursos, e transformação de ideias em projetos reais.
 
-A consequência competitiva é direta: **a Overlens não compete com ChatGPT, Claude, Gemini ou outros modelos gerais** na capacidade de responder perguntas, explicar assuntos, resumir informações ou gerar conteúdo. Essa disputa está perdida por desenho. Esses modelos aparecem no mapa competitivo como **substitutos**, não como concorrentes de categoria — ver **Concorrentes**.
+A consequência competitiva é direta: **a Overlens não compete com ChatGPT, Claude, Gemini ou outros modelos gerais** na capacidade de responder perguntas, explicar assuntos, resumir informações ou gerar conteúdo. Essa disputa está perdida por desenho. Esses modelos aparecem no mapa competitivo como **substitutos**, não como concorrentes de categoria. Ver **Concorrentes**.
 
 Qualquer material que descreva a Overlens como "escola de IA" ou coloque "ensinar IA" como essência está desatualizado.
 
 ## O público, pela regra de estado
 
-**DEFINIDO.** O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade.
+<dado q="A" /> O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade.
 
-**O que define o público é o estado, não a profissão.** Esse empreendedor pode vir da engenharia, da arquitetura, da arte, do design, da tecnologia, da pesquisa — ou de nenhuma formação específica. A origem profissional é circunstância, nunca identidade.
+**O que define o público é o estado, não a profissão.** Esse empreendedor pode vir da engenharia, da arquitetura, da arte, do design, da tecnologia, da pesquisa, ou de nenhuma formação específica. A origem profissional é circunstância, nunca identidade.
 
-Isso tem consequência prática para segmentação: **não segmentamos por cargo, formação ou senioridade.** Segmentamos por condição em relação à ideia — o quanto ela já existe no mundo, que tipo de obstáculo a impede de avançar, e que decisão a pessoa precisa tomar agora.
+Isso tem consequência prática para segmentação: **não segmentamos por cargo, formação ou senioridade.** Segmentamos por condição em relação à ideia: o quanto ela já existe no mundo, que tipo de obstáculo a impede de avançar, e que decisão a pessoa precisa tomar agora.
 
 Descrever o público como "designers", "criativos" ou "profissionais criativos" é proibido nesta base. Design é uma das disciplinas que a Overlens ensina, não quem nos procura.
 
-**A segmentação detalhada é PENDENTE.** Personas, ICP e critérios de qualificação precisam ser refeitos sob esta regra. As personas anteriores foram construídas sobre origem profissional, faixa etária e comportamento de consumo, e não devem ser usadas como verdade atual.
+A segmentação detalhada está pendente <dado q="E" />. Personas, ICP e critérios de qualificação precisam ser refeitos sob esta regra. As personas anteriores foram construídas sobre origem profissional, faixa etária e comportamento de consumo, e não devem ser usadas como verdade atual.
 
 ## Eixos de diferenciação
 
 O que hoje sustenta a diferença da Overlens dentro da categoria, com o nível de certeza de cada afirmação:
 
-**Projeto como unidade central — EM VALIDAÇÃO.** A unidade de aprendizagem migra de conteúdo para projeto. A lógica é *projeto → necessidade → conhecimento → aplicação → evidência*. PBL (aprendizagem baseada em projetos) não é metodologia adicional: é uma das principais estruturas que conectam aprendizagem, projeto e execução. É a aposta mais estruturante e a menos validada em escala.
+**Projeto como unidade central.** <dado q="B" /> A unidade de aprendizagem migra de conteúdo para projeto. A lógica é *projeto → necessidade → conhecimento → aplicação → evidência*. PBL (aprendizagem baseada em projetos) não é metodologia adicional: é uma das principais estruturas que conectam aprendizagem, projeto e execução. É a aposta mais estruturante e a menos validada em escala.
 
-**Comunidade como infraestrutura — EM VALIDAÇÃO.** Comunidade não é feature de engajamento, retenção ou suporte. É infraestrutura de aprendizagem e realização: colaboração, formação de times, descoberta de talento, feedback qualificado, reputação e oportunidade. Parte do valor que a Overlens entrega não é produzida pela Overlens — é produzida pelos membros entre si.
+**Comunidade como infraestrutura.** <dado q="B" /> Comunidade não é feature de engajamento, retenção ou suporte. É infraestrutura de aprendizagem e realização: colaboração, formação de times, descoberta de talento, feedback qualificado, reputação e oportunidade. Parte do valor que a Overlens entrega não é produzida pela Overlens: é produzida pelos membros entre si.
 
-**Realização como critério de sucesso — EM VALIDAÇÃO.** O resultado que a Overlens persegue não é conclusão de curso nem certificado: é o que a pessoa conseguiu colocar no mundo. Isso muda o que medimos e o que prometemos.
+**Realização como critério de sucesso.** <dado q="B" /> O resultado que a Overlens persegue não é conclusão de curso nem certificado: é o que a pessoa conseguiu colocar no mundo. Isso muda o que medimos e o que prometemos.
 
-**Experiência: metodologia gamificada e lore — HIPÓTESE.** Narrativa, progressão e universo ficcional permanecem como elementos de experiência e continuam sendo ativos da marca. **Não são o diferencial estratégico** e não devem ser apresentados como tal em material de mercado. O que sustenta a diferença é projeto, comunidade e realização; a camada simbólica é a forma como isso é vivido.
+**Experiência: metodologia gamificada e lore.** <dado q="C" /> Narrativa, progressão e universo ficcional permanecem como elementos de experiência e continuam sendo ativos da marca. **Não são o diferencial estratégico** e não devem ser apresentados como tal em material de mercado. O que sustenta a diferença é projeto, comunidade e realização; a camada simbólica é a forma como isso é vivido.
 
 ## Perguntas abertas deste recorte
 
@@ -76,9 +76,9 @@ Pendências que só a pesquisa resolve, alinhadas com **Research & Market Intell
 
 ---
 
-## Histórico — categoria anterior
+## Histórico: categoria anterior
 
-**Status de tudo nesta seção: HISTÓRICO.** Preservado como registro. Não usar como definição vigente.
+Status de tudo nesta seção: <dado q="D" /> Preservado como registro. Não usar como definição vigente.
 
 Esta era a declaração de segmento da Overlens antes da transição:
 
@@ -91,16 +91,16 @@ Esta era a declaração de segmento da Overlens antes da transição:
 | **Público-alvo** | "Empreendedores Nexialistas": criadores, sonhadores, engenheiros, designers, artistas e arquitetos |
 | **Público expandido** | Equipes de inovação, times de marketing, agências, startups e quem precisasse entender IA e criação com visão estratégica |
 
-O **posicionamento único** era sustentado por quatro elementos: metodologia gamificada, lore ficcional, comunidade ativa e **"foco em IA consciente"** — capacitação para usar IA de forma ética, estratégica e criativa.
+O **posicionamento único** era sustentado por quatro elementos: metodologia gamificada, lore ficcional, comunidade ativa e **"foco em IA consciente"**: capacitação para usar IA de forma ética, estratégica e criativa.
 
 O **público-alvo** era listado por perfil profissional e de estágio: fundadores de negócios emergentes; especialistas que queriam construir o próprio (engenheiros, arquitetos, designers, artistas); inventores e sonhadores; e estudantes em formação.
 
 **O que mudou e por quê:**
 
 1. **IA saiu da categoria e virou infraestrutura.** "Foco em IA consciente" deixou de ser posicionamento declarado. A Overlens não compete com modelos gerais, e uma escola que vende explicação e tutorial passa a competir diretamente com ferramentas que fazem isso de graça e melhor.
-2. **"Negócios emergentes e inovação" virou "negócios, criação e realização".** O recorte anterior descrevia um nicho de inovação; o atual descreve a promessa central — transformar ideias em realidade.
+2. **"Negócios emergentes e inovação" virou "negócios, criação e realização".** O recorte anterior descrevia um nicho de inovação; o atual descreve a promessa central: transformar ideias em realidade.
 3. **O público deixou de ser listado por profissão.** "Empreendedores Nexialistas" deixou de ser nome do público. Nexialismo permanece como capacidade cognitiva e prática que a Overlens desenvolve, não como rótulo de quem nos procura.
 4. **O público expandido corporativo não foi reafirmado.** Existem frentes B2B no mapa de negócio, mas elas pertencem ao Business Document e não devem ser assumidas a partir desta página.
 5. **Gamificação e lore saíram do lugar de diferencial estratégico** e passaram a ser tratados como elementos de experiência.
 
-A segmentação de público que acompanhava esta categoria — os cinco perfis que mediam "a distância entre a ideia e a realidade" — está registrada em **Registro do Modelo Anterior**, no Business Document, e também é histórico.
+A segmentação de público que acompanhava esta categoria, os cinco perfis que mediam "a distância entre a ideia e a realidade", está registrada em **Registro do Modelo Anterior**, no Business Document, e também é histórico <dado fonte="Business Document › Registro do Modelo Anterior" />.

@@ -45,10 +45,10 @@ Exemplo:
 
 Essa headline funciona porque segue uma estrutura clara:
 
-• **Gatilho de ruptura** – “Finalmente”  
-• **Promessa clara** – o que a pessoa passa a conseguir  
-• **Remoção de objeção** – o que ela acredita que a impede  
-• **Reforço de segurança** – garantia, prova ou mecanismo
+• **Gatilho de ruptura:** “Finalmente”  
+• **Promessa clara:** o que a pessoa passa a conseguir  
+• **Remoção de objeção:** o que ela acredita que a impede  
+• **Reforço de segurança:** garantia, prova ou mecanismo
 
 Sem Big Idea, essa mesma estrutura se torna manipulativa. Com Big Idea, ela se torna precisa.
 

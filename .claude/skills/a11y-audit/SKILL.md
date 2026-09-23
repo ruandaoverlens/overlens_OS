@@ -9,7 +9,7 @@ Run a comprehensive accessibility audit on the ds-overlens design system.
 
 ## Arguments
 
-- `$ARGUMENTS`: Optional scope — "full", "aria", "contrast", "focus", or a specific component path
+- `$ARGUMENTS`: Optional scope. "full", "aria", "contrast", "focus", or a specific component path
 
 ## Instructions
 

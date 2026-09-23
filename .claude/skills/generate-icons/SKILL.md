@@ -10,7 +10,7 @@ Process SVG icons from `icon-library/` into React components.
 > **Legacy.** This pipeline maintains the original custom SVG set (`Md*`/`Sm*`/`Micro*`
 > under `components/icons/`), kept for components that already use it. The **official
 > iconography is now [Phosphor](https://phosphoricons.com/)** (`@phosphor-icons/react`).
-> For any new component, import from Phosphor instead of generating custom SVGs — see the
+> For any new component, import from Phosphor instead of generating custom SVGs. See the
 > `Icons/Phosphor` story in Storybook. Only use this skill to touch the existing legacy set.
 
 ## Instructions

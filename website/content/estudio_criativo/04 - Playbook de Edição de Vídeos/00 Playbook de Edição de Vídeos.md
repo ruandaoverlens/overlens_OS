@@ -1,6 +1,6 @@
 ---
 title: Playbook de Edição de Vídeos
-summary: Capa do sistema operacional de edição de vídeo da Overlens — reúne fundamentos, fluxos de produção e padrões de qualidade da decupagem ao render final, organizado em três blocos (Fundamentos, Produção, Métricas e Padrões).
+summary: "Capa do sistema operacional de edição de vídeo da Overlens: reúne fundamentos, fluxos de produção e padrões de qualidade da decupagem ao render final, organizado em três blocos (Fundamentos, Produção, Métricas e Padrões)."
 topics: [edição de vídeo, produção audiovisual, fluxo de trabalho, padrões de qualidade, conteúdo, sistema operacional criativo]
 keywords: [playbook, edição de vídeo, decupagem, render, identidade visual, fluxo de produção, métricas, padrões técnicos, overlens, departamento criativo]
 priority: high

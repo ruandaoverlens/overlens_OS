@@ -1,6 +1,6 @@
 ---
 title: Personas Sintéticas
-summary: Define personas sintéticas como personagens narrativos com voz, função e personalidade próprias que estendem a linguagem da Overlens — pontes simbólicas entre marca e público.
+summary: "Define personas sintéticas como personagens narrativos com voz, função e personalidade próprias que estendem a linguagem da Overlens: pontes simbólicas entre marca e público."
 topics: [personas sintéticas, narrativa, vozes da marca, símbolos, comunicação]
 keywords: [personas sintéticas, vozes, personagens, narrativa, símbolos, máscaras, lentes, automações, fluxos, ia generativa]
 priority: high

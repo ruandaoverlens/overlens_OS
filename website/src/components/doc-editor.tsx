@@ -66,12 +66,24 @@ import { Figure, Figcaption, collapseFigures } from "@/components/doc-editor-fig
 const COMPONENT_TAG_RE = /<(color-palette|icon-gallery)\s*(?:\/>|><\/\1>)/g;
 const COMPONENT_MARK_RE = /\{\{componente:(color-palette|icon-gallery)\}\}/g;
 
+/*
+ * O ponto de qualidade do dado (`<dado q="A" fonte="..." />`) é inline e também
+ * não é nó do editor: vira `{{dado:...}}` na carga e volta a ser tag no
+ * salvamento, com os atributos preservados.
+ */
+const DADO_TAG_RE = /<dado\b([^>]*?)\/?>(?:<\/dado>)?/gi;
+const DADO_MARK_RE = /\{\{dado:([^}]*)\}\}/g;
+
 function protectComponents(md: string): string {
-  return md.replace(COMPONENT_TAG_RE, (_m, name) => `{{componente:${name}}}`);
+  return md
+    .replace(COMPONENT_TAG_RE, (_m, name) => `{{componente:${name}}}`)
+    .replace(DADO_TAG_RE, (_m, attrs: string) => `{{dado:${attrs.trim()}}}`);
 }
 
 function restoreComponents(md: string): string {
-  return md.replace(COMPONENT_MARK_RE, (_m, name) => `<${name} />`);
+  return md
+    .replace(COMPONENT_MARK_RE, (_m, name) => `<${name} />`)
+    .replace(DADO_MARK_RE, (_m, attrs: string) => `<dado ${attrs.trim()} />`);
 }
 
 /*

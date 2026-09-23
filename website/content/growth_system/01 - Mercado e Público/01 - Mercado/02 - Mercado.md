@@ -1,6 +1,6 @@
 ---
 title: Mercado
-summary: Página índice da seção Mercado do Growth System. Enquadra a Overlens como escola de negócios, criação e realização para quem quer transformar ideias em realidade, e aponta para Segmento, TAM/SAM/SOM, Público-Alvo e Perfil Ideal — registrando o que já está definido e o que segue pendente de pesquisa.
+summary: Página índice da seção Mercado do Growth System. Enquadra a Overlens como escola de negócios, criação e realização para quem quer transformar ideias em realidade, e aponta para Segmento, TAM/SAM/SOM, Público-Alvo e Perfil Ideal, registrando o que já está definido e o que segue pendente de pesquisa.
 topics: [mercado, categoria, posicionamento, segmento, estratégia, dimensionamento]
 keywords: [mercado, segmento, TAM, SAM, SOM, público-alvo, ICP, perfil ideal, escola de negócios, criação, realização, empreendedor, edtech, economia criativa, pesquisa pendente]
 priority: high
@@ -13,11 +13,11 @@ related: []
 
 ## A Overlens é uma escola de negócios, criação e realização: existe para ajudar pessoas a transformar ideias em realidade.
 
-A seção "Mercado" do Growth System reúne o que sabemos — e o que ainda não sabemos — sobre o cenário em que a Overlens opera. Ela estabelece a categoria, o público, o dimensionamento e o campo competitivo que sustentam as decisões de posicionamento, aquisição e conversão.
+A seção "Mercado" do Growth System reúne o que sabemos, e o que ainda não sabemos, sobre o cenário em que a Overlens opera. Ela estabelece a categoria, o público, o dimensionamento e o campo competitivo que sustentam as decisões de posicionamento, aquisição e conversão.
 
-Educação é um dos mecanismos. IA é uma das infraestruturas. Negócios são uma das formas de materialização. Projetos são uma das principais unidades de aprendizagem. Comunidade é parte fundamental do ecossistema. A pergunta que organiza a oferta é **"o que você quer construir, realizar ou se tornar?"** — não "o que você quer aprender?".
+Educação é um dos mecanismos. IA é uma das infraestruturas. Negócios são uma das formas de materialização. Projetos são uma das principais unidades de aprendizagem. Comunidade é parte fundamental do ecossistema. A pergunta que organiza a oferta é **"o que você quer construir, realizar ou se tornar?"**, e não "o que você quer aprender?".
 
-O público é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que o define é o estado, não a profissão.** Pode vir da engenharia, da arquitetura, da arte, do design, da tecnologia — ou de nenhuma formação específica.
+O público é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que o define é o estado, não a profissão.** Pode vir da engenharia, da arquitetura, da arte, do design, da tecnologia, ou de nenhuma formação específica.
 
 ## Estado desta seção
 
@@ -26,24 +26,24 @@ A companhia mudou de categoria, e parte desta seção ainda não alcançou a mud
 | Página | Estado |
 | :---- | :---- |
 | **Segmento** | Atualizado sob a categoria atual. Categoria anterior preservada como histórico na própria página |
-| **TAM, SAM, SOM** | **PENDENTE.** Nenhum número levantado sob o recorte atual |
+| **TAM, SAM, SOM** | <dado q="E" /> Nenhum número levantado sob o recorte atual |
 | **Público-Alvo** | **Necessita revisão.** Escrito sob a definição anterior de público |
 | **Perfil Ideal (ICP)** | **Necessita revisão.** Depende da redefinição de personas |
 | **Benchmarking e Referências** | Metodologia válida; enquadramento de categoria atualizado |
 | **Concorrentes** | **Desatualizado.** Conjunto competitivo mudou com a categoria; nenhum concorrente novo verificado |
 
-Nada aqui deve ser lido como pesquisa concluída. **Research & Market Intelligence**, no Business Document, é a fonte de verdade sobre dimensionamento e cenário competitivo — e está explicitamente pendente.
+Nada aqui deve ser lido como pesquisa concluída. **Research & Market Intelligence**, no Business Document, é a fonte de verdade sobre dimensionamento e cenário competitivo, e está explicitamente pendente.
 
 ## Propósito da seção
 
 A seção "Mercado" serve como guia estratégico para equipes internas, parceiros e investidores: oferece uma visão do território em que a Overlens atua e de como ela se posiciona nele. Cada página tem uma função distinta:
 
-**Segmento** — estabelece a categoria, o setor, o subsetor e os eixos de diferenciação.
-**TAM, SAM, SOM** — define o recorte de dimensionamento e registra o que a pesquisa precisa responder.
-**Público-Alvo** — descreve quem são as pessoas para quem a proposta faz sentido.
-**Perfil Ideal (ICP)** — refina o público-alvo até o segmento mais estratégico para a operação comercial.
+**Segmento**: estabelece a categoria, o setor, o subsetor e os eixos de diferenciação.
+**TAM, SAM, SOM**: define o recorte de dimensionamento e registra o que a pesquisa precisa responder.
+**Público-Alvo**: descreve quem são as pessoas para quem a proposta faz sentido.
+**Perfil Ideal (ICP)**: refina o público-alvo até o segmento mais estratégico para a operação comercial.
 
-Essa estrutura permite alinhar as iniciativas de aquisição e conversão com o que o mercado de fato demanda — desde que o que está pendente continue marcado como pendente.
+Essa estrutura permite alinhar as iniciativas de aquisição e conversão com o que o mercado de fato demanda, desde que o que está pendente continue marcado como pendente.
 
 ## Estrutura da seção
 
@@ -53,7 +53,7 @@ Define em que categoria a Overlens é comparada: setor macro (Educação, Tecnol
 
 "Escola de negócios" aqui não significa escola de administração tradicional: significa uma escola de negócios construída para quem não se identifica com a estética, a linguagem e a visão de mundo de uma escola de negócios convencional.
 
-A página também registra o papel da IA — **infraestrutura, não categoria** — e preserva a declaração anterior de segmento como histórico.
+A página também registra o papel da IA (**infraestrutura, não categoria**) e preserva a declaração anterior de segmento como histórico.
 
 ### TAM, SAM, SOM
 
@@ -65,7 +65,7 @@ Descreve quem é o público pela **regra de estado**: condição em relação à
 
 ### Perfil Ideal de Cliente (ICP)
 
-Refina o público-alvo até o segmento mais valioso para a operação comercial contínua — critérios de qualificação, desqualificação e prioridade. Depende diretamente da redefinição de personas, ainda não feita.
+Refina o público-alvo até o segmento mais valioso para a operação comercial contínua: critérios de qualificação, desqualificação e prioridade. Depende diretamente da redefinição de personas, ainda não feita.
 
 ---
 

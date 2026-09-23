@@ -82,7 +82,7 @@ export default async function ChatLayout({
           <TopbarCenter>
             <span className="text-xs text-muted-foreground">
               <span className="font-semibold text-foreground/80">Beta:</span>{" "}
-              Modelo Gemma — pode apresentar erros e lentidão.
+              Modelo Gemma: pode apresentar erros e lentidão.
             </span>
           </TopbarCenter>
           <TopbarActions>

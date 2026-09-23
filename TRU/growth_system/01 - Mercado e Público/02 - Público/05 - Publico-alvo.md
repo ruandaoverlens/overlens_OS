@@ -2,11 +2,11 @@
 
 ## Quem a Overlens quer alcançar, e por que esse recorte se sustenta.
 
-**Status desta página: EM VALIDAÇÃO.** A definição de público é atual. Os indicadores econômicos e faixas de preço citados são **HISTÓRICOS** e estão marcados como tal ao longo do texto.
+Status desta página: <dado q="B" /> A definição de público é atual. Os indicadores econômicos e faixas de preço citados são históricos <dado q="D" /> e estão marcados como tal ao longo do texto.
 
 O público da Overlens é o **empreendedor**: quem tem uma ideia, uma ambição ou uma visão de futuro e quer transformá-la em realidade. **O que define esse público é o estado, não a profissão.**
 
-Esse empreendedor pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa, do desenvolvimento, de uma oficina, de uma sala de aula — ou de nenhuma dessas origens. A formação é circunstância; nunca identidade. A Overlens não atende "designers" nem "criativos" como categoria: design é uma das disciplinas que ensinamos, não quem nos procura.
+Esse empreendedor pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa, do desenvolvimento, de uma oficina, de uma sala de aula, ou de nenhuma dessas origens. A formação é circunstância; nunca identidade. A Overlens não atende "designers" nem "criativos" como categoria: design é uma das disciplinas que ensinamos, não quem nos procura.
 
 ## Fatores de Validação
 
@@ -29,20 +29,20 @@ A estratégia da Overlens combina posicionamento de autoridade, narrativas insti
 
 A Overlens opera com múltiplos níveis de entrada, de conteúdo gratuito a programas de acompanhamento próximo. Do lado do público, três condições econômicas distintas convivem: quem já tem uma oferta ou um negócio pequeno no ar, com renda irregular; quem tem ideia e ainda não tem negócio, com menor poder aquisitivo e alto engajamento; e empreendedores consolidados e lideranças de inovação, com maior poder de compra e busca por soluções para times.
 
-> **HISTÓRICO — necessita revalidação.** A leitura anterior desta seção citava faixas de preço específicas (imersões a partir de R$19) e afirmava "alta margem e potencial de recorrência" como conclusão. Os preços praticados estão registrados em `business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md`. **Não usar como critério de precificação, qualificação ou projeção.** A tabela de preços vigente é responsabilidade da operação comercial.
+> <dado q="D" nota="Necessita revalidação." fonte="business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md" /> A leitura anterior desta seção citava faixas de preço específicas (imersões a partir de R$19) e afirmava "alta margem e potencial de recorrência" como conclusão. Os preços praticados estão registrados em `business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md`. **Não usar como critério de precificação, qualificação ou projeção.** A tabela de preços vigente é responsabilidade da operação comercial.
 
 ### **Objetividade da estratégia**
 
-A Overlens constrói ofertas com portas de entrada distintas e caminhos de aprofundamento — **Atlas** como experiência de entrada e ativação, **Overpass** como camada contínua, **Vanguarda** como camada de aceleração.
+A Overlens constrói ofertas com portas de entrada distintas e caminhos de aprofundamento: **Atlas** como experiência de entrada e ativação, **Overpass** como camada contínua, **Vanguarda** como camada de aceleração.
 
 O que orienta a comunicação não é um estágio de maturidade do cliente, e sim a **situação concreta** em que a pessoa está e **como ela age, aprende, pensa e cria**. Para isso usamos os quatro modos:
 
 > **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**
 
-São formas de agir e de pensar, não níveis de senioridade nem etapas obrigatórias de uma escada. Uma mesma pessoa pode operar em modos diferentes conforme o problema que tem diante de si. **Status: EM VALIDAÇÃO.**
+São formas de agir e de pensar, não níveis de senioridade nem etapas obrigatórias de uma escada. Uma mesma pessoa pode operar em modos diferentes conforme o problema que tem diante de si. Status: <dado q="B" />
 
-> **HISTÓRICO.** A formulação anterior desta seção descrevia cinco estágios sequenciais — dos "Inconscientes" aos "Nexialistas" — que mediam "a distância entre a ideia e a realidade", cada um com porta de entrada e proposta de valor própria. "Inconscientes" não existe na formulação atual, e os quatro conceitos restantes deixaram de ser estágios para se tornarem modos. Registro completo em `06 - Perfis de Clientes.md`.
+> <dado q="D" fonte="06 - Perfis de Clientes.md" /> A formulação anterior desta seção descrevia cinco estágios sequenciais, dos "Inconscientes" aos "Nexialistas", que mediam "a distância entre a ideia e a realidade", cada um com porta de entrada e proposta de valor própria. "Inconscientes" não existe na formulação atual, e os quatro conceitos restantes deixaram de ser estágios para se tornarem modos. Registro completo em `06 - Perfis de Clientes.md`.
 
 ## Análise demográfica e comportamental
 
-**PENDENTE.** Precisa ser refeita com dados reais da base atual. Não preencher com suposição.
+<dado q="E" /> Precisa ser refeita com dados reais da base atual. Não preencher com suposição.

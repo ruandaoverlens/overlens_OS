@@ -1,6 +1,6 @@
 ---
 title: Seu destino está selado em seus olhos.
-summary: Encerramento do Pacote Cultural — costura o fio condutor de todas as referências (o futuro como projeto criado), retoma o propósito da Overlens (colocar o poder da criação nas mãos das pessoas) e apresenta a Overlens como escola de negócios, criação e realização, nascida na convergência entre imaginação humana e tecnologia.
+summary: "Encerramento do Pacote Cultural: costura o fio condutor de todas as referências (o futuro como projeto criado), retoma o propósito da Overlens (colocar o poder da criação nas mãos das pessoas) e apresenta a Overlens como escola de negócios, criação e realização, nascida na convergência entre imaginação humana e tecnologia."
 topics: [encerramento, propósito, era da criação, futuro, nexialismo, empreendedorismo, manifesto]
 keywords: [futuro, era da criação, propósito overlens, pensamento nexialista, empreendedor, inventores, artistas, engenheiros, arquitetos, fundadores, tecnologia, inteligência artificial, manifesto, fechamento, pacote cultural]
 priority: medium

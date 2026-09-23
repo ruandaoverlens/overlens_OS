@@ -1,6 +1,6 @@
 ---
 title: Nossa postura
-summary: Define a postura ética da Overlens — uma autonomia humana que inclui o direito de não conseguir, o tempo de não saber e a dignidade de não criar, evitando que a tese vire dogma.
+summary: Define a postura ética da Overlens, uma autonomia humana que inclui o direito de não conseguir, o tempo de não saber e a dignidade de não criar, evitando que a tese vire dogma.
 topics: [postura ética, permeabilidade à fragilidade, antidogma, responsabilidade vs culpa, contexto humano]
 keywords: [postura, autonomia, fragilidade, contexto, hilma af klint, altarpiece, responsabilidade, culpa, ócio, ritmo humano, ressentimento, permeabilidade]
 priority: high

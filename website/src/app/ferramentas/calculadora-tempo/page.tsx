@@ -95,15 +95,15 @@ export default function CalculadoraTempoPage() {
       .filter((t) => t.name.trim())
       .map(
         (t) =>
-          `- ${t.name}: ${t.minTime}–${t.maxTime} ${t.unit}`
+          `- ${t.name}: de ${t.minTime} a ${t.maxTime} ${t.unit}`
       );
     return [
       "Estimativa de tempo",
       "",
       ...lines,
       "",
-      `Estimativa: ${formatTime(totals.totalMin)} – ${formatTime(totals.totalMax)}`,
-      `Com buffer de ${buffer}%: ${formatTime(totals.bufferMin)} – ${formatTime(totals.bufferMax)}`,
+      `Estimativa: de ${formatTime(totals.totalMin)} a ${formatTime(totals.totalMax)}`,
+      `Com buffer de ${buffer}%: de ${formatTime(totals.bufferMin)} a ${formatTime(totals.bufferMax)}`,
     ].join("\n");
   }, [tasks, totals, buffer]);
 
@@ -276,13 +276,13 @@ export default function CalculadoraTempoPage() {
             <div>
               <p className="text-sm text-muted-foreground">Estimativa pura</p>
               <p className="text-xl font-semibold">
-                {formatTime(totals.totalMin)} – {formatTime(totals.totalMax)}
+                de {formatTime(totals.totalMin)} a {formatTime(totals.totalMax)}
               </p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Com buffer ({buffer}%)</p>
               <p className="text-xl font-semibold">
-                {formatTime(totals.bufferMin)} – {formatTime(totals.bufferMax)}
+                de {formatTime(totals.bufferMin)} a {formatTime(totals.bufferMax)}
               </p>
             </div>
           </div>

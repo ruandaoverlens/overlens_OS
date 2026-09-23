@@ -9,12 +9,12 @@ paths:
 ## Revisões (framework P.R.I.S.M.A)
 
 Toda revisão deve avaliar 6 dimensões:
-- **P**ropósito — A página cumpre seu papel no Brand System?
-- **R**itmo e Tom — As 4 virtudes estão na proporção certa?
-- **I**ntegridade Conceitual — Coerência com fundamentos da Overlens?
-- **S**inergia — Dialoga com o ecossistema existente?
-- **M**ecânica — Estrutura, formato, português corretos?
-- **A**utenticidade — Soa como Overlens ou genérico?
+- **P**ropósito: A página cumpre seu papel no Brand System?
+- **R**itmo e Tom: As 4 virtudes estão na proporção certa?
+- **I**ntegridade Conceitual: Coerência com fundamentos da Overlens?
+- **S**inergia: Dialoga com o ecossistema existente?
+- **M**ecânica: Estrutura, formato, português corretos?
+- **A**utenticidade: Soa como Overlens ou genérico?
 
 Prioridade: Integridade > Autenticidade > Tom > Sinergia > Mecânica > Propósito
 

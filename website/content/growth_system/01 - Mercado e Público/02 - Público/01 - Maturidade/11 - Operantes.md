@@ -1,35 +1,35 @@
 ---
 title: Operantes
-summary: Descreve o modo Operante — a forma de agir que executa dentro de sistemas, métodos e estruturas já estabelecidas — com dilema central, subtipos, medos ocultos, problemas, soluções e micro-gatilhos. Modo comportamental, não estágio de maturidade.
+summary: Descreve o modo Operante, a forma de agir que executa dentro de sistemas, métodos e estruturas já estabelecidas, com dilema central, subtipos, medos ocultos, problemas, soluções e micro-gatilhos. Modo comportamental, não estágio de maturidade.
 topics: [quatro modos, operante, execução, atlas, overpass, primeira oferta]
 keywords: [operante, modo operante, executa dentro do sistema, empreendedor, primeira oferta no ar, arquitetura de valor, atlas, overpass, autonomia intelectual, micro-gatilhos, em validação]
 priority: medium
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre o modo Operante — quem executa bem dentro de estruturas que já existem e trava na hora de colocar algo próprio no mundo — ou ao desenhar comunicação e ofertas para essa situação. Operante é uma forma de agir e pensar, não um estágio de maturidade nem um degrau de senioridade, e não é julgamento de valor.
+  Use quando o usuário perguntar sobre o modo Operante, quem executa bem dentro de estruturas que já existem e trava na hora de colocar algo próprio no mundo, ou ao desenhar comunicação e ofertas para essa situação. Operante é uma forma de agir e pensar, não um estágio de maturidade nem um degrau de senioridade, e não é julgamento de valor.
 related: []
 ---
 
 # Operantes
 
-## Operante é o modo de quem funciona dentro de sistemas, métodos e estruturas já estabelecidas — e executa bem o que já existe.
+## Operante é o modo de quem funciona dentro de sistemas, métodos e estruturas já estabelecidas, e executa bem o que já existe.
 
-> **Nota de enquadramento — EM VALIDAÇÃO.** Apesar do nome da pasta, **não se trata de maturidade sequencial.** Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, não degraus de uma escada nem níveis de senioridade. Ninguém precisa "passar" pelo Operante para chegar a outro lugar, e a mesma pessoa pode agir em modos diferentes conforme o problema que tem diante de si. Formulação completa em `02 - Público/06 - Perfis de Clientes.md`.
+> **Nota de enquadramento.** <dado q="B" fonte="02 - Público/06 - Perfis de Clientes.md" /> Apesar do nome da pasta, **não se trata de maturidade sequencial.** Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, não degraus de uma escada nem níveis de senioridade. Ninguém precisa "passar" pelo Operante para chegar a outro lugar, e a mesma pessoa pode agir em modos diferentes conforme o problema que tem diante de si. Formulação completa em `02 - Público/06 - Perfis de Clientes.md`.
 
-**Operante não é insulto nem julgamento de valor. Operantes são necessários em qualquer sistema.** A diferença entre os modos está no grau de autonomia intelectual e na capacidade de construir novas conexões — não no valor da pessoa.
+**Operante não é insulto nem julgamento de valor. Operantes são necessários em qualquer sistema.** A diferença entre os modos está no grau de autonomia intelectual e na capacidade de construir novas conexões, não no valor da pessoa.
 
 Quem age predominantemente no modo Operante segue métodos existentes, opera ferramentas e processos, recebe problemas relativamente definidos e executa dentro de paradigmas conhecidos. Sua relação é mais forte com a execução do que com a criação de novos sistemas.
 
-O atrito aparece quando alguém que age assim decide construir algo próprio: acumula ferramentas, cursos e começos sem fechar ciclos, na crença de que dominar mais um recurso é o que falta. O desafio real não é técnico — é construir uma arquitetura de valor própria e colocar algo no mundo. Na Overlens, esse é o ponto de trabalho.
+O atrito aparece quando alguém que age assim decide construir algo próprio: acumula ferramentas, cursos e começos sem fechar ciclos, na crença de que dominar mais um recurso é o que falta. O desafio real não é técnico: é construir uma arquitetura de valor própria e colocar algo no mundo. Na Overlens, esse é o ponto de trabalho.
 
 **Como a Overlens se relaciona com esse modo**: **Atlas** funciona como experiência de entrada e ativação; **Overpass**, como camada contínua onde as capacidades se desenvolvem ao longo do tempo.
 
 ### **O Dilema de quem age no modo Operante**
 
-**Operante (substantivo)**: *aquele/a que executa dentro do sistema — opera bem métodos, ferramentas e estruturas já estabelecidas.*
+**Operante (substantivo)**: *aquele/a que executa dentro do sistema: opera bem métodos, ferramentas e estruturas já estabelecidas.*
 
 *Você está preso em um loop de execução, acreditando que dominar mais ferramentas e aumentar sua produtividade são os caminhos para colocar sua ideia de pé. Esta é uma ilusão perigosa. Enquanto você otimiza processos obsoletos, o mundo está se transformando fundamentalmente. Suas habilidades técnicas, que hoje parecem valiosas, estão se tornando commodities. A IA já executa em segundos o que você leva dias para fazer, e isso é apenas o começo.*
 
-*Sua única chance é quebrar o ciclo de dependência técnica. Pare de acumular cursos superficiais e comece a desenvolver compreensão profunda. Estude teoria dos sistemas complexos, psicologia cognitiva e antropologia (onde? na Overlens). Não para aplicar diretamente, mas para desenvolver uma nova forma de pensar. O mundo não precisa de mais executores técnicos, precisa de pessoas que compreendam padrões fundamentais de comportamento e mudança — e que consigam transformar essa compreensão em algo que exista. Seu desafio não é aprender mais, é aprender diferente e, sobretudo, terminar.*
+*Sua única chance é quebrar o ciclo de dependência técnica. Pare de acumular cursos superficiais e comece a desenvolver compreensão profunda. Estude teoria dos sistemas complexos, psicologia cognitiva e antropologia (onde? na Overlens). Não para aplicar diretamente, mas para desenvolver uma nova forma de pensar. O mundo não precisa de mais executores técnicos, precisa de pessoas que compreendam padrões fundamentais de comportamento e mudança, e que consigam transformar essa compreensão em algo que exista. Seu desafio não é aprender mais, é aprender diferente e, sobretudo, terminar.*
 
 ### **Ficha rápida:**
 
@@ -39,7 +39,7 @@ O atrito aparece quando alguém que age assim decide construir algo próprio: ac
 | :---- | :---- |
 | **Resumo Essencial** | Executa bem dentro de estruturas que já existem e decidiu construir algo próprio, mas segue operando com os mesmos paradigmas. Na crença de que dominar mais uma ferramenta resolve, precisa aprender a arquitetar valor até que algo seu exista de fato. A batalha não é técnica, é cognitiva. |
 | **Arquétipo** | Executor que amplia o próprio repertório de decisão. |
-| **Momento de vida** | Pessoas de qualquer origem — o que define é o estado, não a profissão — que decidiram construir algo próprio e ainda não conseguiram colocar no mundo. Têm pastas cheias de começos: uma marca sem oferta, um protótipo sem público, um plano sem data. Já sentem as limitações do modelo puramente técnico, mas ainda não sabem como atravessá-las. |
+| **Momento de vida** | Pessoas de qualquer origem (o que define é o estado, não a profissão) que decidiram construir algo próprio e ainda não conseguiram colocar no mundo. Têm pastas cheias de começos: uma marca sem oferta, um protótipo sem público, um plano sem data. Já sentem as limitações do modelo puramente técnico, mas ainda não sabem como atravessá-las. |
 | **JTBD Funcional** | Quebrar o ciclo de execução sem fechamento e colocar uma primeira oferta própria no mundo, com valor claro para alguém. |
 | **JTBD Emocional** | Reconquistar a confiança em si, sentindo que finalmente terminou algo e que aquilo que construiu importa. |
 | **Motivação Primária** | Desejo de protagonismo, autonomia e reconhecimento autêntico. Vontade de provar (a si mesmo e ao mundo) que consegue terminar e que o que constrói tem valor real, não apenas técnico. |

@@ -1,20 +1,20 @@
 # Ofertas
 
-## Esta seção organiza como as ofertas da Overlens são apresentadas, consideradas e compradas. O que cada uma é — e como a companhia captura valor com elas — pertence ao Business Document.
+## Esta seção organiza como as ofertas da Overlens são apresentadas, consideradas e compradas. O que cada uma é, e como a companhia captura valor com elas, pertence ao Business Document.
 
 A fronteira importa. O Business Document é a verdade sobre **arquitetura de ofertas e de receita**: o que cada frente é, em que status está e como gera valor. O Growth System é a verdade sobre **como as pessoas descobrem, consideram, compram, permanecem e expandem**.
 
-Esta página, portanto, **referencia e não redefine**. Ela existe para que quem trabalha com aquisição, conteúdo, vendas e relacionamento tenha, num só lugar, o mapa do que a Overlens oferece hoje — com o grau de certeza de cada frente à vista.
+Esta página, portanto, **referencia e não redefine**. Ela existe para que quem trabalha com aquisição, conteúdo, vendas e relacionamento tenha, num só lugar, o mapa do que a Overlens oferece hoje, com o grau de certeza de cada frente à vista.
 
 ## Por que o status vem antes do argumento
 
 **Nem tudo o que aparece abaixo é produto consolidado.** Parte é frente em construção, parte é hipótese. Comunicar uma hipótese como se fosse oferta madura gera três problemas previsíveis: promessa que a operação não sustenta, dispersão de esforço comercial e perda de credibilidade quando a frente muda de forma.
 
-Por isso cada frente carrega uma marcação de certeza — **DEFINIDO · EM VALIDAÇÃO · HIPÓTESE** — e essa marcação deve ser respeitada em qualquer material que a mencione.
+Por isso cada frente carrega uma marcação de certeza, e essa marcação deve ser respeitada em qualquer material que a mencione.
 
 ## Espectro de entrega
 
-**EM VALIDAÇÃO.** Modelo mental interno para ler a arquitetura:
+<dado q="B" /> Modelo mental interno para ler a arquitetura:
 
 > **Aprender → Construir → Acelerar**
 
@@ -32,15 +32,15 @@ Três ressalvas:
 
 | Frente | O que o Growth System precisa saber | Status |
 | :---- | :---- | :---- |
-| **Educação** | Atlas ativa · Overpass sustenta e desenvolve. É a via de entrada mais volumosa e a base do relacionamento contínuo. | DEFINIDO — ativa |
-| **Comunidade** | Não é canal nem benefício: é **infraestrutura** de aprendizagem e realização, e atravessa todas as demais frentes. | DEFINIDO — ativa |
-| **Aceleração** | Vanguarda. Decisão longa, assistida, com contato humano e ticket alto. | DEFINIDO — ativa, em redefinição |
-| **Incubação** | Acompanha um projeto específico em estágio inicial. Conversa comercial distinta da aceleração. | EM VALIDAÇÃO — frente em construção |
-| **Serviços — Assessoria** | Acompanhamento contínuo de uma empresa. **Não é agência.** Venda consultiva e relacional. | EM VALIDAÇÃO — validada comercialmente |
-| **Serviços — Consultoria** | Diagnostica, recomenda e estrutura caminhos. Fronteira com assessoria não definida. | HIPÓTESE |
-| **B2B** | Empresas: workshops, treinamentos, programas internos, projetos especiais. Canal e frente de receita, não produto único. | HIPÓTESE — sem oferta estruturada |
-| **Eventos** | Hackathons, imersões e encontros. Aquisição, comunidade e descoberta de projetos ao mesmo tempo. | EM VALIDAÇÃO |
-| **Produtos físicos e artefatos** | **Artefatos de pertencimento**, não merchandising. Identidade, participação, memória, acesso. | HIPÓTESE — implementação em desenvolvimento |
+| **Educação** | Atlas ativa · Overpass sustenta e desenvolve. É a via de entrada mais volumosa e a base do relacionamento contínuo. | <dado q="A" nota="Ativa." /> |
+| **Comunidade** | Não é canal nem benefício: é **infraestrutura** de aprendizagem e realização, e atravessa todas as demais frentes. | <dado q="A" nota="Ativa." /> |
+| **Aceleração** | Vanguarda. Decisão longa, assistida, com contato humano e ticket alto. | <dado q="A" nota="Ativa, em redefinição." /> |
+| **Incubação** | Acompanha um projeto específico em estágio inicial. Conversa comercial distinta da aceleração. | <dado q="B" nota="Frente em construção." /> |
+| **Serviços · Assessoria** | Acompanhamento contínuo de uma empresa. **Não é agência.** Venda consultiva e relacional. | <dado q="B" nota="Validada comercialmente." /> |
+| **Serviços · Consultoria** | Diagnostica, recomenda e estrutura caminhos. Fronteira com assessoria não definida. | <dado q="C" /> |
+| **B2B** | Empresas: workshops, treinamentos, programas internos, projetos especiais. Canal e frente de receita, não produto único. | <dado q="C" nota="Sem oferta estruturada." /> |
+| **Eventos** | Hackathons, imersões e encontros. Aquisição, comunidade e descoberta de projetos ao mesmo tempo. | <dado q="B" /> |
+| **Produtos físicos e artefatos** | **Artefatos de pertencimento**, não merchandising. Identidade, participação, memória, acesso. | <dado q="C" nota="Implementação em desenvolvimento." /> |
 
 A definição de cada frente está em *Arquitetura de Produtos e Serviços* e *Arquitetura de Receita*, no Business Document. **Em caso de divergência, vale o Business Document.**
 
@@ -50,7 +50,7 @@ A definição de cada frente está em *Arquitetura de Produtos e Serviços* e *A
 
 **Cada frente tem um estado de entrada diferente.** Quem procura educação está perguntando "como eu aprendo a fazer isso?". Quem procura incubação pergunta "isso pode existir?". Quem procura aceleração pergunta "como isso avança mais rápido?". Quem procura assessoria pergunta "vocês fazem isso comigo?". **Usar o mesmo argumento para todas desqualifica a oferta.**
 
-**Nenhuma frente deveria existir apenas porque gera receita.** O princípio de coerência registrado na Arquitetura de Receita vale também aqui: cada frente deveria aumentar a capacidade de realização de alguém e, ao fazer isso, alimentar outra frente.
+**Nenhuma frente deveria existir apenas porque gera receita.** O princípio de coerência registrado na Arquitetura de Receita <dado fonte="Business Document › Arquitetura de Receita" /> vale também aqui: cada frente deveria aumentar a capacidade de realização de alguém e, ao fazer isso, alimentar outra frente.
 
 **Não assumir que os produtos permanecerão iguais.** A arquitetura está em transição. Overpass e Vanguarda estão em redefinição conceitual e frentes novas ainda não têm forma comercial definida.
 
@@ -71,12 +71,12 @@ A definição de cada frente está em *Arquitetura de Produtos e Serviços* e *A
 
 ## Histórico
 
-**HISTÓRICO.** Esta página enquadrava as ofertas exclusivamente como produtos educacionais organizados por função na jornada de compra — front-end, back-end e high-end, ancorados em Jobs to Be Done. Esse enquadramento descrevia corretamente uma arquitetura de três produtos, mas não comporta a arquitetura atual, que inclui serviços, B2B, incubação, eventos e artefatos.
+<dado q="D" /> Esta página enquadrava as ofertas exclusivamente como produtos educacionais organizados por função na jornada de compra: front-end, back-end e high-end, ancorados em Jobs to Be Done. Esse enquadramento descrevia corretamente uma arquitetura de três produtos, mas não comporta a arquitetura atual, que inclui serviços, B2B, incubação, eventos e artefatos.
 
 A classificação por função comercial (front-end / back-end / high-end) permanece registrada nas fichas técnicas de cada oferta como **registro do que foi praticado**, não como definição estratégica.
 
 ## O que precisa ser decidido
 
-1. Quais frentes recebem esforço comercial dedicado neste ciclo e quais seguem como experimento. **PENDENTE.**
-2. Como cada frente é apresentada publicamente — se aparece no site, em que ordem e com qual linguagem. **PENDENTE.**
-3. Qual a transição desenhada entre as camadas. **PENDENTE.**
+1. <dado q="E" /> Quais frentes recebem esforço comercial dedicado neste ciclo e quais seguem como experimento.
+2. <dado q="E" /> Como cada frente é apresentada publicamente: se aparece no site, em que ordem e com qual linguagem.
+3. <dado q="E" /> Qual a transição desenhada entre as camadas.

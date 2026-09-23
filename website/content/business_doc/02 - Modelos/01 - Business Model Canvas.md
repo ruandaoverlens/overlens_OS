@@ -1,18 +1,18 @@
 ---
 title: Business Model Canvas
-summary: PENDENTE DE CONSTRUÇÃO — a página existe para receber o Business Model Canvas atualizado e não contém canvas preenchido. Registra por que o canvas de Osterwalder precisa ser refeito inteiro após a mudança de categoria, o status de cada um dos nove blocos, os cinco pré-requisitos para preenchê-lo e a regra de marcação de certeza por bloco.
+summary: "PENDENTE DE CONSTRUÇÃO: a página existe para receber o Business Model Canvas atualizado e não contém canvas preenchido. Registra por que o canvas de Osterwalder precisa ser refeito inteiro após a mudança de categoria, o status de cada um dos nove blocos, os cinco pré-requisitos para preenchê-lo e a regra de marcação de certeza por bloco."
 topics: [business model canvas, modelos de negócio, artefato pendente, pré-requisitos, governança de preenchimento]
 keywords: [Business Model Canvas, BMC, Alexander Osterwalder, nove blocos, segmentos de clientes, proposta de valor, canais, relacionamento com clientes, fontes de receita, recursos-chave, atividades-chave, parcerias-chave, estrutura de custos, PENDENTE, Growth System, personas]
 priority: medium
 ai_when_to_use: |
-  Use apenas para explicar que o Business Model Canvas da Overlens está PENDENTE DE CONSTRUÇÃO, quais blocos dependem de quais insumos e o que precisa existir antes de preenchê-lo. Nunca cite esta página como se houvesse um canvas pronto, nem derive blocos a partir da documentação anterior — o canvas antigo foi construído sob a tese de escola de IA e está preservado apenas como registro histórico.
+  Use apenas para explicar que o Business Model Canvas da Overlens está PENDENTE DE CONSTRUÇÃO, quais blocos dependem de quais insumos e o que precisa existir antes de preenchê-lo. Nunca cite esta página como se houvesse um canvas pronto, nem derive blocos a partir da documentação anterior. O canvas antigo foi construído sob a tese de escola de IA e está preservado apenas como registro histórico.
 related: ["business_doc/02 - Modelos/02 - Lean Canvas.md", "business_doc/03 - Arquitetura/02 - Arquitetura de Receita.md", "business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md", "business_doc/04 - Estratégia/01 - Moats.md"]
 ---
 # Business Model Canvas
 
 ## Estrutura criada, conteúdo pendente. O Business Model Canvas oficial da Overlens será construído separadamente e incorporado aqui.
 
-**Status: PENDENTE DE CONSTRUÇÃO.**
+Status: <dado q="E" />
 
 Esta página existe para receber o BMC atualizado, não para antecipá-lo. O canvas anterior da companhia foi construído sob a tese de escola de IA, design e criatividade, com receita concentrada em cursos, assinatura e lançamentos. Ele está preservado como registro em **Histórico › Registro do Modelo Anterior** e **não deve ser lido como o modelo atual**.
 
@@ -28,26 +28,26 @@ O Business Model Canvas, de Alexander Osterwalder, organiza o negócio em nove c
 
 | # | Bloco | O que precisa ser respondido | Status |
 | :---- | :---- | :---- | :---- |
-| 1 | **Segmentos de Clientes** | Quem são os grupos que a Overlens atende, definidos por mentalidade e comportamento, não por profissão. | Pendente — depende da redefinição de personas e segmentos no Growth System. |
-| 2 | **Proposta de Valor** | O que a Overlens entrega a cada segmento e por que isso importa para ele. | Pendente — resumo executivo virá do Value Proposition Canvas, no Growth System. |
-| 3 | **Canais** | Como cada segmento descobre, avalia, compra e recebe. | Pendente — detalhamento pertence ao Growth System. |
-| 4 | **Relacionamento com Clientes** | Que tipo de relação a companhia estabelece e mantém, incluindo o papel da comunidade. | Pendente — depende do Community System. |
-| 5 | **Fontes de Receita** | Como a companhia captura valor em cada frente. | Parcial — ver **Arquitetura de Receita**, que separa receita existente de experimental. |
-| 6 | **Recursos-Chave** | Que ativos são indispensáveis para operar o modelo. | Parcial — hipóteses em **Moats**. |
+| 1 | **Segmentos de Clientes** | Quem são os grupos que a Overlens atende, definidos por mentalidade e comportamento, não por profissão. | Pendente: depende da redefinição de personas e segmentos no Growth System. |
+| 2 | **Proposta de Valor** | O que a Overlens entrega a cada segmento e por que isso importa para ele. | Pendente: resumo executivo virá do Value Proposition Canvas, no Growth System. |
+| 3 | **Canais** | Como cada segmento descobre, avalia, compra e recebe. | Pendente: detalhamento pertence ao Growth System. |
+| 4 | **Relacionamento com Clientes** | Que tipo de relação a companhia estabelece e mantém, incluindo o papel da comunidade. | Pendente: depende do Community System. |
+| 5 | **Fontes de Receita** | Como a companhia captura valor em cada frente. | Parcial: ver **Arquitetura de Receita**, que separa receita existente de experimental. |
+| 6 | **Recursos-Chave** | Que ativos são indispensáveis para operar o modelo. | Parcial: hipóteses em **Moats**. |
 | 7 | **Atividades-Chave** | O que a companhia precisa fazer bem, obrigatoriamente. | Pendente. |
 | 8 | **Parcerias-Chave** | De quem a companhia depende e o que terceiriza. | Pendente. |
-| 9 | **Estrutura de Custos** | Onde o dinheiro é consumido e qual a natureza de cada custo. | Pendente — não existe estrutura de custos consolidada nesta base. |
+| 9 | **Estrutura de Custos** | Onde o dinheiro é consumido e qual a natureza de cada custo. | Pendente: não existe estrutura de custos consolidada nesta base. |
 
 ## Pré-requisitos para preencher
 
 O canvas não deve ser construído antes destes insumos existirem:
 
-1. **Redefinição de personas e segmentos** — Growth System.
-2. **Value Proposition Canvas atualizado** — Growth System.
-3. **Decisão sobre quais frentes de receita são unidades de negócio** e quais permanecem experimento — ver **Arquitetura de Receita**.
-4. **Estrutura de custos consolidada** — não existe hoje em nenhum documento da base.
+1. **Redefinição de personas e segmentos**: Growth System.
+2. **Value Proposition Canvas atualizado**: Growth System.
+3. **Decisão sobre quais frentes de receita são unidades de negócio** e quais permanecem experimento: ver **Arquitetura de Receita**.
+4. **Estrutura de custos consolidada**: não existe hoje em nenhum documento da base.
 5. **Definição do papel de comunidade, incubação, aceleração, serviços e B2B** no modelo, e não apenas no discurso.
 
 ## Regra de preenchimento
 
-Quando for construído, cada bloco deve declarar o que é **DEFINIDO**, o que é **EM VALIDAÇÃO** e o que é **HIPÓTESE**. Um canvas que apresenta aposta e decisão com o mesmo peso é pior do que nenhum canvas, porque transmite falsa consolidação.
+Quando for construído, cada bloco deve declarar o que é **A** (definido), o que é **B** (em validação) e o que é **C** (hipótese). Um canvas que apresenta aposta e decisão com o mesmo peso é pior do que nenhum canvas, porque transmite falsa consolidação.

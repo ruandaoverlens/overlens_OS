@@ -135,7 +135,7 @@ export async function montarContexto(
         linhas.push(`      <eventos>`);
         for (const e of evs) {
           const rpi = e.rpi_numero ? ` (RPI ${e.rpi_numero})` : "";
-          const desc = e.descricao ? ` — ${e.descricao}` : "";
+          const desc = e.descricao ? `, ${e.descricao}` : "";
           linhas.push(
             `        - [${formatarData(e.data)}] ${EVENTO_TIPO_LABEL[e.tipo]}: ${e.titulo}${rpi}${desc}`,
           );
@@ -154,8 +154,8 @@ export async function montarContexto(
     linhas.push("  (nenhum alerta pendente)");
   }
   for (const a of alertas) {
-    const prazo = a.data_limite ? ` — prazo: ${formatarData(a.data_limite)}` : "";
-    const desc = a.descricao ? ` — ${a.descricao}` : "";
+    const prazo = a.data_limite ? `, prazo: ${formatarData(a.data_limite)}` : "";
+    const desc = a.descricao ? `, ${a.descricao}` : "";
     const proc = a.processo_id ? `, processo_id: ${a.processo_id}` : "";
     linhas.push(
       `  - [${ALERTA_TIPO_LABEL[a.tipo]} / ${ALERTA_STATUS_LABEL[a.status]}] ${a.titulo}${prazo}${desc} (origem: ${a.origem}${proc}, alerta_id: ${a.id})`,
@@ -245,7 +245,7 @@ export async function resolverDocumentos(
           sensivel: row.sensivel,
           conteudo: null,
           aviso:
-            "conteúdo não pôde ser baixado do armazenamento — cole o texto relevante na conversa se necessário",
+            "conteúdo não pôde ser baixado do armazenamento; cole o texto relevante na conversa se necessário",
         });
         continue;
       }
@@ -271,7 +271,7 @@ export async function resolverDocumentos(
         tipo: row.tipo,
         sensivel: row.sensivel,
         conteudo: null,
-        aviso: `conteúdo não extraído (${row.mime_type ?? "tipo desconhecido"}) — cole o texto relevante na conversa se necessário`,
+        aviso: `conteúdo não extraído (${row.mime_type ?? "tipo desconhecido"}); cole o texto relevante na conversa se necessário`,
       });
     }
   }
@@ -281,17 +281,17 @@ export async function resolverDocumentos(
 
 // ─── System prompt ──────────────────────────────────────────────
 
-const REGRAS_ASSISTENTE = `Você é o assistente especializado em propriedade intelectual (registros de marca junto ao INPI e LPI — Lei da Propriedade Industrial) da equipe interna da Overlens, atuando dentro do módulo "Registros".
+const REGRAS_ASSISTENTE = `Você é o assistente especializado em propriedade intelectual (registros de marca junto ao INPI e LPI, a Lei da Propriedade Industrial) da equipe interna da Overlens, atuando dentro do módulo "Registros".
 
-Papel: você INFORMA, contextualiza e estrutura caminhos de ação. Você NÃO decide. A decisão jurídica é sempre humana — do time com o escritório de propriedade intelectual.
+Papel: você INFORMA, contextualiza e estrutura caminhos de ação. Você NÃO decide. A decisão jurídica é sempre humana, do time com o escritório de propriedade intelectual.
 
 Regras obrigatórias:
-- Responda APENAS com base no <contexto_portfolio> e nos <documentos_anexados> fornecidos abaixo, mais conhecimento geral de processo INPI/LPI — e, quando usar conhecimento geral (não específico do portfólio Overlens), rotule claramente como tal (ex.: "de forma geral, no rito do INPI...").
-- Cite a fonte de cada afirmação factual: número do processo, nome/tipo do documento anexado, ou id do alerta. Nunca afirme algo sobre o portfólio "de memória" — se não estiver no contexto fornecido, diga que a informação não está disponível.
+- Responda APENAS com base no <contexto_portfolio> e nos <documentos_anexados> fornecidos abaixo, mais conhecimento geral de processo INPI/LPI; e, quando usar conhecimento geral (não específico do portfólio Overlens), rotule claramente como tal (ex.: "de forma geral, no rito do INPI...").
+- Cite a fonte de cada afirmação factual: número do processo, nome/tipo do documento anexado, ou id do alerta. Nunca afirme algo sobre o portfólio "de memória": se não estiver no contexto fornecido, diga que a informação não está disponível.
 - Quando faltar informação para responder com segurança, diga explicitamente o que falta e sugira qual documento anexar ou qual dado cadastrar.
 - Nunca apresente uma recomendação como decisão tomada. Apresente caminhos possíveis com prós e contras, e lembre que a palavra final é do time com o escritório jurídico.
 - Sem promessas de resultado (nunca garanta que um registro será concedido, que uma oposição terá sucesso, etc.).
-- Português brasileiro claro e direto, sem jargão jurídico desnecessário — quando usar um termo técnico, explique-o brevemente.`;
+- Português brasileiro claro e direto, sem jargão jurídico desnecessário; quando usar um termo técnico, explique-o brevemente.`;
 
 /**
  * Monta o system prompt completo: papel + regras + documentos anexados

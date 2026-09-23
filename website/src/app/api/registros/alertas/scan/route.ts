@@ -66,7 +66,7 @@ async function runScan() {
       candidatos.push({
         processo_id: p.id,
         tipo: "renovacao",
-        titulo: `Renovação próxima — ${marcaNome} (${p.numero})`,
+        titulo: `Renovação próxima: ${marcaNome} (${p.numero})`,
         descricao: `A renovação do processo ${p.numero} vence em ${p.proxima_renovacao}.`,
         data_limite: p.proxima_renovacao,
       });
@@ -76,7 +76,7 @@ async function runScan() {
       candidatos.push({
         processo_id: p.id,
         tipo: "exigencia",
-        titulo: `Exigência pendente — ${marcaNome} (${p.numero})`,
+        titulo: `Exigência pendente: ${marcaNome} (${p.numero})`,
         descricao: p.situacao ?? `O processo ${p.numero} está em exigência.`,
         data_limite: null,
       });
@@ -86,7 +86,7 @@ async function runScan() {
       candidatos.push({
         processo_id: p.id,
         tipo: "oposicao",
-        titulo: `Oposição em curso — ${marcaNome} (${p.numero})`,
+        titulo: `Oposição em curso: ${marcaNome} (${p.numero})`,
         descricao: p.situacao ?? `O processo ${p.numero} está em oposição.`,
         data_limite: null,
       });

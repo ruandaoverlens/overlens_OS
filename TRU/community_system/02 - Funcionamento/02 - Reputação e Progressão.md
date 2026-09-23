@@ -2,7 +2,7 @@
 
 ## Todo sistema de reconhecimento ensina alguma coisa. A pergunta não é se vamos medir, é o que as pessoas vão aprender a perseguir quando descobrirem o que estamos medindo.
 
-**Estado desta página: HIPÓTESE em todas as afirmações sobre mecanismo. Não existe sistema de reputação decidido, implementado ou validado na Overlens.**
+**Estado desta página:** <dado q="C" nota="Hipótese em todas as afirmações sobre mecanismo." /> **Não existe sistema de reputação decidido, implementado ou validado na Overlens.**
 
 O que existe é um problema real e duas armadilhas conhecidas. Esta página trata dos três.
 
@@ -25,38 +25,38 @@ Reputação, nesse sentido, é **infraestrutura de confiança em escala**. É o 
 | **Para que serve** | Permitir que estranhos confiem uns nos outros | Sustentar frequência de uso |
 | **Risco principal** | Concentrar visibilidade em poucos | Ensinar a perseguir o indicador em vez do trabalho |
 
-A gamificação não é ilegítima — ela resolve bem um problema específico, que é iniciar e manter hábito. O erro é tratá-la como se fosse reputação. Pontos por presença medem presença. Não medem se alguém é bom, confiável ou útil.
+A gamificação não é ilegítima: ela resolve bem um problema específico, que é iniciar e manter hábito. O erro é tratá-la como se fosse reputação. Pontos por presença medem presença. Não medem se alguém é bom, confiável ou útil.
 
 ## A gamificação herdada
 
-**HISTÓRICO quanto ao papel · HIPÓTESE quanto à implementação futura.**
+<dado q="D" nota="Quanto ao papel." /> <dado q="C" nota="Quanto à implementação futura." />
 
-O modelo anterior da companhia usava gamificação — **XP, missões, badges, ofensiva, ranking, fractais, certificados** — como principal mecanismo de permanência, dentro de um growth loop organizado em aquisição → ativação → retenção → receita → indicação. O registro está no **Business Document**, em Histórico.
+O modelo anterior da companhia usava gamificação (**XP, missões, badges, ofensiva, ranking, fractais, certificados**) como principal mecanismo de permanência, dentro de um growth loop organizado em aquisição → ativação → retenção → receita → indicação. O registro está no **Business Document**, em Histórico <dado fonte="Business Document › Histórico" />.
 
 Duas consequências para este sistema:
 
 1. **Esses mecanismos permanecem disponíveis como possibilidade de implementação.** Nenhum deles é proibido. Badges, missões e certificados podem voltar a existir se resolverem um problema identificado.
-2. **Nenhum deles é o mecanismo de valor.** O que sustenta a permanência de um Atom, na tese atual, é o que ele consegue construir e com quem — não a sequência de dias ativos.
+2. **Nenhum deles é o mecanismo de valor.** O que sustenta a permanência de um Atom, na tese atual, é o que ele consegue construir e com quem, não a sequência de dias ativos.
 
-Também vale a proibição explícita: **não assumir que os quatro modos — Operante, Convergente, Emergente, Nexialista — constituam um sistema formal de gamificação.** Eles descrevem formas de agir. Transformá-los em níveis de pontuação seria criar uma hierarquia que a própria formulação recusa.
+Também vale a proibição explícita: **não assumir que os quatro modos (Operante, Convergente, Emergente, Nexialista) constituam um sistema formal de gamificação.** Eles descrevem formas de agir. Transformá-los em níveis de pontuação seria criar uma hierarquia que a própria formulação recusa.
 
 ## Sobre o que a reputação poderia se construir
 
-**HIPÓTESE.** Três fontes parecem coerentes com a tese, e todas têm em comum o fato de serem consequência de trabalho, não de atividade:
+<dado q="C" /> Três fontes parecem coerentes com a tese, e todas têm em comum o fato de serem consequência de trabalho, não de atividade:
 
 **Por contribuição.** O que a pessoa colocou na comunidade que outros usaram: respostas, referências, feedback, conexões feitas. Mede utilidade para terceiros.
 
-**Por projeto entregue.** O que a pessoa construiu e que existe no mundo. É a forma mais próxima do que a companhia chama de **evidência** — não o que alguém sabe, mas o que alguém fez.
+**Por projeto entregue.** O que a pessoa construiu e que existe no mundo. É a forma mais próxima do que a companhia chama de **evidência**: não o que alguém sabe, mas o que alguém fez.
 
 **Por ajuda prestada.** Acompanhamento que fez diferença no projeto de outra pessoa. É a fonte mais difícil de observar e provavelmente a mais valiosa, porque é a que menos se finge.
 
-O Business Document trata o registro de **capacidade demonstrada** como candidata a vantagem defensável — dados de capacidade, não de consumo. Reputação comunitária é uma das formas possíveis de alimentar esse registro, e depende inteiramente de infraestrutura que ainda não existe: essa parte pertence ao **Product System**.
+O Business Document trata o registro de **capacidade demonstrada** como candidata a vantagem defensável <dado fonte="Business Document" />, dados de capacidade e não de consumo. Reputação comunitária é uma das formas possíveis de alimentar esse registro, e depende inteiramente de infraestrutura que ainda não existe: essa parte pertence ao **Product System**.
 
 ## Progressão
 
-**PENDENTE.** Não existem níveis formais, faixas, categorias de membro ou critérios de avanço definidos na comunidade da Overlens. Nada disso deve ser inferido a partir dos quatro modos, das ofertas ou do modelo anterior.
+<dado q="E" /> Não existem níveis formais, faixas, categorias de membro ou critérios de avanço definidos na comunidade da Overlens. Nada disso deve ser inferido a partir dos quatro modos, das ofertas ou do modelo anterior.
 
-O que pode ser registrado como princípio, e não como sistema: progressão na Overlens é **aumento de capacidade**, verificável por evidência. Se um dia existir representação formal disso, ela deveria descrever o que a pessoa consegue fazer — não há quanto tempo ela está por aqui.
+O que pode ser registrado como princípio, e não como sistema: progressão na Overlens é **aumento de capacidade**, verificável por evidência. Se um dia existir representação formal disso, ela deveria descrever o que a pessoa consegue fazer, não há quanto tempo ela está por aqui.
 
 ## Riscos a considerar antes de implementar qualquer coisa
 
@@ -69,9 +69,9 @@ Quatro riscos são previsíveis e devem estar sobre a mesa quando a decisão for
 
 ## O que falta decidir
 
-1. Se existirá sistema formal de reputação — e se sim, público ou privado.
+1. Se existirá sistema formal de reputação e, em caso afirmativo, se público ou privado.
 2. Que comportamentos ele reconhece, e qual comportamento isso ensina.
 3. Se gamificação volta, para que problema específico e com que limite.
 4. Se progressão será representada formalmente, e com base em quê.
 
-Enquanto essas decisões não existirem, reconhecimento na comunidade acontece por percepção e por relação — que é honesto em escala pequena e insuficiente em qualquer outra.
+Enquanto essas decisões não existirem, reconhecimento na comunidade acontece por percepção e por relação, que é honesto em escala pequena e insuficiente em qualquer outra.

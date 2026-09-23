@@ -1,6 +1,6 @@
 ---
 title: Pedido de Ajuda
-summary: Convite ao leitor para deixar uma resenha como ato de generosidade que ajuda outro empreendedor desconhecido — exemplo de copy de fechamento que transforma avaliação em propósito.
+summary: "Convite ao leitor para deixar uma resenha como ato de generosidade que ajuda outro empreendedor desconhecido: exemplo de copy de fechamento que transforma avaliação em propósito."
 topics: [copy, fechamento, generosidade, swipe file, resenhas]
 keywords: [resenha, generosidade, copy, fechamento, livro, leitor, empreendedor, prova social]
 priority: low

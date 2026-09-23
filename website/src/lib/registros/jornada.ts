@@ -124,10 +124,10 @@ export const JORNADA_PASSOS: JornadaPasso[] = [
     instrucoes: [
       "Pesquise o nome na Busca da plataforma (cruza a base local com a consulta ao vivo do INPI) e depois confirme diretamente na busca oficial do INPI, marcando pesquisa por marca e testando variações: radical, grafias próximas e tradução.",
       "Avalie colidência além da igualdade exata: semelhança fonética, gráfica e ideológica dentro das classes de interesse e em classes afins.",
-      "Se encontrar marca semelhante ativa na mesma classe, considere ajustar o nome ou a especificação antes de seguir — é muito mais barato do que receber um indeferimento depois.",
+      "Se encontrar marca semelhante ativa na mesma classe, considere ajustar o nome ou a especificação antes de seguir: é muito mais barato do que receber um indeferimento depois.",
     ],
     postura:
-      "Seja cética: procure motivos para o nome NÃO estar disponível. A análise automática é indicativa — a decisão de prosseguir é sempre humana e deve considerar colidência fonética e de segmento, não só texto idêntico.",
+      "Seja cética: procure motivos para o nome NÃO estar disponível. A análise automática é indicativa: a decisão de prosseguir é sempre humana e deve considerar colidência fonética e de segmento, não só texto idêntico.",
     links: [
       { titulo: "Busca da plataforma", url: "/registros/busca", interno: true },
       {
@@ -151,13 +151,13 @@ export const JORNADA_PASSOS: JornadaPasso[] = [
     titulo: "Definir classes de Nice e especificação",
     resumo: "Escolher as classes NCL e redigir a especificação de produtos/serviços.",
     instrucoes: [
-      "Identifique as classes da Classificação de Nice (NCL) que cobrem a atividade real da marca — para a Overlens, tipicamente 41 (educação) e/ou 42 (tecnologia), mas confirme caso a caso.",
+      "Identifique as classes da Classificação de Nice (NCL) que cobrem a atividade real da marca. Para a Overlens, tipicamente 41 (educação) e/ou 42 (tecnologia), mas confirme caso a caso.",
       "Prefira itens da lista pré-aprovada do INPI ao redigir a especificação: itens pré-aprovados não geram exigência de mérito sobre a redação.",
-      "Cada classe é um pedido (e uma taxa) separado. Registre apenas classes que a marca realmente usa ou usará — classe sem uso pode cair por caducidade após 5 anos.",
+      "Cada classe é um pedido (e uma taxa) separado. Registre apenas classes que a marca realmente usa ou usará: classe sem uso pode cair por caducidade após 5 anos.",
     ],
     postura:
       "Precisão em vez de ambição: uma especificação enxuta e fiel ao uso real protege melhor do que uma lista inflada, que aumenta custo, risco de exigência e de oposição.",
-    prazo: "Sem prazo legal — mas define o custo e o escopo de todo o processo.",
+    prazo: "Sem prazo legal, mas define o custo e o escopo de todo o processo.",
     links: [
       {
         titulo: "Classificação de produtos e serviços (INPI)",
@@ -171,7 +171,7 @@ export const JORNADA_PASSOS: JornadaPasso[] = [
     evidencia: {
       tipo: "texto",
       label: "Classes escolhidas e especificação",
-      placeholder: "Ex.: NCL 41 — educação; cursos online. NCL 42 — software como serviço.",
+      placeholder: "Ex.: NCL 41: educação; cursos online. NCL 42: software como serviço.",
     },
   },
   {
@@ -180,7 +180,7 @@ export const JORNADA_PASSOS: JornadaPasso[] = [
     resumo: "Criar (ou validar) o cadastro do titular no sistema do INPI via gov.br.",
     instrucoes: [
       "Acesse o portal do INPI e faça login no sistema e-INPI com a conta gov.br do titular (pessoa jurídica exige vínculo do CNPJ no gov.br).",
-      "Confira os dados cadastrais do titular — nome empresarial, CNPJ e endereço serão impressos no certificado exatamente como estiverem no cadastro.",
+      "Confira os dados cadastrais do titular: nome empresarial, CNPJ e endereço serão impressos no certificado exatamente como estiverem no cadastro.",
       "Verifique se o titular se enquadra em desconto de taxa (ME/EPP, MEI): o enquadramento é declarado no cadastro e reduz as GRUs em 60%.",
     ],
     postura:
@@ -198,7 +198,7 @@ export const JORNADA_PASSOS: JornadaPasso[] = [
     evidencia: {
       tipo: "confirmacao",
       label: "Cadastro validado no e-INPI",
-      placeholder: "Observações (opcional) — ex.: titular enquadrado como EPP, desconto de 60%.",
+      placeholder: "Observações (opcional). Ex.: titular enquadrado como EPP, desconto de 60%.",
     },
   },
   {
@@ -206,9 +206,9 @@ export const JORNADA_PASSOS: JornadaPasso[] = [
     titulo: "Emitir e pagar a GRU de depósito",
     resumo: "Gerar a Guia de Recolhimento da União (serviço 389) e pagar antes de protocolar.",
     instrucoes: [
-      "No sistema de GRU do INPI, gere uma guia por classe com o serviço 389 (Pedido de registro de marca com especificação pré-aprovada) — ou 394 se a especificação for de livre redação.",
+      "No sistema de GRU do INPI, gere uma guia por classe com o serviço 389 (Pedido de registro de marca com especificação pré-aprovada), ou 394 se a especificação for de livre redação.",
       "Pague a GRU antes de protocolar o pedido: o número da guia (\"nosso número\") é a chave que liga o pagamento ao formulário de depósito.",
-      "Guarde o comprovante de pagamento — ele é a evidência deste passo e pode ser exigido em caso de divergência bancária.",
+      "Guarde o comprovante de pagamento: ele é a evidência deste passo e pode ser exigido em caso de divergência bancária.",
     ],
     postura:
       "Método antes de pressa: guia certa, serviço certo, classe certa. Uma GRU emitida com serviço errado não é aproveitável e o valor pago não é restituído automaticamente.",
@@ -234,25 +234,25 @@ export const JORNADA_PASSOS: JornadaPasso[] = [
     resumo: "Preencher o formulário eletrônico, anexar a arte (se mista/figurativa) e depositar.",
     instrucoes: [
       "Acesse o sistema e-Marcas com o número da GRU paga e preencha o formulário: dados do titular, apresentação da marca (nominativa, mista, figurativa ou tridimensional), classe e especificação definidas no passo 2.",
-      "Para marca mista ou figurativa, anexe a imagem no padrão exigido (JPG, 8×8 cm, 300 dpi) — a arte protocolada é a que fica protegida; mudou o logo, muda-se o registro.",
+      "Para marca mista ou figurativa, anexe a imagem no padrão exigido (JPG, 8×8 cm, 300 dpi). A arte protocolada é a que fica protegida; mudou o logo, muda-se o registro.",
       "Envie o pedido e guarde o protocolo: o número do processo (formato 9XXXXXXXX) é a identidade da marca no INPI daqui em diante.",
     ],
     postura:
-      "Revisão tripla antes do envio: depois de protocolado, erros de titular, classe ou arte não se corrigem — geram exigência ou exigem novo depósito com nova taxa.",
+      "Revisão tripla antes do envio: depois de protocolado, erros de titular, classe ou arte não se corrigem: geram exigência ou exigem novo depósito com nova taxa.",
     links: [
       {
         titulo: "Sistema e-Marcas (peticionamento)",
         url: "https://gru.inpi.gov.br/pag/",
       },
       {
-        titulo: "Manual de Marcas — depósito",
+        titulo: "Manual de Marcas: depósito",
         url: "https://manualdemarcas.inpi.gov.br/",
       },
     ],
     evidencia: {
       tipo: "arquivo",
-      label: "Protocolo de depósito (PDF) — informe o nº do processo na nota",
-      placeholder: "Nº do processo — ex.: 923456789",
+      label: "Protocolo de depósito (PDF): informe o nº do processo na nota",
+      placeholder: "Nº do processo, ex.: 923456789",
     },
   },
   {
@@ -291,10 +291,10 @@ export const JORNADA_PASSOS: JornadaPasso[] = [
     instrucoes: [
       "Encerrado o prazo de oposição, o pedido entra na fila de exame de mérito. O examinador pode deferir, indeferir ou formular exigência (pedido de esclarecimento ou correção).",
       "Exigência é publicada na RPI e deve ser cumprida em 60 dias via petição (GRU de cumprimento de exigência, serviço 338). Não responder arquiva o pedido definitivamente.",
-      "Em caso de indeferimento, cabe recurso em 60 dias — avalie com apoio jurídico se o fundamento do indeferimento é contornável.",
+      "Em caso de indeferimento, cabe recurso em 60 dias: avalie com apoio jurídico se o fundamento do indeferimento é contornável.",
     ],
     postura:
-      "Leia o despacho inteiro antes de reagir: boa parte das exigências é simples (esclarecimento de especificação, documento faltante) e se resolve sem advogado — mas indeferimento e oposição merecem análise jurídica.",
+      "Leia o despacho inteiro antes de reagir: boa parte das exigências é simples (esclarecimento de especificação, documento faltante) e se resolve sem advogado, mas indeferimento e oposição merecem análise jurídica.",
     prazo: "Cumprimento de exigência: 60 dias. Recurso contra indeferimento: 60 dias.",
     links: [
       {
@@ -302,7 +302,7 @@ export const JORNADA_PASSOS: JornadaPasso[] = [
         url: "https://busca.inpi.gov.br/pePI/",
       },
       {
-        titulo: "Manual de Marcas — exame",
+        titulo: "Manual de Marcas: exame",
         url: "https://manualdemarcas.inpi.gov.br/",
       },
     ],
@@ -319,7 +319,7 @@ export const JORNADA_PASSOS: JornadaPasso[] = [
     instrucoes: [
       "Com o pedido deferido, emita e pague a GRU do serviço 371 (concessão do registro + proteção do 1º decênio) em até 60 dias contados da publicação do deferimento.",
       "Perdeu o prazo ordinário? Ainda há um prazo extraordinário de 30 dias com valor adicional. Depois disso o pedido é definitivamente arquivado.",
-      "O registro só existe juridicamente após esse pagamento — deferimento sem concessão paga não protege nada.",
+      "O registro só existe juridicamente após esse pagamento: deferimento sem concessão paga não protege nada.",
     ],
     postura:
       "Trate este prazo como inegociável: é a etapa em que mais marcas deferidas morrem por esquecimento. Pague no prazo ordinário e guarde o comprovante.",

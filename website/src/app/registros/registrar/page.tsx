@@ -27,7 +27,7 @@ export default async function RegistrarPage() {
     <div className="mx-auto flex max-w-5xl flex-col gap-6 p-6">
       <PageHeader
         title="Registro"
-        description="Acompanhamento guiado do registro de marca junto ao INPI — um passo de cada vez, com evidência a cada avanço."
+        description="Acompanhamento guiado do registro de marca junto ao INPI: um passo de cada vez, com evidência a cada avanço."
         actions={<JornadaNovaDialog />}
       />
 

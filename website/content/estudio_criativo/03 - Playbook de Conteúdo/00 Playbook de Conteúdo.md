@@ -1,6 +1,6 @@
 ---
 title: Playbook de Conteúdo
-summary: Capa do Playbook de Conteúdo — sistema vivo que reúne fundamentos, pesquisa, enquadramento, ferramentas, criativos e copy para a produção de conteúdo da Overlens.
+summary: "Capa do Playbook de Conteúdo: sistema vivo que reúne fundamentos, pesquisa, enquadramento, ferramentas, criativos e copy para a produção de conteúdo da Overlens."
 topics: [playbook, conteúdo, produção, sistema vivo, overview]
 keywords: [playbook de conteúdo, fundamentos, pesquisa, enquadramento, ferramentas, criativos, copy, sistema vivo, big idea, overlens]
 priority: high

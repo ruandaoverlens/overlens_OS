@@ -6,7 +6,7 @@
 
 ![Squares with Concentric Circles](/brand/images/Squares%20with%20Concentric%20Circles.jpg)
 
-<figcaption><a href="https://commons.wikimedia.org/wiki/File:Vassily_Kandinsky,_1913_-_Color_Study,_Squares_with_Concentric_Circles.jpg">Farbstudie — Quadrate mit konzentrischen Ringen</a>; Wassily Kandinsky, 1913</figcaption>
+<figcaption><a href="https://commons.wikimedia.org/wiki/File:Vassily_Kandinsky,_1913_-_Color_Study,_Squares_with_Concentric_Circles.jpg">Farbstudie: Quadrate mit konzentrischen Ringen</a>; Wassily Kandinsky, 1913</figcaption>
 
 A Overlens não faz barulho. A Overlens cria atmosferas.
 
@@ -81,12 +81,12 @@ A música da Overlens não é decoração nem entretenimento. É uma ferramenta 
 
 | Contexto | BPM | Intenção |
 |----------|-----|----------|
-| **Reflexão e introspecção** | 50–70 | Respiração lenta. Tempo para o pensamento se formar. |
-| **Aulas e conteúdo educacional** | 70–95 | Cadência de conversa séria. Nem sonolento, nem apressado. |
-| **Vídeos institucionais** | 80–110 | Progressão. Construção narrativa. Movimento com propósito. |
-| **Reels e conteúdo curto** | 90–120 | Presença imediata sem ansiedade. Atenção, não urgência. |
-| **Eventos e momentos de convocação** | 100–130 | Energia ascendente. A marca se levanta. |
-| **Transições e intervalos** | 60–80 | Respiro. O som que diz "absorva o que acabou de ver". |
+| **Reflexão e introspecção** | de 50 a 70 | Respiração lenta. Tempo para o pensamento se formar. |
+| **Aulas e conteúdo educacional** | de 70 a 95 | Cadência de conversa séria. Nem sonolento, nem apressado. |
+| **Vídeos institucionais** | de 80 a 110 | Progressão. Construção narrativa. Movimento com propósito. |
+| **Reels e conteúdo curto** | de 90 a 120 | Presença imediata sem ansiedade. Atenção, não urgência. |
+| **Eventos e momentos de convocação** | de 100 a 130 | Energia ascendente. A marca se levanta. |
+| **Transições e intervalos** | de 60 a 80 | Respiro. O som que diz "absorva o que acabou de ver". |
 
 ### Instrumentação preferencial
 
@@ -242,10 +242,10 @@ Novas playlists devem seguir a lógica de quatro estados-chave do processo criat
 
 | Estado | Emoção-alvo | Diretrizes sonoras | BPM |
 |--------|-------------|--------------------|----|
-| **Foco** | Concentração sem tensão. A mente afiada, o corpo calmo. | Ambient minimalista, drones sutis, sem melodia dominante, sem letra. Texturas que criam um "casulo sonoro". | 55–75 |
-| **Inspiração** | Abertura. A sensação de que tudo é possível; não como otimismo ingênuo, mas como percepção ampliada de possibilidade. | Neo-classical com cordas, piano espaçado, sintetizadores que evocam vastidão. Melodias que sobem sem pressa. | 70–100 |
-| **Reflexão** | Introspecção sem melancolia. Olhar para dentro com curiosidade, não com peso. | Downtempo com texturas orgânicas, field recordings, guitarra com reverb longo. Espaço entre as notas é tão importante quanto as notas. | 60–85 |
-| **Energia** | Movimento com direção. Não é adrenalina; é propulsão consciente. A energia de quem sabe exatamente para onde está indo. | Eletrônica com groove, post-rock crescente, percussão com swing. Complexidade rítmica que recompensa atenção. | 95–130 |
+| **Foco** | Concentração sem tensão. A mente afiada, o corpo calmo. | Ambient minimalista, drones sutis, sem melodia dominante, sem letra. Texturas que criam um "casulo sonoro". | de 55 a 75 |
+| **Inspiração** | Abertura. A sensação de que tudo é possível; não como otimismo ingênuo, mas como percepção ampliada de possibilidade. | Neo-classical com cordas, piano espaçado, sintetizadores que evocam vastidão. Melodias que sobem sem pressa. | de 70 a 100 |
+| **Reflexão** | Introspecção sem melancolia. Olhar para dentro com curiosidade, não com peso. | Downtempo com texturas orgânicas, field recordings, guitarra com reverb longo. Espaço entre as notas é tão importante quanto as notas. | de 60 a 85 |
+| **Energia** | Movimento com direção. Não é adrenalina; é propulsão consciente. A energia de quem sabe exatamente para onde está indo. | Eletrônica com groove, post-rock crescente, percussão com swing. Complexidade rítmica que recompensa atenção. | de 95 a 130 |
 
 ### Critérios de curadoria
 

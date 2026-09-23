@@ -959,7 +959,7 @@ Exemplos:
 
 Criar a seção, mas marcar:
 
-**PENDENTE DE PESQUISA.**
+<dado q="E" nota="Pesquisa de mercado." />
 
 Futuramente deverá conter:
 
@@ -1215,23 +1215,28 @@ Não criar uma nova definição concorrente.
 
 # 29. CLASSIFICAÇÃO DE CERTEZA
 
-Durante a revisão da documentação, classificar conceitos importantes quando necessário em:
+Durante a revisão da documentação, classificar conceitos importantes quando necessário.
 
-## DEFINIDO
+A classificação não é escrita por extenso. Ela é uma **tag inline** que o site renderiza como uma bolinha de qualidade:
 
-Decisão tomada e atualmente válida.
+```
+<dado q="A" />
+<dado q="B" nota="Direção testada em duas turmas." />
+<dado q="A" fonte="TRU/changes.md" />
+<dado q="C" nota="Candidato mais forte." fonte="https://exemplo.com/pesquisa" />
+```
 
-## EM VALIDAÇÃO
+Atributos: `q` é obrigatório e vai de `A` a `E`; `nota` é opcional e leva uma frase curta de qualificação; `fonte` é opcional e só aparece quando o documento declara de onde a informação veio.
 
-Direção em teste.
+| Bolinha | Significa | Quando usar |
+| :---- | :---- | :---- |
+| **A** | DEFINIDO | Decisão tomada e atualmente válida |
+| **B** | EM VALIDAÇÃO | Direção em teste, com evidência parcial |
+| **C** | HIPÓTESE | Possibilidade ainda não validada |
+| **D** | HISTÓRICO | Já foi verdadeiro; não representa a direção atual |
+| **E** | PENDENTE | Precisa existir e ainda não existe |
 
-## HIPÓTESE
-
-Possibilidade ainda não validada.
-
-## HISTÓRICO
-
-Algo que já foi verdadeiro, mas não representa necessariamente a direção atual.
+No site, cada letra aparece como um ponto colorido com tooltip: a bolinha mostra a letra, o tooltip abre o significado e a nota. Quando a afirmação tem fonte declarada, um segundo ponto marcado **F** aparece ao lado e leva à origem.
 
 Isso é especialmente importante porque a Overlens está em transição.
 

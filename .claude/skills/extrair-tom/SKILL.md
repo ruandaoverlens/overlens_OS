@@ -4,7 +4,7 @@ description: Extrai o DNA verbal real da Overlens analisando a base canônica. P
 allowed-tools: Read, Grep, Glob, Write, Bash, Agent
 ---
 
-# /extrair-tom — Extrair DNA Verbal
+# /extrair-tom: Extrair DNA Verbal
 
 Execute a extração completa do tom de voz real:
 

@@ -2,11 +2,11 @@
 
 > ## ⚠️ NECESSITA REVISÃO DE PERSONA
 >
-> Esta persona foi construída sob o **recorte anterior de público** — definido por profissão, faixa etária, renda e comportamento de consumo — e sob a formulação de **cinco estágios sequenciais de maturidade** (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas), que não existe mais.
+> Esta persona foi construída sob o **recorte anterior de público** (definido por profissão, faixa etária, renda e comportamento de consumo) e sob a formulação de **cinco estágios sequenciais de maturidade** (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas), que não existe mais.
 >
-> **Não use esta página como verdade atual** sobre o público da Overlens. O público é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.** E Operante, Convergente, Emergente e Nexialista são hoje **formas de agir, aprender, pensar e criar** — não degraus de uma escada.
+> **Não use esta página como verdade atual** sobre o público da Overlens. O público é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.** E Operante, Convergente, Emergente e Nexialista são hoje **formas de agir, aprender, pensar e criar**, não degraus de uma escada.
 >
-> **A redefinição de personas acontecerá no Growth System e ainda não foi feita.** Até lá, o conteúdo abaixo permanece preservado como registro do que foi documentado — não como base para campanha, produto ou qualificação.
+> **A redefinição de personas acontecerá no Growth System e ainda não foi feita.** Até lá, o conteúdo abaixo permanece preservado como registro do que foi documentado, não como base para campanha, produto ou qualificação.
 
 
 <div style="display:flex;gap:24px;align-items:flex-start">
@@ -43,17 +43,17 @@
 
 ## Biografia
 
-Lilian tem 34 anos e é fundadora de uma marca própria. Começou vendendo consultoria, mas há quatro anos deu o passo que a maioria não dá: parou de vender o próprio tempo e construiu um negócio — uma marca com linha de produtos, conteúdo e uma comunidade paga que a sustenta. Casada e vivendo em São Paulo, alcançou estabilidade e reconhecimento, com uma retirada média em torno de R$14.000. Hoje, já não busca apenas entregar bons projetos: quer que o que construiu seja um sistema vivo, que resista ao tempo e transcenda modismos.
+Lilian tem 34 anos e é fundadora de uma marca própria. Começou vendendo consultoria, mas há quatro anos deu o passo que a maioria não dá: parou de vender o próprio tempo e construiu um negócio: uma marca com linha de produtos, conteúdo e uma comunidade paga que a sustenta. Casada e vivendo em São Paulo, alcançou estabilidade e reconhecimento, com uma retirada média em torno de R$14.000. Hoje, já não busca apenas entregar bons projetos: quer que o que construiu seja um sistema vivo, que resista ao tempo e transcenda modismos.
 
-Chegou ao nível em que enxerga os padrões invisíveis do mercado e entende a complexidade das transformações culturais e tecnológicas. Inova de verdade — e é justamente esse o problema. Tem sempre três ou quatro frentes abertas ao mesmo tempo: uma nova linha, um curso, uma parceria, um podcast. Nenhuma delas recebe energia suficiente para amadurecer. Tem clareza de que seu próximo passo não é aprender mais ferramentas isoladas, mas construir uma arquitetura que conecte o que ela já criou em um só sistema coerente.
+Chegou ao nível em que enxerga os padrões invisíveis do mercado e entende a complexidade das transformações culturais e tecnológicas. Inova de verdade, e é justamente esse o problema. Tem sempre três ou quatro frentes abertas ao mesmo tempo: uma nova linha, um curso, uma parceria, um podcast. Nenhuma delas recebe energia suficiente para amadurecer. Tem clareza de que seu próximo passo não é aprender mais ferramentas isoladas, mas construir uma arquitetura que conecte o que ela já criou em um só sistema coerente.
 
-Lilian se orgulha do caminho que percorreu, mas sente uma pressão interna: não quer ser “mais uma marca pequena que foi legal por uns anos”, deseja construir algo que atravesse o tempo — um negócio que articule estética, cultura e economia de forma sustentável. Busca, portanto, um espaço guiado, com comunidades maduras e mentorias profundas, que a ajudem a escolher onde não colocar energia, validar o que fica e deixar um legado.
+Lilian se orgulha do caminho que percorreu, mas sente uma pressão interna: não quer ser “mais uma marca pequena que foi legal por uns anos”, deseja construir algo que atravesse o tempo: um negócio que articule estética, cultura e economia de forma sustentável. Busca, portanto, um espaço guiado, com comunidades maduras e mentorias profundas, que a ajudem a escolher onde não colocar energia, validar o que fica e deixar um legado.
 
 ### Conflito da Lilian
 
 Apesar de já ter construído um negócio sólido, Lilian atuou muito tempo sozinha, carregando tudo do início ao fim quase sem rede de apoio. Isso lhe deu autonomia e profundidade, mas também trouxe um peso enorme: decisões estratégicas, execução e validação sempre recaíram apenas sobre ela.
 
-Hoje, sente que esse isolamento limita sua velocidade e consistência. Trabalhar sozinha faz com que suas ideias, muitas vezes visionárias, se multipliquem sem nunca aprofundar — e a energia se divide entre frentes que competem entre si em vez de se somarem.
+Hoje, sente que esse isolamento limita sua velocidade e consistência. Trabalhar sozinha faz com que suas ideias, muitas vezes visionárias, se multipliquem sem nunca aprofundar, e a energia se divide entre frentes que competem entre si em vez de se somarem.
 
 O conflito central é: Lilian já tem um negócio de pé e enxerga padrões complexos, mas dispersa energia em frentes demais e nenhuma vira sistema. Ela precisa de uma comunidade madura, frameworks aplicáveis e apoio estratégico para escolher, aprofundar e transformar visão em legado sem carregar tudo nos ombros.
 

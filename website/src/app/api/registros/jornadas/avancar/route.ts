@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
   }
   if (jornada.passo_atual !== passo) {
     return NextResponse.json(
-      { error: `Passo fora de ordem — o passo atual é o ${jornada.passo_atual}` },
+      { error: `Passo fora de ordem: o passo atual é o ${jornada.passo_atual}` },
       { status: 409 },
     );
   }

@@ -1,6 +1,6 @@
 ---
 title: Distribuição por Canal
-summary: Define a lógica de distribuição multicanal — YouTube (Ruan) com vídeos estruturados, Instagram pessoal (@ruanbraz) com cortes e reflexões, Instagram institucional (@overlens) com conteúdo de marca — e a quantidade semanal de peças por canal.
+summary: Define a lógica de distribuição multicanal, YouTube (Ruan) com vídeos estruturados, Instagram pessoal (@ruanbraz) com cortes e reflexões, Instagram institucional (@overlens) com conteúdo de marca, e a quantidade semanal de peças por canal.
 topics: [distribuição, canais, youtube, instagram, multicanal, reaproveitamento]
 keywords: [youtube, instagram, ruanbraz, overlens, cortes, reflexões, insights, conteúdo de marca, distribuição semanal, multicanal]
 priority: medium

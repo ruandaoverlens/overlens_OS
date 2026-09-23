@@ -314,15 +314,14 @@ export function BuscaPageClient({
             </p>
             <p className="text-xs text-muted-foreground">
               Esta análise é indicativa. A colidência real depende de análise
-              jurídica — a decisão final é sempre humana.
+              jurídica: a decisão final é sempre humana.
             </p>
             {!resultado.fontes.inpiLive.consultada && (
               <p className="text-xs text-warning">
                 Consulta ao vivo ao INPI indisponível
                 {resultado.fontes.inpiLive.motivo
                   ? ` (${resultado.fontes.inpiLive.motivo})`
-                  : ""}
-                — mostrando apenas a base local.
+                  : ""}, mostrando apenas a base local.
               </p>
             )}
           </div>

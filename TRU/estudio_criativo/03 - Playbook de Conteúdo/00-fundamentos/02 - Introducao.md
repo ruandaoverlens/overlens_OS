@@ -2,9 +2,9 @@
 
 ## O Manual de Produção de Conteúdo da Overlens é um mapa para navegar o território simbólico e estratégico que sustenta a nossa comunicação.
 
-A Overlens é uma escola de negócios, criação e realização. Existe para pessoas que têm uma ideia, uma ambição ou uma visão de futuro e querem transformá-la em realidade. **DEFINIDO.**
+A Overlens é uma escola de negócios, criação e realização. Existe para pessoas que têm uma ideia, uma ambição ou uma visão de futuro e querem transformá-la em realidade. <dado q="A" />
 
-O público é o **empreendedor**, e o que o define é o estado, não a profissão: ele pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa, de um ofício manual ou de nenhuma dessas origens. Atravessar fronteiras entre conhecimentos — filosofia, arte, tecnologia, negócio, design — é uma capacidade que a Overlens desenvolve (nexialismo), não um rótulo que colamos em quem nos procura. IA é infraestrutura do que fazemos, não a categoria da escola.
+O público é o **empreendedor**, e o que o define é o estado, não a profissão: ele pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa, de um ofício manual ou de nenhuma dessas origens. Atravessar fronteiras entre conhecimentos (filosofia, arte, tecnologia, negócio, design) é uma capacidade que a Overlens desenvolve (nexialismo), não um rótulo que colamos em quem nos procura. IA é infraestrutura do que fazemos, não a categoria da escola.
 
 Cada texto, imagem ou vídeo produzido em nome da Overlens carrega essa essência: clareza, profundidade, impacto e transformação.
 

@@ -1,6 +1,6 @@
 ---
 title: Filmes e séries sinérgicos
-summary: Lista curada de 12 filmes e séries sinérgicos com a filosofia da Overlens — narrativas sobre criação, sistemas, tecnologia, consciência e responsabilidade. Inclui Tomorrowland, Inception, Arrival, Dune, Matrix, Interstellar, Ex Machina, Blade Runner 2049, EEAAO, Waking Life, Mr. Robot e Black Mirror.
+summary: "Lista curada de 12 filmes e séries sinérgicos com a filosofia da Overlens: narrativas sobre criação, sistemas, tecnologia, consciência e responsabilidade. Inclui Tomorrowland, Inception, Arrival, Dune, Matrix, Interstellar, Ex Machina, Blade Runner 2049, EEAAO, Waking Life, Mr. Robot e Black Mirror."
 topics: [filmes, séries, audiovisual, ficção científica, narrativa, repertório cinematográfico]
 keywords: [tomorrowland, inception, arrival, dune, matrix, interstellar, ex machina, blade runner 2049, everything everywhere all at once, waking life, mr robot, black mirror, christopher nolan, denis villeneuve, brad bird, charlie brooker, ficção científica, criação, tecnologia]
 priority: low

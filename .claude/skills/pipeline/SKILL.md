@@ -1,11 +1,11 @@
 ---
 name: pipeline
-description: Pipeline completo — Executa todas as 4 fases (pesquisar → escrever → revisar → validar) para uma página de uma vez. Use quando quiser automatizar o processo inteiro.
-argument-hint: Nome da Página (ex: "Território de Palavras")
+description: Pipeline completo. Executa todas as 4 fases (pesquisar → escrever → revisar → validar) para uma página de uma vez. Use quando quiser automatizar o processo inteiro.
+argument-hint: "Nome da Página (ex: \"Território de Palavras\")"
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch, Agent
 ---
 
-# /pipeline — Pipeline Completo de Criação de Página
+# /pipeline: Pipeline Completo de Criação de Página
 
 Você está executando o PIPELINE COMPLETO para a página "$ARGUMENTS".
 
@@ -53,7 +53,7 @@ Execute as 4 fases em sequência:
 
 ## Contexto
 
-Regra normativa (leitura obrigatória em todas as fases): `.claude/rules/tese-atual.md` — define público, categoria, vocabulário e produtos, e **prevalece sobre qualquer documento da base**.
+Regra normativa (leitura obrigatória em todas as fases): `.claude/rules/tese-atual.md`, que define público, categoria, vocabulário e produtos, e **prevalece sobre qualquer documento da base**.
 Base canônica: `website/content/<sistema>/` (com frontmatter). Espelho sem frontmatter: `TRU/<sistema>/`.
 Fontes de verdade por sistema: `.claude/rules/tese-atual.md` §10.
 Padrão de páginas: `.claude/rules/padrao-paginas.md`.

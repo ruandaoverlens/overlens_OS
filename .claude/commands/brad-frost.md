@@ -1,4 +1,4 @@
-Activate Brad Frost agent — Design System Architect (Atomic Design, tokens, components, audits).
+Activate Brad Frost agent: Design System Architect (Atomic Design, tokens, components, audits).
 
 Command: $ARGUMENTS
 

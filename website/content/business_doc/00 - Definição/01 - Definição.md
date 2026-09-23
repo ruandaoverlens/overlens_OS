@@ -1,6 +1,6 @@
 ---
 title: Definição
-summary: Apresenta o Business Document como a sobrecamada executiva do negócio da Overlens — o que ele responde, quais sistemas são fonte de verdade sobre cada assunto, a escala de classificação de certeza (DEFINIDO, EM VALIDAÇÃO, HIPÓTESE, HISTÓRICO, PENDENTE), as regras de evolução do documento e a estrutura das seis seções.
+summary: "Apresenta o Business Document como a sobrecamada executiva do negócio da Overlens: o que ele responde, quais sistemas são fonte de verdade sobre cada assunto, a escala de classificação de certeza (DEFINIDO, EM VALIDAÇÃO, HIPÓTESE, HISTÓRICO, PENDENTE), as regras de evolução do documento e a estrutura das seis seções."
 topics: [business document, definição, escopo, fontes de verdade, classificação de certeza, governança documental]
 keywords: [Business Document, Brand System, Growth System, Product System, Community System, fontes de verdade, DEFINIDO, EM VALIDAÇÃO, HIPÓTESE, HISTÓRICO, PENDENTE, Mapa de Empatia, Value Proposition Canvas, ADR, criação de valor, captura de valor, documento interno]
 priority: high
@@ -42,19 +42,21 @@ Dois artefatos que poderiam ser esperados aqui **não pertencem a este documento
 
 A Overlens está em transição. Documentar exploração estratégica como decisão tomada é o erro mais caro que esta base pode cometer. Por isso cada afirmação relevante carrega uma marcação:
 
-| Marcação | Significado |
-| :---- | :---- |
-| **DEFINIDO** | Decisão tomada e atualmente válida. |
-| **EM VALIDAÇÃO** | Direção em teste, com evidência parcial. |
-| **HIPÓTESE** | Possibilidade ainda não validada. |
-| **HISTÓRICO** | Já foi verdadeiro, mas não representa a direção atual. |
-| **PENDENTE** | Precisa existir e ainda não existe. Não preencher com suposição. |
+| Bolinha | Significa | Quando usar |
+| :---- | :---- | :---- |
+| **A** | DEFINIDO | Decisão tomada e atualmente válida |
+| **B** | EM VALIDAÇÃO | Direção em teste, com evidência parcial |
+| **C** | HIPÓTESE | Possibilidade ainda não validada |
+| **D** | HISTÓRICO | Já foi verdadeiro; não representa a direção atual |
+| **E** | PENDENTE | Precisa existir e ainda não existe |
+
+No site, cada letra aparece como um ponto colorido com tooltip, e um segundo ponto marcado **F** indica que a afirmação tem fonte declarada.
 
 Uma informação sem marcação deve ser lida como ainda não classificada, não como confirmada.
 
 ## Princípio de consistência
 
-Documentos mais recentes relacionados ao novo posicionamento prevalecem sobre documentos antigos quando houver conflito. A presença de uma informação na base não é prova de que ela esteja correta — a data e o contexto estratégico contam.
+Documentos mais recentes relacionados ao novo posicionamento prevalecem sobre documentos antigos quando houver conflito. A presença de uma informação na base não é prova de que ela esteja correta. A data e o contexto estratégico contam.
 
 Grande parte da base de conhecimento da Overlens foi construída no fim de 2025 e início de 2026 e descreve uma versão anterior da empresa. O estado dessa revisão está registrado no relatório de auditoria da base de conhecimento.
 

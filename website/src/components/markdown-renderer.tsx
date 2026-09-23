@@ -1,8 +1,10 @@
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import rehypeSlug from "rehype-slug";
 import { ColorPalette } from "@/components/color-palette";
+import { DadoBadge } from "@/components/dado-badge";
+import { normalizeDadoTags } from "@/lib/dado";
 import { IconGallery } from "@/components/icons/icon-gallery";
 import { resolveBrandImageSrc } from "@/lib/brand-images";
 
@@ -97,7 +99,8 @@ function splitByCustomTags(md: string): Array<{ type: "md"; value: string } | { 
 }
 
 export function MarkdownRenderer({ content, title }: { content: string; title?: string }) {
-  const { content: cleaned, description } = parseLeadingContent(content);
+  const { content: parsed, description } = parseLeadingContent(content);
+  const cleaned = normalizeDadoTags(parsed);
   const segments = splitByCustomTags(cleaned);
   // A primeira imagem do documento costuma estar acima da dobra (candidata a LCP):
   // ela carrega com prioridade; as seguintes continuam preguiçosas. O `src` é
@@ -127,6 +130,9 @@ export function MarkdownRenderer({ content, title }: { content: string; title?: 
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw, rehypeSlug]}
         components={{
+          // `<dado q="A" />` no markdown vira o ponto de qualidade do dado.
+          // A chave não é uma tag HTML conhecida, daí o cast em `components`.
+          dado: DadoBadge,
           h1: ({ children, id }) => (
             <h1 id={id} className="font-heading text-display font-normal uppercase tracking-normal leading-none text-balance text-foreground">
               {children}
@@ -360,7 +366,7 @@ export function MarkdownRenderer({ content, title }: { content: string; title?: 
               {children}
             </td>
           ),
-        }}
+        } as Components}
       >
         {segment.value}
       </ReactMarkdown>

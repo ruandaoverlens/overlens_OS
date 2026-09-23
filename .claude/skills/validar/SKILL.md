@@ -1,11 +1,11 @@
 ---
 name: validar
-description: Fase de validação final — Checklist binário de conformidade antes de considerar a página pronta. Última etapa do pipeline. Use após /revisar.
-argument-hint: Nome da Página (ex: "Território de Palavras")
+description: Fase de validação final. Checklist binário de conformidade antes de considerar a página pronta. Última etapa do pipeline. Use após /revisar.
+argument-hint: "Nome da Página (ex: \"Território de Palavras\")"
 allowed-tools: Read, Write, Grep, Glob, Agent
 ---
 
-# /validar — Fase de Validação
+# /validar: Fase de Validação
 
 Você está iniciando a fase de VALIDAÇÃO FINAL para a página "$ARGUMENTS".
 
@@ -13,7 +13,7 @@ Você está iniciando a fase de VALIDAÇÃO FINAL para a página "$ARGUMENTS".
 
 1. Verifique que `[PAGINA] $ARGUMENTS.md` existe e que `[REVISAO] $ARGUMENTS.md` foi aprovada
 2. Lance o agente `validador` com a seguinte instrução:
-   - Ler `.claude/rules/tese-atual.md` — fonte normativa; prevalece sobre qualquer documento da base
+   - Ler `.claude/rules/tese-atual.md`, fonte normativa que prevalece sobre qualquer documento da base
    - Executar checklist completo de conformidade (estrutural, tom, vocabulário, filosófica, técnica, integração)
    - Verificar a regra de público, os quatro modos, IA como infraestrutura, as definições de Atlas/Overpass/Vanguarda e a classificação de certeza (DEFINIDO / EM VALIDAÇÃO / HIPÓTESE / HISTÓRICO / PENDENTE)
    - Buscar termos proibidos com Grep

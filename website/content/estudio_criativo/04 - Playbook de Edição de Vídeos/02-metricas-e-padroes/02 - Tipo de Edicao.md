@@ -1,6 +1,6 @@
 ---
 title: Tipo de edição
-summary: Detalha as seis etapas sequenciais da edição de cada vídeo — decupagem bruta (46,9%), slides/textos, decupagem de revisão, medição de LUFs, render e upload — com pesos e durações que somam 5h20 para uma aula de 30 minutos, além das modalidades rápida e detalhada.
+summary: "Detalha as seis etapas sequenciais da edição de cada vídeo: decupagem bruta (46,9%), slides/textos, decupagem de revisão, medição de LUFs, render e upload, com pesos e durações que somam 5h20 para uma aula de 30 minutos, além das modalidades rápida e detalhada."
 topics: [edição de vídeo, etapas de edição, decupagem, lufs, render, modalidades de edição]
 keywords: [decupagem bruta, decupagem de revisão, slides, lufs, renderização, upload, edição rápida, edição detalhada, ritmo, 5h20, aula de 30 minutos]
 priority: medium

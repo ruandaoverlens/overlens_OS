@@ -2,7 +2,7 @@
 
 ## Princípios de negócio não dizem o que fazer. Dizem como decidir quando a resposta não é óbvia e ninguém tem tempo de pedir autorização.
 
-Estes princípios operam sobre decisões econômicas e de produto. Eles convivem com os **Princípios da Overlens** registrados no Brand System — julgamento, realização, parcimônia e unidade — que operam em nível cultural e de comportamento. Não são concorrentes: estes são a aplicação daqueles ao negócio.
+Estes princípios operam sobre decisões econômicas e de produto. Eles convivem com os **Princípios da Overlens** registrados no Brand System (julgamento, realização, parcimônia e unidade), que operam em nível cultural e de comportamento. Não são concorrentes: estes são a aplicação daqueles ao negócio.
 
 ---
 
@@ -36,7 +36,7 @@ IA é infraestrutura, não categoria nem substituto. Serve para aumentar a capac
 
 Comunidade não é feature de retenção nem canal de suporte. É parte de como o valor é produzido.
 
-**Na prática:** decisões que aumentam volume às custas de densidade devem ser tratadas como decisões estratégicas, não operacionais. Uma comunidade grande e rasa vale menos que uma pequena e densa — economicamente, não apenas culturalmente.
+**Na prática:** decisões que aumentam volume às custas de densidade devem ser tratadas como decisões estratégicas, não operacionais. Uma comunidade grande e rasa vale menos que uma pequena e densa (economicamente, não apenas culturalmente).
 
 ---
 
@@ -84,7 +84,7 @@ Definição duplicada é definição que vai divergir.
 
 A companhia está em transição. Exploração estratégica documentada como decisão oficial faz a organização parar de testar o que ainda não sabe.
 
-**Na prática:** toda afirmação relevante carrega sua marcação de certeza. Na dúvida entre **EM VALIDAÇÃO** e **DEFINIDO**, escolher a primeira.
+**Na prática:** toda afirmação relevante carrega sua marcação de certeza. Na dúvida entre **B** (em validação) e **A** (definido), escolher a primeira.
 
 ---
 

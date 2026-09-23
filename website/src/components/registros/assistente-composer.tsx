@@ -228,7 +228,7 @@ export function AssistenteComposer({
           {willUsePaidModel && (
             <Badge variant="warning">
               <SmLockLineIcon />
-              Sensível — modelo pago
+              Sensível: modelo pago
             </Badge>
           )}
         </div>

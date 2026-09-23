@@ -1,6 +1,6 @@
 ---
 title: Produção de Criativos
-summary: Define o criativo Overlens como módulo de uma narrativa maior (autonomia, estrutura, responsabilidade) e estabelece a ordem inegociável de produção — diagnóstico, copy, depois design.
+summary: "Define o criativo Overlens como módulo de uma narrativa maior (autonomia, estrutura, responsabilidade) e estabelece a ordem inegociável de produção: diagnóstico, copy, depois design."
 topics: [criativos, copy, design, missão do ciclo, narrativa]
 keywords: [criativo, copy, design, captação, lembrete, remarketing, carrinho aberto, nível de consciência, comportamento, narrativa, ciclo, empreendedor, autoria]
 priority: medium

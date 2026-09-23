@@ -1,21 +1,21 @@
 ---
 title: Convergentes
-summary: Descreve o modo Convergente — a forma de agir que atravessa fronteiras entre conhecimentos, ferramentas e disciplinas, conectando partes antes separadas — com paradoxo central, variações, objeções, antídotos e gatilhos. Modo comportamental, não estágio de maturidade.
+summary: Descreve o modo Convergente, a forma de agir que atravessa fronteiras entre conhecimentos, ferramentas e disciplinas, conectando partes antes separadas, com paradoxo central, variações, objeções, antídotos e gatilhos. Modo comportamental, não estágio de maturidade.
 topics: [quatro modos, convergente, conexão entre disciplinas, sistema próprio, atlas, overpass]
 keywords: [convergente, modo convergente, conecta partes separadas, sistema próprio, recomeçar do zero, atlas, overpass, repertório, metodologia, framework, micro-vitórias, em validação]
 priority: medium
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre o modo Convergente — quem busca conhecimento fora da própria especialidade, combina ferramentas e conecta disciplinas — ou ao desenhar comunicação sobre sistema próprio e visão sistêmica. Convergente é uma forma de agir e pensar, não um estágio de maturidade nem um degrau de senioridade.
+  Use quando o usuário perguntar sobre o modo Convergente, quem busca conhecimento fora da própria especialidade, combina ferramentas e conecta disciplinas, ou ao desenhar comunicação sobre sistema próprio e visão sistêmica. Convergente é uma forma de agir e pensar, não um estágio de maturidade nem um degrau de senioridade.
 related: []
 ---
 
 # Convergentes
 
-## Convergente é o modo de quem atravessa fronteiras entre conhecimentos, ferramentas e disciplinas — e conecta partes que antes estavam separadas.
+## Convergente é o modo de quem atravessa fronteiras entre conhecimentos, ferramentas e disciplinas, e conecta partes que antes estavam separadas.
 
-> **Nota de enquadramento — EM VALIDAÇÃO.** Apesar do nome da pasta, **não se trata de maturidade sequencial.** Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, não degraus de uma escada nem níveis de senioridade. Ninguém precisa "sair" do Operante para "chegar" ao Convergente, e a mesma pessoa pode agir em modos diferentes conforme o problema. Formulação completa em `02 - Público/06 - Perfis de Clientes.md`.
+> **Nota de enquadramento.** <dado q="B" fonte="02 - Público/06 - Perfis de Clientes.md" /> Apesar do nome da pasta, **não se trata de maturidade sequencial.** Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, não degraus de uma escada nem níveis de senioridade. Ninguém precisa "sair" do Operante para "chegar" ao Convergente, e a mesma pessoa pode agir em modos diferentes conforme o problema. Formulação completa em `02 - Público/06 - Perfis de Clientes.md`.
 
-Quem age no modo Convergente percebe que uma única especialização já não resolve certos problemas. Busca conhecimento fora da especialidade de origem, conecta disciplinas, amplia repertório, combina ferramentas e tenta adaptar o que já sabe a contextos novos — enquanto começa a enxergar os limites dos paradigmas anteriores.
+Quem age no modo Convergente percebe que uma única especialização já não resolve certos problemas. Busca conhecimento fora da especialidade de origem, conecta disciplinas, amplia repertório, combina ferramentas e tenta adaptar o que já sabe a contextos novos, enquanto começa a enxergar os limites dos paradigmas anteriores.
 
 O atrito característico desse modo: a conexão acontece, mas ainda apoiada em metodologias emprestadas. Cada entrega recomeça do zero porque não existe um sistema próprio que funcione sem a presença da pessoa. Na Overlens, o trabalho é transformar esforço repetido em estrutura que permanece.
 
@@ -27,7 +27,7 @@ O atrito característico desse modo: a conexão acontece, mas ainda apoiada em m
 
 *Você está no limiar da transformação. Já provou que consegue lançar, e mesmo assim cada ciclo parece começar do zero. Suas tentativas de integrar novas tecnologias e metodologias são superficiais porque você tenta encaixá-las em estruturas mentais antigas. É como tentar rodar software quântico em hardware analógico.*
 
-*Você precisa reconstruir sua base conceitual. Não basta adaptar processos, é necessário repensar premissas fundamentais. Estude como sistemas complexos se auto-organizam — é literalmente o que falta ao que você construiu. Aprenda sobre emergência e padrões evolutivos. Desenvolva metacognição; a capacidade de pensar sobre como você pensa. Sua vantagem é que você já enxerga a necessidade de mudança. Agora precisa de coragem intelectual para abandonar certezas confortáveis.*
+*Você precisa reconstruir sua base conceitual. Não basta adaptar processos, é necessário repensar premissas fundamentais. Estude como sistemas complexos se auto-organizam: é literalmente o que falta ao que você construiu. Aprenda sobre emergência e padrões evolutivos. Desenvolva metacognição; a capacidade de pensar sobre como você pensa. Sua vantagem é que você já enxerga a necessidade de mudança. Agora precisa de coragem intelectual para abandonar certezas confortáveis.*
 
 ### **Ficha rápida:**
 
@@ -35,12 +35,12 @@ O atrito característico desse modo: a conexão acontece, mas ainda apoiada em m
 
 | Campo | Descrição |
 | :---- | :---- |
-| **Resumo Essencial** | Conecta conhecimentos, ferramentas e disciplinas, e já coloca coisas no mundo — mas se apoia em metodologias emprestadas como muletas, e por isso cada entrega recomeça do zero. Falta a visão sistêmica capaz de transformar esforço repetido em estrutura que se mantém. A questão não é mais aprender: é desaprender e reconstruir. |
+| **Resumo Essencial** | Conecta conhecimentos, ferramentas e disciplinas, e já coloca coisas no mundo, mas se apoia em metodologias emprestadas como muletas, e por isso cada entrega recomeça do zero. Falta a visão sistêmica capaz de transformar esforço repetido em estrutura que se mantém. A questão não é mais aprender: é desaprender e reconstruir. |
 | **Arquétipo** | Alquimista conceitual: combina o que estava separado. |
-| **Momento de vida** | Pessoas com algo real no ar: uma oferta que vende de vez em quando, um produto lançado, um pequeno negócio que depende inteiramente delas. Podem vir da engenharia, da arte, da arquitetura, do design ou de nenhuma formação específica — o que define é o estado, não a profissão. Já sentem a inadequação dos métodos emprestados, mas ainda não sabem como romper. |
-| **JTBD Funcional** | Construir um sistema próprio — processo, oferta e modelo — que sustente o que já foi lançado sem depender de reinvenção a cada ciclo. |
+| **Momento de vida** | Pessoas com algo real no ar: uma oferta que vende de vez em quando, um produto lançado, um pequeno negócio que depende inteiramente delas. Podem vir da engenharia, da arte, da arquitetura, do design ou de nenhuma formação específica: o que define é o estado, não a profissão. Já sentem a inadequação dos métodos emprestados, mas ainda não sabem como romper. |
+| **JTBD Funcional** | Construir um sistema próprio (processo, oferta e modelo) que sustente o que já foi lançado sem depender de reinvenção a cada ciclo. |
 | **JTBD Emocional** | Parar de sentir que está sempre recomeçando; ter a sensação de que algo se acumula e permanece. |
-| **Motivação Primária** | Desejo profundo de construir algo que se sustente — um negócio percebido como raro, relevante e difícil de replicar. Vontade de sair do ciclo de esforço reiniciado para ocupar um lugar estratégico e autoral. |
+| **Motivação Primária** | Desejo profundo de construir algo que se sustente: um negócio percebido como raro, relevante e difícil de replicar. Vontade de sair do ciclo de esforço reiniciado para ocupar um lugar estratégico e autoral. |
 | **Medo/Frustração** | Medo de que tudo pare no dia em que ele parar. Frustração ao perceber que, mesmo com experiência e entregas feitas, nada se acumula. Ansiedade crescente frente à aceleração da IA e à exigência de construir algo mais sólido. |
 | **Paradigmas Mentais** | “Se eu dominar mais metodologias, aí sim vai engrenar.” “Preciso seguir modelos que já funcionaram para os outros.” “Só eu consigo fazer isso direito.” “É perigoso criar um sistema próprio, melhor ficar nos padrões conhecidos.” |
 | **Gatilhos de Ação** | Perceber que o segundo lançamento deu o mesmo trabalho que o primeiro. Ver um mês bom seguido de um mês vazio. Precisar recusar oportunidades por não ter estrutura. Descobrir que o negócio não funciona quando ele para. |
@@ -51,7 +51,7 @@ O atrito característico desse modo: a conexão acontece, mas ainda apoiada em m
 | **Barreira Sistêmica** | Excesso de fórmulas prontas de crescimento que não ensinam pensamento adaptativo. Pressão silenciosa por resultados imediatos num ambiente onde construir estrutura exige coragem intelectual e paciência. |
 
 **Como a Overlens entra**: Atlas (entrada e ativação) e Overpass (camada contínua).  
-**Métricas de sucesso** *(HISTÓRICO — necessitam revalidação)*:  
+**Métricas de sucesso** <dado q="D" nota="Necessitam revalidação." />:  
 Depoimento sobre receita que se repete sem novo esforço heroico  
 NPS acima de 60 pontos (mínimo)
 
@@ -189,7 +189,7 @@ Estar disposto a abandonar abordagens genéricas e reconstruir uma nova lógica 
 Início: Começa no dia da primeira aula, mas já recebe materiais de aquecimento.  
 Duração típica: Atlas dura 2 dias, dependendo do tema e do nível de profundidade.  
 Dedicação sugerida: Entre 5 a 8 horas por semana para absorver o conteúdo e realizar as aplicações práticas.  
-Entrega prática: ao acessar Overpass, em até 3 semanas o participante terá uma estrutura aplicável — oferta, processo ou modelo — pronta para sustentar o próximo ciclo.  
+Entrega prática: ao acessar Overpass, em até 3 semanas o participante terá uma estrutura aplicável (oferta, processo ou modelo) pronta para sustentar o próximo ciclo.  
 Sensação de avanço visível: Já na primeira semana, é possível perceber evolução mental e prática (novos conceitos, novas abordagens).  
 Crescimento acelerado: cada semana traz entregáveis tangíveis e reforça a arquitetura do negócio.  
 Satisfação rápida: em menos de um mês, será possível perceber que algo do que foi montado permanece.

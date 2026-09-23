@@ -1,12 +1,12 @@
 # Arquitetura de Produtos e Serviços
 
-## O mapa das ofertas da Overlens e a relação entre elas. Nem tudo o que está aqui é produto consolidado — parte é frente em construção, e a diferença está marcada.
+## O mapa das ofertas da Overlens e a relação entre elas. Nem tudo o que está aqui é produto consolidado: parte é frente em construção, e a diferença está marcada.
 
 Esta página descreve **o que existe, o que está sendo validado e o que ainda é hipótese**. Ela não define como cada produto funciona por dentro: isso pertence ao Product System, que ainda precisa ser criado.
 
 ## Espectro de entrega
 
-**EM VALIDAÇÃO.** Modelo mental para interpretar a arquitetura:
+<dado q="B" /> Modelo mental para interpretar a arquitetura:
 
 > **Aprender → Construir → Acelerar**
 
@@ -18,21 +18,21 @@ Não é obrigatório usar esses termos literalmente na comunicação pública. E
 
 | Oferta | Camada | Natureza | Status |
 | :---- | :---- | :---- | :---- |
-| **Atlas** | Entrada | Experiência de ativação | DEFINIDO — ativo |
-| **Overpass** | Continuidade | Ambiente contínuo de desenvolvimento | DEFINIDO — ativo, em redefinição |
-| **Vanguarda** | Aceleração | Programa de alta intensidade | DEFINIDO — ativo, em redefinição |
-| **Assessoria** | Serviços | Acompanhamento de negócio | EM VALIDAÇÃO — validada comercialmente |
-| **Consultoria** | Serviços | Diagnóstico e estruturação | HIPÓTESE — fronteira não definida |
-| **B2B** | Empresas | Workshops, treinamentos, programas | HIPÓTESE — sem oferta estruturada |
-| **Incubação** | Aceleração | Acompanhamento de projetos iniciais | EM VALIDAÇÃO — frente em construção |
-| **Eventos** | Transversal | Hackathons, imersões, encontros | EM VALIDAÇÃO |
-| **Produtos físicos e artefatos** | Transversal | Objetos de pertencimento | HIPÓTESE — implementação em desenvolvimento |
+| **Atlas** | Entrada | Experiência de ativação | <dado q="A" nota="Ativo." /> |
+| **Overpass** | Continuidade | Ambiente contínuo de desenvolvimento | <dado q="A" nota="Ativo, em redefinição." /> |
+| **Vanguarda** | Aceleração | Programa de alta intensidade | <dado q="A" nota="Ativo, em redefinição." /> |
+| **Assessoria** | Serviços | Acompanhamento de negócio | <dado q="B" nota="Validada comercialmente." /> |
+| **Consultoria** | Serviços | Diagnóstico e estruturação | <dado q="C" nota="Fronteira não definida." /> |
+| **B2B** | Empresas | Workshops, treinamentos, programas | <dado q="C" nota="Sem oferta estruturada." /> |
+| **Incubação** | Aceleração | Acompanhamento de projetos iniciais | <dado q="B" nota="Frente em construção." /> |
+| **Eventos** | Transversal | Hackathons, imersões, encontros | <dado q="B" /> |
+| **Produtos físicos e artefatos** | Transversal | Objetos de pertencimento | <dado q="C" nota="Implementação em desenvolvimento." /> |
 
 ---
 
 ## Atlas
 
-**DEFINIDO — ativo.** Experiência de entrada e ativação, utilizada como imersão prática de curta duração.
+<dado q="A" nota="Ativo." /> Experiência de entrada e ativação, utilizada como imersão prática de curta duração.
 
 Seu papel no ecossistema envolve aquisição de novos usuários, primeira experiência com a metodologia, transformação rápida, execução guiada, ativação de novos Atoms e descoberta das demais soluções da Overlens.
 
@@ -42,19 +42,19 @@ Atlas não deve ser documentado apenas como "produto barato de entrada". Preço 
 
 ## Overpass
 
-**DEFINIDO como oferta ativa · EM REDEFINIÇÃO quanto ao que é.**
+<dado q="A" nota="Oferta ativa, em redefinição quanto ao que é." />
 
 Overpass é a **camada contínua** do ecossistema: o ambiente no qual o Atom desenvolve suas capacidades continuamente.
 
 Pode reunir aprendizagem, conteúdos, IA, projetos, PBL, ferramentas, recomendações, comunidade, desenvolvimento de competências e acompanhamento de progresso.
 
-Historicamente foi estruturado como assinatura e biblioteca educacional. **Essa definição está superada.** Descrições como "Netflix de cursos" ou "biblioteca de aulas" não representam mais a ambição do produto — esses elementos podem continuar existindo, mas não são a proposta.
+Historicamente foi estruturado como assinatura e biblioteca educacional. **Essa definição está superada.** Descrições como "Netflix de cursos" ou "biblioteca de aulas" não representam mais a ambição do produto. Esses elementos podem continuar existindo, mas não são a proposta.
 
 A forma comercial (assinatura) permanece; o que mudou é o que está sendo assinado.
 
 ## Vanguarda
 
-**DEFINIDO como oferta ativa · EM REDEFINIÇÃO quanto ao enquadramento.**
+<dado q="A" nota="Oferta ativa, em redefinição quanto ao enquadramento." />
 
 Vanguarda é a **camada de aceleração** da Overlens: oferta de maior intensidade, proximidade e transformação.
 
@@ -64,7 +64,7 @@ Evitar definições estreitas como "curso premium" ou apenas "mentoria em grupo"
 
 ## Assessoria
 
-**EM VALIDAÇÃO — já validada comercialmente.**
+<dado q="B" nota="Já validada comercialmente." />
 
 A Overlens não precisa atuar apenas ensinando pessoas a fazer. Também pode participar diretamente da transformação de negócios.
 
@@ -76,7 +76,7 @@ Esta frente representa uma mudança relevante no modelo de negócio e deve apare
 
 ## Consultoria
 
-**HIPÓTESE — fronteira comercial ainda não definida.**
+<dado q="C" nota="Fronteira comercial ainda não definida." />
 
 Consultoria pode coexistir com assessoria, mas não se confunde com ela. Como princípio geral:
 
@@ -89,7 +89,7 @@ A nomenclatura comercial ainda pode mudar. Não cristalizar fronteiras contratua
 
 ## B2B
 
-**HIPÓTESE — sem oferta estruturada.**
+<dado q="C" nota="Sem oferta estruturada." />
 
 A Overlens pode atuar diretamente com empresas: workshops, treinamentos, programas internos, inovação, IA, estratégia, desenvolvimento de equipes, capacitação e projetos especiais.
 
@@ -97,7 +97,7 @@ B2B deve ser entendido como **canal e frente de receita possível**, não como u
 
 ## Incubação
 
-**EM VALIDAÇÃO — frente em construção.**
+<dado q="B" nota="Frente em construção." />
 
 Incubação significa acompanhar projetos em estágio inicial para que ganhem estrutura e evidência de viabilidade. Pode envolver análise do problema, definição de oportunidade, validação, modelo de negócio, produto, GTM, testes, métricas, acompanhamento, mentoria e conexão com pessoas e recursos.
 
@@ -109,17 +109,17 @@ Por ser frente em construção, não documentar processos ou modelos que ainda n
 
 ## Eventos
 
-**EM VALIDAÇÃO.** Experiências presenciais e online, hackathons, imersões e outros formatos.
+<dado q="B" /> Experiências presenciais e online, hackathons, imersões e outros formatos.
 
 Hackathons não devem ser tratados apenas como eventos de comunidade. Podem funcionar como mecanismo estratégico de aprendizagem, colaboração, identificação de talentos, descoberta de projetos, experimentação, geração de portfólio, incubação e formação de times.
 
-O hackathon funciona como ponte entre **aprender → construir → demonstrar → continuar**, e projetos relevantes podem eventualmente avançar para incubação. **Atom Praxis** é o nome usado para iniciativas orientadas à prática, criação, experimentação e construção — teve uso concreto no hackathon da comunidade, mas não deve ser assumido como sendo apenas um evento anual.
+O hackathon funciona como ponte entre **aprender → construir → demonstrar → continuar**, e projetos relevantes podem eventualmente avançar para incubação. **Atom Praxis** é o nome usado para iniciativas orientadas à prática, criação, experimentação e construção. Teve uso concreto no hackathon da comunidade, mas não deve ser assumido como sendo apenas um evento anual.
 
 ## Produtos físicos e artefatos
 
-**HIPÓTESE — implementação comercial em desenvolvimento.**
+<dado q="C" nota="Implementação comercial em desenvolvimento." />
 
-Livros, bonés, camisetas, mochilas, cadernos, pôsteres, garrafas e objetos especiais. A direção explorada é que alguns desses itens funcionem como **artefatos de pertencimento** — representando identidade, participação, status, memória, acesso, edição limitada, experiências ou ambientes exclusivos.
+Livros, bonés, camisetas, mochilas, cadernos, pôsteres, garrafas e objetos especiais. A direção explorada é que alguns desses itens funcionem como **artefatos de pertencimento**: representando identidade, participação, status, memória, acesso, edição limitada, experiências ou ambientes exclusivos.
 
 A lógica se aproxima mais de objetos culturais do que de produtos estampados com uma marca. Não interpretar como merchandising.
 
@@ -127,7 +127,7 @@ A lógica se aproxima mais de objetos culturais do que de produtos estampados co
 
 ## Relação entre as ofertas
 
-**HIPÓTESE.** Uma leitura possível do encadeamento:
+<dado q="C" /> Uma leitura possível do encadeamento:
 
 > Atlas ativa · Overpass sustenta e desenvolve · Vanguarda acelera · Serviços e incubação atuam diretamente sobre o negócio · Eventos e artefatos atravessam todas as camadas como experiência e pertencimento.
 
@@ -139,8 +139,8 @@ Duas ressalvas importantes:
 
 ## O que precisa ser decidido
 
-1. Quais frentes se tornam unidades de negócio com dono, meta e processo — e quais continuam como experimento.
+1. Quais frentes se tornam unidades de negócio com dono, meta e processo, e quais continuam como experimento.
 2. A fronteira comercial entre assessoria e consultoria.
 3. Se existe oferta B2B dedicada ou se B2B é apenas canal.
 4. Como incubação se relaciona com Vanguarda: camadas distintas ou continuação.
-5. Se a camada de artefatos é linha de receita ou mecanismo de pertencimento — ou ambos, e com que prioridade.
+5. Se a camada de artefatos é linha de receita ou mecanismo de pertencimento, ou ambos, e com que prioridade.

@@ -165,7 +165,7 @@ export default async function MarcaDetalhePage({
                     </div>
                     <span className="text-xs text-muted-foreground">
                       Classe {p.classe}
-                      {p.classe_descricao ? ` — ${p.classe_descricao}` : ""}
+                      {p.classe_descricao ? `: ${p.classe_descricao}` : ""}
                     </span>
                     {p.situacao && (
                       <span className="text-xs text-muted-foreground">{p.situacao}</span>

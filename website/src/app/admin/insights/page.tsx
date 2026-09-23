@@ -86,7 +86,7 @@ interface InsightsData {
 const nf = new Intl.NumberFormat("pt-BR");
 
 function fmtDate(iso: string | null): string {
-  if (!iso) return "—";
+  if (!iso) return "-";
   try {
     return new Date(iso).toLocaleDateString("pt-BR", {
       day: "2-digit",
@@ -94,7 +94,7 @@ function fmtDate(iso: string | null): string {
       year: "numeric",
     });
   } catch {
-    return "—";
+    return "-";
   }
 }
 

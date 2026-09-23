@@ -24,7 +24,7 @@ As palavras da Overlens operam em camadas:
 
 - **Personas e proxies** como D.U.D, T.R.U, Brunin, Tella, Ander e Lilly são vozes que habitam o ecossistema, cada uma com função, tom e limites definidos.
 
-- **Os quatro modos** (Operante, Convergente, Emergente, Nexialista) descrevem formas de agir, aprender, pensar e criar: *Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra*. São comportamentais e cognitivos, não estágios sequenciais de maturidade, não níveis de senioridade e não funil de vendas. Uma mesma pessoa pode operar em modos diferentes conforme o problema. **[EM VALIDAÇÃO]**
+- **Os quatro modos** (Operante, Convergente, Emergente, Nexialista) descrevem formas de agir, aprender, pensar e criar: *Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra*. São comportamentais e cognitivos, não estágios sequenciais de maturidade, não níveis de senioridade e não funil de vendas. Uma mesma pessoa pode operar em modos diferentes conforme o problema. <dado q="B" />
 
 - **Lugares simbólicos** como Parallax, Arcádia, Téssera, Orbital e Noumenom fazem parte do worldbuilding e representam dimensões da atividade criativa.
 
@@ -36,37 +36,37 @@ As palavras da Overlens operam em camadas:
 
 Os verbetes abaixo mudaram de sentido ou entraram no vocabulário durante a revisão em curso. Enquanto o glossário do site é atualizado, valem as definições registradas aqui.
 
-**Atom** — Identidade básica de um membro da comunidade Overlens. Não é aluno, assinante, comprador, lead nem usuário; essas são condições transacionais ou funcionais. Atom é identidade de pertencimento. A definição conceitual completa está na página Atom, no Núcleo da Marca; a implementação operacional pertence ao Community System. **[EM VALIDAÇÃO]**
+**Atom**: identidade básica de um membro da comunidade Overlens. Não é aluno, assinante, comprador, lead nem usuário; essas são condições transacionais ou funcionais. Atom é identidade de pertencimento. A definição conceitual completa está na página Atom, no Núcleo da Marca; a implementação operacional pertence ao Community System. <dado q="B" />
 
-**Atom Praxis** — Nome das iniciativas orientadas à prática, à criação, à experimentação e à construção dentro do ecossistema. Teve uso concreto no hackathon da comunidade, mas não se reduz a um hackathon nem a um evento anual. **[EM VALIDAÇÃO]**
+**Atom Praxis**: nome das iniciativas orientadas à prática, à criação, à experimentação e à construção dentro do ecossistema. Teve uso concreto no hackathon da comunidade, mas não se reduz a um hackathon nem a um evento anual. <dado q="B" />
 
-**Praxis** — Aprendizagem transformada em ação. O princípio por trás do nome: conhecimento precisa encontrar prática, e a prática produz evidência de capacidade.
+**Praxis**: aprendizagem transformada em ação. O princípio por trás do nome: conhecimento precisa encontrar prática, e a prática produz evidência de capacidade.
 
-**Nexialismo** — Capacidade cognitiva e prática que a Overlens desenvolve: transitar entre mundos, reconhecer relações entre campos distintos e mobilizar conhecimentos diferentes para realizar ideias complexas. Permanece ligado à realização; conhecimento enciclopédico sem aplicação não é nexialismo. **Nexialista** nomeia quem opera nesse modo — não é rótulo de público, cargo ou título concedido. **[EM VALIDAÇÃO]**
+**Nexialismo**: capacidade cognitiva e prática que a Overlens desenvolve: transitar entre mundos, reconhecer relações entre campos distintos e mobilizar conhecimentos diferentes para realizar ideias complexas. Permanece ligado à realização; conhecimento enciclopédico sem aplicação não é nexialismo. **Nexialista** nomeia quem opera nesse modo. Não é rótulo de público, cargo ou título concedido. <dado q="B" />
 
-**Operante** — Modo de quem funciona dentro de sistemas, métodos e estruturas já estabelecidas, e executa bem o que já existe. Não é insulto nem julgamento de valor: operantes são necessários em qualquer sistema. *O Operante executa dentro do sistema.*
+**Operante**: modo de quem funciona dentro de sistemas, métodos e estruturas já estabelecidas, e executa bem o que já existe. Não é insulto nem julgamento de valor: operantes são necessários em qualquer sistema. *O Operante executa dentro do sistema.*
 
-**Convergente** — Modo de quem atravessa fronteiras entre conhecimentos, ferramentas e disciplinas, percebendo que uma única especialização já não resolve certos problemas. *O Convergente conecta partes que antes estavam separadas.*
+**Convergente**: modo de quem atravessa fronteiras entre conhecimentos, ferramentas e disciplinas, percebendo que uma única especialização já não resolve certos problemas. *O Convergente conecta partes que antes estavam separadas.*
 
-**Emergente** — Modo de quem cria novas formas de agir a partir dessas combinações: métodos próprios, experimentação, menor apego a processos estabelecidos. *O Emergente cria novas possibilidades a partir das conexões.*
+**Emergente**: modo de quem cria novas formas de agir a partir dessas combinações: métodos próprios, experimentação, menor apego a processos estabelecidos. *O Emergente cria novas possibilidades a partir das conexões.*
 
-**Projeto** — Unidade central da experiência Overlens. Algo que alguém quer realizar e que organiza o que vem depois: *projeto → necessidade → conhecimento → aplicação → evidência*. Não elimina aulas, livros, artigos ou trilhas; altera a relação entre eles. **[EM VALIDAÇÃO]**
+**Projeto**: unidade central da experiência Overlens. Algo que alguém quer realizar e que organiza o que vem depois: *projeto → necessidade → conhecimento → aplicação → evidência*. Não elimina aulas, livros, artigos ou trilhas; altera a relação entre eles. <dado q="B" />
 
-**Evidência** — Registro concreto do que alguém conseguiu fazer: o que foi construído, o que funcionou, o que mudou. Substitui o certificado de presença e o número exibido como prova. **[EM VALIDAÇÃO]**
+**Evidência**: registro concreto do que alguém conseguiu fazer: o que foi construído, o que funcionou, o que mudou. Substitui o certificado de presença e o número exibido como prova. <dado q="B" />
 
-**PBL / Aprendizagem Baseada em Projetos** — *Project-Based Learning.* Na Overlens não é uma metodologia adicional, e sim uma das principais estruturas que conectam aprendizagem, projeto e execução: alguém informa o que deseja alcançar e recebe uma jornada adaptada a esse objetivo, com conteúdos, ferramentas, pessoas, entregáveis, checkpoints e evidências de progresso. **[EM VALIDAÇÃO]**
+**PBL / Aprendizagem Baseada em Projetos**: *Project-Based Learning.* Na Overlens não é uma metodologia adicional, e sim uma das principais estruturas que conectam aprendizagem, projeto e execução: alguém informa o que deseja alcançar e recebe uma jornada adaptada a esse objetivo, com conteúdos, ferramentas, pessoas, entregáveis, checkpoints e evidências de progresso. <dado q="B" />
 
 ### Verbetes aposentados
 
 Registrados para que ninguém os reintroduza ao encontrar material antigo.
 
-**átomo** (unidade pequena de conteúdo ou curso especializado) — **HISTÓRICO**. A palavra já foi usada assim em versões anteriores da documentação. Em caso de conflito, vale a definição atual: Atom é o indivíduo da comunidade.
+**átomo** (unidade pequena de conteúdo ou curso especializado): <dado q="D" /> a palavra já foi usada assim em versões anteriores da documentação. Em caso de conflito, vale a definição atual: Atom é o indivíduo da comunidade.
 
-**Inconsciente** (como perfil) — **HISTÓRICO**. Não existe na formulação atual; os modos são Operante, Convergente, Emergente e Nexialista.
+**Inconsciente** (como perfil): <dado q="D" /> não existe na formulação atual; os modos são Operante, Convergente, Emergente e Nexialista.
 
-**Empreendedor Nexialista** (como nome do público) — **HISTÓRICO**. O público é o empreendedor, definido pelo que quer realizar. Nexialismo passou a ser capacidade desenvolvida, não rótulo.
+**Empreendedor Nexialista** (como nome do público): <dado q="D" /> o público é o empreendedor, definido pelo que quer realizar. Nexialismo passou a ser capacidade desenvolvida, não rótulo.
 
-**Perfis de maturidade** (como escada entre a ideia e a realidade) — **HISTÓRICO**. Os quatro modos não são estágios sequenciais.
+**Perfis de maturidade** (como escada entre a ideia e a realidade): <dado q="D" /> os quatro modos não são estágios sequenciais.
 
 ---
 

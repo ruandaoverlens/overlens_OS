@@ -2,25 +2,25 @@
 
 ## Ajudar pessoas a realizarem suas ideias.
 
-**EM VALIDAÇÃO.** Esta é a formulação atualmente explorada para a missão da Overlens. Caso a formulação oficial seja alterada, é aqui que ela deve ser atualizada — e não em cada documento que a cita.
+<dado q="B" /> Esta é a formulação atualmente explorada para a missão da Overlens. Caso a formulação oficial seja alterada, é aqui que ela deve ser atualizada, e não em cada documento que a cita.
 
 ## Como ler essa frase
 
 Cada palavra carrega peso e delimita escopo.
 
-**Ajudar** — a Overlens não constrói pela pessoa. O protagonismo é de quem tem a ideia. A empresa entrega repertório, estrutura, ferramentas, conexões e acompanhamento; a autoria permanece de quem constrói. Nas frentes de assessoria e incubação essa fronteira é mais próxima, e por isso precisa ser explicitada caso a caso.
+**Ajudar**: a Overlens não constrói pela pessoa. O protagonismo é de quem tem a ideia. A empresa entrega repertório, estrutura, ferramentas, conexões e acompanhamento; a autoria permanece de quem constrói. Nas frentes de assessoria e incubação essa fronteira é mais próxima, e por isso precisa ser explicitada caso a caso.
 
-**Pessoas** — a unidade é o indivíduo, não a profissão nem o cargo. A Overlens também pode atender empresas, mas mesmo em contexto B2B quem desenvolve capacidade é gente.
+**Pessoas**: a unidade é o indivíduo, não a profissão nem o cargo. A Overlens também pode atender empresas, mas mesmo em contexto B2B quem desenvolve capacidade é gente.
 
-**Realizarem** — o verbo é de conclusão, não de aprendizado. A missão não se cumpre quando alguém entende; cumpre-se quando alguém coloca algo de pé no mundo real.
+**Realizarem**: o verbo é de conclusão, não de aprendizado. A missão não se cumpre quando alguém entende; cumpre-se quando alguém coloca algo de pé no mundo real.
 
-**Suas ideias** — a ideia é da pessoa. A Overlens não entrega um modelo pronto para ser replicado. Isso exclui, por decisão, a lógica de fórmula de negócio replicável.
+**Suas ideias**: a ideia é da pessoa. A Overlens não entrega um modelo pronto para ser replicado. Isso exclui, por decisão, a lógica de fórmula de negócio replicável.
 
 ## Relação com o propósito histórico
 
-**HISTÓRICO, ainda coerente.** A formulação anterior do propósito da Overlens é *"colocar o poder da criação nas mãos das pessoas"*.
+<dado q="D" nota="Ainda coerente." /> A formulação anterior do propósito da Overlens é *"colocar o poder da criação nas mãos das pessoas"*.
 
-Ela não entra em conflito com a missão atual — descreve a mesma intenção em linguagem mais simbólica. A diferença é de ênfase: a formulação anterior enfatiza o **poder de criar**; a atual enfatiza a **realização da ideia**.
+Ela não entra em conflito com a missão atual: descreve a mesma intenção em linguagem mais simbólica. A diferença é de ênfase: a formulação anterior enfatiza o **poder de criar**; a atual enfatiza a **realização da ideia**.
 
 Ambas podem coexistir, com papéis distintos:
 
@@ -33,7 +33,7 @@ A definição oficial de propósito, manifesto e linguagem de marca é responsab
 
 ## Como a missão se traduz em operação
 
-**EM VALIDAÇÃO.** Se a missão é realização, então a companhia precisa ser capaz de responder mais do que "o que essa pessoa aprendeu". Precisa progressivamente responder também:
+<dado q="B" /> Se a missão é realização, então a companhia precisa ser capaz de responder mais do que "o que essa pessoa aprendeu". Precisa progressivamente responder também:
 
 - O que essa pessoa consegue fazer.
 - Quais capacidades desenvolveu.

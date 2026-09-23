@@ -230,8 +230,8 @@ export function AdUploadModal({ open, onOpenChange, onCreated }: AdUploadModalPr
         title: "Trocar o tipo do anúncio?",
         description:
           dropped === files.length
-            ? `Os ${files.length === 1 ? "arquivo selecionado será removido" : `${files.length} arquivos selecionados serão removidos`} — não são compatíveis com o novo tipo.`
-            : `${dropped === 1 ? "1 arquivo será removido" : `${dropped} arquivos serão removidos`} — só ${kept.length === 1 ? "1 é compatível" : `${kept.length} são compatíveis`} com o novo tipo.`,
+            ? `Os ${files.length === 1 ? "arquivo selecionado será removido" : `${files.length} arquivos selecionados serão removidos`}. Não são compatíveis com o novo tipo.`
+            : `${dropped === 1 ? "1 arquivo será removido" : `${dropped} arquivos serão removidos`}. Só ${kept.length === 1 ? "1 é compatível" : `${kept.length} são compatíveis`} com o novo tipo.`,
         confirmLabel: "Trocar tipo",
         cancelLabel: "Manter seleção",
       });
@@ -285,7 +285,7 @@ export function AdUploadModal({ open, onOpenChange, onCreated }: AdUploadModalPr
       }
 
       if (rejected.length > 0) {
-        setFieldError("files", `Ignorado — ${rejected.join("; ")}.`);
+        setFieldError("files", `Ignorado: ${rejected.join("; ")}.`);
         notify.warning("Alguns arquivos foram ignorados", {
           description: rejected.join("; "),
         });
@@ -326,7 +326,7 @@ export function AdUploadModal({ open, onOpenChange, onCreated }: AdUploadModalPr
     else if (type === "carousel" && files.length < 2) next.files = "Carrossel precisa de pelo menos 2 imagens.";
     else if (type !== "carousel" && files.length !== 1) next.files = "Selecione exatamente 1 arquivo.";
     else if (totalBytes > MAX_TOTAL_BYTES)
-      next.files = `Os arquivos somam ${formatMB(totalBytes)} — o limite total é ${MAX_TOTAL_MB} MB. Remova ou troque algum.`;
+      next.files = `Os arquivos somam ${formatMB(totalBytes)}. O limite total é ${MAX_TOTAL_MB} MB. Remova ou troque algum.`;
     next.ctr = validateMetric(ctr, "percent");
     next.conversion = validateMetric(conversion, "percent");
     if (type === "video") {
@@ -456,7 +456,7 @@ export function AdUploadModal({ open, onOpenChange, onCreated }: AdUploadModalPr
                 aria-required="true"
                 aria-invalid={errors.title ? true : undefined}
                 aria-describedby={errors.title ? fieldId("title-error") : undefined}
-                placeholder="Ex.: Lançamento curso outubro — variação A"
+                placeholder="Ex.: Lançamento curso outubro · variação A"
                 value={title}
                 onChange={(e) => {
                   setTitle(e.target.value);

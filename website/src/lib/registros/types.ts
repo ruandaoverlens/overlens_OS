@@ -226,7 +226,7 @@ export const ALERTA_STATUS_VARIANT: Record<AlertaStatus, BadgeVariant> = {
 // ─── Helpers ──────────────────────────────────────────────────
 
 export function formatarData(data: string | null): string {
-  if (!data) return "—";
+  if (!data) return "-";
   // Datas do tipo `date` chegam como "YYYY-MM-DD"; evitamos timezone.
   const [ano, mes, dia] = data.slice(0, 10).split("-");
   if (!ano || !mes || !dia) return data;
@@ -234,7 +234,7 @@ export function formatarData(data: string | null): string {
 }
 
 export function formatarTamanho(bytes: number | null): string {
-  if (!bytes || bytes <= 0) return "—";
+  if (!bytes || bytes <= 0) return "-";
   const unidades = ["B", "KB", "MB", "GB"];
   let valor = bytes;
   let i = 0;

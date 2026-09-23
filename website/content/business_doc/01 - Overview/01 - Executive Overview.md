@@ -1,6 +1,6 @@
 ---
 title: Executive Overview
-summary: Resumo executivo da companhia — quem é a Overlens, o que faz, para quem existe, qual mudança pretende produzir, a tese do futuro como projeto, o modelo mental Aprender → Construir → Acelerar, as cinco camadas (marca, educação, produto, comunidade, negócio) e o quadro do que mudou em relação à versão anterior da empresa.
+summary: "Resumo executivo da companhia: quem é a Overlens, o que faz, para quem existe, qual mudança pretende produzir, a tese do futuro como projeto, o modelo mental Aprender → Construir → Acelerar, as cinco camadas (marca, educação, produto, comunidade, negócio) e o quadro do que mudou em relação à versão anterior da empresa."
 topics: [visão executiva, identidade da companhia, público, tese, camadas da companhia, transição estratégica]
 keywords: [Overlens, escola de negócios, criação, realização, Ruan Braz, Rafael Braz, 2021, empreendedor, Atom, ecossistema, IA como infraestrutura, projeto como unidade central, Aprender Construir Acelerar, o futuro é um projeto, camadas da companhia, reposicionamento]
 priority: high
@@ -16,13 +16,13 @@ Educação é um dos mecanismos. IA é uma das infraestruturas. Negócios são u
 
 ## Quem somos
 
-**DEFINIDO.** A Overlens é uma escola de negócios, criação e realização. Foi fundada em 2021 por Ruan Braz e Rafael Braz, opera no Brasil de forma majoritariamente digital, com experiências presenciais pontuais, e ampliou sua equipe pela primeira vez em 2025.
+<dado q="A" /> A Overlens é uma escola de negócios, criação e realização. Foi fundada em 2021 por Ruan Braz e Rafael Braz, opera no Brasil de forma majoritariamente digital, com experiências presenciais pontuais, e ampliou sua equipe pela primeira vez em 2025.
 
 "Escola de negócios" aqui não significa escola de administração tradicional. Significa uma escola construída para pessoas que tradicionalmente não se identificam com a estética, a linguagem ou a visão de mundo de uma escola de negócios convencional.
 
 ## O que fazemos
 
-**DEFINIDO.** Ajudamos pessoas a desenvolverem as capacidades, os conhecimentos, as ferramentas, as conexões e os sistemas necessários para construir aquilo que imaginam.
+<dado q="A" /> Ajudamos pessoas a desenvolverem as capacidades, os conhecimentos, as ferramentas, as conexões e os sistemas necessários para construir aquilo que imaginam.
 
 A aprendizagem continua sendo fundamental, mas deixou de ser o objetivo final. Aprender é meio. O objetivo é **criar, construir, experimentar, validar, executar e realizar**.
 
@@ -32,9 +32,9 @@ A pergunta que organiza o ecossistema mudou:
 
 ## Para quem existimos
 
-**EM VALIDAÇÃO.** Para pessoas que possuem ideias, ambições ou visões de futuro e desejam transformá-las em realidade.
+<dado q="B" /> Para pessoas que possuem ideias, ambições ou visões de futuro e desejam transformá-las em realidade.
 
-Criadores, inventores, artistas, designers, engenheiros, empreendedores, makers, pesquisadores, construtores e sonhadores. Essas categorias não são personas independentes — são formas diferentes de nomear uma mesma característica mais profunda.
+Criadores, inventores, artistas, designers, engenheiros, empreendedores, makers, pesquisadores, construtores e sonhadores. Essas categorias não são personas independentes: são formas diferentes de nomear uma mesma característica mais profunda.
 
 A identidade do público da Overlens é cada vez menos definida por profissão e cada vez mais por **mentalidade, intenção e comportamento**.
 
@@ -42,13 +42,13 @@ A identidade do público da Overlens é cada vez menos definida por profissão e
 
 ## Qual mudança queremos produzir
 
-**DEFINIDO.** Aumentar a capacidade das pessoas de imaginar futuros possíveis e participar ativamente da construção deles.
+<dado q="A" /> Aumentar a capacidade das pessoas de imaginar futuros possíveis e participar ativamente da construção deles.
 
-Concretamente, isso significa reduzir a distância entre o que uma pessoa imagina e o que ela consegue colocar de pé — e fazer isso com repertório, julgamento e sistemas, não com fórmulas.
+Concretamente, isso significa reduzir a distância entre o que uma pessoa imagina e o que ela consegue colocar de pé, e fazer isso com repertório, julgamento e sistemas, não com fórmulas.
 
 ## Nossa tese
 
-**DEFINIDO.**
+<dado q="A" />
 
 > **O futuro não é um destino. O futuro é um projeto.**
 
@@ -58,7 +58,7 @@ A tese econômica que sustenta essa posição está detalhada em **Business Thes
 
 ## Como o ecossistema se organiza
 
-**EM VALIDAÇÃO.** Um modelo mental útil para compreender a expansão da empresa:
+<dado q="B" /> Um modelo mental útil para compreender a expansão da empresa:
 
 > **Aprender → Construir → Acelerar**
 

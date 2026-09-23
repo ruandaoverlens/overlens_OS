@@ -177,14 +177,14 @@ export function RadarPageClient({ execucoes, candidatos }: RadarPageClientProps)
                 <div className="flex min-w-0 flex-1 flex-col gap-1">
                   <div className="flex flex-wrap items-center gap-2">
                     <Badge variant={TIPO_MATCH_VARIANT[c.tipo_match]}>
-                      {TIPO_MATCH_LABEL[c.tipo_match]} · {c.score ?? "—"}
+                      {TIPO_MATCH_LABEL[c.tipo_match]} · {c.score ?? "-"}
                     </Badge>
                     <Badge variant={RADAR_CANDIDATO_STATUS_VARIANT[c.status]}>
                       {RADAR_CANDIDATO_STATUS_LABEL[c.status]}
                     </Badge>
                     <span className="truncate text-sm font-medium">
                       {c.nossaMarcaNome ? `${c.nossaMarcaNome} × ` : ""}
-                      {c.marca_texto ?? "—"}
+                      {c.marca_texto ?? "-"}
                     </span>
                   </div>
                   <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">

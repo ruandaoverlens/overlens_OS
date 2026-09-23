@@ -1,6 +1,6 @@
 ---
 title: Definição
-summary: Apresenta o Growth System da Overlens — a verdade sobre mercado, públicos, aquisição e conversão. Define o escopo (personas, ICP, segmentos, JTBD, Mapa de Empatia, Value Proposition Canvas, jornada de compra, canais, funis, CRM, growth loops e messaging), os momentos de uso e a relação com os outros systems.
+summary: Apresenta o Growth System da Overlens, a verdade sobre mercado, públicos, aquisição e conversão. Define o escopo (personas, ICP, segmentos, JTBD, Mapa de Empatia, Value Proposition Canvas, jornada de compra, canais, funis, CRM, growth loops e messaging), os momentos de uso e a relação com os outros systems.
 topics: [growth, growth system, definição, estratégia, fundamentos, mercado, aquisição, conversão]
 keywords: [growth system, livro de growth, mercado, personas, ICP, segmentos, JTBD, mapa de empatia, value proposition canvas, jornada de compra, canais, funis, CRM, growth loops, messaging, posicionamento, vendas, marketing]
 priority: high
@@ -18,7 +18,7 @@ Apresentamos o nosso pensamento estratégico em diretrizes concretas, combinando
 
 ## Sobre o que este sistema é verdade
 
-**DEFINIDO.** O Growth System é a fonte de verdade sobre **mercado, públicos, aquisição e conversão**. Quando qualquer documento da base precisar responder quem é o público, como ele decide, por onde chega e o que o convence, a resposta pertence aqui.
+<dado q="A" /> O Growth System é a fonte de verdade sobre **mercado, públicos, aquisição e conversão**. Quando qualquer documento da base precisar responder quem é o público, como ele decide, por onde chega e o que o convence, a resposta pertence aqui.
 
 O escopo cobre:
 
@@ -33,7 +33,7 @@ O escopo cobre:
 
 **Value Proposition Canvas e Mapa de Empatia pertencem a este sistema**, não ao Business Document. O Business Document explica por que o negócio existe e como ele captura valor; o Growth System explica para quem, contra o quê e por qual caminho.
 
-**Status de ambos: PENDENTE.** Nenhum dos dois será construído antes da redefinição de personas e segmentos — construí-los sobre as personas anteriores produziria um artefato que parece fundamentado e não é.
+Status de ambos: <dado q="E" /> Nenhum dos dois será construído antes da redefinição de personas e segmentos. Construí-los sobre as personas anteriores produziria um artefato que parece fundamentado e não é.
 
 ## Por que este sistema existe?
 
@@ -43,7 +43,7 @@ Não se trata de uma coletânea de boas práticas. Trata-se de um sistema de pen
 
 ## De lançamentos para operação contínua
 
-**EM VALIDAÇÃO.** A arquitetura comercial da Overlens está migrando da dependência de lançamentos para **aquisição e vendas contínuas**.
+<dado q="B" /> A arquitetura comercial da Overlens está migrando da dependência de lançamentos para **aquisição e vendas contínuas**.
 
 Isso muda o que este sistema precisa documentar. Um modelo de lançamentos organiza tudo em torno de um evento: campanha, abertura, fechamento, silêncio. Um modelo contínuo organiza tudo em torno de um **relacionamento**: CRM, vendedores, follow-up, recuperação de leads, WhatsApp, conteúdo permanente, eventos recorrentes, produtos perpétuos, expansão de clientes e retenção de longo prazo.
 
@@ -63,23 +63,23 @@ Este sistema foi estruturado em módulos autônomos, organizados para leitura co
 
 ## Relação com os outros systems
 
-**DEFINIDO.** Cada assunto tem um documento responsável. Os demais **referenciam, não redefinem**.
+<dado q="A" /> Cada assunto tem um documento responsável. Os demais **referenciam, não redefinem**.
 
 | Sistema | É verdade sobre | Fronteira com o Growth System |
 | :---- | :---- | :---- |
 | **Business Document** | Negócio: modelo, receita, arquitetura de ofertas, apostas, estratégia | O Business Document decide o que vendemos e como capturamos valor; o Growth System decide para quem e por qual caminho |
 | **Brand System** | Identidade e significado: posicionamento, narrativa, linguagem, worldbuilding, símbolos | A definição oficial de posicionamento é do Brand System; o Growth System a traduz em messaging por segmento |
-| **Growth System** | Mercado, públicos, aquisição e conversão | — |
+| **Growth System** | Mercado, públicos, aquisição e conversão | Não se aplica |
 | **Product System** | Produto: PBL, IA, projetos, competências, evidências, progresso, roadmap | O Product System define a experiência; o Growth System define a promessa que a antecede |
 | **Community System** | Comunidade: membros, níveis, rituais, reputação, progressão, papéis, governança | A comunidade é infraestrutura de realização; aqui ela aparece como fator de decisão e de retenção, não como mecânica |
 
-Dois pontos de atenção recorrentes: a definição conceitual de **Atom** pertence ao Brand System, e o dimensionamento de mercado depende de **Research & Market Intelligence**, no Business Document — que segue **PENDENTE**.
+Dois pontos de atenção recorrentes: a definição conceitual de **Atom** pertence ao Brand System, e o dimensionamento de mercado depende de **Research & Market Intelligence**, no Business Document, que segue pendente <dado q="E" />.
 
 ## Como ele evolui?
 
 Este documento está em constante construção. À medida que aprendemos com os próprios resultados, aprimoramos nossos princípios e atualizamos nossas práticas. Para sugerir alterações ou complementos, siga o protocolo estabelecido nas diretrizes editoriais internas. A versão vigente estará sempre atualizada em nosso ambiente de documentação. Mudanças são registradas com data, autoria e justificativa.
 
-Como a companhia está em transição, toda afirmação estratégica deste sistema deve carregar sua classificação de certeza: **DEFINIDO · EM VALIDAÇÃO · HIPÓTESE · HISTÓRICO · PENDENTE**. Documentar exploração como decisão tomada é o erro mais caro que esta base pode cometer.
+Como a companhia está em transição, toda afirmação estratégica deste sistema deve carregar sua classificação de certeza, registrada como uma bolinha de qualidade: **A** (definido) · **B** (em validação) · **C** (hipótese) · **D** (histórico) · **E** (pendente). Documentar exploração como decisão tomada é o erro mais caro que esta base pode cometer.
 
 ## O que este sistema representa
 

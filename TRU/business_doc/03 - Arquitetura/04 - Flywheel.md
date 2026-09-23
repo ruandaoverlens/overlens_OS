@@ -1,12 +1,12 @@
 # Flywheel
 
-## Um flywheel descreve o ciclo em que cada volta torna a próxima mais barata. O da Overlens ainda é hipótese — e está registrado aqui como hipótese.
+## Um flywheel descreve o ciclo em que cada volta torna a próxima mais barata. O da Overlens ainda é hipótese, e está registrado aqui como hipótese.
 
-**Status: HIPÓTESE. Não assumir como definitivo sem validação.**
+Status: <dado q="C" nota="Não assumir como definitivo sem validação." />
 
 A diferença entre funil e flywheel não é estética. Um funil consome energia a cada ciclo: entra investimento, sai receita, e no ciclo seguinte é preciso investir de novo. Um flywheel acumula: o resultado de um ciclo é o insumo do próximo, e o custo marginal de crescer cai com o tempo.
 
-Uma empresa de campanhas opera funil. Uma empresa de sistemas opera flywheel. A Overlens está migrando da primeira lógica para a segunda — o que torna esta página importante e, ao mesmo tempo, prematura.
+Uma empresa de campanhas opera funil. Uma empresa de sistemas opera flywheel. A Overlens está migrando da primeira lógica para a segunda, o que torna esta página importante e, ao mesmo tempo, prematura.
 
 ## Hipótese a estudar
 
@@ -25,23 +25,23 @@ Uma empresa de campanhas opera funil. Uma empresa de sistemas opera flywheel. A 
 
 ## Por que ainda é hipótese
 
-Três coisas precisariam ser verdade para que este flywheel girasse — e nenhuma delas está demonstrada:
+Três coisas precisariam ser verdade para que este flywheel girasse, e nenhuma delas está demonstrada:
 
 **1. Projetos precisam efetivamente acontecer.** Se as pessoas aprendem e não constroem, o ciclo trava na quarta etapa e o resto não existe. Esta é a dependência mais crítica de todas.
 
-**2. Resultados precisam ser observáveis.** Sem conseguir registrar o que cada pessoa construiu, não há histórias verificáveis — apenas depoimentos. Depoimento sustenta campanha; evidência sustenta reputação.
+**2. Resultados precisam ser observáveis.** Sem conseguir registrar o que cada pessoa construiu, não há histórias verificáveis, apenas depoimentos. Depoimento sustenta campanha; evidência sustenta reputação.
 
 **3. Reputação precisa converter em entrada.** É preciso que a reputação gere novos membros de forma mensurável, e não apenas admiração.
 
 ## O que aceleraria o ciclo
 
-**HIPÓTESE.** Elementos que aumentariam a velocidade de cada volta:
+<dado q="C" /> Elementos que aumentariam a velocidade de cada volta:
 
-- **PBL bem implementado** — encurta a distância entre aprender e construir.
-- **Comunidade densa** — aumenta a chance de um projeto encontrar a pessoa, o feedback ou o time que faltava.
-- **Hackathons e Atom Praxis** — comprimem o ciclo inteiro em um intervalo curto de tempo.
-- **Evidências registradas** — transformam resultado em ativo reutilizável.
-- **Incubação** — leva os melhores projetos adiante, produzindo os resultados mais visíveis.
+- **PBL bem implementado**: encurta a distância entre aprender e construir.
+- **Comunidade densa**: aumenta a chance de um projeto encontrar a pessoa, o feedback ou o time que faltava.
+- **Hackathons e Atom Praxis**: comprimem o ciclo inteiro em um intervalo curto de tempo.
+- **Evidências registradas**: transformam resultado em ativo reutilizável.
+- **Incubação**: leva os melhores projetos adiante, produzindo os resultados mais visíveis.
 
 ## O que freia o ciclo
 
@@ -59,4 +59,4 @@ Antes de tratar este flywheel como modelo operacional, é preciso conseguir obse
 3. Quantas dessas evidências viram história comunicável.
 4. Que proporção dos novos membros chega por reputação e indicação.
 
-Enquanto esses quatro pontos não forem observáveis, o flywheel é um bom modelo mental — e nada além disso. Registrá-lo como mecanismo em funcionamento seria transformar exploração estratégica em decisão oficial.
+Enquanto esses quatro pontos não forem observáveis, o flywheel é um bom modelo mental, e nada além disso. Registrá-lo como mecanismo em funcionamento seria transformar exploração estratégica em decisão oficial.

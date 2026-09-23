@@ -1,4 +1,4 @@
-Activate Design Chief agent — DS orchestrator that routes requests to the right specialist.
+Activate Design Chief agent: DS orchestrator that routes requests to the right specialist.
 
 Request: $ARGUMENTS
 

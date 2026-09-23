@@ -2,11 +2,11 @@
 
 > ## ⚠️ NECESSITA REVISÃO DE PERSONA
 >
-> Esta persona foi construída sob o **recorte anterior de público** — definido por profissão, faixa etária, renda e comportamento de consumo — e sob a formulação de **cinco estágios sequenciais de maturidade** (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas), que não existe mais.
+> Esta persona foi construída sob o **recorte anterior de público** (definido por profissão, faixa etária, renda e comportamento de consumo) e sob a formulação de **cinco estágios sequenciais de maturidade** (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas), que não existe mais.
 >
-> **Não use esta página como verdade atual** sobre o público da Overlens. O público é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.** E Operante, Convergente, Emergente e Nexialista são hoje **formas de agir, aprender, pensar e criar** — não degraus de uma escada.
+> **Não use esta página como verdade atual** sobre o público da Overlens. O público é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.** E Operante, Convergente, Emergente e Nexialista são hoje **formas de agir, aprender, pensar e criar**, não degraus de uma escada.
 >
-> **A redefinição de personas acontecerá no Growth System e ainda não foi feita.** Até lá, o conteúdo abaixo permanece preservado como registro do que foi documentado — não como base para campanha, produto ou qualificação.
+> **A redefinição de personas acontecerá no Growth System e ainda não foi feita.** Até lá, o conteúdo abaixo permanece preservado como registro do que foi documentado, não como base para campanha, produto ou qualificação.
 
 
 <div style="display:flex;gap:24px;align-items:flex-start">
@@ -43,17 +43,17 @@
 
 ## Biografia
 
-Brunin tem 18 anos e mora em São Paulo com os pais. Estuda Publicidade em uma faculdade particular, mas ainda não sente que a graduação por si só vai garantir futuro. Sempre foi considerado “o cara das ideias” pelos amigos — tem uns cinco projetos anotados no celular, nenhum deles começado.
+Brunin tem 18 anos e mora em São Paulo com os pais. Estuda Publicidade em uma faculdade particular, mas ainda não sente que a graduação por si só vai garantir futuro. Sempre foi considerado “o cara das ideias” pelos amigos: tem uns cinco projetos anotados no celular, nenhum deles começado.
 
-Ele consegue alguns bicos pequenos de social media e edição de cortes, mas nada consistente — e nenhum deles é o que ele quer fazer da vida. O dinheiro que ganha, cerca de R$1.200 por mês, somando bicos e ajuda da família, mal cobre as próprias saídas e pequenas compras. Brunin sonha em ter algo que seja dele, mas ainda não vê um caminho claro para isso.
+Ele consegue alguns bicos pequenos de social media e edição de cortes, mas nada consistente, e nenhum deles é o que ele quer fazer da vida. O dinheiro que ganha, cerca de R$1.200 por mês, somando bicos e ajuda da família, mal cobre as próprias saídas e pequenas compras. Brunin sonha em ter algo que seja dele, mas ainda não vê um caminho claro para isso.
 
 Passa horas no TikTok, YouTube e Instagram consumindo tutoriais, trends e histórias de gente que construiu algo do zero. Tem dezenas de PDFs de cursos e materiais salvos no computador, mas raramente finaliza algum. Sente uma mistura de entusiasmo e ansiedade: percebe que o mundo está mudando rápido, principalmente com a chegada da IA, mas não sabe como agir sem se perder.
 
 Ao mesmo tempo em que acha fascinante o que as novas tecnologias permitem, sente culpa de usar “atalhos”. Tem medo de ser julgado pelos colegas ou até de estar “trapaceando” o ofício criativo. Esse conflito o deixa paralisado: quer experimentar mais, mas não consegue assumir isso com confiança.
 
-O maior sonho de Brunin é ver uma das ideias que ele carrega existindo de verdade — algo que ele possa apontar e dizer “isso aqui é meu”. Ele não sonha em ser contratado; sonha em construir. Mas não faz ideia de por onde uma pessoa começa, e por isso ainda repete o roteiro que ouve em casa. No fundo, procura uma trilha clara, guiada e prática, algo que mostre que ele não está sozinho e que existe um caminho realista sem jogar fora tudo que já construiu.
+O maior sonho de Brunin é ver uma das ideias que ele carrega existindo de verdade, algo que ele possa apontar e dizer “isso aqui é meu”. Ele não sonha em ser contratado; sonha em construir. Mas não faz ideia de por onde uma pessoa começa, e por isso ainda repete o roteiro que ouve em casa. No fundo, procura uma trilha clara, guiada e prática, algo que mostre que ele não está sozinho e que existe um caminho realista sem jogar fora tudo que já construiu.
 
-Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sabe que precisa mudar, mas ainda está preso na esperança de que “um dia as coisas se resolvem”. Ele representa o início da jornada: tem vontade, não tem direção — sente o chamado do novo, mas ainda não deu o primeiro passo firme para atravessar o portal.
+Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sabe que precisa mudar, mas ainda está preso na esperança de que “um dia as coisas se resolvem”. Ele representa o início da jornada: tem vontade, não tem direção. Sente o chamado do novo, mas ainda não deu o primeiro passo firme para atravessar o portal.
 
 ### Tom de Voz do Brunin
 
@@ -166,4 +166,4 @@ Hoje, vive nesse dilema entre consumo e ação: curioso, mas inseguro. Brunin sa
 
 ---
 
-Brunin é uma representação precisa e específica dos Inconscientes: tem vontade, não tem direção. A origem dele é publicitária por acaso, não por definição — o mesmo padrão aparece em quem estuda engenharia, arquitetura ou nada, e o traço transversal é sempre o mesmo: **ideias guardadas há anos \+ nenhum primeiro passo dado**. Ele encarna a faixa mais jovem do público (18–24 anos), sem deixar de refletir dores que também aparecem em perfis muito mais velhos.
+Brunin é uma representação precisa e específica dos Inconscientes: tem vontade, não tem direção. A origem dele é publicitária por acaso, não por definição: o mesmo padrão aparece em quem estuda engenharia, arquitetura ou nada, e o traço transversal é sempre o mesmo: **ideias guardadas há anos \+ nenhum primeiro passo dado**. Ele encarna a faixa mais jovem do público (de 18 a 24 anos), sem deixar de refletir dores que também aparecem em perfis muito mais velhos.

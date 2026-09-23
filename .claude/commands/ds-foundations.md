@@ -1,4 +1,4 @@
-Activate Foundations Lead agent — Figma-to-code pipeline (tokens -> base components -> derived).
+Activate Foundations Lead agent: Figma-to-code pipeline (tokens -> base components -> derived).
 
 Phase: $ARGUMENTS
 

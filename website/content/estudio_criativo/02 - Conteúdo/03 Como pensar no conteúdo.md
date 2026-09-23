@@ -1,6 +1,6 @@
 ---
 title: Como pensar no conteúdo
-summary: Estabelece o método de pensamento antes da execução — contexto, utilidade, abrangência, enquadramento — e explica a lacuna entre valor real e valor percebido que define se um conteúdo será visto ou ignorado.
+summary: Estabelece o método de pensamento antes da execução (contexto, utilidade, abrangência, enquadramento) e explica a lacuna entre valor real e valor percebido que define se um conteúdo será visto ou ignorado.
 topics: [estratégia de conteúdo, contexto, utilidade, valor percebido, enquadramento]
 keywords: [contexto, utilidade, abrangência, enquadramento, valor real, valor percebido, heurísticas, atenção, viés de confirmação, headlines]
 priority: high

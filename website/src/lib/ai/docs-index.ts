@@ -6,6 +6,7 @@ import {
   type DocFile,
 } from "@/lib/docs";
 import type { DocIndexEntry } from "./types";
+import { expandDadoTags } from "@/lib/dado";
 
 let _cache: DocIndexEntry[] | null = null;
 
@@ -80,7 +81,8 @@ export function loadDocsByIds(
         id,
         title: f.frontmatter?.title ?? f.title,
         segments: f.segments,
-        content: f.content,
+        // A IA lê melhor `[DEFINIDO]` do que `<dado q="A" />`.
+        content: expandDadoTags(f.content),
       });
     }
   }

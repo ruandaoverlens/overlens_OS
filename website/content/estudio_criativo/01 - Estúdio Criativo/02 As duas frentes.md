@@ -1,6 +1,6 @@
 ---
 title: As duas frentes do Estúdio Criativo
-summary: Detalha as duas responsabilidades complementares do Estúdio — governança dos assets de marca (visuais, verbais, sensoriais, estratégicos) e produção criativa sob demanda para os demais departamentos.
+summary: "Detalha as duas responsabilidades complementares do Estúdio: governança dos assets de marca (visuais, verbais, sensoriais, estratégicos) e produção criativa sob demanda para os demais departamentos."
 topics: [governança de marca, produção criativa, assets, estratégia, frentes de trabalho]
 keywords: [governança, assets, logotipos, tipografia, tom de voz, naming, posicionamento, briefing, formulário de solicitação, demanda]
 priority: high

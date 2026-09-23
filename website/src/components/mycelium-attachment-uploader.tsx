@@ -148,7 +148,7 @@ export function MyceliumAttachmentUploader({
         if (!tipoAceito(file)) {
           rejected.push({
             id: `${file.name}-tipo-${Date.now()}`,
-            message: `${file.name}: tipo não aceito — use imagem, vídeo, áudio ou PDF`,
+            message: `${file.name}: tipo não aceito. Use imagem, vídeo, áudio ou PDF`,
           });
           continue;
         }

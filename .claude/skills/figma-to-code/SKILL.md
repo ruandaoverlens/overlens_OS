@@ -23,4 +23,4 @@ Convert a Figma design into a component that follows ds-overlens conventions.
    - Dark-only styles using oklch design tokens
    - Named exports
 5. Create a Storybook story file alongside the component
-6. Adapt Figma's visual output to the project's Tailwind CSS 4 setup — do not copy raw styles
+6. Adapt Figma's visual output to the project's Tailwind CSS 4 setup. Do not copy raw styles

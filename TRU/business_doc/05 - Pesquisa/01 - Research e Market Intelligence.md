@@ -8,7 +8,7 @@ Esta seção existe na estrutura e **não deve ser preenchida com suposições**
 
 A companhia mudou de categoria. Deixou de se descrever como escola de IA, design e criatividade para pessoas definidas por profissão, e passou a se descrever como escola de negócios, criação e realização para pessoas definidas por mentalidade e intenção.
 
-Isso invalidou todo o dimensionamento anterior. Os números que existiam na base descreviam o mercado de serviços criativos e de profissionais de design — **outro universo**. Reaproveitá-los com rótulo novo produziria um plano que parece fundamentado e não é.
+Isso invalidou todo o dimensionamento anterior. Os números que existiam na base descreviam o mercado de serviços criativos e de profissionais de design: **outro universo**. Reaproveitá-los com rótulo novo produziria um plano que parece fundamentado e não é.
 
 Preencher esta seção agora seria o erro mais caro desta base: um número inventado é lido como fato por todo agente e toda pessoa que encontrar este documento depois.
 
@@ -22,7 +22,7 @@ Preencher esta seção agora seria o erro mais caro desta base: um número inven
 | **Categorias** | Em que categorias a Overlens é comparada e por quem. |
 | **Concorrentes** | Quem disputa a mesma decisão de compra hoje. |
 | **Categorias adjacentes** | Quem disputa a mesma verba sem ser concorrente direto. |
-| **Substitutos e alternativas** | O que as pessoas usam quando não compram nada — incluindo modelos de IA gerais e autoformação. |
+| **Substitutos e alternativas** | O que as pessoas usam quando não compram nada, incluindo modelos de IA gerais e autoformação. |
 | **Oportunidades** | Onde há demanda mal atendida. |
 | **Riscos e movimentações** | O que muda no cenário e o que ameaça a posição. |
 | **Benchmarking** | Referências dentro e fora da categoria. |
@@ -64,4 +64,4 @@ Preencher esta seção agora seria o erro mais caro desta base: um número inven
 
 ## Enquanto isso
 
-Toda decisão que depende de dimensionamento de mercado deve ser tomada sabendo que essa base não existe — e declarando isso. O documento **Riscos e Incertezas** registra quais decisões estão bloqueadas por esta lacuna.
+Toda decisão que depende de dimensionamento de mercado deve ser tomada sabendo que essa base não existe, e declarando isso. O documento **Riscos e Incertezas** registra quais decisões estão bloqueadas por esta lacuna.

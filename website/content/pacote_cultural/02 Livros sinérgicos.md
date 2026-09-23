@@ -1,6 +1,6 @@
 ---
 title: Livros sinérgicos
-summary: Lista curada de 12 livros sinérgicos com a filosofia da Overlens — ciência, filosofia, ficção e pensamento sistêmico. Inclui Deutsch, Hofstadter, Taleb, Aristóteles, Kuhn, Sagan, Meadows, Harari, entre outros, com comentário crítico de cada obra.
+summary: "Lista curada de 12 livros sinérgicos com a filosofia da Overlens: ciência, filosofia, ficção e pensamento sistêmico. Inclui Deutsch, Hofstadter, Taleb, Aristóteles, Kuhn, Sagan, Meadows, Harari, entre outros, com comentário crítico de cada obra."
 topics: [livros, leituras, repertório literário, ciência, filosofia, ficção, pensamento sistêmico]
 keywords: [david deutsch, hofstadter, godel escher bach, antifragile, taleb, retórica, aristóteles, ayn rand, mlodinow, lewis carroll, alice, sapiens, harari, thomas kuhn, carl sagan, donella meadows, thinking in systems, van vogt, space beagle, nexialismo, beginning of infinity]
 priority: low

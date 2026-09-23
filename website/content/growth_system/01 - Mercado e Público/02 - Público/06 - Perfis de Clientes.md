@@ -5,13 +5,13 @@ topics: [perfis de clientes, quatro modos, segmentação comportamental, jtbd, h
 keywords: [perfis de clientes, ICP, empreendedor, quatro modos, operante, convergente, emergente, nexialista, jtbd, arquétipo, paradigmas mentais, micro-gatilhos, histórico, em validação]
 priority: high
 ai_when_to_use: |
-  Use quando o usuário perguntar sobre os perfis de clientes da Overlens, segmentação comportamental, ICP, como construir um perfil novo, ou ao desenhar campanhas, jornadas, onboarding e ofertas. Os quatro modos — Operante, Convergente, Emergente e Nexialista — são formas de agir e pensar, não estágios sequenciais de maturidade. A formulação anterior de cinco perfis está preservada na seção de Histórico desta página.
+  Use quando o usuário perguntar sobre os perfis de clientes da Overlens, segmentação comportamental, ICP, como construir um perfil novo, ou ao desenhar campanhas, jornadas, onboarding e ofertas. Os quatro modos, Operante, Convergente, Emergente e Nexialista, são formas de agir e pensar, não estágios sequenciais de maturidade. A formulação anterior de cinco perfis está preservada na seção de Histórico desta página.
 related: []
 ---
 
 # Perfis de Clientes
 
-**Status desta página: EM VALIDAÇÃO.** A leitura por quatro modos comportamentais é a formulação atual e ainda está em teste. A formulação anterior, de cinco perfis sequenciais, está preservada na seção **Histórico**, ao final.
+Status desta página: <dado q="B" /> A leitura por quatro modos comportamentais é a formulação atual e ainda está em teste. A formulação anterior, de cinco perfis sequenciais, está preservada na seção **Histórico**, ao final.
 
 ## Perfis de Clientes Ideais
 
@@ -19,7 +19,7 @@ Perfis de Clientes são representações estratégicas de grupos de pessoas que 
 
 ### Objetivo dos Perfis
 
-O objetivo dos Perfis de Clientes é guiar com precisão todas as ações de comunicação, produto, experiência e estratégia. Eles servem para garantir que cada solução, cada mensagem e cada jornada criada pela Overlens esteja conectada às necessidades reais e latentes de nossos diferentes públicos — acelerando a lucidez, a evolução e a realização de quem quer transformar uma ideia em realidade.
+O objetivo dos Perfis de Clientes é guiar com precisão todas as ações de comunicação, produto, experiência e estratégia. Eles servem para garantir que cada solução, cada mensagem e cada jornada criada pela Overlens esteja conectada às necessidades reais e latentes de nossos diferentes públicos, acelerando a lucidez, a evolução e a realização de quem quer transformar uma ideia em realidade.
 
 ### Quando devem ser utilizados
 
@@ -36,21 +36,21 @@ Sempre que houver interação, entrega ou desenvolvimento de novos pontos de con
 
 ---
 
-## Os quatro modos — EM VALIDAÇÃO
+## Os quatro modos
 
 O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.**
 
-Dentro desse público, Operante, Convergente, Emergente e Nexialista descrevem **formas de agir, aprender, pensar e criar**. São modos comportamentais e cognitivos:
+<dado q="B" /> Dentro desse público, Operante, Convergente, Emergente e Nexialista descrevem **formas de agir, aprender, pensar e criar**. São modos comportamentais e cognitivos:
 
 > **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**
 
-**Operante** — funciona predominantemente dentro de sistemas, métodos e estruturas já estabelecidas. Segue métodos existentes, opera ferramentas e processos, recebe problemas relativamente definidos e executa bem dentro de paradigmas conhecidos. Sua relação é mais forte com a execução do que com a criação de novos sistemas.
+**Operante**: funciona predominantemente dentro de sistemas, métodos e estruturas já estabelecidas. Segue métodos existentes, opera ferramentas e processos, recebe problemas relativamente definidos e executa bem dentro de paradigmas conhecidos. Sua relação é mais forte com a execução do que com a criação de novos sistemas.
 
-**Convergente** — atravessa fronteiras entre conhecimentos, ferramentas e disciplinas. Percebe que uma única especialização já não resolve certos problemas: busca conhecimento fora da especialidade de origem, combina ferramentas, amplia repertório e tenta adaptar o que já sabe a contextos novos.
+**Convergente**: atravessa fronteiras entre conhecimentos, ferramentas e disciplinas. Percebe que uma única especialização já não resolve certos problemas: busca conhecimento fora da especialidade de origem, combina ferramentas, amplia repertório e tenta adaptar o que já sabe a contextos novos.
 
-**Emergente** — não apenas combina o que existe: cria novas formas de agir a partir dessas combinações. Experimenta, constrói métodos próprios, lê ativamente mudanças tecnológicas e culturais, tem menos apego a processos estabelecidos e aprende orientado a problemas e objetivos.
+**Emergente**: não apenas combina o que existe: cria novas formas de agir a partir dessas combinações. Experimenta, constrói métodos próprios, lê ativamente mudanças tecnológicas e culturais, tem menos apego a processos estabelecidos e aprende orientado a problemas e objetivos.
 
-**Nexialista** — mobiliza domínios, pessoas e competências em torno de problemas complexos. Reconhece relações entre campos diferentes, compreende sistemas, aprende rápido, combina perspectivas e transforma repertório em ação. O conceito permanece ligado à **realização**: conhecimento enciclopédico sem aplicação não é nexialismo.
+**Nexialista**: mobiliza domínios, pessoas e competências em torno de problemas complexos. Reconhece relações entre campos diferentes, compreende sistemas, aprende rápido, combina perspectivas e transforma repertório em ação. O conceito permanece ligado à **realização**: conhecimento enciclopédico sem aplicação não é nexialismo.
 
 ### O que esta leitura não é
 
@@ -62,7 +62,7 @@ Dentro desse público, Operante, Convergente, Emergente e Nexialista descrevem *
 
 Uma formulação auxiliar, útil como instrumento explicativo e não como definição oficial: *o Operante é fiel ao método; o Convergente é leal ao paradigma; o Emergente é fiel ao propósito.*
 
-O que a Overlens deseja desenvolver progressivamente é a capacidade de **executar → conectar → criar → orquestrar** — como repertório disponível, não como carreira a subir.
+O que a Overlens deseja desenvolver progressivamente é a capacidade de **executar → conectar → criar → orquestrar**, como repertório disponível, não como carreira a subir.
 
 ## Estrutura dos Perfis
 
@@ -170,11 +170,11 @@ Além disso, sugira imagens ou símbolos visuais relacionados. Crie metáforas t
 
 ---
 
-## Histórico — a formulação anterior de cinco perfis
+## Histórico: a formulação anterior de cinco perfis
 
-**Status desta seção: HISTÓRICO.** O que está abaixo foi verdadeiro na documentação anterior e é preservado como registro. **Não representa a leitura atual** e não deve ser usado como base para comunicação, produto ou qualificação.
+Status desta seção: <dado q="D" /> O que está abaixo foi verdadeiro na documentação anterior e é preservado como registro. **Não representa a leitura atual** e não deve ser usado como base para comunicação, produto ou qualificação.
 
-A formulação anterior descrevia **cinco perfis tratados como estágios sequenciais de maturidade do cliente**. O eixo declarado não era senioridade profissional, e sim **a distância entre a ideia e a realidade** — o quanto a pessoa já conseguia transformar o que imaginava em algo que existe, sustenta e cresce.
+A formulação anterior descrevia **cinco perfis tratados como estágios sequenciais de maturidade do cliente**. O eixo declarado não era senioridade profissional, e sim **a distância entre a ideia e a realidade**: o quanto a pessoa já conseguia transformar o que imaginava em algo que existe, sustenta e cresce.
 
 | Perfil (anterior) | Condição descrita |
 | :---- | :---- |
@@ -190,11 +190,11 @@ Descrições registradas na época:
 
 **Operantes**: Pessoas que já decidiram construir algo próprio e executam bem, mas não lançam. Acumulam ferramentas, cursos e começos sem fechar ciclos, sem perceber que o desafio real não é técnico: é reconstruir a própria arquitetura de valor e colocar algo no mundo.
 
-**Convergentes**: Pessoas que já lançam — têm projetos no ar, clientes ou primeiros produtos — mas não sustentam. Cada entrega recomeça do zero porque se prendem a metodologias sem construir um sistema próprio que funcione sem elas.
+**Convergentes**: Pessoas que já lançam (têm projetos no ar, clientes ou primeiros produtos), mas não sustentam. Cada entrega recomeça do zero porque se prendem a metodologias sem construir um sistema próprio que funcione sem elas.
 
 **Emergentes**: Pessoas que já têm um negócio de pé e inovam de verdade, mas dispersam energia em frentes demais. Enxergam a complexidade dos novos tempos e ainda têm dificuldade de conectar as próprias ideias em um sistema vivo e coerente que escale sem consumi-las.
 
-**Nexialistas**: Pessoas que atravessaram todas as fases anteriores e operam um ecossistema próprio — negócios, obras e redes que se sustentam e se retroalimentam. Buscam significado, legado e maestria: construir realidades que sobrevivam ao tempo, unindo criação, estratégia, tecnologia e propósito.
+**Nexialistas**: Pessoas que atravessaram todas as fases anteriores e operam um ecossistema próprio: negócios, obras e redes que se sustentam e se retroalimentam. Buscam significado, legado e maestria: construir realidades que sobrevivam ao tempo, unindo criação, estratégia, tecnologia e propósito.
 
 ### O que mudou
 

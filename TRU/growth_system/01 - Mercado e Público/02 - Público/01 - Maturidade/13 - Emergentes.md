@@ -1,12 +1,12 @@
 # Emergentes
 
-## Emergente é o modo de quem cria novas formas de agir a partir das conexões que faz — não apenas combina o que existe.
+## Emergente é o modo de quem cria novas formas de agir a partir das conexões que faz, e não apenas combina o que existe.
 
-> **Nota de enquadramento — EM VALIDAÇÃO.** Apesar do nome da pasta, **não se trata de maturidade sequencial.** Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, não degraus de uma escada nem níveis de senioridade. Não existe "ponto crítico" a ser ultrapassado nem fase anterior a ser superada. Formulação completa em `02 - Público/06 - Perfis de Clientes.md`.
+> **Nota de enquadramento.** <dado q="B" fonte="02 - Público/06 - Perfis de Clientes.md" /> Apesar do nome da pasta, **não se trata de maturidade sequencial.** Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, não degraus de uma escada nem níveis de senioridade. Não existe "ponto crítico" a ser ultrapassado nem fase anterior a ser superada. Formulação completa em `02 - Público/06 - Perfis de Clientes.md`.
 
 Quem age no modo Emergente experimenta, constrói métodos próprios, adapta-se com rapidez, lê ativamente mudanças tecnológicas e culturais, tem menos apego a processos estabelecidos e aprende orientado a problemas e objetivos.
 
-O atrito característico desse modo: criar muito e dispersar. A energia se espalha por frentes demais e a invenção não se ancora em algo que permaneça. Na Overlens, o trabalho é estruturar o invisível — alinhar estratégia, execução e visão para que o que se cria atravesse o tempo.
+O atrito característico desse modo: criar muito e dispersar. A energia se espalha por frentes demais e a invenção não se ancora em algo que permaneça. Na Overlens, o trabalho é estruturar o invisível: alinhar estratégia, execução e visão para que o que se cria atravesse o tempo.
 
 **Como a Overlens se relaciona com esse modo**: **Atlas** como experiência de entrada e ativação; **Overpass** como camada contínua; **Vanguarda** como camada de aceleração.
 
@@ -35,13 +35,13 @@ O atrito característico desse modo: criar muito e dispersar. A energia se espal
 | **Gatilhos de Ação** | Perceber que uma ideia brilhante não se sustentou por falta de estrutura. Ver peers avançando com frameworks claros enquanto ainda está lidando com fragmentação. Sentir que o tempo de inovação espontânea acabou e que agora a excelência exige estratégia deliberada. |
 | **Objeções típicas** | "Será que estruturar minhas ideias não vai engessar minha capacidade criativa?" "E se eu ainda não estiver pronto para transformar visão em sistema?" "Será que vale a pena investir tanto agora, se o futuro ainda é tão incerto?" |
 | **De/Para** | De: fundador que inova de verdade, mas dispersa energia em frentes demais ➔ Para: arquiteto de sistemas emergentes, capaz de consolidar redes de valor e sustentar um ecossistema no tempo. |
-| **Lente de sucesso** | Conseguir não apenas inovar, mas construir estruturas que sobrevivam às mudanças — sentir que está criando realidades sistêmicas e deixando marcas que evoluem no tempo. |
+| **Lente de sucesso** | Conseguir não apenas inovar, mas construir estruturas que sobrevivam às mudanças, sentir que está criando realidades sistêmicas e deixando marcas que evoluem no tempo. |
 | **Comportamento de consumo** | Plataformas: LinkedIn (networking estratégico e tendências emergentes), Medium (ensaios sobre inovação e complexidade), podcasts sobre negócios futuros, newsletters de futurologia aplicada. |
 | **Padrões de busca** | Conteúdos que falam sobre construção de sistemas, antifragilidade, inovação sustentável, frameworks de negócios emergentes. Evitam "modismos" superficiais e buscam "ferramentas para o invisível". |
 | **Barreira Sistêmica** | Ambiente repleto de "inovações vazias" que iludem com brilho superficial, mas não entregam bases estruturais. Pressão acelerada para se posicionar na vanguarda sem comprometer a profundidade, exigência de agir rápido em terrenos ainda em formação. Dificuldade de encontrar comunidades maduras o suficiente para acolher inovação genuína sem pasteurizar ou diluir a originalidade. |
 
 **Como a Overlens entra**: Atlas (entrada e ativação), Overpass (camada contínua), Vanguarda (camada de aceleração).  
-**Métricas de sucesso** *(HISTÓRICO — necessitam revalidação)*:  
+**Métricas de sucesso** <dado q="D" nota="Necessitam revalidação." />:  
 Modelo de negócio validado e resistente ao tempo  
 Ferramentas de utilidade construída  
 Churn anual \< 10%
@@ -59,7 +59,7 @@ Características principais:
 \- Se sente limitado por processos muito rígidos, mas reconhece que precisa de estrutura.
 
 Motivação: Deixar uma marca única no mundo, transformar ideias em realidades duradouras.  
-Frase representativa: "Tenho mais ideias do que braços para sustentá-las — preciso transformar visão em realidade concreta."
+Frase representativa: "Tenho mais ideias do que braços para sustentá-las. Preciso transformar visão em realidade concreta."
 
 #### O Estrategista Sistêmico
 
@@ -163,7 +163,7 @@ Identificar e evitar uma armadilha de modismo. Conseguir diferenciar tendência 
 
 "Será só mais um método bonito sem aplicação real?" \> Trauma de experiências anteriores com promessas teóricas. \> Mostrar entregáveis práticos, resultados concretos, foco em construção real desde o início.
 
-"Vou perder minha originalidade seguindo um framework?" \> Medo de perder a singularidade do próprio pensamento/criação.	\> Ressaltar que frameworks são trampolins e não gaiolas — flexibilidade é encorajada.
+"Vou perder minha originalidade seguindo um framework?" \> Medo de perder a singularidade do próprio pensamento/criação.	\> Ressaltar que frameworks são trampolins e não gaiolas, e flexibilidade é encorajada.
 
 "Será que não é só mais um modismo disfarçado?"	 \> Desconfiança em relação à autenticidade e profundidade.	\> Demonstrar lastro intelectual, referências sólidas, cases e visão de longo prazo da Overlens.
 

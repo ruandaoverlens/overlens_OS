@@ -98,10 +98,10 @@ As virtudes orientam a comunicação, comportamento e decisões da Overlens. Cad
 
 | *Camada* | *Objetivo principal* | *Virtudes*  |
 | :---- | :---- | :---- |
-| *1ª Camada – Ethos* | ***Provocar atenção** de maneira inteligente e diferenciada.* | *Provocativa* |
-| *2ª Camada – Ethos* | *Validar autoridade e relevância através de uma abordagem clara e científica.* | *Científica, Profunda* |
-| *3ª Camada – Pathos* | *Gerar conexão emocional significativa e inspiradora.* | *Inspiradora, Provocativa* |
-| *4ª Camada – Logos* | *Aprofundar com argumentos sólidos, metodologia clara e conteúdo evergreen.* | *Profunda, Científica* |
+| *1ª Camada: Ethos* | ***Provocar atenção** de maneira inteligente e diferenciada.* | *Provocativa* |
+| *2ª Camada: Ethos* | *Validar autoridade e relevância através de uma abordagem clara e científica.* | *Científica, Profunda* |
+| *3ª Camada: Pathos* | *Gerar conexão emocional significativa e inspiradora.* | *Inspiradora, Provocativa* |
+| *4ª Camada: Logos* | *Aprofundar com argumentos sólidos, metodologia clara e conteúdo evergreen.* | *Profunda, Científica* |
 
 ## **Tons Específicos e Recomendações Práticas**
 

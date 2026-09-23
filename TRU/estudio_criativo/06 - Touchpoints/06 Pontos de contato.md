@@ -6,15 +6,15 @@ A Overlens não é um logotipo que aparece em telas. É uma postura que se manif
 
 Este documento mapeia como a marca se comporta em cada ponto de contato. Não é uma lista de canais. É um sistema de experiências intencionais, onde tom, persona sintética, modo e objetivo se alinham para acompanhar o empreendedor; sem empurrá-lo, sem abandoná-lo.
 
-> **Status desta página: EM VALIDAÇÃO.** O mapa de canais, as diretrizes por canal, as métricas e os anti-padrões continuam válidos e em uso. A leitura de jornada e a atribuição de público por fase **dependem da redefinição de personas, segmentos e ICP**, que pertence ao Growth System e está **PENDENTE**. Enquanto isso não se conclui, trate as proporções de público indicadas nas tabelas como hipótese de trabalho, não como dado.
+> Status desta página: <dado q="B" /> O mapa de canais, as diretrizes por canal, as métricas e os anti-padrões continuam válidos e em uso. A leitura de jornada e a atribuição de público por fase **dependem da redefinição de personas, segmentos e ICP**, que pertence ao Growth System e está pendente <dado q="E" />. Enquanto isso não se conclui, trate as proporções de público indicadas nas tabelas como hipótese de trabalho, não como dado.
 
 ---
 
 ## Quem atravessa esses pontos de contato
 
-**DEFINIDO.** O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. O que o define é o estado, não a profissão — pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa ou de nenhuma dessas origens.
+<dado q="A" /> O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. O que o define é o estado, não a profissão: pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa ou de nenhuma dessas origens.
 
-Quem entra no ecossistema passa a ser um **Atom**: a identidade de um membro da comunidade Overlens. Não é aluno, assinante nem usuário — essas são condições transacionais. Atom é identidade de pertencimento, e vale a partir do momento em que a pessoa faz parte, não apenas quando compra.
+Quem entra no ecossistema passa a ser um **Atom**: a identidade de um membro da comunidade Overlens. Não é aluno, assinante nem usuário: essas são condições transacionais. Atom é identidade de pertencimento, e vale a partir do momento em que a pessoa faz parte, não apenas quando compra.
 
 **Comunidade não é um canal entre outros; é infraestrutura.** É dentro dela que colaboração, descoberta de pessoas, formação de times, feedback e reputação acontecem. Vários dos touchpoints descritos adiante existem para levar a ela ou para sustentá-la.
 
@@ -22,19 +22,19 @@ Quem entra no ecossistema passa a ser um **Atom**: a identidade de um membro da 
 
 ## Os quatro modos
 
-**EM VALIDAÇÃO.** As tabelas adiante citam quatro modos. Eles descrevem **formas de agir, aprender, pensar e criar** — não senioridade, não estágios obrigatórios, não gamificação:
+<dado q="B" /> As tabelas adiante citam quatro modos. Eles descrevem **formas de agir, aprender, pensar e criar**, não senioridade, não estágios obrigatórios, não gamificação:
 
 > **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**
 
 Uma mesma pessoa pode operar em modos diferentes conforme o contexto, e não existe percurso obrigatório entre eles. "Nexialista" nomeia uma capacidade que a Overlens desenvolve, nunca o nome do nosso público.
 
-**HISTÓRICO.** A versão anterior desta página organizava a jornada sobre cinco perfis lidos como escada de maturidade — Inconscientes, Operantes, Convergentes, Emergentes e Nexialistas —, definidos como "a distância entre a ideia e a realidade". Essa leitura foi substituída: "Inconscientes" deixou de existir na formulação atual e os quatro modos restantes não formam hierarquia.
+<dado q="D" /> A versão anterior desta página organizava a jornada sobre cinco perfis lidos como escada de maturidade (Inconscientes, Operantes, Convergentes, Emergentes e Nexialistas), definidos como "a distância entre a ideia e a realidade". Essa leitura foi substituída: "Inconscientes" deixou de existir na formulação atual e os quatro modos restantes não formam hierarquia.
 
 ---
 
 ## As 5 fases de experiência
 
-**EM VALIDAÇÃO.** A experiência não é um funil. É uma espiral: o empreendedor pode entrar em qualquer ponto, voltar a fases anteriores e aprofundar-se em ciclos.
+<dado q="B" /> A experiência não é um funil. É uma espiral: o empreendedor pode entrar em qualquer ponto, voltar a fases anteriores e aprofundar-se em ciclos.
 
 | Fase | Descrição | Modo mais frequente | Movimento |
 |------|-----------|---------------------|-----------|
@@ -48,7 +48,7 @@ Cada fase corresponde a uma camada retórica da comunicação da Overlens; Ethos
 
 ### Relação com a jornada macro do Business Document
 
-**HIPÓTESE.** O Business Document descreve a jornada do empreendedor no ecossistema em sete movimentos:
+<dado q="C" fonte="Business Document" /> O Business Document descreve a jornada do empreendedor no ecossistema em sete movimentos:
 
 > **Descobre → Experimenta → Aprende → Constrói → Evolui → Acelera → Pertence**
 
@@ -62,7 +62,7 @@ As cinco fases desta página são a leitura de **comunicação e marca** dessa j
 | Profundidade | Constrói · Evolui |
 | Legado | Acelera · Pertence |
 
-Duas observações importam: **Pertence** não é o fim de uma escada, é uma condição que pode começar cedo — alguém se torna Atom antes de ter concluído qualquer coisa; e **Acelera** já não descreve só um produto, mas uma frente de negócio própria.
+Duas observações importam: **Pertence** não é o fim de uma escada, é uma condição que pode começar cedo: alguém se torna Atom antes de ter concluído qualquer coisa; e **Acelera** já não descreve só um produto, mas uma frente de negócio própria.
 
 ---
 
@@ -336,7 +336,7 @@ O empreendedor entrou. Agora a experiência precisa cumprir; e exceder; a promes
 | **Objetivo** | Sustentar a comunidade como infraestrutura: troca real entre Atoms com experiências, repertórios e modos diferentes |
 
 **Diretrizes de experiência:**
-- **A comunidade não é um canal de suporte nem feature de engajamento. É infraestrutura de aprendizagem e realização.** É onde alguém encontra o conhecimento certo, a pessoa certa e o contexto certo para avançar um projeto — com curadoria de qualidade.
+- **A comunidade não é um canal de suporte nem feature de engajamento. É infraestrutura de aprendizagem e realização.** É onde alguém encontra o conhecimento certo, a pessoa certa e o contexto certo para avançar um projeto, com curadoria de qualidade.
 - **Quem está dentro é um Atom.** O tratamento é de membro de uma comunidade, não de aluno de uma escola nem de assinante de um serviço.
 - **Quem já colocou algo de pé é convidado a contribuir**, não apenas a consumir. A comunidade cresce quando quem já atravessou um problema abre caminho para quem está chegando nele.
 - **Moderação firme, não autoritária.** As regras existem para proteger a qualidade da conversa, não para silenciar.
@@ -363,7 +363,7 @@ O empreendedor entrou. Agora a experiência precisa cumprir; e exceder; a promes
 | **Tom predominante** | 30% Provocativa, 25% Científica, 25% Profunda, 20% Inspiradora |
 | **Persona sintética ativa** | Nenhuma. Voz humana direta; Ruan Braz e equipe |
 | **Modo predominante** | Emergente e Convergente |
-| **Objetivo** | Desenvolver a capacidade de orquestrar — pessoas, domínios e recursos — em torno de um projeto real. Confrontar limites com método |
+| **Objetivo** | Desenvolver a capacidade de orquestrar pessoas, domínios e recursos em torno de um projeto real. Confrontar limites com método |
 
 **Diretrizes de experiência:**
 - **A Vanguarda acelera o que já existe.** Não é curso premium nem mentoria genérica: é a camada que faz um projeto ou negócio em movimento avançar mais rápido. A intensidade é proposital, mas sempre com segurança psicológica.

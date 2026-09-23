@@ -8,9 +8,9 @@ A tese de negócio explica **por que esta empresa deveria existir agora** e por 
 
 ## O deslocamento
 
-**EM VALIDAÇÃO.**
+<dado q="B" />
 
-O mundo está reduzindo drasticamente o custo de criação por meio de IA e de novas tecnologias. Produzir um texto, uma imagem, um vídeo, um protótipo, um site, um aplicativo — tudo isso ficou ordens de magnitude mais barato e mais rápido em um intervalo curto de tempo.
+O mundo está reduzindo drasticamente o custo de criação por meio de IA e de novas tecnologias. Produzir um texto, uma imagem, um vídeo, um protótipo, um site, um aplicativo: tudo isso ficou ordens de magnitude mais barato e mais rápido em um intervalo curto de tempo.
 
 A consequência econômica é direta: **capacidade de execução deixa de ser fator de diferenciação.** Aquilo que qualquer um consegue fazer rapidamente tende a valer menos.
 
@@ -22,7 +22,7 @@ Quando a execução barateia, o valor se desloca para o que não barateou junto:
 | **Julgamento** | Com mais opções possíveis, escolher bem passa a valer mais do que executar bem. |
 | **Repertório** | Conexões entre campos distintos não são geradas por quem só domina um campo. |
 | **Estratégia** | Fazer a coisa certa na ordem certa não é acelerado por ferramenta. |
-| **Capacidade de execução real** | Colocar no mundo, sustentar e iterar — distinto de produzir artefatos. |
+| **Capacidade de execução real** | Colocar no mundo, sustentar e iterar, distinto de produzir artefatos. |
 | **Interdisciplinaridade** | Problemas relevantes raramente pertencem a uma única disciplina. |
 | **Comunidade** | Acesso a pessoas, feedback e colaboração não é replicável por software. |
 | **Distribuição** | Com abundância de oferta, ser encontrado vale mais do que existir. |
@@ -31,7 +31,7 @@ Quando a execução barateia, o valor se desloca para o que não barateou junto:
 
 ## Por que isso sustenta um negócio
 
-**EM VALIDAÇÃO.** Três consequências econômicas decorrem do deslocamento acima.
+<dado q="B" /> Três consequências econômicas decorrem do deslocamento acima.
 
 **1. Aumenta o número de pessoas que tentam construir algo próprio.** A barreira de entrada caiu. Mais gente consegue começar. Isso amplia a base de pessoas para quem a proposta da Overlens faz sentido.
 
@@ -43,7 +43,7 @@ A terceira consequência é a mais importante para a decisão de produto: **a Ov
 
 ## O papel da IA na tese
 
-**DEFINIDO.** IA deixa de ser a categoria da Overlens e passa a ser infraestrutura.
+<dado q="A" /> IA deixa de ser a categoria da Overlens e passa a ser infraestrutura.
 
 IA continua sendo tecnologia essencial para a empresa, para seus produtos e para o que ensinamos. O que muda é a posição: ela não é o produto nem o diferencial declarado. Dentro da Overlens, IA existe para potencializar aprendizagem, planejamento, execução, criação, desenvolvimento de projetos e de competências, personalização, conexão entre conhecimentos, acompanhamento de progresso, descoberta de pessoas e recursos, e transformação de ideias em projetos reais.
 
@@ -51,27 +51,27 @@ A consequência para a documentação é explícita: **qualquer material que col
 
 ## O papel do projeto na tese
 
-**EM VALIDAÇÃO.** A unidade central migra de conteúdo para projeto.
+<dado q="B" /> A unidade central migra de conteúdo para projeto.
 
 A lógica desejada é:
 
 > **Projeto → necessidade → conhecimento → aplicação → evidência.**
 
-Em vez de consumir conhecimento e depois procurar onde usá-lo, a pessoa parte de algo que quer realizar. Isso não elimina aulas, livros, artigos ou trilhas — altera a relação entre eles.
+Em vez de consumir conhecimento e depois procurar onde usá-lo, a pessoa parte de algo que quer realizar. Isso não elimina aulas, livros, artigos ou trilhas: altera a relação entre eles.
 
-Economicamente, isso importa por dois motivos. Primeiro, porque conhecimento aplicado a um projeto real gera resultado verificável, e resultado verificável é o que sustenta preço, retenção e reputação. Segundo, porque um projeto em andamento é um motivo recorrente para permanecer no ecossistema — enquanto um catálogo de conteúdo é consumido e abandonado.
+Economicamente, isso importa por dois motivos. Primeiro, porque conhecimento aplicado a um projeto real gera resultado verificável, e resultado verificável é o que sustenta preço, retenção e reputação. Segundo, porque um projeto em andamento é um motivo recorrente para permanecer no ecossistema, enquanto um catálogo de conteúdo é consumido e abandonado.
 
 ## O papel da comunidade na tese
 
-**EM VALIDAÇÃO.** Comunidade não é feature de retenção. É infraestrutura de realização.
+<dado q="B" /> Comunidade não é feature de retenção. É infraestrutura de realização.
 
 A tese é que, à medida que criar fica barato e o gargalo migra para julgamento e distribuição, o valor de estar cercado das pessoas certas aumenta. Colaboração, feedback qualificado, formação de times, descoberta de talento, reputação e oportunidade são coisas que um produto sozinho não entrega.
 
-Isso tem implicação econômica concreta: parte do valor que a Overlens entrega não é produzida pela Overlens — é produzida pelos membros entre si. Esse é um dos poucos ativos da companhia que aumentam de valor com escala em vez de se diluírem com ela.
+Isso tem implicação econômica concreta: parte do valor que a Overlens entrega não é produzida pela Overlens: é produzida pelos membros entre si. Esse é um dos poucos ativos da companhia que aumentam de valor com escala em vez de se diluírem com ela.
 
 ## Como a tese vira receita
 
-**EM VALIDAÇÃO.** Se a tese estiver correta, a companhia não deveria capturar valor apenas ensinando.
+<dado q="B" /> Se a tese estiver correta, a companhia não deveria capturar valor apenas ensinando.
 
 Uma empresa que desenvolve capacidade de realização pode capturar valor em mais de um ponto do mesmo percurso: quando alguém aprende, quando constrói, quando pertence, quando acelera, e quando precisa que alguém participe diretamente da transformação do seu negócio.
 

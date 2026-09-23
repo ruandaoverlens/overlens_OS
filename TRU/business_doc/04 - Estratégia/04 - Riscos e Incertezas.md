@@ -2,7 +2,7 @@
 
 ## Riscos não desaparecem por não serem escritos. Ficam mais caros quando se manifestam, porque ninguém se preparou.
 
-Esta página registra o que pode quebrar e o que ainda não sabemos. Não substitui análise financeira — que não existe nesta base — nem antecipa a pesquisa de mercado, que permanece pendente.
+Esta página registra o que pode quebrar e o que ainda não sabemos. Não substitui análise financeira (que não existe nesta base) nem antecipa a pesquisa de mercado, que permanece pendente.
 
 ## Riscos da transição
 
@@ -54,7 +54,7 @@ A atenção, a autoridade e a entrega de topo concentram-se de forma significati
 
 **Severidade: alta · Já é o caso.**
 
-Assessoria, consultoria, incubação e aceleração dependem das mesmas pessoas. Crescer em uma pode significar não conseguir entregar outra — e a degradação aparece na entrega, não no contrato.
+Assessoria, consultoria, incubação e aceleração dependem das mesmas pessoas. Crescer em uma pode significar não conseguir entregar outra, e a degradação aparece na entrega, não no contrato.
 
 ### E3 · PBL em escala
 
@@ -86,7 +86,7 @@ A comunidade é o candidato a moat mais forte da companhia e depende de uma prop
 
 Posicionamento precisa ser simples; universo pode ser complexo. Se compreender o worldbuilding virar pré-requisito para entender o que a empresa vende, o ativo cultural vira custo de conversão.
 
-## Incertezas — o que simplesmente não sabemos
+## Incertezas: o que simplesmente não sabemos
 
 | # | Incerteza | Decisão bloqueada |
 | :---- | :---- | :---- |
@@ -115,13 +115,13 @@ Registrados no Brand System, repetidos aqui pelo efeito direto sobre receita.
 
 ## Ordem sugerida de resolução
 
-1. **T2** — priorizar entre as frentes. Nada avança bem com nove apostas simultâneas.
-2. **I3 e I6** — consolidação financeira. Sem isso não há decisão informada possível.
-3. **T1** — concluir a revisão da base, começando pelas regras que governam os agentes.
-4. **E3** — testar PBL em escala antes de comprometer o modelo de assinatura a ele.
-5. **T3** — redefinir personas e segmentos.
-6. **E1** — descentralizar aquisição. O mais lento e o mais estruturante.
-7. **I1 e I2** — pesquisa de mercado, antes do próximo ciclo de planejamento.
+1. **T2**: priorizar entre as frentes. Nada avança bem com nove apostas simultâneas.
+2. **I3 e I6**: consolidação financeira. Sem isso não há decisão informada possível.
+3. **T1**: concluir a revisão da base, começando pelas regras que governam os agentes.
+4. **E3**: testar PBL em escala antes de comprometer o modelo de assinatura a ele.
+5. **T3**: redefinir personas e segmentos.
+6. **E1**: descentralizar aquisição. O mais lento e o mais estruturante.
+7. **I1 e I2**: pesquisa de mercado, antes do próximo ciclo de planejamento.
 
 ---
 

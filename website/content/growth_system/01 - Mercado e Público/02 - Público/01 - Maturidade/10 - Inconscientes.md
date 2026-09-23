@@ -5,35 +5,35 @@ topics: [histórico, registro do modelo anterior, perfis anteriores, quatro modo
 keywords: [inconscientes, histórico, registro, formulação anterior, cinco estágios, distância entre ideia e realidade, quatro modos, operante, convergente, emergente, nexialista, obsoleto]
 priority: low
 ai_when_to_use: |
-  Use apenas como registro histórico. "Inconscientes" NÃO existe na formulação atual da Overlens — foi um dos cinco perfis sequenciais de maturidade da documentação anterior. Se alguém perguntar sobre o perfil, explique que ele saiu da formulação e aponte para os quatro modos em "06 - Perfis de Clientes". Nada nesta página deve ser usado como base para comunicação, produto ou qualificação.
+  Use apenas como registro histórico. "Inconscientes" NÃO existe na formulação atual da Overlens: foi um dos cinco perfis sequenciais de maturidade da documentação anterior. Se alguém perguntar sobre o perfil, explique que ele saiu da formulação e aponte para os quatro modos em "06 - Perfis de Clientes". Nada nesta página deve ser usado como base para comunicação, produto ou qualificação.
 related: []
 ---
 
 # Inconscientes
 
-## ⚠️ HISTÓRICO — este perfil não existe na formulação atual
+## ⚠️ HISTÓRICO: este perfil não existe na formulação atual
 
-**Status desta página: HISTÓRICO.** "Inconscientes" era um dos **cinco perfis** da formulação anterior, em que Inconscientes, Operantes, Convergentes, Emergentes e Nexialistas eram tratados como **estágios sequenciais de maturidade do cliente**, medindo "a distância entre a ideia e a realidade".
+Status desta página: <dado q="D" /> "Inconscientes" era um dos **cinco perfis** da formulação anterior, em que Inconscientes, Operantes, Convergentes, Emergentes e Nexialistas eram tratados como **estágios sequenciais de maturidade do cliente**, medindo "a distância entre a ideia e a realidade".
 
-**Essa leitura não vale mais.** Na formulação atual, Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar** — modos comportamentais e cognitivos, não degraus de uma escada:
+**Essa leitura não vale mais.** Na formulação atual, Operante, Convergente, Emergente e Nexialista são **formas de agir, aprender, pensar e criar**, modos comportamentais e cognitivos, não degraus de uma escada:
 
 > **Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra**
 
-**"Inconscientes" não tem equivalente nessa formulação.** O conceito saiu: ele descrevia um estado de consciência prévio à escada, e a escada deixou de existir. A situação que ele tentava nomear — alguém que carrega uma ideia e ainda não encontrou como começar — continua real e continua fazendo parte do público, mas é tratada como **situação**, não como perfil ou estágio.
+**"Inconscientes" não tem equivalente nessa formulação.** O conceito saiu: ele descrevia um estado de consciência prévio à escada, e a escada deixou de existir. A situação que ele tentava nomear (alguém que carrega uma ideia e ainda não encontrou como começar) continua real e continua fazendo parte do público, mas é tratada como **situação**, não como perfil ou estágio.
 
-**Onde está a formulação atual:** `02 - Público/06 - Perfis de Clientes.md`. Registro consolidado da transição: `business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md`.
+**Onde está a formulação atual:** `02 - Público/06 - Perfis de Clientes.md`. Registro consolidado da transição: `business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md` <dado fonte="business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md" />.
 
 O conteúdo abaixo é preservado **como registro do que foi documentado**. Não deve ser usado como base para comunicação, produto, campanha ou qualificação.
 
 ---
 
-## Registro do conteúdo original — HISTÓRICO
+## Registro do conteúdo original
 
-> Texto original da página, preservado integralmente a partir daqui.
+> <dado q="D" /> Texto original da página, preservado integralmente a partir daqui.
 
 **Descrição registrada à época:** *"Inconscientes são aquelas pessoas que carregam ideias há anos sem nunca ter tirado nenhuma do papel. Têm vontade, não têm direção. Ainda não despertaram verdadeiramente para a mudança que estamos vivendo e seguem suas vidas como se o mundo fosse o mesmo de algumas décadas atrás."*
 
-**Soluções indicadas à época**: Atlas, Overpass. *(Enquadramento anterior — Atlas é hoje definida como experiência de entrada e ativação e Overpass como camada contínua.)*
+**Soluções indicadas à época**: Atlas, Overpass. *(Enquadramento anterior: Atlas é hoje definida como experiência de entrada e ativação e Overpass como camada contínua.)*
 
 ### **Ficha rápida:**
 
@@ -43,7 +43,7 @@ O conteúdo abaixo é preservado **como registro do que foi documentado**. Não 
 | :---- | :---- |
 | **Resumo Essencial** | O Inconsciente intui que algo mudou e sente que deveria estar construindo algo próprio, mas não sabe nomear o quê nem por onde começar. Precisa de um portal de iniciação: uma porta realista e segura que lhe mostre que dá para começar agora, sem destruir a vida que já tem. |
 | **Arquétipo** | Inocente que desperta para a Jornada |
-| **Momento de vida** | Pessoas de qualquer origem — técnica, criativa, acadêmica ou nenhuma — que nunca construíram nada próprio. Podem estar empregadas, estudando ou entre uma coisa e outra. Guardam ideias em notas, conversas e rascunhos há anos. Sentem-se deslocadas e ainda não sabem explicar por quê. Contato raso com tecnologia emergente. |
+| **Momento de vida** | Pessoas de qualquer origem (técnica, criativa, acadêmica ou nenhuma) que nunca construíram nada próprio. Podem estar empregadas, estudando ou entre uma coisa e outra. Guardam ideias em notas, conversas e rascunhos há anos. Sentem-se deslocadas e ainda não sabem explicar por quê. Contato raso com tecnologia emergente. |
 | **JTBD Funcional** | Encontrar uma direção clara e possível para finalmente tirar uma ideia do papel. |
 | **JTBD Emocional** | Sentir que a ideia que carrega é legítima e que ainda dá tempo de construí-la. |
 | **Motivação Primária** | Desejo de autonomia e de autoria: construir algo que seja seu. Busca de um senso de significado que o velho sistema não oferece mais. |
@@ -92,7 +92,7 @@ O conteúdo abaixo é preservado **como registro do que foi documentado**. Não 
 **E**: Segurança emocional para dar o primeiro passo sem grandes riscos.
 
 **R**: Introdução a um novo ecossistema (não é só um curso, é uma nova forma de aprender).  
-**E**: Inspiração profunda — sentir que está, finalmente, "do lado certo da história".
+**E**: Inspiração profunda: sentir que está, finalmente, "do lado certo da história".
 
 ### **Resultado dos Sonhos:** 
 

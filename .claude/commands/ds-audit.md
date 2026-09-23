@@ -1,4 +1,4 @@
-Audit the design system codebase — patterns, redundancy, tokens, components.
+Audit the design system codebase: patterns, redundancy, tokens, components.
 
 Focus: $ARGUMENTS
 

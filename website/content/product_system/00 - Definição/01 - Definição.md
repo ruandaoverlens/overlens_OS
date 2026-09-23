@@ -1,6 +1,6 @@
 ---
 title: Definição
-summary: Apresenta o Product System da Overlens — a fonte de verdade sobre como o produto funciona. Define o escopo (princípios de produto, projeto como unidade central, PBL, grafo de capacidades, evidências, IA, plataforma, roadmap e métricas), a fronteira com o Business Document e os demais systems, e registra que este sistema é majoritariamente hipótese.
+summary: Apresenta o Product System da Overlens, a fonte de verdade sobre como o produto funciona. Define o escopo (princípios de produto, projeto como unidade central, PBL, grafo de capacidades, evidências, IA, plataforma, roadmap e métricas), a fronteira com o Business Document e os demais systems, e registra que este sistema é majoritariamente hipótese.
 topics: [product system, produto, definição, fundamentos, sistemas da companhia, fontes de verdade, classificação de certeza]
 keywords: [product system, produto, PBL, projeto, IA, grafo de capacidades, competências, evidências, progresso, roadmap, métricas de produto, Overlens OS, Overpass, fonte de verdade, hipótese, pendente]
 priority: high
@@ -13,7 +13,7 @@ related: []
 
 Documento interno · Acesso restrito · Sistema novo, majoritariamente em construção
 
-## O Product System descreve como a visão da Overlens vira produto. Ele não justifica o produto — apenas explica o funcionamento dele.
+## O Product System descreve como a visão da Overlens vira produto. Ele não justifica o produto, apenas explica o funcionamento dele.
 
 A separação é simples e vale para toda a base. O **Business Document** responde *por que esse produto existe dentro do negócio*: como a companhia cria valor, como captura valor, quais apostas assume e onde pretende competir. O **Product System** responde *como esse produto funciona*: qual é a unidade central da experiência, como aprendizagem vira capacidade, o que conta como evidência, qual é o papel da IA e o que a plataforma faz hoje.
 
@@ -25,13 +25,13 @@ Quando as duas respostas divergirem, não é um problema de redação: é sinal 
 - Como aprendizagem, projeto e execução se conectam.
 - O que a Overlens precisa conseguir observar sobre cada pessoa.
 - O que conta como evidência de capacidade.
-- Qual é a função da IA dentro do produto — e qual não é.
+- Qual é a função da IA dentro do produto, e qual não é.
 - O que a plataforma própria faz hoje, o que custa e o que provaria a decisão.
 - O que ainda precisa ser decidido antes de existir roadmap.
 
 ## O que este sistema não responde
 
-Este documento referencia; não redefine. **DEFINIDO** por `.claude/rules/tese-atual.md` §10:
+Este documento referencia; não redefine. <dado q="A" nota="Definido no §10 da tese atual." fonte=".claude/rules/tese-atual.md" />
 
 | Assunto | Sistema responsável |
 | :---- | :---- |
@@ -43,27 +43,29 @@ Este documento referencia; não redefine. **DEFINIDO** por `.claude/rules/tese-a
 
 Uma consequência prática: **Overpass aparece aqui como ambiente onde o produto acontece, não como oferta comercial.** A definição da oferta está em `Business Document › Arquitetura de Produtos e Serviços`. A implementação operacional de ser um Atom pertence ao Community System; a definição conceitual de Atom pertence ao Brand System.
 
-## Classificação de certeza — obrigatória
+## Classificação de certeza obrigatória
 
 A Overlens está em transição, e documentar exploração estratégica como decisão tomada é o erro mais caro que esta base pode cometer. Toda afirmação relevante deste sistema carrega uma marcação:
 
-| Marcação | Significado |
-| :---- | :---- |
-| **DEFINIDO** | Decisão tomada e atualmente válida. |
-| **EM VALIDAÇÃO** | Direção em teste, com evidência parcial. |
-| **HIPÓTESE** | Possibilidade ainda não validada. |
-| **HISTÓRICO** | Já foi verdadeiro; não representa a direção atual. |
-| **PENDENTE** | Precisa existir e ainda não existe — não preencher com suposição. |
+| Bolinha | Significa | Quando usar |
+| :---- | :---- | :---- |
+| **A** | DEFINIDO | Decisão tomada e atualmente válida |
+| **B** | EM VALIDAÇÃO | Direção em teste, com evidência parcial |
+| **C** | HIPÓTESE | Possibilidade ainda não validada |
+| **D** | HISTÓRICO | Já foi verdadeiro; não representa a direção atual |
+| **E** | PENDENTE | Precisa existir e ainda não existe |
 
-Na dúvida entre DEFINIDO e EM VALIDAÇÃO, escolher **EM VALIDAÇÃO**. Uma informação sem marcação deve ser lida como ainda não classificada, nunca como confirmada.
+No site, cada letra aparece como um ponto colorido com tooltip, e um segundo ponto marcado **F** indica que a afirmação tem fonte declarada.
+
+Na dúvida entre **A** e **B**, escolher **B**. Uma informação sem marcação deve ser lida como ainda não classificada, nunca como confirmada.
 
 ## O estado honesto deste sistema
 
-Vale dizer isto antes de qualquer leitura: **este sistema é novo e quase tudo nele é HIPÓTESE ou PENDENTE.**
+Vale dizer isto antes de qualquer leitura: **este sistema é novo**, e quase tudo nele é <dado q="C" /> ou <dado q="E" />.
 
 O que está razoavelmente firme é a direção: projeto como unidade central, PBL como estrutura de ligação, IA como infraestrutura e não como categoria, evidência como resultado esperado. O que não existe é a implementação. Não há grafo de capacidades. Não há roadmap. Não há métrica de produto instrumentada. A plataforma que existe hoje serve principalmente à operação interna da companhia, não à experiência de aprendizagem descrita aqui.
 
-Isso não invalida o sistema — define para que ele serve agora. Ele é o lugar onde a ambição de produto fica escrita de forma verificável, para que a distância entre o que se pretende e o que existe permaneça visível em vez de ser confundida com progresso.
+Isso não invalida o sistema: define para que ele serve agora. Ele é o lugar onde a ambição de produto fica escrita de forma verificável, para que a distância entre o que se pretende e o que existe permaneça visível em vez de ser confundida com progresso.
 
 ## Estrutura
 
@@ -72,7 +74,7 @@ Isso não invalida o sistema — define para que ele serve agora. Ele é o lugar
 | **Fundamentos** | Princípios de produto, projeto como unidade central e PBL. |
 | **Sistema** | Grafo de capacidades, evidências e progresso, IA no produto. |
 | **Plataforma** | Overlens OS: o que existe, o que custa e o que provaria a decisão. |
-| **Roadmap** | Roadmap e métricas de produto — estrutura criada, conteúdo pendente. |
+| **Roadmap** | Roadmap e métricas de produto: estrutura criada, conteúdo pendente. |
 
 ## Como este sistema evolui
 

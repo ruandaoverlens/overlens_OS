@@ -1,11 +1,11 @@
 ---
 title: Research & Market Intelligence
-summary: PENDENTE DE PESQUISA — a página não contém dados de mercado. Explica por que a mudança de categoria invalidou todo o dimensionamento anterior, lista os onze temas que a seção precisará cobrir, as doze perguntas que a pesquisa deve responder e as cinco regras para quem for preenchê-la.
+summary: "PENDENTE DE PESQUISA: a página não contém dados de mercado. Explica por que a mudança de categoria invalidou todo o dimensionamento anterior, lista os onze temas que a seção precisará cobrir, as doze perguntas que a pesquisa deve responder e as cinco regras para quem for preenchê-la."
 topics: [pesquisa de mercado, market intelligence, dimensionamento, concorrência, seção pendente, regras de preenchimento]
 keywords: [research, market intelligence, TAM, SAM, SOM, tendências, segmentos, categorias, concorrentes, categorias adjacentes, substitutos, benchmarking, disposição a pagar, fonte verificável, PENDENTE, mercado brasileiro, modelos de IA gerais]
 priority: medium
 ai_when_to_use: |
-  Use apenas para afirmar que a Overlens não tem pesquisa de mercado concluída sob o recorte atual e para listar o que a pesquisa precisará conter e responder. O conteúdo está PENDENTE DE PESQUISA — nunca cite esta página como se houvesse dimensionamento, concorrentes ou números, e não derive estimativas do recorte anterior de design e economia criativa.
+  Use apenas para afirmar que a Overlens não tem pesquisa de mercado concluída sob o recorte atual e para listar o que a pesquisa precisará conter e responder. O conteúdo está PENDENTE DE PESQUISA. Nunca cite esta página como se houvesse dimensionamento, concorrentes ou números, e não derive estimativas do recorte anterior de design e economia criativa.
 related: ["business_doc/04 - Estratégia/04 - Riscos e Incertezas.md", "business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md", "business_doc/01 - Overview/04 - Business Thesis.md", "growth_system/00 - Definição/01 - Definição.md"]
 ---
 # Research & Market Intelligence
@@ -18,7 +18,7 @@ Esta seção existe na estrutura e **não deve ser preenchida com suposições**
 
 A companhia mudou de categoria. Deixou de se descrever como escola de IA, design e criatividade para pessoas definidas por profissão, e passou a se descrever como escola de negócios, criação e realização para pessoas definidas por mentalidade e intenção.
 
-Isso invalidou todo o dimensionamento anterior. Os números que existiam na base descreviam o mercado de serviços criativos e de profissionais de design — **outro universo**. Reaproveitá-los com rótulo novo produziria um plano que parece fundamentado e não é.
+Isso invalidou todo o dimensionamento anterior. Os números que existiam na base descreviam o mercado de serviços criativos e de profissionais de design: **outro universo**. Reaproveitá-los com rótulo novo produziria um plano que parece fundamentado e não é.
 
 Preencher esta seção agora seria o erro mais caro desta base: um número inventado é lido como fato por todo agente e toda pessoa que encontrar este documento depois.
 
@@ -32,7 +32,7 @@ Preencher esta seção agora seria o erro mais caro desta base: um número inven
 | **Categorias** | Em que categorias a Overlens é comparada e por quem. |
 | **Concorrentes** | Quem disputa a mesma decisão de compra hoje. |
 | **Categorias adjacentes** | Quem disputa a mesma verba sem ser concorrente direto. |
-| **Substitutos e alternativas** | O que as pessoas usam quando não compram nada — incluindo modelos de IA gerais e autoformação. |
+| **Substitutos e alternativas** | O que as pessoas usam quando não compram nada, incluindo modelos de IA gerais e autoformação. |
 | **Oportunidades** | Onde há demanda mal atendida. |
 | **Riscos e movimentações** | O que muda no cenário e o que ameaça a posição. |
 | **Benchmarking** | Referências dentro e fora da categoria. |
@@ -74,4 +74,4 @@ Preencher esta seção agora seria o erro mais caro desta base: um número inven
 
 ## Enquanto isso
 
-Toda decisão que depende de dimensionamento de mercado deve ser tomada sabendo que essa base não existe — e declarando isso. O documento **Riscos e Incertezas** registra quais decisões estão bloqueadas por esta lacuna.
+Toda decisão que depende de dimensionamento de mercado deve ser tomada sabendo que essa base não existe, e declarando isso. O documento **Riscos e Incertezas** registra quais decisões estão bloqueadas por esta lacuna.

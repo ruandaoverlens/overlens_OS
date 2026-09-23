@@ -1,4 +1,4 @@
-Activate Atlas (Token Architect) agent — Figma-to-tokens pipeline, W3C DTCG, shadcn integration.
+Activate Atlas (Token Architect) agent: Figma-to-tokens pipeline, W3C DTCG, shadcn integration.
 
 Command: $ARGUMENTS
 

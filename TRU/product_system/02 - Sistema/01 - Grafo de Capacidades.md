@@ -1,8 +1,8 @@
 # Grafo de Capacidades
 
-## A ambição é simples de enunciar e difícil de qualquer outra forma: que a Overlens consiga dizer o que cada pessoa consegue fazer — e não apenas o que ela consumiu.
+## A ambição é simples de enunciar e difícil de qualquer outra forma: que a Overlens consiga dizer o que cada pessoa consegue fazer, e não apenas o que ela consumiu.
 
-**Status: HIPÓTESE. Não existe.** Esta página descreve um conceito e o que ele exigiria, não um sistema em construção. Nenhuma decisão de modelo de dados, schema ou arquitetura técnica foi tomada, e nenhuma deve ser inferida daqui.
+**Status:** <dado q="C" nota="Não existe." /> Esta página descreve um conceito e o que ele exigiria, não um sistema em construção. Nenhuma decisão de modelo de dados, schema ou arquitetura técnica foi tomada, e nenhuma deve ser inferida daqui.
 
 A pergunta que quase toda plataforma de educação sabe responder é "o que essa pessoa estudou". É uma pergunta de consumo, e ela é fácil porque o dado aparece sozinho: basta registrar cliques, conclusões e tempo de sessão.
 
@@ -16,7 +16,7 @@ A pergunta que a Overlens precisaria responder é outra, e ela não se responde 
 | **Quais capacidades desenvolveu?** | Progressão ao longo do tempo, não estado estático. |
 | **Quais projetos realizou?** | Trabalho concluído, com escopo e resultado. |
 | **Quais evidências existem disso?** | Artefato verificável, não autorrelato. |
-| **No que está trabalhando agora?** | Contexto presente — o que torna uma sugestão relevante hoje. |
+| **No que está trabalhando agora?** | Contexto presente: o que torna uma sugestão relevante hoje. |
 | **No que quer se transformar?** | Intenção declarada, que dá direção ao restante. |
 | **Que conhecimentos ajudam?** | Ligação entre necessidade e repertório disponível. |
 | **Quem na comunidade pode colaborar?** | Ligação entre pessoas, a partir do que cada uma consegue fazer. |
@@ -39,14 +39,14 @@ O que se pretende aqui é o oposto em três aspectos:
 
 `Business Document › Moats` classifica este item como **"o de maior potencial e o menos existente"**. Vale reproduzir o raciocínio sem redefini-lo: um concorrente novo pode copiar conteúdo, método e interface, mas não pode copiar um histórico de capacidade demonstrada que se acumulou ao longo de anos com pessoas específicas.
 
-É também o candidato com a contra-argumentação mais dura: é a hipótese mais cara e mais longa de construir, e depende inteiramente de as pessoas registrarem o próprio trabalho. Sem registro, não há insumo — e um grafo sem insumo é uma estrutura vazia com custo de manutenção.
+É também o candidato com a contra-argumentação mais dura: é a hipótese mais cara e mais longa de construir, e depende inteiramente de as pessoas registrarem o próprio trabalho. Sem registro, não há insumo, e um grafo sem insumo é uma estrutura vazia com custo de manutenção.
 
 ## O que isto exigiria
 
-**HIPÓTESE.** O que teria que existir antes, na ordem em que a dependência se impõe:
+<dado q="C" /> O que teria que existir antes, na ordem em que a dependência se impõe:
 
 1. **Projetos reais acontecendo dentro do ecossistema.** Sem projeto, não há o que observar.
-2. **Registro de execução com fricção baixa.** Se registrar custar caro, ninguém registra — e o sistema morre de fome. Ver `Sistema › Evidências e Progresso`.
+2. **Registro de execução com fricção baixa.** Se registrar custar caro, ninguém registra, e o sistema morre de fome. Ver `Sistema › Evidências e Progresso`.
 3. **Um vocabulário comum de capacidades.** Sem linguagem compartilhada, o mesmo trabalho é descrito de cinco formas e nada se conecta. Isso é decisão de produto e de marca, não um detalhe técnico.
 4. **Critério de verificação.** Alguma forma de distinguir capacidade demonstrada de capacidade afirmada, sem transformar o processo em certificação burocrática.
 5. **Capacidade técnica e tempo de construção.** A aposta correspondente no Business Document registra isto explicitamente como condição.
@@ -63,10 +63,10 @@ O que se pretende aqui é o oposto em três aspectos:
 
 ## O que está em aberto
 
-- **PENDENTE.** O que é uma capacidade dentro da Overlens e como ela é nomeada.
-- **PENDENTE.** Como capacidade é verificada, e por quem.
-- **PENDENTE.** O que a pessoa vê do próprio grafo, e o que é visível para os outros.
-- **PENDENTE.** Como o dado se relaciona com reputação e papéis na comunidade — decisão que pertence ao **Community System**, não a este documento.
-- **PENDENTE.** Tudo o que for modelo de dados, arquitetura ou implementação. Nada disso foi decidido, e preencher com suposição seria o erro que este sistema existe para evitar.
+- <dado q="E" /> O que é uma capacidade dentro da Overlens e como ela é nomeada.
+- <dado q="E" /> Como capacidade é verificada, e por quem.
+- <dado q="E" /> O que a pessoa vê do próprio grafo, e o que é visível para os outros.
+- <dado q="E" /> Como o dado se relaciona com reputação e papéis na comunidade, decisão que pertence ao **Community System**, não a este documento.
+- <dado q="E" /> Tudo o que for modelo de dados, arquitetura ou implementação. Nada disso foi decidido, e preencher com suposição seria o erro que este sistema existe para evitar.
 
 A aposta correspondente é `Business Document › Strategic Bets › Aposta 8 · Sistema operacional de aprendizagem e realização`.

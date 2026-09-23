@@ -612,7 +612,7 @@ export const AllTypes: Story = {
     <>
       <div>
         <h3 className="mb-2 text-xs font-medium text-muted-foreground">
-          compact - 120–180px, 1:1
+          compact - de 120 a 180px, 1:1
         </h3>
         <MediaCard variant="compact">
           <MediaCardImage color="#1a1a2e" />

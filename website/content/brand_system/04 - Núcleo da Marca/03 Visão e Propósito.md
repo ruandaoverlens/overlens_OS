@@ -1,6 +1,6 @@
 ---
 title: Visão e Propósito
-summary: Articula por que a Overlens existe — o propósito de colocar o poder da criação nas mãos das pessoas, a tese do futuro como projeto e a missão de ajudar pessoas a realizarem suas ideias — e qual o papel da escola diante de um mundo em que criar ficou barato.
+summary: Articula por que a Overlens existe (o propósito de colocar o poder da criação nas mãos das pessoas, a tese do futuro como projeto e a missão de ajudar pessoas a realizarem suas ideias) e qual o papel da escola diante de um mundo em que criar ficou barato.
 topics: [propósito, visão, missão, tese de marca, futuro como projeto, manifesto fundacional]
 keywords: [Time to Build, propósito, missão, visão, o futuro não é um destino, futuro como projeto, poder da criação, realização, empreendedor, IA como infraestrutura, inteligência ampliada, Malevich, Suprematist Composition, sistêmico, redesenhar mercado]
 priority: high
@@ -23,19 +23,19 @@ related: ["brand_system/05 - Universo Verbal/02 Manifesto.md", "brand_system/04 
 
 Nosso mundo está repleto de ferramentas, mas a verdadeira criação continua rara. Há excesso de ruído, repetição, fórmulas vazias. Falta profundidade. Falta visão. Falta coragem para construir algo que realmente importa.
 
-Por isso, criamos a Overlens: uma escola de negócios, criação e realização para quem quer transformar ideias em realidade. Quem chega aqui pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa — ou de nenhuma dessas origens. A formação é circunstância. O que define quem constrói conosco é o estado: ter uma ideia, uma ambição ou uma visão de futuro e decidir colocá-la de pé. São pessoas que pensam de forma sistêmica, usam a tecnologia como inteligência ampliada e transformam as próprias ideias em marcas, produtos e negócios com propósito real.
+Por isso, criamos a Overlens: uma escola de negócios, criação e realização para quem quer transformar ideias em realidade. Quem chega aqui pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa ou de nenhuma dessas origens. A formação é circunstância. O que define quem constrói conosco é o estado: ter uma ideia, uma ambição ou uma visão de futuro e decidir colocá-la de pé. São pessoas que pensam de forma sistêmica, usam a tecnologia como inteligência ampliada e transformam as próprias ideias em marcas, produtos e negócios com propósito real.
 
 Nosso papel é preparar essas mentes para atravessar o caos com discernimento e usar a tecnologia como uma extensão do pensamento, não como substituto. Formamos aqueles que não querem apenas fazer parte do mercado, mas, sem falsa modéstia, redesenhá-lo. Criamos um novo tipo de escola, para um novo tipo de empreendedor, em um novo tipo de mundo.
 
 ### Nosso propósito
 
-**DEFINIDO.** Colocar o poder da criação nas mãos das pessoas.
+<dado q="A" /> Colocar o poder da criação nas mãos das pessoas.
 
 Esse é o propósito simbólico da Overlens desde a fundação, e ele permanece coerente com tudo o que a empresa se tornou. Ele não descreve o que vendemos; descreve por que existimos. Poder da criação, aqui, não é inspiração: é repertório, julgamento, método, ferramentas, companhia e capacidade real de colocar algo no mundo.
 
 ### Nossa tese
 
-**DEFINIDO.**
+<dado q="A" />
 
 > O futuro não é um destino. O futuro é um projeto.
 
@@ -43,12 +43,12 @@ Não é slogan. É uma tese estratégica e filosófica: futuros não acontecem p
 
 ### Nossa missão
 
-**EM VALIDAÇÃO.** Ajudar pessoas a realizarem suas ideias.
+<dado q="B" /> Ajudar pessoas a realizarem suas ideias.
 
 A formulação ainda está em teste e pode mudar de palavras, mas a direção é clara: a Overlens é avaliada pelo que as pessoas conseguem construir depois de passarem por ela, não pelo que consumiram enquanto estavam aqui.
 
 ### Nossa visão
 
-**PENDENTE.** A declaração formal de visão ainda não foi escrita. Enquanto isso, o que orienta a companhia está registrado acima, no propósito e na tese. Este espaço não deve ser preenchido por suposição.
+<dado q="E" /> A declaração formal de visão ainda não foi escrita. Enquanto isso, o que orienta a companhia está registrado acima, no propósito e na tese. Este espaço não deve ser preenchido por suposição.
 
 > Time to Build.

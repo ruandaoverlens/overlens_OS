@@ -1,4 +1,4 @@
-Next.js app for Overlens. Secrets are managed via [Infisical](https://infisical.com) — there is no `.env.local`.
+Next.js app for Overlens. Secrets are managed via [Infisical](https://infisical.com). There is no `.env.local`.
 
 ## Setup local
 
@@ -29,7 +29,7 @@ Next.js app for Overlens. Secrets are managed via [Infisical](https://infisical.
 | Script | O que faz |
 |---|---|
 | `npm run dev` | Next em modo dev, com segredos do Infisical (env `dev`) |
-| `npm run build` | Build de produção (sem wrapper — Vercel injeta env vars no build remoto) |
+| `npm run build` | Build de produção (sem wrapper; a Vercel injeta env vars no build remoto) |
 | `npm run build:local` | Build local com segredos do Infisical |
 | `npm run start` | Roda o build local (depois de `build:local`) |
 | `npm run storybook` | Storybook em dev |

@@ -1,6 +1,6 @@
 ---
 title: Iconografia
-summary: Estabelece os princípios da iconografia Overlens — ícones sólidos com pontas levemente arredondadas, preenchimento como padrão e linha como apoio — e as três escalas de uso (Medium 24px, Small 20px, Micro 16px) com prefixos Md/Sm/Micro.
+summary: Estabelece os princípios da iconografia Overlens (ícones sólidos com pontas levemente arredondadas, preenchimento como padrão e linha como apoio) e as três escalas de uso (Medium 24px, Small 20px, Micro 16px) com prefixos Md/Sm/Micro.
 topics: [iconografia, sistema de ícones, escalas, princípios de construção]
 keywords: [ícones sólidos, ícones de linha, Md, Sm, Micro, 24px, 20px, 16px, navegação, badges, tags, indicadores, preenchimento, pontas arredondadas]
 priority: medium

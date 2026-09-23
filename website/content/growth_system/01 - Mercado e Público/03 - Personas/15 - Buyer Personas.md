@@ -5,7 +5,7 @@ topics: [personas, necessita revisão de persona, registro, segmentação, comun
 keywords: [personas, buyer personas, brunin, tella, ander, lilly, necessita revisão de persona, registro histórico, quatro modos, operante, convergente, emergente, nexialista]
 priority: high
 ai_when_to_use: |
-  ATENÇÃO — estas personas NECESSITAM REVISÃO. Use apenas como registro do que foi documentado sobre Brunin, Tella, Ander e Lilly. Foram construídas sob o recorte anterior de público (definido por profissão, idade, renda e consumo) e sobre cinco estágios sequenciais de maturidade, formulação que não vale mais. Não usar como base para campanha, produto ou qualificação; a redefinição acontecerá no Growth System.
+  ATENÇÃO: estas personas NECESSITAM REVISÃO. Use apenas como registro do que foi documentado sobre Brunin, Tella, Ander e Lilly. Foram construídas sob o recorte anterior de público (definido por profissão, idade, renda e consumo) e sobre cinco estágios sequenciais de maturidade, formulação que não vale mais. Não usar como base para campanha, produto ou qualificação; a redefinição acontecerá no Growth System.
 related: []
 ---
 
@@ -13,13 +13,13 @@ related: []
 
 > ## ⚠️ NECESSITA REVISÃO DE PERSONA
 >
-> As quatro personas desta página foram construídas sob o **recorte anterior de público** — definido por profissão, faixa etária, renda e comportamento de consumo — e sob a formulação de **cinco estágios sequenciais de maturidade** (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas), que não existe mais.
+> As quatro personas desta página foram construídas sob o **recorte anterior de público** (definido por profissão, faixa etária, renda e comportamento de consumo) e sob a formulação de **cinco estágios sequenciais de maturidade** (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas), que não existe mais.
 >
-> **Não use esta página como verdade atual.** O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.** Operante, Convergente, Emergente e Nexialista são hoje **formas de agir, aprender, pensar e criar** — não degraus de uma escada. "Inconscientes" saiu da formulação.
+> **Não use esta página como verdade atual.** O público da Overlens é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.** Operante, Convergente, Emergente e Nexialista são hoje **formas de agir, aprender, pensar e criar**, não degraus de uma escada. "Inconscientes" saiu da formulação.
 >
 > **A redefinição de personas acontecerá no Growth System e ainda não foi feita.** O conteúdo abaixo permanece preservado como registro do que foi documentado.
 
-Buyer Personas são representações semi-fictícias dos principais perfis de pessoas que a Overlens atende. Elas não representam um único indivíduo específico. São arquétipos construídos a partir de padrões de comportamento, necessidades, motivações e desafios observados em **empreendedores** — pessoas que querem transformar as próprias ideias em realidade, venham elas da engenharia, da arquitetura, da arte, do design ou de nenhuma dessas origens. O que define o público é o estado, não a profissão.
+Buyer Personas são representações semi-fictícias dos principais perfis de pessoas que a Overlens atende. Elas não representam um único indivíduo específico. São arquétipos construídos a partir de padrões de comportamento, necessidades, motivações e desafios observados em **empreendedores**: pessoas que querem transformar as próprias ideias em realidade, venham elas da engenharia, da arquitetura, da arte, do design ou de nenhuma dessas origens. O que define o público é o estado, não a profissão.
 
 Criar personas ajuda a responder perguntas fundamentais:
 
@@ -35,9 +35,9 @@ Quando uma empresa não define bem suas personas, ela corre o risco de tentar fa
 * Construir experiências mais alinhadas  
 * Ajudar as pessoas certas no momento certo da jornada
 
-As quatro personas a seguir foram escritas como representações de **estágios sequenciais de maturidade**, medindo "a distância entre a ideia e a realidade". **Essa leitura é HISTÓRICA.** Na formulação atual, Operante, Convergente, Emergente e Nexialista descrevem **formas de agir, aprender, pensar e criar** — *Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra* — sem escada obrigatória e sem hierarquia de senioridade. Ver `02 - Público/06 - Perfis de Clientes.md`.
+As quatro personas a seguir foram escritas como representações de **estágios sequenciais de maturidade**, medindo "a distância entre a ideia e a realidade" <dado q="D" />. Na formulação atual, Operante, Convergente, Emergente e Nexialista descrevem **formas de agir, aprender, pensar e criar**: *Operante executa · Convergente conecta · Emergente cria · Nexialista orquestra*, sem escada obrigatória e sem hierarquia de senioridade. Ver `02 - Público/06 - Perfis de Clientes.md`.
 
-As origens das quatro personas são deliberadamente diferentes entre si — uma vem da publicidade, uma da arte, uma da engenharia, uma já opera o próprio negócio — justamente porque o público nunca foi uma profissão. A seguir, os perfis como foram documentados.
+As origens das quatro personas são deliberadamente diferentes entre si (uma vem da publicidade, uma da arte, uma da engenharia, uma já opera o próprio negócio), justamente porque o público nunca foi uma profissão. A seguir, os perfis como foram documentados.
 
 ## [Brunin: O Jovem Inconsciente]()
 
@@ -53,14 +53,14 @@ Ander é engenheiro e já lançou: mantém um produto digital próprio no ar, co
 
 ## [Lilly: A Fundadora Emergente]()
 
-Lilly já tem um negócio de pé: uma marca própria, com produtos, conteúdo e uma comunidade que a sustenta. Inova de verdade — e é exatamente por isso que dispersa. Tem sempre três ou quatro frentes abertas ao mesmo tempo, e nenhuma recebe energia suficiente para amadurecer. Seu desafio não é aprender ferramentas, é conectar o que já criou em um sistema coerente e escolher onde não colocar energia. Ela busca ambientes intelectualmente estimulantes, conversas profundas e redes de pares. Para pessoas como Lilly, a Overlens oferece direção estratégica, trocas de alto nível e ambientes de crescimento, como a mentoria Vanguarda.
+Lilly já tem um negócio de pé: uma marca própria, com produtos, conteúdo e uma comunidade que a sustenta. Inova de verdade, e é exatamente por isso que dispersa. Tem sempre três ou quatro frentes abertas ao mesmo tempo, e nenhuma recebe energia suficiente para amadurecer. Seu desafio não é aprender ferramentas, é conectar o que já criou em um sistema coerente e escolher onde não colocar energia. Ela busca ambientes intelectualmente estimulantes, conversas profundas e redes de pares. Para pessoas como Lilly, a Overlens oferece direção estratégica, trocas de alto nível e ambientes de crescimento, como a mentoria Vanguarda.
 
 ---
 
-Essas quatro personas descrevem situações diferentes, e não posições em uma escada. O texto original desta página afirmava que alguém "começa como Brunin, evolui para Tella, se torna Ander e alcança a maturidade de Lilly" — **essa leitura sequencial é HISTÓRICA e não vale mais**. Não existe percurso linear obrigatório: uma pessoa pode agir em modos diferentes conforme o problema que tem diante de si.
+Essas quatro personas descrevem situações diferentes, e não posições em uma escada. O texto original desta página afirmava que alguém "começa como Brunin, evolui para Tella, se torna Ander e alcança a maturidade de Lilly". Essa leitura sequencial não vale mais <dado q="D" />. Não existe percurso linear obrigatório: uma pessoa pode agir em modos diferentes conforme o problema que tem diante de si.
 
 O que permanece: a Overlens existe para apoiar quem quer transformar uma ideia em realidade, qualquer que seja sua origem.
 
 ---
 
-**Status desta página: NECESSITA REVISÃO DE PERSONA.** A redefinição de personas pertence ao Growth System e ainda não foi feita. Registro da transição em `business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md`.
+**Status desta página: NECESSITA REVISÃO DE PERSONA.** A redefinição de personas pertence ao Growth System e ainda não foi feita. Registro da transição em `business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md` <dado fonte="business_doc/06 - Histórico/02 - Registro do Modelo Anterior.md" />.

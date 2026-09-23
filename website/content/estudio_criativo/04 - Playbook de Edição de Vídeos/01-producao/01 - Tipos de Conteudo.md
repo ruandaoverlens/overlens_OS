@@ -1,6 +1,6 @@
 ---
 title: Tipos de Conteúdo
-summary: Classifica os três formatos de material bruto pelo potencial de gerar cortes — Lives (7/10, bom para cortes e YouTube), Checkpoints (8/10, perguntas e respostas) e Workshops (5/10, mais difíceis de cortar) — para orientar onde concentrar esforço de edição.
+summary: "Classifica os três formatos de material bruto pelo potencial de gerar cortes: Lives (7/10, bom para cortes e YouTube), Checkpoints (8/10, perguntas e respostas) e Workshops (5/10, mais difíceis de cortar), para orientar onde concentrar esforço de edição."
 topics: [tipos de conteúdo, lives, checkpoints, workshops, potencial de cortes]
 keywords: [lives, checkpoints, workshops, terça, quinta, perguntas e respostas, cortes, avaliação, potencial, classificação de conteúdo]
 priority: medium

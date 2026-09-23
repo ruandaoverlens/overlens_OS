@@ -44,13 +44,13 @@ export function platformLabel(value: string | null): string {
 
 /** Format a percentage value (numeric column) into "2.5%" or "—". */
 export function formatPercent(value: number | null | undefined, fractionDigits = 2): string {
-  if (value == null || Number.isNaN(value)) return "—";
+  if (value == null || Number.isNaN(value)) return "-";
   return `${Number(value).toFixed(fractionDigits)}%`;
 }
 
 /** Format seconds into "18s" or "—". */
 export function formatSeconds(value: number | null | undefined): string {
-  if (value == null || Number.isNaN(value)) return "—";
+  if (value == null || Number.isNaN(value)) return "-";
   const n = Number(value);
   if (n >= 60) {
     const m = Math.floor(n / 60);

@@ -1,6 +1,6 @@
 ---
 title: Business Principles
-summary: Doze princípios que orientam decisões econômicas e de produto quando a resposta não é óbvia — de "aprendizagem deve gerar capacidade" e "projeto precede conteúdo quando possível" até "a recusa é parte do modelo" e "vender o degrau certo" —, cada um com a aplicação prática e, quando existe, o limite honesto do princípio.
+summary: Doze princípios que orientam decisões econômicas e de produto quando a resposta não é óbvia (de "aprendizagem deve gerar capacidade" e "projeto precede conteúdo quando possível" até "a recusa é parte do modelo" e "vender o degrau certo"), cada um com a aplicação prática e, quando existe, o limite honesto do princípio.
 topics: [princípios de negócio, critérios de decisão, produto, comunidade, ética comercial, governança documental]
 keywords: [princípios de negócio, capacidade, projeto precede conteúdo, IA amplifica humanos, comunidade como infraestrutura, execução gera evidência, visão, construir antes de polir, validar antes de investir, fonte única de verdade, aposta versus decisão, recusa, degrau certo, julgamento, realização, parcimônia, unidade]
 priority: medium
@@ -12,7 +12,7 @@ related: ["brand_system/02 - Overview da Overlens/06 Princípios da Overlens.md"
 
 ## Princípios de negócio não dizem o que fazer. Dizem como decidir quando a resposta não é óbvia e ninguém tem tempo de pedir autorização.
 
-Estes princípios operam sobre decisões econômicas e de produto. Eles convivem com os **Princípios da Overlens** registrados no Brand System — julgamento, realização, parcimônia e unidade — que operam em nível cultural e de comportamento. Não são concorrentes: estes são a aplicação daqueles ao negócio.
+Estes princípios operam sobre decisões econômicas e de produto. Eles convivem com os **Princípios da Overlens** registrados no Brand System (julgamento, realização, parcimônia e unidade), que operam em nível cultural e de comportamento. Não são concorrentes: estes são a aplicação daqueles ao negócio.
 
 ---
 
@@ -46,7 +46,7 @@ IA é infraestrutura, não categoria nem substituto. Serve para aumentar a capac
 
 Comunidade não é feature de retenção nem canal de suporte. É parte de como o valor é produzido.
 
-**Na prática:** decisões que aumentam volume às custas de densidade devem ser tratadas como decisões estratégicas, não operacionais. Uma comunidade grande e rasa vale menos que uma pequena e densa — economicamente, não apenas culturalmente.
+**Na prática:** decisões que aumentam volume às custas de densidade devem ser tratadas como decisões estratégicas, não operacionais. Uma comunidade grande e rasa vale menos que uma pequena e densa (economicamente, não apenas culturalmente).
 
 ---
 
@@ -94,7 +94,7 @@ Definição duplicada é definição que vai divergir.
 
 A companhia está em transição. Exploração estratégica documentada como decisão oficial faz a organização parar de testar o que ainda não sabe.
 
-**Na prática:** toda afirmação relevante carrega sua marcação de certeza. Na dúvida entre **EM VALIDAÇÃO** e **DEFINIDO**, escolher a primeira.
+**Na prática:** toda afirmação relevante carrega sua marcação de certeza. Na dúvida entre **B** (em validação) e **A** (definido), escolher a primeira.
 
 ---
 

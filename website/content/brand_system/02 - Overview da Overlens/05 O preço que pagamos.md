@@ -1,6 +1,6 @@
 ---
 title: O preço que pagamos
-summary: Torna explícito o custo de colaborar com a Overlens — autoria, coerência, abdicar de ser "especial", ritmo realista e sustentar convicções impopulares — e por que ainda assim vale a pena.
+summary: Torna explícito o custo de colaborar com a Overlens (autoria, coerência, abdicar de ser "especial", ritmo realista e sustentar convicções impopulares) e por que ainda assim vale a pena.
 topics: [contrato implícito, exigências do colaborador, filtro de fit cultural, autoria, coerência discurso-prática]
 keywords: [autoria, coerência, ritmo, atlas, hércules, claude mellan, especial, validação, status quo, sustentar convicções, fit, sentido]
 priority: high

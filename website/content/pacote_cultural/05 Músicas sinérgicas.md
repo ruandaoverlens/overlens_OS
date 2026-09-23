@@ -1,6 +1,6 @@
 ---
 title: Músicas sinérgicas
-summary: Paisagem sonora da Overlens — 6 playlists históricas da jornada da escola (2020 a 2025) e 12 músicas individuais que ressoam com o pensamento nexialista. Inclui Radiohead, Daft Punk, Massive Attack, Björk, Hans Zimmer, Göransson, John Williams, Jon Hopkins, Ólafur Arnalds, Nils Frahm, Sakamoto e Aphex Twin.
+summary: "Paisagem sonora da Overlens: 6 playlists históricas da jornada da escola (2020 a 2025) e 12 músicas individuais que ressoam com o pensamento nexialista. Inclui Radiohead, Daft Punk, Massive Attack, Björk, Hans Zimmer, Göransson, John Williams, Jon Hopkins, Ólafur Arnalds, Nils Frahm, Sakamoto e Aphex Twin."
 topics: [música, trilha sonora, playlists, paisagem sonora, repertório musical]
 keywords: [radiohead, daft punk, massive attack, björk, hans zimmer, ludwig göransson, john williams, jon hopkins, ólafur arnalds, nils frahm, ryuichi sakamoto, aphex twin, kid a, random access memories, mezzanine, interstellar ost, oppenheimer, star wars, immunity, spaces, playlists overlens, spotify]
 priority: low

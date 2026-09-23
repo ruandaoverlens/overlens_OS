@@ -1,8 +1,8 @@
 # Registro do Modelo Anterior
 
-## O modelo de negócio da Overlens tal como estava documentado antes desta transição. Preservado como registro — não como definição vigente.
+## O modelo de negócio da Overlens tal como estava documentado antes desta transição. Preservado como registro, não como definição vigente.
 
-**Status de tudo nesta página: HISTÓRICO.**
+Status de tudo nesta página: <dado q="D" />
 
 Esta página existe por dois motivos: porque parte destas informações continua sendo historicamente verdadeira e útil, e porque saber o que a base afirmava antes ajuda a reconhecer material desatualizado quando ele aparecer em outros documentos.
 
@@ -17,7 +17,7 @@ Esta página existe por dois motivos: porque parte destas informações continua
 | Setor macro | Educação, Tecnologia, Economia Criativa e Entretenimento |
 | Subsetor | Edtech, Empreendedorismo, Futurismo |
 | Categoria | Escola de negócios emergentes e inovação **com foco em IA** |
-| Público | "Empreendedores Nexialistas" — criadores, sonhadores, engenheiros, designers, artistas e arquitetos |
+| Público | "Empreendedores Nexialistas": criadores, sonhadores, engenheiros, designers, artistas e arquitetos |
 | Público expandido | Equipes de inovação, times de marketing, agências e startups |
 
 **O que mudou:** IA deixou de ser a categoria e passou a ser infraestrutura. O público deixou de ser nomeado por rótulo próprio e passou a ser definido por mentalidade e intenção. "Escola de negócios emergentes" evoluiu para "escola de negócios, criação e realização".
@@ -36,7 +36,7 @@ Cinco perfis que mediam **a distância entre a ideia e a realidade**, tratados c
 | Emergentes | Têm negócio de pé, dispersam energia em frentes demais |
 | Nexialistas | Operam ecossistema próprio |
 
-**O que mudou:** Operante, Convergente, Emergente e Nexialista deixaram de ser estágios sequenciais de maturidade do cliente e passaram a ser **formas de agir, aprender, pensar e criar** — comportamentais e cognitivas. A leitura atual é **executa → conecta → cria → orquestra**, sem pressupor percurso linear obrigatório nem sistema formal de gamificação. "Inconscientes" não aparece na formulação atual.
+**O que mudou:** Operante, Convergente, Emergente e Nexialista deixaram de ser estágios sequenciais de maturidade do cliente e passaram a ser **formas de agir, aprender, pensar e criar**: comportamentais e cognitivas. A leitura atual é **executa → conecta → cria → orquestra**, sem pressupor percurso linear obrigatório nem sistema formal de gamificação. "Inconscientes" não aparece na formulação atual.
 
 **Atenção:** essa segmentação ainda sustenta vários documentos do Growth System, do Brand System e do Content System. A redefinição de personas e segmentos pertence ao Growth System e ainda não foi feita.
 
@@ -44,7 +44,7 @@ Cinco perfis que mediam **a distância entre a ideia e a realidade**, tratados c
 
 ## Personas anteriores
 
-Quatro buyer personas — **Brunin** (jovem inconsciente), **Tella** (artista operante), **Ander** (construtor convergente) e **Lilly** (fundadora emergente) — construídas sobre origem profissional, faixa etária, renda e comportamento de consumo.
+Quatro buyer personas, construídas sobre origem profissional, faixa etária, renda e comportamento de consumo: **Brunin** (jovem inconsciente), **Tella** (artista operante), **Ander** (construtor convergente) e **Lilly** (fundadora emergente).
 
 **Status: necessitam revisão de persona.** Foram construídas sob o recorte anterior de público e sobre pressupostos de profissão. Não devem ser usadas automaticamente como verdade atual. A redefinição será feita no Growth System.
 
@@ -68,12 +68,12 @@ Medidos sob o recorte anterior de público. **Não usar como critério de qualif
 
 | Indicador | Valor registrado |
 | :---- | :---- |
-| Ticket médio inicial | R$1.000 – R$4.000 |
-| LTV médio | R$9.000 – R$18.000 |
+| Ticket médio inicial | de R$1.000 a R$4.000 |
+| LTV médio | de R$9.000 a R$18.000 |
 | Duração do relacionamento | 2 a 3 anos |
 | Ciclo de decisão | 7 a 30 dias |
-| Concentração de receita | 8–12% da base gerava mais de 60% da recorrência e dos upgrades |
-| Receita do cliente | R$5k – R$25k/mês |
+| Concentração de receita | de 8% a 12% da base gerava mais de 60% da recorrência e dos upgrades |
+| Receita do cliente | de R$5k a R$25k/mês |
 | Meta de upgrade | ≥35% para Vanguarda em 6 meses |
 | Meta de NPS | > 60 |
 
@@ -83,7 +83,7 @@ A própria documentação anterior já marcava esses valores como pendentes de r
 
 ## Motor de crescimento anterior
 
-Growth loop em cinco etapas: **aquisição → ativação → retenção → receita → indicação**, com a compra como evento central e gamificação — XP, missões, badges, ofensiva, ranking, fractais, certificados — como principal mecanismo de permanência.
+Growth loop em cinco etapas: **aquisição → ativação → retenção → receita → indicação**, com a compra como evento central e gamificação (XP, missões, badges, ofensiva, ranking, fractais, certificados) como principal mecanismo de permanência.
 
 **O que mudou:** a leitura atual trata a jornada como aprofundamento de relação, com **construir** e **pertencer** como estados próprios, e não como consequências da retenção. A gamificação permanece como possibilidade de implementação, mas não como definição do mecanismo de valor.
 
@@ -109,5 +109,5 @@ Construído quando o público era descrito como "designers e criadores": escolas
 
 1. Como referência histórica, nunca como fonte de decisão.
 2. Para reconhecer material desatualizado: ao encontrar em outro documento uma afirmação que corresponde ao que está aqui, tratá-la como anterior à transição.
-3. Os preços praticados e os indicadores medidos continuam sendo fatos sobre o que aconteceu — apenas não são critérios sobre o que deve acontecer.
+3. Os preços praticados e os indicadores medidos continuam sendo fatos sobre o que aconteceu, apenas não são critérios sobre o que deve acontecer.
 4. Quando o novo modelo for construído, esta página permanece. Não se apaga histórico útil.

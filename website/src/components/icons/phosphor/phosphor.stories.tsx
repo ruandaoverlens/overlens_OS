@@ -20,7 +20,7 @@ const meta = {
     docs: {
       description: {
         component: [
-          "# Iconografia — Phosphor",
+          "# Iconografia: Phosphor",
           "",
           "A iconografia oficial do design system da Overlens é o **[Phosphor](https://phosphoricons.com/)**.",
           "Todo **novo componente** deve usar Phosphor. O catálogo tem 1500+ ícones em 6 pesos, com API consistente e tree-shaking nativo.",
@@ -58,10 +58,10 @@ const meta = {
           "| Weight | Quando usar |",
           "| --- | --- |",
           "| `thin` / `light` | Acentos sutis, estados desabilitados, ilustração fina |",
-          "| `regular` | **Padrão** da UI — ícones de ação, navegação, inline com texto |",
+          "| `regular` | **Padrão** da UI: ícones de ação, navegação, inline com texto |",
           "| `bold` | Ênfase, ícones pequenos que precisam de presença |",
           "| `fill` | Estados ativos/selecionados (ex.: item de nav atual, favorito marcado) |",
-          "| `duotone` | Destaques expressivos, vazios, onboarding — usar com parcimônia |",
+          "| `duotone` | Destaques expressivos, vazios, onboarding; usar com parcimônia |",
           "",
           "## Tamanho",
           "",
@@ -71,7 +71,7 @@ const meta = {
           "",
           "## Cor",
           "",
-          "Por padrão o ícone herda `currentColor` — basta controlar a cor do texto",
+          "Por padrão o ícone herda `currentColor`: basta controlar a cor do texto",
           "(`text-foreground`, `text-muted-foreground`, etc.). Evite a prop `color` fixa; prefira tokens via classe.",
           "",
           "## Defaults globais (opcional)",

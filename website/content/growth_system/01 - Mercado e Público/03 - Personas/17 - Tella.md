@@ -1,11 +1,11 @@
 ---
 title: Tella - A Artista Operante
-summary: NECESSITA REVISÃO DE PERSONA. Persona de 23 anos em Belo Horizonte que já decidiu construir algo próprio mas não lança. Construída sob o recorte anterior de público (profissão, idade, renda, consumo) e sob a formulação de cinco estágios de maturidade — preservada como registro, não como verdade atual.
+summary: NECESSITA REVISÃO DE PERSONA. Persona de 23 anos em Belo Horizonte que já decidiu construir algo próprio mas não lança. Construída sob o recorte anterior de público (profissão, idade, renda, consumo) e sob a formulação de cinco estágios de maturidade, preservada como registro, não como verdade atual.
 topics: [persona, tella, necessita revisão de persona, registro, primeira oferta, fechamento de ciclo]
 keywords: [tella, stella, persona, operante, empreendedora nexialista, executa não lança, primeira oferta no ar, designer gráfico, artista, ENFP, belo horizonte, overpass, protocolo 3-2-1, IA, mapa de empatia, loop técnico]
 priority: high
 ai_when_to_use: |
-  ATENÇÃO — persona NECESSITA REVISÃO. Use apenas como registro do que foi documentado sobre Tella. Foi construída sob o recorte anterior de público e sobre a leitura de "Operante" como estágio de maturidade, que não vale mais. Não usar como base para campanha, produto ou qualificação; a redefinição de personas acontecerá no Growth System.
+  ATENÇÃO: persona NECESSITA REVISÃO. Use apenas como registro do que foi documentado sobre Tella. Foi construída sob o recorte anterior de público e sobre a leitura de "Operante" como estágio de maturidade, que não vale mais. Não usar como base para campanha, produto ou qualificação; a redefinição de personas acontecerá no Growth System.
 related: []
 ---
 
@@ -13,11 +13,11 @@ related: []
 
 > ## ⚠️ NECESSITA REVISÃO DE PERSONA
 >
-> Esta persona foi construída sob o **recorte anterior de público** — definido por profissão, faixa etária, renda e comportamento de consumo — e sob a formulação de **cinco estágios sequenciais de maturidade** (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas), que não existe mais.
+> Esta persona foi construída sob o **recorte anterior de público** (definido por profissão, faixa etária, renda e comportamento de consumo) e sob a formulação de **cinco estágios sequenciais de maturidade** (Inconscientes, Operantes, Convergentes, Emergentes, Nexialistas), que não existe mais.
 >
-> **Não use esta página como verdade atual** sobre o público da Overlens. O público é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.** E Operante, Convergente, Emergente e Nexialista são hoje **formas de agir, aprender, pensar e criar** — não degraus de uma escada.
+> **Não use esta página como verdade atual** sobre o público da Overlens. O público é o **empreendedor**: quem tem uma ideia, ambição ou visão de futuro e quer transformá-la em realidade. **O que define o público é o estado, não a profissão.** E Operante, Convergente, Emergente e Nexialista são hoje **formas de agir, aprender, pensar e criar**, não degraus de uma escada.
 >
-> **A redefinição de personas acontecerá no Growth System e ainda não foi feita.** Até lá, o conteúdo abaixo permanece preservado como registro do que foi documentado — não como base para campanha, produto ou qualificação.
+> **A redefinição de personas acontecerá no Growth System e ainda não foi feita.** Até lá, o conteúdo abaixo permanece preservado como registro do que foi documentado, não como base para campanha, produto ou qualificação.
 
 
 <div style="display:flex;gap:24px;align-items:flex-start">
@@ -56,11 +56,11 @@ related: []
 
 Tella é uma jovem de 23 anos, sonhadora e otimista, que adora imaginar e criar. Escolheu a faculdade de design por identificação com a área e deve se formar este ano, ou no máximo no próximo. Pensa em fazer uma pós, mas está ansiosa para entrar no mercado.
 
-Muito curiosa e com sede por aprendizado, maratona tutoriais, salva links e compra cursos baratos — mas costuma acumular conteúdos sem concluir. Foca em softwares e truques de execução, ainda sem uma narrativa clara sobre quem é, que problema resolve e por que aquilo que ela faz vale dinheiro. Procura algo guiado, com começo–meio–fim e resultado prático visível, para sentir segurança de que está evoluindo e não ficando para trás.
+Muito curiosa e com sede por aprendizado, maratona tutoriais, salva links e compra cursos baratos, mas costuma acumular conteúdos sem concluir. Foca em softwares e truques de execução, ainda sem uma narrativa clara sobre quem é, que problema resolve e por que aquilo que ela faz vale dinheiro. Procura algo guiado, com começo, meio e fim e resultado prático visível, para sentir segurança de que está evoluindo e não ficando para trás.
 
 Tella ainda está confusa sobre o uso de IAs na criação. Ao mesmo tempo que se sente entusiasmada, também se sente mal por não entender a tecnologia. Escuta de pessoas próximas que a IA “roubou o trabalho de muita gente” e fica dividida, como se tivesse que escolher entre evoluir e ser leal ao que aprendeu. Fascinada pela IA, mas culpada e envergonhada, evita admitir que já usa essas ferramentas em seus processos.
 
-Atualmente, faz projetos de design e arte para amigos e conhecidos, e vende umas peças autorais quando alguém pede. Nada consistente. Sua renda gira em torno de R$2.500, de ganhos variáveis. Mora com os pais, tem tempo para estudar e busca oportunidades de crescimento. O plano imediato mudou de lugar: ela parou de querer um emprego que a valorize e passou a querer transformar o que faz em algo próprio que venda — uma linha de produtos, um estúdio, uma oferta que exista sem depender de alguém a contratar. O que trava não é talento, é nunca fechar nada.
+Atualmente, faz projetos de design e arte para amigos e conhecidos, e vende umas peças autorais quando alguém pede. Nada consistente. Sua renda gira em torno de R$2.500, de ganhos variáveis. Mora com os pais, tem tempo para estudar e busca oportunidades de crescimento. O plano imediato mudou de lugar: ela parou de querer um emprego que a valorize e passou a querer transformar o que faz em algo próprio que venda: uma linha de produtos, um estúdio, uma oferta que exista sem depender de alguém a contratar. O que trava não é talento, é nunca fechar nada.
 
 Tella trabalha em um notebook intermediário e sonha com o dia em que terá equipamentos de ponta e um estúdio próprio, com nome na porta. O que ganha, gasta com passeios, roupas e algumas despesas da família. Guarda um pouco e investe em livros, cursos e melhorias no setup. Tem um cartão com limite baixo e, sempre que pode, prefere pagar pelo Pix.
 

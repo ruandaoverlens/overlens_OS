@@ -4,7 +4,7 @@ description: Constrói a página de Virtudes da Overlens usando o continuum aris
 allowed-tools: Read, Write, Edit, Glob, Grep, WebSearch, Agent
 ---
 
-# /virtudes — Construir o Sistema de Virtudes
+# /virtudes: Construir o Sistema de Virtudes
 
 Execute o pipeline completo para a página de Virtudes:
 

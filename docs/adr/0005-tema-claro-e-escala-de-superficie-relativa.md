@@ -1,4 +1,4 @@
-# ADR-0005 — Tema claro e escala de superfície relativa ao tema
+# ADR-0005: Tema claro e escala de superfície relativa ao tema
 
 - **Status**: Proposto
 - **Data**: 2026-09-22
@@ -9,11 +9,11 @@
 A plataforma nasceu `dark-only`. Os tokens de cor viviam todos em `:root` de
 `website/src/app/globals.css`, o `<html>` recebia `className="dark"` fixo e o
 `viewport` declarava `colorScheme: "dark"`. O cabeçalho do arquivo dizia, em
-letras maiúsculas, `DARK-ONLY THEME — Platform is dark-only`.
+letras maiúsculas, `DARK-ONLY THEME: Platform is dark-only`.
 
 Sobre essa base, os componentes se acostumaram a dois atalhos:
 
-1. Usar a escala primitiva `surface/*` como se fosse semântica — `bg-surface-950`
+1. Usar a escala primitiva `surface/*` como se fosse semântica, com `bg-surface-950`
    para "o card mais discreto", `text-surface-500` para "texto secundário".
    São ~200 ocorrências espalhadas por toda a aplicação.
 2. Escrever preto e branco literais (`bg-black`, `text-white`, `bg-white/[0.04]`,
@@ -29,8 +29,8 @@ superfície, e sem deixar a base com duas convenções de cor convivendo?
 
 ## Decisão
 
-Vamos manter **dois temas** — `dark` como padrão do produto, `light` completo,
-`system` como opção explícita — com as seguintes sub-decisões estruturais.
+Vamos manter **dois temas** (`dark` como padrão do produto, `light` completo,
+`system` como opção explícita) com as seguintes sub-decisões estruturais.
 
 **1. `:root` carrega o tema claro; `.dark` sobrescreve o escuro.**
 É a convenção do shadcn e a que o Tailwind já espera (`@custom-variant dark`).
@@ -44,7 +44,7 @@ e `surface-white` é sempre o polo de **contraste máximo** (`#FFF` no escuro,
 
 É a decisão central deste ADR. Ela reconhece o uso real: a base já tratava a
 escala como semântica. Ao inverter a escala, os ~200 usos passam a funcionar nos
-dois temas sem uma única alteração de componente — e continuam significando
+dois temas sem uma única alteração de componente, e continuam significando
 exatamente o que já significavam. Os degraus foram calibrados para **espelhar os
 contrastes WCAG** do tema escuro, não por inversão aritmética: `text-surface-500`
 dá 5,30:1 sobre o fundo nos dois temas.
@@ -52,7 +52,7 @@ dá 5,30:1 sobre o fundo nos dois temas.
 **3. Preto e branco literais ganham tokens próprios: `--absolute-white` e
 `--absolute-black`.**
 Uma amostra de paleta, o fundo de preview de um logo monocromático, o véu sobre
-uma foto e o "papel" de um QR code são a própria cor — não podem inverter. Com
+uma foto e o "papel" de um QR code são a própria cor: não podem inverter. Com
 um token nomeado, a intenção fica legível no código e não volta a ser
 "consertada" por engano.
 
@@ -60,7 +60,7 @@ um token nomeado, a intenção fica legível no código e não volta a ser
 `--brand-*` é paleta de marca e permanece igual nos dois temas. Quando a cor
 precisa virar **texto** sobre o fundo do tema, usa-se `--brand-*-text`, que no
 escuro é a própria cor e no claro vem rebaixada. A calibragem é feita contra o
-pior caso real — a própria cor em tinta de 15% sobre um card — e não contra o
+pior caso real, a própria cor em tinta de 15% sobre um card, e não contra o
 branco puro.
 
 **5. Preenchimento e limite de campo viram tokens distintos.**
@@ -68,7 +68,7 @@ branco puro.
 pinta o **limite** (18 usos). Separados porque o limite precisa de 3:1 contra a
 página (WCAG 1.4.11) e o fundo, com esse peso, viraria um bloco cinza. O mesmo
 token de limite serve a qualquer controle cujo contorno seja a única pista de
-que ele existe — alça de redimensionamento, separador de `ButtonGroup`.
+que ele existe: alça de redimensionamento, separador de `ButtonGroup`.
 
 **6. O contraste passa a ser verificado por script, não por inspeção.**
 `website/scripts/check-theme-contrast.mjs` (`npm run check:contrast`) lê os
@@ -85,14 +85,14 @@ semânticos.** Seria o "certo" pela teoria de design tokens: primitivo é
 primitivo. Descartada porque exigiria inventar tokens semânticos para uma
 dúzia de papéis que hoje não existem, tocar quase todos os componentes da
 aplicação num único passo, e porque o significado que os componentes já dão à
-escala é consistente — o problema não era o uso, era o nome prometer literalidade.
+escala é consistente: o problema não era o uso, era o nome prometer literalidade.
 
 **Duplicar cada classe com variantes `dark:`.** Dobraria o tamanho de quase toda
 `className` do projeto e deixaria o tema claro como enxerto permanente em vez de
 um tema de primeira classe.
 
 **Tema claro só via `prefers-color-scheme`, sem seletor.** Tira do usuário a
-escolha e não resolve o caso mais comum — quem usa o sistema no claro mas quer a
+escolha e não resolve o caso mais comum, quem usa o sistema no claro mas quer a
 plataforma escura, ou o contrário.
 
 **`defaultTheme="system"`.** Descartada: mudaria a aparência da plataforma para

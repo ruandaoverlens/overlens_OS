@@ -508,9 +508,27 @@ export function SystemSidebar({
     setStoredView(readStoredView());
   }, [showTabs]);
 
+  // A aba escolhida nesta página vira o fallback da próxima: um link de doc
+  // não carrega `?view=`, e sem isso a sidebar voltaria para a aba lida do
+  // localStorage na montagem (ex.: Conversas) ao clicar num item de Diretrizes.
+  // Ajuste durante o render, como no `prevPath` abaixo, para não piscar a aba
+  // errada por um frame.
+  const [lastNav, setLastNav] = useState<{
+    path: string | null;
+    view: SidebarView | null;
+  }>({ path: pathname, view: null });
+  if (lastNav.path !== pathname) {
+    setLastNav({ path: pathname, view: lastNav.view });
+    if (!isSidebarView(urlView) && lastNav.view) setStoredView(lastNav.view);
+  }
+
   const view: SidebarView = isSidebarView(urlView)
     ? urlView
     : (storedView ?? defaultView);
+
+  if (lastNav.path === pathname && lastNav.view !== view) {
+    setLastNav({ path: pathname, view });
+  }
 
   // Persistir a aba corrente é seguro: `storedView` (o fallback desta
   // montagem) não muda junto, então o histórico continua reversível.
@@ -569,7 +587,7 @@ export function SystemSidebar({
         <div className="flex h-12 items-center justify-between pb-0.5 pl-4 pr-0 group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:pl-0">
           <Link
             href={basePath}
-            aria-label={`${title} — início`}
+            aria-label={`${title}: início`}
             className="rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-foreground group-data-[collapsible=icon]:hidden"
           >
             {/* O logo é um SVG de cor chapada: `logo-light` é branco (fundo

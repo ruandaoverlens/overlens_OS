@@ -279,7 +279,7 @@ function CarouselViewer({ media, title }: { media: AdMedia[]; title: string }) {
 
   if (!current) return null;
 
-  const itemLabel = media.length > 1 ? `${title} — item ${index + 1} de ${media.length}` : title;
+  const itemLabel = media.length > 1 ? `${title}: item ${index + 1} de ${media.length}` : title;
 
   return (
     <div className="relative flex flex-1 items-center justify-center min-h-[50vh] md:min-h-0">

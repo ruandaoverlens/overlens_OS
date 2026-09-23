@@ -1,4 +1,4 @@
-Activate Storybook Expert agent — Story writing, interaction testing, visual regression, a11y testing.
+Activate Storybook Expert agent: Story writing, interaction testing, visual regression, a11y testing.
 
 Command: $ARGUMENTS
 

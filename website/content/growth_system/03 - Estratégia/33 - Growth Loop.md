@@ -1,6 +1,6 @@
 ---
 title: Growth Loop
-summary: Reenquadra o mecanismo de crescimento da Overlens — projeto e evidência passam a ser estados próprios do ciclo, comunidade é infraestrutura e não feature de retenção, e a compra deixa de ser o evento central. O flywheel de referência está marcado como HIPÓTESE.
+summary: "Reenquadra o mecanismo de crescimento da Overlens: projeto e evidência passam a ser estados próprios do ciclo, comunidade é infraestrutura e não feature de retenção, e a compra deixa de ser o evento central. O flywheel de referência está marcado como HIPÓTESE."
 topics: [growth loop, flywheel, projeto, evidência, comunidade, aquisição, retenção, expansão]
 keywords: [growth loop, flywheel, projeto, evidência, histórias, reputação, comunidade como infraestrutura, aquisição, ativação, retenção, expansão, indicação, gamificação, xp, badges, missões, hipótese]
 priority: high
@@ -10,11 +10,11 @@ related: [growth_system/03 - Estratégia/32 - Fluxos, growth_system/03 - Estrat�
 ---
 # Growth Loop
 
-## Um growth loop descreve um ciclo em que o resultado de uma volta é o insumo da próxima. Se ele funciona, crescer fica mais barato com o tempo. O da Overlens ainda é hipótese — e está registrado aqui como hipótese.
+## Um growth loop descreve um ciclo em que o resultado de uma volta é o insumo da próxima. Se ele funciona, crescer fica mais barato com o tempo. O da Overlens ainda é hipótese, e está registrado aqui como hipótese.
 
-**Status: HIPÓTESE.** Não tratar como mecanismo em funcionamento. Esta página existe para orientar decisões, não para justificar metas.
+Status: <dado q="C" /> Não tratar como mecanismo em funcionamento. Esta página existe para orientar decisões, não para justificar metas.
 
-A distinção que organiza tudo o que vem a seguir: **funil consome energia; loop acumula.** Um funil termina na venda e recomeça do zero no ciclo seguinte — investe-se de novo para obter o mesmo resultado. Um loop transforma o resultado de cada volta em insumo da próxima, e o custo marginal de crescer cai.
+A distinção que organiza tudo o que vem a seguir: **funil consome energia; loop acumula.** Um funil termina na venda e recomeça do zero no ciclo seguinte: investe-se de novo para obter o mesmo resultado. Um loop transforma o resultado de cada volta em insumo da próxima, e o custo marginal de crescer cai.
 
 A Overlens está migrando da primeira lógica para a segunda, o que torna esta página importante e, ao mesmo tempo, prematura. Ver *Arquitetura Comercial* para o lado operacional dessa migração.
 
@@ -22,15 +22,15 @@ A Overlens está migrando da primeira lógica para a segunda, o que torna esta p
 
 A versão anterior desta página descrevia o ciclo como **aquisição → ativação → retenção → receita → indicação**, com a compra no centro e a gamificação como mecanismo de valor. Três correções de fundo:
 
-**Projeto e evidência são estados próprios do ciclo.** Antes, construir era consequência eventual do aprendizado. Agora é um estado esperado: se a pessoa não constrói, o ciclo não gira — ainda que a assinatura continue ativa e o engajamento pareça saudável. E um projeto que acontece mas não deixa registro não alimenta a volta seguinte: **resultado sem evidência não vira história comunicável.**
+**Projeto e evidência são estados próprios do ciclo.** Antes, construir era consequência eventual do aprendizado. Agora é um estado esperado: se a pessoa não constrói, o ciclo não gira, ainda que a assinatura continue ativa e o engajamento pareça saudável. E um projeto que acontece mas não deixa registro não alimenta a volta seguinte: **resultado sem evidência não vira história comunicável.**
 
-**Comunidade é infraestrutura, não feature de retenção.** Não é um benefício que segura o cliente. É o meio onde colaboração, feedback, formação de times, descoberta de pessoas e reputação acontecem — e sem isso nem projeto nem evidência se sustentam em escala.
+**Comunidade é infraestrutura, não feature de retenção.** Não é um benefício que segura o cliente. É o meio onde colaboração, feedback, formação de times, descoberta de pessoas e reputação acontecem, e sem isso nem projeto nem evidência se sustentam em escala.
 
 **A compra não é o evento central.** É uma transição entre estados de relação, não o objetivo do ciclo. Um mecanismo que otimiza compra e não produz realização gera receita sem gerar o insumo da próxima volta.
 
 ## O ciclo de referência
 
-**HIPÓTESE.** O flywheel registrado no Business Document, adotado aqui como referência:
+<dado q="C" fonte="business_doc" /> O flywheel registrado no Business Document, adotado aqui como referência:
 
 > **Conteúdo → comunidade → aprendizagem → projetos → resultados → histórias → reputação → novos membros**
 
@@ -45,7 +45,7 @@ A versão anterior desta página descrevia o ciclo como **aquisição → ativa�
 | **Reputação** | Confiança que reduz o custo de convencer. |
 | **Novos membros** | Nova entrada no ciclo, a custo menor que o anterior. |
 
-**A definição deste flywheel pertence ao Business Document.** Esta página não o redefine — usa-o como referência e trata do que é responsabilidade do Growth System: o que precisa acontecer, em termos de descoberta, consideração, compra, permanência e expansão, para que cada etapa alimente a seguinte.
+**A definição deste flywheel pertence ao Business Document.** Esta página não o redefine: usa-o como referência e trata do que é responsabilidade do Growth System: o que precisa acontecer, em termos de descoberta, consideração, compra, permanência e expansão, para que cada etapa alimente a seguinte.
 
 ## Por que ainda é hipótese
 
@@ -59,13 +59,13 @@ Três coisas precisariam ser verdade para o ciclo girar, e nenhuma está demonst
 
 ## O que aceleraria o ciclo
 
-**HIPÓTESE.**
+<dado q="C" />
 
-- **PBL bem implementado** — encurta a distância entre aprender e construir.
-- **Comunidade densa** — aumenta a chance de um projeto encontrar a pessoa, o feedback ou o time que faltava.
-- **Hackathons e Atom Praxis** — comprimem o ciclo inteiro em um intervalo curto de tempo.
-- **Evidências registradas** — transformam resultado em ativo reutilizável.
-- **Incubação** — leva os melhores projetos adiante, produzindo os resultados mais visíveis.
+- **PBL bem implementado**: encurta a distância entre aprender e construir.
+- **Comunidade densa**: aumenta a chance de um projeto encontrar a pessoa, o feedback ou o time que faltava.
+- **Hackathons e Atom Praxis**: comprimem o ciclo inteiro em um intervalo curto de tempo.
+- **Evidências registradas**: transformam resultado em ativo reutilizável.
+- **Incubação**: leva os melhores projetos adiante, produzindo os resultados mais visíveis.
 
 ## O que freia o ciclo
 
@@ -77,7 +77,7 @@ Três coisas precisariam ser verdade para o ciclo girar, e nenhuma está demonst
 
 ## Onde cada oferta entra
 
-**EM VALIDAÇÃO.** Leitura possível, sem assumir percurso obrigatório:
+<dado q="B" /> Leitura possível, sem assumir percurso obrigatório:
 
 | Etapa do ciclo | Onde tende a acontecer |
 | :---- | :---- |
@@ -91,11 +91,11 @@ Três coisas precisariam ser verdade para o ciclo girar, e nenhuma está demonst
 
 ## Gamificação
 
-**HIPÓTESE — possibilidade de implementação, não definição do mecanismo.**
+<dado q="C" nota="Possibilidade de implementação, não definição do mecanismo." />
 
 XP, missões, badges, ofensiva, ranking, fractais e certificados permanecem registrados como elementos que **podem** ser implementados. O que muda é o estatuto: eles não são o mecanismo de valor do ecossistema.
 
-A razão é direta. Gamificação é boa para produzir frequência e visibilidade de progresso; é insuficiente para produzir realização. Se o ciclo depende de projeto e evidência, o que sustenta a permanência é **ter algo em andamento que importa**, e não uma sequência de dias ativos. Progresso simbólico pode reforçar um avanço real — mas não substitui o avanço.
+A razão é direta. Gamificação é boa para produzir frequência e visibilidade de progresso; é insuficiente para produzir realização. Se o ciclo depende de projeto e evidência, o que sustenta a permanência é **ter algo em andamento que importa**, e não uma sequência de dias ativos. Progresso simbólico pode reforçar um avanço real, mas não substitui o avanço.
 
 **Não confundir sinal com causa:** uma pessoa engajada na mecânica e parada no projeto é um falso positivo.
 
@@ -108,17 +108,17 @@ Antes de tratar este ciclo como modelo operacional, é preciso conseguir observa
 3. Quantas dessas evidências viram história comunicável.
 4. Que proporção dos novos membros chega por reputação e indicação.
 
-**Nenhuma meta, taxa ou número está definido para esses pontos. PENDENTE.** Enquanto não forem observáveis, o loop é um bom modelo mental — e nada além disso.
+<dado q="E" /> Nenhuma meta, taxa ou número está definido para esses pontos. Enquanto não forem observáveis, o loop é um bom modelo mental, e nada além disso.
 
-## Histórico — o loop anterior
+## Histórico: o loop anterior
 
-**HISTÓRICO.** O ciclo documentado anteriormente, preservado como registro do que foi desenhado:
+<dado q="D" fonte="https://www.figma.com/board/bPV9gXuVdE3nFHxfg4gucv/Fluxos-de-Marketing?node-id=405-5914" /> O ciclo documentado anteriormente, preservado como registro do que foi desenhado:
 
-1. **Aquisição** — YouTube, lives, conteúdo evergreen, SEO e mídia paga, quizzes e o Atlas como imersão de alto tempo de permanência.
-2. **Ativação** — conta criada ou ingresso comprado; e-mails de boas-vindas, notificações, banners, popups e paywall conduzindo ao primeiro momento de sucesso (primeira aula consumida e projeto definido).
-3. **Retenção** — ofensiva, XP, missões, badges, conteúdo semanal, ranking, fractais, inventário e certificados.
-4. **Receita** — upgrade "natural" para Overpass, Vanguarda e loja de artefatos, com cross-sell e up-sell por estágio de maturidade.
-5. **Indicação** — indique e ganhe, conteúdo gerado por usuários e liberação de materiais por ações sociais.
+1. **Aquisição**: YouTube, lives, conteúdo evergreen, SEO e mídia paga, quizzes e o Atlas como imersão de alto tempo de permanência.
+2. **Ativação**: conta criada ou ingresso comprado; e-mails de boas-vindas, notificações, banners, popups e paywall conduzindo ao primeiro momento de sucesso (primeira aula consumida e projeto definido).
+3. **Retenção**: ofensiva, XP, missões, badges, conteúdo semanal, ranking, fractais, inventário e certificados.
+4. **Receita**: upgrade "natural" para Overpass, Vanguarda e loja de artefatos, com cross-sell e up-sell por estágio de maturidade.
+5. **Indicação**: indique e ganhe, conteúdo gerado por usuários e liberação de materiais por ações sociais.
 
 **O que esse modelo acertava:** a circularidade, a recusa à pressão comercial e a ideia de que monetização deve ser consequência de valor entregue.
 

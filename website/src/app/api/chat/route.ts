@@ -196,7 +196,7 @@ export async function POST(req: NextRequest) {
       const list = nonImageAttachments
         .map((a) => `- ${a.name} (${a.contentType})`)
         .join("\n");
-      systemPrompt += `\n\nO usuário anexou os seguintes arquivos não-imagem (você não consegue ler o conteúdo diretamente — peça ao usuário para colar o trecho relevante se necessário):\n${list}`;
+      systemPrompt += `\n\nO usuário anexou os seguintes arquivos não-imagem (você não consegue ler o conteúdo diretamente; peça ao usuário para colar o trecho relevante se necessário):\n${list}`;
     }
 
     const sources = resolveSources(routedDocIds);

@@ -1,6 +1,6 @@
 ---
 title: Proxies
-summary: Estabelece os códigos de quem fala em nome da Overlens — pessoas, sistemas e personas autorizadas a expressar a marca — sintetizando direção da comunicação, arquétipos, valores, regra de público e tom de voz para garantir harmonia entre vozes diferentes.
+summary: Estabelece os códigos de quem fala em nome da Overlens (pessoas, sistemas e personas autorizadas a expressar a marca), sintetizando direção da comunicação, arquétipos, valores, regra de público e tom de voz para garantir harmonia entre vozes diferentes.
 topics: [proxies, representação de marca, personas, governança da voz, síntese institucional]
 keywords: [proxy, D.U.D, T.R.U, personas simbólicas, El Lissitzky, Proun 5A, Mago, Criador, Sábio, virtudes, Ethos Pathos Logos, valores inegociáveis, território linguístico, harmonia, regra de público, empreendedor, escola de negócios dos criadores]
 priority: high
@@ -32,7 +32,7 @@ Esta parte do livro oferece uma cartografia expressiva da Overlens. É aqui que 
 
 ## Por que esta seção importa?
 
-A Overlens não é apenas um conjunto de produtos, aulas ou ferramentas. É um ecossistema de aprendizagem, negócios, criação e realização para pessoas que querem transformar ideias em realidade — e é também uma linguagem em desenvolvimento. Toda vez que alguém fala em nome da marca, essa linguagem é reforçada ou enfraquecida. Um texto mal posicionado, um título mal escrito ou um comentário desatento pode comprometer a construção simbólica. Ser proxy é entender que cada palavra pública é uma lente pela qual o mundo nos percebe.
+A Overlens não é apenas um conjunto de produtos, aulas ou ferramentas. É um ecossistema de aprendizagem, negócios, criação e realização para pessoas que querem transformar ideias em realidade, e é também uma linguagem em desenvolvimento. Toda vez que alguém fala em nome da marca, essa linguagem é reforçada ou enfraquecida. Um texto mal posicionado, um título mal escrito ou um comentário desatento pode comprometer a construção simbólica. Ser proxy é entender que cada palavra pública é uma lente pela qual o mundo nos percebe.
 
 ## Como utilizar?
 
@@ -44,7 +44,7 @@ Consulte os personagens para ajustar o tom. Consulte os territórios para manter
 
 **Arquétipos e narrativa simbólica**; A identidade da Overlens se ancora no Mago (transformação com método, Prometeu tecnológico), equilibrado pelo Criador (forma, estética e realização) e contido pelo Sábio (ética, explicabilidade). A ideia é provocar assombro sem truques, sempre mostrando os mecanismos, com replicabilidade e ética explícita. Símbolos como prisma, lentes, constelações e metáforas como faísca, micélio e ponte reforçam essa narrativa, evitando clichês. Os valores inegociáveis incluem julgamento, realização, liberdade, responsabilidade, simplicidade, maestria, comunicação, curiosidade, inovação, colaboração, honestidade e coragem.
 
-**Com quem falamos**; O público da Overlens é o empreendedor: quem tem uma ideia, uma ambição ou uma visão de futuro e quer transformá-la em realidade. O que define esse público é o estado, não a profissão — ele pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa ou de nenhuma dessas origens. Nenhum proxy deve rotular a audiência como "designers", "criativos" ou "profissionais criativos", nem defini-la por cargo, formação ou senioridade. Substantivos de profissão são permitidos como exemplos de origem e dentro da estrutura dinâmica de posicionamento ("a escola de negócios dos artistas, dos engenheiros, dos inventores, dos designers, dos sonhadores, dos criadores"), nunca como definição de quem nos procura. Membros da comunidade são **Atoms**, e o **nexialismo** é uma capacidade que a Overlens desenvolve, não um rótulo colado nas pessoas.
+**Com quem falamos**; O público da Overlens é o empreendedor: quem tem uma ideia, uma ambição ou uma visão de futuro e quer transformá-la em realidade. O que define esse público é o estado, não a profissão: ele pode vir da engenharia, da arquitetura, da arte, do design, da pesquisa ou de nenhuma dessas origens. Nenhum proxy deve rotular a audiência como "designers", "criativos" ou "profissionais criativos", nem defini-la por cargo, formação ou senioridade. Substantivos de profissão são permitidos como exemplos de origem e dentro da estrutura dinâmica de posicionamento ("a escola de negócios dos artistas, dos engenheiros, dos inventores, dos designers, dos sonhadores, dos criadores"), nunca como definição de quem nos procura. Membros da comunidade são **Atoms**, e o **nexialismo** é uma capacidade que a Overlens desenvolve, não um rótulo colado nas pessoas.
 
 **Tom de voz**; Organizado em quatro virtudes principais (Científica, Profunda, Provocativa, Inspiradora) com a virtude transversal Adaptável. Cada uma tem seu excesso a evitar e sua falta a corrigir. A estratégia segue Ethos (atenção \+ credibilidade), Pathos (conexão), Logos (profundidade). Há orientações práticas e exemplos para cada tom, sempre mantendo clareza, inteligência e acessibilidade.
 

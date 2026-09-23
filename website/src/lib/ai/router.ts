@@ -22,7 +22,7 @@ export async function routeDocs(
   // Compact brief — title + summary only. Free-tier OpenRouter caps prompt
   // tokens around ~14k, and including ai_when_to_use blows past that.
   const indexBrief = index
-    .map((d) => `[${d.id}] (${d.priority}) ${d.title} — ${d.summary}`)
+    .map((d) => `[${d.id}] (${d.priority}) ${d.title}: ${d.summary}`)
     .join("\n");
 
   try {
@@ -37,7 +37,7 @@ Pedido do usuário:
 ${userPrompt}
 """
 
-Índice (id | priority/system | título — summary | When: ai_when_to_use):
+Índice (id | priority/system | título: summary | When: ai_when_to_use):
 ${indexBrief}`,
     });
 

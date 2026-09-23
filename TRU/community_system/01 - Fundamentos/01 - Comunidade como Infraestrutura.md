@@ -2,7 +2,7 @@
 
 ## Quase toda empresa de educação tem comunidade. Quase nenhuma depende dela para entregar o que promete. Essa é a diferença que esta página tenta sustentar.
 
-**EM VALIDAÇÃO.** A comunidade é tratada aqui como uma das infraestruturas do ecossistema — no mesmo nível conceitual em que a tecnologia é infraestrutura. Não como espaço de convivência que acompanha o produto, mas como parte do mecanismo pelo qual o produto funciona.
+<dado q="B" /> A comunidade é tratada aqui como uma das infraestruturas do ecossistema, no mesmo nível conceitual em que a tecnologia é infraestrutura. Não como espaço de convivência que acompanha o produto, mas como parte do mecanismo pelo qual o produto funciona.
 
 ## O que comunidade não é
 
@@ -25,23 +25,23 @@ O objetivo de longo prazo pode ser enunciado de forma precisa:
 
 Essa formulação tem uma qualidade rara para uma ambição cultural: ela é observável. Probabilidade sobe ou não sobe. Encontro acontece ou não acontece. Projeto avança ou não avança.
 
-Ela também explica por que comunidade não é acessório. Se a unidade central da experiência é o projeto — e é, conforme o Product System —, então tudo aquilo de que um projeto depende e que a empresa não consegue fornecer sozinha precisa vir de algum lugar. A comunidade é esse lugar.
+Ela também explica por que comunidade não é acessório. Se a unidade central da experiência é o projeto (e é, conforme o Product System <dado fonte="Product System" />), então tudo aquilo de que um projeto depende e que a empresa não consegue fornecer sozinha precisa vir de algum lugar. A comunidade é esse lugar.
 
 ## A consequência econômica
 
-**EM VALIDAÇÃO.** Se a leitura acima estiver correta, uma consequência se impõe: **parte do valor que a Overlens entrega não é produzida pela Overlens, e sim pelos membros entre si.**
+<dado q="B" /> Se a leitura acima estiver correta, uma consequência se impõe: **parte do valor que a Overlens entrega não é produzida pela Overlens, e sim pelos membros entre si.**
 
-Feedback qualificado, colaboração real, descoberta de um sócio, um conselho no momento certo, a referência que economiza três meses — nada disso passa pela produção da empresa. A empresa cria a condição; o valor nasce entre as pessoas.
+Feedback qualificado, colaboração real, descoberta de um sócio, um conselho no momento certo, a referência que economiza três meses: nada disso passa pela produção da empresa. A empresa cria a condição; o valor nasce entre as pessoas.
 
 Isso torna a comunidade **o único ativo do ecossistema que tende a aumentar de valor com escala**. Conteúdo não melhora quando mais gente assiste. Metodologia não melhora quando mais gente aplica. Uma rede de pessoas que constroem coisas, sim: cada participante qualificado aumenta o que os demais podem encontrar.
 
-O Business Document trata dessa propriedade como candidata a vantagem defensável — ver **Moats** e **Strategic Bets**. A qualificação registrada lá vale aqui: é a hipótese mais forte da companhia e continua sendo uma hipótese.
+O Business Document trata dessa propriedade como candidata a vantagem defensável (ver **Moats** e **Strategic Bets**). A qualificação registrada lá vale aqui <dado fonte="Business Document › Moats e Strategic Bets" />: é a hipótese mais forte da companhia e continua sendo uma hipótese.
 
 ## Densidade: a variável que decide
 
-**EM VALIDAÇÃO.** A propriedade anterior tem uma condição: *desde que a densidade se mantenha*.
+<dado q="B" /> A propriedade anterior tem uma condição: *desde que a densidade se mantenha*.
 
-Densidade é a proporção de pessoas presentes que efetivamente contribuem, constroem, respondem e aparecem — em relação ao total. É diferente de tamanho e frequentemente inversa a ele.
+Densidade é a proporção de pessoas presentes que efetivamente contribuem, constroem, respondem e aparecem, em relação ao total. É diferente de tamanho e frequentemente inversa a ele.
 
 O risco correspondente precisa ficar registrado com a mesma clareza da oportunidade:
 
@@ -49,14 +49,14 @@ O risco correspondente precisa ficar registrado com a mesma clareza da oportunid
 
 Um fórum comum não é um desastre visível. Ele continua tendo membros, postagens e métricas de atividade. O que ele perde é a única coisa que importava: a probabilidade de encontro útil. A degradação é silenciosa, e quando se torna perceptível já custou anos.
 
-Esse é o motivo pelo qual curadoria, comportamento esperado e critérios de entrada não são temas de etiqueta neste sistema — são temas de estratégia. Ver **Governança e Comportamento**.
+Esse é o motivo pelo qual curadoria, comportamento esperado e critérios de entrada não são temas de etiqueta neste sistema: são temas de estratégia. Ver **Governança e Comportamento**.
 
 ## O que ainda não sabemos
 
-**PENDENTE.** Três lacunas impedem que esta página vá além do princípio:
+<dado q="E" /> Três lacunas impedem que esta página vá além do princípio:
 
-1. **Como densidade é medida.** Não existe definição operacional nem instrumento. Sem isso, o risco acima não é observável — apenas argumentável.
+1. **Como densidade é medida.** Não existe definição operacional nem instrumento. Sem isso, o risco acima não é observável, apenas argumentável.
 2. **Qual o limite de escala por ambiente.** Não há decisão sobre tamanho máximo, segmentação por interesse, por projeto ou por modo de participação.
-3. **Onde a comunidade acontece.** A arquitetura de ambientes — dentro da plataforma, fora dela, ou em combinação — não está decidida. Isso é dependência direta do **Product System**.
+3. **Onde a comunidade acontece.** A arquitetura de ambientes (dentro da plataforma, fora dela, ou em combinação) não está decidida. Isso é dependência direta do **Product System**.
 
 Enquanto as três permanecerem abertas, a comunidade funciona por prática acumulada e não por sistema. Prática acumulada escala mal.

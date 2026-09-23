@@ -16,7 +16,7 @@ export default async function BuscaPage({
     <div className="mx-auto flex max-w-5xl flex-col gap-6 p-6">
       <PageHeader
         title="Busca"
-        description="Verifique a disponibilidade de um nome de marca cruzando a base local com a consulta ao vivo do INPI. A análise é indicativa — a decisão final é sempre humana."
+        description="Verifique a disponibilidade de um nome de marca cruzando a base local com a consulta ao vivo do INPI. A análise é indicativa: a decisão final é sempre humana."
       />
       <BuscaPageClient initialNome={nome ?? ""} initialClasses={classes ?? ""} />
     </div>

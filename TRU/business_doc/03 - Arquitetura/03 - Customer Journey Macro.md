@@ -1,12 +1,12 @@
 # Customer Journey Macro
 
-## A jornada macro de relacionamento com a companhia. Apenas a altitude executiva — persona, funil, canal e mensagem pertencem ao Growth System.
+## A jornada macro de relacionamento com a companhia. Apenas a altitude executiva: persona, funil, canal e mensagem pertencem ao Growth System.
 
 Esta página descreve **os estados pelos quais alguém passa na relação com a Overlens**, não como cada transição é operada comercialmente.
 
 ## A jornada
 
-**HIPÓTESE.** Modelo conceitual a ser validado contra os produtos reais:
+<dado q="C" /> Modelo conceitual a ser validado contra os produtos reais:
 
 > **Descobre → Experimenta → Aprende → Constrói → Evolui → Acelera → Pertence**
 
@@ -24,7 +24,7 @@ Esta página descreve **os estados pelos quais alguém passa na relação com a 
 
 **Não é linear.** A sequência descreve profundidade crescente de relação, não um caminho obrigatório. Alguém pode entrar por assessoria e nunca ter passado por Atlas. Alguém pode pertencer à comunidade antes de comprar qualquer coisa.
 
-**"Pertence" não é o fim.** É o estado mais estável, não o último. Uma pessoa que pertence continua aprendendo, construindo e acelerando — e é dela que sai boa parte do valor que outras pessoas recebem.
+**"Pertence" não é o fim.** É o estado mais estável, não o último. Uma pessoa que pertence continua aprendendo, construindo e acelerando, e é dela que sai boa parte do valor que outras pessoas recebem.
 
 **Não é funil.** Um funil termina na venda e assume perda a cada etapa. Esta jornada assume que a relação se aprofunda e que parte das pessoas volta a alimentar o começo dela.
 
@@ -34,17 +34,17 @@ A jornada documentada anteriormente seguia a lógica clássica de **aquisição 
 
 Duas diferenças de fundo:
 
-**Construir passou a ser um estado próprio.** Na leitura anterior, construir era consequência eventual do aprendizado. Agora é um estado esperado da jornada — e, se ele não acontece, a relação não avançou, ainda que a assinatura continue ativa.
+**Construir passou a ser um estado próprio.** Na leitura anterior, construir era consequência eventual do aprendizado. Agora é um estado esperado da jornada: se ele não acontece, a relação não avançou, ainda que a assinatura continue ativa.
 
 **Pertencer deixou de ser consequência de retenção.** Passou a ser um estado com valor próprio, e não apenas um indicador de que a pessoa não cancelou.
 
 ## Implicação para o negócio
 
-Se a jornada acima estiver correta, a companhia precisa conseguir observar **em que estado cada pessoa está** — e não apenas o que ela comprou.
+Se a jornada acima estiver correta, a companhia precisa conseguir observar **em que estado cada pessoa está**, e não apenas o que ela comprou.
 
 Isso significa responder, por pessoa: o que ela consegue fazer, quais capacidades desenvolveu, quais projetos realizou, quais evidências existem disso, no que está trabalhando e no que quer se transformar.
 
-Essa é uma exigência de produto, e pertence ao **Product System**, que ainda precisa ser criado. Enquanto o ecossistema não conseguir observar estados, a jornada permanece como modelo conceitual — útil para decidir, insuficiente para operar.
+Essa é uma exigência de produto, e pertence ao **Product System**, que ainda precisa ser criado. Enquanto o ecossistema não conseguir observar estados, a jornada permanece como modelo conceitual: útil para decidir, insuficiente para operar.
 
 ## O que não pertence a esta página
 

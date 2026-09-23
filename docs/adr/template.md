@@ -1,4 +1,4 @@
-# ADR-NNNN — Título da decisão
+# ADR-NNNN: Título da decisão
 
 - **Status**: Proposto
 - **Data**: AAAA-MM-DD
