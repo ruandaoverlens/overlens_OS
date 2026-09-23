@@ -28,14 +28,14 @@ export function DadoBadge({
   const isLink = typeof fonte === "string" && /^https?:\/\//i.test(fonte);
 
   return (
-    <span className="mr-1.5 inline-flex translate-y-[0.1em] items-center gap-1 align-baseline">
+    <span className="mr-2 inline-flex translate-y-[0.22em] items-center gap-1.5 align-baseline">
       {grade && info && (
       <Tooltip>
         <TooltipTrigger asChild>
           <button
             type="button"
             aria-label={`Qualidade do dado: ${grade}, ${info.label}. ${info.meaning}`}
-            className={`inline-flex size-[1.35em] shrink-0 cursor-help items-center justify-center rounded-full border font-body text-[0.68em] font-semibold leading-none text-foreground transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ${info.dotClass}`}
+            className={`inline-flex size-[1.75em] p-[0.3em] shrink-0 cursor-help items-center justify-center rounded-full border font-body text-[0.75em] font-semibold leading-none text-foreground transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ${info.dotClass}`}
           >
             {grade}
           </button>
@@ -60,7 +60,7 @@ export function DadoBadge({
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`Fonte: ${fonte}`}
-                className="inline-flex size-[1.35em] shrink-0 items-center justify-center rounded-full border border-border bg-muted font-body text-[0.68em] font-semibold leading-none text-muted-foreground no-underline transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                className="inline-flex size-[1.75em] p-[0.3em] shrink-0 items-center justify-center rounded-full border border-border bg-muted font-body text-[0.75em] font-semibold leading-none text-muted-foreground no-underline transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
               >
                 F
               </a>
@@ -68,7 +68,7 @@ export function DadoBadge({
               <button
                 type="button"
                 aria-label={`Fonte: ${fonte}`}
-                className="inline-flex size-[1.35em] shrink-0 cursor-help items-center justify-center rounded-full border border-border bg-muted font-body text-[0.68em] font-semibold leading-none text-muted-foreground transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                className="inline-flex size-[1.75em] p-[0.3em] shrink-0 cursor-help items-center justify-center rounded-full border border-border bg-muted font-body text-[0.75em] font-semibold leading-none text-muted-foreground transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
               >
                 F
               </button>

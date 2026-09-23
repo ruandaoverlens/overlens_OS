@@ -98,7 +98,15 @@ export function DocPagination({
       className="mt-12 flex items-center justify-between gap-4 border-t border-border pt-6"
     >
       {prev && prevHref ? (
-        <Button variant="secondary" size="sm" asChild>
+        // A seta encosta na borda (`ps-2` e sem a margem externa do ícone) e o
+        // atalho ganha folga do lado de dentro: o chip do Kbd tem fundo
+        // próprio e precisa de mais respiro que o traço fino da seta.
+        <Button
+          variant="secondary"
+          size="sm"
+          asChild
+          className="has-[svg]:ps-2 has-[svg]:pe-4 [&>svg:first-child]:ms-0"
+        >
           <Link
             href={prevHref}
             rel="prev"
@@ -118,7 +126,13 @@ export function DocPagination({
         <div />
       )}
       {next && nextHref ? (
-        <Button variant="secondary" size="sm" asChild>
+        // Espelho do botão anterior: aqui a seta é o último filho.
+        <Button
+          variant="secondary"
+          size="sm"
+          asChild
+          className="has-[svg]:ps-4 has-[svg]:pe-2 [&>svg:last-child]:me-0"
+        >
           <Link
             href={nextHref}
             rel="next"
